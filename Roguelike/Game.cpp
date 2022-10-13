@@ -9,7 +9,6 @@
 #include <iostream>
 
 
-
 /// <summary>
 /// default constructor
 /// setup the window properties
@@ -22,6 +21,8 @@ Game::Game() :
 {
 	setupFontAndText(); // load font 
 	setupSprite(); // load texture
+
+	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
 }
 
 /// <summary>
@@ -113,6 +114,7 @@ void Game::render()
 	m_window.clear(sf::Color::White);
 	m_window.draw(m_welcomeMessage);
 	m_window.draw(m_logoSprite);
+	m_testEnemy->render(m_window);
 	m_window.display();
 }
 
