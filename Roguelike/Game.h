@@ -16,7 +16,8 @@
 /// Don't forget the endif at the bottom
 /// </summary>
 #include <SFML/Graphics.hpp>
-
+#include "Item.h"
+#include "Weapon.h"
 class Game
 {
 public:
@@ -44,6 +45,7 @@ private:
 	sf::Sprite m_logoSprite; // sprite used for sfml logo
 	bool m_exitGame; // control exiting game
 
+	Weapon m_genericWeapon;
 };
 
 #endif // !GAME_HPP
