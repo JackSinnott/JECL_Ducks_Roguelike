@@ -1,7 +1,13 @@
 /// <summary>
-/// author Pete Lowe May 2019
-/// you need to change the above line or lose marks
+///	Authors:
+/// Jack
+/// Eoin
+/// Caroline
+///	Leo
+/// Start Date: 13/10/2022
+///
 /// </summary>
+
 #ifndef GAME_HPP
 #define GAME_HPP
 /// <summary>

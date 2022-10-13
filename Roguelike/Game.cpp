@@ -1,8 +1,12 @@
 /// <summary>
-/// @author Peter Lowe
-/// @date May 2019
+///	Authors:
+/// Jack
+/// Eoin
+/// Caroline
+///	Leo
+/// 
+/// Start Date: 13/10/2022
 ///
-/// you need to change the above lines or lose marks
 /// </summary>
 
 #include "Game.h"
