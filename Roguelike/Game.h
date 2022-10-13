@@ -9,7 +9,7 @@
 /// same as #pragma once
 /// Don't forget the endif at the bottom
 /// </summary>
-#include <SFML/Graphics.hpp>
+#include "Player.h"
 #include "Globals.h"
 #include "Enemy.h"
 
@@ -40,6 +40,7 @@ private:
 	sf::Sprite m_logoSprite; // sprite used for sfml logo
 	bool m_exitGame; // control exiting game
 
+	Player player;
 	Enemy* m_testEnemy;
 };
 
