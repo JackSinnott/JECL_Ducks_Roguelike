@@ -10,6 +10,8 @@
 /// Don't forget the endif at the bottom
 /// </summary>
 #include "Player.h"
+#include "Globals.h"
+#include "Enemy.h"
 
 class Game
 {
@@ -39,7 +41,7 @@ private:
 	bool m_exitGame; // control exiting game
 
 	Player player;
-
+	Enemy* m_testEnemy;
 };
 
 #endif // !GAME_HPP
