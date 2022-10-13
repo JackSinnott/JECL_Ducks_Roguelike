@@ -113,6 +113,7 @@ void Game::render()
 	m_window.clear(sf::Color::White);
 	m_window.draw(m_welcomeMessage);
 	m_window.draw(m_logoSprite);
+	player.Render(m_window);
 	m_window.display();
 }
 
