@@ -3,7 +3,7 @@
 GameData::GameData()
 {
 
-	m_pTexture = TextureManager::Acquire("ASSETS//IMAGES//Level//MapTiles.png");
+	m_pTexture = TextureManager::Acquire("Assets//Images//Level//MapTiles.png");
 }
 
 //********************************************************
