@@ -9,7 +9,7 @@ void FileLoader::Load(int t_level)
 {
 	// load in the level data and setup levelData
 	std::ifstream level;
-	std::string path = "Assets/Levels/Level" + std::to_string(t_level) + ".txt";
+	std::string path = "ASSETS/LEVELS/Level" + std::to_string(t_level) + ".txt";
 	level.open(path);
 
 	if (level.is_open())

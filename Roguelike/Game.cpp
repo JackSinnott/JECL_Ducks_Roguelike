@@ -1,33 +1,40 @@
 #include "Game.h"
-#include <iostream>
+std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::texturePtrs; // Singletons need declaring
 
-
-/// <summary>
-/// ### Description:
-/// Default Constructor.
-/// 
-/// Game classes constructor.
-/// 
-/// ### Example:
-/// ~~~~~~~~~~~~~~~~~~~~~.cpp
-/// Game newGame = Game();
-/// ~~~~~~~~~~~~~~~~~~~~~
-/// </summary>
-Game::Game() :
-	m_window{ sf::VideoMode{ 800U, 640U, 32U }, "SFML Game" },
+Game::Game(sf::Font& t_font) :
+	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "SFML Game" },
 	m_exitGame{ false } //when true game will exit
 {
-	setupFontAndText(); // load font 
-	setupSprite(); // load texture
+	m_levelLoader = new FileLoader(m_levelData);
+
+	LoadLevel(1);
 }
 
-/// Default Destructor.
-///
-/// Game classes destructor.
+/// <summary>
+/// default constructor
+/// setup the window properties
+/// load and setup the text 
+/// load and setup thne image
+/// </summary>
+Game::Game() :
+	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "SFML Game" },
+	m_exitGame{ false } //when true game will exit
+{
+	m_levelLoader = new FileLoader(m_levelData);
+
+	LoadLevel(1);
+}
+
+/// <summary>
+/// default destructor we didn't dynamically allocate anything
+/// so we don't need to free it, but mthod needs to be here
+/// </summary>
 Game::~Game()
 {
 }
 
+
+//****************************************************************
 void Game::run()
 {
 	sf::Clock clock;
@@ -42,12 +49,19 @@ void Game::run()
 		{
 			timeSinceLastUpdate -= timePerFrame;
 			processEvents(); // at least 60 fps
-			update(timePerFrame); //60 fps
+			Update(timePerFrame); //60 fps
 		}
-		render(); // as many as possible
+		Render(m_window); // as many as possible
 	}
 }
 
+//****************************************************************
+
+/// <summary>
+/// handle user and system events/ input
+/// get key presses/ mouse moves etc. from OS
+/// and user :: Don't do game update here
+/// </summary>
 void Game::processEvents()
 {
 	sf::Event newEvent;
@@ -64,6 +78,7 @@ void Game::processEvents()
 	}
 }
 
+//****************************************************************
 
 void Game::processKeys(sf::Event t_event)
 {
@@ -73,40 +88,30 @@ void Game::processKeys(sf::Event t_event)
 	}
 }
 
-void Game::update(sf::Time t_deltaTime)
-{
-	if (m_exitGame)
-	{
-		m_window.close();
-	}
-}
+//****************************************************************
 
-void Game::render()
+void Game::Update(sf::Time t_dt)
 {
-	m_window.clear(sf::Color::White);
-	m_window.display();
-}
-
-void Game::setupFontAndText()
-{
-	if (!m_ArialBlackfont.loadFromFile("ASSETS\\FONTS\\ariblk.ttf"))
-	{
-		std::cout << "problem loading arial black font" << std::endl;
-	}
-	m_welcomeMessage.setFont(m_ArialBlackfont);
-	m_welcomeMessage.setString("SFML Game");
-	m_welcomeMessage.setStyle(sf::Text::Underlined | sf::Text::Italic | sf::Text::Bold);
-	m_welcomeMessage.setPosition(40.0f, 40.0f);
-	m_welcomeMessage.setCharacterSize(80U);
-	m_welcomeMessage.setOutlineColor(sf::Color::Red);
-	m_welcomeMessage.setFillColor(sf::Color::Black);
-	m_welcomeMessage.setOutlineThickness(3.0f);
-
-}
-
-void Game::setupSprite()
-{
+	TextureManager::Collectgarbage();
 
 }
 
 
+//****************************************************************
+
+void Game::Render(sf::RenderWindow& t_window)
+{
+	t_window.draw(m_levelData);
+
+	t_window.draw(m_infoText);
+
+}
+
+//****************************************************************
+
+void Game::LoadLevel(int t_level)
+{
+	m_levelLoader->Load(t_level);
+
+	m_levelData.addWalls(m_walls);
+}

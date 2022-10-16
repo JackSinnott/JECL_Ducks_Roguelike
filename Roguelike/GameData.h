@@ -1,5 +1,5 @@
-#ifndef GAMEDATA_H
-#define GAMEDATA_H
+#ifndef GAME_DATA_H
+#define GAME_DATA_H
 
 #include <SFML/graphics.hpp>
 #include "TextureManager.h"
@@ -26,4 +26,4 @@ private:
 	std::array<std::array<Tile, 20>, 25> m_data;
 };
 
-#endif // !GAMEDATA_H
+#endif // !GAME_DATA_H
