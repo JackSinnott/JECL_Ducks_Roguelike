@@ -15,7 +15,7 @@
 /// same as #pragma once
 /// Don't forget the endif at the bottom
 /// </summary>
-#include <SFML/Graphics.hpp>
+#include "Player.h"
 #include "Item.h"
 #include "Weapon.h"
 class Game
@@ -45,7 +45,9 @@ private:
 	sf::Sprite m_logoSprite; // sprite used for sfml logo
 	bool m_exitGame; // control exiting game
 
+	Player player;
 	Weapon m_genericWeapon;
+	Enemy* m_testEnemy;
 };
 
 #endif // !GAME_HPP
