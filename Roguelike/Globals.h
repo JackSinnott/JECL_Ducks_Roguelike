@@ -6,3 +6,10 @@ enum class EnemyType
 	Bat,
 	Rat
 };
+
+enum class Weapons
+{
+	Sword,
+	Axe,
+	Dagger
+};
