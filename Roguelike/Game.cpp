@@ -1,17 +1,12 @@
 /// <summary>
-///	Authors:
-/// Jack
-/// Eoin
-/// Caroline
-///	Leo
-/// 
-/// Start Date: 13/10/2022
+/// @author Peter Lowe
+/// @date May 2019
 ///
+/// you need to change the above lines or lose marks
 /// </summary>
 
 #include "Game.h"
 #include <iostream>
-
 
 
 /// <summary>
@@ -26,6 +21,8 @@ Game::Game() :
 {
 	setupFontAndText(); // load font 
 	setupSprite(); // load texture
+
+	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
 }
 
 /// <summary>
@@ -117,7 +114,8 @@ void Game::render()
 	m_window.clear(sf::Color::White);
 	m_window.draw(m_welcomeMessage);
 	m_window.draw(m_logoSprite);
-	m_genericWeapon.draw(m_window);
+	player.Render(m_window);
+	m_testEnemy->render(m_window);
 	m_window.display();
 }
 
