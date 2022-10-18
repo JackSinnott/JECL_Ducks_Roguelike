@@ -13,3 +13,25 @@ enum class Weapons
 	Axe,
 	Dagger
 };
+
+enum class Armour
+{
+	Light,
+	Medium,
+	Heavy
+};
+
+
+enum class Potions
+{
+	Health,
+	Strength,
+	Speed
+};
+
+enum class Scrolls
+{
+	Fireball,
+	Shield,
+	Teleportation
+};
