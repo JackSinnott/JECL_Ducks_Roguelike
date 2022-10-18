@@ -18,6 +18,7 @@
 #include "Player.h"
 #include "Item.h"
 #include "Weapon.h"
+#include "Enemy.h"
 class Game
 {
 public:
