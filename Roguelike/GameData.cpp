@@ -3,14 +3,14 @@
 GameData::GameData()
 {
 
-	m_pTexture = TextureManager::Acquire("Assets//Images//Level//MapTiles.png");
+	m_pTexture = TextureManager::Acquire("ASSETS//IMAGES//Level//MapTiles.png");
 }
 
 //********************************************************
 
 void GameData::setTile(int row, int col, CellType t_type)
 {
-	m_data[row][col].setup(m_pTexture, sf::Vector2f{ static_cast<float>(row * 32), static_cast<float>(col * 32) }, t_type);
+	m_data[row][col].setup(m_pTexture, sf::Vector2f{ static_cast<float>(row * G_CELL_SIZE), static_cast<float>(col * G_CELL_SIZE) }, t_type);
 }
 
 //********************************************************

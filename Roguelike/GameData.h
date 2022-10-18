@@ -6,24 +6,25 @@
 #include "Tile.h"
 #include <array>
 #include <iostream>
+#include "Globals.h"
 
 class GameData : public sf::Drawable
 {
 public:
 	GameData();
 
-	std::array<std::array<Tile, 20>, 25>& getData() { return m_data; };
+	std::array<std::array<Tile, G_MAP_COLS>, G_MAP_ROWS>& getData() { return m_data; };
 
 	void setTile(int row, int col, CellType t_type);
 
-	void addWalls(std::vector<sf::Sprite*>&);
+	void addWalls(std::vector<sf::Sprite*>& t_walls);
 
 	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const override;
 private:
 	std::shared_ptr<sf::Texture> m_pTexture;
-	static const int s_GAME_WIDTH{ 25 };
-	static const int s_GAME_HEIGHT{ 20 };
-	std::array<std::array<Tile, 20>, 25> m_data;
+	static const int s_GAME_WIDTH{ G_MAP_ROWS };
+	static const int s_GAME_HEIGHT{ G_MAP_COLS };
+	std::array<std::array<Tile, G_MAP_COLS>, G_MAP_ROWS> m_data;
 };
 
 #endif // !GAME_DATA_H

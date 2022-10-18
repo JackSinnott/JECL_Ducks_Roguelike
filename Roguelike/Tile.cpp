@@ -23,10 +23,12 @@ void Tile::setup(std::shared_ptr<sf::Texture>& t_tex, sf::Vector2f t_pos, CellTy
 	m_tile.setTexture(*t_tex);
 	m_tile.setOrigin(16.f, 16.f);
 	m_tile.setPosition(t_pos + sf::Vector2f(16.f, 16.f));
+	// flips sprites so we have right and left walls
 	if ((t_pos + sf::Vector2f(16.f, 16.f)).x < 400)
 		m_tile.scale(-1.f, 1);
 	m_currentType = t_type;
 	m_tile.setTextureRect(m_rects.at(t_type));
+	// Keeps our ground textures from looking stale and boring by adding some noise to them
 	if (m_currentType == CellType::GROUND)
 	{
 		int rotation = rand() % 4; // 0-3

@@ -2,12 +2,13 @@
 std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::texturePtrs; // Singletons need declaring
 
 Game::Game(sf::Font& t_font) :
-	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "SFML Game" },
+	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" },
 	m_exitGame{ false } //when true game will exit
 {
 	m_levelLoader = new FileLoader(m_levelData);
 
-	LoadLevel(1);
+	LoadLevel(0);
+
 }
 
 /// <summary>
@@ -101,9 +102,10 @@ void Game::Update(sf::Time t_dt)
 
 void Game::Render(sf::RenderWindow& t_window)
 {
+	t_window.clear();
 	t_window.draw(m_levelData);
-
 	t_window.draw(m_infoText);
+	t_window.display();
 
 }
 

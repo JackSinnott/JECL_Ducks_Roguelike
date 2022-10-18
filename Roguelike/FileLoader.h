@@ -4,6 +4,7 @@
 #include "LevelLoader.h"
 #include <fstream>
 #include "GameData.h"
+#include "Globals.h"
 
 class FileLoader : public LevelLoader
 {
