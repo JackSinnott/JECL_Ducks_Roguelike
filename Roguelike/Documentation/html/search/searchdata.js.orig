@@ -1,0 +1,41 @@
+var indexSectionsWithContent =
+{
+<<<<<<< HEAD
+  0: "gir~",
+  1: "gi",
+  2: "gr~"
+=======
+  0: "gmprsu~",
+  1: "gp",
+  2: "gmp",
+  3: "gmprsu~",
+  4: "mp"
+>>>>>>> 55d176ff4e9584334a7b4f0d339167996039f4a7
+};
+
+var indexSectionNames =
+{
+  0: "all",
+  1: "classes",
+<<<<<<< HEAD
+  2: "functions"
+=======
+  2: "files",
+  3: "functions",
+  4: "variables"
+>>>>>>> 55d176ff4e9584334a7b4f0d339167996039f4a7
+};
+
+var indexSectionLabels =
+{
+  0: "All",
+  1: "Classes",
+<<<<<<< HEAD
+  2: "Functions"
+=======
+  2: "Files",
+  3: "Functions",
+  4: "Variables"
+>>>>>>> 55d176ff4e9584334a7b4f0d339167996039f4a7
+};
+
