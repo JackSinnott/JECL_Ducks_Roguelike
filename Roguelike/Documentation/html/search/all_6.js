@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7egame_0',['~Game',['../class_game.html#ae3d112ca6e0e55150d2fdbc704474530',1,'Game']]]
+  ['setupfontandtext_0',['setupFontAndText',['../class_game.html#a3d1c7a9010c33a27424961138dadb442',1,'Game']]],
+  ['setupsprite_1',['setupSprite',['../class_game.html#ae0708ae9f1fd7b640ffd1796773734f1',1,'Game']]]
 ];
