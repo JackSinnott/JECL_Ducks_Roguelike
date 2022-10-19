@@ -1,3 +1,13 @@
+
+/// <summary>
+///	Authors:
+/// Jack
+/// Eoin
+/// Caroline
+///	Leo
+/// Start Date: 13/10/2022
+///
+/// </summary>
 #ifndef GAME_HPP
 #define GAME_HPP
 
@@ -5,12 +15,14 @@
 #include "GameData.h"
 #include "FileLoader.h"
 #include "Player.h"
-#include "Globals.h"
+#include "Item.h"
+#include "Weapon.h"
 #include "Enemy.h"
 
 /// <summary>
 /// Game Class. Keeps track of Game Flow.
 /// </summary>
+
 class Game
 {
 public:
@@ -42,6 +54,7 @@ private:
 	bool m_exitGame; // control exiting game
 
 	Player player;
+	Weapon m_genericWeapon;
 	Enemy* m_testEnemy;
 };
 
