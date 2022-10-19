@@ -19,24 +19,6 @@
     <Filter Include="Resource Files\IMAGES">
       <UniqueIdentifier>{1d793ccc-0d22-4eea-8d0e-c5b5a5270a40}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Utilities">
-      <UniqueIdentifier>{61c24142-0088-4e91-8ad9-9bf8005f7126}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Utilities\LevelLoader">
-      <UniqueIdentifier>{6d0ff848-2109-4fad-b843-93c205a3bd71}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Utilities\Globals">
-      <UniqueIdentifier>{863b032c-2ae8-4314-a84a-b77ae83a34b5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Utilities\AssetManagers">
-      <UniqueIdentifier>{0ff10d9f-f741-40e5-bfd9-327b3169921a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Utilities">
-      <UniqueIdentifier>{57cf5fda-200f-4374-b27c-de9296cd2faa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Utilities\LevelLoader">
-      <UniqueIdentifier>{4a510570-b01b-42e9-ad2c-d0eec885abf1}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -46,13 +28,13 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FileLoader.cpp">
-      <Filter>Source Files\Utilities\LevelLoader</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameData.cpp">
-      <Filter>Source Files\Utilities\LevelLoader</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
-      <Filter>Source Files\Utilities\LevelLoader</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -60,25 +42,25 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FileLoader.h">
-      <Filter>Header Files\Utilities\LevelLoader</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameData.h">
-      <Filter>Header Files\Utilities\LevelLoader</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LevelLoader.h">
-      <Filter>Header Files\Utilities\LevelLoader</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tile.h">
-      <Filter>Header Files\Utilities\LevelLoader</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Globals.h">
-      <Filter>Header Files\Utilities\Globals</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ResourceAllocator.h">
-      <Filter>Header Files\Utilities\AssetManagers</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TextureManager.h">
-      <Filter>Header Files\Utilities\AssetManagers</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
