@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 #ifndef GLOBALS_H
 #define GLOBALS_H
+
+
+#include <SFML/Graphics.hpp>
+
+enum class EnemyType
+{
+	Bat,
+	Rat
+};
 
 unsigned const int G_VIEW_WIDTH = 800;
 unsigned const int G_VIEW_HEIGTH = 640;

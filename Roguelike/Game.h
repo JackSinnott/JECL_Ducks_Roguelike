@@ -4,11 +4,13 @@
 #include <SFML/Graphics.hpp>
 #include "GameData.h"
 #include "FileLoader.h"
+#include "Player.h"
+#include "Globals.h"
+#include "Enemy.h"
 
 /// <summary>
 /// Game Class. Keeps track of Game Flow.
 /// </summary>
-
 class Game
 {
 public:
@@ -39,6 +41,8 @@ private:
 
 	bool m_exitGame; // control exiting game
 
+	Player player;
+	Enemy* m_testEnemy;
 };
 
 #endif // !GAME_HPP
