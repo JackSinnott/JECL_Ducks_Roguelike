@@ -10,6 +10,36 @@ enum class EnemyType
 	Rat
 };
 
+
+enum class Weapons
+{
+	Sword,
+	Axe,
+	Dagger
+};
+
+enum class Armour
+{
+	Light,
+	Medium,
+	Heavy
+};
+
+
+enum class Potions
+{
+	Health,
+	Strength,
+	Speed
+};
+
+enum class Scrolls
+{
+	Fireball,
+	Shield,
+	Teleportation
+};
+
 unsigned const int G_VIEW_WIDTH = 800;
 unsigned const int G_VIEW_HEIGTH = 640;
 
@@ -27,3 +57,4 @@ unsigned const int G_CELL_SIZE = 32;
 //unsigned const int MAP_HEIGTH = MAP_ROWS * CELL_SIZE ;
 
 #endif // !GLOBALS_H
+
