@@ -72,6 +72,9 @@ $(function() {
   <div class="headertitle"><div class="title">JECL-Ducks Documentation</div></div>
 </div><!--header-->
 <div class="contents">
+<<<<<<< HEAD
+=======
+<ul><li><a href="index.html"><span>Main&#160;Page</span></a>
 </li><li><a href="annotated.html"><span>Classes</span></a>
 <ul><li><a href="annotated.html"><span>Class&#160;List</span></a>
 </li><li><a href="classes.html"><span>Class&#160;Index</span></a>
@@ -81,6 +84,8 @@ $(function() {
 <ul><li><a href="files.html"><span>File&#160;List</span></a>
 </li><li><a href="globals.html"><span>File&#160;Members</span></a>
 </li></ul>
+</li></ul>
+>>>>>>> 55d176ff4e9584334a7b4f0d339167996039f4a7
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
