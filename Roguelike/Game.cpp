@@ -11,6 +11,8 @@ Game::Game(sf::Font& t_font) :
 
 }
 
+//****************************************************************
+
 /// <summary>
 /// default constructor
 /// setup the window properties
@@ -24,7 +26,11 @@ Game::Game() :
 	m_levelLoader = new FileLoader(m_levelData);
 
 	LoadLevel(1);
+
+	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
 }
+
+//****************************************************************
 
 /// <summary>
 /// default destructor we didn't dynamically allocate anything
@@ -94,9 +100,7 @@ void Game::processKeys(sf::Event t_event)
 void Game::Update(sf::Time t_dt)
 {
 	TextureManager::Collectgarbage();
-
 }
-
 
 //****************************************************************
 
@@ -105,6 +109,8 @@ void Game::Render(sf::RenderWindow& t_window)
 	t_window.clear();
 	t_window.draw(m_levelData);
 	t_window.draw(m_infoText);
+	player.Render(m_window);
+	m_testEnemy->render(m_window);
 	t_window.display();
 
 }
