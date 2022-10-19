@@ -1,14 +1,25 @@
 #include "Player.h"
 
 /// <summary>
+/// Moves the player one grid space along the direction provided by the user's button press.
+/// </summary>
+/// <param name="t_direction">The direction the player should move.</param>
+void Player::MoveSquare(sf::Vector2f t_direction)
+{
+	m_playerBody.move(t_direction * gridCellSize);
+}
+
+
+/// <summary>
 /// Default Constructor of Player.
 /// </summary>
 Player::Player() : m_playerTexture(nullptr)
 {
 	m_playerBody.setFillColor(sf::Color::Green);
 	m_playerBody.setSize(sf::Vector2f(100,100));
-	m_playerBody.setPosition(100,100);
+	m_playerBody.setPosition(150,150);
 }
+
 
 /// <summary>
 /// Updates the player object every frame.
@@ -31,6 +42,46 @@ void Player::Update(sf::Time t_deltaTime)
 /// <param name="t_event">Event of button being pressed OR released.</param>
 void Player::ProcessKeys(sf::Event t_event)
 {
+	if (sf::Event::KeyPressed == t_event.type)
+	{
+		if (m_pressingButton != t_event.key.code) // only allow movement
+			// if the player is pressing a key for the first time
+		{
+			// Do Player things
+			switch (t_event.key.code)
+			{
+			case sf::Keyboard::A:
+			case sf::Keyboard::Left:
+				MoveSquare(sf::Vector2f(-1, 0));
+				break;
+
+			case sf::Keyboard::W:
+			case sf::Keyboard::Up:
+				MoveSquare(sf::Vector2f(0, -1));
+				break;
+
+			case sf::Keyboard::D:
+			case sf::Keyboard::Right:
+				MoveSquare(sf::Vector2f(1, 0));
+				break;
+
+			case sf::Keyboard::S:
+			case sf::Keyboard::Down:
+				MoveSquare(sf::Vector2f(0, 1));
+				break;
+
+			default:
+				break;
+			}
+
+			m_pressingButton = t_event.key.code;
+		}
+	}
+
+	else
+	{
+		m_pressingButton = sf::Keyboard::Unknown;
+	}
 }
 
 /// <summary>
@@ -44,4 +95,9 @@ void Player::ProcessKeys(sf::Event t_event)
 void Player::Render(sf::RenderWindow& t_window)
 {
 	t_window.draw(m_playerBody);
+}
+
+sf::Vector2f Player::GetPosition()
+{
+	return m_playerBody.getPosition();
 }

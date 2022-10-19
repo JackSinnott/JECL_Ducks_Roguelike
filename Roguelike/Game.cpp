@@ -3,7 +3,7 @@
 /// @date May 2019
 ///
 /// you need to change the above lines or lose marks
-/// </summary>
+/// </summary>	
 
 #include "Game.h"
 #include <iostream>
@@ -74,10 +74,18 @@ void Game::processEvents()
 		{
 			m_exitGame = true;
 		}
-		if (sf::Event::KeyPressed == newEvent.type) //user pressed a key
+
+		if (sf::Event::KeyPressed == newEvent.type || 
+			sf::Event::KeyReleased == newEvent.type) //user pressed OR released a key
 		{
-			processKeys(newEvent);
+			player.ProcessKeys(newEvent);
+
+			if (sf::Event::KeyPressed == newEvent.type) //user pressed a key
+			{
+				processKeys(newEvent);
+			}
 		}
+
 	}
 }
 

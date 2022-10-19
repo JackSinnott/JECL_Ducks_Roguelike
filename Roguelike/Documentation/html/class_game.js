@@ -13,6 +13,7 @@ var class_game =
     [ "m_exitGame", "class_game.html#a5452d49a7b3f2d2ea3c7e2072fe8a828", null ],
     [ "m_logoSprite", "class_game.html#ad952ecd17335d493304d41ecc7e07e73", null ],
     [ "m_logoTexture", "class_game.html#a9921b40f7acc93e819c831223972607a", null ],
+    [ "m_testEnemy", "class_game.html#a87dc7b0386a606552942ffbcbdd90a2c", null ],
     [ "m_welcomeMessage", "class_game.html#a620ab177bf9b34ab2dbcec585f86afbd", null ],
     [ "m_window", "class_game.html#a22a61b5ea27c609be8cf2724c33d7ae5", null ],
     [ "player", "class_game.html#a6e48721b0532833b99fd5615a3628792", null ]
