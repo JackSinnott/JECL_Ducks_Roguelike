@@ -1,7 +1,6 @@
 #ifndef GAME_DATA_H
 #define GAME_DATA_H
 
-#include <SFML/graphics.hpp>
 #include "TextureManager.h"
 #include "Tile.h"
 #include <array>
