@@ -28,6 +28,8 @@ Game::Game() :
 	LoadLevel(1);
 
 	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
+
+	
 }
 
 //****************************************************************
@@ -119,6 +121,7 @@ void Game::Render(sf::RenderWindow& t_window)
 	t_window.draw(m_infoText);
 	player.Render(m_window);
 	//m_testEnemy->render(m_window);
+	m_grid.Render(m_window);
 	t_window.display();
 
 }

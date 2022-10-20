@@ -18,6 +18,7 @@
 #include "Item.h"
 #include "Weapon.h"
 #include "Enemy.h"
+#include "Grid.h"
 
 /// <summary>
 /// Game Class. Keeps track of Game Flow.
@@ -56,6 +57,7 @@ private:
 	Player player;
 	Weapon m_genericWeapon;
 	Enemy* m_testEnemy;
+	Grid m_grid;
 };
 
 #endif // !GAME_HPP

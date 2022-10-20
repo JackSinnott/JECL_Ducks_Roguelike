@@ -2,15 +2,17 @@
 #define GRID_H
 
 #include "SFML/Graphics.hpp"
+#include "Globals.h"
 
 class Grid
 {
 private:
-	sf::Vertex m_vertex;
 
 public:
 	sf::VertexArray m_links;
 	Grid();
+
+	void Render(sf::RenderWindow& m_win);
 
 };
 
