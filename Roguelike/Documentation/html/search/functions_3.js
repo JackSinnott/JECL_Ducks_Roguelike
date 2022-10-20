@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['render_0',['render',['../class_game.html#a15ddd769261d923827a3cdf41499c843',1,'Game']]],
-  ['render_1',['Render',['../class_player.html#a2022b71485561ab132bfc88566ee08f0',1,'Player']]],
-  ['run_2',['run',['../class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa',1,'Game']]]
+  ['player_0',['Player',['../class_player.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8',1,'Player']]],
+  ['processevents_1',['processEvents',['../class_game.html#a79f698dda206dd7a9bed28b3f88bdc38',1,'Game']]],
+  ['processkeys_2',['processKeys',['../class_game.html#adf2eb2e773dbad1322db8d6798705ea1',1,'Game']]],
+  ['processkeys_3',['ProcessKeys',['../class_player.html#a48fbeb3e31da3b8fe794bb67c99cc076',1,'Player']]]
 ];

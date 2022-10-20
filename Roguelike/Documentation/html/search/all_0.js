@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['game_0',['Game',['../class_game.html',1,'Game'],['../class_game.html#ad59df6562a58a614fda24622d3715b65',1,'Game::Game()']]],
-  ['game_2ecpp_1',['Game.cpp',['../_game_8cpp.html',1,'']]],
-  ['game_2eh_2',['Game.h',['../_game_8h.html',1,'']]]
+  ['bat_0',['Bat',['../_globals_8h.html#ac3e413a86119db4b031458c7259e268ea2d5b3d62e7bd3a1d79494bd85e69b5ba',1,'Globals.h']]]
 ];
