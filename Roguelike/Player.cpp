@@ -48,9 +48,7 @@ void Player::Update(sf::Time t_deltaTime)
 /// <param name="t_event">Event of button being pressed OR released.</param>
 void Player::ProcessKeys(sf::Event t_event)
 {
-<<<<<<< HEAD
 
-=======
 	if (sf::Event::KeyPressed == t_event.type)
 	{
 		if (m_pressingButton != t_event.key.code) // only allow movement
@@ -91,7 +89,7 @@ void Player::ProcessKeys(sf::Event t_event)
 	{
 		m_pressingButton = sf::Keyboard::Unknown;
 	}
->>>>>>> master
+
 }
 
 /// <summary>
