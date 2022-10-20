@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Globals.h"
 
 /// <summary>
 /// Moves the player one grid space along the direction provided by the user's button press.
@@ -6,7 +7,7 @@
 /// <param name="t_direction">The direction the player should move.</param>
 void Player::MoveSquare(sf::Vector2f t_direction)
 {
-	m_playerBody.move(t_direction * gridCellSize);
+	m_playerBody.move(t_direction * float(G_CELL_SIZE));
 }
 
 
@@ -16,8 +17,13 @@ void Player::MoveSquare(sf::Vector2f t_direction)
 Player::Player() : m_playerTexture(nullptr)
 {
 	m_playerBody.setFillColor(sf::Color::Green);
-	m_playerBody.setSize(sf::Vector2f(100,100));
-	m_playerBody.setPosition(150,150);
+	m_playerBody.setSize(sf::Vector2f(G_CELL_SIZE, G_CELL_SIZE));
+
+	m_playerBody.setOrigin(G_CELL_SIZE / 2.0f, G_CELL_SIZE / 2.0f);
+
+	// Sets player to centre of map
+	m_playerBody.setPosition(G_CELL_SIZE * (G_MAP_ROWS / 2) + G_CELL_SIZE / 2.0f,
+		G_CELL_SIZE * (G_MAP_COLS / 2) + G_CELL_SIZE / 2.0f);
 }
 
 
