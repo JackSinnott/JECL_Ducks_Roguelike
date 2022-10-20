@@ -7,7 +7,7 @@ Game::Game(sf::Font& t_font) :
 {
 	m_levelLoader = new FileLoader(m_levelData);
 
-	LoadLevel(0);
+	LoadLevel(1);
 
 }
 
@@ -118,7 +118,7 @@ void Game::Render(sf::RenderWindow& t_window)
 	t_window.draw(m_levelData);
 	t_window.draw(m_infoText);
 	player.Render(m_window);
-	m_testEnemy->render(m_window);
+	//m_testEnemy->render(m_window);
 	t_window.display();
 
 }
