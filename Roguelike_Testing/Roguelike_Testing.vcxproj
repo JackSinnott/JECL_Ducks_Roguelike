@@ -99,7 +99,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;$(SFML_SDK)\lib;%(AdditionalLibraryDirectories);C:\Users\liney\OneDrive\Desktop\Work\Games Engineering\JECL_Ducks_Roguelike\Roguelike\Debug</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;$(SFML_SDK)\lib;%(AdditionalLibraryDirectories);..\Roguelike\Debug</AdditionalLibraryDirectories>
       <AdditionalDependencies>Player.obj;sfml-graphics.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
