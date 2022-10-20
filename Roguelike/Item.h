@@ -5,7 +5,7 @@ class Item
 {
 public:
 
-	Item(std::string t_itemImageName, sf::Vector2f t_position);
+	Item(std::string t_itemImageName, sf::Vector2f t_position, int t_rarity);
 	~Item();
 	void draw(sf::RenderWindow& t_window);
 protected:
