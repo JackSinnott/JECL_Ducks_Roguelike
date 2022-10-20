@@ -18,7 +18,7 @@ enum class Weapons
 	Dagger
 };
 
-enum class Armour
+enum class Armours
 {
 	Light,
 	Medium,
