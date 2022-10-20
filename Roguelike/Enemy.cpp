@@ -12,7 +12,25 @@ Enemy::Enemy(EnemyType t_type, float t_posX, float t_posY) : m_type(t_type)
 
 void Enemy::update()
 {
-
+	sf::Vector2f pos = m_enemy.getPosition();
+	int direction = rand() % 4;
+	switch (direction)
+	{
+	case 0:
+		pos.y -= G_CELL_SIZE;
+		break;
+	case 1:
+		pos.x += G_CELL_SIZE;
+		break;
+	case 2:
+		pos.y += G_CELL_SIZE;
+		break;
+	case 3:
+		pos.x -= G_CELL_SIZE;
+		break;
+	}
+	
+	m_enemy.setPosition(pos);
 }
 
 void Enemy::render(sf::RenderWindow& t_window)

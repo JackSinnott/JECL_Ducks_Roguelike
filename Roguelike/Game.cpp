@@ -82,7 +82,10 @@ void Game::processEvents()
 		if (sf::Event::KeyPressed == newEvent.type || 
 			sf::Event::KeyReleased == newEvent.type) //user pressed OR released a key
 		{
-			player.ProcessKeys(newEvent);
+			if (player.ProcessKeys(newEvent))
+			{
+				processTurn();
+			}
 
 			if (sf::Event::KeyPressed == newEvent.type) //user pressed a key
 			{
@@ -101,6 +104,11 @@ void Game::processKeys(sf::Event t_event)
 	{
 		m_exitGame = true;
 	}
+}
+
+void Game::processTurn()
+{
+	m_testEnemy->update();
 }
 
 //****************************************************************
