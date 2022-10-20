@@ -110,6 +110,7 @@ void Game::Render(sf::RenderWindow& t_window)
 	t_window.draw(m_levelData);
 	t_window.draw(m_infoText);
 	player.Render(m_window);
+	m_genericWeapon.draw(m_window);
 	m_testEnemy->render(m_window);
 	t_window.display();
 
