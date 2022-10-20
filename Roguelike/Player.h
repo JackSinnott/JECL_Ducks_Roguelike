@@ -10,7 +10,9 @@ class Player
 {
 private:
 
-	//sf::Sprite m_playerBody;
+	// Variables
+
+	//sf::Sprite m_playerBody; 
 
 	/// Appearance of player.
 	/// For now it will be a rectangle shape, until a spritesheet can be sorted.
@@ -20,9 +22,20 @@ private:
 	sf::Texture* m_playerTexture;
 
 	/// <summary>
-	/// Keeps track of whether the player is currently pressing a button
+	/// Keeps track of whether the player is currently pressing a button.
 	/// </summary>
-	bool pressingButton = false;
+	sf::Keyboard::Key m_pressingButton = sf::Keyboard::Unknown;
+
+	/// <summary>
+	/// Temporary variable - Used for moving between grid cells.
+	/// Will be replaced once Grid class is set up.
+	/// </summary>
+	float gridCellSize = 50.0f;
+
+
+	// Methods / Functions
+
+	void MoveSquare(sf::Vector2f t_direction);
 
 public:
 
@@ -33,5 +46,6 @@ public:
 	void Update(sf::Time t_deltaTime);
 	void ProcessKeys(sf::Event t_event);
 	void Render(sf::RenderWindow& t_window);
-};
 
+	sf::Vector2f GetPosition();
+};
