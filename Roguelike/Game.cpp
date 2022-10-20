@@ -3,7 +3,8 @@ std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::te
 
 Game::Game(sf::Font& t_font) :
 	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" },
-	m_exitGame{ false } //when true game will exit
+	m_exitGame{ false }, //when true game will exit
+	m_genericWeapon("Items/Weapons/Axe.png", sf::Vector2f(10, 10), 2)
 {
 	m_levelLoader = new FileLoader(m_levelData);
 
@@ -21,7 +22,8 @@ Game::Game(sf::Font& t_font) :
 /// </summary>
 Game::Game() :
 	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "SFML Game" },
-	m_exitGame{ false } //when true game will exit
+	m_exitGame{ false }, //when true game will exit
+	m_genericWeapon("Items/Weapons/Axe.png", sf::Vector2f(5, 5), 2)
 {
 	m_levelLoader = new FileLoader(m_levelData);
 
@@ -126,6 +128,7 @@ void Game::Render(sf::RenderWindow& t_window)
 	t_window.draw(m_levelData);
 	t_window.draw(m_infoText);
 	player.Render(m_window);
+	m_genericWeapon.draw(m_window);
 	m_testEnemy->render(m_window);
 	t_window.display();
 

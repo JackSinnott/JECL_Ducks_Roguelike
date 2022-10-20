@@ -86,9 +86,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="ASSETS\FONTS\ariblk.ttf" />
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{ee3d6718-80cb-4243-a63d-61e4b135be1e}</UniqueIdentifier>
     </Filter>
@@ -103,5 +100,10 @@
     <Image Include="ASSETS\IMAGES\SFML-LOGO.png">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="ASSETS\FONTS\ariblk.ttf">
+      <Filter>Resource Files</Filter>
+    </Font>
   </ItemGroup>
 </Project>

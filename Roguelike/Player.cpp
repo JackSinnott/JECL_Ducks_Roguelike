@@ -93,7 +93,9 @@ bool Player::ProcessKeys(sf::Event t_event)
 	{
 		m_pressingButton = sf::Keyboard::Unknown;
 	}
+
 	return action;
+
 }
 
 /// <summary>
