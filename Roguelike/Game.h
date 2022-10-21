@@ -43,6 +43,7 @@ private:
 
 	void Render(sf::RenderWindow& t_window);
 
+	void GenerateRandomWeapon();
 	sf::RenderWindow m_window; // main SFML window
 	sf::Text m_infoText;
 	sf::Texture m_tileTexture;
