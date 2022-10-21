@@ -45,6 +45,7 @@ private:
 	GameOver m_gameOverScreen;
 	Options m_optionScreen;
 
+	void GenerateRandomWeapon();
 	sf::RenderWindow m_window; // main SFML window
 	bool m_exitGame; // control exiting game
 };

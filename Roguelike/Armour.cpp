@@ -9,3 +9,8 @@ Armour::~Armour()
 {
 
 }
+
+int Armour::getArmourRating()
+{
+    return m_armourRating;
+}
