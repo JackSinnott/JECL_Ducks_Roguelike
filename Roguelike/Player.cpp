@@ -11,6 +11,11 @@ void Player::MoveSquare(sf::Vector2f t_direction)
 }
 
 
+void Player::moveTile(Tile t_tile)
+{
+	
+}
+
 /// <summary>
 /// Default Constructor of Player.
 /// </summary>

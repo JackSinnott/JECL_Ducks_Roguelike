@@ -7,6 +7,7 @@
 #include <array>
 #include <iostream>
 #include "Globals.h"
+#include <string>
 
 class GameData : public sf::Drawable
 {
@@ -20,6 +21,8 @@ public:
 	void addWalls(std::vector<sf::Sprite*>& t_walls);
 
 	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const override;
+
+	void print(int row, int col);
 private:
 	std::shared_ptr<sf::Texture> m_pTexture;
 	static const int s_GAME_WIDTH{ G_MAP_ROWS };

@@ -20,7 +20,7 @@ Game::Game(sf::Font& t_font) :
 /// load and setup thne image
 /// </summary>
 Game::Game() :
-	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "SFML Game" },
+	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "SFML Game" },
 	m_exitGame{ false } //when true game will exit
 {
 	m_levelLoader = new FileLoader(m_levelData);
@@ -110,6 +110,11 @@ void Game::processKeys(sf::Event t_event)
 void Game::Update(sf::Time t_dt)
 {
 	TextureManager::Collectgarbage();
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::L))
+	{
+
+	}
 }
 
 //****************************************************************
@@ -121,7 +126,6 @@ void Game::Render(sf::RenderWindow& t_window)
 	t_window.draw(m_infoText);
 	player.Render(m_window);
 	//m_testEnemy->render(m_window);
-	m_grid.Render(m_window);
 	t_window.display();
 
 }

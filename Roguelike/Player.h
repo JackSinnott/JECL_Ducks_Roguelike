@@ -1,5 +1,6 @@
 #pragma once
 #include "SFML/Graphics.hpp"
+#include "Tile.h"
 
 
 /// <summary>
@@ -40,6 +41,8 @@ private:
 public:
 
 	//void InitialiseTextures();
+
+	void moveTile(Tile t_tile);
 
 	Player();
 

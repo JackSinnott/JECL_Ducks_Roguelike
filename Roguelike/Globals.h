@@ -40,8 +40,8 @@ enum class Scrolls
 	Teleportation
 };
 
-unsigned const int G_VIEW_WIDTH = 800;
-unsigned const int G_VIEW_HEIGTH = 640;
+unsigned const int G_VIEW_WIDTH = 1800;
+unsigned const int G_VIEW_HEIGTH = 940;
 
 //unsigned int Music_volume;
 //unsigned int SFX_volume;
