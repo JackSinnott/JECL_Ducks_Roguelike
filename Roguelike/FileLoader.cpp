@@ -23,7 +23,7 @@ void FileLoader::Load(int t_level)
 				if (type.at(i) != ' ' && type.at(i) != ',')
 				{
 					m_levelData.setTile(cell % G_MAP_ROWS, cell / G_MAP_ROWS, static_cast<CellType>(std::stoi(&type.at(i)))); // convert the character to an int and static cast that to a cell type
-					m_levelData.print(cell % G_MAP_ROWS, cell / G_MAP_ROWS);
+					//m_levelData.print(cell % G_MAP_ROWS, cell / G_MAP_ROWS);
 					cell++;
 				}
 			}
