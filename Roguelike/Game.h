@@ -57,7 +57,6 @@ private:
 	Player player;
 	Weapon m_genericWeapon;
 	Enemy* m_testEnemy;
-	Grid m_grid;
 };
 
 #endif // !GAME_HPP

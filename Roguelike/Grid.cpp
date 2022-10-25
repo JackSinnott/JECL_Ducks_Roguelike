@@ -2,23 +2,34 @@
 
 Grid::Grid()
 {
-	for (int x = 1; x <= G_MAP_ROWS; x++)
-	{
-		for (int y = 1; y <= G_MAP_COLS; y++)
-		{
-			m_links[x].position = sf::Vector2f{ static_cast<float>(G_CELL_SIZE * y), static_cast<float>(G_CELL_SIZE / y) };
-			m_links[x].color = sf::Color{ 255,255,255,32U };
-		}
-	}
+	m_point.color = sf::Color::Red;
 }
 
-void Grid::Render(sf::RenderWindow& m_win)
+Grid::~Grid()
 {
-	for (int x = 0; x < G_MAP_ROWS; x++)
-	{
-		for (int y = 0; y < G_MAP_COLS; y++)
-		{
-			m_win.draw(m_links);
-		}
-	}
 }
+
+void Grid::setup(sf::Vector2f t_pos)
+{
+	m_point.position = t_pos;
+	m_tiles.append(m_point);
+}
+
+void Grid::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) const
+{
+	t_target.draw(m_tiles, t_state);
+}
+
+sf::Vector2f Grid::getPosition()
+{
+	std::cout << "position of point: " << m_point.position.x << ", " << m_point.position.y << "\n";
+	return m_point.position;
+}
+
+void Grid::Test()
+{
+	std::cout << "Test: " << m_tiles.getVertexCount() << "\n";
+}
+
+
+
