@@ -1,5 +1,4 @@
 #include "Player.h"
-#include "Globals.h"
 
 /// <summary>
 /// Move the player by the specified row/col parameter passed into the function 
@@ -45,8 +44,9 @@ void Player::Update(sf::Time t_deltaTime)
 /// For example, if the player presses Up/Down/Left/Right, move player in appropriate direction.
 /// </summary>
 /// <param name="t_event">Event of button being pressed OR released.</param>
-void Player::ProcessKeys(sf::Event t_event)
+bool Player::ProcessKeys(sf::Event t_event)
 {
+	bool action = false;
 	if (sf::Event::KeyPressed == t_event.type)
 	{
 		if (m_pressingButton != t_event.key.code) // only allow movement
@@ -57,26 +57,26 @@ void Player::ProcessKeys(sf::Event t_event)
 			{
 			case sf::Keyboard::A:
 			case sf::Keyboard::Left:
-				//MoveSquare(sf::Vector2f(-1, 0));
 				move(-1, 0);
+				action = true;
 				break;
 
 			case sf::Keyboard::W:
 			case sf::Keyboard::Up:
-				//MoveSquare(sf::Vector2f(0, -1));
 				move(0, -1);
+				action = true;
 				break;
 
 			case sf::Keyboard::D:
 			case sf::Keyboard::Right:
-				//MoveSquare(sf::Vector2f(1, 0));
 				move(1, 0);
+				action = true;
 				break;
 
 			case sf::Keyboard::S:
 			case sf::Keyboard::Down:
-				//MoveSquare(sf::Vector2f(0, 1));
 				move(0, 1);
+				action = true;
 				break;
 
 			default:
@@ -91,6 +91,9 @@ void Player::ProcessKeys(sf::Event t_event)
 	{
 		m_pressingButton = sf::Keyboard::Unknown;
 	}
+
+	return action;
+
 }
 
 /// <summary>

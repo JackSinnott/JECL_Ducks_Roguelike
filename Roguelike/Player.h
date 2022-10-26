@@ -49,7 +49,7 @@ public:
 	Player();
 
 	void Update(sf::Time t_deltaTime);
-	void ProcessKeys(sf::Event t_event);
+	bool ProcessKeys(sf::Event t_event);
 	void Render(sf::RenderWindow& t_window);
 
 	sf::Vector2f GetPosition();
