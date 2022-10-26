@@ -53,3 +53,5 @@ sf::Vector2f Tile::getPosition()
 	return m_grid.getPosition();
 }
 
+
+

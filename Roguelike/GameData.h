@@ -8,6 +8,7 @@
 #include <iostream>
 #include "Globals.h"
 #include <string>
+#include "Player.h"
 
 class GameData : public sf::Drawable
 {
@@ -21,6 +22,8 @@ public:
 	void addWalls(std::vector<sf::Sprite*>& t_walls);
 
 	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const override;
+
+	void move(Player player, int row, int col);
 
 	void print(int row, int col);
 private:
