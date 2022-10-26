@@ -111,10 +111,6 @@ void Game::Update(sf::Time t_dt)
 {
 	TextureManager::Collectgarbage();
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::L))
-	{
-
-	}
 }
 
 //****************************************************************

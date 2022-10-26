@@ -30,7 +30,6 @@ public:
 
 	sf::Sprite& getSprite() { return m_tile; }
 
-	sf::Vector2f getPosition();
 
 
 private:

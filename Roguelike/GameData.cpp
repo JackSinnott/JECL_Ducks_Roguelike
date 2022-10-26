@@ -32,13 +32,4 @@ void GameData::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) 
 			t_target.draw(x, t_state);
 }
 
-void GameData::move(Player player, int row, int col)
-{
-	
-}
-
-void GameData::print(int row, int col)
-{
-	m_data[row][col].getPosition();
-}
 
