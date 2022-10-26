@@ -1,6 +1,7 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 #include "Tile.h"
+#include "Globals.h"
 
 
 /// <summary>
@@ -15,6 +16,7 @@ private:
 
 	//sf::Sprite m_playerBody; 
 
+	int m_x, m_y;
 	/// Appearance of player.
 	/// For now it will be a rectangle shape, until a spritesheet can be sorted.
 	sf::RectangleShape m_playerBody;
@@ -42,7 +44,7 @@ public:
 
 	//void InitialiseTextures();
 
-	void moveTile(Tile t_tile);
+	void move(int row, int col);
 
 	Player();
 
@@ -51,4 +53,5 @@ public:
 	void Render(sf::RenderWindow& t_window);
 
 	sf::Vector2f GetPosition();
+	void setPosition(int row, int col);
 };

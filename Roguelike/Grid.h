@@ -19,8 +19,7 @@ public:
 
 	void setup(sf::Vector2f t_pos);
 	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const;
-	sf::Vector2f getPosition();
-	void Test();
+
 
 };
 

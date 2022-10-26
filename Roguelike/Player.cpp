@@ -2,18 +2,13 @@
 #include "Globals.h"
 
 /// <summary>
-/// Moves the player one grid space along the direction provided by the user's button press.
+/// Move the player by the specified row/col parameter passed into the function 
 /// </summary>
-/// <param name="t_direction">The direction the player should move.</param>
-void Player::MoveSquare(sf::Vector2f t_direction)
+/// <param name="row">The row change to move by (if any)</param>
+/// <param name="col">The column change to move by (if any)</param>
+void Player::move(int row, int col)
 {
-	m_playerBody.move(t_direction * float(G_CELL_SIZE));
-}
-
-
-void Player::moveTile(Tile t_tile)
-{
-	
+	m_playerBody.move(sf::Vector2f( row, col ) * float(G_CELL_SIZE));
 }
 
 /// <summary>
@@ -26,9 +21,8 @@ Player::Player() : m_playerTexture(nullptr)
 
 	m_playerBody.setOrigin(G_CELL_SIZE / 2.0f, G_CELL_SIZE / 2.0f);
 
-	// Sets player to centre of map
-	m_playerBody.setPosition(G_CELL_SIZE * (G_MAP_ROWS / 2) + G_CELL_SIZE / 2.0f,
-		G_CELL_SIZE * (G_MAP_COLS / 2) + G_CELL_SIZE / 2.0f);
+	// Sets player to centre of map hard coded for now 
+	setPosition(G_MAP_ROWS / 2, G_MAP_COLS / 2);
 }
 
 
@@ -63,22 +57,26 @@ void Player::ProcessKeys(sf::Event t_event)
 			{
 			case sf::Keyboard::A:
 			case sf::Keyboard::Left:
-				MoveSquare(sf::Vector2f(-1, 0));
+				//MoveSquare(sf::Vector2f(-1, 0));
+				move(-1, 0);
 				break;
 
 			case sf::Keyboard::W:
 			case sf::Keyboard::Up:
-				MoveSquare(sf::Vector2f(0, -1));
+				//MoveSquare(sf::Vector2f(0, -1));
+				move(0, -1);
 				break;
 
 			case sf::Keyboard::D:
 			case sf::Keyboard::Right:
-				MoveSquare(sf::Vector2f(1, 0));
+				//MoveSquare(sf::Vector2f(1, 0));
+				move(1, 0);
 				break;
 
 			case sf::Keyboard::S:
 			case sf::Keyboard::Down:
-				MoveSquare(sf::Vector2f(0, 1));
+				//MoveSquare(sf::Vector2f(0, 1));
+				move(0, 1);
 				break;
 
 			default:
@@ -111,4 +109,11 @@ void Player::Render(sf::RenderWindow& t_window)
 sf::Vector2f Player::GetPosition()
 {
 	return m_playerBody.getPosition();
+}
+
+void Player::setPosition(int row, int col)
+{
+	// Sets player to centre of map
+	m_playerBody.setPosition(G_CELL_SIZE * (row) + G_CELL_SIZE / 2.0f,
+		G_CELL_SIZE * (col) + G_CELL_SIZE / 2.0f);
 }
