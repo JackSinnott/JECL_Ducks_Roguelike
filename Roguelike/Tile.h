@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <unordered_map>
 #include <cstdlib>
+#include "Grid.h"
 
 enum class CellType
 {
@@ -29,9 +30,12 @@ public:
 
 	sf::Sprite& getSprite() { return m_tile; }
 
+
+
 private:
 	sf::Sprite m_tile;
 	CellType m_currentType;
 	static std::unordered_map<CellType, sf::IntRect> m_rects;
+	Grid m_grid;
 };
 #endif // !TILE_H

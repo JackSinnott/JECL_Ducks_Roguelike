@@ -17,6 +17,7 @@
 #include "Item.h"
 #include "Weapon.h"
 #include "Enemy.h"
+#include "Grid.h"
 
 /// <summary>
 /// Game Class. Keeps track of Game Flow.
