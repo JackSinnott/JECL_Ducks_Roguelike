@@ -11,7 +11,6 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
-#include <SFML/Graphics.hpp>
 #include "GameData.h"
 #include "FileLoader.h"
 #include "Player.h"
@@ -39,6 +38,7 @@ private:
 	void processEvents();
 
 	void processKeys(sf::Event t_event);
+	void processTurn();
 
 	void Update(sf::Time t_dt);
 
