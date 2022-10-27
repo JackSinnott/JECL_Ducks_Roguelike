@@ -41,7 +41,7 @@ enum class Scrolls
 };
 
 unsigned const int G_VIEW_WIDTH = 800;
-unsigned const int G_VIEW_HEIGTH = 640;
+unsigned const int G_VIEW_HEIGTH = 600;
 
 //unsigned int Music_volume;
 //unsigned int SFX_volume;

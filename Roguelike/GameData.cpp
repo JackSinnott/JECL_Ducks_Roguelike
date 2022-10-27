@@ -31,3 +31,5 @@ void GameData::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) 
 		for (auto& x : row)
 			t_target.draw(x, t_state);
 }
+
+
