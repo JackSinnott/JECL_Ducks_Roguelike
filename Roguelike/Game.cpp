@@ -137,6 +137,11 @@ void Game::Render(sf::RenderWindow& t_window)
 
 }
 
+void Game::GenerateRandomWeapon()
+{
+	
+}
+
 //****************************************************************
 
 void Game::LoadLevel(int t_level)
