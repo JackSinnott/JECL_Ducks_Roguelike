@@ -6,6 +6,8 @@
 #include <array>
 #include <iostream>
 #include "Globals.h"
+#include <string>
+#include "Player.h"
 
 class GameData : public sf::Drawable
 {

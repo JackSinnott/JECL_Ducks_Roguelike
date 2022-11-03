@@ -4,7 +4,8 @@
 std::unordered_map<CellType, sf::IntRect> Tile::m_rects = std::unordered_map<CellType, sf::IntRect>(); // initialize
 
 Tile::Tile() :
-	m_currentType(CellType::UNUSED)
+	m_currentType(CellType::UNUSED),
+	m_grid()
 {
 	if (m_rects.size() == 0)
 	{
@@ -36,9 +37,16 @@ void Tile::setup(std::shared_ptr<sf::Texture>& t_tex, sf::Vector2f t_pos, float 
 		int rotation = rand() % 4; // 0-3
 		m_tile.setRotation(90 * rotation);
 	}
+	m_grid.setup(t_pos);
+
 }
 
 void Tile::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) const
 {
 	t_target.draw(m_tile, t_state);
+	m_grid.draw(t_target, t_state);
 }
+
+
+
+

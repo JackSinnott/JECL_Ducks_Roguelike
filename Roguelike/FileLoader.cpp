@@ -12,11 +12,12 @@ void FileLoader::Load(int t_level)
 
 	std::vector<int> madeRooms;
 
-	int roomCap = (rand() % 5) + 4;
+	int roomCap = (rand() % 4) + 3;
 
+	// find which rooms will be added
 	while (madeRooms.size() < roomCap)
 	{
-		int placedRoom = (rand() % 7) + 1;
+		int placedRoom = rand() % 9;
 
 		if (std::find(madeRooms.begin(), madeRooms.end(), placedRoom) != madeRooms.end())
 		{
@@ -26,17 +27,17 @@ void FileLoader::Load(int t_level)
 		madeRooms.push_back(placedRoom);
 	}
 
-	// GenerateRandom Level Number
+	// GenerateRandom Level Number (which level file will get loaded)
 
-	int levelNum;
+	int loadedLevelNum;
 
-	for (int roomNum : madeRooms)
+	for (int roomType : madeRooms)
 	{
-		levelNum = (rand() % 7) + 1;
+		loadedLevelNum = (rand() % 7) + 1;
 
 		// load in the level data and setup levelData
 		std::ifstream level;
-		std::string path = "ASSETS/levels/Level" + std::to_string(roomNum) + ".txt";
+		std::string path = "ASSETS/levels/Level" + std::to_string(loadedLevelNum) + ".txt";
 		level.open(path);
 
 		if (level.is_open())
@@ -49,7 +50,7 @@ void FileLoader::Load(int t_level)
 				{
 					if (type.at(i) != ' ' && type.at(i) != ',')
 					{
-						m_levelData.setTile(cell % G_MAP_ROWS, cell / G_MAP_ROWS, static_cast<CellType>(std::stoi(&type.at(i))), roomNum); // convert the character to an int and static cast that to a cell type
+						m_levelData.setTile(cell % G_MAP_ROWS, cell / G_MAP_ROWS, static_cast<CellType>(std::stoi(&type.at(i))), roomType); // convert the character to an int and static cast that to a cell type
 						cell++;
 					}
 				}
