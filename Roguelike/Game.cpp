@@ -30,7 +30,7 @@ Game::Game() :
 	LoadLevel(1);
 
 	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
-
+	m_testWeapon = new Weapon();
 	
 }
 

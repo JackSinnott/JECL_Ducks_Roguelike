@@ -57,6 +57,7 @@ private:
 
 	Player player;
 	Weapon m_genericWeapon;
+	Weapon* m_testWeapon;
 	Enemy* m_testEnemy;
 };
 
