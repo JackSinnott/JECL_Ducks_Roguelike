@@ -27,6 +27,7 @@
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="ItemFactory.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Options.cpp" />
@@ -48,9 +49,13 @@
     <ClInclude Include="Globals.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Item.h" />
+<<<<<<< HEAD
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="PauseMenu.h" />
+=======
+    <ClInclude Include="ItemFactory.h" />
+>>>>>>> 141ff41 (Empty changes)
     <ClInclude Include="Player.h" />
     <ClInclude Include="Potion.h" />
     <ClInclude Include="Scroll.h" />

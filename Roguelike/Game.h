@@ -48,6 +48,14 @@ private:
 	void GenerateRandomWeapon();
 	sf::RenderWindow m_window; // main SFML window
 	bool m_exitGame; // control exiting game
+<<<<<<< HEAD
+=======
+
+	Player player;
+	Weapon m_genericWeapon;
+	Weapon* m_testWeapon;
+	Enemy* m_testEnemy;
+>>>>>>> 141ff41 (Empty changes)
 };
 
 #endif // !GAME_HPP

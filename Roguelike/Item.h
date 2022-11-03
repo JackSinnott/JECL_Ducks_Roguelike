@@ -14,6 +14,7 @@ protected:
 	std::string m_name;
 	sf::Vector2f m_position;
 	sf::Sprite m_itemSprite;
+	Weapons m_weaponType;
 	std::shared_ptr<sf::Texture> m_pTexture;
 	int m_rarity;
 };
