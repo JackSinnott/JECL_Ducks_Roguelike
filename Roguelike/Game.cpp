@@ -8,7 +8,7 @@ Game::Game(sf::Font& t_font) :
 {
 	m_levelLoader = new FileLoader(m_levelData);
 
-	LoadLevel(0);
+	LoadLevel(1);
 
 }
 
@@ -21,9 +21,9 @@ Game::Game(sf::Font& t_font) :
 /// load and setup thne image
 /// </summary>
 Game::Game() :
-	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "SFML Game" },
+	m_window{ sf::VideoMode{ 800U * 3, 650U * 3, 32U }, "SFML Game" },
 	m_exitGame{ false }, //when true game will exit
-	m_genericWeapon("Items/Weapons/Axe.png", sf::Vector2f(5, 5), 2)
+	m_genericWeapon("Items/Weapons/Axe.png", sf::Vector2f(5, 5), 2), m_levelData()
 {
 	m_levelLoader = new FileLoader(m_levelData);
 
