@@ -23,7 +23,7 @@ GameData::GameData()
 
 //********************************************************
 
-void GameData::setTile(int row, int col, CellType t_type, int t_roomPlacement)
+void GameData::setTile(int row, int col, CellType t_type,int t_roomPlacement)
 {
 	int n_row = t_roomPlacement % 3;
 	int n_col = t_roomPlacement / 3;
@@ -32,7 +32,7 @@ void GameData::setTile(int row, int col, CellType t_type, int t_roomPlacement)
 		G_CELL_SIZE * G_MAP_COLS * n_col);
 
 
-	(*m_data)[t_roomPlacement][row][col].setup(m_pTexture, 
+	(*m_data)[t_roomPlacement][row][col].setup(m_pTexture,
 		sf::Vector2f{ static_cast<float>(row * G_CELL_SIZE) +
 		addedDistance.x,static_cast<float>(col * G_CELL_SIZE) + addedDistance.y}, 
 		((G_MAP_ROWS * G_CELL_SIZE) / 2.0f) + addedDistance.x + 16.0f, t_type);
@@ -61,4 +61,5 @@ void GameData::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) 
 
 void GameData::GenerateFloor()
 {
+
 }

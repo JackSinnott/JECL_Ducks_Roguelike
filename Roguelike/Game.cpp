@@ -30,6 +30,8 @@ Game::Game() :
 	LoadLevel(1);
 
 	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
+
+	
 }
 
 //****************************************************************
@@ -118,6 +120,7 @@ void Game::processTurn()
 void Game::Update(sf::Time t_dt)
 {
 	TextureManager::Collectgarbage();
+
 }
 
 //****************************************************************
