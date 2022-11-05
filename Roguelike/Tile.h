@@ -22,7 +22,8 @@ class Tile : public sf::Drawable
 public:
 	Tile();
 
-	void setup(std::shared_ptr<sf::Texture>& t_tex, sf::Vector2f t_pos, CellType t_type);
+	void setup(std::shared_ptr<sf::Texture>& t_tex,
+		sf::Vector2f t_pos, float t_centre, CellType t_type);
 
 	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const override;
 
