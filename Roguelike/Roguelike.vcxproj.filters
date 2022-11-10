@@ -114,6 +114,15 @@
     <ClInclude Include="AxeWeapon.h">
       <Filter>Header Files\Weapons</Filter>
     </ClInclude>
+    <ClInclude Include="DaggerWeapon.h">
+      <Filter>Header Files\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="SwordWeapon.h">
+      <Filter>Header Files\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractArmour.h">
+      <Filter>Header Files\AbstractItems</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Resource Files">
