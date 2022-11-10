@@ -160,7 +160,19 @@
     <ClInclude Include="AxeWeapon.h">
       <Filter>Header Files\Weapons</Filter>
     </ClInclude>
+<<<<<<< HEAD
 >>>>>>> 5b1d3c8 (Refactoring how items are generated)
+=======
+    <ClInclude Include="DaggerWeapon.h">
+      <Filter>Header Files\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="SwordWeapon.h">
+      <Filter>Header Files\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractArmour.h">
+      <Filter>Header Files\AbstractItems</Filter>
+    </ClInclude>
+>>>>>>> eb911c5 (Minor changes)
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Resource Files">
