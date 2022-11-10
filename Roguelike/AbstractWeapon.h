@@ -12,11 +12,9 @@ public:
 protected:
 	std::shared_ptr<sf::Texture> m_weaponTexture;
 	sf::Sprite m_weaponSprite;
-	int m_damage;
-	int m_rarity;
+
 	Weapons m_weaponType;
-	//Should this even be here?
-	//int m_damage; //How much damage the weapon does.
-	//int m_rarity; //How rare the weapon is. High rarity increases damage. Should be randomised.
+	int m_damage; //How much damage the weapon does.
+	int m_rarity; //How rare the weapon is. High rarity increases damage. Should be randomised.
 };
 
