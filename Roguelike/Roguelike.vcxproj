@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractWeapon.cpp" />
+    <ClCompile Include="AxeWeapon.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -27,7 +29,7 @@
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Grid.cpp" />
-    <ClCompile Include="ItemFactory.cpp" />
+    <ClCompile Include="AbstractItemFactory.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Options.cpp" />
@@ -39,9 +41,12 @@
     <ClCompile Include="Potion.cpp" />
     <ClCompile Include="Scroll.cpp" />
     <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="WeaponFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractWeapon.h" />
     <ClInclude Include="Armour.h" />
+    <ClInclude Include="AxeWeapon.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameOver.h" />
@@ -50,12 +55,16 @@
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Item.h" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="PauseMenu.h" />
 =======
     <ClInclude Include="ItemFactory.h" />
 >>>>>>> 141ff41 (Empty changes)
+=======
+    <ClInclude Include="AbstractItemFactory.h" />
+>>>>>>> 5b1d3c8 (Refactoring how items are generated)
     <ClInclude Include="Player.h" />
     <ClInclude Include="Potion.h" />
     <ClInclude Include="Scroll.h" />
@@ -66,6 +75,7 @@
     <ClInclude Include="ResourceAllocator.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Tile.h" />
+    <ClInclude Include="WeaponFactory.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="ASSETS\IMAGES\SFML-LOGO.png">
