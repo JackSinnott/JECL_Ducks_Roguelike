@@ -1,6 +1,6 @@
 #pragma once
 #include "AbstractItemFactory.h"
-
+#include "AxeWeapon.h"
 class WeaponFactory : public AbstractItemFactory
 {
 public:
@@ -12,7 +12,7 @@ public:
 			return NULL;
 			break;
 		case Weapons::Axe:
-			return NULL;
+			return new AxeWeapon(t_weapon);
 			break;
 		case Weapons::Dagger:
 			return NULL;

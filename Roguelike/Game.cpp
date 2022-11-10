@@ -1,8 +1,6 @@
 #include "Game.h"
 std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::texturePtrs; // Singletons need declaring
 
-//****************************************************************
-
 /// <summary>
 /// default constructor
 /// setup the window properties
@@ -86,9 +84,16 @@ void Game::processEvents()
 			break;
 		}
 
+<<<<<<< HEAD
 		if (sf::Event::KeyPressed == newEvent.type) //user pressed a key
 		{
 			processKeys(newEvent);
+=======
+
+		if (m_exitGame)
+		{
+			m_window.close();
+>>>>>>> bc3eb2d (made the abstract weapons factory)
 		}
 	}
 }
@@ -133,6 +138,7 @@ void Game::Update(sf::Time t_dt)
 
 void Game::Render(sf::RenderWindow& t_window)
 {
+<<<<<<< HEAD
 	switch (m_gamestate)
 	{
 	case Gamestate::MainMenu:
@@ -153,4 +159,29 @@ void Game::Render(sf::RenderWindow& t_window)
 	default:
 		break;
 	}
+=======
+	t_window.clear();
+	t_window.draw(m_levelData);
+	t_window.draw(m_infoText);
+	player.Render(m_window);
+	//m_genericWeapon.draw(m_window);
+	m_absWeapon->draw(m_window);
+	m_testEnemy->render(m_window);
+	t_window.display();
+
+}
+
+void Game::GenerateRandomItem(AbstractItemFactory &t_factory)
+{
+	m_absWeapon = t_factory.CreateWeapon(Weapons::Axe);
+}
+
+//****************************************************************
+
+void Game::LoadLevel(int t_level)
+{
+	m_levelLoader->Load(t_level);
+
+	m_levelData.addWalls(m_walls);
+>>>>>>> bc3eb2d (made the abstract weapons factory)
 }
