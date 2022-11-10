@@ -1,16 +1,16 @@
 #include "Game.h"
 std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::texturePtrs; // Singletons need declaring
 
-Game::Game(sf::Font& t_font) :
-	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" },
-	m_exitGame{ false }, //when true game will exit
-	m_genericWeapon(Weapons::Axe,"Items/Weapons/Axe.png", sf::Vector2f(10, 10), 2)
-{
-	m_levelLoader = new FileLoader(m_levelData);
-
-	LoadLevel(1);
-
-}
+//Game::Game(sf::Font& t_font) :
+//	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" },
+//	m_exitGame{ false }, //when true game will exit
+//	m_genericWeapon(Weapons::Axe,"Items/Weapons/Axe.png", sf::Vector2f(10, 10), 2)
+//{
+//	m_levelLoader = new FileLoader(m_levelData);
+//
+//	LoadLevel(1);
+//
+//}
 
 //****************************************************************
 
@@ -21,15 +21,20 @@ Game::Game(sf::Font& t_font) :
 /// load and setup thne image
 /// </summary>
 Game::Game() :
-	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "SFML Game" },
-	m_exitGame{ false }, //when true game will exit
-	m_genericWeapon(Weapons::Axe,"Items/Weapons/Axe.png", sf::Vector2f(5, 5), 2)
+	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "Roguelike Game" },
+	m_exitGame{ false } //when true game will exit
+	//m_genericWeapon(Weapons::Axe,"Items/Weapons/Axe.png", sf::Vector2f(5, 5), 2)
 {
 	m_levelLoader = new FileLoader(m_levelData);
 
 	LoadLevel(1);
 
 	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
+
+	exampleWeapon = new WeaponFactory();
+
+	GenerateRandomItem(*exampleWeapon);
+
 	//m_testWeapon = new Weapon();
 	
 }
@@ -97,6 +102,11 @@ void Game::processEvents()
 			}
 		}
 
+
+		if (m_exitGame)
+		{
+			m_window.close();
+		}
 	}
 }
 
@@ -131,15 +141,16 @@ void Game::Render(sf::RenderWindow& t_window)
 	t_window.draw(m_levelData);
 	t_window.draw(m_infoText);
 	player.Render(m_window);
-	m_genericWeapon.draw(m_window);
+	//m_genericWeapon.draw(m_window);
+	m_absWeapon->draw(m_window);
 	m_testEnemy->render(m_window);
 	t_window.display();
 
 }
 
-void Game::GenerateRandomWeapon()
+void Game::GenerateRandomItem(AbstractItemFactory &t_factory)
 {
-	
+	m_absWeapon = t_factory.CreateWeapon(Weapons::Axe);
 }
 
 //****************************************************************

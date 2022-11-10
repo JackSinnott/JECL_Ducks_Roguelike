@@ -10,8 +10,10 @@
 /// </summary>
 #ifndef GAME_HPP
 #define GAME_HPP
-
+#include "AbstractItemFactory.h"
+#include "WeaponFactory.h"
 #include "GameData.h"
+#include "Globals.h"
 #include "FileLoader.h"
 #include "Player.h"
 #include "Item.h"
@@ -26,7 +28,7 @@
 class Game
 {
 public:
-	Game(sf::Font& t_font);
+	//Game(sf::Font& t_font);
 	Game();
 	~Game();
 
@@ -44,7 +46,10 @@ private:
 
 	void Render(sf::RenderWindow& t_window);
 
-	void GenerateRandomWeapon();
+	void GenerateRandomItem(AbstractItemFactory& t_factory);
+
+	WeaponFactory* exampleWeapon;
+	AbstractWeapon* m_absWeapon;
 	sf::RenderWindow m_window; // main SFML window
 	sf::Text m_infoText;
 	sf::Texture m_tileTexture;
@@ -56,8 +61,8 @@ private:
 	bool m_exitGame; // control exiting game
 
 	Player player;
-	Weapon m_genericWeapon;
-	Weapon* m_testWeapon;
+	//Weapon m_genericWeapon;
+	//Weapon* m_testWeapon;
 	Enemy* m_testEnemy;
 };
 
