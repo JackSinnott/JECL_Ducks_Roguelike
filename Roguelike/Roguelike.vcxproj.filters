@@ -41,6 +41,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ClCompile Include="Globals.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -62,6 +63,20 @@
 =======
     <ClCompile Include="ItemFactory.cpp" />
 >>>>>>> 141ff41 (Empty changes)
+=======
+    <ClCompile Include="AbstractItemFactory.cpp">
+      <Filter>Source Files\Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponFactory.cpp">
+      <Filter>Source Files\Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractWeapon.cpp">
+      <Filter>Source Files\AbstractItems</Filter>
+    </ClCompile>
+    <ClCompile Include="AxeWeapon.cpp">
+      <Filter>Source Files\Weapons</Filter>
+    </ClCompile>
+>>>>>>> 5b1d3c8 (Refactoring how items are generated)
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Armour.h">
@@ -113,6 +128,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ClInclude Include="Gameplay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -131,6 +147,20 @@
 =======
     <ClInclude Include="ItemFactory.h" />
 >>>>>>> 141ff41 (Empty changes)
+=======
+    <ClInclude Include="AbstractItemFactory.h">
+      <Filter>Header Files\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponFactory.h">
+      <Filter>Header Files\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractWeapon.h">
+      <Filter>Header Files\AbstractItems</Filter>
+    </ClInclude>
+    <ClInclude Include="AxeWeapon.h">
+      <Filter>Header Files\Weapons</Filter>
+    </ClInclude>
+>>>>>>> 5b1d3c8 (Refactoring how items are generated)
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Resource Files">
@@ -141,6 +171,24 @@
     </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{4f15b269-1ebb-4973-95bd-38de1390bbfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Factories">
+      <UniqueIdentifier>{942fd969-a2b8-4958-9d2d-0cc679138201}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Factories">
+      <UniqueIdentifier>{b770a9ad-aee2-4e25-a014-4e854b79a5c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AbstractItems">
+      <UniqueIdentifier>{50608498-73a6-445b-b7ea-eb4dadda7ca1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AbstractItems">
+      <UniqueIdentifier>{189ef05f-cc46-4af9-9a5c-ab3611224306}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Weapons">
+      <UniqueIdentifier>{a5ac8cdb-ef06-41ce-aa1e-e09b13aa4176}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Weapons">
+      <UniqueIdentifier>{a4dffe71-f039-4a18-93d4-64078747fa5f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

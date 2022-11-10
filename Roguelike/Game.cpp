@@ -1,13 +1,6 @@
 #include "Game.h"
 std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::texturePtrs; // Singletons need declaring
 
-Game::Game(sf::Font& t_font) :
-	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" },
-	m_exitGame{ false } //when true game will exit
-{
-
-}
-
 //****************************************************************
 
 /// <summary>
@@ -17,10 +10,10 @@ Game::Game(sf::Font& t_font) :
 /// load and setup thne image
 /// </summary>
 Game::Game() :
-	m_window{ sf::VideoMode{ 800U * 3, 650U * 3, 32U }, "SFML Game" },
+	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH,  32U }, "Roguelike Game" },
 	m_exitGame{ false } //when true game will exit
 {
-	
+
 }
 
 //****************************************************************
