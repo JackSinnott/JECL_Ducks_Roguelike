@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "Globals.h"
 #include "TextureManager.h"
+
 class AbstractWeapon
 {
 public:
@@ -12,9 +13,8 @@ public:
 protected:
 	std::shared_ptr<sf::Texture> m_weaponTexture;
 	sf::Sprite m_weaponSprite;
-
-	Weapons m_weaponType;
 	int m_damage; //How much damage the weapon does.
 	int m_rarity; //How rare the weapon is. High rarity increases damage. Should be randomised.
+	Weapons m_weaponType;
 };
 
