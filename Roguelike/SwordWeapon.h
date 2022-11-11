@@ -20,9 +20,9 @@ public:
 
 	int GetDamage() override
 	{
-		if (m_rarity > 5)
+		if (m_rarity > 3)
 		{
-			return m_damage * 2;
+			return m_damage * m_rarity/2;
 		}
 		else
 		{
