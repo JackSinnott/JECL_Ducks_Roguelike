@@ -56,5 +56,7 @@ unsigned const int G_CELL_SIZE = 32;
 //unsigned const int MAP_WIDTH = MAP_COLS * CELL_SIZE;
 //unsigned const int MAP_HEIGTH = MAP_ROWS * CELL_SIZE ;
 
+std::string const MISSINGTEXTURE = "./ASSETS/IMAGES/MissingTexture.png";
+
 #endif // !GLOBALS_H
 

@@ -52,6 +52,9 @@
     <ClCompile Include="AxeWeapon.cpp">
       <Filter>Source Files\Weapons</Filter>
     </ClCompile>
+    <ClCompile Include="ArmourFactory.cpp">
+      <Filter>Source Files\Factories</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Armour.h">
@@ -123,6 +126,12 @@
     <ClInclude Include="AbstractArmour.h">
       <Filter>Header Files\AbstractItems</Filter>
     </ClInclude>
+    <ClInclude Include="ArmourFactory.h">
+      <Filter>Header Files\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="LightArmour.h">
+      <Filter>Header Files\Armour</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Resource Files">
@@ -151,6 +160,9 @@
     </Filter>
     <Filter Include="Header Files\Weapons">
       <UniqueIdentifier>{a4dffe71-f039-4a18-93d4-64078747fa5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Armour">
+      <UniqueIdentifier>{657f11cb-07f5-4daf-a284-9d8def4e3dba}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
