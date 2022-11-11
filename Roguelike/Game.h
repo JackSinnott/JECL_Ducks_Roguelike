@@ -12,6 +12,7 @@
 #define GAME_HPP
 #include "AbstractItemFactory.h"
 #include "WeaponFactory.h"
+#include "ArmourFactory.h"
 #include "GameData.h"
 #include "Globals.h"
 #include "FileLoader.h"
