@@ -1,25 +1,16 @@
 #include "Grid.h"
+#include "Globals.h"
 
-Grid::Grid()
+Grid::Grid(int t_x, int t_y) : x(t_x), y(t_y)
 {
-	m_point.color = sf::Color::Red;
+	for (int i = 0; i < G_MAP_COLS; i++)
+	{
+		for (int k = 0; k < G_MAP_ROWS; k++)
+		{
+			x = k * G_CELL_SIZE;
+			y = i * G_CELL_SIZE;
+
+			std::cout << "x: " << x << " Y: " << y << "\n";
+		}
+	}
 }
-
-Grid::~Grid()
-{
-}
-
-void Grid::setup(sf::Vector2f t_pos)
-{
-	m_point.position = t_pos;
-	m_tiles.append(m_point);
-}
-
-void Grid::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) const
-{
-	t_target.draw(m_tiles, t_state);
-}
-
-
-
-
