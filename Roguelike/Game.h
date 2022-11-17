@@ -11,8 +11,6 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
-#include "GameData.h"
-#include "FileLoader.h"
 #include "Player.h"
 #include "Item.h"
 #include "Weapon.h"
@@ -33,7 +31,6 @@ public:
 	void run();
 
 private:
-	void LoadLevel(int t_level);
 
 	void processEvents();
 
@@ -47,11 +44,10 @@ private:
 	sf::RenderWindow m_window; // main SFML window
 	sf::Text m_infoText;
 	sf::Texture m_tileTexture;
-	GameData m_levelData;
-	LevelLoader* m_levelLoader;
 	std::shared_ptr<sf::Texture> m_buttonTexture;
 	std::vector<sf::Sprite*> m_walls; // a vector to hold the walls
 
+	Grid m_grid;
 	bool m_exitGame; // control exiting game
 
 	Player player;

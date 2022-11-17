@@ -1,28 +1,19 @@
 #ifndef GRID_H
 #define GRID_H
 
-#include "SFML/Graphics.hpp"
-#include "Globals.h"
 #include <iostream>
-
+#include "SFML/Graphics.hpp"
 class Grid
 {
-private:
-
 public:
-	Grid();
+	Grid(int t_x, int t_y);
+	inline ~Grid() {};
+private:
+	int x = 0;
+	int y = 0;
 
-	~Grid();
-
-	sf::Vertex m_point;
-	sf::VertexArray m_tiles;
-
-	void setup(sf::Vector2f t_pos);
-	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const;
-
+	sf::VertexArray lines;
 
 };
 
 #endif // !GRID_H
-
-

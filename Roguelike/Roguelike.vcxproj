@@ -20,13 +20,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameData.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Armour.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Potion.cpp" />
@@ -44,12 +41,8 @@
     <ClInclude Include="Potion.h" />
     <ClInclude Include="Scroll.h" />
     <ClInclude Include="Weapon.h" />
-    <ClInclude Include="FileLoader.h" />
-    <ClInclude Include="GameData.h" />
-    <ClInclude Include="LevelLoader.h" />
     <ClInclude Include="ResourceAllocator.h" />
     <ClInclude Include="TextureManager.h" />
-    <ClInclude Include="Tile.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="ASSETS\IMAGES\SFML-LOGO.png">

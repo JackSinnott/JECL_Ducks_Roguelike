@@ -4,12 +4,10 @@ std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::te
 Game::Game(sf::Font& t_font) :
 	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" },
 	m_exitGame{ false }, //when true game will exit
-	m_genericWeapon("Items/Weapons/Axe.png", sf::Vector2f(10, 10), 2)
+	m_genericWeapon("Items/Weapons/Axe.png", sf::Vector2f(10, 10), 2),
+	m_grid(0, 0)
 {
-	m_levelLoader = new FileLoader(m_levelData);
-
-	LoadLevel(1);
-
+	
 }
 
 //****************************************************************
@@ -23,14 +21,12 @@ Game::Game(sf::Font& t_font) :
 Game::Game() :
 	m_window{ sf::VideoMode{ 800U * 3, 650U * 3, 32U }, "SFML Game" },
 	m_exitGame{ false }, //when true game will exit
-	m_genericWeapon("Items/Weapons/Axe.png", sf::Vector2f(5, 5), 2), m_levelData()
+	m_genericWeapon("Items/Weapons/Axe.png", sf::Vector2f(5, 5), 2),
+	m_grid(0, 0)
 {
-	m_levelLoader = new FileLoader(m_levelData);
-
-	LoadLevel(1);
 
 	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
-
+	
 	
 }
 
@@ -128,7 +124,6 @@ void Game::Update(sf::Time t_dt)
 void Game::Render(sf::RenderWindow& t_window)
 {
 	t_window.clear();
-	t_window.draw(m_levelData);
 	t_window.draw(m_infoText);
 	player.Render(m_window);
 	m_genericWeapon.draw(m_window);
@@ -139,9 +134,3 @@ void Game::Render(sf::RenderWindow& t_window)
 
 //****************************************************************
 
-void Game::LoadLevel(int t_level)
-{
-	m_levelLoader->Load(t_level);
-
-	m_levelData.addWalls(m_walls);
-}

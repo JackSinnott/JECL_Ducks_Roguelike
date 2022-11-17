@@ -50,8 +50,8 @@ unsigned const int G_VIEW_HEIGTH = 600;
 /// <summary>
 /// Might be used later
 /// </summary>
-unsigned const int G_MAP_ROWS = 25;
-unsigned const int G_MAP_COLS = 20;
+unsigned const int G_MAP_ROWS = 75;
+unsigned const int G_MAP_COLS = 60;
 unsigned const int G_CELL_SIZE = 32;
 //unsigned const int MAP_WIDTH = MAP_COLS * CELL_SIZE;
 //unsigned const int MAP_HEIGTH = MAP_ROWS * CELL_SIZE ;
