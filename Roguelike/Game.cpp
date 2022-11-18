@@ -31,9 +31,11 @@ Game::Game() :
 
 	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
 
-	exampleWeapon = new WeaponFactory();
+	//exampleWeapon = new WeaponFactory();
+	exampleItem = new WeaponFactory();
+	GenerateRandomItem(*exampleItem);
 
-	GenerateRandomItem(*exampleWeapon);
+
 
 	//m_testWeapon = new Weapon();
 	
@@ -141,8 +143,12 @@ void Game::Render(sf::RenderWindow& t_window)
 	t_window.draw(m_levelData);
 	t_window.draw(m_infoText);
 	player.Render(m_window);
-	//m_genericWeapon.draw(m_window);
-	m_absWeapon->draw(m_window);
+
+
+	for (AbstractWeapon* n: m_absWeaponVector)
+	{
+		n->draw(m_window);
+	}
 	m_testEnemy->render(m_window);
 	t_window.display();
 
@@ -150,7 +156,21 @@ void Game::Render(sf::RenderWindow& t_window)
 
 void Game::GenerateRandomItem(AbstractItemFactory &t_factory)
 {
-	m_absWeapon = t_factory.CreateWeapon(Weapons::Axe);
+	srand(time(0)); 
+
+	for (int i = 0; i < 10; i++)
+	{
+		int n = rand() % 3;
+
+		std::cout << n << std::endl;
+
+		Weapons w = static_cast<Weapons>(n);
+
+		m_absWeapon = t_factory.CreateWeapon(w);
+		m_absWeapon->GenerateRandomPosition();
+		m_absWeaponVector.push_back(m_absWeapon);
+	}
+
 }
 
 //****************************************************************

@@ -17,10 +17,10 @@
 #include "Globals.h"
 #include "FileLoader.h"
 #include "Player.h"
-#include "Item.h"
-#include "Weapon.h"
 #include "Enemy.h"
 #include "Grid.h"
+#include <time.h>
+//#include <vector>
 
 /// <summary>
 /// Game Class. Keeps track of Game Flow.
@@ -49,8 +49,12 @@ private:
 
 	void GenerateRandomItem(AbstractItemFactory& t_factory);
 
-	WeaponFactory* exampleWeapon;
+	//WeaponFactory* exampleWeapon;
+	AbstractItemFactory* exampleItem;
 	AbstractWeapon* m_absWeapon;
+
+	std::vector<AbstractWeapon*> m_absWeaponVector;
+
 	sf::RenderWindow m_window; // main SFML window
 	sf::Text m_infoText;
 	sf::Texture m_tileTexture;

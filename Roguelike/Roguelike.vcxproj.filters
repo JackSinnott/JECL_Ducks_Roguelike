@@ -1,12 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Weapon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Armour.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -19,19 +13,10 @@
     <ClCompile Include="GameData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Item.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Potion.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Scroll.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
@@ -49,17 +34,11 @@
     <ClCompile Include="AbstractWeapon.cpp">
       <Filter>Source Files\AbstractItems</Filter>
     </ClCompile>
-    <ClCompile Include="AxeWeapon.cpp">
-      <Filter>Source Files\Weapons</Filter>
-    </ClCompile>
     <ClCompile Include="ArmourFactory.cpp">
       <Filter>Source Files\Factories</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Armour.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -75,16 +54,10 @@
     <ClInclude Include="Globals.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Item.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="LevelLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Potion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ResourceAllocator.h">
@@ -97,9 +70,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Weapon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Grid.h">
@@ -132,6 +102,30 @@
     <ClInclude Include="LightArmour.h">
       <Filter>Header Files\Armour</Filter>
     </ClInclude>
+    <ClInclude Include="MediumArmour.h">
+      <Filter>Header Files\Armour</Filter>
+    </ClInclude>
+    <ClInclude Include="HeavyArmour.h">
+      <Filter>Header Files\Armour</Filter>
+    </ClInclude>
+    <ClInclude Include="PotionFactory.h">
+      <Filter>Header Files\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractPotion.h">
+      <Filter>Header Files\AbstractItems</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractItem.h">
+      <Filter>Header Files\AbstractItems</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthPotion.h">
+      <Filter>Header Files\Potions</Filter>
+    </ClInclude>
+    <ClInclude Include="StrengthPotion.h">
+      <Filter>Header Files\Potions</Filter>
+    </ClInclude>
+    <ClInclude Include="SpeedPotion.h">
+      <Filter>Header Files\Potions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Resource Files">
@@ -163,6 +157,9 @@
     </Filter>
     <Filter Include="Header Files\Armour">
       <UniqueIdentifier>{657f11cb-07f5-4daf-a284-9d8def4e3dba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Potions">
+      <UniqueIdentifier>{1d08cb5d-5955-40a7-ba1b-0eeafb2130ba}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
