@@ -1,19 +1,30 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include "Globals.h"
-#include "TextureManager.h"
-
-class AbstractArmour
+#include "AbstractItem.h"
+class AbstractArmour : public AbstractItem
 {
 public:
 	~AbstractArmour() {};
-	virtual int GetArmour() = 0;
+	sf::Vector2f GenerateRandomPosition()
+	{
+		int randomeX = rand() % 20 + 3;
+		int randomeY = rand() % 20 + 3;
 
-	void draw(sf::RenderWindow& t_window) { t_window.draw(m_armourSprite); };
+		return sf::Vector2f(randomeX, randomeY) * float(G_CELL_SIZE);
+	};
+
+	int GetArmour()
+	{
+		if (m_rarity > 3)
+		{
+			return m_armourClass * m_rarity / 2;
+		}
+		else
+		{
+			return m_armourClass;
+		}
+	};
 protected:
-	std::shared_ptr<sf::Texture> m_armourTexture;
-	sf::Sprite m_armourSprite;
+
 	int m_armourClass = 0;
-	int m_rarity = 0;
 	Armours m_armourType;
 };
