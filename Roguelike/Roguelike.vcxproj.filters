@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+<<<<<<< HEAD
     <ClCompile Include="AbstractWeapon.cpp" />
     <ClCompile Include="ArmourFactory.cpp" />
     <ClCompile Include="AxeWeapon.cpp" />
@@ -54,5 +55,172 @@
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="WeaponFactory.h" />
+=======
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractItemFactory.cpp">
+      <Filter>Source Files\Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponFactory.cpp">
+      <Filter>Source Files\Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractWeapon.cpp">
+      <Filter>Source Files\AbstractItems</Filter>
+    </ClCompile>
+    <ClCompile Include="ArmourFactory.cpp">
+      <Filter>Source Files\Factories</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Globals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceAllocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scroll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractItemFactory.h">
+      <Filter>Header Files\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponFactory.h">
+      <Filter>Header Files\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractWeapon.h">
+      <Filter>Header Files\AbstractItems</Filter>
+    </ClInclude>
+    <ClInclude Include="AxeWeapon.h">
+      <Filter>Header Files\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="DaggerWeapon.h">
+      <Filter>Header Files\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="SwordWeapon.h">
+      <Filter>Header Files\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractArmour.h">
+      <Filter>Header Files\AbstractItems</Filter>
+    </ClInclude>
+    <ClInclude Include="ArmourFactory.h">
+      <Filter>Header Files\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="LightArmour.h">
+      <Filter>Header Files\Armour</Filter>
+    </ClInclude>
+    <ClInclude Include="MediumArmour.h">
+      <Filter>Header Files\Armour</Filter>
+    </ClInclude>
+    <ClInclude Include="HeavyArmour.h">
+      <Filter>Header Files\Armour</Filter>
+    </ClInclude>
+    <ClInclude Include="PotionFactory.h">
+      <Filter>Header Files\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractPotion.h">
+      <Filter>Header Files\AbstractItems</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractItem.h">
+      <Filter>Header Files\AbstractItems</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthPotion.h">
+      <Filter>Header Files\Potions</Filter>
+    </ClInclude>
+    <ClInclude Include="StrengthPotion.h">
+      <Filter>Header Files\Potions</Filter>
+    </ClInclude>
+    <ClInclude Include="SpeedPotion.h">
+      <Filter>Header Files\Potions</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{ee3d6718-80cb-4243-a63d-61e4b135be1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{1dfaac42-39a5-41b4-9a1e-d3da49158ae8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4f15b269-1ebb-4973-95bd-38de1390bbfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Factories">
+      <UniqueIdentifier>{942fd969-a2b8-4958-9d2d-0cc679138201}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Factories">
+      <UniqueIdentifier>{b770a9ad-aee2-4e25-a014-4e854b79a5c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AbstractItems">
+      <UniqueIdentifier>{50608498-73a6-445b-b7ea-eb4dadda7ca1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AbstractItems">
+      <UniqueIdentifier>{189ef05f-cc46-4af9-9a5c-ab3611224306}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Weapons">
+      <UniqueIdentifier>{a5ac8cdb-ef06-41ce-aa1e-e09b13aa4176}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Weapons">
+      <UniqueIdentifier>{a4dffe71-f039-4a18-93d4-64078747fa5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Armour">
+      <UniqueIdentifier>{657f11cb-07f5-4daf-a284-9d8def4e3dba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Potions">
+      <UniqueIdentifier>{1d08cb5d-5955-40a7-ba1b-0eeafb2130ba}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="ASSETS\IMAGES\SFML-LOGO.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+>>>>>>> e262aed (Refactored items factory)
   </ItemGroup>
 </Project>

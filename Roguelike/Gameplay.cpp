@@ -1,7 +1,7 @@
 #include "Gameplay.h"
 
 Gameplay::Gameplay() :
-	m_genericWeapon("Items/Weapons/Axe.png", sf::Vector2f(5, 5), 2), m_levelData()
+	m_levelData()
 {
 	m_levelLoader = new FileLoader(m_levelData);
 
@@ -34,10 +34,29 @@ void Gameplay::render(sf::RenderWindow& t_window)
 	t_window.draw(m_levelData);
 	t_window.draw(m_infoText);
 	player.Render(t_window);
-	m_genericWeapon.draw(t_window);
 	m_testEnemy->render(t_window);
 	t_window.display();
 }
+
+void Gameplay::GenerateRandomItem(AbstractItemFactory& t_factory)
+{
+	srand(time(0));
+
+	for (int i = 0; i < 10; i++)
+	{
+		int n = rand() % 3;
+
+		std::cout << n << std::endl;
+
+		Weapons w = static_cast<Weapons>(n);
+
+		m_absWeapon = t_factory.CreateWeapon(w);
+		m_absWeapon->GenerateRandomPosition();
+		m_absWeaponVector.push_back(m_absWeapon);
+	}
+
+}
+
 
 void Gameplay::LoadLevel(int t_level)
 {

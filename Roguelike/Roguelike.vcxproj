@@ -21,7 +21,6 @@
   <ItemGroup>
     <ClCompile Include="AbstractWeapon.cpp" />
     <ClCompile Include="ArmourFactory.cpp" />
-    <ClCompile Include="AxeWeapon.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -37,15 +36,12 @@
     <ClCompile Include="PauseMenu.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Tile.cpp" />
-    <ClCompile Include="Armour.cpp" />
-    <ClCompile Include="Item.cpp" />
-    <ClCompile Include="Potion.cpp" />
-    <ClCompile Include="Scroll.cpp" />
-    <ClCompile Include="Weapon.cpp" />
     <ClCompile Include="WeaponFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractArmour.h" />
+    <ClInclude Include="AbstractItem.h" />
+    <ClInclude Include="AbstractPotion.h" />
     <ClInclude Include="AbstractWeapon.h" />
     <ClInclude Include="ArmourFactory.h" />
     <ClInclude Include="AxeWeapon.h" />
@@ -56,14 +52,20 @@
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="Grid.h" />
+    <ClInclude Include="HealthPotion.h" />
+    <ClInclude Include="HeavyArmour.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="PauseMenu.h" />
     <ClInclude Include="ItemFactory.h" />
     <ClInclude Include="AbstractItemFactory.h" />
     <ClInclude Include="LightArmour.h" />
+    <ClInclude Include="MediumArmour.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PotionFactory.h" />
     <ClInclude Include="Scroll.h" />
+    <ClInclude Include="SpeedPotion.h" />
+    <ClInclude Include="StrengthPotion.h" />
     <ClInclude Include="SwordWeapon.h" />
     <ClInclude Include="FileLoader.h" />
     <ClInclude Include="GameData.h" />

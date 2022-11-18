@@ -35,10 +35,14 @@ private:
 	/// </summary>
 	float gridCellSize = 50.0f;
 
-
+	int m_damage = 2;
+	int m_armourClass = 2;
+	int health = 20;
+	int level = 1;
+	int xp = 0;
 	// Methods / Functions
 
-	void MoveSquare(sf::Vector2f t_direction);
+	//void MoveSquare(sf::Vector2f t_direction);
 
 public:
 
@@ -54,4 +58,5 @@ public:
 
 	sf::Vector2f GetPosition();
 	void setPosition(int row, int col);
+	void applyWeapon();
 };
