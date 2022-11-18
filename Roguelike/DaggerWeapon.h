@@ -11,11 +11,13 @@ public:
 
 		m_rarity += rand() % 10;
 
-		m_weaponTexture = TextureManager::Acquire("./ASSETS/IMAGES/MissingTexture.png");
-		m_weaponSprite.setTexture(*m_weaponTexture);
-		m_weaponSprite.setOrigin(m_weaponSprite.getTextureRect().width / 2, m_weaponSprite.getTextureRect().height / 2);
-		m_weaponSprite.setPosition(5 * (G_CELL_SIZE / 2), 5 * G_CELL_SIZE / 2);
-		m_weaponSprite.setScale(0.5f, 0.5f);
+		m_itemTexture = TextureManager::Acquire(MISSINGTEXTURE);
+		m_itemSprite.setTexture(*m_itemTexture);
+		m_itemSprite.setOrigin(m_itemSprite.getTextureRect().width, m_itemSprite.getTextureRect().height);
+
+		m_itemSprite.setPosition(G_CELL_SIZE * (10) + G_CELL_SIZE / 2.0f,
+			G_CELL_SIZE * (10) + G_CELL_SIZE / 2.0f);
+		m_itemSprite.setScale(0.5f, 0.5f);
 	};
 
 	int GetDamage() override
