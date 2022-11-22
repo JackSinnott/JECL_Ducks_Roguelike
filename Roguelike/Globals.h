@@ -40,6 +40,17 @@ enum class Scrolls
 	Teleportation
 };
 
+enum class TileType
+{
+	UNUSED = 0,
+	GROUND = 1,
+	VERTICAL_WALL = 2,
+	HORIZONTAL_WALL = 3,
+	UPPER_CORNER = 4,
+	LOWER_CORNER = 5,
+	INSIDE_WALL = 6
+};
+
 unsigned const int G_VIEW_WIDTH = 800;
 unsigned const int G_VIEW_HEIGTH = 600;
 
