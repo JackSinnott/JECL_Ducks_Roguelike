@@ -43,6 +43,6 @@ void Grid::setUpRoom(sf::Vector2f t_position, TileType t_type, int t_roomID)
 		m_rooms.push_back(r);
 		// make a new room
 	}
-
-	m_rooms[t_roomID].setUpTiles();
+	
+	//m_rooms[t_roomID].setUpTiles();
 }

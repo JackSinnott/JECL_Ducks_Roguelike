@@ -8,13 +8,13 @@ FileLoader::FileLoader(Grid& t_grid) : m_gridData(t_grid)
 void FileLoader::Load(int t_level)
 {
 
-	int loadedLevelNum;
+	int room_id;
 
-	loadedLevelNum = (rand() % 7) + 1;
+	room_id = (rand() % 7) + 1;
 
 	// load in the level data and setup levelData
 	std::ifstream level;
-	std::string path = "ASSETS/levels/Level" + std::to_string(loadedLevelNum) + ".txt";
+	std::string path = "ASSETS/levels/Level" + std::to_string(room_id) + ".txt";
 	level.open(path);
 
 	if (level.is_open())
@@ -29,12 +29,14 @@ void FileLoader::Load(int t_level)
 				{
 					// Pass info to grid (alllllll the tiles)
 
-
-					//m_levelData.setTile(cell % G_MAP_ROWS, cell / G_MAP_ROWS, static_cast<CellType>(std::stoi(&type.at(i))), roomType); // convert the character to an int and static cast that to a cell type
+					m_gridData.setUpRoom(sf::Vector2f(cell % G_ROOM_ROWS, cell / G_ROOM_ROWS), 
+						static_cast<TileType>(std::stoi(&type.at(i))), room_id); // convert the character to an int and static cast that to a cell type
 					cell++;
 				}
 			}
 		}
+
+		//
 	}
 	else
 	{
