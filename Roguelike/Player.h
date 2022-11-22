@@ -24,8 +24,12 @@ private:
 	/// Reference to the texture of the player.
 	sf::Texture* m_playerTexture;
 
+
+	//A basic inventory
+	Weapons m_playerWeapon;
+
 	/// <summary>
-	/// Keeps track of whether the player is currently pressing a button.
+	/// Keeps trac k of whether the player is currently pressing a button.
 	/// </summary>
 	sf::Keyboard::Key m_pressingButton = sf::Keyboard::Unknown;
 
