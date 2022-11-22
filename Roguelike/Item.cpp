@@ -3,7 +3,7 @@
 Item::Item(std::string t_itemImageName, sf::Vector2f t_position, int t_rarity) : m_name(t_itemImageName), m_position(t_position), m_rarity(t_rarity)
 {
 
-
+	
 	m_pTexture = TextureManager::Acquire("./ASSETS/IMAGES/" + t_itemImageName);
 
 	m_itemSprite.setTexture(*m_pTexture);

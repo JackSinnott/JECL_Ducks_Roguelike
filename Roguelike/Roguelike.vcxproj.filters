@@ -1,40 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Weapon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Armour.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FileLoader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameData.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Item.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Tile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Potion.cpp">
+    <ClCompile Include="PauseMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Scroll.cpp">
+    <ClCompile Include="Options.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tile.cpp">
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Grid.cpp">
@@ -43,26 +25,38 @@
     <ClCompile Include="Globals.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Gameplay.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MainMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GameOver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Options.cpp">
+    <ClCompile Include="GameData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PauseMenu.cpp">
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ArmourFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractWeapon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractItemFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Gameplay.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Armour.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -75,19 +69,31 @@
     <ClInclude Include="GameData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GameOver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Gameplay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Globals.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Item.h">
+    <ClInclude Include="Grid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LevelLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="MainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Potion.h">
+    <ClInclude Include="Options.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ResourceAllocator.h">
@@ -102,42 +108,82 @@
     <ClInclude Include="Tile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Weapon.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="AbstractArmour.h">
+      <Filter>Header Files\Abstract</Filter>
     </ClInclude>
-    <ClInclude Include="Grid.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="AbstractItem.h">
+      <Filter>Header Files\Abstract</Filter>
     </ClInclude>
-    <ClInclude Include="Gameplay.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="AbstractItemFactory.h">
+      <Filter>Header Files\Abstract</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="AbstractPotion.h">
+      <Filter>Header Files\Abstract</Filter>
     </ClInclude>
-    <ClInclude Include="PauseMenu.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="AbstractWeapon.h">
+      <Filter>Header Files\Abstract</Filter>
     </ClInclude>
-    <ClInclude Include="GameOver.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="AxeWeapon.h">
+      <Filter>Header Files\Weapons</Filter>
     </ClInclude>
-    <ClInclude Include="Options.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="DaggerWeapon.h">
+      <Filter>Header Files\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="SwordWeapon.h">
+      <Filter>Header Files\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemFactory.h">
+      <Filter>Header Files\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponFactory.h">
+      <Filter>Header Files\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="PotionFactory.h">
+      <Filter>Header Files\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="ArmourFactory.h">
+      <Filter>Header Files\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="StrengthPotion.h">
+      <Filter>Header Files\Potions</Filter>
+    </ClInclude>
+    <ClInclude Include="SpeedPotion.h">
+      <Filter>Header Files\Potions</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthPotion.h">
+      <Filter>Header Files\Potions</Filter>
+    </ClInclude>
+    <ClInclude Include="LightArmour.h">
+      <Filter>Header Files\Armours</Filter>
+    </ClInclude>
+    <ClInclude Include="HeavyArmour.h">
+      <Filter>Header Files\Armours</Filter>
+    </ClInclude>
+    <ClInclude Include="MediumArmour.h">
+      <Filter>Header Files\Armours</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{ee3d6718-80cb-4243-a63d-61e4b135be1e}</UniqueIdentifier>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{2a7104ef-6099-40a3-9d23-d1da4ccc79c1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{1dfaac42-39a5-41b4-9a1e-d3da49158ae8}</UniqueIdentifier>
+      <UniqueIdentifier>{cb22c36c-890b-405a-ba19-e2efd6640990}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{4f15b269-1ebb-4973-95bd-38de1390bbfa}</UniqueIdentifier>
+    <Filter Include="Header Files\Abstract">
+      <UniqueIdentifier>{827e98a2-04e7-4823-a14b-e3986035d694}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="ASSETS\IMAGES\SFML-LOGO.png">
-      <Filter>Resource Files</Filter>
-    </Image>
+    <Filter Include="Header Files\Weapons">
+      <UniqueIdentifier>{91e64537-a8ad-41c3-a794-fc5064b78dfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Factories">
+      <UniqueIdentifier>{aeb4beb9-ada6-4bd8-b679-53bb3fbbe95b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Potions">
+      <UniqueIdentifier>{6af2d999-a46d-464e-86c0-76ed9661dd96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Armours">
+      <UniqueIdentifier>{771c53d8-b6bd-46ac-8094-931650081c1d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
