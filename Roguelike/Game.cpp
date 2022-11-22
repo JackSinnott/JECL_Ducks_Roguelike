@@ -7,7 +7,9 @@ Game::Game(sf::Font& t_font) :
 	m_genericWeapon("Items/Weapons/Axe.png", sf::Vector2f(10, 10), 2),
 	m_grid(0, 0)
 {
-	
+	m_playerView.reset(sf::FloatRect(100, 100, 600, 600));
+	m_playerView.setViewport(sf::FloatRect(0.f, 0.f, 0.5f, 1.f));
+	m_window.setView(m_playerView);
 }
 
 //****************************************************************
@@ -125,6 +127,7 @@ void Game::Render(sf::RenderWindow& t_window)
 {
 	t_window.clear();
 	t_window.draw(m_infoText);
+	m_grid.draw(m_window);
 	player.Render(m_window);
 	m_genericWeapon.draw(m_window);
 	m_testEnemy->render(m_window);

@@ -46,6 +46,7 @@ private:
 	sf::Texture m_tileTexture;
 	std::shared_ptr<sf::Texture> m_buttonTexture;
 	std::vector<sf::Sprite*> m_walls; // a vector to hold the walls
+	sf::View m_playerView;
 
 	Grid m_grid;
 	bool m_exitGame; // control exiting game
