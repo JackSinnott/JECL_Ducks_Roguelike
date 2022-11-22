@@ -10,7 +10,17 @@
 /// </summary>
 #ifndef GAME_HPP
 #define GAME_HPP
-
+#include "AbstractItemFactory.h"
+#include "WeaponFactory.h"
+#include "ArmourFactory.h"
+#include "GameData.h"
+#include "Globals.h"
+#include "FileLoader.h"
+#include "Player.h"
+#include "Enemy.h"
+#include "Grid.h"
+#include <time.h>
+//#include <vector>
 #include "Globals.h"
 #include "Gameplay.h"
 #include "MainMenu.h"
@@ -25,7 +35,7 @@
 class Game
 {
 public:
-	Game(sf::Font& t_font);
+	//Game(sf::Font& t_font);
 	Game();
 	~Game();
 
@@ -45,8 +55,15 @@ private:
 	GameOver m_gameOverScreen;
 	Options m_optionScreen;
 
+	//WeaponFactory* exampleWeapon;
+	AbstractItemFactory* exampleItem;
+	AbstractWeapon* m_absWeapon;
+
+	std::vector<AbstractWeapon*> m_absWeaponVector;
+
 	sf::RenderWindow m_window; // main SFML window
 	bool m_exitGame; // control exiting game
+
 };
 
 #endif // !GAME_HPP

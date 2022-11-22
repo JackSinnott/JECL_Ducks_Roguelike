@@ -3,11 +3,11 @@
 #include "GameData.h"
 #include "FileLoader.h"
 #include "Player.h"
-#include "Item.h"
-#include "Weapon.h"
 #include "Enemy.h"
 #include "Grid.h"
-
+#include "AbstractItemFactory.h"
+#include "WeaponFactory.h"
+#include "ArmourFactory.h"
 class Gameplay
 {
 public:
@@ -15,6 +15,7 @@ public:
 	void processEvents(sf::Event t_event);
 	void update();
 	void render(sf::RenderWindow& t_window);
+	void GenerateRandomItem(AbstractItemFactory& t_factory);
 private:
 	void LoadLevel(int t_level);
 	void processTurn();
@@ -26,7 +27,12 @@ private:
 	std::shared_ptr<sf::Texture> m_buttonTexture;
 	std::vector<sf::Sprite*> m_walls; // a vector to hold the walls
 
+	//WeaponFactory* exampleWeapon;
+	AbstractItemFactory* exampleItem;
+	AbstractWeapon* m_absWeapon;
+
+	std::vector<AbstractWeapon*> m_absWeaponVector;
+
 	Player player;
-	Weapon m_genericWeapon;
 	Enemy* m_testEnemy;
 };
