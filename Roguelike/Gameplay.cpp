@@ -6,7 +6,8 @@ Gameplay::Gameplay() :
 	m_levelLoader = new FileLoader(m_levelData);
 
 	LoadLevel(1);
-
+	exampleItem = new WeaponFactory();
+	GenerateRandomItem(*exampleItem);
 	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
 }
 
@@ -35,6 +36,12 @@ void Gameplay::render(sf::RenderWindow& t_window)
 	t_window.draw(m_infoText);
 	player.Render(t_window);
 	m_testEnemy->render(t_window);
+
+	for(AbstractWeapon * n : m_absWeaponVector)
+	{
+		n->draw(t_window);
+	}
+
 	t_window.display();
 }
 
