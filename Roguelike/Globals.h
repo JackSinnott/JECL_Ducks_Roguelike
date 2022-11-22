@@ -61,11 +61,13 @@ unsigned const int G_VIEW_HEIGTH = 600;
 /// <summary>
 /// Might be used later
 /// </summary>
-unsigned const int G_MAP_ROWS = 75;
-unsigned const int G_MAP_COLS = 60;
+unsigned const int G_ROOM_ROWS = 25; // Max room row num
+unsigned const int G_ROOM_COLS = 20; // Max room col num
+unsigned const int G_MAP_ROWS = 75; // Max overall map row num
+unsigned const int G_MAP_COLS = 60; // Max overall map col num
 unsigned const int G_CELL_SIZE = 32;
-//unsigned const int MAP_WIDTH = MAP_COLS * CELL_SIZE;
-//unsigned const int MAP_HEIGTH = MAP_ROWS * CELL_SIZE ;
+//unsigned const int MAP_WIDTH = MAP_ROWS * CELL_SIZE;
+//unsigned const int MAP_HEIGTH = MAP_COLS * CELL_SIZE ;
 
 #endif // !GLOBALS_H
 
