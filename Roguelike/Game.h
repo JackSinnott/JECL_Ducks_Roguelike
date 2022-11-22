@@ -21,6 +21,7 @@
 #include "Grid.h"
 #include <time.h>
 //#include <vector>
+<<<<<<< HEAD
 
 #include "Globals.h"
 #include "Gameplay.h"
@@ -28,6 +29,8 @@
 #include "PauseMenu.h"
 #include "GameOver.h"
 #include "Options.h"
+=======
+>>>>>>> d04c390f05285c41c298e6d6e0f1b73dbee78a11
 
 /// <summary>
 /// Game Class. Keeps track of Game Flow.
@@ -56,9 +59,24 @@ private:
 	GameOver m_gameOverScreen;
 	Options m_optionScreen;
 
+	void GenerateRandomItem(AbstractItemFactory& t_factory);
+
+	//WeaponFactory* exampleWeapon;
+	AbstractItemFactory* exampleItem;
+	AbstractWeapon* m_absWeapon;
+
+	std::vector<AbstractWeapon*> m_absWeaponVector;
+
 	sf::RenderWindow m_window; // main SFML window
 	bool m_exitGame; // control exiting game
 
+<<<<<<< HEAD
+=======
+	Player player;
+	//Weapon m_genericWeapon;
+	//Weapon* m_testWeapon;
+	Enemy* m_testEnemy;
+>>>>>>> d04c390f05285c41c298e6d6e0f1b73dbee78a11
 };
 
 #endif // !GAME_HPP
