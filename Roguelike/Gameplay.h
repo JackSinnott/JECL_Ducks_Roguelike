@@ -8,6 +8,7 @@
 #include "AbstractItemFactory.h"
 #include "WeaponFactory.h"
 #include "ArmourFactory.h"
+#include "PotionFactory.h"
 class Gameplay
 {
 public:
