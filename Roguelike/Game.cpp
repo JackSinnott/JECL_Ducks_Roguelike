@@ -1,22 +1,7 @@
 #include "Game.h"
 std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::texturePtrs; // Singletons need declaring
 
-<<<<<<< HEAD
-=======
-//Game::Game(sf::Font& t_font) :
-//	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" },
-//	m_exitGame{ false }, //when true game will exit
-//	m_genericWeapon(Weapons::Axe,"Items/Weapons/Axe.png", sf::Vector2f(10, 10), 2)
-//{
-//	m_levelLoader = new FileLoader(m_levelData);
-//
-//	LoadLevel(1);
-//
-//}
 
-//****************************************************************
-
->>>>>>> d04c390f05285c41c298e6d6e0f1b73dbee78a11
 /// <summary>
 /// default constructor
 /// setup the window properties
@@ -24,31 +9,10 @@ std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::te
 /// load and setup thne image
 /// </summary>
 Game::Game() :
-<<<<<<< HEAD
-	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH,  32U }, "Roguelike Game" },
+	m_window{ sf::VideoMode{ G_VIEW_WIDTH * 3, G_VIEW_HEIGTH * 3,  32U }, "Roguelike Game" },
 	m_exitGame{ false } //when true game will exit
-=======
-	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "Roguelike Game" },
-	m_exitGame{ false } //when true game will exit
-	//m_genericWeapon(Weapons::Axe,"Items/Weapons/Axe.png", sf::Vector2f(5, 5), 2)
->>>>>>> d04c390f05285c41c298e6d6e0f1b73dbee78a11
 {
 
-<<<<<<< HEAD
-=======
-	LoadLevel(1);
-
-	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
-
-	//exampleWeapon = new WeaponFactory();
-	exampleItem = new WeaponFactory();
-	GenerateRandomItem(*exampleItem);
-
-
-
-	//m_testWeapon = new Weapon();
-	
->>>>>>> d04c390f05285c41c298e6d6e0f1b73dbee78a11
 }
 
 //****************************************************************
@@ -121,13 +85,11 @@ void Game::processEvents()
 			break;
 		}
 
-<<<<<<< HEAD
+
 		if (sf::Event::KeyPressed == newEvent.type) //user pressed a key
 		{
 			processKeys(newEvent);
 		}
-=======
->>>>>>> d04c390f05285c41c298e6d6e0f1b73dbee78a11
 
 		if (m_exitGame)
 		{
@@ -176,7 +138,7 @@ void Game::Update(sf::Time t_dt)
 
 void Game::Render(sf::RenderWindow& t_window)
 {
-<<<<<<< HEAD
+
 	switch (m_gamestate)
 	{
 	case Gamestate::MainMenu:
@@ -199,48 +161,3 @@ void Game::Render(sf::RenderWindow& t_window)
 	}
 
 }
-
-=======
-	t_window.clear();
-	t_window.draw(m_levelData);
-	t_window.draw(m_infoText);
-	player.Render(m_window);
-
-
-	for (AbstractWeapon* n: m_absWeaponVector)
-	{
-		n->draw(m_window);
-	}
-	m_testEnemy->render(m_window);
-	t_window.display();
-
-}
-
-void Game::GenerateRandomItem(AbstractItemFactory &t_factory)
-{
-	srand(time(0)); 
-
-	for (int i = 0; i < 10; i++)
-	{
-		int n = rand() % 3;
-
-		std::cout << n << std::endl;
-
-		Weapons w = static_cast<Weapons>(n);
-
-		m_absWeapon = t_factory.CreateWeapon(w);
-		m_absWeapon->GenerateRandomPosition();
-		m_absWeaponVector.push_back(m_absWeapon);
-	}
-
-}
-
-//****************************************************************
-
-void Game::LoadLevel(int t_level)
-{
-	m_levelLoader->Load(t_level);
-
-	m_levelData.addWalls(m_walls);
-}
->>>>>>> d04c390f05285c41c298e6d6e0f1b73dbee78a11

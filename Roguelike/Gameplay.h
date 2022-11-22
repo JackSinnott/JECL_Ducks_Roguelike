@@ -6,6 +6,8 @@
 #include "Enemy.h"
 #include "Grid.h"
 #include "AbstractItemFactory.h"
+#include "WeaponFactory.h"
+#include "ArmourFactory.h"
 class Gameplay
 {
 public:
