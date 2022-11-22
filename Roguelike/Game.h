@@ -11,13 +11,12 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
-#include "GameData.h"
-#include "FileLoader.h"
-#include "Player.h"
-#include "Item.h"
-#include "Weapon.h"
-#include "Enemy.h"
-#include "Grid.h"
+#include "Globals.h"
+#include "Gameplay.h"
+#include "MainMenu.h"
+#include "PauseMenu.h"
+#include "GameOver.h"
+#include "Options.h"
 
 /// <summary>
 /// Game Class. Keeps track of Game Flow.
@@ -33,30 +32,21 @@ public:
 	void run();
 
 private:
-	void LoadLevel(int t_level);
 
 	void processEvents();
-
 	void processKeys(sf::Event t_event);
-	void processTurn();
 
 	void Update(sf::Time t_dt);
 
 	void Render(sf::RenderWindow& t_window);
+	Gameplay m_gameScreen;
+	MainMenu m_mainMenuScreen;
+	PauseMenu m_pauseScreen;
+	GameOver m_gameOverScreen;
+	Options m_optionScreen;
 
 	sf::RenderWindow m_window; // main SFML window
-	sf::Text m_infoText;
-	sf::Texture m_tileTexture;
-	GameData m_levelData;
-	LevelLoader* m_levelLoader;
-	std::shared_ptr<sf::Texture> m_buttonTexture;
-	std::vector<sf::Sprite*> m_walls; // a vector to hold the walls
-
 	bool m_exitGame; // control exiting game
-
-	Player player;
-	Weapon m_genericWeapon;
-	Enemy* m_testEnemy;
 };
 
 #endif // !GAME_HPP

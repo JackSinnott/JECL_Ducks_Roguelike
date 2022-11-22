@@ -4,6 +4,16 @@
 
 #include <SFML/Graphics.hpp>
 
+enum class Gamestate
+{
+	MainMenu,
+	PauseMenu,
+	Options,
+	Gameplay,
+	GameOver
+};
+extern Gamestate m_gamestate;
+
 enum class EnemyType
 {
 	Bat,
