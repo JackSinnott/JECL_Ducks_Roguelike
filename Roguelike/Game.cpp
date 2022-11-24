@@ -1,34 +1,10 @@
 #include "Game.h"
 std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::texturePtrs; // Singletons need declaring
 
-Game::Game(sf::Font& t_font) :
-	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" },
-	m_exitGame{ false }, //when true game will exit
-	m_genericWeapon("Items/Weapons/Axe.png", sf::Vector2f(10, 10), 2),
-	m_grid(0, 0)
-{
-	m_playerView.reset(sf::FloatRect(100, 100, 600, 600));
-	m_playerView.setViewport(sf::FloatRect(0.f, 0.f, 0.5f, 1.f));
-	m_window.setView(m_playerView);
-}
-
-//****************************************************************
-
-/// <summary>
-/// default constructor
-/// setup the window properties
-/// load and setup the text 
-/// load and setup thne image
-/// </summary>
 Game::Game() :
-	m_window{ sf::VideoMode{ 800U * 3, 650U * 3, 32U }, "SFML Game" },
-	m_exitGame{ false }, //when true game will exit
-	m_genericWeapon("Items/Weapons/Axe.png", sf::Vector2f(5, 5), 2),
-	m_grid(0, 0)
+	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" },
+	m_exitGame{ false } //when true game will exit
 {
-
-	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
-	
 	
 }
 
@@ -40,8 +16,8 @@ Game::Game() :
 /// </summary>
 Game::~Game()
 {
-}
 
+}
 
 //****************************************************************
 void Game::run()
@@ -81,20 +57,37 @@ void Game::processEvents()
 			m_exitGame = true;
 		}
 
-		if (sf::Event::KeyPressed == newEvent.type || 
-			sf::Event::KeyReleased == newEvent.type) //user pressed OR released a key
+		switch (m_gamestate)
 		{
-			if (player.ProcessKeys(newEvent))
-			{
-				processTurn();
-			}
-
-			if (sf::Event::KeyPressed == newEvent.type) //user pressed a key
-			{
-				processKeys(newEvent);
-			}
+		case Gamestate::MainMenu:
+			m_mainMenuScreen.processEvents(newEvent);
+			break;
+		case Gamestate::PauseMenu:
+			m_pauseScreen.processEvents(newEvent);
+			break;
+		case Gamestate::Options:
+			m_optionScreen.processEvents(newEvent);
+			break;
+		case Gamestate::Gameplay:
+			m_gameScreen.processEvents(newEvent);
+			break;
+		case Gamestate::GameOver:
+			m_gameOverScreen.processEvents(newEvent);
+			break;
+		default:
+			break;
 		}
 
+
+		if (sf::Event::KeyPressed == newEvent.type) //user pressed a key
+		{
+			processKeys(newEvent);
+		}
+
+		if (m_exitGame)
+		{
+			m_window.close();
+		}
 	}
 }
 
@@ -108,32 +101,56 @@ void Game::processKeys(sf::Event t_event)
 	}
 }
 
-void Game::processTurn()
-{
-	m_testEnemy->update();
-}
-
 //****************************************************************
 
 void Game::Update(sf::Time t_dt)
 {
-	TextureManager::Collectgarbage();
-
+	switch (m_gamestate)
+	{
+	case Gamestate::MainMenu:
+		m_mainMenuScreen.update();
+		break;
+	case Gamestate::PauseMenu:
+		m_pauseScreen.update();
+		break;
+	case Gamestate::Options:
+		m_optionScreen.update();
+		break;
+	case Gamestate::Gameplay:
+		m_gameScreen.update();
+		break;
+	case Gamestate::GameOver:
+		m_gameOverScreen.update();
+		break;
+	default:
+		break;
+	}
 }
 
 //****************************************************************
 
 void Game::Render(sf::RenderWindow& t_window)
 {
-	t_window.clear();
-	t_window.draw(m_infoText);
-	m_grid.draw(m_window);
-	player.Render(m_window);
-	m_genericWeapon.draw(m_window);
-	m_testEnemy->render(m_window);
-	t_window.display();
+
+	switch (m_gamestate)
+	{
+	case Gamestate::MainMenu:
+		m_mainMenuScreen.render(t_window);
+		break;
+	case Gamestate::PauseMenu:
+		m_pauseScreen.render(t_window);
+		break;
+	case Gamestate::Options:
+		m_optionScreen.render(t_window);
+		break;
+	case Gamestate::Gameplay:
+		m_gameScreen.render(t_window);
+		break;
+	case Gamestate::GameOver:
+		m_gameOverScreen.render(t_window);
+		break;
+	default:
+		break;
+	}
 
 }
-
-//****************************************************************
-

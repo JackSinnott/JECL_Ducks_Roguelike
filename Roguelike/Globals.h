@@ -4,6 +4,16 @@
 
 #include <SFML/Graphics.hpp>
 
+enum class Gamestate
+{
+	MainMenu,
+	PauseMenu,
+	Options,
+	Gameplay,
+	GameOver
+};
+extern Gamestate m_gamestate;
+
 enum class EnemyType
 {
 	Bat,
@@ -51,8 +61,8 @@ enum class TileType
 	INSIDE_WALL = 6
 };
 
-unsigned const int G_VIEW_WIDTH = 800;
-unsigned const int G_VIEW_HEIGTH = 600;
+unsigned const int G_VIEW_WIDTH = 1800;
+unsigned const int G_VIEW_HEIGTH = 900;
 
 //unsigned int Music_volume;
 //unsigned int SFX_volume;
@@ -68,6 +78,8 @@ unsigned const int G_MAP_COLS = 60; // Max overall map col num
 unsigned const int G_CELL_SIZE = 32;
 //unsigned const int MAP_WIDTH = MAP_ROWS * CELL_SIZE;
 //unsigned const int MAP_HEIGTH = MAP_COLS * CELL_SIZE ;
+
+std::string const MISSINGTEXTURE = "./ASSETS/IMAGES/MissingTexture.png";
 
 #endif // !GLOBALS_H
 
