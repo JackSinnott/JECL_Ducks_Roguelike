@@ -99,9 +99,6 @@
     <ClInclude Include="ResourceAllocator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Scroll.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TextureManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -131,9 +128,6 @@
     </ClInclude>
     <ClInclude Include="SwordWeapon.h">
       <Filter>Header Files\Weapons</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemFactory.h">
-      <Filter>Header Files\Factories</Filter>
     </ClInclude>
     <ClInclude Include="WeaponFactory.h">
       <Filter>Header Files\Factories</Filter>

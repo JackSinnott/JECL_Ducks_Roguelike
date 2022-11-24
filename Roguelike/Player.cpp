@@ -123,9 +123,26 @@ void Player::setPosition(int row, int col)
 
 void Player::PickUpItem(AbstractItem& t_item)
 {
-	if (true)
+	//When the item is picked up. It will need to go into the right item slot type.
+	
+	switch (t_item.GetItemType())
 	{
-
+	case ItemType::Weapon:
+		//m_testingWeapon = t_item;
+		m_currentWeapon = &t_item;
+		std::cout << "You picked up a weapon" << std::endl;
+		break;
+	case ItemType::Armour:
+		m_currentArmour = &t_item;
+		std::cout << "You picked up some armour" << std::endl;
+		break;
+	case ItemType::Potion:
+		m_currentPotion = &t_item;
+		std::cout << "You picked up a potion" << std::endl;
+		break;
+	default:
+		std::cout << "Unable to get item type" << std::endl;
+		break;
 	}
 }
 

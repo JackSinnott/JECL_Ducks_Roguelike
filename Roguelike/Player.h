@@ -31,12 +31,14 @@ private:
 	//A basic inventory
 	Weapons m_playerWeapon;
 
-	AbstractWeapon * m_testWeapon;
-	AbstractArmour * m_testArmour;
-	AbstractPotion * m_testPotion;
+	//AbstractWeapon m_testingWeapon;
+
+	AbstractItem * m_currentWeapon;
+	AbstractItem * m_currentArmour;
+	AbstractItem * m_currentPotion;
 
 	/// <summary>
-	/// Keeps trac k of whether the player is currently pressing a button.
+	/// Keeps track of whether the player is currently pressing a button.
 	/// </summary>
 	sf::Keyboard::Key m_pressingButton = sf::Keyboard::Unknown;
 
