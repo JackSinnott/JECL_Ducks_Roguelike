@@ -1,10 +1,11 @@
 #include "Gameplay.h"
 
-Gameplay::Gameplay()
+Gameplay::Gameplay() :
+	m_grid(0,0)
 {
-	//m_levelLoader = new FileLoader();
+	m_levelLoader = new FileLoader(m_grid);
 
-	LoadLevel(1);
+	LoadLevel();
 	exampleItem = new WeaponFactory();
 	GenerateRandomItem(*exampleItem);
 	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
@@ -31,6 +32,7 @@ void Gameplay::update()
 void Gameplay::render(sf::RenderWindow& t_window)
 {
 	t_window.clear();
+	m_grid.draw(t_window);
 	t_window.draw(m_infoText);
 	player.Render(t_window);
 	m_testEnemy->render(t_window);
@@ -63,9 +65,10 @@ void Gameplay::GenerateRandomItem(AbstractItemFactory& t_factory)
 }
 
 
-void Gameplay::LoadLevel(int t_level)
+void Gameplay::LoadLevel()
 {
-	//m_levelLoader->Load(t_level);
+	m_levelLoader->Load();
+	m_levelLoader->Load();
 
 	//m_levelData.addWalls(m_walls);
 }

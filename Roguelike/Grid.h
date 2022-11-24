@@ -12,9 +12,9 @@ public:
 	Grid(int t_x, int t_y);
 	inline ~Grid() {};
 
-	void draw(sf::RenderWindow& m_win);
+	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const;
 
-	void setUpRoom(sf::Vector2f t_position, TileType t_type, int t_roomID);
+	void setUpRoom(sf::Vector2f t_position, TileType t_type, int t_roomID, int t_row, int t_col);
 
 
 private:
