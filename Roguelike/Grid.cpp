@@ -27,9 +27,9 @@ void Grid::setUpRoom(sf::Vector2f t_position, TileType t_type, int t_roomID)
 {
 	bool roomExists = false;
 
-	for (Room oneRoom : m_rooms)
+	for (Room* oneRoom : m_rooms)
 	{
-		if (oneRoom.getID() == t_roomID) // id == t_roomID
+		if (oneRoom->getID() == t_roomID) // id == t_roomID
 		{
 			roomExists = true;
 			break;
@@ -38,7 +38,7 @@ void Grid::setUpRoom(sf::Vector2f t_position, TileType t_type, int t_roomID)
 
 	if (!roomExists) // If room already exists 
 	{
-		Room r = Room();
+		Room* r = new Room();
 
 		m_rooms.push_back(r);
 		// make a new room
