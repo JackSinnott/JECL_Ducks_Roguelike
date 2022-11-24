@@ -146,3 +146,18 @@ void Player::PickUpItem(AbstractItem& t_item)
 	}
 }
 
+int Player::GetWeaponDamage()
+{
+	
+	return 0;
+}
+
+int Player::GetArmourClass()
+{
+	return 0;
+}
+
+void Player::UsePotion()
+{
+}
+

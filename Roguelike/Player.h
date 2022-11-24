@@ -72,4 +72,7 @@ public:
 	sf::Vector2f GetPosition();
 	void setPosition(int row, int col);
 	void PickUpItem(AbstractItem& t_item);
+	int GetWeaponDamage();
+	int GetArmourClass();
+	void UsePotion();
 };
