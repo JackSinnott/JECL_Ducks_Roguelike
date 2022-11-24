@@ -30,6 +30,7 @@
     <ClCompile Include="Potion.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Scroll.cpp" />
+    <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -45,6 +46,7 @@
     <ClInclude Include="Potion.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Scroll.h" />
+    <ClInclude Include="Tile.h" />
     <ClInclude Include="Weapon.h" />
     <ClInclude Include="ResourceAllocator.h" />
     <ClInclude Include="TextureManager.h" />
