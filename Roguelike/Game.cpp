@@ -9,8 +9,7 @@ std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::te
 /// load and setup thne image
 /// </summary>
 Game::Game() :
-	m_window{ sf::VideoMode{ G_VIEW_WIDTH * 3, G_VIEW_HEIGTH * 3,  32U }, "Roguelike Game" },
-	m_exitGame{ false } //when true game will exit
+	m_window{ sf::VideoMode{ G_VIEW_WIDTH * 3, G_VIEW_HEIGTH * 3,  32U }, "Roguelike Game" }
 {
 
 }
@@ -115,7 +114,7 @@ void Game::Update(sf::Time t_dt)
 	switch (m_gamestate)
 	{
 	case Gamestate::MainMenu:
-		m_mainMenuScreen.update();
+		m_mainMenuScreen.update(sf::Mouse::getPosition(m_window));
 		break;
 	case Gamestate::PauseMenu:
 		m_pauseScreen.update();
@@ -138,7 +137,7 @@ void Game::Update(sf::Time t_dt)
 
 void Game::Render(sf::RenderWindow& t_window)
 {
-
+	t_window.clear();
 	switch (m_gamestate)
 	{
 	case Gamestate::MainMenu:
@@ -159,5 +158,5 @@ void Game::Render(sf::RenderWindow& t_window)
 	default:
 		break;
 	}
-
+	t_window.display();
 }
