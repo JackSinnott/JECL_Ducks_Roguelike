@@ -120,3 +120,12 @@ void Player::setPosition(int row, int col)
 	m_playerBody.setPosition(G_CELL_SIZE * (row) + G_CELL_SIZE / 2.0f,
 		G_CELL_SIZE * (col) + G_CELL_SIZE / 2.0f);
 }
+
+void Player::PickUpItem(AbstractItem& t_item)
+{
+	if (true)
+	{
+
+	}
+}
+

@@ -20,7 +20,6 @@ enum class EnemyType
 	Rat
 };
 
-
 enum class Weapons
 {
 	Sword,

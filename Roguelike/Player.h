@@ -2,7 +2,10 @@
 #include "SFML/Graphics.hpp"
 #include "Tile.h"
 #include "Globals.h"
-
+#include "AbstractItem.h"
+#include "AbstractWeapon.h"
+#include "AbstractArmour.h"
+#include "AbstractPotion.h"
 
 /// <summary>
 /// Class the player directly controls.
@@ -27,6 +30,10 @@ private:
 
 	//A basic inventory
 	Weapons m_playerWeapon;
+
+	AbstractWeapon * m_testWeapon;
+	AbstractArmour * m_testArmour;
+	AbstractPotion * m_testPotion;
 
 	/// <summary>
 	/// Keeps trac k of whether the player is currently pressing a button.
@@ -62,5 +69,5 @@ public:
 
 	sf::Vector2f GetPosition();
 	void setPosition(int row, int col);
-	void applyWeapon();
+	void PickUpItem(AbstractItem& t_item);
 };
