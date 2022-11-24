@@ -16,7 +16,7 @@ public:
 	void render(sf::RenderWindow& t_window);
 	void GenerateRandomItem(AbstractItemFactory& t_factory);
 private:
-	void LoadLevel(int t_level);
+	void LoadLevel();
 	void processTurn();
 
 	sf::Text m_infoText;
@@ -24,6 +24,7 @@ private:
 	LevelLoader* m_levelLoader;
 	std::shared_ptr<sf::Texture> m_buttonTexture;
 	std::vector<sf::Sprite*> m_walls; // a vector to hold the walls
+	Grid m_grid;
 
 	//WeaponFactory* exampleWeapon;
 	AbstractItemFactory* exampleItem;

@@ -4,7 +4,7 @@
 class LevelLoader
 {
 public:
-	virtual void Load(int t_level) = 0;
+	virtual void Load() = 0;
 };
 
 

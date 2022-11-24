@@ -13,12 +13,13 @@ class FileLoader : public LevelLoader
 public:
 	FileLoader(Grid& t_room);
 
-	void Load(int t_level)override;
+	void Load()override;
 
-
+	sf::Vector2f PlaceRoom();
 private:
 
 	Grid& m_gridData;
+	int roomCount = 0;
 };
 
 #endif // !FILE_LOADER_H

@@ -10,7 +10,7 @@
 class Room
 {
 public:
-	Room(int t_x = 0, int t_y = 0, int t_id = 0);
+	Room(int t_id, int t_x = 0, int t_y = 0);
 	~Room();
 
 	void update(sf::Time t_dt);
