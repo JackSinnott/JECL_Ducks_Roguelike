@@ -31,7 +31,6 @@ void Gameplay::update()
 
 void Gameplay::render(sf::RenderWindow& t_window)
 {
-	t_window.clear();
 	t_window.draw(m_levelData);
 	t_window.draw(m_infoText);
 	player.Render(t_window);
@@ -41,8 +40,6 @@ void Gameplay::render(sf::RenderWindow& t_window)
 	{
 		n->draw(t_window);
 	}
-
-	t_window.display();
 }
 
 void Gameplay::GenerateRandomItem(AbstractItemFactory& t_factory)
