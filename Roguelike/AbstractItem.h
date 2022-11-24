@@ -14,9 +14,26 @@ public:
 		int randomeY = rand() % 20 + 3;
 
 		m_itemSprite.setPosition( sf::Vector2f(randomeX, randomeY) * float(G_CELL_SIZE));
-	};
+	}
+
+	void SetupBasics()
+	{
+		m_itemTexture = TextureManager::Acquire(MISSINGTEXTURE);
+		m_itemSprite.setTexture(*m_itemTexture);
+		m_itemSprite.setOrigin(m_itemSprite.getTextureRect().width, m_itemSprite.getTextureRect().height);
+
+		m_itemSprite.setPosition(G_CELL_SIZE * (10) + G_CELL_SIZE / 2.0f,
+			G_CELL_SIZE * (10) + G_CELL_SIZE / 2.0f);
+		m_itemSprite.setScale(0.5f, 0.5f);
+	}
+
+	ItemType GetItemType()
+	{
+		return m_itemType;
+	}
 protected:
 	int m_rarity = 0;
 	std::shared_ptr<sf::Texture> m_itemTexture;
 	sf::Sprite m_itemSprite;
+	ItemType m_itemType;
 };

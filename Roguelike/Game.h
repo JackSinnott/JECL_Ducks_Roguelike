@@ -56,7 +56,7 @@ private:
 	Options m_optionScreen;
 
 	//WeaponFactory* exampleWeapon;
-	AbstractItemFactory* exampleItem;
+	AbstractItemFactory* m_itemfactory;
 	AbstractWeapon* m_absWeapon;
 
 	std::vector<AbstractWeapon*> m_absWeaponVector;

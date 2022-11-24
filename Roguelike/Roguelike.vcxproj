@@ -57,13 +57,11 @@
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="PauseMenu.h" />
-    <ClInclude Include="ItemFactory.h" />
     <ClInclude Include="AbstractItemFactory.h" />
     <ClInclude Include="LightArmour.h" />
     <ClInclude Include="MediumArmour.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PotionFactory.h" />
-    <ClInclude Include="Scroll.h" />
     <ClInclude Include="SpeedPotion.h" />
     <ClInclude Include="StrengthPotion.h" />
     <ClInclude Include="SwordWeapon.h" />
