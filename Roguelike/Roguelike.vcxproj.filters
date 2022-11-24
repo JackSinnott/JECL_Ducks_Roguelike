@@ -49,10 +49,10 @@
     <ClCompile Include="AbstractItemFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Gameplay.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="WeaponFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Gameplay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -6,7 +6,7 @@
 class AbstractItem
 {
 public:
-	~AbstractItem() {};
+	~AbstractItem() { delete this; };
 	void draw(sf::RenderWindow& t_window) { t_window.draw(m_itemSprite); };
 	void GenerateRandomPosition()
 	{

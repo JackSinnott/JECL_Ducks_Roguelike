@@ -13,7 +13,6 @@ Gameplay::Gameplay() :
 
 void Gameplay::processEvents(sf::Event t_event)
 {
-
 	if (sf::Event::KeyPressed == t_event.type ||
 		sf::Event::KeyReleased == t_event.type) //user pressed OR released a key
 	{
@@ -37,7 +36,7 @@ void Gameplay::render(sf::RenderWindow& t_window)
 	player.Render(t_window);
 	m_testEnemy->render(t_window);
 
-	for(AbstractWeapon * n : m_absWeaponVector)
+	for(AbstractItem * n : m_absItemVector)
 	{
 		n->draw(t_window);
 	}
@@ -59,7 +58,7 @@ void Gameplay::GenerateRandomItem(AbstractItemFactory& t_factory)
 
 		m_absWeapon = t_factory.CreateWeapon(w);
 		m_absWeapon->GenerateRandomPosition();
-		m_absWeaponVector.push_back(m_absWeapon);
+		m_absItemVector.push_back(m_absWeapon);
 	}
 
 }

@@ -32,7 +32,7 @@ private:
 	AbstractItemFactory* exampleItem;
 	AbstractWeapon* m_absWeapon;
 
-	std::vector<AbstractWeapon*> m_absWeaponVector;
+	std::vector<AbstractItem*> m_absItemVector;
 
 	Player player;
 	Enemy* m_testEnemy;
