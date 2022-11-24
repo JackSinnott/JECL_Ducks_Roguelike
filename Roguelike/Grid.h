@@ -24,7 +24,7 @@ private:
 	sf::Vertex m_point;
 	sf::VertexArray m_points;
 
-	std::vector<Room> m_rooms;
+	std::vector<Room*> m_rooms;
 
 };
 

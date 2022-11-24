@@ -16,6 +16,7 @@
 #include "Weapon.h"
 #include "Enemy.h"
 #include "Grid.h"
+#include "FileLoader.h"
 
 /// <summary>
 /// Game Class. Keeps track of Game Flow.
@@ -47,8 +48,10 @@ private:
 	std::shared_ptr<sf::Texture> m_buttonTexture;
 	std::vector<sf::Sprite*> m_walls; // a vector to hold the walls
 	sf::View m_playerView;
+	LevelLoader* m_level;
 
 	Grid m_grid;
+
 	bool m_exitGame; // control exiting game
 
 	Player player;

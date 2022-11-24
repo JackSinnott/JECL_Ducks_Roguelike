@@ -4,17 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <unordered_map>
 #include <cstdlib>
-
-enum class CellType
-{
-	UNUSED = 0,
-	GROUND = 1,
-	VERTICAL_WALL = 2,
-	HORIZONTAL_WALL = 3,
-	UPPER_CORNER = 4,
-	LOWER_CORNER = 5,
-	INSIDE_WALL = 6
-};
+#include "Globals.h"
 
 class Tile : public sf::Drawable
 {
@@ -26,7 +16,7 @@ public:
 
 	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const override;
 
-	CellType getType() { return m_currentType; }
+	TileType getType() { return m_currentType; }
 
 	sf::Sprite& getSprite() { return m_tile; }
 
@@ -34,7 +24,7 @@ public:
 
 private:
 	sf::Sprite m_tile;
-	CellType m_currentType;
-	static std::unordered_map<CellType, sf::IntRect> m_rects;
+	TileType m_currentType;
+	static std::unordered_map<TileType, sf::IntRect> m_rects;
 };
 #endif // !TILE_H
