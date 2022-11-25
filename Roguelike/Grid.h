@@ -16,6 +16,7 @@ public:
 
 	void setUpRoom(sf::Vector2f t_position, TileType t_type, int t_roomID, int t_row, int t_col);
 
+	sf::Vector2f placeRoom(sf::Vector2f t_position);
 
 private:
 	int x = 0;
