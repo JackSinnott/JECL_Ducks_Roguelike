@@ -24,10 +24,5 @@ public:
 			break;
 		}
 	};
-
-	AbstractArmour* CreateArmour(Armours t_armour) override
-	{
-		return NULL;
-	};
 };
 
