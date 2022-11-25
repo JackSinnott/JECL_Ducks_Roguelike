@@ -28,6 +28,14 @@ void Grid::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) cons
 	}
 }
 
+void Grid::update(sf::Time t_dt)
+{
+	for (Room* room : m_rooms)
+	{
+		room->update(t_dt, 1, 1);
+	}
+}
+
 void Grid::setUpRoom(TileType t_type, int t_roomID, int t_row, int t_col)
 {
 	bool roomExists = false;

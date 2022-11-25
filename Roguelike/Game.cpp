@@ -117,7 +117,7 @@ void Game::Update(sf::Time t_dt)
 		m_optionScreen.update();
 		break;
 	case Gamestate::Gameplay:
-		m_gameScreen.update();
+		m_gameScreen.update(t_dt);
 		break;
 	case Gamestate::GameOver:
 		m_gameOverScreen.update();

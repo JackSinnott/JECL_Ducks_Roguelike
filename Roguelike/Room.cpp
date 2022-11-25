@@ -11,8 +11,9 @@ Room::~Room()
 {
 }	
 
-void Room::update(sf::Time t_dt)
+void Room::update(sf::Time t_dt, int row, int col)
 {
+	//std::cout << "tile at index [24][19] is located at: " << m_tiles[row][col].getPosition().x << m_tiles[row][col].getPosition().y << "\n";
 }
 
 void Room::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) const

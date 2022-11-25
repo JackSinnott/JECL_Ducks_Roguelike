@@ -24,9 +24,10 @@ void Gameplay::processEvents(sf::Event t_event)
 	}
 }
 
-void Gameplay::update()
+void Gameplay::update(sf::Time t_dt)
 {
 	TextureManager::Collectgarbage();
+	m_grid.update(t_dt);
 }
 
 void Gameplay::render(sf::RenderWindow& t_window)
@@ -36,6 +37,8 @@ void Gameplay::render(sf::RenderWindow& t_window)
 	t_window.draw(m_infoText);
 	player.Render(t_window);
 	m_testEnemy->render(t_window);
+
+	
 
 	for(AbstractWeapon * n : m_absWeaponVector)
 	{

@@ -6,14 +6,14 @@
 #include "Globals.h"
 #include <array>
 #include "Tile.h"
-
+#include <iostream>
 class Room
 {
 public:
 	Room(int t_id, sf::Vector2f t_roomPos);
 	~Room();
 
-	void update(sf::Time t_dt);
+	void update(sf::Time t_dt, int row, int col);
 	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const;
 
 	void setUpTiles(TileType t_type, int row, int col);

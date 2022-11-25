@@ -12,7 +12,7 @@ class Gameplay
 public:
 	Gameplay();
 	void processEvents(sf::Event t_event);
-	void update();
+	void update(sf::Time t_dt);
 	void render(sf::RenderWindow& t_window);
 	void GenerateRandomItem(AbstractItemFactory& t_factory);
 private:

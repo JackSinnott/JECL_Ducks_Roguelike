@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <cstdlib>
 #include "Globals.h"
+#include <iostream>
 
 class Tile : public sf::Drawable
 {
@@ -20,7 +21,7 @@ public:
 
 	sf::Sprite& getSprite() { return m_tile; }
 
-
+	sf::Vector2f getPosition() { return getSprite().getPosition(); }
 
 private:
 	sf::Sprite m_tile;

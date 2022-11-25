@@ -79,6 +79,8 @@ bool Player::ProcessKeys(sf::Event t_event)
 				action = true;
 				break;
 
+			case sf::Keyboard::V:
+				std::cout << "Player pos: { " << m_playerBody.getPosition().x << ", " << m_playerBody.getPosition().y << " }";
 			default:
 				break;
 			}
