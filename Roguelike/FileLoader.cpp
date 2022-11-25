@@ -1,65 +1,56 @@
 #include "FileLoader.h"
 
-FileLoader::FileLoader(GameData& t_ld) :
-	m_levelData(t_ld)
+FileLoader::FileLoader(Grid& t_grid) : m_gridData(t_grid)
 {
 	srand(time(NULL));
 }
 
 void FileLoader::Load(int t_level)
 {
-	// Generate Number of rooms
+	roomCount = t_level;
+	
+	room_id += 1; // If this is the same value again the room is discarded
 
-	std::vector<int> madeRooms;
+	if (room_id == 8)
+		room_id = 1;
+	// load in the level data and setup levelData
+	std::ifstream level;
+	std::string path = "ASSETS/levels/Level" + std::to_string(room_id) + ".txt";
+	level.open(path);
+	std::cout << "current random Number is: " << room_id << "\n";
 
-	int roomCap = (rand() % 4) + 3;
+	int col = 0;
+	int row = 0;
 
-	// find which rooms will be added
-	while (madeRooms.size() < roomCap)
+	if (level.is_open())
 	{
-		int placedRoom = rand() % 9;
-
-		if (std::find(madeRooms.begin(), madeRooms.end(), placedRoom) != madeRooms.end())
+		int cell = 0;
+		std::string type;
+		while (std::getline(level, type))
 		{
-			continue;
-		}
-
-		madeRooms.push_back(placedRoom);
-	}
-
-	// GenerateRandom Level Number (which level file will get loaded)
-
-	int loadedLevelNum;
-
-	for (int roomType : madeRooms)
-	{
-		loadedLevelNum = (rand() % 7) + 1;
-
-		// load in the level data and setup levelData
-		std::ifstream level;
-		std::string path = "ASSETS/levels/Level" + std::to_string(loadedLevelNum) + ".txt";
-		level.open(path);
-
-		if (level.is_open())
-		{
-			int cell = 0;
-			std::string type;
-			while (std::getline(level, type))
+			for (int i = 0; i < type.size(); ++i)
 			{
-				for (int i = 0; i < type.size(); ++i)
+				if (type.at(i) != ' ' && type.at(i) != ',')
 				{
-					if (type.at(i) != ' ' && type.at(i) != ',')
+					// Pass info to grid (all the tiles)
+
+					m_gridData.setUpRoom(static_cast<TileType>(std::stoi(&type.at(i))), room_id, row , col); // convert the character to an int and static cast that to a cell type
+					
+					row++;
+					cell++;
+
+					if (row >= G_ROOM_ROWS)
 					{
-						m_levelData.setTile(cell % G_MAP_ROWS, cell / G_MAP_ROWS, static_cast<CellType>(std::stoi(&type.at(i))), roomType); // convert the character to an int and static cast that to a cell type
-						cell++;
+						col++;
+						row = 0;
 					}
 				}
 			}
 		}
-		else
-		{
-			std::cout << "uh oh \n";
-		}
-		level.close();
+	level.close();
+	}
+	else
+	{
+		std::cout << "uh oh \n";
 	}
 }

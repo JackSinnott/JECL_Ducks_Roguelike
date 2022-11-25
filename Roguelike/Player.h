@@ -1,7 +1,7 @@
 #pragma once
 #include "SFML/Graphics.hpp"
-#include "Tile.h"
 #include "Globals.h"
+#include <iostream>
 #include "AbstractItem.h"
 #include "AbstractWeapon.h"
 #include "AbstractArmour.h"
