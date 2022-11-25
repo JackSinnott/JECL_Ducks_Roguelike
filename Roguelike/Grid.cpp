@@ -28,7 +28,7 @@ void Grid::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) cons
 	}
 }
 
-void Grid::setUpRoom(sf::Vector2f t_position, TileType t_type, int t_roomID, int t_row, int t_col)
+void Grid::setUpRoom(TileType t_type, int t_roomID, int t_row, int t_col)
 {
 	bool roomExists = false;
 
@@ -41,18 +41,26 @@ void Grid::setUpRoom(sf::Vector2f t_position, TileType t_type, int t_roomID, int
 		}
 	}
 
-	if (!roomExists) // If room doesn't exists 
+	if (!roomExists) // If room doesn't exist
 	{
-		Room* r = new Room(t_roomID);
-
+		Room* r = new Room(t_roomID, placeRoom());
+		numOfRoomsMade++;
 		m_rooms.push_back(r);
 		// make a new room
 	}
-	m_rooms[m_rooms.size() - 1]->setUpTiles(t_position, t_type, t_row, t_col);
+	m_rooms[m_rooms.size() - 1]->setUpTiles(t_type, t_row, t_col);
 }
 
-sf::Vector2f Grid::placeRoom(sf::Vector2f t_position)
+sf::Vector2f Grid::placeRoom()
 {
-
-	return sf::Vector2f();
+	switch (numOfRoomsMade)
+	{
+	case 0:
+		break;
+	case 1:
+		m_roomPos += sf::Vector2f(G_ROOM_ROWS * G_ROOM_ROWS + 16.f, G_ROOM_COLS * G_ROOM_COLS + 16.f);
+	}
+	return m_roomPos;
 }
+
+

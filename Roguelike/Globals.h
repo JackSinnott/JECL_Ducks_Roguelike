@@ -61,7 +61,7 @@ enum class TileType
 	INSIDE_WALL = 6
 };
 
-unsigned const int G_VIEW_WIDTH = 1400;
+unsigned const int G_VIEW_WIDTH = 1800;
 unsigned const int G_VIEW_HEIGTH = 900;
 
 //unsigned int Music_volume;

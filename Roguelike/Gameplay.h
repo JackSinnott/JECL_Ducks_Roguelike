@@ -18,6 +18,7 @@ public:
 private:
 	void LoadLevel();
 	void processTurn();
+	void setUpShape();
 
 	sf::Text m_infoText;
 	sf::Texture m_tileTexture;
@@ -31,6 +32,7 @@ private:
 	AbstractWeapon* m_absWeapon;
 
 	std::vector<AbstractWeapon*> m_absWeaponVector;
+	sf::RectangleShape m_test;
 
 	Player player;
 	Enemy* m_testEnemy;

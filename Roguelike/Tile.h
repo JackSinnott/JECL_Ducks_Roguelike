@@ -12,7 +12,7 @@ public:
 	Tile();
 
 	void setup(std::shared_ptr<sf::Texture>& t_tex,
-		sf::Vector2f t_pos, TileType t_type);
+		sf::Vector2f t_pos, sf::Vector2f t_offset, TileType t_type);
 
 	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const override;
 
