@@ -17,6 +17,7 @@ public:
 
 		m_itemSprite.setPosition(10 * float(G_CELL_SIZE), 10 * float(G_CELL_SIZE));
 		m_itemSprite.setScale(0.5f, 0.5f);
+		SetType();
 	};
 
 	int GetDamage() override 
