@@ -28,7 +28,7 @@ void Room::setUpTiles(sf::Vector2f t_pos, TileType t_type, int row, int col) // 
 
 
 	m_tiles[row][col].setup(m_pTexture, sf::Vector2f{ static_cast<float>(row * G_CELL_SIZE), static_cast<float>(col * G_CELL_SIZE) } + t_pos, t_type);
-
+	// t_pos causing gaps to appear in tileset being drawn
 	// call tile setUp function
 
 	// Figure out the num of tiles in row/col

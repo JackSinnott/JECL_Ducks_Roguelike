@@ -48,5 +48,11 @@ void Grid::setUpRoom(sf::Vector2f t_position, TileType t_type, int t_roomID, int
 		m_rooms.push_back(r);
 		// make a new room
 	}
-	m_rooms[m_rooms.size() -1]->setUpTiles(t_position, t_type, t_row, t_col);
+	m_rooms[m_rooms.size() - 1]->setUpTiles(t_position, t_type, t_row, t_col);
+}
+
+sf::Vector2f Grid::placeRoom(sf::Vector2f t_position)
+{
+
+	return sf::Vector2f();
 }
