@@ -19,6 +19,8 @@ private:
 
 	Grid& m_gridData;
 	int roomCount = 0;
+	int room_id = 0;
+	std::vector<int> previousID;
 };
 
 #endif // !FILE_LOADER_H

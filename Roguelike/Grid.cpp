@@ -58,7 +58,13 @@ sf::Vector2f Grid::placeRoom()
 	case 0:
 		break;
 	case 1:
-		m_roomPos += sf::Vector2f(G_ROOM_ROWS * G_ROOM_ROWS + 16.f, G_ROOM_COLS * G_ROOM_COLS + 16.f);
+		m_roomPos += sf::Vector2f(800, 0);
+		break;
+	case 2:
+		m_roomPos += sf::Vector2f(-800, 640);
+		break;
+	case 3:
+		m_roomPos += sf::Vector2f(800, 0);
 	}
 	return m_roomPos;
 }
