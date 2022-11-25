@@ -19,8 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AbstractWeapon.cpp" />
-    <ClCompile Include="ArmourFactory.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -29,7 +27,6 @@
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Grid.cpp" />
-    <ClCompile Include="AbstractItemFactory.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Options.cpp" />
@@ -57,13 +54,11 @@
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="PauseMenu.h" />
-    <ClInclude Include="ItemFactory.h" />
     <ClInclude Include="AbstractItemFactory.h" />
     <ClInclude Include="LightArmour.h" />
     <ClInclude Include="MediumArmour.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PotionFactory.h" />
-    <ClInclude Include="Scroll.h" />
     <ClInclude Include="SpeedPotion.h" />
     <ClInclude Include="StrengthPotion.h" />
     <ClInclude Include="SwordWeapon.h" />

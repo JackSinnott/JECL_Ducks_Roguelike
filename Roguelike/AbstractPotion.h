@@ -5,11 +5,7 @@ class AbstractPotion : public AbstractItem
 {
 public:
 	~AbstractPotion() {};
-	
-	int GetPotion()
-	{
-		return 0;
-	}
+	void SetType() { m_itemType = ItemType::Potion; };
 
 protected:
 	Potions m_potionType;
