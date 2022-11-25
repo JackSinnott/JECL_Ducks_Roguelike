@@ -9,6 +9,7 @@ Gameplay::Gameplay() :
 	exampleItem = new WeaponFactory();
 	GenerateRandomItem(*exampleItem);
 	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
+	setUpShape();
 }
 
 void Gameplay::processEvents(sf::Event t_event)
@@ -41,7 +42,7 @@ void Gameplay::render(sf::RenderWindow& t_window)
 	{
 		n->draw(t_window);
 	}
-
+	t_window.draw(m_test);
 	t_window.display();
 }
 
@@ -67,8 +68,8 @@ void Gameplay::GenerateRandomItem(AbstractItemFactory& t_factory)
 
 void Gameplay::LoadLevel()
 {
-	m_levelLoader->Load();
-	m_levelLoader->Load();
+	m_levelLoader->Load(0);
+	m_levelLoader->Load(1);
 
 	//m_levelData.addWalls(m_walls);
 }
@@ -76,4 +77,11 @@ void Gameplay::LoadLevel()
 void Gameplay::processTurn()
 {
 	m_testEnemy->update();
+}
+
+void Gameplay::setUpShape()
+{
+	m_test.setSize(sf::Vector2f(G_CELL_SIZE, G_CELL_SIZE));
+	m_test.setFillColor(sf::Color::Yellow);
+	m_test.setPosition(G_ROOM_ROWS * G_ROOM_ROWS + 16.f, G_ROOM_COLS * G_ROOM_COLS + 16.f);
 }

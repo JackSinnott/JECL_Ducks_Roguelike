@@ -10,20 +10,20 @@
 class Room
 {
 public:
-	Room(int t_id, int t_x = 0, int t_y = 0);
+	Room(int t_id, sf::Vector2f t_roomPos);
 	~Room();
 
 	void update(sf::Time t_dt);
 	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const;
 
-	void setUpTiles(sf::Vector2f t_pos, TileType t_type, int row, int col);
+	void setUpTiles(TileType t_type, int row, int col);
 	inline int getID() { return id; }
 
 private:
+	sf::Vector2f m_pos;
+
 	std::shared_ptr<sf::Texture> m_pTexture;
 	std::array<std::array<Tile, G_MAP_COLS>,G_MAP_ROWS> m_tiles;
-	int x = 0, y = 0;
-	sf::Vector2f position{ x, y };
 	int id;
 };
 

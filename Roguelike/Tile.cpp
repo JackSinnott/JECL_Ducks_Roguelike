@@ -18,16 +18,14 @@ Tile::Tile() :
 	}
 }
 
-void Tile::setup(std::shared_ptr<sf::Texture>& t_tex, sf::Vector2f t_pos, TileType t_type)
+void Tile::setup(std::shared_ptr<sf::Texture>& t_tex, sf::Vector2f t_pos, sf::Vector2f t_offset, TileType t_type)
 {
 	m_tile.setTexture(*t_tex);
 	m_tile.setOrigin(16.f, 16.f);
-	m_tile.setPosition(t_pos + sf::Vector2f(4.f, 4.f));
+	m_tile.setPosition((t_pos + sf::Vector2f(16.f, 16.f)) + t_offset);
 	// flips sprites so we have right and left walls
-	if ((t_pos + sf::Vector2f(16.f, 16.f)).x)
-	{
+	if ((t_pos + sf::Vector2f(16.f, 16.f)).x < 400)
 		m_tile.scale(-1.f, 1);
-	}
 	m_currentType = t_type;
 	m_tile.setTextureRect(m_rects.at(t_type));
 	// Keeps our ground textures from looking stale and boring by adding some noise to them
@@ -36,11 +34,9 @@ void Tile::setup(std::shared_ptr<sf::Texture>& t_tex, sf::Vector2f t_pos, TileTy
 		int rotation = rand() % 4; // 0-3
 		m_tile.setRotation(90 * rotation);
 	}
-
 }
 
 void Tile::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) const
 {
 	t_target.draw(m_tile, t_state);
 }
-

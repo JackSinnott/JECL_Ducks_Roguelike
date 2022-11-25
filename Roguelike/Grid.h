@@ -14,18 +14,25 @@ public:
 
 	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const;
 
-	void setUpRoom(sf::Vector2f t_position, TileType t_type, int t_roomID, int t_row, int t_col);
+	void setUpRoom(TileType t_type, int t_roomID, int t_row, int t_col);
 
-	sf::Vector2f placeRoom(sf::Vector2f t_position);
 
 private:
+	sf::Vector2f placeRoom();
+
 	int x = 0;
 	int y = 0;
+
+	sf::Vector2f m_roomPos = sf::Vector2f();
+
+	int numOfRoomsMade = 0;
 
 	sf::Vertex m_point;
 	sf::VertexArray m_points;
 
 	std::vector<Room*> m_rooms;
+
+
 
 };
 
