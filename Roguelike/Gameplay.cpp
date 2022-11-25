@@ -1,12 +1,13 @@
 #include "Gameplay.h"
 
 Gameplay::Gameplay() :
-	m_levelData()
+	m_grid(0,0)
 {
-	m_levelLoader = new FileLoader(m_levelData);
+	m_levelLoader = new FileLoader(m_grid);
 
-	LoadLevel(1);
+	LoadLevel();
 	GenerateRandomItem();
+
 	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
 }
 
@@ -22,24 +23,25 @@ void Gameplay::processEvents(sf::Event t_event)
 	}
 }
 
-void Gameplay::update()
+void Gameplay::update(sf::Time t_dt)
 {
 	TextureManager::Collectgarbage();
+	m_grid.update(t_dt);
 }
 
 void Gameplay::render(sf::RenderWindow& t_window)
 {
 	t_window.clear();
-	t_window.draw(m_levelData);
+	m_grid.draw(t_window);
 	t_window.draw(m_infoText);
 	player.Render(t_window);
 	m_testEnemy->render(t_window);
+
 
 	for(AbstractItem * n : m_absItemVector)
 	{
 		n->draw(t_window);
 	}
-
 	t_window.display();
 }
 
@@ -111,11 +113,14 @@ void Gameplay::GenerateRandomItem()
 }
 
 
-void Gameplay::LoadLevel(int t_level)
+void Gameplay::LoadLevel()
 {
-	m_levelLoader->Load(t_level);
+	m_levelLoader->Load(0);
+	m_levelLoader->Load(1);
+	m_levelLoader->Load(2);
+	m_levelLoader->Load(3);
 
-	m_levelData.addWalls(m_walls);
+	//m_levelData.addWalls(m_walls);
 }
 
 void Gameplay::processTurn()

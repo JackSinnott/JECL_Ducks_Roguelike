@@ -1,18 +1,11 @@
 #include "Game.h"
 std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::texturePtrs; // Singletons need declaring
 
-
-/// <summary>
-/// default constructor
-/// setup the window properties
-/// load and setup the text 
-/// load and setup thne image
-/// </summary>
 Game::Game() :
-	m_window{ sf::VideoMode{ G_VIEW_WIDTH * 3, G_VIEW_HEIGTH * 3,  32U }, "Roguelike Game" },
+	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" },
 	m_exitGame{ false } //when true game will exit
 {
-
+	
 }
 
 //****************************************************************
@@ -124,7 +117,7 @@ void Game::Update(sf::Time t_dt)
 		m_optionScreen.update();
 		break;
 	case Gamestate::Gameplay:
-		m_gameScreen.update();
+		m_gameScreen.update(t_dt);
 		break;
 	case Gamestate::GameOver:
 		m_gameOverScreen.update();

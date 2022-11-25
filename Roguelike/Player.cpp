@@ -21,7 +21,7 @@ Player::Player() : m_playerTexture(nullptr)
 	m_playerBody.setOrigin(G_CELL_SIZE / 2.0f, G_CELL_SIZE / 2.0f);
 
 	// Sets player to centre of map hard coded for now 
-	setPosition(G_MAP_ROWS / 2, G_MAP_COLS / 2);
+	setPosition(G_ROOM_ROWS / 2, G_ROOM_COLS / 2);
 }
 
 
@@ -79,6 +79,8 @@ bool Player::ProcessKeys(sf::Event t_event)
 				action = true;
 				break;
 
+			case sf::Keyboard::V:
+				std::cout << "Player pos: { " << m_playerBody.getPosition().x << ", " << m_playerBody.getPosition().y << " }";
 			default:
 				break;
 			}
