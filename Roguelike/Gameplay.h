@@ -32,7 +32,6 @@ private:
 	AbstractWeapon* m_absWeapon;
 
 	std::vector<AbstractWeapon*> m_absWeaponVector;
-	sf::RectangleShape m_test;
 
 	Player player;
 	Enemy* m_testEnemy;

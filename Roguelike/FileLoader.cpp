@@ -8,14 +8,16 @@ FileLoader::FileLoader(Grid& t_grid) : m_gridData(t_grid)
 void FileLoader::Load(int t_level)
 {
 	roomCount = t_level;
-	int room_id;
+	
+	room_id += 1; // If this is the same value again the room is discarded
 
-	room_id = (rand() % 7) + 1;
-
+	if (room_id == 8)
+		room_id = 1;
 	// load in the level data and setup levelData
 	std::ifstream level;
 	std::string path = "ASSETS/levels/Level" + std::to_string(room_id) + ".txt";
 	level.open(path);
+	std::cout << "current random Number is: " << room_id << "\n";
 
 	int col = 0;
 	int row = 0;
