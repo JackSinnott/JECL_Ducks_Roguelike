@@ -7,6 +7,7 @@
 #include "AbstractItemFactory.h"
 #include "WeaponFactory.h"
 #include "ArmourFactory.h"
+#include "PotionFactory.h"
 class Gameplay
 {
 public:
@@ -14,7 +15,7 @@ public:
 	void processEvents(sf::Event t_event);
 	void update(sf::Time t_dt);
 	void render(sf::RenderWindow& t_window);
-	void GenerateRandomItem(AbstractItemFactory& t_factory);
+	void GenerateRandomItem();
 private:
 	void LoadLevel();
 	void processTurn();
@@ -28,10 +29,16 @@ private:
 	Grid m_grid;
 
 	//WeaponFactory* exampleWeapon;
-	AbstractItemFactory* exampleItem;
-	AbstractWeapon* m_absWeapon;
 
-	std::vector<AbstractWeapon*> m_absWeaponVector;
+
+
+	AbstractItemFactory* m_itemfactory;
+	AbstractWeapon* m_absWeapon;
+	AbstractArmour* m_absArmour;
+	AbstractPotion* m_absPotion;
+	AbstractItem* m_absItem;
+
+	std::vector<AbstractItem*> m_absItemVector;
 
 	Player player;
 	Enemy* m_testEnemy;

@@ -5,11 +5,12 @@ class AbstractWeapon : public AbstractItem
 {
 public:
 	~AbstractWeapon() {};
-	virtual int GetDamage() = 0; //Returns the damage of the weapon
+
+	void SetType() { m_itemType = ItemType::Weapon; };
+	virtual int GetDamage() { return m_damage; }; //Returns the damage of the weapon
 
 protected:
-	int m_damage; //How much damage the weapon does.
-	int m_rarity; //How rare the weapon is. High rarity increases damage. Should be randomised.
+	int m_damage = 0; //How much damage the weapon does.
 	Weapons m_weaponType;
 };
 

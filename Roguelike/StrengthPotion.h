@@ -8,6 +8,10 @@ public:
 	{
 		m_potionType = t_potionType;
 		m_strength = 2 + rand() % 10;
+
+		SetupBasics();
+
+		SetType();
 	};
 
 	int GetStrength()
