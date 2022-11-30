@@ -2,11 +2,11 @@
 
 MainMenu::MainMenu()
 {
-	sf::Vector2f buttonWidth = sf::Vector2f(600, 200);
+	sf::Vector2f buttonWidth = sf::Vector2f(400, 150);
 	std::string buttonTexts[3] = { "PLAY", "OPTIONS", "EXIT" };
 	for (int i = 0; i < 3; i++)
 	{
-		m_buttons.push_back(new Button(sf::Vector2f(G_VIEW_WIDTH * 1.5f - (buttonWidth.x / 2), G_VIEW_HEIGTH + (buttonWidth.y * 1.5 * i)),
+		m_buttons.push_back(new Button(sf::Vector2f(G_VIEW_WIDTH * 0.5f - (buttonWidth.x / 2), G_VIEW_HEIGTH / 4 + (buttonWidth.y * 1.2 * i)),
 		buttonWidth, buttonTexts[i], sf::Color::Yellow, sf::Color::Red, sf::Color::Green));
 	}
 	

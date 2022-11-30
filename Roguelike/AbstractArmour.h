@@ -4,14 +4,7 @@ class AbstractArmour : public AbstractItem
 {
 public:
 	~AbstractArmour() {};
-	sf::Vector2f GenerateRandomPosition()
-	{
-		int randomeX = rand() % 20 + 3;
-		int randomeY = rand() % 20 + 3;
-
-		return sf::Vector2f(randomeX, randomeY) * float(G_CELL_SIZE);
-	};
-
+	void SetType() { m_itemType = ItemType::Armour; };
 	int GetArmour()
 	{
 		if (m_rarity > 3)

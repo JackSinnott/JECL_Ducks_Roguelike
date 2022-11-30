@@ -3,19 +3,24 @@
 
 #include "LevelLoader.h"
 #include <fstream>
-#include "GameData.h"
+#include <iostream>
+
 #include "Globals.h"
+#include "Grid.h"
 
 class FileLoader : public LevelLoader
 {
 public:
-	FileLoader(GameData& t_gd);
+	FileLoader(Grid& t_room);
 
 	void Load(int t_level)override;
 
-
 private:
-	GameData& m_levelData;
+
+	Grid& m_gridData;
+	int roomCount = 0;
+	int room_id = 0;
+	std::vector<int> previousID;
 };
 
 #endif // !FILE_LOADER_H

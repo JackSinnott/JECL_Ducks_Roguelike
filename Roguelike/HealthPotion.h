@@ -8,6 +8,10 @@ public:
 	{
 		m_potionType = t_potionType;
 		m_healing = 5 + rand() % 10;
+
+		SetupBasics();
+
+		SetType();
 	};
 
 	int GetHealing()

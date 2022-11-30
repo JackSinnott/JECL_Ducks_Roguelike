@@ -19,23 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AbstractWeapon.cpp" />
-    <ClCompile Include="ArmourFactory.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameData.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Grid.cpp" />
-    <ClCompile Include="AbstractItemFactory.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Options.cpp" />
     <ClCompile Include="PauseMenu.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Room.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="WeaponFactory.cpp" />
   </ItemGroup>
@@ -54,27 +51,26 @@
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="Grid.h" />
+    <ClInclude Include="Room.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="Weapon.h" />
     <ClInclude Include="HealthPotion.h" />
     <ClInclude Include="HeavyArmour.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="PauseMenu.h" />
-    <ClInclude Include="ItemFactory.h" />
     <ClInclude Include="AbstractItemFactory.h" />
     <ClInclude Include="LightArmour.h" />
     <ClInclude Include="MediumArmour.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PotionFactory.h" />
-    <ClInclude Include="Scroll.h" />
     <ClInclude Include="SpeedPotion.h" />
     <ClInclude Include="StrengthPotion.h" />
     <ClInclude Include="SwordWeapon.h" />
     <ClInclude Include="FileLoader.h" />
-    <ClInclude Include="GameData.h" />
     <ClInclude Include="LevelLoader.h" />
     <ClInclude Include="ResourceAllocator.h" />
     <ClInclude Include="TextureManager.h" />
-    <ClInclude Include="Tile.h" />
     <ClInclude Include="WeaponFactory.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

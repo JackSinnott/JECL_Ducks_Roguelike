@@ -21,7 +21,7 @@ Player::Player() : m_playerTexture(nullptr)
 	m_playerBody.setOrigin(G_CELL_SIZE / 2.0f, G_CELL_SIZE / 2.0f);
 
 	// Sets player to centre of map hard coded for now 
-	setPosition(G_MAP_ROWS / 2, G_MAP_COLS / 2);
+	setPosition(G_ROOM_ROWS / 2, G_ROOM_COLS / 2);
 }
 
 
@@ -79,6 +79,8 @@ bool Player::ProcessKeys(sf::Event t_event)
 				action = true;
 				break;
 
+			case sf::Keyboard::V:
+				std::cout << "Player pos: { " << m_playerBody.getPosition().x << ", " << m_playerBody.getPosition().y << " }";
 			default:
 				break;
 			}
@@ -120,3 +122,44 @@ void Player::setPosition(int row, int col)
 	m_playerBody.setPosition(G_CELL_SIZE * (row) + G_CELL_SIZE / 2.0f,
 		G_CELL_SIZE * (col) + G_CELL_SIZE / 2.0f);
 }
+
+void Player::PickUpItem(AbstractItem& t_item)
+{
+	//When the item is picked up. It will need to go into the right item slot type.
+	
+	switch (t_item.GetItemType())
+	{
+	case ItemType::Weapon:
+		//m_testingWeapon = t_item;
+		m_currentWeapon = &t_item;
+		std::cout << "You picked up a weapon" << std::endl;
+		break;
+	case ItemType::Armour:
+		m_currentArmour = &t_item;
+		std::cout << "You picked up some armour" << std::endl;
+		break;
+	case ItemType::Potion:
+		m_currentPotion = &t_item;
+		std::cout << "You picked up a potion" << std::endl;
+		break;
+	default:
+		std::cout << "Unable to get item type" << std::endl;
+		break;
+	}
+}
+
+int Player::GetWeaponDamage()
+{
+	
+	return 0;
+}
+
+int Player::GetArmourClass()
+{
+	return 0;
+}
+
+void Player::UsePotion()
+{
+}
+
