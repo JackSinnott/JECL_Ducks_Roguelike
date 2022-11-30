@@ -13,6 +13,7 @@ enum class Gamestate
 	GameOver
 };
 extern Gamestate m_gamestate;
+extern bool m_exitGame;
 
 enum class EnemyType
 {
@@ -87,6 +88,8 @@ unsigned const int G_CELL_SIZE = 32;
 
 std::string const MISSINGTEXTURE = "./ASSETS/IMAGES/MissingTexture.png";
 std::string const ITEMS_TEXTURE = "./ASSETS/IMAGES/tilemap_packed.png";
+
+extern sf::Font m_font;
 
 #endif // !GLOBALS_H
 
