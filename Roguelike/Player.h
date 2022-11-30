@@ -33,9 +33,10 @@ private:
 
 	//AbstractWeapon m_testingWeapon;
 
-	AbstractItem * m_currentWeapon;
-	AbstractItem * m_currentArmour;
-	AbstractItem * m_currentPotion;
+	//AbstractItem * m_currentWeapon;
+	AbstractWeapon * m_currentWeapon;
+	AbstractArmour * m_currentArmour;
+	AbstractPotion * m_currentPotion;
 
 	/// <summary>
 	/// Keeps track of whether the player is currently pressing a button.
