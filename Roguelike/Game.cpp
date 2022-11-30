@@ -2,8 +2,7 @@
 std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::texturePtrs; // Singletons need declaring
 
 Game::Game() :
-	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" },
-	m_exitGame{ false } //when true game will exit
+	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" }
 {
 	
 }
@@ -108,7 +107,7 @@ void Game::Update(sf::Time t_dt)
 	switch (m_gamestate)
 	{
 	case Gamestate::MainMenu:
-		m_mainMenuScreen.update();
+		m_mainMenuScreen.update(sf::Mouse::getPosition(m_window));
 		break;
 	case Gamestate::PauseMenu:
 		m_pauseScreen.update();
@@ -131,7 +130,7 @@ void Game::Update(sf::Time t_dt)
 
 void Game::Render(sf::RenderWindow& t_window)
 {
-
+	t_window.clear();
 	switch (m_gamestate)
 	{
 	case Gamestate::MainMenu:
@@ -152,5 +151,5 @@ void Game::Render(sf::RenderWindow& t_window)
 	default:
 		break;
 	}
-
+	t_window.display();
 }
