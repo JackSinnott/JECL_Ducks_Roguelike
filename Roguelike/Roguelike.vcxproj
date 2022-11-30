@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractArmour.cpp" />
+    <ClCompile Include="AbstractPotion.cpp" />
+    <ClCompile Include="AbstractWeapon.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="Game.cpp" />
