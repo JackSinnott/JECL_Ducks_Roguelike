@@ -1,8 +1,11 @@
 #pragma once
 #include "SFML/Graphics.hpp"
-#include "Tile.h"
 #include "Globals.h"
-
+#include <iostream>
+#include "AbstractItem.h"
+#include "AbstractWeapon.h"
+#include "AbstractArmour.h"
+#include "AbstractPotion.h"
 
 /// <summary>
 /// Class the player directly controls.
@@ -23,6 +26,16 @@ private:
 
 	/// Reference to the texture of the player.
 	sf::Texture* m_playerTexture;
+
+
+	//A basic inventory
+	Weapons m_playerWeapon;
+
+	//AbstractWeapon m_testingWeapon;
+
+	AbstractItem * m_currentWeapon;
+	AbstractItem * m_currentArmour;
+	AbstractItem * m_currentPotion;
 
 	/// <summary>
 	/// Keeps track of whether the player is currently pressing a button.
@@ -58,5 +71,8 @@ public:
 
 	sf::Vector2f GetPosition();
 	void setPosition(int row, int col);
-	void applyWeapon();
+	void PickUpItem(AbstractItem& t_item);
+	int GetWeaponDamage();
+	int GetArmourClass();
+	void UsePotion();
 };
