@@ -61,9 +61,6 @@ private:
 	std::vector<AbstractWeapon*> m_absWeaponVector;
 
 	sf::RenderWindow m_window; // main SFML window
-
-	bool m_exitGame; // control exiting game
-
 };
 
 #endif // !GAME_HPP
