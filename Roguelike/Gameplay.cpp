@@ -42,7 +42,6 @@ void Gameplay::render(sf::RenderWindow& t_window)
 	{
 		n->draw(t_window);
 	}
-	t_window.display();
 }
 
 void Gameplay::GenerateRandomItem()
