@@ -1,6 +1,6 @@
 #include "Globals.h"
 
-Gamestate m_gamestate = Gamestate::MainMenu;
-bool m_exitGame = false;
+Gamestate g_gamestate = Gamestate::MainMenu;
+bool g_exitGame = false;
 
-sf::Font m_font;
+sf::Font g_font;

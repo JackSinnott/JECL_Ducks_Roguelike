@@ -22,7 +22,7 @@ void Options::processEvents(sf::Event t_event)
 		{
 			if (m_backButton->onMouseUp())
 			{
-				m_gamestate = Gamestate::MainMenu;
+				g_gamestate = Gamestate::MainMenu;
 			}
 		}
 	}

@@ -20,7 +20,7 @@
 /// </summary>
 void setupFont()
 {
-	if (!m_font.loadFromFile("./ASSETS/FONTS/ariblk.ttf"))
+	if (!g_font.loadFromFile("./ASSETS/FONTS/ariblk.ttf"))
 	{
 		std::cout << "font not loading" << std::endl;
 	}
