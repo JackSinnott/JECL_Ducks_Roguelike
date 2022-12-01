@@ -1,18 +1,10 @@
 #include "Game.h"
 std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::texturePtrs; // Singletons need declaring
 
-
-/// <summary>
-/// default constructor
-/// setup the window properties
-/// load and setup the text 
-/// load and setup thne image
-/// </summary>
 Game::Game() :
-	m_window{ sf::VideoMode{ G_VIEW_WIDTH * 3, G_VIEW_HEIGTH * 3,  32U }, "Roguelike Game" },
-	m_exitGame{ false } //when true game will exit
+	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" }
 {
-
+	
 }
 
 //****************************************************************
@@ -115,16 +107,16 @@ void Game::Update(sf::Time t_dt)
 	switch (m_gamestate)
 	{
 	case Gamestate::MainMenu:
-		m_mainMenuScreen.update();
+		m_mainMenuScreen.update(sf::Mouse::getPosition(m_window));
 		break;
 	case Gamestate::PauseMenu:
 		m_pauseScreen.update();
 		break;
 	case Gamestate::Options:
-		m_optionScreen.update();
+		m_optionScreen.update(sf::Mouse::getPosition(m_window));
 		break;
 	case Gamestate::Gameplay:
-		m_gameScreen.update();
+		m_gameScreen.update(t_dt);
 		break;
 	case Gamestate::GameOver:
 		m_gameOverScreen.update();
@@ -138,7 +130,7 @@ void Game::Update(sf::Time t_dt)
 
 void Game::Render(sf::RenderWindow& t_window)
 {
-
+	t_window.clear();
 	switch (m_gamestate)
 	{
 	case Gamestate::MainMenu:
@@ -159,5 +151,5 @@ void Game::Render(sf::RenderWindow& t_window)
 	default:
 		break;
 	}
-
+	t_window.display();
 }

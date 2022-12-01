@@ -19,10 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractArmour.cpp" />
+    <ClCompile Include="AbstractPotion.cpp" />
+    <ClCompile Include="AbstractWeapon.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameData.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="Globals.cpp" />
@@ -32,6 +35,7 @@
     <ClCompile Include="Options.cpp" />
     <ClCompile Include="PauseMenu.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Room.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="WeaponFactory.cpp" />
   </ItemGroup>
@@ -42,6 +46,7 @@
     <ClInclude Include="AbstractWeapon.h" />
     <ClInclude Include="ArmourFactory.h" />
     <ClInclude Include="AxeWeapon.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="DaggerWeapon.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
@@ -49,6 +54,9 @@
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="Grid.h" />
+    <ClInclude Include="Room.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="Weapon.h" />
     <ClInclude Include="HealthPotion.h" />
     <ClInclude Include="HeavyArmour.h" />
     <ClInclude Include="MainMenu.h" />
@@ -63,11 +71,9 @@
     <ClInclude Include="StrengthPotion.h" />
     <ClInclude Include="SwordWeapon.h" />
     <ClInclude Include="FileLoader.h" />
-    <ClInclude Include="GameData.h" />
     <ClInclude Include="LevelLoader.h" />
     <ClInclude Include="ResourceAllocator.h" />
     <ClInclude Include="TextureManager.h" />
-    <ClInclude Include="Tile.h" />
     <ClInclude Include="WeaponFactory.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -131,6 +137,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SFML_SDK)\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -153,6 +160,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(SFML_SDK)\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
