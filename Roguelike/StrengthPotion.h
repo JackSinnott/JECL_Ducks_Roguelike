@@ -14,7 +14,7 @@ public:
 		SetType();
 	};
 
-	int GetStrength()
+	int UseEffect() override
 	{
 		return m_strength;
 	}
