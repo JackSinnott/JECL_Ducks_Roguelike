@@ -1,28 +1,41 @@
 #ifndef GRID_H
 #define GRID_H
 
-#include "SFML/Graphics.hpp"
-#include "Globals.h"
 #include <iostream>
+#include "SFML/Graphics.hpp"
+#include <vector>
+#include "Room.h"
 
 class Grid
 {
-private:
-
 public:
-	Grid();
+	Grid(int t_x, int t_y);
+	inline ~Grid() {};
 
-	~Grid();
+	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const;
+
+	void update(sf::Time t_dt);
+
+	void setUpRoom(TileType t_type, int t_roomID, int t_row, int t_col);
+
+
+private:
+	sf::Vector2f placeRoom();
+
+	int x = 0;
+	int y = 0;
+
+	sf::Vector2f m_roomPos = sf::Vector2f();
+
+	int numOfRoomsMade = 0;
 
 	sf::Vertex m_point;
-	sf::VertexArray m_tiles;
+	sf::VertexArray m_points;
 
-	void setup(sf::Vector2f t_pos);
-	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const;
+	std::vector<Room*> m_rooms;
+
 
 
 };
 
 #endif // !GRID_H
-
-
