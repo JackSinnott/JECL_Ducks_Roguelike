@@ -20,7 +20,7 @@ public:
 	{
 		m_itemTexture = TextureManager::Acquire(ITEMS_TEXTURE);
 		m_itemSprite.setTexture(*m_itemTexture);
-		m_itemSprite.setOrigin(m_itemSprite.getTextureRect().width, m_itemSprite.getTextureRect().height);
+		m_itemSprite.setOrigin(m_itemSprite.getTextureRect().width/ 2.0f, m_itemSprite.getTextureRect().height / 2.0f);
 
 		m_itemSprite.setPosition(G_CELL_SIZE * (10) + G_CELL_SIZE / 2.0f,
 			G_CELL_SIZE * (10) + G_CELL_SIZE / 2.0f);
