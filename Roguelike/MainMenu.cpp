@@ -36,16 +36,16 @@ void MainMenu::processEvents(sf::Event t_event)
 					switch (counter)
 					{
 					case 0:
-						m_gamestate = Gamestate::Gameplay;
+						g_gamestate = Gamestate::Gameplay;
 						break;
 					case 1:
-						m_gamestate = Gamestate::Help;
+						g_gamestate = Gamestate::Help;
 						break;
 					case 2:
-						m_gamestate = Gamestate::Options;
+						g_gamestate = Gamestate::Options;
 						break;
 					case 3:
-						m_exitGame = true;
+						g_exitGame = true;
 						break;
 					}
 				}

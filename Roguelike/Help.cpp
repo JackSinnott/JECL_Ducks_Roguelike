@@ -16,7 +16,7 @@ Help::Help()
 	for (int i = 0; i < line_no; i++)
 	{
 		sf::Text newLine;
-		newLine.setFont(m_font);
+		newLine.setFont(g_font);
 		newLine.setString(help[i]);
 		newLine.setCharacterSize(40);
 		newLine.setFillColor(sf::Color::White);
@@ -42,7 +42,7 @@ void Help::processEvents(sf::Event t_event)
 		{
 			if (m_backButton->onMouseUp())
 			{
-				m_gamestate = Gamestate::MainMenu;
+				g_gamestate = Gamestate::MainMenu;
 			}
 		}
 	}

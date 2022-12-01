@@ -53,10 +53,10 @@ void Game::processEvents()
 	{
 		if (sf::Event::Closed == newEvent.type) // window message
 		{
-			m_exitGame = true;
+			g_exitGame = true;
 		}
 
-		switch (m_gamestate)
+		switch (g_gamestate)
 		{
 		case Gamestate::MainMenu:
 			m_mainMenuScreen.processEvents(newEvent);
@@ -86,7 +86,7 @@ void Game::processEvents()
 			processKeys(newEvent);
 		}
 
-		if (m_exitGame)
+		if (g_exitGame)
 		{
 			m_window.close();
 		}
@@ -99,7 +99,7 @@ void Game::processKeys(sf::Event t_event)
 {
 	if (sf::Keyboard::Escape == t_event.key.code)
 	{
-		m_exitGame = true;
+		g_exitGame = true;
 	}
 }
 
@@ -107,7 +107,7 @@ void Game::processKeys(sf::Event t_event)
 
 void Game::Update(sf::Time t_dt)
 {
-	switch (m_gamestate)
+	switch (g_gamestate)
 	{
 	case Gamestate::MainMenu:
 		m_mainMenuScreen.update(sf::Mouse::getPosition(m_window));
@@ -122,7 +122,7 @@ void Game::Update(sf::Time t_dt)
 		m_gameScreen.update(t_dt);
 		break;
 	case Gamestate::GameOver:
-		m_gameOverScreen.update();
+		m_gameOverScreen.update(sf::Mouse::getPosition(m_window));
 		break;
 	case Gamestate::Help:
 		m_helpScreen.update(sf::Mouse::getPosition(m_window));
@@ -137,7 +137,7 @@ void Game::Update(sf::Time t_dt)
 void Game::Render(sf::RenderWindow& t_window)
 {
 	t_window.clear();
-	switch (m_gamestate)
+	switch (g_gamestate)
 	{
 	case Gamestate::MainMenu:
 		m_mainMenuScreen.render(t_window);
