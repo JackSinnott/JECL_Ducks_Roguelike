@@ -87,6 +87,7 @@ unsigned const int G_CELL_SIZE = 32;
 //unsigned const int MAP_HEIGTH = MAP_COLS * CELL_SIZE ;
 
 std::string const MISSINGTEXTURE = "./ASSETS/IMAGES/MissingTexture.png";
+std::string const ITEMS_TEXTURE = "./ASSETS/IMAGES/tilemap_packed.png";
 
 extern sf::Font m_font;
 
