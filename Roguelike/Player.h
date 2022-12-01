@@ -15,6 +15,8 @@ class Player
 {
 private:
 
+	sf::View m_playerView;
+
 	// Variables
 
 	//sf::Sprite m_playerBody; 
@@ -51,8 +53,9 @@ private:
 
 	int m_damage = 2;
 	int m_armourClass = 2;
-	int health = 20;
-	int level = 1;
+	int m_health = 20;
+	int m_maxHealth = 20; //Current maximum health the player can have
+	int m_level = 1;
 	int xp = 0;
 	// Methods / Functions
 
