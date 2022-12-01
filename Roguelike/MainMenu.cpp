@@ -2,12 +2,12 @@
 
 MainMenu::MainMenu()
 {
-	sf::Vector2f buttonWidth = sf::Vector2f(400, 150);
-	std::string buttonTexts[3] = { "PLAY", "OPTIONS", "EXIT" };
-	for (int i = 0; i < 3; i++)
+	sf::Vector2f buttonSize = sf::Vector2f(400, 150);
+	std::string buttonTexts[4] = { "PLAY", "HELP", "OPTIONS", "EXIT" };
+	for (int i = 0; i < 4; i++)
 	{
-		m_buttons.push_back(new Button(sf::Vector2f(G_VIEW_WIDTH * 0.5f - (buttonWidth.x / 2), G_VIEW_HEIGTH / 4 + (buttonWidth.y * 1.2 * i)),
-		buttonWidth, buttonTexts[i], sf::Color::Yellow, sf::Color::Red, sf::Color::Green));
+		m_buttons.push_back(new Button(sf::Vector2f(G_VIEW_WIDTH * 0.5f - (buttonSize.x / 2), G_VIEW_HEIGTH / 8 + (buttonSize.y * 1.2 * i)),
+		buttonSize, buttonTexts[i], sf::Color::Yellow, sf::Color::Red, sf::Color::Green));
 	}
 	
 }
@@ -39,9 +39,12 @@ void MainMenu::processEvents(sf::Event t_event)
 						m_gamestate = Gamestate::Gameplay;
 						break;
 					case 1:
-						m_gamestate = Gamestate::Options;
+						m_gamestate = Gamestate::Help;
 						break;
 					case 2:
+						m_gamestate = Gamestate::Options;
+						break;
+					case 3:
 						m_exitGame = true;
 						break;
 					}

@@ -73,6 +73,9 @@ void Game::processEvents()
 		case Gamestate::GameOver:
 			m_gameOverScreen.processEvents(newEvent);
 			break;
+		case Gamestate::Help:
+			m_helpScreen.processEvents(newEvent);
+			break;
 		default:
 			break;
 		}
@@ -121,6 +124,9 @@ void Game::Update(sf::Time t_dt)
 	case Gamestate::GameOver:
 		m_gameOverScreen.update();
 		break;
+	case Gamestate::Help:
+		m_helpScreen.update(sf::Mouse::getPosition(m_window));
+		break;
 	default:
 		break;
 	}
@@ -147,6 +153,9 @@ void Game::Render(sf::RenderWindow& t_window)
 		break;
 	case Gamestate::GameOver:
 		m_gameOverScreen.render(t_window);
+		break;
+	case Gamestate::Help:
+		m_helpScreen.render(t_window);
 		break;
 	default:
 		break;
