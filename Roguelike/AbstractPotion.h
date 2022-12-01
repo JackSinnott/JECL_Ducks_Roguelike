@@ -14,6 +14,10 @@ public:
 		}
 	}
 	~AbstractPotion() {};
+	virtual int UseEffect() = 0;
+	void SetPotionType(Potions t_potionType) { m_potionType = t_potionType; };
+	Potions GetPotionType() { return m_potionType; };
+
 	void SetType() { m_itemType = ItemType::Potion;  m_itemSprite.setTextureRect(m_rects.at(m_potionType));};
 
 protected:

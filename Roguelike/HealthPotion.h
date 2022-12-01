@@ -6,7 +6,7 @@ class HealthPotion : public AbstractPotion
 public:
 	HealthPotion(Potions t_potionType)
 	{
-		m_potionType = t_potionType;
+		SetPotionType(t_potionType);
 		m_healing = 5 + rand() % 10;
 
 		SetupBasics();
@@ -14,10 +14,11 @@ public:
 		SetType();
 	};
 
-	int GetHealing()
+	int UseEffect() override
 	{
 		return m_healing;
 	}
+
 
 private:
 	int m_healing = 0;

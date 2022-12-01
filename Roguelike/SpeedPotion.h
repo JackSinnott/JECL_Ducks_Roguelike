@@ -13,10 +13,11 @@ public:
 		SetType();
 	};
 
-	int GetStrength()
+	int UseEffect() override
 	{
 		return m_speed;
 	}
+
 
 private:
 	int m_speed = 0;
