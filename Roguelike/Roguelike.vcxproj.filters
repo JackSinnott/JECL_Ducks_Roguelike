@@ -46,20 +46,20 @@
     <ClCompile Include="FileLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ArmourFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AbstractWeapon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AbstractItemFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="WeaponFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Gameplay.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractArmour.cpp">
+      <Filter>Source Files\Abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractWeapon.cpp">
+      <Filter>Source Files\Abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractPotion.cpp">
+      <Filter>Source Files\Abstract</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -194,6 +194,9 @@
     <Filter Include="Header Files\Armours">
       <UniqueIdentifier>{771c53d8-b6bd-46ac-8094-931650081c1d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Abstract">
+      <UniqueIdentifier>{c3ff770c-1c91-4920-877b-342aaa54d5ae}</UniqueIdentifier>
+      </Filter>
     <Filter Include="Header Files\Scenes">
       <UniqueIdentifier>{5f5f7969-a9d7-41e7-8bcf-0887a3b55b0d}</UniqueIdentifier>
     </Filter>
