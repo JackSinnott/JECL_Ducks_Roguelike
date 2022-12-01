@@ -22,6 +22,9 @@ Player::Player() : m_playerTexture(nullptr)
 
 	// Sets player to centre of map hard coded for now 
 	setPosition(G_ROOM_ROWS / 2, G_ROOM_COLS / 2);
+
+	m_playerView.setCenter(m_playerBody.getPosition());
+	m_playerView.setSize(G_VIEW_WIDTH/2, G_VIEW_HEIGTH/2);
 }
 
 
@@ -86,6 +89,7 @@ bool Player::ProcessKeys(sf::Event t_event)
 			}
 
 			m_pressingButton = t_event.key.code;
+			m_playerView.setCenter(m_playerBody.getPosition());
 		}
 	}
 
@@ -109,6 +113,7 @@ bool Player::ProcessKeys(sf::Event t_event)
 void Player::Render(sf::RenderWindow& t_window)
 {
 	t_window.draw(m_playerBody);
+	t_window.setView(m_playerView);
 }
 
 sf::Vector2f Player::GetPosition()
