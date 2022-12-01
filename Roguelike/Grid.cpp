@@ -51,6 +51,7 @@ void Grid::setUpRoom(TileType t_type, int t_roomID, int t_row, int t_col)
 
 	if (!roomExists) // If room doesn't exist
 	{
+		//Creates new room with a set position created based on the number of rooms
 		Room* r = new Room(t_roomID, placeRoom());
 		numOfRoomsMade++;
 		m_rooms.push_back(r);
