@@ -27,6 +27,7 @@ void Gameplay::update(sf::Time t_dt)
 {
 	TextureManager::Collectgarbage();
 	m_grid.update(t_dt);
+	player.Update(t_dt);
 }
 
 void Gameplay::render(sf::RenderWindow& t_window)
