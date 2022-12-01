@@ -10,7 +10,8 @@ enum class Gamestate
 	PauseMenu,
 	Options,
 	Gameplay,
-	GameOver
+	GameOver,
+	Help
 };
 extern Gamestate m_gamestate;
 extern bool m_exitGame;
