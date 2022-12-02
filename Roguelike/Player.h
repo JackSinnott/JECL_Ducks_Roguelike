@@ -17,6 +17,8 @@ private:
 	//Field of view of the player
 	sf::View m_playerView;
 
+	sf::View m_playerView;
+
 	// Variables
 
 	//sf::Sprite m_playerBody; 
