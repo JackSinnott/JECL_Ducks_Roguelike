@@ -20,8 +20,8 @@ Tile::Tile() :
 
 void Tile::setup(std::shared_ptr<sf::Texture>& t_tex, sf::Vector2f t_pos, sf::Vector2f t_offset, TileType t_type)
 {
-	m_tile.setTexture(*t_tex);
 	m_tile.setOrigin(16.f, 16.f);
+	m_tile.setTexture(*t_tex);
 	m_tile.setPosition((t_pos + sf::Vector2f(16.f, 16.f)) + t_offset);
 	// flips sprites so we have right and left walls
 	if ((t_pos + sf::Vector2f(16.f, 16.f)).x < 400)

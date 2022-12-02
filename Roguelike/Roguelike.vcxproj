@@ -51,7 +51,6 @@
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Tile.h" />
-    <ClInclude Include="Weapon.h" />
     <ClInclude Include="HealthPotion.h" />
     <ClInclude Include="HeavyArmour.h" />
     <ClInclude Include="MainMenu.h" />

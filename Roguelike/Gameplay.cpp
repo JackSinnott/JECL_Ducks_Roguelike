@@ -120,7 +120,7 @@ void Gameplay::LoadLevel()
 	m_levelLoader->Load(2);
 	m_levelLoader->Load(3);
 
-	//m_levelData.addWalls(m_walls);
+	m_grid.setUpWalls();
 }
 
 void Gameplay::processTurn()
