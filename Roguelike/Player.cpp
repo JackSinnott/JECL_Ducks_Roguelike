@@ -25,6 +25,8 @@ Player::Player() : m_playerTexture(nullptr)
 
 	m_playerView.setCenter(m_playerBody.getPosition());
 	m_playerView.setSize(G_VIEW_WIDTH/2, G_VIEW_HEIGTH/2);
+
+	m_playerInventory.SetupInventory(m_playerBody.getPosition());
 }
 
 
@@ -89,12 +91,18 @@ bool Player::ProcessKeys(sf::Event t_event)
 				break;
 			case sf::Keyboard::V:
 				std::cout << "Player pos: { " << m_playerBody.getPosition().x << ", " << m_playerBody.getPosition().y << " }";
+				break;
+			case sf::Keyboard::I:
+				m_playerInventory.ToggleInventory();
+				break;
+			
 			default:
 				break;
 			}
 
 			m_pressingButton = t_event.key.code;
 			m_playerView.setCenter(m_playerBody.getPosition());
+			m_playerInventory.UpdatePosition(m_playerBody.getPosition());
 		}
 	}
 
@@ -117,6 +125,7 @@ bool Player::ProcessKeys(sf::Event t_event)
 /// ~~~~~~~~~~~~~~~~~~~~~
 void Player::Render(sf::RenderWindow& t_window)
 {
+	m_playerInventory.Draw(t_window);
 	t_window.draw(m_playerBody);
 	t_window.setView(m_playerView);
 }
@@ -177,10 +186,15 @@ void Player::UsePotion()
 		switch (m_currentPotion->GetPotionType())
 		{
 		case Potions::Health:
-			std::cout << "Health before: " << health << std::endl;
+			std::cout << "Health before: " << m_health << std::endl;
 
-			health += m_currentPotion->UseEffect();
-			std::cout << "Health after: " << health << std::endl;
+			m_health += m_currentPotion->UseEffect();
+
+			if (m_health > m_maxHealth)
+			{
+				m_health = m_maxHealth;
+			}
+			std::cout << "Health after: " << m_health << std::endl;
 			m_currentPotion = nullptr;
 			break;
 		case Potions::Strength:

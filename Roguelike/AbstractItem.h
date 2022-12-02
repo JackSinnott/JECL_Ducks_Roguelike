@@ -31,6 +31,12 @@ public:
 	{
 		return m_itemType;
 	}
+
+	sf::Sprite & GetSprite()
+	{
+		return m_itemSprite;
+	}
+
 protected:
 	int m_rarity = 0;
 	std::shared_ptr<sf::Texture> m_itemTexture;

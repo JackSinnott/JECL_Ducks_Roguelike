@@ -39,7 +39,6 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Tile.cpp" />
-    <ClCompile Include="WeaponFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractArmour.h" />
@@ -60,7 +59,6 @@
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Tile.h" />
-    <ClInclude Include="Weapon.h" />
     <ClInclude Include="HealthPotion.h" />
     <ClInclude Include="HeavyArmour.h" />
     <ClInclude Include="MainMenu.h" />
