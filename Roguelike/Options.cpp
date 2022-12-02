@@ -2,9 +2,9 @@
 
 Options::Options()
 {
-	sf::Vector2f buttonWidth = sf::Vector2f(250, 100);
-	m_backButton = new Button(sf::Vector2f(G_VIEW_WIDTH - (buttonWidth.x + 20), G_VIEW_HEIGTH - (buttonWidth.y + 20)),
-		buttonWidth, "BACK", sf::Color::Yellow, sf::Color::Red, sf::Color::Green);
+	sf::Vector2f buttonSize = sf::Vector2f(250, 100);
+	m_backButton = new Button(sf::Vector2f(G_VIEW_WIDTH - (buttonSize.x + 20), G_VIEW_HEIGTH - (buttonSize.y + 20)),
+		buttonSize, "BACK", sf::Color::Yellow, sf::Color::Red, sf::Color::Green);
 }
 
 void Options::processEvents(sf::Event t_event)
@@ -22,7 +22,7 @@ void Options::processEvents(sf::Event t_event)
 		{
 			if (m_backButton->onMouseUp())
 			{
-				m_gamestate = Gamestate::MainMenu;
+				g_gamestate = Gamestate::MainMenu;
 			}
 		}
 	}
