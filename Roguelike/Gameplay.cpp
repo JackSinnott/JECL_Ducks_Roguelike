@@ -51,6 +51,8 @@ void Gameplay::GenerateRandomItem()
 
 	m_itemfactory = new WeaponFactory();
 
+	//AbstractWeapon* absWeapom;
+
 	for (int i = 0; i < 10; i++)
 	{
 		int n = rand() % 3;
@@ -60,8 +62,10 @@ void Gameplay::GenerateRandomItem()
 		m_absItem = m_itemfactory->CreateWeapon(w);
 		m_absItem->GenerateRandomPosition();
 		m_absItemVector.push_back(m_absItem);
-	}
 
+	}
+	//absWeapom = m_absItem;
+	player.PickUpItem(*m_absItem);
 	m_itemfactory = new ArmourFactory();
 
 	for (int i = 0; i < 10; i++)
@@ -88,26 +92,6 @@ void Gameplay::GenerateRandomItem()
 		m_absItem->GenerateRandomPosition();
 		m_absItemVector.push_back(m_absItem);
 	}
-
-	//for (AbstractItem * n: m_absItemVector)
-	//{
-	//	switch (n->GetItemType())
-	//	{
-	//	case ItemType::Weapon:
-	//		//m_testingWeapon = t_item;
-	//		std::cout << "This is a weapon" << std::endl;
-	//		break;
-	//	case ItemType::Armour:
-	//		std::cout << "This is some armour" << std::endl;
-	//		break;
-	//	case ItemType::Potion:
-	//		std::cout << "This is a potion" << std::endl;
-	//		break;
-	//	default:
-	//		std::cout << "Unable to get item type" << std::endl;
-	//		break;
-	//	}
-	//}
 
 	player.PickUpItem(*m_absItem);
 }

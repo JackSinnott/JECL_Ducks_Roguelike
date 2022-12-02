@@ -95,7 +95,12 @@ bool Player::ProcessKeys(sf::Event t_event)
 				move(0, 1);
 				action = true;
 				break;
-
+			case sf::Keyboard::Space:
+				std::cout << GetWeaponDamage() << std::endl;
+				break;
+			case sf::Keyboard::E:
+				UsePotion();
+				break;
 			case sf::Keyboard::V:
 				std::cout << "Player pos: { " << m_playerBody.getPosition().x << ", " << m_playerBody.getPosition().y << " }";
 			default:
@@ -148,15 +153,15 @@ void Player::PickUpItem(AbstractItem& t_item)
 	{
 	case ItemType::Weapon:
 		//m_testingWeapon = t_item;
-		m_currentWeapon = &t_item;
+		m_currentWeapon = static_cast<AbstractWeapon*>(&t_item);
 		std::cout << "You picked up a weapon" << std::endl;
 		break;
 	case ItemType::Armour:
-		m_currentArmour = &t_item;
+		m_currentArmour = static_cast<AbstractArmour*>(&t_item);
 		std::cout << "You picked up some armour" << std::endl;
 		break;
 	case ItemType::Potion:
-		m_currentPotion = &t_item;
+		m_currentPotion = static_cast<AbstractPotion*>(&t_item);;
 		std::cout << "You picked up a potion" << std::endl;
 		break;
 	default:
@@ -168,16 +173,44 @@ void Player::PickUpItem(AbstractItem& t_item)
 int Player::GetWeaponDamage()
 {
 	
-	return 0;
+	return m_currentWeapon->GetDamage();
+	//return 0;
 }
 
 int Player::GetArmourClass()
 {
-	return 0;
+	return m_currentArmour->GetArmour();
 }
 
 void Player::UsePotion()
 {
+	if (m_currentPotion != nullptr)
+	{
+		switch (m_currentPotion->GetPotionType())
+		{
+		case Potions::Health:
+			std::cout << "Health before: " << health << std::endl;
+
+			health += m_currentPotion->UseEffect();
+			std::cout << "Health after: " << health << std::endl;
+			m_currentPotion = nullptr;
+			break;
+		case Potions::Strength:
+			m_currentPotion->UseEffect();
+			std::cout << "Strength Potion used" << std::endl;
+			m_currentPotion = nullptr;
+			break;
+		case Potions::Speed:
+			m_currentPotion->UseEffect();
+			std::cout << "Speed Potion used" << std::endl;
+			m_currentPotion = nullptr;
+			break;
+		};
+	}
+	else
+	{
+		std::cout << "You have no potion available" << std::endl;
+	}
 }
 
 void Player::UpdateArmourLook()
