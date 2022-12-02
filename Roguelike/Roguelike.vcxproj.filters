@@ -79,6 +79,7 @@
     <ClCompile Include="Options.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="Inventory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemy.h">
@@ -189,6 +190,7 @@
     <ClInclude Include="Help.h">
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="Inventory.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
