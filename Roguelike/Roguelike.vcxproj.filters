@@ -34,7 +34,6 @@
     <ClCompile Include="WeaponFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Options.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
@@ -58,6 +57,12 @@
     </ClCompile>
     <ClCompile Include="AbstractPotion.cpp">
       <Filter>Source Files\Abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="Help.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +171,9 @@
     <ClInclude Include="FileLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Help.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
@@ -191,7 +199,7 @@
     </Filter>
     <Filter Include="Source Files\Abstract">
       <UniqueIdentifier>{c3ff770c-1c91-4920-877b-342aaa54d5ae}</UniqueIdentifier>
-      </Filter>
+    </Filter>
     <Filter Include="Header Files\Scenes">
       <UniqueIdentifier>{5f5f7969-a9d7-41e7-8bcf-0887a3b55b0d}</UniqueIdentifier>
     </Filter>

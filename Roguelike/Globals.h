@@ -10,10 +10,11 @@ enum class Gamestate
 	PauseMenu,
 	Options,
 	Gameplay,
-	GameOver
+	GameOver,
+	Help
 };
-extern Gamestate m_gamestate;
-extern bool m_exitGame;
+extern Gamestate g_gamestate;
+extern bool g_exitGame;
 
 enum class EnemyType
 {
@@ -89,7 +90,7 @@ unsigned const int G_CELL_SIZE = 32;
 std::string const MISSINGTEXTURE = "./ASSETS/IMAGES/MissingTexture.png";
 std::string const ITEMS_TEXTURE = "./ASSETS/IMAGES/tilemap_packed.png";
 
-extern sf::Font m_font;
+extern sf::Font g_font;
 
 #endif // !GLOBALS_H
 
