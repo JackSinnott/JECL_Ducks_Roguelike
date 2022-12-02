@@ -6,7 +6,7 @@
 #include "AbstractWeapon.h"
 #include "AbstractArmour.h"
 #include "AbstractPotion.h"
-
+#include "Inventory.h"
 /// <summary>
 /// Class the player directly controls.
 /// </summary>
@@ -14,7 +14,7 @@
 class Player
 {
 private:
-
+	//Field of view of the player
 	sf::View m_playerView;
 
 	// Variables
@@ -33,12 +33,11 @@ private:
 	//A basic inventory
 	Weapons m_playerWeapon;
 
-	//AbstractWeapon m_testingWeapon;
-
-	//AbstractItem * m_currentWeapon;
 	AbstractWeapon * m_currentWeapon;
 	AbstractArmour * m_currentArmour;
 	AbstractPotion * m_currentPotion;
+
+	Inventory m_playerInventory;
 
 	/// <summary>
 	/// Keeps track of whether the player is currently pressing a button.
