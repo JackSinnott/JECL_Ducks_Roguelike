@@ -26,4 +26,9 @@ void Room::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) cons
 void Room::setUpTiles(TileType t_type, int row, int col) // pass argument that is GameData (aka whats loaded)
 {
 	m_tiles[row][col].setup(m_pTexture, sf::Vector2f{ static_cast<float>(row * G_CELL_SIZE), static_cast<float>(col * G_CELL_SIZE) }, m_pos, t_type);
+
+	if (m_tiles[row][col].getType() != TileType::UNUSED && m_tiles[row][col].getType() != TileType::GROUND)
+	{
+		m_walls.push_back(m_tiles[row][col].getSprite());
+	}
 }

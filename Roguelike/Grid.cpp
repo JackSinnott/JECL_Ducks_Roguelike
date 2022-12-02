@@ -59,6 +59,14 @@ void Grid::setUpRoom(TileType t_type, int t_roomID, int t_row, int t_col)
 	m_rooms[m_rooms.size() - 1]->setUpTiles(t_type, t_row, t_col);
 }
 
+void Grid::setUpWalls()
+{
+	for (Room* room : m_rooms)
+	{
+		m_roomWalls.emplace(room->getID(), room->getWalls());
+	}
+}
+
 sf::Vector2f Grid::placeRoom()
 {
 	switch (numOfRoomsMade)

@@ -18,6 +18,7 @@ public:
 
 	void setUpRoom(TileType t_type, int t_roomID, int t_row, int t_col);
 
+	void setUpWalls();
 
 private:
 	sf::Vector2f placeRoom();
@@ -33,6 +34,7 @@ private:
 	sf::VertexArray m_points;
 
 	std::vector<Room*> m_rooms;
+	std::map<int, std::vector<sf::Sprite>> m_roomWalls;
 
 
 
