@@ -1,5 +1,18 @@
 #include "Player.h"
 
+sf::Vector2i Player::getPlayerPositionInGrid()
+{
+	return sf::Vector2i(row, col);
+}
+
+void Player::setPlayerPositionInGrid()
+{
+	row = m_playerBody.getPosition().x / G_CELL_SIZE;
+	col = m_playerBody.getPosition().y / G_CELL_SIZE;
+}
+
+
+
 /// <summary>
 /// Move the player by the specified row/col parameter passed into the function 
 /// </summary>
@@ -13,7 +26,9 @@ void Player::move(int row, int col)
 /// <summary>
 /// Default Constructor of Player.
 /// </summary>
-Player::Player() : m_playerTexture(nullptr)
+Player::Player(int t_row, int t_col) : m_playerTexture(nullptr),
+	row(t_row),
+	col(t_col)
 {
 	m_playerBody.setFillColor(sf::Color::Green);
 	m_playerBody.setSize(sf::Vector2f(G_CELL_SIZE, G_CELL_SIZE));
@@ -21,7 +36,12 @@ Player::Player() : m_playerTexture(nullptr)
 	m_playerBody.setOrigin(G_CELL_SIZE / 2.0f, G_CELL_SIZE / 2.0f);
 
 	// Sets player to centre of map hard coded for now 
-	setPosition(G_ROOM_ROWS / 2, G_ROOM_COLS / 2);
+	setPosition(row, col);
+
+	setPlayerPositionInGrid();
+
+
+	std::cout << "Players grid position in base: {" << getPlayerPositionInGrid().x << ", " << getPlayerPositionInGrid().y << "}" << "\n";
 }
 
 
@@ -36,7 +56,9 @@ Player::Player() : m_playerTexture(nullptr)
 /// ~~~~~~~~~~~~~~~~~~~~~
 void Player::Update(sf::Time t_deltaTime)
 {
-
+	setPlayerPositionInGrid();
+	std::cout << "Player Row: " << row << "\n";
+	std::cout << "Player col: " << col << "\n";
 }
 
 /// <summary>

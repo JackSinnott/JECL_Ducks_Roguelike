@@ -20,6 +20,8 @@ private:
 	//sf::Sprite m_playerBody; 
 
 	int m_x, m_y;
+
+	int row, col;
 	/// Appearance of player.
 	/// For now it will be a rectangle shape, until a spritesheet can be sorted.
 	sf::RectangleShape m_playerBody;
@@ -61,9 +63,12 @@ public:
 
 	//void InitialiseTextures();
 
+	void setPlayerPositionInGrid();
+	sf::Vector2i getPlayerPositionInGrid();
+
 	void move(int row, int col);
 
-	Player();
+	Player(int t_row, int t_col);
 
 	void Update(sf::Time t_deltaTime);
 	bool ProcessKeys(sf::Event t_event);
