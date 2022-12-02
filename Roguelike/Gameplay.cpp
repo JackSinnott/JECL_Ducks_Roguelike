@@ -1,7 +1,8 @@
 #include "Gameplay.h"
 
 Gameplay::Gameplay() :
-	m_grid(0,0)
+	m_grid(0,0),
+	player(5,5)
 {
 	m_levelLoader = new FileLoader(m_grid);
 
@@ -26,6 +27,7 @@ void Gameplay::processEvents(sf::Event t_event)
 void Gameplay::update(sf::Time t_dt)
 {
 	TextureManager::Collectgarbage();
+	player.Update(t_dt);
 	m_grid.update(t_dt);
 }
 
