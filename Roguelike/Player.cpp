@@ -32,7 +32,6 @@ Player::Player() : m_playerTexture(nullptr)
 
 	if (m_rects.size() == 0)
 	{
-		//m_rects.try_emplace(Armours)
 		m_rects.try_emplace(Armours::Heavy, sf::IntRect{ 16,128,16,16 });
 		m_rects.try_emplace(Armours::Medium, sf::IntRect{ 32,128,16,16 });
 		m_rects.try_emplace(Armours::Light, sf::IntRect{ 16,112,16,16 });
