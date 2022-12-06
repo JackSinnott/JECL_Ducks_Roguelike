@@ -10,8 +10,8 @@ public:
 	void draw(sf::RenderWindow& t_window) { t_window.draw(m_itemSprite); };
 	void GenerateRandomPosition()
 	{
-		int randomeX = rand() % 20 + 3;
-		int randomeY = rand() % 20 + 3;
+		int randomeX = rand() % 56 + 16;
+		int randomeY = rand() % 28 + 16;
 
 		m_itemSprite.setPosition( sf::Vector2f(randomeX, randomeY) * float(G_CELL_SIZE));
 	}

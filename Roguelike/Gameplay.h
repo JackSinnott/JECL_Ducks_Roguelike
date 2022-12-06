@@ -16,10 +16,14 @@ public:
 	void update(sf::Time t_dt);
 	void render(sf::RenderWindow& t_window);
 	void GenerateRandomItem();
+	void MouseEvents(sf::Event t_event);
 private:
 	void LoadLevel();
 	void processTurn();
-	void setUpShape();
+	//void setUpShape();
+	sf::Font m_arialBlackfont; // font used by message
+	sf::Text m_mouseCoordinate; // text used for message on screen
+	sf::Vector2f m_mousePositionView;
 
 	sf::Text m_infoText;
 	sf::Texture m_tileTexture;
