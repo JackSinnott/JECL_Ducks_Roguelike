@@ -17,6 +17,8 @@ public:
 	}
 	~AbstractArmour() {};
 	void SetType() { m_itemType = ItemType::Armour; m_itemSprite.setTextureRect(m_rects.at(m_armourType)); };
+	Armours GetType() { return m_armourType; }
+
 	int GetArmour()
 	{
 		if (m_rarity > 3)
