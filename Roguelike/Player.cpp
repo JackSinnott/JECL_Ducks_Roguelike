@@ -1,5 +1,8 @@
 #include "Player.h"
 
+std::unordered_map<Armours, sf::IntRect> Player::m_rects = std::unordered_map<Armours, sf::IntRect>(); // initialize
+sf::IntRect Player::m_noArmourRect = sf::IntRect();
+
 /// <summary>
 /// Move the player by the specified row/col parameter passed into the function 
 /// </summary>
@@ -15,19 +18,34 @@ void Player::move(int row, int col)
 /// </summary>
 Player::Player() : m_playerTexture(nullptr)
 {
-	m_playerBody.setFillColor(sf::Color::Green);
-	m_playerBody.setSize(sf::Vector2f(G_CELL_SIZE, G_CELL_SIZE));
+	m_playerTexture = TextureManager::Acquire(ITEMS_TEXTURE);
+	m_playerBody.setTexture(*m_playerTexture);
 
-	m_playerBody.setOrigin(G_CELL_SIZE / 2.0f, G_CELL_SIZE / 2.0f);
+	UpdateArmourLook();
 
+	m_playerBody.setOrigin(m_playerBody.getTextureRect().width / 2.0f, 
+		m_playerBody.getTextureRect().height / 2.0f);
+	m_playerBody.setScale(2.0f, 2.0f);
 	// Sets player to centre of map hard coded for now 
-	setPosition(G_ROOM_ROWS / 2, G_ROOM_COLS / 2);
 
 	m_playerView.setCenter(m_playerBody.getPosition());
 	m_playerView.setSize(G_VIEW_WIDTH/2, G_VIEW_HEIGTH/2);
 
 	m_playerInventory.SetupInventory(m_playerBody.getPosition());
+
+	setPosition(int(G_ROOM_ROWS / 2), int(G_ROOM_COLS / 2));
+	//setPosition(0, 1);
+
+	if (m_rects.size() == 0)
+	{
+		m_rects.try_emplace(Armours::Heavy, sf::IntRect{ 16,128,16,16 });
+		m_rects.try_emplace(Armours::Medium, sf::IntRect{ 32,128,16,16 });
+		m_rects.try_emplace(Armours::Light, sf::IntRect{ 16,112,16,16 });
+		m_noArmourRect = sf::IntRect{ 32,176,16,16 };
+	}
 }
+
+
 
 
 /// <summary>
@@ -41,7 +59,7 @@ Player::Player() : m_playerTexture(nullptr)
 /// ~~~~~~~~~~~~~~~~~~~~~
 void Player::Update(sf::Time t_deltaTime)
 {
-
+	UpdateArmourLook();
 }
 
 /// <summary>
@@ -138,8 +156,8 @@ sf::Vector2f Player::GetPosition()
 void Player::setPosition(int row, int col)
 {
 	// Sets player to centre of map
-	m_playerBody.setPosition(G_CELL_SIZE * (row) + G_CELL_SIZE / 2.0f,
-		G_CELL_SIZE * (col) + G_CELL_SIZE / 2.0f);
+	m_playerBody.setPosition(G_CELL_SIZE * (row),
+		G_CELL_SIZE * (col));
 }
 
 void Player::PickUpItem(AbstractItem& t_item)
@@ -215,3 +233,19 @@ void Player::UsePotion()
 	}
 }
 
+void Player::UpdateArmourLook()
+{
+	if (m_currentArmour != nullptr)
+	{
+		AbstractArmour* currentArmourAbs = static_cast<AbstractArmour*>(m_currentArmour);
+
+		Armours armourType = currentArmourAbs->GetType();
+		
+		m_playerBody.setTextureRect(m_rects.at(armourType));
+	}
+
+	else
+	{
+		m_playerBody.setTextureRect(m_noArmourRect);
+	}
+}
