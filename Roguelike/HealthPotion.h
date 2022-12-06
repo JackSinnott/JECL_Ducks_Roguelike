@@ -10,7 +10,6 @@ public:
 		m_healing = 5 + rand() % 10;
 
 		SetupBasics();
-
 		SetType();
 	};
 

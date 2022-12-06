@@ -17,8 +17,6 @@ private:
 	//Field of view of the player
 	sf::View m_playerView;
 
-	sf::View m_playerView;
-
 	// Variables
 		
 	//sf::Sprite m_playerBody; 
@@ -34,11 +32,10 @@ private:
 	static sf::IntRect m_noArmourRect;
 
 	//A basic inventory
-	Weapons m_playerWeapon;
 
-	AbstractWeapon * m_currentWeapon;
-	AbstractArmour * m_currentArmour;
-	AbstractPotion * m_currentPotion;
+	//AbstractWeapon * m_currentWeapon;
+	//AbstractArmour * m_currentArmour;
+	//AbstractPotion * m_currentPotion;
 
 	Inventory m_playerInventory;
 
@@ -77,8 +74,8 @@ public:
 	bool ProcessKeys(sf::Event t_event);
 	void Render(sf::RenderWindow& t_window);
 
-	sf::Vector2f GetPosition();
-	void setPosition(int row, int col);
+	//sf::Vector2f GetPosition();
+	void setGridPosition(int row, int col);
 	void PickUpItem(AbstractItem& t_item);
 	int GetWeaponDamage();
 	int GetArmourClass();

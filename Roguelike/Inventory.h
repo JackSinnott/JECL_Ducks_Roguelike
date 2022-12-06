@@ -18,13 +18,14 @@ public:
 	void UpdatePosition(sf::Vector2f t_playerPosition);
 	void Draw(sf::RenderWindow& t_window);
 	void ToggleInventory();
+	void RemovePotion();
 	//Getting an item
 	AbstractWeapon& GetWeapon();
 	AbstractArmour& GetArmour();
 	AbstractPotion& GetPotion();
 
 private:
-	AbstractWeapon* m_currentWeapon = new AxeWeapon(Weapons::Axe);
+	AbstractWeapon* m_currentWeapon;
 	AbstractArmour* m_currentArmour;
 	AbstractPotion* m_currentPotion;
 

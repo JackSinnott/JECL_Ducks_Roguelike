@@ -10,7 +10,6 @@ public:
 		m_strength = 2 + rand() % 10;
 
 		SetupBasics();
-
 		SetType();
 	};
 
