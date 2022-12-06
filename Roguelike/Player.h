@@ -16,17 +16,18 @@ class Player
 private:
 
 	// Variables
-
+		
 	//sf::Sprite m_playerBody; 
 
 	int m_x, m_y;
 	/// Appearance of player.
 	/// For now it will be a rectangle shape, until a spritesheet can be sorted.
-	sf::RectangleShape m_playerBody;
+	sf::Sprite m_playerBody;
 
 	/// Reference to the texture of the player.
-	sf::Texture* m_playerTexture;
-
+	std::shared_ptr<sf::Texture> m_playerTexture;
+	static std::unordered_map<Armours, sf::IntRect> m_rects;
+	static sf::IntRect m_noArmourRect;
 
 	//A basic inventory
 	Weapons m_playerWeapon;
@@ -57,6 +58,8 @@ private:
 	// Methods / Functions
 
 	//void MoveSquare(sf::Vector2f t_direction);
+
+	void UpdateArmourLook();
 
 public:
 
