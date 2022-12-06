@@ -113,7 +113,7 @@ void Game::Update(sf::Time t_dt)
 		m_mainMenuScreen.update(sf::Mouse::getPosition(m_window));
 		break;
 	case Gamestate::PauseMenu:
-		m_pauseScreen.update();
+		m_pauseScreen.update(sf::Mouse::getPosition(m_window));
 		break;
 	case Gamestate::Options:
 		m_optionScreen.update(sf::Mouse::getPosition(m_window));
