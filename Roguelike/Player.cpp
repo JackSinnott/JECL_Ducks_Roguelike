@@ -30,15 +30,13 @@ Player::Player() : m_playerTexture(nullptr)
 	m_playerBody.setOrigin(m_playerBody.getTextureRect().width / 2.0f, 
 		m_playerBody.getTextureRect().height / 2.0f);
 	m_playerBody.setScale(2.0f, 2.0f);
+
 	// Sets player to centre of map hard coded for now 
-
-
-
 	setGridPosition(int(G_ROOM_ROWS / 2), int(G_ROOM_COLS / 2));
 
 	m_playerInventory.SetupInventory(m_playerBody.getPosition());
 	m_playerView.setCenter(m_playerBody.getPosition());
-	m_playerView.setSize(G_VIEW_WIDTH, G_VIEW_HEIGTH);
+	m_playerView.setSize(G_VIEW_WIDTH/2, G_VIEW_HEIGTH/2);
 
 	if (m_rects.size() == 0)
 	{
@@ -48,9 +46,6 @@ Player::Player() : m_playerTexture(nullptr)
 		m_noArmourRect = sf::IntRect{ 32,176,16,16 };
 	}
 }
-
-
-
 
 /// <summary>
 /// Updates the player object every frame.
