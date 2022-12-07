@@ -30,13 +30,15 @@ private:
 	AbstractPotion* m_currentPotion;
 
 	sf::RectangleShape m_inventoryBackground;
-	//sf::RectangleShape m_inventoryBlockWeapon;
-	//sf::RectangleShape m_inventoryBlockArmour;
-	//sf::RectangleShape m_inventoryBlockPotion;
+	sf::RectangleShape m_inventoryBlockWeapon;
+	sf::RectangleShape m_inventoryBlockArmour;
+	sf::RectangleShape m_inventoryBlockPotion;
 
 	sf::Sprite m_inventoryWeaponSprite;
 	sf::Sprite m_inventoryArmourSprite;
 	sf::Sprite m_inventoryPotionSprite;
+
+	sf::Vector2f m_cellOffset;
 
 	bool m_showInventory;
 };
