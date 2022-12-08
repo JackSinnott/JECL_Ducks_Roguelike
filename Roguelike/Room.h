@@ -19,7 +19,13 @@ public:
 	void setUpTiles(TileType t_type, int row, int col);
 	inline int getID() { return id; }
 
+	inline sf::Vector2f getPosition() { return m_pos; }
+
 	inline std::vector<sf::Sprite> getWalls() { return m_walls; };
+
+	void setGridPosition();
+
+	inline sf::Vector2i getGridPosition() { return sf::Vector2i(row, col); }
 
 private:
 	sf::Vector2f m_pos;
@@ -27,6 +33,7 @@ private:
 	std::shared_ptr<sf::Texture> m_pTexture;
 	std::array<std::array<Tile, G_MAP_COLS>,G_MAP_ROWS> m_tiles;
 	std::vector<sf::Sprite> m_walls;
+	int row, col;
 	int id;
 };
 

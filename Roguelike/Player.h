@@ -65,6 +65,7 @@ public:
 
 	//void InitialiseTextures();
 
+
 	void setPlayerPositionInGrid();
 	sf::Vector2i getPlayerPositionInGrid();
 

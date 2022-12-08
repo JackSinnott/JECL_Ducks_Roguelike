@@ -42,6 +42,7 @@
     <ClInclude Include="AbstractWeapon.h" />
     <ClInclude Include="ArmourFactory.h" />
     <ClInclude Include="AxeWeapon.h" />
+    <ClInclude Include="BaseGameEntity.h" />
     <ClInclude Include="DaggerWeapon.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />

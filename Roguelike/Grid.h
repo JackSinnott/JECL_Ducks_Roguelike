@@ -21,6 +21,10 @@ public:
 
 	void setUpWalls();
 
+	void getRoomPosition();
+
+	void CheckCollision(Player t_player, Room* t_room);
+
 private:
 	sf::Vector2f placeRoom();
 

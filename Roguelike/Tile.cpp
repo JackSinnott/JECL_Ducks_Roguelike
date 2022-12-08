@@ -40,3 +40,9 @@ void Tile::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) cons
 {
 	t_target.draw(m_tile, t_state);
 }
+
+void Tile::setGridPosition()
+{
+	row = m_tile.getPosition().x / G_CELL_SIZE;
+	col = m_tile.getPosition().y / G_CELL_SIZE;
+}
