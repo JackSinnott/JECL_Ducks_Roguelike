@@ -32,3 +32,8 @@ void Room::setUpTiles(TileType t_type, int row, int col) // pass argument that i
 		m_walls.push_back(m_tiles[row][col].getSprite());
 	}
 }
+
+sf::Vector2f Room::getPosition(int t_roomID)
+{
+	return m_tiles[0][0].getPosition();
+}

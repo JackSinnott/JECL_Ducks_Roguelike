@@ -23,6 +23,11 @@ void Player::move(int row, int col)
 	m_playerBody.move(sf::Vector2f( row, col ) * float(G_CELL_SIZE));
 }
 
+Player::Player()
+{
+
+}
+
 /// <summary>
 /// Default Constructor of Player.
 /// </summary>
@@ -57,8 +62,8 @@ Player::Player(int t_row, int t_col) : m_playerTexture(nullptr),
 void Player::Update(sf::Time t_deltaTime)
 {
 	setPlayerPositionInGrid();
-	std::cout << "Player Row: " << row << "\n";
-	std::cout << "Player col: " << col << "\n";
+	//std::cout << "Player Row: " << row << "\n";
+	//std::cout << "Player col: " << col << "\n";
 }
 
 /// <summary>
