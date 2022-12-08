@@ -20,6 +20,8 @@ Gameplay::Gameplay() :
 	m_mouseCoordinate.setString("Mouse Position: blank, blank");
 
 	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
+
+	m_debugTools = false;
 }
 
 void Gameplay::processEvents(sf::Event t_event)
@@ -31,9 +33,14 @@ void Gameplay::processEvents(sf::Event t_event)
 		{
 			processTurn();
 		}
+
+		if (sf::Keyboard::M)
+		{
+			m_debugTools = !m_debugTools;
+		}
 	}
 
-	if (sf::Event::MouseMoved)
+	if (sf::Event::MouseMoved && m_debugTools == true)
 	{
 		MouseEvents(t_event);
 	}
