@@ -106,9 +106,18 @@ void Inventory::Draw(sf::RenderWindow& t_window)
 		t_window.draw(m_inventoryBlockWeapon);
 		t_window.draw(m_inventoryBlockArmour);
 		t_window.draw(m_inventoryBlockPotion);
-		t_window.draw(m_inventoryWeaponSprite);
-		t_window.draw(m_inventoryArmourSprite);
-		t_window.draw(m_inventoryPotionSprite);
+		if (m_currentWeapon != nullptr)
+		{
+			t_window.draw(m_inventoryWeaponSprite);
+		}
+		if (m_currentArmour != nullptr)
+		{
+			t_window.draw(m_inventoryArmourSprite);
+		}
+		if (m_currentPotion != nullptr)
+		{
+			t_window.draw(m_inventoryPotionSprite);
+		}
 	}
 }
 

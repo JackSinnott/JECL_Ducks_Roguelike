@@ -46,4 +46,6 @@ private:
 
 	Player player;
 	Enemy* m_testEnemy;
+
+	bool m_debugTools;
 };
