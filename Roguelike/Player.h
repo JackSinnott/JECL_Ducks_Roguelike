@@ -32,11 +32,6 @@ private:
 	static sf::IntRect m_noArmourRect;
 
 	//A basic inventory
-
-	//AbstractWeapon * m_currentWeapon;
-	//AbstractArmour * m_currentArmour;
-	//AbstractPotion * m_currentPotion;
-
 	Inventory m_playerInventory;
 
 	/// <summary>
@@ -50,12 +45,12 @@ private:
 	/// </summary>
 	float gridCellSize = 50.0f;
 
-	int m_damage = 2;
-	int m_armourClass = 2;
-	int m_health = 20;
+	int m_damage = 2; //Default damage of the player
+	int m_armourClass = 2; //Default armour of the player
+	int m_health = 20; //Current base health of the player
 	int m_maxHealth = 20; //Current maximum health the player can have
-	int m_level = 1;
-	int xp = 0;
+	int m_level = 1; //Player's current level
+	int xp = 0;//Player's current XP
 	// Methods / Functions
 
 	//void MoveSquare(sf::Vector2f t_direction);

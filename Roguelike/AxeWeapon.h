@@ -3,6 +3,10 @@
 class AxeWeapon : public AbstractWeapon
 {
 public:
+	/// <summary>
+	/// Constructor for setting up the weapon and its basics
+	/// </summary>
+	/// <param name="t_weaponType"></param>
 	AxeWeapon(Weapons t_weaponType)
 	{
 		m_weaponType = t_weaponType;
@@ -14,7 +18,10 @@ public:
 		SetupBasics();
 		SetType();
 	};
-
+	/// <summary>
+	/// Override function that returns the damage
+	/// </summary>
+	/// <returns></returns>
 	int GetDamage() override 
 	{
 		if (m_rarity > 5)

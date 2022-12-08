@@ -161,45 +161,37 @@ void Player::setGridPosition(int row, int col)
 		G_CELL_SIZE * (col));
 }
 
+/// <summary>
+/// Stores an item that the player has picked up
+/// </summary>
+/// <param name="t_item"></param>
 void Player::PickUpItem(AbstractItem& t_item)
 {
 	//When the item is picked up. It will need to go into the right item slot type.
-	
-	//switch (t_item.GetItemType())
-	//{
-	//case ItemType::Weapon:
-	//	//m_testingWeapon = t_item;
-	//	m_currentWeapon = static_cast<AbstractWeapon*>(&t_item);
-	//	std::cout << "You picked up a weapon" << std::endl;
-	//	break;
-	//case ItemType::Armour:
-	//	m_currentArmour = static_cast<AbstractArmour*>(&t_item);
-	//	std::cout << "You picked up some armour" << std::endl;
-	//	break;
-	//case ItemType::Potion:
-	//	m_currentPotion = static_cast<AbstractPotion*>(&t_item);;
-	//	std::cout << "You picked up a potion" << std::endl;
-	//	break;
-	//default:
-	//	std::cout << "Unable to get item type" << std::endl;
-	//	break;
-	//}
-
 	m_playerInventory.StoreItem(t_item);
 }
 
+/// <summary>
+/// Gets the damage of the current weapon
+/// </summary>
+/// <returns></returns>
 int Player::GetWeaponDamage()
 {
-	
 	return m_playerInventory.GetWeapon().GetDamage();
-	//return 0;
 }
 
+/// <summary>
+/// Gets the armour class of the player's current armour
+/// </summary>
+/// <returns></returns>
 int Player::GetArmourClass()
 {
 	return m_playerInventory.GetArmour().GetArmourClass();
 }
 
+/// <summary>
+/// Uses the current potion the player has in their inventory
+/// </summary>
 void Player::UsePotion()
 {
 	if (&m_playerInventory.GetPotion() != nullptr)
@@ -216,6 +208,7 @@ void Player::UsePotion()
 				m_health = m_maxHealth;
 			}
 			std::cout << "Health after: " << m_health << std::endl;
+			std::cout << "Health Potion used" << std::endl;
 			m_playerInventory.RemovePotion();
 			break;
 		case Potions::Strength:
@@ -236,6 +229,10 @@ void Player::UsePotion()
 	}
 }
 
+
+/// <summary>
+/// Update what the player looks like based on their armour
+/// </summary>
 void Player::UpdateArmourLook()
 {
 	if (&m_playerInventory.GetArmour() != nullptr)
