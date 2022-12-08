@@ -10,7 +10,11 @@ sf::IntRect Player::m_noArmourRect = sf::IntRect();
 /// <param name="col">The column change to move by (if any)</param>
 void Player::move(int row, int col)
 {
+	// if Enemy isnt in next cell
 	m_playerBody.move(sf::Vector2f( row, col ) * float(G_CELL_SIZE));
+
+	// else!
+	//CalculateDamageToEnemy(1, 0); // hardcoded, need to get back to this
 }
 
 /// <summary>
@@ -37,10 +41,9 @@ Player::Player() : m_playerTexture(nullptr)
 		m_rects.try_emplace(Armours::Light, sf::IntRect{ 16,112,16,16 });
 		m_noArmourRect = sf::IntRect{ 32,176,16,16 };
 	}
+
+	CombatSystem::SetPlayerHealth(&health);
 }
-
-
-
 
 /// <summary>
 /// Updates the player object every frame.
@@ -54,6 +57,11 @@ Player::Player() : m_playerTexture(nullptr)
 void Player::Update(sf::Time t_deltaTime)
 {
 	UpdateArmourLook();
+
+	if (health <= 0)
+	{
+		g_gamestate = Gamestate::GameOver;
+	}
 }
 
 /// <summary>
@@ -133,11 +141,21 @@ void Player::Render(sf::RenderWindow& t_window)
 	t_window.draw(m_playerBody);
 }
 
+/// <summary>
+/// returns the player's position on the screen.
+/// </summary>
+/// <returns>The position of the player</returns>
 sf::Vector2f Player::GetPosition()
 {
 	return m_playerBody.getPosition();
 }
 
+/// <summary>
+/// Changes the position of the player, in relation to the grid 
+/// (ie 1,2 would put the player in second row, third column, as it starts with 0,0)
+/// </summary>
+/// <param name="row">The player's new row in the grid</param>
+/// <param name="col">The player's new column in the grid</param>
 void Player::setPosition(int row, int col)
 {
 	// Sets player to centre of map
@@ -145,6 +163,11 @@ void Player::setPosition(int row, int col)
 		G_CELL_SIZE * (col));
 }
 
+/// <summary>
+/// Picks up a new item and adds it to the corresponding slot the player has.
+/// (ie for a potion, armour, or weapon)
+/// </summary>
+/// <param name="t_item">The new item to add to the inventory.</param>
 void Player::PickUpItem(AbstractItem& t_item)
 {
 	//When the item is picked up. It will need to go into the right item slot type.
@@ -170,18 +193,27 @@ void Player::PickUpItem(AbstractItem& t_item)
 	}
 }
 
+/// <summary>
+/// Gets the damage the weapon the player is currently holding.
+/// </summary>
+/// <returns>The damage caused by the player's weapon.</returns>
 int Player::GetWeaponDamage()
 {
-	
 	return m_currentWeapon->GetDamage();
-	//return 0;
 }
 
+/// <summary>
+/// Returns the AC of the player - aka how difficult to hit the player
+/// </summary>
+/// <returns>The AC of the player.</returns>
 int Player::GetArmourClass()
 {
 	return m_currentArmour->GetArmour();
 }
 
+/// <summary>
+/// Uses the potion in the player's possession
+/// </summary>
 void Player::UsePotion()
 {
 	if (m_currentPotion != nullptr)
@@ -213,6 +245,9 @@ void Player::UsePotion()
 	}
 }
 
+/// <summary>
+/// Visually updates what the player looks like to match the armour they're wearing.
+/// </summary>
 void Player::UpdateArmourLook()
 {
 	if (m_currentArmour != nullptr)
@@ -228,4 +263,107 @@ void Player::UpdateArmourLook()
 	{
 		m_playerBody.setTextureRect(m_noArmourRect);
 	}
+}
+
+/// <summary>
+/// Calculates if the player hits the enemy, and if they do, how much damage the hit does.
+/// </summary>
+/// <param name="t_EnemyAC">The armour class of the enemy.</param>
+/// <param name="t_index">The index of the enemy in the vector storing them.</param>
+void Player::CalculateDamageToEnemy(int t_EnemyAC, int t_index)
+{
+	bool hitEnemy = CombatSystem::BattleEquation(level, t_EnemyAC, GetHitModifier());
+
+	if (hitEnemy)
+	{
+		std::cout << "You hit the enemy!" << std::endl;
+		xp += CombatSystem::HurtEnemy(t_index, GetDamageModifier() + GetWeaponDamage());
+	}
+
+	else
+	{
+		std::cout << "You missed the enemy..." << std::endl;
+	}
+}
+
+/// <summary>
+/// Adds hit chance to the players attempted strike, determined by their strength.
+/// </summary>
+/// <returns>The modifier to the hit chance.</returns>
+int Player::GetHitModifier()
+{
+	int modifier = 0;
+
+	if (m_strength < 7)
+	{
+		modifier = -7 + m_strength;
+	}
+
+	else if (m_strength >= 17)
+	{
+		modifier++;
+
+		if (m_strength >= 19)
+		{
+			modifier++;
+
+			if (m_strength >= 21)
+			{
+				modifier++;
+
+				if (m_strength >= 31)
+				{
+					modifier++;
+				}
+			}
+		}
+	}
+
+	return modifier;
+}
+
+/// <summary>
+/// Adds damage to players attack, the stronger they are.
+/// </summary>
+/// <returns>The modifier to the damage.</returns>
+int Player::GetDamageModifier()
+{
+	int modifier = 0;	
+
+	if (m_strength < 7)
+	{
+		modifier = -7 + m_strength;
+	}
+
+	else if (m_strength >= 16)
+	{
+		modifier++;
+
+		if (m_strength >= 17)
+		{
+			modifier++;
+
+			if (m_strength >= 18)
+			{
+				modifier++;
+
+				if (m_strength >= 20)
+				{
+					modifier++;
+
+					if (m_strength >= 22)
+					{
+						modifier++;
+
+						if (m_strength >= 31)
+						{
+							modifier++;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return modifier;
 }
