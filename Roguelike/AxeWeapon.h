@@ -3,6 +3,10 @@
 class AxeWeapon : public AbstractWeapon
 {
 public:
+	/// <summary>
+	/// Constructor for setting up the weapon and its basics
+	/// </summary>
+	/// <param name="t_weaponType"></param>
 	AxeWeapon(Weapons t_weaponType)
 	{
 		m_weaponType = t_weaponType;
@@ -11,14 +15,13 @@ public:
 
 		m_rarity += rand() % 10;
 
-		//m_itemSprite.setTexture(*m_itemTexture);
-		//m_itemSprite.setOrigin(G_CELL_SIZE / 2.0f, G_CELL_SIZE / 2.0f);
-
-		m_itemSprite.setPosition(10 * float(G_CELL_SIZE), 10 * float(G_CELL_SIZE));
-		//m_itemSprite.setScale(0.5f, 0.5f);
+		SetupBasics();
 		SetType();
 	};
-
+	/// <summary>
+	/// Override function that returns the damage
+	/// </summary>
+	/// <returns></returns>
 	int GetDamage() override 
 	{
 		if (m_rarity > 5)
