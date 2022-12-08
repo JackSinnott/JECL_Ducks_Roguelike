@@ -74,14 +74,50 @@ void Grid::getRoomPosition()
 {
 	for (Room* r : m_rooms)
 	{
-		std::cout << "The current room positions are: { " << r->getGridPosition().x << " , " << r->getGridPosition().y << "}\n";
-
+		//std::cout << "The current room positions are: { " << r->getGridPosition().x << " , " << r->getGridPosition().y << "}\n";
 	}
 }
 
-void Grid::CheckCollision(Player t_player, Room* t_room)
+Room* Grid::checkRoom(int t_roomID)
 {
+	return m_rooms.at(t_roomID);
+}
 
+int Grid::whatRoomIsPlayerIn(sf::Vector2i t_playerPos)
+{
+	m_playerRoom = -1;
+	if (t_playerPos.x <= m_rooms.at(1)->getGridPosition().x)
+	{
+		if (t_playerPos.y < m_rooms.at(2)->getGridPosition().y)
+		{
+			m_playerRoom = 1;
+		}
+	}
+	if (t_playerPos.x >= m_rooms.at(1)->getGridPosition().x)
+	{
+		if (t_playerPos.y < m_rooms.at(2)->getGridPosition().y)
+		{
+			m_playerRoom = 2;
+		}
+	}
+	if (t_playerPos.x <= m_rooms.at(1)->getGridPosition().x)
+	{
+		if (t_playerPos.y >= m_rooms.at(3)->getGridPosition().y)
+		{
+			m_playerRoom = 3;
+		}
+	}
+
+	if (t_playerPos.x >= m_rooms.at(1)->getGridPosition().x)
+	{
+		if (t_playerPos.y >= m_rooms.at(3)->getGridPosition().y)
+		{
+			m_playerRoom = 4;
+		}
+	}
+	
+	
+		return m_playerRoom;
 }
 
 sf::Vector2f Grid::placeRoom()

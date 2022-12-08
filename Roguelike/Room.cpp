@@ -42,3 +42,5 @@ void Room::setGridPosition()
 	col = m_pos.y / G_CELL_SIZE;
 }
 
+
+

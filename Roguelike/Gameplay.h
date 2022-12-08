@@ -8,6 +8,8 @@
 #include "WeaponFactory.h"
 #include "ArmourFactory.h"
 #include "PotionFactory.h"
+#include "CollisionHandler.h"
+
 class Gameplay
 {
 public:
@@ -19,7 +21,6 @@ public:
 private:
 	void LoadLevel();
 	void processTurn();
-	void setUpShape();
 
 	sf::Text m_infoText;
 	sf::Texture m_tileTexture;
@@ -42,4 +43,5 @@ private:
 
 	Player player;
 	Enemy* m_testEnemy;
+	CollisionHandler m_cH;
 };

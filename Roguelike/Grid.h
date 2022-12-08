@@ -23,13 +23,17 @@ public:
 
 	void getRoomPosition();
 
-	void CheckCollision(Player t_player, Room* t_room);
+	Room* checkRoom(int t_roomID);
+
+	int whatRoomIsPlayerIn(sf::Vector2i t_playerPos);
+
 
 private:
 	sf::Vector2f placeRoom();
 
 	int x = 0;
 	int y = 0;
+	int m_playerRoom;
 
 	sf::Vector2f m_roomPos = sf::Vector2f();
 

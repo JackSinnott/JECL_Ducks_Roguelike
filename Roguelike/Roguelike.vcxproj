@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CollisionHandler.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -42,7 +43,7 @@
     <ClInclude Include="AbstractWeapon.h" />
     <ClInclude Include="ArmourFactory.h" />
     <ClInclude Include="AxeWeapon.h" />
-    <ClInclude Include="BaseGameEntity.h" />
+    <ClInclude Include="CollisionHandler.h" />
     <ClInclude Include="DaggerWeapon.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
