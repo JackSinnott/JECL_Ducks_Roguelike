@@ -27,6 +27,8 @@ public:
 
 	inline sf::Vector2i getGridPosition() { return sf::Vector2i(row, col); }
 
+	
+
 private:
 	sf::Vector2f m_pos;
 

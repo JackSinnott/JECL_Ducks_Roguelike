@@ -2,7 +2,8 @@
 
 Gameplay::Gameplay() :
 	m_grid(0,0),
-	player(5,5)
+	player(5,5),
+	m_cH(player.getPlayerPositionInGrid())
 {
 	m_levelLoader = new FileLoader(m_grid);
 
@@ -29,6 +30,7 @@ void Gameplay::update(sf::Time t_dt)
 	TextureManager::Collectgarbage();
 	player.Update(t_dt);
 	m_grid.update(t_dt);
+	std::cout << "Player is in room: " << m_grid.whatRoomIsPlayerIn(player.getPlayerPositionInGrid()) << "\n";
 }
 
 void Gameplay::render(sf::RenderWindow& t_window)
@@ -90,26 +92,6 @@ void Gameplay::GenerateRandomItem()
 		m_absItem->GenerateRandomPosition();
 		m_absItemVector.push_back(m_absItem);
 	}
-
-	//for (AbstractItem * n: m_absItemVector)
-	//{
-	//	switch (n->GetItemType())
-	//	{
-	//	case ItemType::Weapon:
-	//		//m_testingWeapon = t_item;
-	//		std::cout << "This is a weapon" << std::endl;
-	//		break;
-	//	case ItemType::Armour:
-	//		std::cout << "This is some armour" << std::endl;
-	//		break;
-	//	case ItemType::Potion:
-	//		std::cout << "This is a potion" << std::endl;
-	//		break;
-	//	default:
-	//		std::cout << "Unable to get item type" << std::endl;
-	//		break;
-	//	}
-	//}
 
 	player.PickUpItem(*m_absItem);
 }
