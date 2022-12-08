@@ -119,6 +119,13 @@ int Grid::whatRoomIsPlayerIn(sf::Vector2i t_playerPos)
 	return m_playerRoom;
 }
 
+void Grid::checkCollisionPlayerWall(sf::Vector2i t_playerPos)
+{
+	m_roomWalls.at(m_playerRoom)
+
+
+}
+
 sf::Vector2f Grid::placeRoom()
 {
 	switch (numOfRoomsMade)
