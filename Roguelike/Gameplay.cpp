@@ -39,7 +39,7 @@ void Gameplay::processEvents(sf::Event t_event)
 			if (t_event.key.code == sf::Keyboard::P)
 			{
 				g_gamestate = Gamestate::PauseMenu;
-      }
+			}
       
 			if (t_event.key.code == sf::Keyboard::M)
 			{
