@@ -33,10 +33,12 @@ void Gameplay::processEvents(sf::Event t_event)
 		{
 			processTurn();
 		}
-
-		if (sf::Keyboard::M)
+		if (sf::Event::KeyReleased == t_event.type)
 		{
-			m_debugTools = !m_debugTools;
+			if (t_event.key.code == sf::Keyboard::M)
+			{
+				m_debugTools = !m_debugTools;
+			}
 		}
 	}
 
@@ -62,7 +64,11 @@ void Gameplay::render(sf::RenderWindow& t_window)
 	player.Render(t_window);
 	m_testEnemy->render(t_window);
 	m_mousePositionView = t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window));
-	t_window.draw(m_mouseCoordinate);
+	if (m_debugTools)
+	{
+		t_window.draw(m_mouseCoordinate);
+	}
+
 
 	for(AbstractItem * n : m_absItemVector)
 	{
