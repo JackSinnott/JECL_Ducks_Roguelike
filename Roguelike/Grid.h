@@ -13,7 +13,7 @@ public:
 	inline ~Grid() {};
 
 	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const;
-
+	 
 	void update(sf::Time t_dt);
 
 	void setUpRoom(TileType t_type, int t_roomID, int t_row, int t_col);

@@ -1,5 +1,8 @@
 #include "Player.h"
 
+std::unordered_map<Armours, sf::IntRect> Player::m_rects = std::unordered_map<Armours, sf::IntRect>(); // initialize
+sf::IntRect Player::m_noArmourRect = sf::IntRect();
+
 /// <summary>
 /// Move the player by the specified row/col parameter passed into the function 
 /// </summary>
@@ -8,6 +11,10 @@
 void Player::move(int row, int col)
 {
 	m_playerBody.move(sf::Vector2f( row, col ) * float(G_CELL_SIZE));
+	std::cout << "Player's position: " 
+		<< m_playerBody.getPosition().x 
+		<< ", " <<
+		m_playerBody.getPosition().y << std::endl;
 }
 
 /// <summary>
@@ -15,15 +22,30 @@ void Player::move(int row, int col)
 /// </summary>
 Player::Player() : m_playerTexture(nullptr)
 {
-	m_playerBody.setFillColor(sf::Color::Green);
-	m_playerBody.setSize(sf::Vector2f(G_CELL_SIZE, G_CELL_SIZE));
+	m_playerTexture = TextureManager::Acquire(ITEMS_TEXTURE);
+	m_playerBody.setTexture(*m_playerTexture);
 
-	m_playerBody.setOrigin(G_CELL_SIZE / 2.0f, G_CELL_SIZE / 2.0f);
+	UpdateArmourLook();
+
+	m_playerBody.setOrigin(m_playerBody.getTextureRect().width / 2.0f, 
+		m_playerBody.getTextureRect().height / 2.0f);
+	m_playerBody.setScale(2.0f, 2.0f);
 
 	// Sets player to centre of map hard coded for now 
-	setPosition(G_ROOM_ROWS / 2, G_ROOM_COLS / 2);
-}
+	setGridPosition(int(G_ROOM_ROWS / 2), int(G_ROOM_COLS / 2));
 
+	m_playerInventory.SetupInventory(m_playerBody.getPosition());
+	m_playerView.setCenter(m_playerBody.getPosition());
+	m_playerView.setSize(G_VIEW_WIDTH/2, G_VIEW_HEIGTH/2);
+
+	if (m_rects.size() == 0)
+	{
+		m_rects.try_emplace(Armours::Heavy, sf::IntRect{ 16,128,16,16 });
+		m_rects.try_emplace(Armours::Medium, sf::IntRect{ 32,128,16,16 });
+		m_rects.try_emplace(Armours::Light, sf::IntRect{ 16,112,16,16 });
+		m_noArmourRect = sf::IntRect{ 32,176,16,16 };
+	}
+}
 
 /// <summary>
 /// Updates the player object every frame.
@@ -36,7 +58,7 @@ Player::Player() : m_playerTexture(nullptr)
 /// ~~~~~~~~~~~~~~~~~~~~~
 void Player::Update(sf::Time t_deltaTime)
 {
-
+	UpdateArmourLook();
 }
 
 /// <summary>
@@ -85,12 +107,21 @@ bool Player::ProcessKeys(sf::Event t_event)
 				UsePotion();
 				break;
 			case sf::Keyboard::V:
-				std::cout << "Player pos: { " << m_playerBody.getPosition().x << ", " << m_playerBody.getPosition().y << " }";
+				std::cout << "Player pos: { " << m_playerBody.getPosition().x << ", " << m_playerBody.getPosition().y << " }" << std::endl;
+				break;
+			case sf::Keyboard::I:
+				m_playerInventory.ToggleInventory();
+				break;
+			
 			default:
 				break;
 			}
 
+			
+
 			m_pressingButton = t_event.key.code;
+			m_playerView.setCenter(m_playerBody.getPosition());
+			m_playerInventory.UpdatePosition(m_playerBody.getPosition());
 		}
 	}
 
@@ -113,80 +144,82 @@ bool Player::ProcessKeys(sf::Event t_event)
 /// ~~~~~~~~~~~~~~~~~~~~~
 void Player::Render(sf::RenderWindow& t_window)
 {
+	m_playerInventory.Draw(t_window);
 	t_window.draw(m_playerBody);
+	t_window.setView(m_playerView);
 }
 
-sf::Vector2f Player::GetPosition()
-{
-	return m_playerBody.getPosition();
-}
+//sf::Vector2f Player::GetPosition()
+//{
+//	return m_playerBody.getPosition();
+//}
 
-void Player::setPosition(int row, int col)
+void Player::setGridPosition(int row, int col)
 {
 	// Sets player to centre of map
-	m_playerBody.setPosition(G_CELL_SIZE * (row) + G_CELL_SIZE / 2.0f,
-		G_CELL_SIZE * (col) + G_CELL_SIZE / 2.0f);
+	m_playerBody.setPosition(G_CELL_SIZE * (row),
+		G_CELL_SIZE * (col));
 }
 
+/// <summary>
+/// Stores an item that the player has picked up
+/// </summary>
+/// <param name="t_item"></param>
 void Player::PickUpItem(AbstractItem& t_item)
 {
 	//When the item is picked up. It will need to go into the right item slot type.
-	
-	switch (t_item.GetItemType())
-	{
-	case ItemType::Weapon:
-		//m_testingWeapon = t_item;
-		m_currentWeapon = static_cast<AbstractWeapon*>(&t_item);
-		std::cout << "You picked up a weapon" << std::endl;
-		break;
-	case ItemType::Armour:
-		m_currentArmour = static_cast<AbstractArmour*>(&t_item);
-		std::cout << "You picked up some armour" << std::endl;
-		break;
-	case ItemType::Potion:
-		m_currentPotion = static_cast<AbstractPotion*>(&t_item);;
-		std::cout << "You picked up a potion" << std::endl;
-		break;
-	default:
-		std::cout << "Unable to get item type" << std::endl;
-		break;
-	}
+	m_playerInventory.StoreItem(t_item);
 }
 
+/// <summary>
+/// Gets the damage of the current weapon
+/// </summary>
+/// <returns></returns>
 int Player::GetWeaponDamage()
 {
-	
-	return m_currentWeapon->GetDamage();
-	//return 0;
+	return m_playerInventory.GetWeapon().GetDamage();
 }
 
+/// <summary>
+/// Gets the armour class of the player's current armour
+/// </summary>
+/// <returns></returns>
 int Player::GetArmourClass()
 {
-	return m_currentArmour->GetArmour();
+	return m_playerInventory.GetArmour().GetArmourClass();
 }
 
+/// <summary>
+/// Uses the current potion the player has in their inventory
+/// </summary>
 void Player::UsePotion()
 {
-	if (m_currentPotion != nullptr)
+	if (&m_playerInventory.GetPotion() != nullptr)
 	{
-		switch (m_currentPotion->GetPotionType())
+		switch (m_playerInventory.GetPotion().GetPotionType())
 		{
 		case Potions::Health:
-			std::cout << "Health before: " << health << std::endl;
+			std::cout << "Health before: " << m_health << std::endl;
 
-			health += m_currentPotion->UseEffect();
-			std::cout << "Health after: " << health << std::endl;
-			m_currentPotion = nullptr;
+			m_health += m_playerInventory.GetPotion().UseEffect();
+
+			if (m_health > m_maxHealth)
+			{
+				m_health = m_maxHealth;
+			}
+			std::cout << "Health after: " << m_health << std::endl;
+			std::cout << "Health Potion used" << std::endl;
+			m_playerInventory.RemovePotion();
 			break;
 		case Potions::Strength:
-			m_currentPotion->UseEffect();
+			m_playerInventory.GetPotion().UseEffect();
 			std::cout << "Strength Potion used" << std::endl;
-			m_currentPotion = nullptr;
+			m_playerInventory.RemovePotion();
 			break;
 		case Potions::Speed:
-			m_currentPotion->UseEffect();
+			m_playerInventory.GetPotion().UseEffect();
 			std::cout << "Speed Potion used" << std::endl;
-			m_currentPotion = nullptr;
+			m_playerInventory.RemovePotion();
 			break;
 		};
 	}
@@ -196,3 +229,23 @@ void Player::UsePotion()
 	}
 }
 
+
+/// <summary>
+/// Update what the player looks like based on their armour
+/// </summary>
+void Player::UpdateArmourLook()
+{
+	if (&m_playerInventory.GetArmour() != nullptr)
+	{
+		AbstractArmour* currentArmourAbs = static_cast<AbstractArmour*>(&m_playerInventory.GetArmour());
+
+		Armours armourType = currentArmourAbs->GetType();
+		
+		m_playerBody.setTextureRect(m_rects.at(armourType));
+	}
+
+	else
+	{
+		m_playerBody.setTextureRect(m_noArmourRect);
+	}
+}

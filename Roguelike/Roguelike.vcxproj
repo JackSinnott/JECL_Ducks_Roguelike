@@ -31,6 +31,7 @@
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Help.cpp" />
+    <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Options.cpp" />
@@ -38,7 +39,6 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Tile.cpp" />
-    <ClCompile Include="WeaponFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractArmour.h" />
@@ -56,9 +56,9 @@
     <ClInclude Include="Globals.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Help.h" />
+    <ClInclude Include="Inventory.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Tile.h" />
-    <ClInclude Include="Weapon.h" />
     <ClInclude Include="HealthPotion.h" />
     <ClInclude Include="HeavyArmour.h" />
     <ClInclude Include="MainMenu.h" />
