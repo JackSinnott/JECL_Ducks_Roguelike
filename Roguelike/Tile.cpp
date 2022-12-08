@@ -15,7 +15,10 @@ Tile::Tile() :
 		m_rects.try_emplace(TileType::UPPER_CORNER, sf::IntRect{ 0,32,32,32 });
 		m_rects.try_emplace(TileType::LOWER_CORNER, sf::IntRect{ 32,32,32,32 });
 		m_rects.try_emplace(TileType::INSIDE_WALL, sf::IntRect{ 64,32,32,32 });
+
 	}
+
+
 }
 
 void Tile::setup(std::shared_ptr<sf::Texture>& t_tex, sf::Vector2f t_pos, sf::Vector2f t_offset, TileType t_type)
@@ -34,9 +37,25 @@ void Tile::setup(std::shared_ptr<sf::Texture>& t_tex, sf::Vector2f t_pos, sf::Ve
 		int rotation = rand() % 4; // 0-3
 		m_tile.setRotation(90 * rotation);
 	}
+
+	//If the current tile is a wall, it'll always be visible for now
+	//if (m_currentType == TileType::VERTICAL_WALL
+	//	|| m_currentType == TileType::HORIZONTAL_WALL
+	//	|| m_currentType == TileType::UPPER_CORNER
+	//	|| m_currentType == TileType::LOWER_CORNER
+	//	)
+	//{
+	//	m_visibility = true;
+	//}
+	//m_visibility = true;
 }
 
 void Tile::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) const
 {
+	//Draws the tile if it is visible
+	//if (m_visibility)
+	//{
+	//	t_target.draw(m_tile, t_state);
+	//}
 	t_target.draw(m_tile, t_state);
 }

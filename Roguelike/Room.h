@@ -25,6 +25,8 @@ private:
 	std::shared_ptr<sf::Texture> m_pTexture;
 	std::array<std::array<Tile, G_MAP_COLS>,G_MAP_ROWS> m_tiles;
 	int id;
+
+	bool m_revealed;
 };
 
 #endif // !ROOM_H
