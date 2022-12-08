@@ -7,9 +7,11 @@
 class CollisionHandler
 {
 public:
-	CollisionHandler(sf::Vector2i(t_playerPos));
+	CollisionHandler();
 
-	bool checkCollisonWithWall();
+	void update(sf::Vector2i(t_playerPos));
+
+	bool checkCollisonWithWall(int t_PlayerRoom);
 
 private:
 	sf::Vector2i m_playerPos;

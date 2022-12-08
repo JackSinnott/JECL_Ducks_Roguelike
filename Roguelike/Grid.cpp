@@ -1,7 +1,7 @@
 #include "Grid.h"
 #include "Globals.h"
 
-Grid::Grid(int t_x, int t_y) : x(t_x), y(t_y)
+Grid::Grid(int t_x, int t_y) : x(t_x), y(t_y),m_playerRoom(0)
 {
 	for (int i = 0; i < G_MAP_COLS; i++)
 	{
@@ -116,8 +116,7 @@ int Grid::whatRoomIsPlayerIn(sf::Vector2i t_playerPos)
 		}
 	}
 	
-	
-		return m_playerRoom;
+	return m_playerRoom;
 }
 
 sf::Vector2f Grid::placeRoom()

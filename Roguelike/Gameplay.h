@@ -8,7 +8,6 @@
 #include "WeaponFactory.h"
 #include "ArmourFactory.h"
 #include "PotionFactory.h"
-#include "CollisionHandler.h"
 
 class Gameplay
 {

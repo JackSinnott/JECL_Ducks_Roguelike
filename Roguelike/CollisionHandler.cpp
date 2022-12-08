@@ -1,12 +1,19 @@
 #include "CollisionHandler.h"
 
-CollisionHandler::CollisionHandler(sf::Vector2i(t_playerPos)) : m_playerPos(t_playerPos)
+CollisionHandler::CollisionHandler() 
 {
-	m_surroundingTiles.push_back(sf::Vector2i(m_playerPos.x - 1, m_playerPos.y));
-	m_surroundingTiles.push_back(sf::Vector2i(m_playerPos.x + 1, m_playerPos.y));
-	m_surroundingTiles.push_back(sf::Vector2i(m_playerPos.x, m_playerPos.y - 1));
-	m_surroundingTiles.push_back(sf::Vector2i(m_playerPos.x, m_playerPos.y + 1));
+	
+}
 
+void CollisionHandler::update(sf::Vector2i(t_playerPos))
+{
+	if (m_surroundingTiles.size() < 4)
+	{
+		m_surroundingTiles.push_back(sf::Vector2i(t_playerPos.x - 1, t_playerPos.y));
+		m_surroundingTiles.push_back(sf::Vector2i(t_playerPos.x + 1, t_playerPos.y));
+		m_surroundingTiles.push_back(sf::Vector2i(t_playerPos.x, t_playerPos.y - 1));
+		m_surroundingTiles.push_back(sf::Vector2i(t_playerPos.x, t_playerPos.y + 1));
+	}
 	int test = 1;
 	for (sf::Vector2i pos : m_surroundingTiles)
 	{
@@ -14,7 +21,8 @@ CollisionHandler::CollisionHandler(sf::Vector2i(t_playerPos)) : m_playerPos(t_pl
 	}
 }
 
-bool CollisionHandler::checkCollisonWithWall()
+bool CollisionHandler::checkCollisonWithWall(int t_playerRoom)
 {
+
 	return false;
 }
