@@ -33,8 +33,14 @@ void Gameplay::processEvents(sf::Event t_event)
 		{
 			processTurn();
 		}
+
 		if (sf::Event::KeyReleased == t_event.type)
 		{
+			if (t_event.key.code == sf::Keyboard::P)
+			{
+				g_gamestate = Gamestate::PauseMenu;
+      }
+      
 			if (t_event.key.code == sf::Keyboard::M)
 			{
 				m_debugTools = !m_debugTools;
