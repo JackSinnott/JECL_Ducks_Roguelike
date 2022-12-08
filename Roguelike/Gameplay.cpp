@@ -3,7 +3,7 @@
 Gameplay::Gameplay() :
 	m_grid(0,0),
 	player(5,5),
-	m_cH(player.getPlayerPositionInGrid())
+	m_cH()
 {
 	m_levelLoader = new FileLoader(m_grid);
 
@@ -30,7 +30,8 @@ void Gameplay::update(sf::Time t_dt)
 	TextureManager::Collectgarbage();
 	player.Update(t_dt);
 	m_grid.update(t_dt);
-	std::cout << "Player is in room: " << m_grid.whatRoomIsPlayerIn(player.getPlayerPositionInGrid()) << "\n";
+	m_grid.whatRoomIsPlayerIn(player.getPlayerPositionInGrid());
+	m_cH.update(player.getPlayerPositionInGrid());
 }
 
 void Gameplay::render(sf::RenderWindow& t_window)

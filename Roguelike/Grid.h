@@ -6,6 +6,7 @@
 #include <vector>
 #include "Room.h"
 #include "Player.h"
+#include "CollisionHandler.h"
 
 class Grid
 {
@@ -46,6 +47,7 @@ private:
 	std::map<int, std::vector<sf::Sprite>> m_roomWalls;
 
 	Player m_player;
+
 
 };
 
