@@ -6,7 +6,7 @@
 #include "AbstractWeapon.h"
 #include "AbstractArmour.h"
 #include "AbstractPotion.h"
-
+#include "Inventory.h"
 /// <summary>
 /// Class the player directly controls.
 /// </summary>
@@ -14,6 +14,8 @@
 class Player
 {
 private:
+	//Field of view of the player
+	sf::View m_playerView;
 
 	// Variables
 		
@@ -30,14 +32,7 @@ private:
 	static sf::IntRect m_noArmourRect;
 
 	//A basic inventory
-	Weapons m_playerWeapon;
-
-	//AbstractWeapon m_testingWeapon;
-
-	//AbstractItem * m_currentWeapon;
-	AbstractWeapon * m_currentWeapon;
-	AbstractArmour * m_currentArmour;
-	AbstractPotion * m_currentPotion;
+	Inventory m_playerInventory;
 
 	/// <summary>
 	/// Keeps track of whether the player is currently pressing a button.
@@ -50,11 +45,12 @@ private:
 	/// </summary>
 	float gridCellSize = 50.0f;
 
-	int m_damage = 2;
-	int m_armourClass = 2;
-	int health = 20;
-	int level = 1;
-	int xp = 0;
+	int m_damage = 2; //Default damage of the player
+	int m_armourClass = 2; //Default armour of the player
+	int m_health = 20; //Current base health of the player
+	int m_maxHealth = 20; //Current maximum health the player can have
+	int m_level = 1; //Player's current level
+	int xp = 0;//Player's current XP
 	// Methods / Functions
 
 	//void MoveSquare(sf::Vector2f t_direction);
@@ -73,8 +69,8 @@ public:
 	bool ProcessKeys(sf::Event t_event);
 	void Render(sf::RenderWindow& t_window);
 
-	sf::Vector2f GetPosition();
-	void setPosition(int row, int col);
+	//sf::Vector2f GetPosition();
+	void setGridPosition(int row, int col);
 	void PickUpItem(AbstractItem& t_item);
 	int GetWeaponDamage();
 	int GetArmourClass();

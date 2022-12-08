@@ -48,12 +48,6 @@ private:
 	Options m_optionScreen;
 	Help m_helpScreen;
 
-	//WeaponFactory* exampleWeapon;
-	AbstractItemFactory* m_itemfactory;
-	AbstractWeapon* m_absWeapon;
-
-	std::vector<AbstractWeapon*> m_absWeaponVector;
-
 	sf::RenderWindow m_window; // main SFML window
 };
 
