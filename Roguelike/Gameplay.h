@@ -17,6 +17,8 @@ public:
 	void render(sf::RenderWindow& t_window);
 	void GenerateRandomItem();
 	void MouseEvents(sf::Event t_event);
+
+	void ResetGame();
 private:
 	void LoadLevel();
 	void processTurn();

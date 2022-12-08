@@ -107,6 +107,8 @@ void Game::processKeys(sf::Event t_event)
 
 void Game::Update(sf::Time t_dt)
 {
+	g_previousState = g_gamestate;
+
 	switch (g_gamestate)
 	{
 	case Gamestate::MainMenu:
@@ -129,6 +131,11 @@ void Game::Update(sf::Time t_dt)
 		break;
 	default:
 		break;
+	}
+
+	if (g_previousState == Gamestate::Gameplay && (g_gamestate == Gamestate::GameOver || g_gamestate == Gamestate::MainMenu))
+	{
+		m_gameScreen.ResetGame();
 	}
 }
 
