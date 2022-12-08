@@ -28,6 +28,8 @@ public:
 
 	int whatRoomIsPlayerIn(sf::Vector2i t_playerPos);
 
+	void checkCollisionPlayerWall(sf::Vector2i t_playerPos);
+
 
 private:
 	sf::Vector2f placeRoom();
