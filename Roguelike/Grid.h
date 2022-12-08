@@ -5,6 +5,7 @@
 #include "SFML/Graphics.hpp"
 #include <vector>
 #include "Room.h"
+#include "Player.h"
 
 class Grid
 {
@@ -36,7 +37,7 @@ private:
 	std::vector<Room*> m_rooms;
 	std::map<int, std::vector<sf::Sprite>> m_roomWalls;
 
-
+	Player m_player;
 
 };
 

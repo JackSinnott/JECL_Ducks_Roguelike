@@ -60,6 +60,8 @@ private:
 	//void MoveSquare(sf::Vector2f t_direction);
 
 public:
+	Player();
+	Player(int t_row, int t_col);
 
 	//void InitialiseTextures();
 
@@ -68,7 +70,6 @@ public:
 
 	void move(int row, int col);
 
-	Player(int t_row, int t_col);
 
 	void Update(sf::Time t_deltaTime);
 	bool ProcessKeys(sf::Event t_event);

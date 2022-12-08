@@ -13,9 +13,9 @@ Grid::Grid(int t_x, int t_y) : x(t_x), y(t_y)
 			m_point.position = sf::Vector2f(x, y);
 			m_point.color = sf::Color::Red;
 			m_points.append(m_point);
-			
 		}
 	}
+	m_player();
 }
 
 void Grid::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) const
