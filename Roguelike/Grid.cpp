@@ -15,7 +15,6 @@ Grid::Grid(int t_x, int t_y) : x(t_x), y(t_y)
 			m_points.append(m_point);
 		}
 	}
-	m_player();
 }
 
 void Grid::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) const
@@ -33,7 +32,11 @@ void Grid::update(sf::Time t_dt)
 	for (Room* room : m_rooms)
 	{
 		room->update(t_dt, 1, 1);
+		room->setGridPosition();
+		getRoomPosition();
 	}
+
+	
 }
 
 void Grid::setUpRoom(TileType t_type, int t_roomID, int t_row, int t_col)
@@ -65,6 +68,20 @@ void Grid::setUpWalls()
 	{
 		m_roomWalls.emplace(room->getID(), room->getWalls());
 	}
+}
+
+void Grid::getRoomPosition()
+{
+	for (Room* r : m_rooms)
+	{
+		std::cout << "The current room positions are: { " << r->getGridPosition().x << " , " << r->getGridPosition().y << "}\n";
+
+	}
+}
+
+void Grid::CheckCollision(Player t_player, Room* t_room)
+{
+
 }
 
 sf::Vector2f Grid::placeRoom()

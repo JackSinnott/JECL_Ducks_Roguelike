@@ -13,7 +13,7 @@ Room::~Room()
 
 void Room::update(sf::Time t_dt, int row, int col)
 {
-	//std::cout << "tile at index [24][19] is located at: " << m_tiles[row][col].getPosition().x << m_tiles[row][col].getPosition().y << "\n";
+	//std::cout << "tile at index [" << row << "],[" << col <<"] is located at : " << m_tiles[row][col].getGridPosition().x << m_tiles[row][col].getGridPosition().y << "\n";
 }
 
 void Room::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) const
@@ -31,9 +31,14 @@ void Room::setUpTiles(TileType t_type, int row, int col) // pass argument that i
 	{
 		m_walls.push_back(m_tiles[row][col].getSprite());
 	}
+
+	m_tiles[row][col].setGridPosition();
 }
 
-sf::Vector2f Room::getPosition(int t_roomID)
+
+void Room::setGridPosition()
 {
-	return m_tiles[0][0].getPosition();
+	row = m_pos.x / G_CELL_SIZE;
+	col = m_pos.y / G_CELL_SIZE;
 }
+

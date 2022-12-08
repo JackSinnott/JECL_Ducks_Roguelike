@@ -23,8 +23,13 @@ public:
 
 	sf::Vector2f getPosition() { return getSprite().getPosition(); }
 
+	void setGridPosition();
+
+	inline sf::Vector2i getGridPosition() { return sf::Vector2i(row, col); }
+
 private:
 	sf::Sprite m_tile;
+	int row, col;
 	TileType m_currentType;
 	static std::unordered_map<TileType, sf::IntRect> m_rects;
 };
