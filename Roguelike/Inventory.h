@@ -25,18 +25,18 @@ public:
 	AbstractPotion& GetPotion();
 
 private:
-	AbstractWeapon* m_currentWeapon;
-	AbstractArmour* m_currentArmour;
-	AbstractPotion* m_currentPotion;
+	AbstractWeapon* m_currentWeapon; //Stores the current weapon the player has.
+	AbstractArmour* m_currentArmour; //Stores the current armour the player has.
+	AbstractPotion* m_currentPotion; //Stores the current potion the player has.
 
-	sf::RectangleShape m_inventoryBackground;
-	sf::RectangleShape m_inventoryBlockWeapon;
-	sf::RectangleShape m_inventoryBlockArmour;
-	sf::RectangleShape m_inventoryBlockPotion;
+	sf::RectangleShape m_inventoryBackground;  //Background that shows the player's inventory.
+	sf::RectangleShape m_inventoryBlockWeapon; //Block to show the specific item the player has.
+	sf::RectangleShape m_inventoryBlockArmour; //Block to show the specific item the player has.
+	sf::RectangleShape m_inventoryBlockPotion; //Block to show the specific item the player has.
 
-	sf::Sprite m_inventoryWeaponSprite;
-	sf::Sprite m_inventoryArmourSprite;
-	sf::Sprite m_inventoryPotionSprite;
+	sf::Sprite m_inventoryWeaponSprite;//Sprite of the current item the player has.
+	sf::Sprite m_inventoryArmourSprite;//Sprite of the current item the player has.
+	sf::Sprite m_inventoryPotionSprite;//Sprite of the current item the player has.
 
 	sf::Vector2f m_cellOffset;
 

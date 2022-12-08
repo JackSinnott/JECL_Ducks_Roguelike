@@ -6,6 +6,13 @@
 class ArmourFactory : public AbstractItemFactory
 {
 public:
+
+
+	/// <summary>
+	/// Default overloaded constructor
+	/// Creates a new armour object depending on what type of armour is passed in
+	/// </summary>
+	/// <param name="t_armourType"></param>
 	AbstractArmour* CreateArmour(Armours t_armour) override
 	{
 		switch (t_armour)

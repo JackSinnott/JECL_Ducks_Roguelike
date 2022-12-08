@@ -32,17 +32,10 @@ private:
 	std::vector<sf::Sprite*> m_walls; // a vector to hold the walls
 	Grid m_grid;
 
-	//WeaponFactory* exampleWeapon;
+	AbstractItemFactory* m_itemfactory; // Uses a factory method that allows the generation of items
+	AbstractItem* m_absItem; // The item itself that can be used to assigned the generated item
 
-
-
-	AbstractItemFactory* m_itemfactory;
-	AbstractWeapon* m_absWeapon;
-	AbstractArmour* m_absArmour;
-	AbstractPotion* m_absPotion;
-	AbstractItem* m_absItem;
-
-	std::vector<AbstractItem*> m_absItemVector;
+	std::vector<AbstractItem*> m_absItemVector; // A vector of items used to store what item is created
 
 	Player player;
 	Enemy* m_testEnemy;
