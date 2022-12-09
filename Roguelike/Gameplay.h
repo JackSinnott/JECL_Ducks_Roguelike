@@ -8,6 +8,7 @@
 #include "WeaponFactory.h"
 #include "ArmourFactory.h"
 #include "PotionFactory.h"
+
 class Gameplay
 {
 public:
@@ -22,7 +23,7 @@ public:
 private:
 	void LoadLevel();
 	void processTurn();
-	//void setUpShape();
+	
 	sf::Font m_arialBlackfont; // font used by message
 	sf::Text m_mouseCoordinate; // text used for message on screen
 	sf::Vector2f m_mousePositionView;
