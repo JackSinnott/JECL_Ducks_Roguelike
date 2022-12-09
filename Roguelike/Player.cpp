@@ -69,7 +69,7 @@ Player::Player(int t_row, int t_col) : m_playerTexture(nullptr),
 void Player::Update(sf::Time t_deltaTime)
 {
 	setPlayerPositionInGrid();
-	std::cout << "Player row: " << row << "player col: " << col << "\n";
+	//std::cout << "Player row: " << row << "player col: " << col << "\n";
 
 }
 
