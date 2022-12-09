@@ -19,6 +19,14 @@ private:
 
 	//sf::Sprite m_playerBody; 
 
+	bool m_freeToMove = true;
+	bool m_stuckLeft = false;
+	bool m_stuckRight = false;
+	bool m_stuckUp = false;
+	bool m_stuckDown = false;
+
+	sf::Vector2i m_previousPos;
+
 	int m_x, m_y;
 
 	int row, col;
@@ -65,8 +73,12 @@ public:
 
 	//void InitialiseTextures();
 
-
+	inline bool canWeMove() { return m_freeToMove; }
+	inline void setMovementBool(bool t_switch) { m_freeToMove = t_switch; }
+	inline sf::Vector2i getPreviousPos() { return m_previousPos; }
+	inline void setPreviousPos(sf::Vector2i t_prev) { m_previousPos = t_prev; }
 	void setPlayerPositionInGrid();
+	void setPlayerPositionInGrid(sf::Vector2i t_pos);
 	sf::Vector2i getPlayerPositionInGrid();
 
 	void move(int row, int col);

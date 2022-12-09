@@ -16,7 +16,7 @@ public:
 
 	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const;
 
-	void update(sf::Time t_dt, sf::Vector2i t_playerPos);
+	void update(sf::Time t_dt, Player &t_playerPos);
 
 	void setUpRoom(TileType t_type, int t_roomID, int t_row, int t_col);
 
@@ -28,7 +28,7 @@ public:
 
 	int whatRoomIsPlayerIn(sf::Vector2i t_playerPos);
 
-	void checkCollisionPlayerWall(sf::Vector2i t_playerPos);
+	void checkCollisionPlayerWall(Player &t_player);
 
 private:
 	sf::Vector2f placeRoom();
