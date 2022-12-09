@@ -138,6 +138,15 @@ void Gameplay::MouseEvents(sf::Event t_event)
 	m_mouseCoordinate.setString("Mouse Position: " + std::to_string(m_mousePositionView.x) + " | " + std::to_string(m_mousePositionView.y));
 }
 
+void Gameplay::ResetGame()
+{
+	// Enemies get regenerated here
+	player.reset();
+
+	LoadLevel();
+	GenerateRandomItem();
+}
+
 
 void Gameplay::LoadLevel()
 {
