@@ -27,7 +27,7 @@ void Grid::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) cons
 	}
 }
 
-void Grid::update(sf::Time t_dt, sf::Vector2i t_playerPos)
+void Grid::update(sf::Time t_dt, Player &t_playerPos)
 {
 	for (Room* room : m_rooms)
 	{
@@ -120,43 +120,66 @@ int Grid::whatRoomIsPlayerIn(sf::Vector2i t_playerPos)
 	return m_playerRoom;
 }
 
-void Grid::checkCollisionPlayerWall(sf::Vector2i t_playerPos)
+void Grid::checkCollisionPlayerWall(Player &t_player)
 {
 	switch (m_playerRoom)
 	{
 	case 1:
 		for (auto& m : m_roomWalls.at(m_playerRoom))
 		{
-			if (t_playerPos == m)
+			if (t_player.getPlayerPositionInGrid().x + 1 == m.x
+				&& t_player.getPlayerPositionInGrid().y == m.y)
 			{
-				std::cout << "aghhhh we collided!!!! \n";
+				//std::cout << "aghhhh we collided!!!! \n player row in question: " << t_player.getPlayerPositionInGrid().x + 1 << "\n wall row in question: " << m.x << "\n";
+				t_player.setMovementBool(false);
+			}
+			if (t_player.getPlayerPositionInGrid().x - 1 == m.x
+				&& t_player.getPlayerPositionInGrid().y == m.y)
+			{
+				//std::cout << "aghhhh we collided!!!! \n player row in question: " << t_player.getPlayerPositionInGrid().x + 1 << "\n wall row in question: " << m.x << "\n";
+				t_player.setMovementBool(false);
+			}
+			if (t_player.getPlayerPositionInGrid().x == m.x
+				&& t_player.getPlayerPositionInGrid().y + 1 == m.y)
+			{
+				//std::cout << "aghhhh we collided!!!! \n player row in question: " << t_player.getPlayerPositionInGrid().x + 1 << "\n wall row in question: " << m.x << "\n";
+				t_player.setMovementBool(false);
+			}
+			if (t_player.getPlayerPositionInGrid().x == m.x
+				&& t_player.getPlayerPositionInGrid().y -1 == m.y)
+			{
+				//std::cout << "aghhhh we collided!!!! \n player row in question: " << t_player.getPlayerPositionInGrid().x + 1 << "\n wall row in question: " << m.x << "\n";
+				t_player.setMovementBool(false);
 			}
 		}
 		break;
 	case 2:
 		for (auto& m : m_roomWalls.at(m_playerRoom))
 		{
-			if (t_playerPos == m)
+			if (t_player.getPlayerPositionInGrid() == m)
 			{
 				std::cout << "aghhhh we collided!!!! \n";
+				t_player.setMovementBool(false);
 			}
 		}
 		break;
 	case 3:
 		for (auto& m : m_roomWalls.at(m_playerRoom))
 		{
-			if (t_playerPos == m)
+			if (t_player.getPlayerPositionInGrid() == m)
 			{
 				std::cout << "aghhhh we collided!!!! \n";
+				t_player.setMovementBool(false);
 			}
 		}
 		break;
 	case 4:
 		for (auto& m : m_roomWalls.at(m_playerRoom))
 		{
-			if (t_playerPos == m)
+			if (t_player.getPlayerPositionInGrid() == m)
 			{
 				std::cout << "aghhhh we collided!!!! \n";
+				t_player.setMovementBool(false);
 			}
 		}
 		break;

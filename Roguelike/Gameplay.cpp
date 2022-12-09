@@ -29,9 +29,8 @@ void Gameplay::update(sf::Time t_dt)
 {
 	TextureManager::Collectgarbage();
 	player.Update(t_dt);
-	m_grid.update(t_dt, player.getPlayerPositionInGrid());
+	m_grid.update(t_dt, player);
 	m_grid.whatRoomIsPlayerIn(player.getPlayerPositionInGrid());
-	m_cH.update(player.getPlayerPositionInGrid());
 }
 
 void Gameplay::render(sf::RenderWindow& t_window)
