@@ -3,6 +3,23 @@
 std::unordered_map<Armours, sf::IntRect> Player::m_rects = std::unordered_map<Armours, sf::IntRect>(); // initialize
 sf::IntRect Player::m_noArmourRect = sf::IntRect();
 
+sf::Vector2i Player::getPlayerPositionInGrid()
+{
+	return sf::Vector2i(row, col);
+}
+
+void Player::setPlayerPositionInGrid()
+{
+	row = m_playerBody.getPosition().x / G_CELL_SIZE;
+	col = m_playerBody.getPosition().y / G_CELL_SIZE;
+}
+
+void Player::setPlayerPositionInGrid(sf::Vector2i t_pos)
+{
+	row = t_pos.x;
+	col = t_pos.y;
+}
+
 /// <summary>
 /// Move the player by the specified row/col parameter passed into the function 
 /// </summary>
@@ -13,10 +30,17 @@ void Player::move(int row, int col)
 	m_playerBody.move(sf::Vector2f( row, col ) * float(G_CELL_SIZE));
 }
 
+Player::Player()
+{
+
+}
+
 /// <summary>
 /// Default Constructor of Player.
 /// </summary>
-Player::Player() : m_playerTexture(nullptr)
+Player::Player(int t_row, int t_col) : m_playerTexture(nullptr),
+	row(t_row),
+	col(t_col)
 {
 	m_playerTexture = TextureManager::Acquire(ITEMS_TEXTURE);
 	m_playerBody.setTexture(*m_playerTexture);
@@ -59,11 +83,13 @@ Player::Player() : m_playerTexture(nullptr)
 /// ~~~~~~~~~~~~~~~~~~~~~
 void Player::Update(sf::Time t_deltaTime)
 {
+	setPlayerPositionInGrid();
+	//std::cout << "Player row: " << row << "player col: " << col << "\n";
 	UpdateArmourLook();
 
 	if (m_health <= 0)
 	{
-		g_gamestate = Gamestate::GameOver;
+		//g_gamestate = Gamestate::GameOver;
 	}
 }
 
@@ -87,31 +113,44 @@ bool Player::ProcessKeys(sf::Event t_event)
 		if (m_pressingButton != t_event.key.code) // only allow movement
 			// if the player is pressing a key for the first time
 		{
+			
 			// Do Player things
 			switch (t_event.key.code)
 			{
 			case sf::Keyboard::A:
 			case sf::Keyboard::Left:
-				move(-1, 0);
-				action = true;
+				if (canWeMoveLeft())
+				{
+					move(-1, 0);
+					action = true;
+				}
 				break;
 
 			case sf::Keyboard::W:
 			case sf::Keyboard::Up:
-				move(0, -1);
-				action = true;
+				if (canWeMoveUp())
+				{
+					move(0, -1);
+					action = true;
+				}
 				break;
 
 			case sf::Keyboard::D:
 			case sf::Keyboard::Right:
-				move(1, 0);
-				action = true;
+				if (canWeMoveRight())
+				{
+					move(1, 0);
+					action = true;
+				}
 				break;
 
 			case sf::Keyboard::S:
 			case sf::Keyboard::Down:
-				move(0, 1);
-				action = true;
+				if (canWeMoveDown())
+				{
+					move(0, 1);
+					action = true;
+				}
 				break;
 			case sf::Keyboard::Space:
 				std::cout << GetWeaponDamage() << std::endl;
@@ -125,7 +164,6 @@ bool Player::ProcessKeys(sf::Event t_event)
 			case sf::Keyboard::I:
 				m_playerInventory.ToggleInventory();
 				break;
-			
 			default:
 				break;
 			}

@@ -21,6 +21,19 @@ private:
 
 	// Variables
 
+	//sf::Sprite m_playerBody; 
+
+	bool m_freeToMoveRight = true;
+	bool m_freeToMoveLeft = true;
+	bool m_freeToMoveUp = true;
+	bool m_freeToMoveDown = true;
+	
+
+	sf::Vector2i m_previousPos;
+
+	int m_x, m_y;
+
+	int row, col;
 	/// Appearance of player.
 	/// For now it will be a rectangle shape, until a spritesheet can be sorted.
 	sf::Sprite m_playerBody;
@@ -55,13 +68,23 @@ private:
 	int GetDamageModifier();
 
 public:
-
 	Player();
+	Player(int t_row, int t_col);
+
+	//void InitialiseTextures();
+
+	inline sf::Vector2i getPreviousPos() { return m_previousPos; }
+
+	inline void setPreviousPos(sf::Vector2i t_prev) { m_previousPos = t_prev; }
+
+	void setPlayerPositionInGrid();
+	void setPlayerPositionInGrid(sf::Vector2i t_pos);
+	sf::Vector2i getPlayerPositionInGrid();
+
 	void move(int row, int col);
 	void reset();
 
 	// The three main processes
-
 	void Update(sf::Time t_deltaTime);
 	bool ProcessKeys(sf::Event t_event);
 	void Render(sf::RenderWindow& t_window);
@@ -70,6 +93,18 @@ public:
 
 	sf::Vector2f GetPosition();
 	void setGridPosition(int row, int col);
+	
+	inline bool canWeMoveUp() { return m_freeToMoveUp; }
+	inline void setMovementBoolUp(bool t_switch) { m_freeToMoveUp = t_switch; }
+
+	inline void setMovementBoolDown(bool t_switch) { m_freeToMoveDown = t_switch; }
+	inline bool canWeMoveDown() { return m_freeToMoveDown; }
+
+	inline void setMovementBoolLeft(bool t_switch) { m_freeToMoveLeft = t_switch; }
+	inline bool canWeMoveLeft() { return m_freeToMoveLeft; }
+
+	inline void setMovementBoolRight(bool t_switch) { m_freeToMoveRight = t_switch;	}
+	inline bool canWeMoveRight() { return m_freeToMoveRight; }
 
 	// Inventory Methods
 

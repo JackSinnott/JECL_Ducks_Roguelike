@@ -17,7 +17,8 @@ void FileLoader::Load(int t_level)
 	std::ifstream m_level;
 	std::string path = "ASSETS/levels/Level" + std::to_string(room_id) + ".txt";
 	m_level.open(path);
-	std::cout << "current random Number is: " << room_id << "\n";
+	//std::cout << "current random Number is: " << room_id << "\n";
+
 
 	int col = 0;
 	int row = 0;
