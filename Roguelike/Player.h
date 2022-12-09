@@ -82,9 +82,6 @@ public:
 	sf::Vector2i getPlayerPositionInGrid();
 
 	void move(int row, int col);
-
-	Player();
-	void move(int row, int col);
 	void reset();
 
 	// The three main processes

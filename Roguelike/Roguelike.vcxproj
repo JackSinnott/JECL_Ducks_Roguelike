@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CollisionHandler.cpp" />
     <ClCompile Include="AbstractArmour.cpp" />
     <ClCompile Include="AbstractPotion.cpp" />
     <ClCompile Include="AbstractWeapon.cpp" />
@@ -49,7 +48,6 @@
     <ClInclude Include="AbstractWeapon.h" />
     <ClInclude Include="ArmourFactory.h" />
     <ClInclude Include="AxeWeapon.h" />
-    <ClInclude Include="CollisionHandler.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="CombatSystem.h" />
     <ClInclude Include="DaggerWeapon.h" />

@@ -55,13 +55,6 @@ Player::Player(int t_row, int t_col) : m_playerTexture(nullptr),
 	m_playerBody.setScale(2.0f, 2.0f);
 
 	// Sets player to centre of map hard coded for now 
-	setPosition(row, col);
-
-	setPlayerPositionInGrid();
-
-
-	//std::cout << "Players grid position in base: {" << getPlayerPositionInGrid().x << ", " << getPlayerPositionInGrid().y << "}" << "\n";
-
 	setGridPosition(int(G_ROOM_ROWS / 2), int(G_ROOM_COLS / 2));
 
 	m_playerInventory.SetupInventory(m_playerBody.getPosition());
