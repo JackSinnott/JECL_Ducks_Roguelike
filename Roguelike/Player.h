@@ -19,11 +19,11 @@ private:
 
 	//sf::Sprite m_playerBody; 
 
-	bool m_freeToMove = true;
-	bool m_stuckLeft = false;
-	bool m_stuckRight = false;
-	bool m_stuckUp = false;
-	bool m_stuckDown = false;
+	bool m_freeToMoveRight = true;
+	bool m_freeToMoveLeft = true;
+	bool m_freeToMoveUp = true;
+	bool m_freeToMoveDown = true;
+	
 
 	sf::Vector2i m_previousPos;
 
@@ -73,10 +73,22 @@ public:
 
 	//void InitialiseTextures();
 
-	inline bool canWeMove() { return m_freeToMove; }
-	inline void setMovementBool(bool t_switch) { m_freeToMove = t_switch; }
+	inline bool canWeMoveUp() { return m_freeToMoveUp; }
+	inline void setMovementBoolUp(bool t_switch) { m_freeToMoveUp = t_switch; }
+
+	inline void setMovementBoolDown(bool t_switch) { m_freeToMoveDown = t_switch; }
+	inline bool canWeMoveDown() { return m_freeToMoveDown; }
+
+	inline void setMovementBoolLeft(bool t_switch) { m_freeToMoveLeft = t_switch; }
+	inline bool canWeMoveLeft() { return m_freeToMoveLeft; }
+
+	inline void setMovementBoolRight(bool t_switch) { m_freeToMoveRight = t_switch;	}
+	inline bool canWeMoveRight() { return m_freeToMoveRight; }
+
 	inline sf::Vector2i getPreviousPos() { return m_previousPos; }
+
 	inline void setPreviousPos(sf::Vector2i t_prev) { m_previousPos = t_prev; }
+
 	void setPlayerPositionInGrid();
 	void setPlayerPositionInGrid(sf::Vector2i t_pos);
 	sf::Vector2i getPlayerPositionInGrid();

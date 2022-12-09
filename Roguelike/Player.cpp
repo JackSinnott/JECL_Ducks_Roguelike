@@ -13,8 +13,9 @@ void Player::setPlayerPositionInGrid()
 
 void Player::setPlayerPositionInGrid(sf::Vector2i t_pos)
 {
-	row = t_pos.x / G_CELL_SIZE;
-	col = t_pos.y / G_CELL_SIZE;
+	row = t_pos.x;
+	col = t_pos.y;
+	move(row, col);
 }
 
 
@@ -68,8 +69,8 @@ Player::Player(int t_row, int t_col) : m_playerTexture(nullptr),
 void Player::Update(sf::Time t_deltaTime)
 {
 	setPlayerPositionInGrid();
-	std::cout << "Player Row: " << row << "\n";
-	//std::cout << "Player col: " << col << "\n";
+	std::cout << "Player row: " << row << "player col: " << col << "\n";
+
 }
 
 /// <summary>
@@ -85,63 +86,63 @@ bool Player::ProcessKeys(sf::Event t_event)
 		if (m_pressingButton != t_event.key.code) // only allow movement
 			// if the player is pressing a key for the first time
 		{
-			m_previousPos = getPlayerPositionInGrid();
+			
 			// Do Player things
 			switch (t_event.key.code)
 			{
 			case sf::Keyboard::A:
 			case sf::Keyboard::Left:
-				if (canWeMove())
+				if (canWeMoveLeft())
 				{
 					move(-1, 0);
 					action = true;
 				}
 				else
 				{
-					/*move(1, 0);
-					setMovementBool(true);*/
+					setPlayerPositionInGrid(sf::Vector2i(1, 0));
+					setMovementBoolLeft(true);
 				}
 				break;
 
 			case sf::Keyboard::W:
 			case sf::Keyboard::Up:
-				if (canWeMove())
+				if (canWeMoveUp())
 				{
 					move(0, -1);
 					action = true;
 				}
 				else
 				{
-					/*move(0, 1);
-					setMovementBool(true);*/
+					setPlayerPositionInGrid(sf::Vector2i(0, 1));
+					setMovementBoolUp(true);
 				}
 				break;
 
 			case sf::Keyboard::D:
 			case sf::Keyboard::Right:
-				if (canWeMove())
+				if (canWeMoveRight())
 				{
 					move(1, 0);
 					action = true;
 				}
 				else
 				{
-					/*move(-1, 0);
-					setMovementBool(true);*/
+					setPlayerPositionInGrid(sf::Vector2i(-1, 0));
+					setMovementBoolRight(true);
 				}
 				break;
 
 			case sf::Keyboard::S:
 			case sf::Keyboard::Down:
-				if (canWeMove())
+				if (canWeMoveDown())
 				{
 					move(0, 1);
 					action = true;
 				}
 				else
 				{
-					/*move(0, -1);
-					setMovementBool(true);*/
+					setPlayerPositionInGrid(sf::Vector2i(0, -1));
+					setMovementBoolDown(true);
 				}
 				break;
 
