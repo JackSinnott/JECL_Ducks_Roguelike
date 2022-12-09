@@ -18,7 +18,6 @@ void Player::setPlayerPositionInGrid(sf::Vector2i t_pos)
 {
 	row = t_pos.x;
 	col = t_pos.y;
-	move(row, col);
 }
 
 /// <summary>
@@ -90,7 +89,7 @@ void Player::Update(sf::Time t_deltaTime)
 
 	if (m_health <= 0)
 	{
-		g_gamestate = Gamestate::GameOver;
+		//g_gamestate = Gamestate::GameOver;
 	}
 }
 
@@ -125,11 +124,6 @@ bool Player::ProcessKeys(sf::Event t_event)
 					move(-1, 0);
 					action = true;
 				}
-				else
-				{
-					setPlayerPositionInGrid(sf::Vector2i(1, 0));
-					setMovementBoolLeft(true);
-				}
 				break;
 
 			case sf::Keyboard::W:
@@ -138,11 +132,6 @@ bool Player::ProcessKeys(sf::Event t_event)
 				{
 					move(0, -1);
 					action = true;
-				}
-				else
-				{
-					setPlayerPositionInGrid(sf::Vector2i(0, 1));
-					setMovementBoolUp(true);
 				}
 				break;
 
@@ -153,11 +142,6 @@ bool Player::ProcessKeys(sf::Event t_event)
 					move(1, 0);
 					action = true;
 				}
-				else
-				{
-					setPlayerPositionInGrid(sf::Vector2i(-1, 0));
-					setMovementBoolRight(true);
-				}
 				break;
 
 			case sf::Keyboard::S:
@@ -166,11 +150,6 @@ bool Player::ProcessKeys(sf::Event t_event)
 				{
 					move(0, 1);
 					action = true;
-				}
-				else
-				{
-					setPlayerPositionInGrid(sf::Vector2i(0, -1));
-					setMovementBoolDown(true);
 				}
 				break;
 			case sf::Keyboard::Space:
