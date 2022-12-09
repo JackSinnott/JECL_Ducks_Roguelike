@@ -21,7 +21,7 @@ public:
 
 	inline sf::Vector2f getPosition() { return m_pos; }
 
-	inline std::vector<sf::Sprite> getWalls() { return m_walls; };
+	inline std::vector<sf::Vector2i> getWalls() { return m_walls; };
 
 	void setGridPosition();
 
@@ -34,7 +34,7 @@ private:
 
 	std::shared_ptr<sf::Texture> m_pTexture;
 	std::array<std::array<Tile, G_MAP_COLS>,G_MAP_ROWS> m_tiles;
-	std::vector<sf::Sprite> m_walls;
+	std::vector<sf::Vector2i> m_walls;
 	int row, col;
 	int id;
 };

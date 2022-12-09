@@ -27,13 +27,14 @@ void Grid::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) cons
 	}
 }
 
-void Grid::update(sf::Time t_dt)
+void Grid::update(sf::Time t_dt, sf::Vector2i t_playerPos)
 {
 	for (Room* room : m_rooms)
 	{
 		room->update(t_dt, 1, 1);
 		room->setGridPosition();
 		getRoomPosition();
+		checkCollisionPlayerWall(t_playerPos);
 	}
 
 	
@@ -121,9 +122,48 @@ int Grid::whatRoomIsPlayerIn(sf::Vector2i t_playerPos)
 
 void Grid::checkCollisionPlayerWall(sf::Vector2i t_playerPos)
 {
-	m_roomWalls.at(m_playerRoom)
-
-
+	switch (m_playerRoom)
+	{
+	case 1:
+		for (auto& m : m_roomWalls.at(m_playerRoom))
+		{
+			if (t_playerPos == m)
+			{
+				std::cout << "aghhhh we collided!!!! \n";
+			}
+		}
+		break;
+	case 2:
+		for (auto& m : m_roomWalls.at(m_playerRoom))
+		{
+			if (t_playerPos == m)
+			{
+				std::cout << "aghhhh we collided!!!! \n";
+			}
+		}
+		break;
+	case 3:
+		for (auto& m : m_roomWalls.at(m_playerRoom))
+		{
+			if (t_playerPos == m)
+			{
+				std::cout << "aghhhh we collided!!!! \n";
+			}
+		}
+		break;
+	case 4:
+		for (auto& m : m_roomWalls.at(m_playerRoom))
+		{
+			if (t_playerPos == m)
+			{
+				std::cout << "aghhhh we collided!!!! \n";
+			}
+		}
+		break;
+	default:
+		std::cout << "Where has our little player gone???? \n";
+		break;
+	}
 }
 
 sf::Vector2f Grid::placeRoom()
@@ -143,5 +183,4 @@ sf::Vector2f Grid::placeRoom()
 	}
 	return m_roomPos;
 }
-
 

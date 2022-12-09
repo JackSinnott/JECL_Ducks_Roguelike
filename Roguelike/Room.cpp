@@ -27,12 +27,13 @@ void Room::setUpTiles(TileType t_type, int row, int col) // pass argument that i
 {
 	m_tiles[row][col].setup(m_pTexture, sf::Vector2f{ static_cast<float>(row * G_CELL_SIZE), static_cast<float>(col * G_CELL_SIZE) }, m_pos, t_type);
 
+	m_tiles[row][col].setGridPosition();
+
 	if (m_tiles[row][col].getType() != TileType::UNUSED && m_tiles[row][col].getType() != TileType::GROUND)
 	{
-		m_walls.push_back(m_tiles[row][col].getSprite());
+		m_walls.push_back(m_tiles[row][col].getGridPosition());
 	}
 
-	m_tiles[row][col].setGridPosition();
 }
 
 
