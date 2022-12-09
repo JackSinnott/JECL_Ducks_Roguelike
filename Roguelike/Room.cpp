@@ -44,4 +44,3 @@ void Room::setGridPosition()
 }
 
 
-

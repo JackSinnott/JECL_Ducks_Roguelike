@@ -32,5 +32,6 @@ private:
 	int row, col;
 	TileType m_currentType;
 	static std::unordered_map<TileType, sf::IntRect> m_rects;
+	bool m_visibility;
 };
 #endif // !TILE_H
