@@ -14,6 +14,7 @@ enum class Gamestate
 	Help
 };
 extern Gamestate g_gamestate;
+extern Gamestate g_previousState;
 extern bool g_exitGame;
 
 enum class EnemyType

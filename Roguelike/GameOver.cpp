@@ -44,4 +44,5 @@ void GameOver::render(sf::RenderWindow& t_window)
 {
 	t_window.draw(m_loseText);
 	m_backButton->render(t_window);
+	t_window.setView(t_window.getDefaultView());
 }

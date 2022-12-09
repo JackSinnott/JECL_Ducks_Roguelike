@@ -69,4 +69,6 @@ void MainMenu::render(sf::RenderWindow& t_window)
 	{
 		button->render(t_window);
 	}
+
+	t_window.setView(t_window.getDefaultView());
 }

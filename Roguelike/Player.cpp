@@ -11,10 +11,6 @@ sf::IntRect Player::m_noArmourRect = sf::IntRect();
 void Player::move(int row, int col)
 {
 	m_playerBody.move(sf::Vector2f( row, col ) * float(G_CELL_SIZE));
-	std::cout << "Player's position: " 
-		<< m_playerBody.getPosition().x 
-		<< ", " <<
-		m_playerBody.getPosition().y << std::endl;
 }
 
 /// <summary>
@@ -24,6 +20,8 @@ Player::Player() : m_playerTexture(nullptr)
 {
 	m_playerTexture = TextureManager::Acquire(ITEMS_TEXTURE);
 	m_playerBody.setTexture(*m_playerTexture);
+
+	CombatSystem::SetPlayerHealth(&m_health);
 
 	UpdateArmourLook();
 
@@ -47,6 +45,9 @@ Player::Player() : m_playerTexture(nullptr)
 	}
 }
 
+
+
+
 /// <summary>
 /// Updates the player object every frame.
 /// </summary>
@@ -59,6 +60,18 @@ Player::Player() : m_playerTexture(nullptr)
 void Player::Update(sf::Time t_deltaTime)
 {
 	UpdateArmourLook();
+
+	if (m_health <= 0)
+	{
+		g_gamestate = Gamestate::GameOver;
+	}
+}
+
+void Player::reset()
+{
+	m_health = m_maxHealth;
+	setGridPosition(int(G_ROOM_ROWS / 2), int(G_ROOM_COLS / 2));
+	m_playerView.setCenter(m_playerBody.getPosition());
 }
 
 /// <summary>
@@ -149,11 +162,21 @@ void Player::Render(sf::RenderWindow& t_window)
 	t_window.setView(m_playerView);
 }
 
-//sf::Vector2f Player::GetPosition()
-//{
-//	return m_playerBody.getPosition();
-//}
+/// <summary>
+/// returns the player's position on the screen.
+/// </summary>
+/// <returns>The position of the player</returns>
+sf::Vector2f Player::GetPosition()
+{
+	return m_playerBody.getPosition();
+}
 
+/// <summary>
+/// Changes the position of the player, in relation to the grid 
+/// (ie 1,2 would put the player in second row, third column, as it starts with 0,0)
+/// </summary>
+/// <param name="row">The player's new row in the grid</param>
+/// <param name="col">The player's new column in the grid</param>
 void Player::setGridPosition(int row, int col)
 {
 	// Sets player to centre of map
@@ -161,37 +184,22 @@ void Player::setGridPosition(int row, int col)
 		G_CELL_SIZE * (col));
 }
 
-/// <summary>
-/// Stores an item that the player has picked up
-/// </summary>
-/// <param name="t_item"></param>
 void Player::PickUpItem(AbstractItem& t_item)
 {
 	//When the item is picked up. It will need to go into the right item slot type.
 	m_playerInventory.StoreItem(t_item);
 }
 
-/// <summary>
-/// Gets the damage of the current weapon
-/// </summary>
-/// <returns></returns>
 int Player::GetWeaponDamage()
 {
 	return m_playerInventory.GetWeapon().GetDamage();
 }
 
-/// <summary>
-/// Gets the armour class of the player's current armour
-/// </summary>
-/// <returns></returns>
 int Player::GetArmourClass()
 {
 	return m_playerInventory.GetArmour().GetArmourClass();
 }
 
-/// <summary>
-/// Uses the current potion the player has in their inventory
-/// </summary>
 void Player::UsePotion()
 {
 	if (&m_playerInventory.GetPotion() != nullptr)
@@ -229,10 +237,6 @@ void Player::UsePotion()
 	}
 }
 
-
-/// <summary>
-/// Update what the player looks like based on their armour
-/// </summary>
 void Player::UpdateArmourLook()
 {
 	if (&m_playerInventory.GetArmour() != nullptr)

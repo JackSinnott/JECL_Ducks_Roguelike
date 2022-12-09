@@ -79,6 +79,9 @@
     <ClCompile Include="Inventory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CombatSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemy.h">
@@ -185,6 +188,9 @@
     </ClInclude>
     <ClInclude Include="Help.h">
       <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatSystem.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Inventory.h">
       <Filter>Header Files</Filter>
