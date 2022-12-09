@@ -17,9 +17,16 @@ public:
 	void update(sf::Time t_dt);
 	void render(sf::RenderWindow& t_window);
 	void GenerateRandomItem();
+	void MouseEvents(sf::Event t_event);
+
+	void ResetGame();
 private:
 	void LoadLevel();
 	void processTurn();
+	
+	sf::Font m_arialBlackfont; // font used by message
+	sf::Text m_mouseCoordinate; // text used for message on screen
+	sf::Vector2f m_mousePositionView;
 
 	sf::Text m_infoText;
 	sf::Texture m_tileTexture;
@@ -28,19 +35,13 @@ private:
 	std::vector<sf::Sprite*> m_walls; // a vector to hold the walls
 	Grid m_grid;
 
-	//WeaponFactory* exampleWeapon;
+	AbstractItemFactory* m_itemfactory; // Uses a factory method that allows the generation of items
+	AbstractItem* m_absItem; // The item itself that can be used to assigned the generated item
 
-
-
-	AbstractItemFactory* m_itemfactory;
-	AbstractWeapon* m_absWeapon;
-	AbstractArmour* m_absArmour;
-	AbstractPotion* m_absPotion;
-	AbstractItem* m_absItem;
-
-	std::vector<AbstractItem*> m_absItemVector;
+	std::vector<AbstractItem*> m_absItemVector; // A vector of items used to store what item is created
 
 	Player player;
 	Enemy* m_testEnemy;
-	CollisionHandler m_cH;
+
+	bool m_debugTools;
 };

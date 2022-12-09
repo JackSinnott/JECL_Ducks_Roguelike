@@ -2,8 +2,7 @@
 std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::texturePtrs; // Singletons need declaring
 
 Game::Game() :
-	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" },
-	m_exitGame{ false } //when true game will exit
+	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" }
 {
 	
 }
@@ -54,10 +53,10 @@ void Game::processEvents()
 	{
 		if (sf::Event::Closed == newEvent.type) // window message
 		{
-			m_exitGame = true;
+			g_exitGame = true;
 		}
 
-		switch (m_gamestate)
+		switch (g_gamestate)
 		{
 		case Gamestate::MainMenu:
 			m_mainMenuScreen.processEvents(newEvent);
@@ -74,6 +73,9 @@ void Game::processEvents()
 		case Gamestate::GameOver:
 			m_gameOverScreen.processEvents(newEvent);
 			break;
+		case Gamestate::Help:
+			m_helpScreen.processEvents(newEvent);
+			break;
 		default:
 			break;
 		}
@@ -84,7 +86,7 @@ void Game::processEvents()
 			processKeys(newEvent);
 		}
 
-		if (m_exitGame)
+		if (g_exitGame)
 		{
 			m_window.close();
 		}
@@ -97,7 +99,7 @@ void Game::processKeys(sf::Event t_event)
 {
 	if (sf::Keyboard::Escape == t_event.key.code)
 	{
-		m_exitGame = true;
+		g_exitGame = true;
 	}
 }
 
@@ -105,25 +107,35 @@ void Game::processKeys(sf::Event t_event)
 
 void Game::Update(sf::Time t_dt)
 {
-	switch (m_gamestate)
+	g_previousState = g_gamestate;
+
+	switch (g_gamestate)
 	{
 	case Gamestate::MainMenu:
-		m_mainMenuScreen.update();
+		m_mainMenuScreen.update(sf::Mouse::getPosition(m_window));
 		break;
 	case Gamestate::PauseMenu:
-		m_pauseScreen.update();
+		m_pauseScreen.update(sf::Mouse::getPosition(m_window));
 		break;
 	case Gamestate::Options:
-		m_optionScreen.update();
+		m_optionScreen.update(sf::Mouse::getPosition(m_window));
 		break;
 	case Gamestate::Gameplay:
 		m_gameScreen.update(t_dt);
 		break;
 	case Gamestate::GameOver:
-		m_gameOverScreen.update();
+		m_gameOverScreen.update(sf::Mouse::getPosition(m_window));
+		break;
+	case Gamestate::Help:
+		m_helpScreen.update(sf::Mouse::getPosition(m_window));
 		break;
 	default:
 		break;
+	}
+
+	if (g_previousState == Gamestate::Gameplay && (g_gamestate == Gamestate::GameOver || g_gamestate == Gamestate::MainMenu))
+	{
+		m_gameScreen.ResetGame();
 	}
 }
 
@@ -131,8 +143,8 @@ void Game::Update(sf::Time t_dt)
 
 void Game::Render(sf::RenderWindow& t_window)
 {
-
-	switch (m_gamestate)
+	t_window.clear();
+	switch (g_gamestate)
 	{
 	case Gamestate::MainMenu:
 		m_mainMenuScreen.render(t_window);
@@ -149,8 +161,11 @@ void Game::Render(sf::RenderWindow& t_window)
 	case Gamestate::GameOver:
 		m_gameOverScreen.render(t_window);
 		break;
+	case Gamestate::Help:
+		m_helpScreen.render(t_window);
+		break;
 	default:
 		break;
 	}
-
+	t_window.display();
 }

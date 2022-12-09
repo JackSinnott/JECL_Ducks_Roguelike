@@ -37,6 +37,8 @@ private:
 	std::vector<sf::Vector2i> m_walls;
 	int row, col;
 	int id;
+
+	bool m_revealed;
 };
 
 #endif // !ROOM_H

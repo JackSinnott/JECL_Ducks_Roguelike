@@ -4,6 +4,11 @@
 class LightArmour : public AbstractArmour
 {
 public:
+	/// <summary>
+	/// Default overloaded constructor
+	/// Sets the armour type, armour class and rarity
+	/// </summary>
+	/// <param name="t_armourType"></param>
 	LightArmour(Armours t_armourType)
 	{
 		m_armourType = t_armourType;

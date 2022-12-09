@@ -11,14 +11,6 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
-#include "AbstractItemFactory.h"
-#include "WeaponFactory.h"
-#include "ArmourFactory.h"
-#include "Globals.h"
-#include "FileLoader.h"
-#include "Player.h"
-#include "Enemy.h"
-#include "Grid.h"
 #include <time.h>
 #include "Globals.h"
 #include "Gameplay.h"
@@ -26,6 +18,7 @@
 #include "PauseMenu.h"
 #include "GameOver.h"
 #include "Options.h"
+#include "Help.h"
 
 /// <summary>
 /// Game Class. Keeps track of Game Flow.
@@ -53,17 +46,9 @@ private:
 	PauseMenu m_pauseScreen;
 	GameOver m_gameOverScreen;
 	Options m_optionScreen;
-
-	//WeaponFactory* exampleWeapon;
-	AbstractItemFactory* m_itemfactory;
-	AbstractWeapon* m_absWeapon;
-
-	std::vector<AbstractWeapon*> m_absWeaponVector;
+	Help m_helpScreen;
 
 	sf::RenderWindow m_window; // main SFML window
-
-	bool m_exitGame; // control exiting game
-
 };
 
 #endif // !GAME_HPP

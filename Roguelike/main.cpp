@@ -16,11 +16,23 @@
 #include "Game.h"
 
 /// <summary>
+/// sets up the font used in the game
+/// </summary>
+void setupFont()
+{
+	if (!g_font.loadFromFile("./ASSETS/FONTS/ariblk.ttf"))
+	{
+		std::cout << "font not loading" << std::endl;
+	}
+}
+
+/// <summary>
 /// main enrtry point
 /// </summary>
 /// <returns>success or failure</returns>
 int main()
 {
+	setupFont();
 	Game game;
 	game.run();
 

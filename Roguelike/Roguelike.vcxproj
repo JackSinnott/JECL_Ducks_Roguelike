@@ -20,6 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CollisionHandler.cpp" />
+    <ClCompile Include="AbstractArmour.cpp" />
+    <ClCompile Include="AbstractPotion.cpp" />
+    <ClCompile Include="AbstractWeapon.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="CombatSystem.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -27,6 +32,8 @@
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="Help.cpp" />
+    <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Options.cpp" />
@@ -34,7 +41,6 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Tile.cpp" />
-    <ClCompile Include="WeaponFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractArmour.h" />
@@ -44,6 +50,8 @@
     <ClInclude Include="ArmourFactory.h" />
     <ClInclude Include="AxeWeapon.h" />
     <ClInclude Include="CollisionHandler.h" />
+    <ClInclude Include="Button.h" />
+    <ClInclude Include="CombatSystem.h" />
     <ClInclude Include="DaggerWeapon.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
@@ -51,6 +59,8 @@
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="Grid.h" />
+    <ClInclude Include="Help.h" />
+    <ClInclude Include="Inventory.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="HealthPotion.h" />
@@ -133,6 +143,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SFML_SDK)\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -155,6 +166,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(SFML_SDK)\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

@@ -1,15 +1,16 @@
 #pragma once
 #include "Globals.h"
-#include "Options.h"
+#include "Button.h"
 
-class GameOver
+class Help
 {
 public:
-	GameOver();
+	Help();
 	void processEvents(sf::Event t_event);
 	void update(sf::Vector2i t_mousePos);
 	void render(sf::RenderWindow& t_window);
 private:
 	Button* m_backButton;
-	sf::Text m_loseText;
+
+	std::vector<sf::Text> helpText;
 };

@@ -14,19 +14,20 @@ void FileLoader::Load(int t_level)
 	if (room_id == 8)
 		room_id = 1;
 	// load in the level data and setup levelData
-	std::ifstream level;
+	std::ifstream m_level;
 	std::string path = "ASSETS/levels/Level" + std::to_string(room_id) + ".txt";
 	level.open(path);
 	//std::cout << "current random Number is: " << room_id << "\n";
 
+
 	int col = 0;
 	int row = 0;
 
-	if (level.is_open())
+	if (m_level.is_open())
 	{
 		int cell = 0;
 		std::string type;
-		while (std::getline(level, type))
+		while (std::getline(m_level, type))
 		{
 			for (int i = 0; i < type.size(); ++i)
 			{
@@ -47,7 +48,7 @@ void FileLoader::Load(int t_level)
 				}
 			}
 		}
-	level.close();
+	m_level.close();
 	}
 	else
 	{
