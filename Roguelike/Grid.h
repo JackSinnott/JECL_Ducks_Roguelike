@@ -6,7 +6,6 @@
 #include <vector>
 #include "Room.h"
 #include "Player.h"
-#include "CollisionHandler.h"
 
 class Grid
 {

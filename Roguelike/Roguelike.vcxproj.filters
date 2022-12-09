@@ -28,9 +28,6 @@
     <ClCompile Include="Globals.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WeaponFactory.cpp">
-      <Filter>Source Files</Filter>
-	</ClCompile>
     <ClCompile Include="Options.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
@@ -65,9 +62,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CombatSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CollisionHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -174,9 +168,6 @@
     <ClInclude Include="FileLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionHandler.h">
-	  <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Help.h">
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
@@ -184,7 +175,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Inventory.h">
-	<Filter>Header Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
