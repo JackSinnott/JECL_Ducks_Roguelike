@@ -46,7 +46,7 @@ Player::Player(int t_row, int t_col) : m_playerTexture(nullptr),
 	setPlayerPositionInGrid();
 
 
-	std::cout << "Players grid position in base: {" << getPlayerPositionInGrid().x << ", " << getPlayerPositionInGrid().y << "}" << "\n";
+	//std::cout << "Players grid position in base: {" << getPlayerPositionInGrid().x << ", " << getPlayerPositionInGrid().y << "}" << "\n";
 }
 
 
@@ -62,8 +62,8 @@ Player::Player(int t_row, int t_col) : m_playerTexture(nullptr),
 void Player::Update(sf::Time t_deltaTime)
 {
 	setPlayerPositionInGrid();
-	std::cout << "Player Row: " << row << "\n";
-	std::cout << "Player col: " << col << "\n";
+	//std::cout << "Player Row: " << row << "\n";
+	//std::cout << "Player col: " << col << "\n";
 }
 
 /// <summary>

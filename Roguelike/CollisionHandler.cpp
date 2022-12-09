@@ -17,7 +17,7 @@ void CollisionHandler::update(sf::Vector2i(t_playerPos))
 	int test = 1;
 	for (sf::Vector2i pos : m_surroundingTiles)
 	{
-		std::cout << "tile surrounding player at " << test << " : " << pos.x << "," << pos.y << "\n";
+		//std::cout << "tile surrounding player at " << test << " : " << pos.x << "," << pos.y << "\n";
 	}
 }
 
