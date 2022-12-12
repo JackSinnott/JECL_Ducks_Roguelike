@@ -1,7 +1,8 @@
 #include "Gameplay.h"
 
 Gameplay::Gameplay() :
-	m_grid(0,0)
+	m_grid(0,0),
+	player(5,5)
 {
 	m_levelLoader = new FileLoader(m_grid);
 
@@ -58,8 +59,10 @@ void Gameplay::processEvents(sf::Event t_event)
 void Gameplay::update(sf::Time t_dt)
 {
 	TextureManager::Collectgarbage();
-	m_grid.update(t_dt);
 	player.Update(t_dt);
+	m_grid.update(t_dt, player);
+	m_grid.whatRoomIsPlayerIn(player.getPlayerPositionInGrid());
+
 }
 
 void Gameplay::render(sf::RenderWindow& t_window)
@@ -138,6 +141,15 @@ void Gameplay::MouseEvents(sf::Event t_event)
 	m_mouseCoordinate.setString("Mouse Position: " + std::to_string(m_mousePositionView.x) + " | " + std::to_string(m_mousePositionView.y));
 }
 
+void Gameplay::ResetGame()
+{
+	// Enemies get regenerated here
+	player.reset();
+
+	LoadLevel();
+	GenerateRandomItem();
+}
+
 
 void Gameplay::LoadLevel()
 {
@@ -146,7 +158,7 @@ void Gameplay::LoadLevel()
 	m_levelLoader->Load(2);
 	m_levelLoader->Load(3);
 
-	//m_levelData.addWalls(m_walls);
+	m_grid.setUpWalls();
 }
 
 void Gameplay::processTurn()

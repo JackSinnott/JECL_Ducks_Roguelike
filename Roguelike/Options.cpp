@@ -36,4 +36,5 @@ void Options::update(sf::Vector2i t_mousePos)
 void Options::render(sf::RenderWindow& t_window)
 {
 	m_backButton->render(t_window);
+	t_window.setView(t_window.getDefaultView());
 }

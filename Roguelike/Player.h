@@ -7,6 +7,8 @@
 #include "AbstractArmour.h"
 #include "AbstractPotion.h"
 #include "Inventory.h"
+#include "CombatSystem.h"
+
 /// <summary>
 /// Class the player directly controls.
 /// </summary>
@@ -18,10 +20,20 @@ private:
 	sf::View m_playerView;
 
 	// Variables
-		
+
 	//sf::Sprite m_playerBody; 
 
+	bool m_freeToMoveRight = true;
+	bool m_freeToMoveLeft = true;
+	bool m_freeToMoveUp = true;
+	bool m_freeToMoveDown = true;
+	
+
+	sf::Vector2i m_previousPos;
+
 	int m_x, m_y;
+
+	int row, col;
 	/// Appearance of player.
 	/// For now it will be a rectangle shape, until a spritesheet can be sorted.
 	sf::Sprite m_playerBody;
@@ -39,38 +51,63 @@ private:
 	/// </summary>
 	sf::Keyboard::Key m_pressingButton = sf::Keyboard::Unknown;
 
-	/// <summary>
-	/// Temporary variable - Used for moving between grid cells.
-	/// Will be replaced once Grid class is set up.
-	/// </summary>
-	float gridCellSize = 50.0f;
+	int m_strength = 10; // The strength of the player, used for attacking
+	int m_armourClass = 2; // The defense of the player, used for defending
+	int m_health = 20; // The health of the player. if this reaches 0, the game is over.
+	int level = 1; // The players level. as level increases, so does the health, strength, and defense.
+	int xp = 0; // the players xp. When this reaches a certain threshold, level goes up by 1. XP is gotten by defeating enemies.
 
-	int m_damage = 2; //Default damage of the player
-	int m_armourClass = 2; //Default armour of the player
-	int m_health = 20; //Current base health of the player
 	int m_maxHealth = 20; //Current maximum health the player can have
-	int m_level = 1; //Player's current level
-	int xp = 0;//Player's current XP
 	// Methods / Functions
-
-	//void MoveSquare(sf::Vector2f t_direction);
 
 	void UpdateArmourLook();
 
+	// Combat Methods
+	void CalculateDamageToEnemy(int t_EnemyAC, int t_index);
+	int GetHitModifier();
+	int GetDamageModifier();
+
 public:
+	Player();
+	Player(int t_row, int t_col);
 
 	//void InitialiseTextures();
 
+	inline sf::Vector2i getPreviousPos() { return m_previousPos; }
+
+	inline void setPreviousPos(sf::Vector2i t_prev) { m_previousPos = t_prev; }
+
+	void setPlayerPositionInGrid();
+	void setPlayerPositionInGrid(sf::Vector2i t_pos);
+	sf::Vector2i getPlayerPositionInGrid();
+
 	void move(int row, int col);
+	void reset();
 
-	Player();
-
+	// The three main processes
 	void Update(sf::Time t_deltaTime);
 	bool ProcessKeys(sf::Event t_event);
 	void Render(sf::RenderWindow& t_window);
 
-	//sf::Vector2f GetPosition();
+	// get / sets
+
+	sf::Vector2f GetPosition();
 	void setGridPosition(int row, int col);
+	
+	inline bool canWeMoveUp() { return m_freeToMoveUp; }
+	inline void setMovementBoolUp(bool t_switch) { m_freeToMoveUp = t_switch; }
+
+	inline void setMovementBoolDown(bool t_switch) { m_freeToMoveDown = t_switch; }
+	inline bool canWeMoveDown() { return m_freeToMoveDown; }
+
+	inline void setMovementBoolLeft(bool t_switch) { m_freeToMoveLeft = t_switch; }
+	inline bool canWeMoveLeft() { return m_freeToMoveLeft; }
+
+	inline void setMovementBoolRight(bool t_switch) { m_freeToMoveRight = t_switch;	}
+	inline bool canWeMoveRight() { return m_freeToMoveRight; }
+
+	// Inventory Methods
+
 	void PickUpItem(AbstractItem& t_item);
 	int GetWeaponDamage();
 	int GetArmourClass();

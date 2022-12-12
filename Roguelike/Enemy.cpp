@@ -25,9 +25,19 @@ Enemy::Enemy(EnemyType t_type, float t_posX, float t_posY) : m_type(t_type)
 	m_enemy.setOrigin(m_enemy.getTextureRect().width / 2.0f,
 		m_enemy.getTextureRect().height / 2.0f);
 	m_enemy.setScale(2.0f, 2.0f);
+
+	CombatSystem::PushBackEnemyStats(&health, xp);
 }
 
 void Enemy::update()
+{
+	if (health > 0)
+	{
+		move();
+	}
+}
+
+void Enemy::move()
 {
 	sf::Vector2f pos = m_enemy.getPosition();
 	int direction = rand() % 4;
@@ -46,11 +56,45 @@ void Enemy::update()
 		pos.x -= G_CELL_SIZE;
 		break;
 	}
-	
-	m_enemy.setPosition(pos);
+
+	// if player isnt in next cell
+	//m_enemy.setPosition(pos);
+
+	//else
+	CalculateDamageToPlayer(1);
+}
+
+void Enemy::CalculateDamageToPlayer(int t_playerAC)
+{
+	bool hitPlayer = CombatSystem::BattleEquation(t_playerAC);
+
+	if (hitPlayer)
+	{
+		std::cout << "The enemy hit you!" << std::endl;
+		CombatSystem::HurtPlayer(GetDamage());
+	}
+
+	else
+	{
+		std::cout << "The enemy missed you." << std::endl;
+	}
 }
 
 void Enemy::render(sf::RenderWindow& t_window)
 {
-	t_window.draw(m_enemy);
+	if (health > 0)
+	{
+		t_window.draw(m_enemy);
+	}
+}
+
+int Enemy::GetArmourClass()
+{
+	return m_armourClass;
+}
+
+int Enemy::GetDamage()
+{
+	int damage = CombatSystem::RollD8();
+	return damage;
 }
