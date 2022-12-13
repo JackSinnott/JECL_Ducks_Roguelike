@@ -1,5 +1,8 @@
 #include "GameOver.h"
 
+/// <summary>
+/// The default constructor.
+/// </summary>
 GameOver::GameOver()
 {
 	sf::Vector2f buttonSize = sf::Vector2f(600, 100);
@@ -14,6 +17,10 @@ GameOver::GameOver()
 	m_loseText.setOrigin(m_loseText.getLocalBounds().width / 2.0f, m_loseText.getLocalBounds().height / 2.0f);
 }
 
+/// <summary>
+/// Handles any events the player has triggered while on the GameOver Screen.
+/// </summary>
+/// <param name="t_event">The SFML event.</param>
 void GameOver::processEvents(sf::Event t_event)
 {
 	if (sf::Event::MouseButtonPressed == t_event.type)
@@ -35,11 +42,19 @@ void GameOver::processEvents(sf::Event t_event)
 	}
 }
 
+/// <summary>
+/// Updates the back Button.
+/// </summary>
+/// <param name="t_mousePos">The mouse's position on the screen.</param>
 void GameOver::update(sf::Vector2i t_mousePos)
 {
 	m_backButton->update(t_mousePos);
 }
 
+/// <summary>
+/// Draws all what's happening on the game over screen.
+/// </summary>
+/// <param name="t_window">The screen to draw to.</param>
 void GameOver::render(sf::RenderWindow& t_window)
 {
 	t_window.draw(m_loseText);
