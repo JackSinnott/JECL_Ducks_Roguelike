@@ -16,6 +16,7 @@ public:
 	void update(sf::Time t_dt, int row, int col);
 	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const;
 
+	void CheckPlayer(int t_playerRoomID);
 	void setUpTiles(TileType t_type, int row, int col);
 	inline int getID() { return id; }
 

@@ -48,7 +48,7 @@ void FileLoader::Load(int t_level)
 				}
 			}
 		}
-	m_level.close();
+		m_level.close();
 	}
 	else
 	{

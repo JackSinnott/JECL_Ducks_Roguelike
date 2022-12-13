@@ -28,7 +28,6 @@ void Player::setPlayerPositionInGrid(sf::Vector2i t_pos)
 void Player::move(int row, int col)
 {
 	m_playerBody.move(sf::Vector2f( row, col ) * float(G_CELL_SIZE));
-
 	//CalculateDamageToEnemy(1, 0);
 }
 
@@ -37,7 +36,7 @@ void Player::move(int row, int col)
 /// </summary>
 Player::Player()
 {
-
+	CombatSystem::SetPlayerHealth(&m_health);
 }
 
 /// <summary>
@@ -72,6 +71,8 @@ Player::Player(int t_row, int t_col) : m_playerTexture(nullptr),
 		m_rects.try_emplace(Armours::Light, sf::IntRect{ 16,112,16,16 });
 		m_noArmourRect = sf::IntRect{ 32,176,16,16 };
 	}
+
+	CombatSystem::SetPlayerHealth(&m_health);
 }
 
 
