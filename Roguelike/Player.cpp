@@ -37,6 +37,7 @@ void Player::move(int row, int col)
 Player::Player()
 {
 	CombatSystem::SetPlayerHealth(&m_health);
+
 }
 
 /// <summary>
@@ -44,7 +45,7 @@ Player::Player()
 /// </summary>
 /// <param name="t_row">The player's row in the grid.</param>
 /// <param name="t_col">The player's column in the grid.</param>
-Player::Player(int t_row, int t_col) : m_playerTexture(nullptr),
+Player::Player(int t_row, int t_col, AbstractItem *t_starterWeapon) : m_playerTexture(nullptr),
 	row(t_row),
 	col(t_col)
 {
@@ -73,6 +74,8 @@ Player::Player(int t_row, int t_col) : m_playerTexture(nullptr),
 	}
 
 	CombatSystem::SetPlayerHealth(&m_health);
+
+	m_playerInventory.StoreItem(*t_starterWeapon);
 }
 
 

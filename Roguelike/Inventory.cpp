@@ -169,7 +169,6 @@ void Inventory::RemovePotion()
 	m_currentPotion = nullptr;
 }
 
-
 /// <summary>
 /// Gets a reference to the current player's weapon
 /// </summary>

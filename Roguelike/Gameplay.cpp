@@ -1,9 +1,13 @@
 #include "Gameplay.h"
 
 Gameplay::Gameplay() :
-	m_grid(0,0),
-	player(5,5)
+	m_grid(0, 0)
 {
+	m_itemfactory = new WeaponFactory();
+	Weapons w = static_cast<Weapons>(2);
+	m_starterWeapon = m_itemfactory->CreateWeapon(w);
+	
+	player = Player(5,5, m_starterWeapon);
 	m_levelLoader = new FileLoader(m_grid);
 
 	LoadLevel();
@@ -105,7 +109,7 @@ void Gameplay::GenerateRandomItem()
 
 	}
 	//absWeapom = m_absItem;
-	player.PickUpItem(*m_absItem);
+	//player.PickUpItem(*m_absItem);
 	m_itemfactory = new ArmourFactory();
 
 	for (int i = 0; i < 10; i++)
@@ -119,7 +123,7 @@ void Gameplay::GenerateRandomItem()
 		m_absItem->GenerateRandomPosition();
 		m_absItemVector.push_back(m_absItem);
 	}
-	player.PickUpItem(*m_absItem);
+	//player.PickUpItem(*m_absItem);
 	m_itemfactory = new PotionFactory();
 
 	for (int i = 0; i < 10; i++)
@@ -133,7 +137,7 @@ void Gameplay::GenerateRandomItem()
 		m_absItemVector.push_back(m_absItem);
 	}
 
-	player.PickUpItem(*m_absItem);
+	//player.PickUpItem(*m_absItem);
 }
 
 void Gameplay::MouseEvents(sf::Event t_event)

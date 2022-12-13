@@ -38,6 +38,8 @@ private:
 	AbstractItemFactory* m_itemfactory; // Uses a factory method that allows the generation of items
 	AbstractItem* m_absItem; // The item itself that can be used to assigned the generated item
 
+	AbstractItem* m_starterWeapon;
+
 	std::vector<AbstractItem*> m_absItemVector; // A vector of items used to store what item is created
 
 	Player player;

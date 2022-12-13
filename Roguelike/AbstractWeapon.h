@@ -29,7 +29,17 @@ public:
 	/// Gets the damage of the weapon
 	/// </summary>
 	/// <returns></returns>
-	virtual int GetDamage() { return m_damage; }; //Returns the damage of the weapon
+	virtual int GetDamage() 
+	{
+		if (m_damage == NULL)
+		{
+			return 2;
+		}
+		else
+		{
+			return m_damage;
+		}
+	}; //Returns the damage of the weapon
 
 protected:
 	int m_damage = 0; //How much damage the weapon does.

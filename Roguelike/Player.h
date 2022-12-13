@@ -19,8 +19,6 @@ private:
 	//Field of view of the player
 	sf::View m_playerView;
 
-	// Variables
-
 	//sf::Sprite m_playerBody; 
 
 	bool m_freeToMoveRight = true;
@@ -45,6 +43,7 @@ private:
 
 	//A basic inventory
 	Inventory m_playerInventory;
+	AbstractItem * m_starterWeapon;
 
 	/// <summary>
 	/// Keeps track of whether the player is currently pressing a button.
@@ -69,7 +68,7 @@ private:
 
 public:
 	Player();
-	Player(int t_row, int t_col);
+	Player(int t_row, int t_col, AbstractItem* t_starterWeapon);
 
 	//void InitialiseTextures();
 

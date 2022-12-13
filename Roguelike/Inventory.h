@@ -6,7 +6,6 @@
 #include "AbstractWeapon.h"
 #include "AbstractArmour.h"
 #include "AbstractPotion.h"
-#include "AxeWeapon.h"
 class Inventory
 {
 public:
@@ -19,6 +18,7 @@ public:
 	void Draw(sf::RenderWindow& t_window);
 	void ToggleInventory();
 	void RemovePotion();
+
 	//Getting an item
 	AbstractWeapon& GetWeapon();
 	AbstractArmour& GetArmour();
