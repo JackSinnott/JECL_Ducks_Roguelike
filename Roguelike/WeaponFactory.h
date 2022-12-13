@@ -3,12 +3,16 @@
 #include "AxeWeapon.h"
 #include "DaggerWeapon.h"
 #include "SwordWeapon.h"
+
+/// <summary>
+/// Factory class that allows the enum of #Weapons to be made into an AbstractWeapon.
+/// </summary>
+
 class WeaponFactory : public AbstractItemFactory
 {
 public:
 /// <summary>
-/// Default overloaded constructor
-/// Creates a new weapon object depending on what type of armour is passed in
+/// Default overloaded constructor, that creates a new AbstractWeapon object depending on what type of #Weapons enum is passed in.
 /// </summary>
 /// <param name="t_armourType"></param>
 	AbstractWeapon* CreateWeapon(Weapons t_weapon) override
