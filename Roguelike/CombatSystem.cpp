@@ -3,6 +3,11 @@
 std::vector<std::pair<int*, int>> CombatSystem::enemiesStats = std::vector<std::pair<int*, int>>();
 int* CombatSystem::playerHealth = nullptr;
 
+void CombatSystem::SetPlayerHealth(int* t_health)
+{
+	playerHealth = t_health;
+}
+
 /// <summary>
 /// 
 /// </summary>
