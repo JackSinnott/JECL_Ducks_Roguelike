@@ -206,7 +206,7 @@ void Player::Render(sf::RenderWindow& t_window)
 {
 	m_playerInventory.Draw(t_window);
 	t_window.draw(m_playerBody);
-	t_window.setView(m_playerView);
+	//t_window.setView(m_playerView);
 }
 
 /// <summary>

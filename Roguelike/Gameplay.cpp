@@ -83,10 +83,10 @@ void Gameplay::render(sf::RenderWindow& t_window)
 	}
 
 
-	for(AbstractItem * n : m_absItemVector)
-	{
-		n->draw(t_window);
-	}
+	//for(AbstractItem * n : m_absItemVector)
+	//{
+	//	n->draw(t_window);
+	//}
 }
 
 void Gameplay::GenerateRandomItem()
@@ -94,8 +94,6 @@ void Gameplay::GenerateRandomItem()
 	srand(time(0));
 
 	m_itemfactory = new WeaponFactory();
-
-	//AbstractWeapon* absWeapom;
 
 	for (int i = 0; i < 10; i++)
 	{
@@ -108,8 +106,7 @@ void Gameplay::GenerateRandomItem()
 		m_absItemVector.push_back(m_absItem);
 
 	}
-	//absWeapom = m_absItem;
-	//player.PickUpItem(*m_absItem);
+
 	m_itemfactory = new ArmourFactory();
 
 	for (int i = 0; i < 10; i++)
@@ -123,7 +120,6 @@ void Gameplay::GenerateRandomItem()
 		m_absItem->GenerateRandomPosition();
 		m_absItemVector.push_back(m_absItem);
 	}
-	//player.PickUpItem(*m_absItem);
 	m_itemfactory = new PotionFactory();
 
 	for (int i = 0; i < 10; i++)
@@ -137,7 +133,6 @@ void Gameplay::GenerateRandomItem()
 		m_absItemVector.push_back(m_absItem);
 	}
 
-	//player.PickUpItem(*m_absItem);
 }
 
 void Gameplay::MouseEvents(sf::Event t_event)

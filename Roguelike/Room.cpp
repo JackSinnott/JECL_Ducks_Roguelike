@@ -5,6 +5,7 @@ Room::Room(int t_id, sf::Vector2f t_pos = sf::Vector2f()) :
 	m_pos(t_pos)
 {
 	m_pTexture = TextureManager::Acquire("ASSETS//IMAGES//Level//MapTiles.png");
+	SpawnItems();
 }
 
 Room::~Room()
@@ -24,6 +25,13 @@ void Room::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) cons
 		for (auto& row : m_tiles)
 			for (auto& x : row)
 				t_target.draw(x, t_state);
+
+
+	}
+
+	for (AbstractItem* n : m_absItemVector)
+	{
+		t_target.draw(n->GetSprite());
 	}
 }
 
@@ -55,6 +63,75 @@ void Room::setGridPosition()
 {
 	row = m_pos.x / G_CELL_SIZE;
 	col = m_pos.y / G_CELL_SIZE;
+}
+
+void Room::SpawnItems()
+{
+	srand(time(0));
+
+	int randomChance = rand() % 10 + 1;
+	int randomChanceB = rand() % 3 + 1;
+
+	for (int i = 0; i < 100; i++)
+	{
+		if (randomChance > 0)
+		{
+			int n = rand() % 3;
+			Weapons w;
+			Armours a;
+			Potions p;
+			switch (randomChanceB)
+			{
+			case 1:
+				m_itemfactory = new WeaponFactory();
+
+				w = static_cast<Weapons>(n);
+
+				m_absItem = m_itemfactory->CreateWeapon(w);
+				m_absItem->GenerateRandomPosition();
+				m_absItemVector.push_back(m_absItem);
+				break;
+
+			case 2:
+				m_itemfactory = new ArmourFactory();
+
+				n = rand() % 3;
+
+				a = static_cast<Armours>(n);
+
+				m_absItem = m_itemfactory->CreateArmour(a);
+				m_absItem->GenerateRandomPosition();
+				m_absItemVector.push_back(m_absItem);
+				break;
+
+			case 3:
+				m_itemfactory = new PotionFactory();
+
+				n = rand() % 3;
+
+				p = static_cast<Potions>(n);
+
+				m_absItem = m_itemfactory->CreatePotion(p);
+				m_absItem->GenerateRandomPosition();
+				m_absItemVector.push_back(m_absItem);
+				break;
+
+			default:
+				m_itemfactory = new WeaponFactory();
+
+				n = rand() % 3;
+
+				w = static_cast<Weapons>(n);
+
+				m_absItem = m_itemfactory->CreateWeapon(w);
+				m_absItem->GenerateRandomPosition();
+				m_absItemVector.push_back(m_absItem);
+				break;
+			}
+		}
+	}
+
+	
 }
 
 

@@ -7,6 +7,11 @@
 #include <array>
 #include "Tile.h"
 #include <iostream>
+
+#include "AbstractItemFactory.h"
+#include "WeaponFactory.h"
+#include "ArmourFactory.h"
+#include "PotionFactory.h"
 class Room
 {
 public:
@@ -28,7 +33,7 @@ public:
 
 	inline sf::Vector2i getGridPosition() { return sf::Vector2i(row, col); }
 
-	
+	void SpawnItems();
 
 private:
 	sf::Vector2f m_pos;
@@ -38,6 +43,10 @@ private:
 	std::vector<sf::Vector2i> m_walls;
 	int row, col;
 	int id;
+
+	AbstractItemFactory* m_itemfactory; // Uses a factory method that allows the generation of items
+	AbstractItem* m_absItem; // The item itself that can be used to assigned the generated item
+	std::vector<AbstractItem*> m_absItemVector; // A vector of items used to store what item is created
 
 	bool m_revealed;
 };
