@@ -15,6 +15,7 @@ Grid::Grid(int t_x, int t_y) : x(t_x), y(t_y),m_playerRoom(0)
 			m_points.append(m_point);
 		}
 	}
+
 }
 
 void Grid::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) const
@@ -35,6 +36,7 @@ void Grid::update(sf::Time t_dt, Player &t_playerPos)
 		room->setGridPosition();
 		getRoomPosition();
 		checkCollisionPlayerWall(t_playerPos);
+		room->CheckPlayer(m_playerRoom);
 	}
 
 	
