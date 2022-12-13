@@ -5,22 +5,27 @@
 
 
 /// <summary>
-/// Abstract item that all items derive from
+/// Abstract item that all in-game items derive from.
+/// This includes all the AbstractWeapon, AbstractArmour, and AbstractPotion.
 /// </summary>
 class AbstractItem
 {
 public:
+	
+	/// <summary>
+	/// Class's Default Deconstructor.
+	/// </summary>
 	~AbstractItem() { delete this; };
 
 	/// <summary>
-	/// Draw method for drawing the item's sprite
+	/// Draw method for drawing the item's sprite.
 	/// </summary>
-	/// <param name="t_window"></param>
+	/// <param name="t_window">The window to the item to.</param>
 	void draw(sf::RenderWindow& t_window) { t_window.draw(m_itemSprite); };
 
 
 	/// <summary>
-	/// Generates a random positon on the grid for said item
+	/// Generates a random positon on the grid for said item.
 	/// </summary>
 	void GenerateRandomPosition()
 	{
@@ -32,7 +37,7 @@ public:
 
 
 	/// <summary>
-	/// Sets up the item's texture, a generic position and scale of the sprite
+	/// Sets up the item's texture, a generic position and scale of the sprite.
 	/// </summary>
 	void SetupBasics()
 	{
@@ -47,9 +52,9 @@ public:
 
 
 	/// <summary>
-	/// Gets the type of the item
+	/// Gets the type of the item.
 	/// </summary>
-	/// <returns>Type of the item</returns>
+	/// <returns>Type of the item.</returns>
 	ItemType GetItemType()
 	{
 		return m_itemType;
@@ -57,17 +62,24 @@ public:
 
 
 	/// <summary>
-	/// Returns a reference to the item's sprite
+	/// Returns a reference to the item's sprite.
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>The item's sprite.</returns>
 	sf::Sprite & GetSprite()
 	{
 		return m_itemSprite;
 	}
 
 protected:
-	int m_rarity = 0; //Item rarity, affects it's stats
-	std::shared_ptr<sf::Texture> m_itemTexture; // Shared pointer to the texture
-	sf::Sprite m_itemSprite;//The item's sprite
-	ItemType m_itemType;//The type of item it is
+	///Item rarity, affects it's stats.
+	int m_rarity = 0;
+
+	///Shared pointer to the texture.
+	std::shared_ptr<sf::Texture> m_itemTexture;
+
+	///The item's sprite.
+	sf::Sprite m_itemSprite;
+
+	///The type of item it is.
+	ItemType m_itemType;
 };

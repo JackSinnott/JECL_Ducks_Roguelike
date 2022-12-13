@@ -6,13 +6,20 @@
 #include "Globals.h"
 
 /// <summary>
-/// An abstract item factory
+/// An abstract item factory, that allows the generation of AbstractItem objects.
+/// WeaponFactory, ArmourFactory and PotionFactory all derive from this.
 /// </summary>
+
 class AbstractItemFactory
 {
 public:
-	virtual AbstractWeapon* CreateWeapon(Weapons t_weapon) { return NULL;};//Virtual function where the item factory can create weapons
-	virtual AbstractArmour* CreateArmour(Armours t_armour) { return NULL;};//Virtual function where the item factory can create armours
-	virtual AbstractPotion* CreatePotion(Potions t_potion) { return NULL;};//Virtual function where the item factory can create potion
+	///Virtual function where the item factory can create weapons.
+	virtual AbstractWeapon* CreateWeapon(Weapons t_weapon) { return NULL;};
+
+	///Virtual function where the item factory can create armours.
+	virtual AbstractArmour* CreateArmour(Armours t_armour) { return NULL;};
+
+	///Virtual function where the item factory can create potion.
+	virtual AbstractPotion* CreatePotion(Potions t_potion) { return NULL;};
 };
 

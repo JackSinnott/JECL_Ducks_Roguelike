@@ -3,16 +3,20 @@
 #include "LightArmour.h"
 #include "HeavyArmour.h"
 #include "MediumArmour.h"
+
+/// <summary>
+/// Factory class that allows the enum of #Armour to be made into an AbstractArmour.
+/// </summary>
+
 class ArmourFactory : public AbstractItemFactory
 {
 public:
 
-
 	/// <summary>
-	/// Default overloaded constructor
-	/// Creates a new armour object depending on what type of armour is passed in
+	/// Overloaded constructor, that creates a new AbstractArmour object depending on what type of #Armours enum is passed in.
 	/// </summary>
-	/// <param name="t_armourType"></param>
+	/// <param name="t_armour">The enum type of the armour.</param>
+	/// <returns>The new armour object that was created.</returns>
 	AbstractArmour* CreateArmour(Armours t_armour) override
 	{
 		switch (t_armour)
