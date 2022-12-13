@@ -19,6 +19,7 @@ private:
 public:
 	static int RollD8(int amountRolled = 1);
 
+	static void SetPlayerHealth(int* t_health);
 	static void PushBackEnemyStats(int* t_health, int t_xp);
 
 	static bool BattleEquation(int defendersArmour, int attackersLevel = 0, int t_modifiers = 0);
