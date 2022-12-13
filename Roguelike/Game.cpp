@@ -1,10 +1,13 @@
 #include "Game.h"
 std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::texturePtrs; // Singletons need declaring
+std::unordered_map<std::string, std::shared_ptr<Audio>> AudioManager::m_sounds;
 
 Game::Game() :
 	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" }
 {
-	
+	AudioManager::AddSound("ASSETS/Sounds/Menu_Theme.ogg", "Menu_Theme", AudioType::MUSIC);
+	AudioManager::AddSound("ASSETS/Sounds/Game_Background.ogg", "Game_Theme", AudioType::MUSIC);
+	AudioManager::AddSound("ASSETS/Sounds/Footsteps.wav", "Footstep", AudioType::SFX);
 }
 
 //****************************************************************
@@ -59,6 +62,7 @@ void Game::processEvents()
 		switch (g_gamestate)
 		{
 		case Gamestate::MainMenu:
+			AudioManager::Play("Menu_Theme");
 			m_mainMenuScreen.processEvents(newEvent);
 			break;
 		case Gamestate::PauseMenu:
@@ -68,6 +72,8 @@ void Game::processEvents()
 			m_optionScreen.processEvents(newEvent);
 			break;
 		case Gamestate::Gameplay:
+			AudioManager::Stop("Menu_Theme");
+			AudioManager::Play("Game_Theme");
 			m_gameScreen.processEvents(newEvent);
 			break;
 		case Gamestate::GameOver:
