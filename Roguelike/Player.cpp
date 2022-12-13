@@ -28,24 +28,29 @@ void Player::setPlayerPositionInGrid(sf::Vector2i t_pos)
 void Player::move(int row, int col)
 {
 	m_playerBody.move(sf::Vector2f( row, col ) * float(G_CELL_SIZE));
+
+	//CalculateDamageToEnemy(1, 0);
 }
 
+/// <summary>
+/// Default constructor for Player.
+/// </summary>
 Player::Player()
 {
 
 }
 
 /// <summary>
-/// Default Constructor of Player.
+/// Overloaded constructor for Player, that sets the Player's position.
 /// </summary>
+/// <param name="t_row">The player's row in the grid.</param>
+/// <param name="t_col">The player's column in the grid.</param>
 Player::Player(int t_row, int t_col) : m_playerTexture(nullptr),
 	row(t_row),
 	col(t_col)
 {
 	m_playerTexture = TextureManager::Acquire(ITEMS_TEXTURE);
 	m_playerBody.setTexture(*m_playerTexture);
-
-	CombatSystem::SetPlayerHealth(&m_health);
 
 	UpdateArmourLook();
 
@@ -290,4 +295,109 @@ void Player::UpdateArmourLook()
 	{
 		m_playerBody.setTextureRect(m_noArmourRect);
 	}
+}
+
+
+/// <summary>
+/// Calculates the hit chance the player has on the enemy,
+/// and then if they hit, calculates the damage to the enemy and applies it.
+/// </summary>
+/// <param name="t_EnemyAC">The enemy's armour class, ie. how difficult they are to hit.</param>
+/// <param name="t_index">The index of the enemy in the world.</param>
+void Player::CalculateDamageToEnemy(int t_EnemyAC, int t_index)
+{
+	bool hitEnemy = CombatSystem::BattleEquation(level, t_EnemyAC, GetHitModifier());
+
+	if (hitEnemy)
+	{
+		std::cout << "You hit the enemy!" << std::endl;
+		xp += CombatSystem::HurtEnemy(t_index, GetDamageModifier() + GetWeaponDamage());
+	}
+
+	else
+	{
+		std::cout << "You missed the enemy..." << std::endl;
+	}
+}
+
+/// <summary>
+/// Calculates the additional hit chance of the player, based on their strength.
+/// </summary>
+/// <returns>The additional hit chance the player has when trying to hit the enemy.</returns>
+int Player::GetHitModifier()
+{
+	int modifier = 0;
+
+	if (m_strength < 7)
+	{
+		modifier = -7 + m_strength;
+	}
+
+	else if (m_strength >= 17)
+	{
+		modifier++;
+
+		if (m_strength >= 19)
+		{
+			modifier++;
+
+			if (m_strength >= 21)
+			{
+				modifier++;
+
+				if (m_strength >= 31)
+				{
+					modifier++;
+				}
+			}
+		}
+	}
+
+	return modifier;
+}
+
+/// <summary>
+/// Calculates the extra damage the player will do, based on their strength.
+/// </summary>
+/// <returns>The additional damage the player does to the enemy.</returns>
+int Player::GetDamageModifier()
+{
+	int modifier = 0;
+
+	if (m_strength < 7)
+	{
+		modifier = -7 + m_strength;
+	}
+
+	else if (m_strength >= 16)
+	{
+		modifier++;
+
+		if (m_strength >= 17)
+		{
+			modifier++;
+
+			if (m_strength >= 18)
+			{
+				modifier++;
+
+				if (m_strength >= 20)
+				{
+					modifier++;
+
+					if (m_strength >= 22)
+					{
+						modifier++;
+
+						if (m_strength >= 31)
+						{
+							modifier++;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return modifier;
 }
