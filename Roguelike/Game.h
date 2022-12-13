@@ -19,6 +19,7 @@
 #include "GameOver.h"
 #include "Options.h"
 #include "Help.h"
+#include "AudioManager.h"
 
 /// <summary>
 /// Game Class. Keeps track of Game Flow.
