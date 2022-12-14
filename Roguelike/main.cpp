@@ -16,7 +16,7 @@
 #include "Game.h"
 
 /// <summary>
-/// sets up the font used in the game
+/// Sets up the font that is used in the game.
 /// </summary>
 void setupFont()
 {
@@ -27,9 +27,9 @@ void setupFont()
 }
 
 /// <summary>
-/// main enrtry point
+/// The starting function.
 /// </summary>
-/// <returns>success or failure</returns>
+/// <returns>success or failure of the entire program.</returns>
 int main()
 {
 	setupFont();
