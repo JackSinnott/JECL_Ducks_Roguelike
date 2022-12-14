@@ -7,6 +7,10 @@
 #include "Globals.h"
 #include <iostream>
 
+/// <summary>
+/// Tile class, handles everything for one cell of the Grid.
+/// </summary>
+
 class Tile : public sf::Drawable
 {
 public:
@@ -17,21 +21,52 @@ public:
 
 	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const override;
 
+	/// <summary>
+	/// Returns what type of tile this one is.
+	/// </summary>
+	/// <returns>The tile type of this Tile object.</returns>
 	TileType getType() { return m_currentType; }
 
+	/// <summary>
+	/// Returns the Tile's sprite.
+	/// </summary>
+	/// <returns>The Tile's sprite.</returns>
 	sf::Sprite& getSprite() { return m_tile; }
 
+	/// <summary>
+	/// Returns the tile's position in the Game.
+	/// </summary>
+	/// <returns>The Tile's position.</returns>
 	sf::Vector2f getPosition() { return getSprite().getPosition(); }
 
 	void setGridPosition();
 
+	/// <summary>
+	/// Returns the rows and columns this Tile occupies.
+	/// </summary>
+	/// <returns>The row and columns that this Tile is in.</returns>
 	inline sf::Vector2i getGridPosition() { return sf::Vector2i(row, col); }
 
 private:
+
+	///The appearance of the Tile.
 	sf::Sprite m_tile;
-	int row, col;
+
+	///What row the Tile is in.
+	int row;
+
+	///What column the Tile is in.
+	int col;
+
+	///What type this tile is.
 	TileType m_currentType;
+
+	/// <summary>
+	/// The rects of the sprite, this will change the appearance of the tile depending on its TileType.
+	/// </summary>
 	static std::unordered_map<TileType, sf::IntRect> m_rects;
+
+	///Whether this tile is visible to the Player.
 	bool m_visibility;
 };
 #endif // !TILE_H
