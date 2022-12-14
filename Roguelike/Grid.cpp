@@ -361,6 +361,12 @@ void Grid::checkCollisionPlayerWall(Player &t_player)
 	}
 }
 
+std::vector<Room*>& Grid::GetRooms()
+{
+	return m_rooms;
+}
+
+
 sf::Vector2f Grid::placeRoom()
 {
 	switch (numOfRoomsMade)

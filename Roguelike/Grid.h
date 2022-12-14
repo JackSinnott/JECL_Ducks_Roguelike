@@ -29,6 +29,7 @@ public:
 
 	void checkCollisionPlayerWall(Player &t_player);
 
+	std::vector<Room*> &GetRooms();
 private:
 	sf::Vector2f placeRoom();
 

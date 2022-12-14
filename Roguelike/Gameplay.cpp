@@ -91,48 +91,10 @@ void Gameplay::render(sf::RenderWindow& t_window)
 
 void Gameplay::GenerateRandomItem()
 {
-	//srand(time(0));
-
-	//m_itemfactory = new WeaponFactory();
-
-	//for (int i = 0; i < 10; i++)
-	//{
-	//	int n = rand() % 3;
-
-	//	Weapons w = static_cast<Weapons>(n);
-
-	//	m_absItem = m_itemfactory->CreateWeapon(w);
-	//	m_absItem->GenerateRandomPosition();
-	//	m_absItemVector.push_back(m_absItem);
-
-	//}
-
-	//m_itemfactory = new ArmourFactory();
-
-	//for (int i = 0; i < 10; i++)
-	//{
-	//	int n = rand() % 3;
-
-
-	//	Armours a = static_cast<Armours>(n);
-
-	//	m_absItem = m_itemfactory->CreateArmour(a);
-	//	m_absItem->GenerateRandomPosition();
-	//	m_absItemVector.push_back(m_absItem);
-	//}
-	//m_itemfactory = new PotionFactory();
-
-	//for (int i = 0; i < 10; i++)
-	//{
-	//	int n = rand() % 3;
-
-	//	Potions p = static_cast<Potions>(n);
-
-	//	m_absItem = m_itemfactory->CreatePotion(p);
-	//	m_absItem->GenerateRandomPosition();
-	//	m_absItemVector.push_back(m_absItem);
-	//}
-
+	for (int i = 0; i < 4; i++)
+	{
+		m_grid.GetRooms()[i]->SearchTiles();
+	}
 }
 
 void Gameplay::MouseEvents(sf::Event t_event)
