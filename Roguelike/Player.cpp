@@ -63,7 +63,7 @@ Player::Player(int t_row, int t_col, AbstractItem *t_starterWeapon) : m_playerTe
 
 	m_playerInventory.SetupInventory(m_playerBody.getPosition());
 	m_playerView.setCenter(m_playerBody.getPosition());
-	m_playerView.setSize(G_VIEW_WIDTH/2, G_VIEW_HEIGTH/2);
+	m_playerView.setSize(G_VIEW_WIDTH, G_VIEW_HEIGTH);
 
 	if (m_rects.size() == 0)
 	{
@@ -206,7 +206,7 @@ void Player::Render(sf::RenderWindow& t_window)
 {
 	m_playerInventory.Draw(t_window);
 	t_window.draw(m_playerBody);
-	//t_window.setView(m_playerView);
+	t_window.setView(m_playerView);
 }
 
 /// <summary>

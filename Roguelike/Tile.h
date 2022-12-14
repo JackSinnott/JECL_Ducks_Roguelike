@@ -27,11 +27,13 @@ public:
 
 	inline sf::Vector2i getGridPosition() { return sf::Vector2i(row, col); }
 
+	bool TileOccupied();
+	void ToggleTileOccupied();
 private:
 	sf::Sprite m_tile;
 	int row, col;
 	TileType m_currentType;
 	static std::unordered_map<TileType, sf::IntRect> m_rects;
-	bool m_visibility;
+	bool m_hasItem;
 };
 #endif // !TILE_H

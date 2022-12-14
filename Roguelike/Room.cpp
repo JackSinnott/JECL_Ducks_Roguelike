@@ -5,7 +5,7 @@ Room::Room(int t_id, sf::Vector2f t_pos = sf::Vector2f()) :
 	m_pos(t_pos)
 {
 	m_pTexture = TextureManager::Acquire("ASSETS//IMAGES//Level//MapTiles.png");
-	SpawnItems();
+	srand(time(0));
 }
 
 Room::~Room()
@@ -22,12 +22,12 @@ void Room::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) cons
 {
 	if (m_revealed)
 	{
-		for (auto& row : m_tiles)
-			for (auto& x : row)
-				t_target.draw(x, t_state);
-
 
 	}
+
+	for (auto& row : m_tiles)
+		for (auto& x : row)
+			t_target.draw(x, t_state);
 
 	for (AbstractItem* n : m_absItemVector)
 	{
@@ -55,7 +55,7 @@ void Room::setUpTiles(TileType t_type, int row, int col) // pass argument that i
 	{
 		m_walls.push_back(m_tiles[row][col].getGridPosition());
 	}
-
+	SearchTiles();
 }
 
 
@@ -65,21 +65,42 @@ void Room::setGridPosition()
 	col = m_pos.y / G_CELL_SIZE;
 }
 
-void Room::SpawnItems()
+void Room::SpawnItems(int t_row, int t_col)
 {
-	srand(time(0));
 
-	int randomChance = rand() % 10 + 1;
-	int randomChanceB = rand() % 3 + 1;
+	//if (m_tiles[t_row][t_col].TileOccupied() == false)
+	//{
+	//	int n = rand() % 3;
+	//	Weapons w;
+	//	Armours a;
+	//	Potions p;
+	//	m_itemfactory = new WeaponFactory();
+	//	w = static_cast<Weapons>(n);
+	//	m_absItem = m_itemfactory->CreateWeapon(w);
+	//	//m_absItem->SetRandomPosition(sf::Vector2f(t_row,t_col) * float(G_CELL_SIZE));
+	//	m_absItem->SetRandomPosition(m_tiles[t_row][t_col].getPosition());
+	//	m_absItemVector.push_back(m_absItem);
+	//	m_tiles[t_row][t_col].ToggleTileOccupied();
+	//}
 
-	for (int i = 0; i < 100; i++)
+	
+
+
+	for (int i = 0; i < 10; i++)
 	{
-		if (randomChance > 0)
+
+
+		int randomChance = rand() % 10 + 1;
+		int randomChanceB = rand() % 3 + 1;
+
+		if (randomChance > 0 && m_tiles[t_row][t_col].TileOccupied() == false)
 		{
 			int n = rand() % 3;
 			Weapons w;
 			Armours a;
 			Potions p;
+
+
 			switch (randomChanceB)
 			{
 			case 1:
@@ -88,8 +109,9 @@ void Room::SpawnItems()
 				w = static_cast<Weapons>(n);
 
 				m_absItem = m_itemfactory->CreateWeapon(w);
-				m_absItem->GenerateRandomPosition();
+				m_absItem->SetRandomPosition(m_tiles[t_row][t_col].getPosition());
 				m_absItemVector.push_back(m_absItem);
+				m_tiles[t_row][t_col].ToggleTileOccupied();
 				break;
 
 			case 2:
@@ -100,8 +122,9 @@ void Room::SpawnItems()
 				a = static_cast<Armours>(n);
 
 				m_absItem = m_itemfactory->CreateArmour(a);
-				m_absItem->GenerateRandomPosition();
+				m_absItem->SetRandomPosition(m_tiles[t_row][t_col].getPosition());
 				m_absItemVector.push_back(m_absItem);
+				m_tiles[t_row][t_col].ToggleTileOccupied();
 				break;
 
 			case 3:
@@ -112,26 +135,36 @@ void Room::SpawnItems()
 				p = static_cast<Potions>(n);
 
 				m_absItem = m_itemfactory->CreatePotion(p);
-				m_absItem->GenerateRandomPosition();
+				m_absItem->SetRandomPosition(m_tiles[t_row][t_col].getPosition());
 				m_absItemVector.push_back(m_absItem);
+				m_tiles[t_row][t_col].ToggleTileOccupied();
 				break;
 
 			default:
-				m_itemfactory = new WeaponFactory();
-
-				n = rand() % 3;
-
-				w = static_cast<Weapons>(n);
-
-				m_absItem = m_itemfactory->CreateWeapon(w);
-				m_absItem->GenerateRandomPosition();
-				m_absItemVector.push_back(m_absItem);
 				break;
 			}
 		}
 	}
-
 	
+}
+
+void Room::SearchTiles()
+{
+	for (int col = 0; col < 60; col++)
+	{
+		for (int row = 0; row < 70; row++)
+		{
+			if (m_tiles[row][col].getType() == TileType::GROUND)
+			{
+				SpawnItems(row, col);
+			
+				//std::cout << "Ground tile at: " <<  row << ", "<< col << std::endl;
+			}
+
+		}
+	}
+	//SpawnItems(10, 10);
+
 }
 
 

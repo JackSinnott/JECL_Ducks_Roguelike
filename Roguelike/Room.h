@@ -33,8 +33,9 @@ public:
 
 	inline sf::Vector2i getGridPosition() { return sf::Vector2i(row, col); }
 
-	void SpawnItems();
+	void SpawnItems(int t_row, int t_col);
 
+	void SearchTiles();
 private:
 	sf::Vector2f m_pos;
 

@@ -30,6 +30,14 @@ public:
 		m_itemSprite.setPosition( sf::Vector2f(randomeX, randomeY) * float(G_CELL_SIZE));
 	}
 
+	/// <summary>
+	/// Sets a positon on the grid for said item from a vector
+	/// </summary>
+	void SetRandomPosition(sf::Vector2f t_v)
+	{
+		m_itemSprite.setPosition((t_v + sf::Vector2f(16,16)) + sf::Vector2f(32,32) * 5.0f);
+		//m_itemSprite.setPosition(t_v);
+	}
 
 	/// <summary>
 	/// Sets up the item's texture, a generic position and scale of the sprite
@@ -40,8 +48,8 @@ public:
 		m_itemSprite.setTexture(*m_itemTexture);
 		m_itemSprite.setOrigin(m_itemSprite.getTextureRect().width/ 2.0f, m_itemSprite.getTextureRect().height / 2.0f);
 
-		m_itemSprite.setPosition(G_CELL_SIZE * (10) + G_CELL_SIZE / 2.0f,
-			G_CELL_SIZE * (10) + G_CELL_SIZE / 2.0f);
+		//m_itemSprite.setPosition(G_CELL_SIZE * (10) + G_CELL_SIZE / 2.0f,
+		//	G_CELL_SIZE * (10) + G_CELL_SIZE / 2.0f);
 		m_itemSprite.setScale(2.0f, 2.0f);
 	}
 
