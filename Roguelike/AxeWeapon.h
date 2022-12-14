@@ -1,12 +1,18 @@
 #pragma once
 #include "AbstractWeapon.h"
+
+/// <summary>
+/// The Axe weapon, the strongest of the three #Weapons the Player can use.
+/// </summary>
+
 class AxeWeapon : public AbstractWeapon
 {
 public:
+
 	/// <summary>
-	/// Constructor for setting up the weapon and its basics
+	/// Constructor for setting up the weapon and its basics.
 	/// </summary>
-	/// <param name="t_weaponType"></param>
+	/// <param name="t_weaponType">The weapon type - in this case, the #Axe.</param>
 	AxeWeapon(Weapons t_weaponType)
 	{
 		m_weaponType = t_weaponType;
@@ -18,10 +24,11 @@ public:
 		SetupBasics();
 		SetType();
 	};
+
 	/// <summary>
-	/// Override function that returns the damage
+	/// Override function that returns the damage caused by the axe.
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>The damage as an integer.</returns>
 	int GetDamage() override 
 	{
 		if (m_rarity > 5)

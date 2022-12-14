@@ -58,6 +58,6 @@ protected:
 	/// </summary>
 	static std::unordered_map<Potions, sf::IntRect> m_rects;
 
-	///The type of potion this object is - Strength, Health or Speed.
+	///The type of potion this object is - #Strength, #Health or #Speed.
 	Potions m_potionType = Potions::Health;
 };
