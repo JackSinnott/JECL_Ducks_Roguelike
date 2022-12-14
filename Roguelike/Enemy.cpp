@@ -9,6 +9,8 @@ Enemy::Enemy(EnemyType t_type, float t_posX, float t_posY) : m_type(t_type)
 	int yCoord = (int)t_posY - (int)t_posY % G_CELL_SIZE + G_CELL_SIZE / 2;
 	m_enemy.setOrigin(G_CELL_SIZE / 2, G_CELL_SIZE / 2);
 	m_enemy.setPosition(sf::Vector2f(xCoord, yCoord));
+	row = xCoord - G_CELL_SIZE / 2 / G_CELL_SIZE;
+	col = yCoord - G_CELL_SIZE / 2 / G_CELL_SIZE;
 	
 	m_enemyTexture = TextureManager::Acquire(ITEMS_TEXTURE);
 
@@ -31,6 +33,7 @@ Enemy::Enemy(EnemyType t_type, float t_posX, float t_posY) : m_type(t_type)
 
 void Enemy::update()
 {
+	//room = m_grid->whatRoomIsTargetIn(getEnemyPositionInGrid());
 	if (health > 0)
 	{
 		move();

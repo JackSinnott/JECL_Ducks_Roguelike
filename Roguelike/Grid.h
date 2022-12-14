@@ -6,6 +6,7 @@
 #include <vector>
 #include "Room.h"
 #include "Player.h"
+#include "Enemy.h"
 
 class Grid
 {
@@ -47,7 +48,8 @@ private:
 	std::map<int, std::vector<sf::Vector2i>> m_roomWalls;
 
 	Player m_player;
-
+	
+	void checkCollisionPlayerInRoom(Player& t_player);
 };
 
 #endif // !GRID_H
