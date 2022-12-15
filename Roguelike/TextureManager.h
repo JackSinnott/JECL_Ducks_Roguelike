@@ -2,17 +2,25 @@
 #define TEXTURE_MANAGER_H
 
 #include <SFML/Graphics.hpp>
-#include <memory>>
+#include <memory>
 #include <unordered_map>
 #include <string>
 #include "ResourceAllocator.h"
 
 /// <summary>
-/// Loads textures to unique pointers and has the capabilities of deleting the resources. Use as a template for other resources
+/// Class that loads textures to unique pointers and has the capabilities of deleting them.
+/// Derives from ResourceAllocator. 
 /// </summary>
+
 class TextureManager : public ResourceAllocator<TextureManager, std::shared_ptr<sf::Texture>>
 {
 public:
+
+	/// <summary>
+	/// Searches for a new texture in the project's files, loads it and returns it.
+	/// </summary>
+	/// <param name="name">String that is the path to what is to be acquired.</param>
+	/// <returns>A shared_ptr to the loaded texture.</returns>
 	static std::shared_ptr<sf::Texture> Acquire(const std::string& name)
 	{
 		const auto i = texturePtrs.find(name);
@@ -28,10 +36,12 @@ public:
 			return pTex;
 		}
 	}
+
+
 	/// <summary>
-	/// We may not need this as the game is small on entity types but I said I'd include it in case
+	/// deletes textures not being used, saving memory.
 	/// </summary>
-	static void Collectgarbage() // delete resources not being used.
+	static void Collectgarbage()
 	{
 		for (auto i = texturePtrs.begin(); i != texturePtrs.end(); )
 		{
@@ -46,6 +56,10 @@ public:
 		}
 	}
 private:
+
+	/// <summary>
+	/// A collection of all the shared_ptrs to the textures.
+	/// </summary>
 	static std::unordered_map<std::string, std::shared_ptr<sf::Texture>> texturePtrs;
 };
 
