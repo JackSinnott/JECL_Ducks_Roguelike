@@ -42,17 +42,14 @@ void Room::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) cons
 {
 	if (m_revealed)
 	{
+		for (auto& row : m_tiles)
+			for (auto& x : row)
+				t_target.draw(x, t_state);
 
-
-	}
-
-	for (auto& row : m_tiles)
-		for (auto& x : row)
-			t_target.draw(x, t_state);
-
-	for (AbstractItem* n : m_absItemVector)
-	{
-		t_target.draw(n->GetSprite());
+		for (AbstractItem* n : m_absItemVector)
+		{
+			t_target.draw(n->GetSprite());
+		}
 	}
 }
 
@@ -123,6 +120,7 @@ void Room::SpawnItems(int t_row, int t_col)
 			m_absItem->SetRandomPosition(m_tiles[t_row][t_col].getPosition());
 			m_absItemVector.push_back(m_absItem);
 			m_tiles[t_row][t_col].ToggleTileOccupied();
+			m_tilesWithItems.push_back(sf::Vector2i(t_row,t_col));
 			break;
 
 		case 2:
@@ -136,6 +134,7 @@ void Room::SpawnItems(int t_row, int t_col)
 			m_absItem->SetRandomPosition(m_tiles[t_row][t_col].getPosition());
 			m_absItemVector.push_back(m_absItem);
 			m_tiles[t_row][t_col].ToggleTileOccupied();
+			m_tilesWithItems.push_back(sf::Vector2i(t_row, t_col));
 			break;
 
 		case 3:
@@ -149,6 +148,7 @@ void Room::SpawnItems(int t_row, int t_col)
 			m_absItem->SetRandomPosition(m_tiles[t_row][t_col].getPosition());
 			m_absItemVector.push_back(m_absItem);
 			m_tiles[t_row][t_col].ToggleTileOccupied();
+			m_tilesWithItems.push_back(sf::Vector2i(t_row, t_col));
 			break;
 
 		default:
@@ -171,8 +171,21 @@ void Room::SearchTiles()
 			SpawnItems(randomRow, randomCol);
 		}
 	}
+}
 
-
+void Room::ComparePlayerAndItem(sf::Vector2i t_playerGridPos, int t_playerRoomID)
+{
+	if (t_playerRoomID == id)
+	{
+		for (sf::Vector2i tile : m_tilesWithItems)
+		{
+			if (t_playerGridPos == tile)
+			{
+				m_tiles[tile.x][tile.y].ToggleTileOccupied();
+				std::cout << "You picked up an item" << std::endl;
+			}
+		}
+	}
 }
 
 

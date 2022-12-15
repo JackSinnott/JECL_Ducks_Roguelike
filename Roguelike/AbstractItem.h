@@ -19,7 +19,7 @@ public:
 	/// <summary>
 	/// Draw method for drawing the item's sprite.
 	/// </summary>
-	/// <param name="t_window">The window to the item to.</param>
+	/// <param name="t_window">The window to the item to draw.</param>
 	void draw(sf::RenderWindow& t_window) { t_window.draw(m_itemSprite); };
 
 
@@ -40,7 +40,6 @@ public:
 	void SetRandomPosition(sf::Vector2f t_v)
 	{
 		m_itemSprite.setPosition((t_v + sf::Vector2f(16,16)) + sf::Vector2f(32,32) * 5.0f);
-		//m_itemSprite.setPosition(t_v);
 	}
 
 	/// <summary>

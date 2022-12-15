@@ -61,8 +61,6 @@ private:
 
 	AbstractItem* m_starterWeapon;
 
-	std::vector<AbstractItem*> m_absItemVector; // A vector of items used to store what item is created
-
 	///A vector of items used to store what item is created.
 	std::vector<AbstractItem*> m_absItemVector; 
 

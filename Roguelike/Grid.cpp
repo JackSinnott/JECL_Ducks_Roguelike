@@ -366,6 +366,14 @@ std::vector<Room*>& Grid::GetRooms()
 	return m_rooms;
 }
 
+void Grid::CheckCollisionItems(sf::Vector2i t_playerGridPos)
+{
+	for (Room* Room : m_rooms)
+	{
+		Room->ComparePlayerAndItem(t_playerGridPos, m_playerRoom);
+	}
+}
+
 
 sf::Vector2f Grid::placeRoom()
 {

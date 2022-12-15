@@ -30,6 +30,8 @@ public:
 	void checkCollisionPlayerWall(Player &t_player);
 
 	std::vector<Room*> &GetRooms();
+
+	void CheckCollisionItems(sf::Vector2i t_playerGridPos);
 private:
 	sf::Vector2f placeRoom();
 

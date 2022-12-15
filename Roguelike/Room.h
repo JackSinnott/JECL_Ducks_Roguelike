@@ -52,7 +52,12 @@ public:
 
 	void SpawnItems(int t_row, int t_col);
 	
+	/// <summary>
+	/// Searches through all the ground tiles
+	/// </summary>
 	void SearchTiles();
+
+	void ComparePlayerAndItem(sf::Vector2i t_playerGridPos, int t_playerRoomID);
 private:
 	///
 	sf::Vector2f m_pos;
@@ -79,9 +84,11 @@ private:
 	AbstractItem* m_absItem; // The item itself that can be used to assigned the generated item
 	std::vector<AbstractItem*> m_absItemVector; // A vector of items used to store what item is created
 
-	///
+	/// Simple check to see if the room is revealed or not
 	bool m_revealed;
+	std::vector<sf::Vector2i> m_tilesWithItems;
 };
+
 
 #endif // !ROOM_H
 

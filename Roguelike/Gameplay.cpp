@@ -44,6 +44,7 @@ void Gameplay::processEvents(sf::Event t_event)
 		if (player.ProcessKeys(t_event))
 		{
 			processTurn();
+			m_grid.CheckCollisionItems(player.getPlayerPositionInGrid());
 		}
 
 		if (sf::Event::KeyReleased == t_event.type)
@@ -105,7 +106,7 @@ void Gameplay::render(sf::RenderWindow& t_window)
 }
 
 /// <summary>
-/// Generates a random item, and gives it to the player. This is the player's starting equipment.
+/// Generates random items in each room
 /// </summary>
 void Gameplay::GenerateRandomItem()
 {

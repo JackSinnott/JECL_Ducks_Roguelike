@@ -68,10 +68,7 @@ private:
 	/// </summary>
 	static std::unordered_map<TileType, sf::IntRect> m_rects;
 
-	/// Checks where the item is visible or not
+	/// Checks if the tile has an item or not
 	bool m_hasItem;
-
-	///Whether this tile is visible to the Player.
-	bool m_visibility;
 };
 #endif // !TILE_H
