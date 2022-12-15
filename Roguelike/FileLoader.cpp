@@ -1,14 +1,20 @@
 #include "FileLoader.h"
 
+/// <summary>
+/// Overloaded Constructor.
+/// </summary>
+/// <param name="t_grid">A reference to the Grid in Gameplay.</param>
 FileLoader::FileLoader(Grid& t_grid) : m_gridData(t_grid)
 {
 	srand(time(NULL));
 }
 
+/// <summary>
+/// Loads a Room out of the level text files.
+/// </summary>
+/// <param name="t_level">The index of the Room to be loaded.</param>
 void FileLoader::Load(int t_level)
 {
-	roomCount = t_level;
-	
 	room_id += 1; // If this is the same value again the room is discarded
 
 	if (room_id == 8)

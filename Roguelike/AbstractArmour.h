@@ -63,6 +63,9 @@ protected:
 	/// </summary>
 	static std::unordered_map<Armours, sf::IntRect> m_rects;
 
-	int m_armourClass = 0; ///The armour class.
-	Armours m_armourType = Armours::Light; ///The armour type.
+	///The armour class.
+	int m_armourClass = 0; 
+
+	///The armour type.
+	Armours m_armourType = Armours::Light; 
 };

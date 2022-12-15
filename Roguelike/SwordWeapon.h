@@ -1,12 +1,17 @@
 #pragma once
 #include "AbstractWeapon.h"
+
+/// <summary>
+/// The Sword weapon, the middle of the three #Weapons the Player can use.
+/// </summary>
+
 class SwordWeapon : public AbstractWeapon
 {
 public:
 	/// <summary>
-	/// Constructor for setting up the weapon and its basics
+	/// Constructor for setting up the weapon and its basics.
 	/// </summary>
-	/// <param name="t_weaponType"></param>
+	/// <param name="t_weaponType">The weapon type - in this case, the #Sword.</param>
 	SwordWeapon(Weapons t_weaponType)
 	{
 		m_weaponType = t_weaponType;
@@ -20,9 +25,9 @@ public:
 	};
 
 	/// <summary>
-	/// Override function that returns the damage
+	/// Override function that returns the damage caused by the sword.
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>The damage as an integer.</returns>
 	int GetDamage() override
 	{
 		if (m_rarity > 3)
