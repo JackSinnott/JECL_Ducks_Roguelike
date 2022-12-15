@@ -7,11 +7,14 @@
 #include <array>
 #include "Tile.h"
 #include <iostream>
+#include <map>
+#include <utility>
 
 #include "AbstractItemFactory.h"
 #include "WeaponFactory.h"
 #include "ArmourFactory.h"
 #include "PotionFactory.h"
+#include "Player.h"
 class Room
 {
 public:
@@ -57,7 +60,7 @@ public:
 	/// </summary>
 	void SearchTiles();
 
-	void ComparePlayerAndItem(sf::Vector2i t_playerGridPos, int t_playerRoomID);
+	void ComparePlayerAndItem(Player t_player, int t_playerRoomID);
 private:
 	///
 	sf::Vector2f m_pos;
@@ -87,6 +90,10 @@ private:
 	/// Simple check to see if the room is revealed or not
 	bool m_revealed;
 	std::vector<sf::Vector2i> m_tilesWithItems;
+
+
+	//std::map<sf::Vector2i, AbstractItem*> m_mapWithItems;
+
 };
 
 

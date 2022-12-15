@@ -10,7 +10,9 @@
 class AbstractItem
 {
 public:
-	
+	bool operator < (const AbstractItem& o) const { // Note *const* at end
+		// Do something meaningful here
+	}
 	/// <summary>
 	/// Class's Default Deconstructor.
 	/// </summary>
@@ -75,10 +77,10 @@ public:
 	{
 		return m_itemSprite;
 	}
-
+	int id;
 protected:
-	///Item rarity, affects it's stats.
 	int m_rarity = 0;
+	///Item rarity, affects it's stats.
 
 	///Shared pointer to the texture.
 	std::shared_ptr<sf::Texture> m_itemTexture;
@@ -88,4 +90,12 @@ protected:
 
 	///The type of item it is.
 	ItemType m_itemType = ItemType::Weapon;
+
+	bool operator<(const AbstractItem* b) const
+	{
+		if (this->id == b->id)
+		{
+			return this->id;
+		};
+	}
 };

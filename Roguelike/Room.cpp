@@ -107,7 +107,7 @@ void Room::SpawnItems(int t_row, int t_col)
 		Weapons w;
 		Armours a;
 		Potions p;
-
+		sf::Vector2i i = sf::Vector2i(t_row, t_col);
 
 		switch (randomChanceB)
 		{
@@ -121,6 +121,11 @@ void Room::SpawnItems(int t_row, int t_col)
 			m_absItemVector.push_back(m_absItem);
 			m_tiles[t_row][t_col].ToggleTileOccupied();
 			m_tilesWithItems.push_back(sf::Vector2i(t_row,t_col));
+
+
+
+			//m_mapWithItems.insert(std::pair<sf::Vector2i, AbstractItem*>(i, m_absItem));
+
 			break;
 
 		case 2:
@@ -173,18 +178,21 @@ void Room::SearchTiles()
 	}
 }
 
-void Room::ComparePlayerAndItem(sf::Vector2i t_playerGridPos, int t_playerRoomID)
+void Room::ComparePlayerAndItem(Player t_player, int t_playerRoomID)
 {
 	if (t_playerRoomID == id)
 	{
-		for (sf::Vector2i tile : m_tilesWithItems)
-		{
-			if (t_playerGridPos == tile)
-			{
-				m_tiles[tile.x][tile.y].ToggleTileOccupied();
-				std::cout << "You picked up an item" << std::endl;
-			}
-		}
+		//
+		std::map<sf::Vector2i, AbstractItem*>::iterator it;
+
+		//for (it = m_mapWithItems.begin(); it != m_mapWithItems.end(); it++)
+		//{
+		//	if (it->first == t_player.getPlayerPositionInGrid())
+		//	{
+		//		t_player.PickUpItem(*it->second);
+		//		m_mapWithItems.erase(it->first);
+		//	}
+		//}
 	}
 }
 

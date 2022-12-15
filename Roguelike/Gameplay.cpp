@@ -44,7 +44,7 @@ void Gameplay::processEvents(sf::Event t_event)
 		if (player.ProcessKeys(t_event))
 		{
 			processTurn();
-			m_grid.CheckCollisionItems(player.getPlayerPositionInGrid());
+			m_grid.CheckCollisionItems(player);
 		}
 
 		if (sf::Event::KeyReleased == t_event.type)

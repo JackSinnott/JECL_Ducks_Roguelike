@@ -31,7 +31,7 @@ public:
 
 	std::vector<Room*> &GetRooms();
 
-	void CheckCollisionItems(sf::Vector2i t_playerGridPos);
+	void CheckCollisionItems(Player t_player);
 private:
 	sf::Vector2f placeRoom();
 
