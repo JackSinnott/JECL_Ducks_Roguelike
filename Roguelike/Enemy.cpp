@@ -2,7 +2,12 @@
 
 std::unordered_map<EnemyType, sf::IntRect> Enemy::m_rects = std::unordered_map<EnemyType, sf::IntRect>(); // initialize
 
-
+/// <summary>
+/// Overloaded constructor of the Enemy.
+/// </summary>
+/// <param name="t_type">The type of Enemy this is.</param>
+/// <param name="t_posX">The x position of the enemy.</param>
+/// <param name="t_posY">The y position of the enemy.</param>
 Enemy::Enemy(EnemyType t_type, float t_posX, float t_posY) : m_type(t_type)
 {
 	int xCoord = (int)t_posX - (int)t_posX % G_CELL_SIZE + G_CELL_SIZE / 2;
@@ -29,6 +34,9 @@ Enemy::Enemy(EnemyType t_type, float t_posX, float t_posY) : m_type(t_type)
 	CombatSystem::PushBackEnemyStats(&health, xp);
 }
 
+/// <summary>
+/// Updates and moves the enemy after each Player turn.
+/// </summary>
 void Enemy::update()
 {
 	if (health > 0)
@@ -37,6 +45,9 @@ void Enemy::update()
 	}
 }
 
+/// <summary>
+/// Moves the enemy around the Grid, one Tile per turn.
+/// </summary>
 void Enemy::move()
 {
 	sf::Vector2f pos = m_enemy.getPosition();
@@ -64,6 +75,11 @@ void Enemy::move()
 	CalculateDamageToPlayer(1);
 }
 
+/// <summary>
+/// Calculates the hit chance the enemy has on the player,
+/// and then if they hit, calculates the damage to the player and applies it.
+/// </summary>
+/// <param name="t_playerAC">The player's armour class.</param>
 void Enemy::CalculateDamageToPlayer(int t_playerAC)
 {
 	bool hitPlayer = CombatSystem::BattleEquation(t_playerAC);
@@ -80,6 +96,10 @@ void Enemy::CalculateDamageToPlayer(int t_playerAC)
 	}
 }
 
+/// <summary>
+/// Draws the Enemy to the screen.
+/// </summary>
+/// <param name="t_window">The window to draw to.</param>
 void Enemy::render(sf::RenderWindow& t_window)
 {
 	if (health > 0)
@@ -88,11 +108,19 @@ void Enemy::render(sf::RenderWindow& t_window)
 	}
 }
 
+/// <summary>
+/// Returns the armour class of this enemy - aka how hard it is to hit.
+/// </summary>
+/// <returns>The AC of this Enemy.</returns>
 int Enemy::GetArmourClass()
 {
 	return m_armourClass;
 }
 
+/// <summary>
+/// Calculates how much damage this enemy would cause to it's target, and return it.
+/// </summary>
+/// <returns>The damage dealt by this enemy.</returns>
 int Enemy::GetDamage()
 {
 	int damage = CombatSystem::RollD8();
