@@ -8,6 +8,10 @@
 #include "Globals.h"
 #include "Grid.h"
 
+/// <summary>
+/// Child class of LevelLoader, this class loads the Room objects in using the text files in the project folders.
+/// </summary>
+
 class FileLoader : public LevelLoader
 {
 public:
@@ -17,10 +21,11 @@ public:
 
 private:
 
+	///The Grid - everything loaded here will be passed into this.
 	Grid& m_gridData;
-	int roomCount = 0;
+
+	///Keeps track of what rooms have been loaded.
 	int room_id = 0;
-	std::vector<int> previousID;
 };
 
 #endif // !FILE_LOADER_H
