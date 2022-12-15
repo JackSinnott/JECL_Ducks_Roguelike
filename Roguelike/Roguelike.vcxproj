@@ -48,11 +48,11 @@
     <ClInclude Include="AbstractWeapon.h" />
     <ClInclude Include="ArmourFactory.h" />
     <ClInclude Include="AxeWeapon.h" />
+    <ClInclude Include="Bat.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="CombatSystem.h" />
     <ClInclude Include="DaggerWeapon.h" />
     <ClInclude Include="Enemy.h" />
-    <ClInclude Include="EnemyState.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="Gameplay.h" />
@@ -60,6 +60,7 @@
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Help.h" />
     <ClInclude Include="Inventory.h" />
+    <ClInclude Include="Rat.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="HealthPotion.h" />

@@ -2,7 +2,8 @@
 #include "Globals.h"
 #include "FileLoader.h"
 #include "Player.h"
-#include "Enemy.h"
+#include "Bat.h"
+#include "Rat.h"
 #include "Grid.h"
 #include "AbstractItemFactory.h"
 #include "WeaponFactory.h"
@@ -41,7 +42,7 @@ private:
 	std::vector<AbstractItem*> m_absItemVector; // A vector of items used to store what item is created
 
 	Player player;
-	Enemy* m_testEnemy;
+	std::vector<Enemy*> m_enemies;
 
 	bool m_debugTools;
 };

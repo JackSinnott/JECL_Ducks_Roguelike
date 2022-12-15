@@ -177,8 +177,11 @@
     <ClInclude Include="Inventory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EnemyState.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Bat.h">
+      <Filter>Header Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Rat.h">
+      <Filter>Header Files\Enemies</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +214,9 @@
     </Filter>
     <Filter Include="Source Files\Scenes">
       <UniqueIdentifier>{a9aecd7e-9cff-4923-ab4f-32c19571b3ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Enemies">
+      <UniqueIdentifier>{8bcd258d-fdd3-4e49-96cc-2b065727ce75}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
