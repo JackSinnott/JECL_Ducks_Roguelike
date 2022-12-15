@@ -1,11 +1,16 @@
 #pragma once
-
 #include "AbstractItem.h"
+
+/// <summary>
+/// Abstract Weapon which AxeWeapon, DaggerWeapon and SwordWeapon derive from.
+/// </summary>
+
 class AbstractWeapon : public AbstractItem
 {
 public:
+
 	/// <summary>
-	/// Abstract weapon which all weapons derive from
+	/// Default Class Constructor.
 	/// </summary>
 	AbstractWeapon()
 	{
@@ -17,18 +22,21 @@ public:
 		}
 	}
 
+	/// <summary>
+	/// Default Class Deconstructor.
+	/// </summary>
 	~AbstractWeapon() {};
 
 	/// <summary>
-	/// Gets the type of item it is as well as assign the weapon's texture
+	/// Sets the type of item it is, as well as assign the weapon's texture.
 	/// </summary>
 	void SetType() { m_itemType = ItemType::Weapon; m_itemSprite.setTextureRect(m_rects.at(m_weaponType));};
 
 
 	/// <summary>
-	/// Gets the damage of the weapon
+	/// Gets the damage of the weapon.
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>The damage number of the weapon.</returns>
 	virtual int GetDamage() 
 	{
 		if (m_damage == NULL)
@@ -41,9 +49,16 @@ public:
 		}
 	}; //Returns the damage of the weapon
 
+
 protected:
-	int m_damage = 0; //How much damage the weapon does.
-	static std::unordered_map<Weapons, sf::IntRect> m_rects; //Texture rect of the sprite
-	Weapons m_weaponType;//The type of weapon it is
+
+	///How much damage the weapon does.
+	int m_damage = 0; 
+
+	///Texture rect of the sprite.
+	static std::unordered_map<Weapons, sf::IntRect> m_rects;
+
+	///The type of weapon it is.
+	Weapons m_weaponType = Weapons::Sword;
 };
 

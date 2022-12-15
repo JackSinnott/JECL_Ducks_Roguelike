@@ -1,11 +1,16 @@
 #pragma once
 #include "AbstractItem.h"
+
+/// <summary>
+/// The Abstract class that is the base for the LightArmour, HeavyArmour, and MediumArmour classes.
+/// </summary>
+
 class AbstractArmour : public AbstractItem
 {
 public:
 
 	/// <summary>
-	///	Default armour constructor
+	///	Default class constructor.
 	/// </summary>
 	AbstractArmour()
 	{
@@ -18,24 +23,28 @@ public:
 
 
 	}
+
+	/// <summary>
+	///	Default class deconstructor.
+	/// </summary>
 	~AbstractArmour() {};
 
 	/// <summary>
-	/// Sets the type of item it is
+	/// Sets the type of item this object is, as well as setting its sprite.
 	/// </summary>
 	void SetType() { m_itemType = ItemType::Armour; m_itemSprite.setTextureRect(m_rects.at(m_armourType)); };
 
 	/// <summary>
-	/// Gets the armour type
+	/// Gets the armour type of this object.
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>The Armour type.</returns>
 	Armours GetType() { return m_armourType; };
 
 
 	/// <summary>
-	/// Gets the armour class
+	/// Gets the armour class.
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>The armour class (AC) of this armour.</returns>
 	int GetArmourClass()
 	{
 		if (m_rarity > 3)
@@ -49,8 +58,11 @@ public:
 	};
 protected:
 
-	static std::unordered_map<Armours, sf::IntRect> m_rects;//Sprite rects of the armour
+	/// <summary>
+	/// The sprite rects of the armour.
+	/// </summary>
+	static std::unordered_map<Armours, sf::IntRect> m_rects;
 
-	int m_armourClass = 0; //Armour class
-	Armours m_armourType; //Armour type
+	int m_armourClass = 0; ///The armour class.
+	Armours m_armourType = Armours::Light; ///The armour type.
 };
