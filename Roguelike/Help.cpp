@@ -1,5 +1,8 @@
 #include "Help.h"
 
+/// <summary>
+/// The default constructor.
+/// </summary>
 Help::Help()
 {
 	sf::Vector2f buttonSize = sf::Vector2f(250, 100);
@@ -27,6 +30,10 @@ Help::Help()
 	
 }
 
+/// <summary>
+/// Handles any events the player has triggered while on the Help Screen.
+/// </summary>
+/// <param name="t_event">The SFML event.</param>
 void Help::processEvents(sf::Event t_event)
 {
 	if (sf::Event::MouseButtonPressed == t_event.type)
@@ -48,11 +55,19 @@ void Help::processEvents(sf::Event t_event)
 	}
 }
 
+/// <summary>
+/// Updates the back Button.
+/// </summary>
+/// <param name="t_mousePos">The mouse's position on the screen.</param>
 void Help::update(sf::Vector2i t_mousePos)
 {
 	m_backButton->update(t_mousePos);
 }
 
+/// <summary>
+/// Draws all what's happening on the help screen.
+/// </summary>
+/// <param name="t_window">The screen to draw to.</param>
 void Help::render(sf::RenderWindow& t_window)
 {
 	for (sf::Text line : helpText)

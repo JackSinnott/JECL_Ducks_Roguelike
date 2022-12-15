@@ -1,5 +1,14 @@
 #include "Button.h"
 
+/// <summary>
+/// Overloaded Constructor of the Button class.
+/// </summary>
+/// <param name="t_pos">The position of the button.</param>
+/// <param name="t_size">The size of the button.</param>
+/// <param name="t_buttonText">What the button should say on it.</param>
+/// <param name="t_idle">What colour the button should be when not interacted with.</param>
+/// <param name="t_hover">What colour the button should be when its hovered over.</param>
+/// <param name="t_click">What colour the button should be when its clicked.</param>
 Button::Button(sf::Vector2f t_pos, sf::Vector2f t_size, std::string t_buttonText, sf::Color t_idle, sf::Color t_hover, sf::Color t_click) :
 	idleColor(t_idle), hoverColor(t_hover), clickColor(t_click)
 {
@@ -16,6 +25,9 @@ Button::Button(sf::Vector2f t_pos, sf::Vector2f t_size, std::string t_buttonText
 	buttonText.setOrigin(buttonText.getLocalBounds().width / 2.0f, buttonText.getLocalBounds().height / 2.0f);
 }
 
+/// <summary>
+/// Method that is called when the player releases the left mouse button.
+/// </summary>
 void Button::onMouseDown()
 {
 	if (hover)
@@ -24,12 +36,20 @@ void Button::onMouseDown()
 	}
 }
 
+/// <summary>
+/// Method that is called when the player clicks down the left mouse button.
+/// </summary>
+/// <returns>Whether the mouse is hovering over the button.</returns>
 bool Button::onMouseUp()
 {
 	clicking = false;
 	return hover;
 }
 
+/// <summary>
+/// Checks the current status of this button, like it's colour and whether its being hovered over.
+/// </summary>
+/// <param name="t_pos">The position of the mouse on the screen.</param>
 void Button::update(sf::Vector2i t_pos)
 {
 	sf::Vector2f pos = button.getPosition();
@@ -46,12 +66,19 @@ void Button::update(sf::Vector2i t_pos)
 	changeColor();
 }
 
+/// <summary>
+/// Draws the button and its text to the screen.
+/// </summary>
+/// <param name="t_window">The window to draw to.</param>
 void Button::render(sf::RenderWindow& t_window)
 {
 	t_window.draw(button);
 	t_window.draw(buttonText);
 }
 
+/// <summary>
+/// Changes the colour of the button, depending on how the player is interacting with it.
+/// </summary>
 void Button::changeColor()
 {
 	if (clicking)

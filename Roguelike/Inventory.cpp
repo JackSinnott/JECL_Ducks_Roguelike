@@ -1,7 +1,7 @@
 #include "Inventory.h"
 
 /// <summary>
-/// Default constructor used to create the inventory
+/// Default constructor, used to create the inventory.
 /// </summary>
 Inventory::Inventory()
 {
@@ -25,15 +25,18 @@ Inventory::Inventory()
 	m_cellOffset = sf::Vector2f(G_CELL_SIZE * (5) + G_CELL_SIZE / 2.0f, G_CELL_SIZE * (5) + G_CELL_SIZE / 2.0f);
 }
 
+/// <summary>
+/// Default deconstructor.
+/// </summary>
 Inventory::~Inventory()
 {
 
 }
 
 /// <summary>
-/// Sets up the inventory sprites and positions depending on if the player has items in their inventory
+/// Sets up the inventory sprites and positions depending on if the player has items in their inventory.
 /// </summary>
-/// <param name="t_playerPosition"></param>
+/// <param name="t_playerPosition">The Player's position on the grid.</param>
 void Inventory::SetupInventory(sf::Vector2f t_playerPosition)
 {
 	m_inventoryBackground.setPosition(t_playerPosition.x - 385, t_playerPosition.y);
@@ -58,9 +61,9 @@ void Inventory::SetupInventory(sf::Vector2f t_playerPosition)
 
 
 /// <summary>
-/// Stores the current item the player picked up
+/// Stores the current item the player picked up.
 /// </summary>
-/// <param name="t_item"></param>
+/// <param name="t_item">The new picked up item.</param>
 void Inventory::StoreItem(AbstractItem& t_item)
 {
 	switch (t_item.GetItemType())
@@ -87,9 +90,9 @@ void Inventory::StoreItem(AbstractItem& t_item)
 }
 
 /// <summary>
-/// Updates the position of the inventory to match where the player is.
+/// Updates the position of the inventory, to match where the player is.
 /// </summary>
-/// <param name="t_playerPosition"></param>
+/// <param name="t_playerPosition">The Player's position on the grid.</param>
 void Inventory::UpdatePosition(sf::Vector2f t_playerPosition)
 {
 	//m_inventoryBackground.setPosition(t_playerPosition.x - 440, t_playerPosition.y - 100);
@@ -116,9 +119,9 @@ void Inventory::UpdatePosition(sf::Vector2f t_playerPosition)
 }
 
 /// <summary>
-/// Draws all sprites depending on if the player has items in their inventory
+/// Draws all sprites, depending on if the player has items in their inventory.
 /// </summary>
-/// <param name="t_window"></param>
+/// <param name="t_window">The window to draw to.</param>
 void Inventory::Draw(sf::RenderWindow& t_window)
 {
 	if (m_showInventory)
@@ -145,7 +148,7 @@ void Inventory::Draw(sf::RenderWindow& t_window)
 
 
 /// <summary>
-/// A simple toggle to show or hide the player's inventory
+/// A simple toggle to show or hide the player's inventory.
 /// </summary>
 void Inventory::ToggleInventory()
 {
@@ -162,7 +165,7 @@ void Inventory::ToggleInventory()
 }
 
 /// <summary>
-/// Once the potion is used up, it is removed from the player's inventory
+/// Once the potion is used up, it is removed from the player's inventory.
 /// </summary>
 void Inventory::RemovePotion()
 {
@@ -170,9 +173,9 @@ void Inventory::RemovePotion()
 }
 
 /// <summary>
-/// Gets a reference to the current player's weapon
+/// Gets a reference to the current player's weapon.
 /// </summary>
-/// <returns></returns>
+/// <returns>The Player's weapon.</returns>
 AbstractWeapon& Inventory::GetWeapon()
 {
 	return * m_currentWeapon;
@@ -180,9 +183,9 @@ AbstractWeapon& Inventory::GetWeapon()
 
 
 /// <summary>
-/// Gets a reference to the current player's armour
+/// Gets a reference to the current player's armour.
 /// </summary>
-/// <returns></returns>
+/// <returns>The Player's armour.</returns>
 AbstractArmour& Inventory::GetArmour()
 {
 	return * m_currentArmour;
@@ -191,7 +194,7 @@ AbstractArmour& Inventory::GetArmour()
 /// <summary>
 /// Gets a reference to the current player's potion
 /// </summary>
-/// <returns></returns>
+/// <returns>The Player's potion.</returns>
 AbstractPotion& Inventory::GetPotion()
 {
 	return * m_currentPotion;
