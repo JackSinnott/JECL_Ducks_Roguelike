@@ -28,7 +28,15 @@ public:
 
 	int whatRoomIsPlayerIn(sf::Vector2i t_playerPos);
 
+	int whatRoomIsTargetIn(sf::Vector2i t_TargetPos);
+
 	void checkCollisionPlayerWall(Player &t_player);
+
+	void checkCollisionEnemyWall(Enemy& t_enemy, int t_room);
+
+	int getPlayerRoom() { return m_playerRoom; }
+
+	sf::Vector2i getPlayerPos(Player& t_player) { return t_player.getPlayerPositionInGrid(); }
 
 private:
 	sf::Vector2f placeRoom();
@@ -46,10 +54,10 @@ private:
 
 	std::vector<Room*> m_rooms;
 	std::map<int, std::vector<sf::Vector2i>> m_roomWalls;
-
-	Player m_player;
 	
 	void checkCollisionPlayerInRoom(Player& t_player);
+
+	void checkCollisionEnemyInRoom(Enemy& t_enemy, int t_room);
 };
 
 #endif // !GRID_H
