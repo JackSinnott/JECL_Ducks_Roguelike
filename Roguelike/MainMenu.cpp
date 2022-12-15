@@ -1,5 +1,8 @@
 #include "MainMenu.h"
 
+/// <summary>
+/// The Default constructor.
+/// </summary>
 MainMenu::MainMenu()
 {
 	sf::Vector2f buttonSize = sf::Vector2f(400, 150);
@@ -12,6 +15,10 @@ MainMenu::MainMenu()
 	
 }
 
+/// <summary>
+/// Handles any events the player has triggered while on the MainMenu Screen.
+/// </summary>
+/// <param name="t_event">The SFML event.</param>
 void MainMenu::processEvents(sf::Event t_event)
 {
 	if (sf::Event::MouseButtonPressed == t_event.type)
@@ -55,6 +62,10 @@ void MainMenu::processEvents(sf::Event t_event)
 	}
 }
 
+/// <summary>
+/// Updates the Button objects on the screen.
+/// </summary>
+/// <param name="t_mousePos">The mouse's position on the screen.</param>
 void MainMenu::update(sf::Vector2i t_mousePos)
 {
 	for (Button* button : m_buttons)
@@ -63,6 +74,10 @@ void MainMenu::update(sf::Vector2i t_mousePos)
 	}
 }
 
+/// <summary>
+/// Draws all what's happening on the menu screen.
+/// </summary>
+/// <param name="t_window">The screen to draw to.</param>
 void MainMenu::render(sf::RenderWindow& t_window)
 {
 	for (Button* button : m_buttons)

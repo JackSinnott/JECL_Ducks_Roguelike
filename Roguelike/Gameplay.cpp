@@ -1,5 +1,8 @@
 #include "Gameplay.h"
 
+/// <summary>
+/// The class's default constructor.
+/// </summary>
 Gameplay::Gameplay() :
 	m_grid(0,0),
 	player(5,5)
@@ -25,6 +28,10 @@ Gameplay::Gameplay() :
 	m_debugTools = false;
 }
 
+/// <summary>
+/// Handles any events the player has triggered while on the Gameplay Screen.
+/// </summary>
+/// <param name="t_event">The SFML event.</param>
 void Gameplay::processEvents(sf::Event t_event)
 {
 	if (sf::Event::KeyPressed == t_event.type ||
@@ -56,6 +63,10 @@ void Gameplay::processEvents(sf::Event t_event)
 
 }
 
+/// <summary>
+/// Updates the Player, Grid and Enemy objects, every frame.
+/// </summary>
+/// <param name="t_dt">The passed since the last update call.</param>
 void Gameplay::update(sf::Time t_dt)
 {
 	TextureManager::Collectgarbage();
@@ -65,6 +76,10 @@ void Gameplay::update(sf::Time t_dt)
 
 }
 
+/// <summary>
+/// Draws all what's happening on the gameplay screen.
+/// </summary>
+/// <param name="t_window">The screen to draw the gameplay to.</param>
 void Gameplay::render(sf::RenderWindow& t_window)
 {
 	t_window.clear();
@@ -85,6 +100,9 @@ void Gameplay::render(sf::RenderWindow& t_window)
 	}
 }
 
+/// <summary>
+/// Generates a random item, and gives it to the player. This is the player's starting equipment.
+/// </summary>
 void Gameplay::GenerateRandomItem()
 {
 	srand(time(0));
@@ -136,11 +154,18 @@ void Gameplay::GenerateRandomItem()
 	player.PickUpItem(*m_absItem);
 }
 
+/// <summary>
+/// Handles the mouse events of the game, like the mouse moving around.
+/// </summary>
+/// <param name="t_event">The event of the mouse doing something.</param>
 void Gameplay::MouseEvents(sf::Event t_event)
 {
 	m_mouseCoordinate.setString("Mouse Position: " + std::to_string(m_mousePositionView.x) + " | " + std::to_string(m_mousePositionView.y));
 }
 
+/// <summary>
+/// Sets the game back to how it was when it first loaded. Used for when the player dies or exits the game.
+/// </summary>
 void Gameplay::ResetGame()
 {
 	// Enemies get regenerated here
@@ -150,7 +175,9 @@ void Gameplay::ResetGame()
 	GenerateRandomItem();
 }
 
-
+/// <summary>
+/// Loads the floor the Player is on, with several types of rooms.
+/// </summary>
 void Gameplay::LoadLevel()
 {
 	m_levelLoader->Load(0);
@@ -161,6 +188,9 @@ void Gameplay::LoadLevel()
 	m_grid.setUpWalls();
 }
 
+/// <summary>
+/// Let's all the Enemy objects process their turns.
+/// </summary>
 void Gameplay::processTurn()
 {
 	m_testEnemy->update();

@@ -80,5 +80,5 @@ protected:
 	sf::Sprite m_itemSprite;
 
 	///The type of item it is.
-	ItemType m_itemType;
+	ItemType m_itemType = ItemType::Weapon;
 };

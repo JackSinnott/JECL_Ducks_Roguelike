@@ -1,5 +1,8 @@
 #include "Options.h"
 
+/// <summary>
+/// The default constructor.
+/// </summary>
 Options::Options()
 {
 	sf::Vector2f buttonSize = sf::Vector2f(250, 100);
@@ -7,6 +10,10 @@ Options::Options()
 		buttonSize, "BACK", sf::Color::Yellow, sf::Color::Red, sf::Color::Green);
 }
 
+/// <summary>
+/// Handles any events the player has triggered while on the Options Screen.
+/// </summary>
+/// <param name="t_event">The SFML event.</param>
 void Options::processEvents(sf::Event t_event)
 {
 	if (sf::Event::MouseButtonPressed == t_event.type)
@@ -28,11 +35,19 @@ void Options::processEvents(sf::Event t_event)
 	}
 }
 
+/// <summary>
+/// Updates the Button objects.
+/// </summary>
+/// <param name="t_mousePos">The mouse's position on the screen.</param>
 void Options::update(sf::Vector2i t_mousePos)
 {
 	m_backButton->update(t_mousePos);
 }
 
+/// <summary>
+/// Draws all what's happening on the options screen.
+/// </summary>
+/// <param name="t_window">The screen to draw to.</param>
 void Options::render(sf::RenderWindow& t_window)
 {
 	m_backButton->render(t_window);

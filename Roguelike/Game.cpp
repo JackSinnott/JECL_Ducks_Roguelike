@@ -2,7 +2,11 @@
 std::unordered_map<std::string, std::shared_ptr<sf::Texture>> TextureManager::texturePtrs; // Singletons need declaring
 std::unordered_map<std::string, std::shared_ptr<Audio>> AudioManager::m_sounds;
 
+/// <summary>
+/// Class's Default Constructor.
+/// </summary>
 Game::Game() :
+
 	m_window{ sf::VideoMode{ G_VIEW_WIDTH, G_VIEW_HEIGTH, 32U }, "Roguelike" }
 {
 	AudioManager::AddSound("ASSETS/Sounds/Menu_Theme.ogg", "Menu_Theme", AudioType::MUSIC);
@@ -11,17 +15,16 @@ Game::Game() :
 }
 
 //****************************************************************
-
 /// <summary>
-/// default destructor we didn't dynamically allocate anything
-/// so we don't need to free it, but mthod needs to be here
+/// Class's Default deconstructor.
 /// </summary>
-Game::~Game()
-{
-
-}
+Game::~Game(){}
 
 //****************************************************************
+/// <summary>
+/// The game loop function. Calls upon event handlers, updates, and renders every frame.
+/// Once this method ends, so does the game.
+/// </summary>
 void Game::run()
 {
 	sf::Clock clock;
@@ -43,11 +46,9 @@ void Game::run()
 }
 
 //****************************************************************
-
 /// <summary>
-/// handle user and system events/ input
-/// get key presses/ mouse moves etc. from OS
-/// and user :: Don't do game update here
+/// Handles ALL events that happen when the player interacts with the game. This includes moving the mouse, clicking on the screen,
+/// and pressing buttons.
 /// </summary>
 void Game::processEvents()
 {
@@ -100,7 +101,11 @@ void Game::processEvents()
 }
 
 //****************************************************************
-
+/// <summary>
+/// Handles events that happen when the player presses a key on the keyboard,
+/// and are not bound to a certain screen - hitting escape to close the window, for instance.
+/// </summary>
+/// <param name="t_event">The SFML event.</param>
 void Game::processKeys(sf::Event t_event)
 {
 	if (sf::Keyboard::Escape == t_event.key.code)
@@ -110,7 +115,10 @@ void Game::processKeys(sf::Event t_event)
 }
 
 //****************************************************************
-
+/// <summary>
+/// Method that controls what gets updated, depending on what screen the user is on.
+/// </summary>
+/// <param name="t_dt">The time that has passed since the last frame.</param>
 void Game::Update(sf::Time t_dt)
 {
 	g_previousState = g_gamestate;
@@ -146,7 +154,10 @@ void Game::Update(sf::Time t_dt)
 }
 
 //****************************************************************
-
+/// <summary>
+/// Method that controls what gets drawn onto the SFML window.
+/// </summary>
+/// <param name="t_window">The window to draw everything to.</param>
 void Game::Render(sf::RenderWindow& t_window)
 {
 	t_window.clear();

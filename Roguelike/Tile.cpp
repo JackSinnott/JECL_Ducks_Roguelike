@@ -3,6 +3,9 @@
 
 std::unordered_map<TileType, sf::IntRect> Tile::m_rects = std::unordered_map<TileType, sf::IntRect>(); // initialize
 
+/// <summary>
+/// Default Constructor.
+/// </summary>
 Tile::Tile() :
 	m_currentType(TileType::UNUSED)
 {
@@ -21,6 +24,13 @@ Tile::Tile() :
 
 }
 
+/// <summary>
+/// Sets up the values inside Tile, such as its appearance and translation.
+/// </summary>
+/// <param name="t_tex">The texture of the tile.</param>
+/// <param name="t_pos">The position of the tile.</param>
+/// <param name="t_offset">The offset the tile should have to the Grid.</param>
+/// <param name="t_type">The type of tile it is, determining whether it's passable.</param>
 void Tile::setup(std::shared_ptr<sf::Texture>& t_tex, sf::Vector2f t_pos, sf::Vector2f t_offset, TileType t_type)
 {
 	m_tile.setOrigin(16.f, 16.f);
@@ -50,6 +60,11 @@ void Tile::setup(std::shared_ptr<sf::Texture>& t_tex, sf::Vector2f t_pos, sf::Ve
 	//m_visibility = true;
 }
 
+/// <summary>
+/// Draws the tile out onto the SFML screen.
+/// </summary>
+/// <param name="t_target">Where to draw the Tile.</param>
+/// <param name="t_state">The state in which to draw the Tile.</param>
 void Tile::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) const
 {
 	//Draws the tile if it is visible
@@ -60,6 +75,9 @@ void Tile::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) cons
 	t_target.draw(m_tile, t_state);
 }
 
+/// <summary>
+/// Sets up the rows and columns this Tile occupies, for easy returns later.
+/// </summary>
 void Tile::setGridPosition()
 {
 	row = m_tile.getPosition().x / G_CELL_SIZE;
