@@ -2,7 +2,7 @@
 #define TEXTURE_MANAGER_H
 
 #include <SFML/Graphics.hpp>
-#include <memory>>
+#include <memory>
 #include <unordered_map>
 #include <string>
 #include "ResourceAllocator.h"

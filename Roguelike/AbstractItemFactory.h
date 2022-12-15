@@ -3,7 +3,6 @@
 #include "AbstractArmour.h"
 #include "AbstractPotion.h"
 
-#include "Globals.h"
 
 /// <summary>
 /// An abstract item factory, that allows the generation of AbstractItem objects.
