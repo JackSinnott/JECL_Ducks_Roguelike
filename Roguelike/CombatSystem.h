@@ -2,6 +2,11 @@
 #include <vector>
 #include <iostream>
 
+/// <summary>
+/// The static class that controls the combat between the Enemy and Player.
+/// Also lets the two damage each other.
+/// </summary>
+
 class CombatSystem
 {
 private:
@@ -12,7 +17,8 @@ private:
 	/// </summary>
 	static std::vector<std::pair<int*, int>> enemiesStats;
 
-	static int* playerHealth; // Reference to the player's health.
+	///Reference to the player's health.
+	static int* playerHealth;
 
 	static int RollD20(int amountRolled = 1);
 

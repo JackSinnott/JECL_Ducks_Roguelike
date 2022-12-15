@@ -7,10 +7,18 @@
 #include "Room.h"
 #include "Player.h"
 
+/// <summary>
+/// The Grid class - organises the Room objects, making sure that they're placed and updated correctly.
+/// </summary>
+
 class Grid
 {
 public:
-	Grid(int t_x, int t_y);
+	Grid();
+
+	/// <summary>
+	/// Default Deconstructor.
+	/// </summary>
 	inline ~Grid() {};
 
 	void draw(sf::RenderTarget& t_target, sf::RenderStates const t_state = sf::RenderStates::Default)const;
@@ -32,22 +40,23 @@ public:
 private:
 	sf::Vector2f placeRoom();
 
-	int x = 0;
-	int y = 0;
+	///The index of the room the Player is currently in.
 	int m_playerRoom;
 
+	///The current new position to place down Rooms. This updates every time a new Room is generated.
 	sf::Vector2f m_roomPos = sf::Vector2f();
 
+	///How many rooms are currently made on the Grid.
 	int numOfRoomsMade = 0;
 
-	sf::Vertex m_point;
+	///The dots on the map - used to signify the size and area covered by a Tile.
 	sf::VertexArray m_points;
 
+	///The Rooms themselves - stored as pointers.
 	std::vector<Room*> m_rooms;
+
+	///All the impassable areas of the game.
 	std::map<int, std::vector<sf::Vector2i>> m_roomWalls;
-
-	Player m_player;
-
 };
 
 #endif // !GRID_H
