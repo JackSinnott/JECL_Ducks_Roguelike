@@ -1,0 +1,51 @@
+\hypertarget{_abstract_armour_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Abstract\+Armour.h}
+\mbox{\hyperlink{_abstract_armour_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_item_8h}{AbstractItem.h}}"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_abstract_armour}{AbstractArmour}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_abstract_item}{AbstractItem}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{15     \mbox{\hyperlink{class_abstract_armour_ab12801f79e752bd496b008cc79346237}{AbstractArmour}}()}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_abstract_armour_a6cc7b88e03574f798f8ca01067ba1114}{m\_rects}}.size() == 0)}
+\DoxyCodeLine{18         \{}
+\DoxyCodeLine{19             \mbox{\hyperlink{class_abstract_armour_a6cc7b88e03574f798f8ca01067ba1114}{m\_rects}}.try\_emplace(Armours::Heavy, sf::IntRect\{ 0,128,16,16 \});}
+\DoxyCodeLine{20             \mbox{\hyperlink{class_abstract_armour_a6cc7b88e03574f798f8ca01067ba1114}{m\_rects}}.try\_emplace(Armours::Medium, sf::IntRect\{ 0,176,16,16 \});}
+\DoxyCodeLine{21             \mbox{\hyperlink{class_abstract_armour_a6cc7b88e03574f798f8ca01067ba1114}{m\_rects}}.try\_emplace(Armours::Light, sf::IntRect\{ 16,176,16,16 \});}
+\DoxyCodeLine{22         \}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{30     \mbox{\hyperlink{class_abstract_armour_ad340a2b797cf5c17d2b3e396eb3c71c3}{\string~AbstractArmour}}() \{\};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_abstract_armour_aa02f4016fc6a1a58e19e356a7a378c7d}{SetType}}() \{ \mbox{\hyperlink{class_abstract_item_a6e7d945f75b209961840cee458ae78a0}{m\_itemType}} = ItemType::Armour; \mbox{\hyperlink{class_abstract_item_a3b837fabfac8f03e452a0000def3a1ee}{m\_itemSprite}}.setTextureRect(\mbox{\hyperlink{class_abstract_armour_a6cc7b88e03574f798f8ca01067ba1114}{m\_rects}}.at(\mbox{\hyperlink{class_abstract_armour_a9a47bfcc8db0035cba4189a0a841746f}{m\_armourType}})); \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{41     \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}} \mbox{\hyperlink{class_abstract_armour_aecf865cfa22e951243aac922f81b0699}{GetType}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_abstract_armour_a9a47bfcc8db0035cba4189a0a841746f}{m\_armourType}}; \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{48     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_abstract_armour_a95a473e258e7552bef03068246390646}{GetArmourClass}}()}
+\DoxyCodeLine{49     \{}
+\DoxyCodeLine{50         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_abstract_item_a55adddf80a030b2230c40caf1ef744c2}{m\_rarity}} > 3)}
+\DoxyCodeLine{51         \{}
+\DoxyCodeLine{52             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_abstract_armour_aa1bbaf779de94f8d6d0012da2ddb0d56}{m\_armourClass}} * \mbox{\hyperlink{class_abstract_item_a55adddf80a030b2230c40caf1ef744c2}{m\_rarity}} / 2;}
+\DoxyCodeLine{53         \}}
+\DoxyCodeLine{54         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{55         \{}
+\DoxyCodeLine{56             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_abstract_armour_aa1bbaf779de94f8d6d0012da2ddb0d56}{m\_armourClass}};}
+\DoxyCodeLine{57         \}}
+\DoxyCodeLine{58     \};}
+\DoxyCodeLine{59 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{64     \textcolor{keyword}{static} std::unordered\_map<Armours, sf::IntRect> \mbox{\hyperlink{class_abstract_armour_a6cc7b88e03574f798f8ca01067ba1114}{m\_rects}};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_abstract_armour_aa1bbaf779de94f8d6d0012da2ddb0d56}{m\_armourClass}} = 0; }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70     \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}} \mbox{\hyperlink{class_abstract_armour_a9a47bfcc8db0035cba4189a0a841746f}{m\_armourType}} = Armours::Light; }
+\DoxyCodeLine{71 \};}
+
+\end{DoxyCode}

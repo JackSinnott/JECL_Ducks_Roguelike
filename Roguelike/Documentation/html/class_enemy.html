@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Roguelike: Enemy Class Reference</title>
+<title>JECL-Ducks: Enemy Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -29,23 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="rogue.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">Roguelike<span id="projectnumber">&#160;very early alpha</span>
+   <div id="projectname">JECL-Ducks
    </div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -57,6 +39,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -98,33 +91,126 @@ $(document).ready(function(){initNavTree('class_enemy.html',''); initResizable()
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_enemy-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Enemy Class Reference</div></div>
+  <div class="headertitle"><div class="title">Enemy Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
+<p>The enemies of the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>. Will try and hunt down and defeat them.   
+ <a href="class_enemy.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_enemy_8h_source.html">Enemy.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Enemy:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_enemy.png" usemap="#Enemy_map" alt=""/>
+  <map id="Enemy_map" name="Enemy_map">
+<area href="class_bat.html" title="The Bat enemy that inherits from the Enemy Class" alt="Bat" shape="rect" coords="0,56,50,80"/>
+<area href="class_rat.html" title="The Rat enemy that inherits from the Enemy Class" alt="Rat" shape="rect" coords="60,56,110,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a488552c16da9a5d773485f5fad6581ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a488552c16da9a5d773485f5fad6581ca">Enemy</a> (<a class="el" href="_globals_8h.html#ac3e413a86119db4b031458c7259e268e">EnemyType</a> t_type, float t_posX, float t_posY)</td></tr>
-<tr class="separator:a488552c16da9a5d773485f5fad6581ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad55ee71b5a8c23fbd00b3c368b90cc64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ad55ee71b5a8c23fbd00b3c368b90cc64">update</a> ()</td></tr>
-<tr class="separator:ad55ee71b5a8c23fbd00b3c368b90cc64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94f30d348b6d2840fd71675472ba38dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a94f30d348b6d2840fd71675472ba38dd">Enemy</a> ()</td></tr>
+<tr class="memdesc:a94f30d348b6d2840fd71675472ba38dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty constructor, is to be overridden by child classes   <a href="class_enemy.html#a94f30d348b6d2840fd71675472ba38dd">More...</a><br /></td></tr>
+<tr class="separator:a94f30d348b6d2840fd71675472ba38dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45f2116698b61bfb77b0633097e6b52f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a45f2116698b61bfb77b0633097e6b52f">update</a> (sf::Vector2i t_playerPos, int t_playerRoom, int t_enemyRoom)</td></tr>
+<tr class="memdesc:a45f2116698b61bfb77b0633097e6b52f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the enemy, checks if the enemy has health and if so does the move action   <a href="class_enemy.html#a45f2116698b61bfb77b0633097e6b52f">More...</a><br /></td></tr>
+<tr class="separator:a45f2116698b61bfb77b0633097e6b52f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab56d496118288692dde4c0adcbe94b91"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ab56d496118288692dde4c0adcbe94b91">move</a> (sf::Vector2i t_playerPos, int t_playerRoom, int t_enemyRoom)=0</td></tr>
+<tr class="separator:ab56d496118288692dde4c0adcbe94b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d8ebea362ec8d066952daf636a45d20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a2d8ebea362ec8d066952daf636a45d20">CalculateDamageToPlayer</a> (int t_playerAC)</td></tr>
+<tr class="memdesc:a2d8ebea362ec8d066952daf636a45d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the hit chance the enemy has on the player, and then if they hit, calculates the damage to the player and applies it.   <a href="class_enemy.html#a2d8ebea362ec8d066952daf636a45d20">More...</a><br /></td></tr>
+<tr class="separator:a2d8ebea362ec8d066952daf636a45d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09169617a34e6de54708bf409244d218"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a09169617a34e6de54708bf409244d218">render</a> (sf::RenderWindow &amp;t_window)</td></tr>
+<tr class="memdesc:a09169617a34e6de54708bf409244d218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the <a class="el" href="class_enemy.html" title="The enemies of the Player. Will try and hunt down and defeat them.">Enemy</a> to the screen.   <a href="class_enemy.html#a09169617a34e6de54708bf409244d218">More...</a><br /></td></tr>
 <tr class="separator:a09169617a34e6de54708bf409244d218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdcc7150c080cfef99aa0ce5c4a8f781"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#abdcc7150c080cfef99aa0ce5c4a8f781">GetArmourClass</a> ()</td></tr>
+<tr class="memdesc:abdcc7150c080cfef99aa0ce5c4a8f781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the armour class of this enemy - aka how hard it is to hit.   <a href="class_enemy.html#abdcc7150c080cfef99aa0ce5c4a8f781">More...</a><br /></td></tr>
+<tr class="separator:abdcc7150c080cfef99aa0ce5c4a8f781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68f5c8c31edeab52c1612fb010c40032"><td class="memItemLeft" align="right" valign="top">sf::Vector2i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a68f5c8c31edeab52c1612fb010c40032">getEnemyPositionInGrid</a> ()</td></tr>
+<tr class="separator:a68f5c8c31edeab52c1612fb010c40032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac799b98082fa353e7f3f0f6bdd4193d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ac799b98082fa353e7f3f0f6bdd4193d2">setMovementBoolUp</a> (bool t_switch)</td></tr>
+<tr class="separator:ac799b98082fa353e7f3f0f6bdd4193d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f748630642ea0891a5fa3b8f0ff1319"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a8f748630642ea0891a5fa3b8f0ff1319">canWeMoveUp</a> ()</td></tr>
+<tr class="separator:a8f748630642ea0891a5fa3b8f0ff1319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f2beede54c37c4d5f04e4e95a00c439"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a7f2beede54c37c4d5f04e4e95a00c439">setMovementBoolDown</a> (bool t_switch)</td></tr>
+<tr class="separator:a7f2beede54c37c4d5f04e4e95a00c439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39993a9adce5e45eaa08dfde8ad10d4b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a39993a9adce5e45eaa08dfde8ad10d4b">canWeMoveDown</a> ()</td></tr>
+<tr class="separator:a39993a9adce5e45eaa08dfde8ad10d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a009b50723fab4ac32a2d59766529fbfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a009b50723fab4ac32a2d59766529fbfe">setMovementBoolLeft</a> (bool t_switch)</td></tr>
+<tr class="separator:a009b50723fab4ac32a2d59766529fbfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88b78bb22c2058c0cb3c16be94563ce0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a88b78bb22c2058c0cb3c16be94563ce0">canWeMoveLeft</a> ()</td></tr>
+<tr class="separator:a88b78bb22c2058c0cb3c16be94563ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a591c068089a47f499702ba8054295337"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a591c068089a47f499702ba8054295337">setMovementBoolRight</a> (bool t_switch)</td></tr>
+<tr class="separator:a591c068089a47f499702ba8054295337"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6847db10f89a2617fc92dfa2e6621c4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ad6847db10f89a2617fc92dfa2e6621c4">canWeMoveRight</a> ()</td></tr>
+<tr class="separator:ad6847db10f89a2617fc92dfa2e6621c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5c0ff036d8e8dacf83e09ea6afa9731"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ab5c0ff036d8e8dacf83e09ea6afa9731">resetMovementBools</a> (bool t_switch)</td></tr>
+<tr class="separator:ab5c0ff036d8e8dacf83e09ea6afa9731"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:ad315f1e54271e10f16bf3613c375ea70"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="_globals_8h.html#ac3e413a86119db4b031458c7259e268e">EnemyType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ad315f1e54271e10f16bf3613c375ea70">m_type</a></td></tr>
-<tr class="separator:ad315f1e54271e10f16bf3613c375ea70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ec1cb19a11eb9949493f91fd9ffc33c"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a9ec1cb19a11eb9949493f91fd9ffc33c">m_enemy</a></td></tr>
-<tr class="separator:a9ec1cb19a11eb9949493f91fd9ffc33c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a12c7db0b6db5c4f7ba466f6330b8af0b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a12c7db0b6db5c4f7ba466f6330b8af0b">GetDamage</a> ()</td></tr>
+<tr class="memdesc:a12c7db0b6db5c4f7ba466f6330b8af0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates how much damage this enemy would cause to it's target, and return it.   <a href="class_enemy.html#a12c7db0b6db5c4f7ba466f6330b8af0b">More...</a><br /></td></tr>
+<tr class="separator:a12c7db0b6db5c4f7ba466f6330b8af0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae720d544ca6133bc94e2cbf41fdf0f9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ae720d544ca6133bc94e2cbf41fdf0f9a">randomMovement</a> ()</td></tr>
+<tr class="memdesc:ae720d544ca6133bc94e2cbf41fdf0f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This behaviour moves the enemy randomly only avoiding walls   <a href="class_enemy.html#ae720d544ca6133bc94e2cbf41fdf0f9a">More...</a><br /></td></tr>
+<tr class="separator:ae720d544ca6133bc94e2cbf41fdf0f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd16b6ada7d3f5f2a4d6af3faf78e87a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#acd16b6ada7d3f5f2a4d6af3faf78e87a">moveTowardsPlayer</a> (sf::Vector2i t_playerPos)</td></tr>
+<tr class="memdesc:acd16b6ada7d3f5f2a4d6af3faf78e87a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This behaviour moves the <a class="el" href="class_enemy.html" title="The enemies of the Player. Will try and hunt down and defeat them.">Enemy</a> towards the player, if theres a wall it stops in its tracks   <a href="class_enemy.html#acd16b6ada7d3f5f2a4d6af3faf78e87a">More...</a><br /></td></tr>
+<tr class="separator:acd16b6ada7d3f5f2a4d6af3faf78e87a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ab50f697f22f6d970b0567247d5f17dc8"><td class="memItemLeft" align="right" valign="top">sf::IntRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ab50f697f22f6d970b0567247d5f17dc8">spriteRec</a> { 0,160,16,16 }</td></tr>
+<tr class="separator:ab50f697f22f6d970b0567247d5f17dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac66ee9bc2816c303e2ea947d8a691395"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ac66ee9bc2816c303e2ea947d8a691395">m_armourClass</a> = 2</td></tr>
+<tr class="memdesc:ac66ee9bc2816c303e2ea947d8a691395"><td class="mdescLeft">&#160;</td><td class="mdescRight">The armour class. The higher the number, the easier the enemy is to hit.  <a href="class_enemy.html#ac66ee9bc2816c303e2ea947d8a691395">More...</a><br /></td></tr>
+<tr class="separator:ac66ee9bc2816c303e2ea947d8a691395"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedd5e7bf8ef07ee97be433c853a10d8d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#aedd5e7bf8ef07ee97be433c853a10d8d">health</a> = 20</td></tr>
+<tr class="memdesc:aedd5e7bf8ef07ee97be433c853a10d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The enemy's health. When this is reduced to 0, the enemy is defeated.  <a href="class_enemy.html#aedd5e7bf8ef07ee97be433c853a10d8d">More...</a><br /></td></tr>
+<tr class="separator:aedd5e7bf8ef07ee97be433c853a10d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c93c0e43d21c5198797b386b6140848"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a6c93c0e43d21c5198797b386b6140848">xp</a> = 10</td></tr>
+<tr class="memdesc:a6c93c0e43d21c5198797b386b6140848"><td class="mdescLeft">&#160;</td><td class="mdescRight">The amount of experience the enemy gives the player upon being defeated.  <a href="class_enemy.html#a6c93c0e43d21c5198797b386b6140848">More...</a><br /></td></tr>
+<tr class="separator:a6c93c0e43d21c5198797b386b6140848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fbc5b6223ae7d59df9eb707a963b1dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_globals_8h.html#ac3e413a86119db4b031458c7259e268e">EnemyType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a5fbc5b6223ae7d59df9eb707a963b1dc">m_type</a> = EnemyType::Bat</td></tr>
+<tr class="memdesc:a5fbc5b6223ae7d59df9eb707a963b1dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of enemy this is. These include <a class="el" href="class_bat.html" title="The Bat enemy that inherits from the Enemy Class">Bat</a> and <a class="el" href="class_rat.html" title="The Rat enemy that inherits from the Enemy Class">Rat</a>.  <a href="class_enemy.html#a5fbc5b6223ae7d59df9eb707a963b1dc">More...</a><br /></td></tr>
+<tr class="separator:a5fbc5b6223ae7d59df9eb707a963b1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea3fbafbbd033f2a6d4ff7139379e94f"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#aea3fbafbbd033f2a6d4ff7139379e94f">m_enemy</a></td></tr>
+<tr class="memdesc:aea3fbafbbd033f2a6d4ff7139379e94f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The appearance of the enemy.  <a href="class_enemy.html#aea3fbafbbd033f2a6d4ff7139379e94f">More...</a><br /></td></tr>
+<tr class="separator:aea3fbafbbd033f2a6d4ff7139379e94f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb4cba128ce0cb75235b99d8ef5768a7"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; sf::Texture &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#afb4cba128ce0cb75235b99d8ef5768a7">m_enemyTexture</a></td></tr>
+<tr class="memdesc:afb4cba128ce0cb75235b99d8ef5768a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The spritesheet texture applied to the enemy appearance.  <a href="class_enemy.html#afb4cba128ce0cb75235b99d8ef5768a7">More...</a><br /></td></tr>
+<tr class="separator:afb4cba128ce0cb75235b99d8ef5768a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5fc9526c259374e5981a5547e1fa648"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#af5fc9526c259374e5981a5547e1fa648">row</a></td></tr>
+<tr class="memdesc:af5fc9526c259374e5981a5547e1fa648"><td class="mdescLeft">&#160;</td><td class="mdescRight">The row the enemy is in on the grid.  <a href="class_enemy.html#af5fc9526c259374e5981a5547e1fa648">More...</a><br /></td></tr>
+<tr class="separator:af5fc9526c259374e5981a5547e1fa648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3249683551ec77289ce25a126fdb48ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a3249683551ec77289ce25a126fdb48ec">col</a></td></tr>
+<tr class="memdesc:a3249683551ec77289ce25a126fdb48ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">The column the enemy is in on the grid.  <a href="class_enemy.html#a3249683551ec77289ce25a126fdb48ec">More...</a><br /></td></tr>
+<tr class="separator:a3249683551ec77289ce25a126fdb48ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca0b9deba2be143f2d363dff0d39107"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a5ca0b9deba2be143f2d363dff0d39107">m_freeToMoveUp</a></td></tr>
+<tr class="memdesc:a5ca0b9deba2be143f2d363dff0d39107"><td class="mdescLeft">&#160;</td><td class="mdescRight">The enemy can move up.  <a href="class_enemy.html#a5ca0b9deba2be143f2d363dff0d39107">More...</a><br /></td></tr>
+<tr class="separator:a5ca0b9deba2be143f2d363dff0d39107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af55d7d93c96f44e72bbabf4116d02bf1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#af55d7d93c96f44e72bbabf4116d02bf1">m_freeToMoveDown</a></td></tr>
+<tr class="memdesc:af55d7d93c96f44e72bbabf4116d02bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The enemy can move dowm.  <a href="class_enemy.html#af55d7d93c96f44e72bbabf4116d02bf1">More...</a><br /></td></tr>
+<tr class="separator:af55d7d93c96f44e72bbabf4116d02bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8976d8ba7521d3fca71cdc3c7b1f23f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ae8976d8ba7521d3fca71cdc3c7b1f23f">m_freeToMoveLeft</a></td></tr>
+<tr class="memdesc:ae8976d8ba7521d3fca71cdc3c7b1f23f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The enemy can move left.  <a href="class_enemy.html#ae8976d8ba7521d3fca71cdc3c7b1f23f">More...</a><br /></td></tr>
+<tr class="separator:ae8976d8ba7521d3fca71cdc3c7b1f23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d658ebc7e413853bfea119223919647"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a6d658ebc7e413853bfea119223919647">m_freeToMoveRight</a></td></tr>
+<tr class="memdesc:a6d658ebc7e413853bfea119223919647"><td class="mdescLeft">&#160;</td><td class="mdescRight">The enemy can move right.  <a href="class_enemy.html#a6d658ebc7e413853bfea119223919647">More...</a><br /></td></tr>
+<tr class="separator:a6d658ebc7e413853bfea119223919647"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a488552c16da9a5d773485f5fad6581ca" name="a488552c16da9a5d773485f5fad6581ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a488552c16da9a5d773485f5fad6581ca">&#9670;&#160;</a></span>Enemy()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >The enemies of the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>. Will try and hunt down and defeat them.  </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a94f30d348b6d2840fd71675472ba38dd" name="a94f30d348b6d2840fd71675472ba38dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94f30d348b6d2840fd71675472ba38dd">&#9670;&#160;</a></span>Enemy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -132,20 +218,242 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">Enemy::Enemy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_globals_8h.html#ac3e413a86119db4b031458c7259e268e">EnemyType</a>&#160;</td>
-          <td class="paramname"><em>t_type</em>, </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Empty constructor, is to be overridden by child classes  </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2d8ebea362ec8d066952daf636a45d20" name="a2d8ebea362ec8d066952daf636a45d20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d8ebea362ec8d066952daf636a45d20">&#9670;&#160;</a></span>CalculateDamageToPlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Enemy::CalculateDamageToPlayer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>t_playerAC</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates the hit chance the enemy has on the player, and then if they hit, calculates the damage to the player and applies it.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_playerAC</td><td>The player's armour class.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a39993a9adce5e45eaa08dfde8ad10d4b" name="a39993a9adce5e45eaa08dfde8ad10d4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39993a9adce5e45eaa08dfde8ad10d4b">&#9670;&#160;</a></span>canWeMoveDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Enemy::canWeMoveDown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a88b78bb22c2058c0cb3c16be94563ce0" name="a88b78bb22c2058c0cb3c16be94563ce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b78bb22c2058c0cb3c16be94563ce0">&#9670;&#160;</a></span>canWeMoveLeft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Enemy::canWeMoveLeft </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad6847db10f89a2617fc92dfa2e6621c4" name="ad6847db10f89a2617fc92dfa2e6621c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6847db10f89a2617fc92dfa2e6621c4">&#9670;&#160;</a></span>canWeMoveRight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Enemy::canWeMoveRight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f748630642ea0891a5fa3b8f0ff1319" name="a8f748630642ea0891a5fa3b8f0ff1319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f748630642ea0891a5fa3b8f0ff1319">&#9670;&#160;</a></span>canWeMoveUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Enemy::canWeMoveUp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abdcc7150c080cfef99aa0ce5c4a8f781" name="abdcc7150c080cfef99aa0ce5c4a8f781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdcc7150c080cfef99aa0ce5c4a8f781">&#9670;&#160;</a></span>GetArmourClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Enemy::GetArmourClass </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the armour class of this enemy - aka how hard it is to hit.  </p>
+<dl class="section return"><dt>Returns</dt><dd>The AC of this <a class="el" href="class_enemy.html" title="The enemies of the Player. Will try and hunt down and defeat them.">Enemy</a>.</dd></dl>
+
+</div>
+</div>
+<a id="a12c7db0b6db5c4f7ba466f6330b8af0b" name="a12c7db0b6db5c4f7ba466f6330b8af0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12c7db0b6db5c4f7ba466f6330b8af0b">&#9670;&#160;</a></span>GetDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Enemy::GetDamage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates how much damage this enemy would cause to it's target, and return it.  </p>
+<dl class="section return"><dt>Returns</dt><dd>The damage dealt by this enemy.</dd></dl>
+
+</div>
+</div>
+<a id="a68f5c8c31edeab52c1612fb010c40032" name="a68f5c8c31edeab52c1612fb010c40032"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68f5c8c31edeab52c1612fb010c40032">&#9670;&#160;</a></span>getEnemyPositionInGrid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2i Enemy::getEnemyPositionInGrid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab56d496118288692dde4c0adcbe94b91" name="ab56d496118288692dde4c0adcbe94b91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab56d496118288692dde4c0adcbe94b91">&#9670;&#160;</a></span>move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Enemy::move </td>
+          <td>(</td>
+          <td class="paramtype">sf::Vector2i&#160;</td>
+          <td class="paramname"><em>t_playerPos</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>t_posX</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>t_playerRoom</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>t_posY</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>t_enemyRoom</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -153,11 +461,78 @@ Private Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_bat.html#ac5b133d55bfeb5e686943589ffa1329f">Bat</a>, and <a class="el" href="class_rat.html#a5b92ff258b240dd5d6e90771c8de3667">Rat</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a id="acd16b6ada7d3f5f2a4d6af3faf78e87a" name="acd16b6ada7d3f5f2a4d6af3faf78e87a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd16b6ada7d3f5f2a4d6af3faf78e87a">&#9670;&#160;</a></span>moveTowardsPlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Enemy::moveTowardsPlayer </td>
+          <td>(</td>
+          <td class="paramtype">sf::Vector2i&#160;</td>
+          <td class="paramname"><em>t_playerPos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This behaviour moves the <a class="el" href="class_enemy.html" title="The enemies of the Player. Will try and hunt down and defeat them.">Enemy</a> towards the player, if theres a wall it stops in its tracks  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_playerPos</td><td>The position on the grid of the player</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae720d544ca6133bc94e2cbf41fdf0f9a" name="ae720d544ca6133bc94e2cbf41fdf0f9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae720d544ca6133bc94e2cbf41fdf0f9a">&#9670;&#160;</a></span>randomMovement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Enemy::randomMovement </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This behaviour moves the enemy randomly only avoiding walls  </p>
+
+</div>
+</div>
 <a id="a09169617a34e6de54708bf409244d218" name="a09169617a34e6de54708bf409244d218"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a09169617a34e6de54708bf409244d218">&#9670;&#160;</a></span>render()</h2>
 
@@ -174,10 +549,148 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Draws the <a class="el" href="class_enemy.html" title="The enemies of the Player. Will try and hunt down and defeat them.">Enemy</a> to the screen.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_window</td><td>The window to draw to.</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="ad55ee71b5a8c23fbd00b3c368b90cc64" name="ad55ee71b5a8c23fbd00b3c368b90cc64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad55ee71b5a8c23fbd00b3c368b90cc64">&#9670;&#160;</a></span>update()</h2>
+<a id="ab5c0ff036d8e8dacf83e09ea6afa9731" name="ab5c0ff036d8e8dacf83e09ea6afa9731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5c0ff036d8e8dacf83e09ea6afa9731">&#9670;&#160;</a></span>resetMovementBools()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Enemy::resetMovementBools </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>t_switch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7f2beede54c37c4d5f04e4e95a00c439" name="a7f2beede54c37c4d5f04e4e95a00c439"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f2beede54c37c4d5f04e4e95a00c439">&#9670;&#160;</a></span>setMovementBoolDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Enemy::setMovementBoolDown </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>t_switch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a009b50723fab4ac32a2d59766529fbfe" name="a009b50723fab4ac32a2d59766529fbfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a009b50723fab4ac32a2d59766529fbfe">&#9670;&#160;</a></span>setMovementBoolLeft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Enemy::setMovementBoolLeft </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>t_switch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a591c068089a47f499702ba8054295337" name="a591c068089a47f499702ba8054295337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a591c068089a47f499702ba8054295337">&#9670;&#160;</a></span>setMovementBoolRight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Enemy::setMovementBoolRight </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>t_switch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac799b98082fa353e7f3f0f6bdd4193d2" name="ac799b98082fa353e7f3f0f6bdd4193d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac799b98082fa353e7f3f0f6bdd4193d2">&#9670;&#160;</a></span>setMovementBoolUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Enemy::setMovementBoolUp </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>t_switch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a45f2116698b61bfb77b0633097e6b52f" name="a45f2116698b61bfb77b0633097e6b52f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f2116698b61bfb77b0633097e6b52f">&#9670;&#160;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -185,17 +698,44 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void Enemy::update </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">sf::Vector2i&#160;</td>
+          <td class="paramname"><em>t_playerPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>t_playerRoom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>t_enemyRoom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Updates the enemy, checks if the enemy has health and if so does the move action  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_playerPos</td><td>The Position on the grid of the player</td></tr>
+    <tr><td class="paramname">t_playerRoom</td><td>The room the player is in</td></tr>
+    <tr><td class="paramname">t_enemyRoom</td><td>The room the enemy is in</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a9ec1cb19a11eb9949493f91fd9ffc33c" name="a9ec1cb19a11eb9949493f91fd9ffc33c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ec1cb19a11eb9949493f91fd9ffc33c">&#9670;&#160;</a></span>m_enemy</h2>
+<a id="a3249683551ec77289ce25a126fdb48ec" name="a3249683551ec77289ce25a126fdb48ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3249683551ec77289ce25a126fdb48ec">&#9670;&#160;</a></span>col</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,20 +744,22 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">sf::RectangleShape Enemy::m_enemy</td>
+          <td class="memname">int Enemy::col</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p>The column the enemy is in on the grid. </p>
+
 </div>
 </div>
-<a id="ad315f1e54271e10f16bf3613c375ea70" name="ad315f1e54271e10f16bf3613c375ea70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad315f1e54271e10f16bf3613c375ea70">&#9670;&#160;</a></span>m_type</h2>
+<a id="aedd5e7bf8ef07ee97be433c853a10d8d" name="aedd5e7bf8ef07ee97be433c853a10d8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedd5e7bf8ef07ee97be433c853a10d8d">&#9670;&#160;</a></span>health</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,18 +768,286 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="_globals_8h.html#ac3e413a86119db4b031458c7259e268e">EnemyType</a> Enemy::m_type</td>
+          <td class="memname">int Enemy::health = 20</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The enemy's health. When this is reduced to 0, the enemy is defeated. </p>
+
+</div>
+</div>
+<a id="ac66ee9bc2816c303e2ea947d8a691395" name="ac66ee9bc2816c303e2ea947d8a691395"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac66ee9bc2816c303e2ea947d8a691395">&#9670;&#160;</a></span>m_armourClass</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Enemy::m_armourClass = 2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The armour class. The higher the number, the easier the enemy is to hit. </p>
+
+</div>
+</div>
+<a id="aea3fbafbbd033f2a6d4ff7139379e94f" name="aea3fbafbbd033f2a6d4ff7139379e94f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea3fbafbbd033f2a6d4ff7139379e94f">&#9670;&#160;</a></span>m_enemy</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite Enemy::m_enemy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The appearance of the enemy. </p>
+
+</div>
+</div>
+<a id="afb4cba128ce0cb75235b99d8ef5768a7" name="afb4cba128ce0cb75235b99d8ef5768a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb4cba128ce0cb75235b99d8ef5768a7">&#9670;&#160;</a></span>m_enemyTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;sf::Texture&gt; Enemy::m_enemyTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The spritesheet texture applied to the enemy appearance. </p>
+
+</div>
+</div>
+<a id="af55d7d93c96f44e72bbabf4116d02bf1" name="af55d7d93c96f44e72bbabf4116d02bf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af55d7d93c96f44e72bbabf4116d02bf1">&#9670;&#160;</a></span>m_freeToMoveDown</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Enemy::m_freeToMoveDown</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The enemy can move dowm. </p>
+
+</div>
+</div>
+<a id="ae8976d8ba7521d3fca71cdc3c7b1f23f" name="ae8976d8ba7521d3fca71cdc3c7b1f23f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8976d8ba7521d3fca71cdc3c7b1f23f">&#9670;&#160;</a></span>m_freeToMoveLeft</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Enemy::m_freeToMoveLeft</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The enemy can move left. </p>
+
+</div>
+</div>
+<a id="a6d658ebc7e413853bfea119223919647" name="a6d658ebc7e413853bfea119223919647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d658ebc7e413853bfea119223919647">&#9670;&#160;</a></span>m_freeToMoveRight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Enemy::m_freeToMoveRight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The enemy can move right. </p>
+
+</div>
+</div>
+<a id="a5ca0b9deba2be143f2d363dff0d39107" name="a5ca0b9deba2be143f2d363dff0d39107"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ca0b9deba2be143f2d363dff0d39107">&#9670;&#160;</a></span>m_freeToMoveUp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Enemy::m_freeToMoveUp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The enemy can move up. </p>
+
+</div>
+</div>
+<a id="a5fbc5b6223ae7d59df9eb707a963b1dc" name="a5fbc5b6223ae7d59df9eb707a963b1dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fbc5b6223ae7d59df9eb707a963b1dc">&#9670;&#160;</a></span>m_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_globals_8h.html#ac3e413a86119db4b031458c7259e268e">EnemyType</a> Enemy::m_type = EnemyType::Bat</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The type of enemy this is. These include <a class="el" href="class_bat.html" title="The Bat enemy that inherits from the Enemy Class">Bat</a> and <a class="el" href="class_rat.html" title="The Rat enemy that inherits from the Enemy Class">Rat</a>. </p>
+
+</div>
+</div>
+<a id="af5fc9526c259374e5981a5547e1fa648" name="af5fc9526c259374e5981a5547e1fa648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5fc9526c259374e5981a5547e1fa648">&#9670;&#160;</a></span>row</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Enemy::row</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The row the enemy is in on the grid. </p>
+
+</div>
+</div>
+<a id="ab50f697f22f6d970b0567247d5f17dc8" name="ab50f697f22f6d970b0567247d5f17dc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab50f697f22f6d970b0567247d5f17dc8">&#9670;&#160;</a></span>spriteRec</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::IntRect Enemy::spriteRec { 0,160,16,16 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
+<a id="a6c93c0e43d21c5198797b386b6140848" name="a6c93c0e43d21c5198797b386b6140848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c93c0e43d21c5198797b386b6140848">&#9670;&#160;</a></span>xp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Enemy::xp = 10</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The amount of experience the enemy gives the player upon being defeated. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>C:/Users/liney/OneDrive/Desktop/Work/Games Engineering/JECL_Ducks_Roguelike/Roguelike/<a class="el" href="_enemy_8h_source.html">Enemy.h</a></li>
+<li>C:/Users/liney/OneDrive/Desktop/Work/Games Engineering/JECL_Ducks_Roguelike/Roguelike/<a class="el" href="_enemy_8cpp.html">Enemy.cpp</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,0 +1,68 @@
+\hypertarget{_grid_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Grid.h}
+\mbox{\hyperlink{_grid_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GRID\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GRID\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_room_8h}{Room.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_player_8h}{Player.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_enemy_8h}{Enemy.h}}"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_grid}{Grid}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_grid_a4ac9ff4f63552b4c61ff90fcb35ad66c}{Grid}}();}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{23     \textcolor{keyword}{inline} \mbox{\hyperlink{class_grid_a3661d0a7f998caaaf8627d7a67072116}{\string~Grid}}() \{\};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grid_acc4187ed9e647e33dfb10eee5e57aa7c}{draw}}(sf::RenderTarget\& t\_target, sf::RenderStates \textcolor{keyword}{const} t\_state = sf::RenderStates::Default)\textcolor{keyword}{const};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grid_a869343829d847145c2fc0f1ece4555ec}{update}}(sf::Time t\_dt, \mbox{\hyperlink{class_player}{Player}} \&t\_playerPos);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grid_af021942582b22eac4e7bfe6837b0215a}{setUpRoom}}(\mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{TileType}} t\_type, \textcolor{keywordtype}{int} t\_roomID, \textcolor{keywordtype}{int} t\_row, \textcolor{keywordtype}{int} t\_col);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grid_ac0797650ecb93cbcc36de3029b31409a}{setUpWalls}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grid_a5ad5d8e380d3361cb9c140c39b329abc}{getRoomPosition}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \mbox{\hyperlink{class_room}{Room}}* \mbox{\hyperlink{class_grid_a50584b5882e5d7f011d1eb21f3875648}{checkRoom}}(\textcolor{keywordtype}{int} t\_roomID);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_grid_adc1642b4ef3c602446370e3f293f2c4b}{whatRoomIsPlayerIn}}(sf::Vector2i t\_playerPos);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_grid_a6bf172cbfcc65b3efc50befab4d8d072}{whatRoomIsTargetIn}}(sf::Vector2i t\_TargetPos);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grid_a5d03ca083d80eee1ac195a6d532a6368}{checkCollisionPlayerWall}}(\mbox{\hyperlink{class_player}{Player}} \&t\_player);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grid_ad82007b73c63b12c1340e841e15defcf}{checkCollisionEnemyWall}}(\mbox{\hyperlink{class_enemy}{Enemy}}\& t\_enemy, \textcolor{keywordtype}{int} t\_room);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_grid_a5d1e3b4d368e747b346145745abe784c}{getPlayerRoom}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_grid_a240d262bb7670acf81aa9a296bd3a54f}{m\_playerRoom}}; \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     sf::Vector2i \mbox{\hyperlink{class_grid_a1896b8f2f70a98e0c50a679de14115a9}{getPlayerPos}}(\mbox{\hyperlink{class_player}{Player}}\& t\_player) \{ \textcolor{keywordflow}{return} t\_player.\mbox{\hyperlink{class_player_a3039dcfc146012ccc242328261eab774}{getPlayerPositionInGrid}}(); \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{private}:}
+\DoxyCodeLine{50     sf::Vector2f \mbox{\hyperlink{class_grid_a2dd2149815261c549f61692602e47685}{placeRoom}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_grid_a240d262bb7670acf81aa9a296bd3a54f}{m\_playerRoom}};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56     sf::Vector2f \mbox{\hyperlink{class_grid_aa9cb493bc5fad4e0c16374c9dee2a1d4}{m\_roomPos}} = sf::Vector2f();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_grid_a3442b0f8f93e0735daeb74405f2299d1}{numOfRoomsMade}} = 0;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62     sf::VertexArray \mbox{\hyperlink{class_grid_ab201b36056ea3f606d6297e8ead657e1}{m\_points}};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65     std::vector<Room*> \mbox{\hyperlink{class_grid_ae21c9934d673894474976fb780a50c28}{m\_rooms}};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68     std::map<int, std::vector<sf::Vector2i>> \mbox{\hyperlink{class_grid_adb4e103f0975fddc78bf37f72bf22c16}{m\_roomWalls}};}
+\DoxyCodeLine{69     }
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grid_a841d75cf39e633a33373fdf2366cc887}{checkCollisionPlayerInRoom}}(\mbox{\hyperlink{class_player}{Player}}\& t\_player);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_grid_a7039bd25cc529a62e2e8ba110d8e1a9c}{checkCollisionEnemyInRoom}}(\mbox{\hyperlink{class_enemy}{Enemy}}\& t\_enemy, \textcolor{keywordtype}{int} t\_room);}
+\DoxyCodeLine{73 \};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !GRID\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,56 @@
+\hypertarget{_texture_manager_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Texture\+Manager.h}
+\mbox{\hyperlink{_texture_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef TEXTURE\_MANAGER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define TEXTURE\_MANAGER\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_resource_allocator_8h}{ResourceAllocator.h}}"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_texture_manager}{TextureManager}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_resource_allocator}{ResourceAllocator}}<TextureManager, std::shared\_ptr<sf::Texture>>}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{24     \textcolor{keyword}{static} std::shared\_ptr<sf::Texture> \mbox{\hyperlink{class_texture_manager_a3b6cbb7a9be0556355e8a6206c5cc3e7}{Acquire}}(\textcolor{keyword}{const} std::string\& name)}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         \textcolor{keyword}{const} \textcolor{keyword}{auto} i = \mbox{\hyperlink{class_texture_manager_adbc04f1036a2b808a65b9fc53fde69f1}{texturePtrs}}.find(name);}
+\DoxyCodeLine{27         \textcolor{keywordflow}{if} (i != \mbox{\hyperlink{class_texture_manager_adbc04f1036a2b808a65b9fc53fde69f1}{texturePtrs}}.end()) \textcolor{comment}{// is the iterator valid}}
+\DoxyCodeLine{28         \{}
+\DoxyCodeLine{29             \textcolor{keywordflow}{return} i-\/>second; \textcolor{comment}{// return ptr to texture}}
+\DoxyCodeLine{30         \}}
+\DoxyCodeLine{31         \textcolor{keywordflow}{else} \textcolor{comment}{// load texture}}
+\DoxyCodeLine{32         \{}
+\DoxyCodeLine{33             \textcolor{keyword}{auto} pTex = std::make\_shared<sf::Texture>();}
+\DoxyCodeLine{34             pTex-\/>loadFromFile(name);}
+\DoxyCodeLine{35             \mbox{\hyperlink{class_texture_manager_adbc04f1036a2b808a65b9fc53fde69f1}{texturePtrs}}.insert(\{ name,pTex \});}
+\DoxyCodeLine{36             \textcolor{keywordflow}{return} pTex;}
+\DoxyCodeLine{37         \}}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{44     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_texture_manager_a8792d04864b18f16ec37ab6642b92dbf}{Collectgarbage}}()}
+\DoxyCodeLine{45     \{}
+\DoxyCodeLine{46         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = \mbox{\hyperlink{class_texture_manager_adbc04f1036a2b808a65b9fc53fde69f1}{texturePtrs}}.begin(); i != \mbox{\hyperlink{class_texture_manager_adbc04f1036a2b808a65b9fc53fde69f1}{texturePtrs}}.end(); )}
+\DoxyCodeLine{47         \{}
+\DoxyCodeLine{48             \textcolor{keywordflow}{if} (i-\/>second.unique()) \textcolor{comment}{// If there is only one owner it must only belong to this texture manager}}
+\DoxyCodeLine{49             \{}
+\DoxyCodeLine{50                 i = \mbox{\hyperlink{class_texture_manager_adbc04f1036a2b808a65b9fc53fde69f1}{texturePtrs}}.erase(i); \textcolor{comment}{// So we can erase it. I must be assigned the empty memory or it will be deleted}}
+\DoxyCodeLine{51             \}}
+\DoxyCodeLine{52             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{53             \{}
+\DoxyCodeLine{54                 ++i; \textcolor{comment}{// Stay looking for unused textures}}
+\DoxyCodeLine{55             \}}
+\DoxyCodeLine{56         \}}
+\DoxyCodeLine{57     \}}
+\DoxyCodeLine{58 \textcolor{keyword}{private}:}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{63     \textcolor{keyword}{static} std::unordered\_map<std::string, std::shared\_ptr<sf::Texture>> \mbox{\hyperlink{class_texture_manager_adbc04f1036a2b808a65b9fc53fde69f1}{texturePtrs}};}
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !TEXTURE\_MANAGER\_H}}
+
+\end{DoxyCode}

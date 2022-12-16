@@ -1,0 +1,122 @@
+\hypertarget{class_game_over}{}\doxysection{Game\+Over Class Reference}
+\label{class_game_over}\index{GameOver@{GameOver}}
+
+
+The \mbox{\hyperlink{class_game_over}{Game\+Over}} screen. It is accessed after the \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s health is 0 during \mbox{\hyperlink{class_gameplay}{Gameplay}}.   
+
+
+
+
+{\ttfamily \#include $<$Game\+Over.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_over_a0ff11ac73026d574c5b393e825f10a1b}{Game\+Over}} ()
+\begin{DoxyCompactList}\small\item\em The default constructor.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_over_a79b13d33c435da908c5e22efe9bb3f39}{process\+Events}} (sf\+::\+Event t\+\_\+event)
+\begin{DoxyCompactList}\small\item\em Handles any events the player has triggered while on the \mbox{\hyperlink{class_game_over}{Game\+Over}} Screen.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_over_adfa1f15c2f5dca8053f48f03b734a5fb}{update}} (sf\+::\+Vector2i t\+\_\+mouse\+Pos)
+\begin{DoxyCompactList}\small\item\em Updates the back \mbox{\hyperlink{class_button}{Button}}.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_over_a29c4b3cc0e4fa0c2f6c173f702670845}{render}} (sf\+::\+Render\+Window \&t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draws all what\textquotesingle{}s happening on the game over screen.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_button}{Button}} $\ast$ \mbox{\hyperlink{class_game_over_a9a3563d51ee615374389691f2ea73dd0}{m\+\_\+back\+Button}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_button}{Button}} that will bring you back to the \mbox{\hyperlink{class_main_menu}{Main\+Menu}}. \end{DoxyCompactList}\item 
+sf\+::\+Text \mbox{\hyperlink{class_game_over_a9caf5f5fcfda0ed613fce85c200e22e8}{m\+\_\+lose\+Text}}
+\begin{DoxyCompactList}\small\item\em The text that will tell the player that they died. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_game_over}{Game\+Over}} screen. It is accessed after the \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s health is 0 during \mbox{\hyperlink{class_gameplay}{Gameplay}}.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_over_a0ff11ac73026d574c5b393e825f10a1b}\label{class_game_over_a0ff11ac73026d574c5b393e825f10a1b}} 
+\index{GameOver@{GameOver}!GameOver@{GameOver}}
+\index{GameOver@{GameOver}!GameOver@{GameOver}}
+\doxysubsubsection{\texorpdfstring{GameOver()}{GameOver()}}
+{\footnotesize\ttfamily Game\+Over\+::\+Game\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The default constructor.  
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_over_a79b13d33c435da908c5e22efe9bb3f39}\label{class_game_over_a79b13d33c435da908c5e22efe9bb3f39}} 
+\index{GameOver@{GameOver}!processEvents@{processEvents}}
+\index{processEvents@{processEvents}!GameOver@{GameOver}}
+\doxysubsubsection{\texorpdfstring{processEvents()}{processEvents()}}
+{\footnotesize\ttfamily void Game\+Over\+::process\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event }\end{DoxyParamCaption})}
+
+
+
+Handles any events the player has triggered while on the \mbox{\hyperlink{class_game_over}{Game\+Over}} Screen.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & The SFML event.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game_over_a29c4b3cc0e4fa0c2f6c173f702670845}\label{class_game_over_a29c4b3cc0e4fa0c2f6c173f702670845}} 
+\index{GameOver@{GameOver}!render@{render}}
+\index{render@{render}!GameOver@{GameOver}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Game\+Over\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Draws all what\textquotesingle{}s happening on the game over screen.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & The screen to draw to.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game_over_adfa1f15c2f5dca8053f48f03b734a5fb}\label{class_game_over_adfa1f15c2f5dca8053f48f03b734a5fb}} 
+\index{GameOver@{GameOver}!update@{update}}
+\index{update@{update}!GameOver@{GameOver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Game\+Over\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{t\+\_\+mouse\+Pos }\end{DoxyParamCaption})}
+
+
+
+Updates the back \mbox{\hyperlink{class_button}{Button}}.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+mouse\+Pos} & The mouse\textquotesingle{}s position on the screen.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_over_a9a3563d51ee615374389691f2ea73dd0}\label{class_game_over_a9a3563d51ee615374389691f2ea73dd0}} 
+\index{GameOver@{GameOver}!m\_backButton@{m\_backButton}}
+\index{m\_backButton@{m\_backButton}!GameOver@{GameOver}}
+\doxysubsubsection{\texorpdfstring{m\_backButton}{m\_backButton}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_button}{Button}}$\ast$ Game\+Over\+::m\+\_\+back\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \mbox{\hyperlink{class_button}{Button}} that will bring you back to the \mbox{\hyperlink{class_main_menu}{Main\+Menu}}. 
+
+\mbox{\Hypertarget{class_game_over_a9caf5f5fcfda0ed613fce85c200e22e8}\label{class_game_over_a9caf5f5fcfda0ed613fce85c200e22e8}} 
+\index{GameOver@{GameOver}!m\_loseText@{m\_loseText}}
+\index{m\_loseText@{m\_loseText}!GameOver@{GameOver}}
+\doxysubsubsection{\texorpdfstring{m\_loseText}{m\_loseText}}
+{\footnotesize\ttfamily sf\+::\+Text Game\+Over\+::m\+\_\+lose\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The text that will tell the player that they died. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_game_over_8h}{Game\+Over.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_game_over_8cpp}{Game\+Over.\+cpp}}\end{DoxyCompactItemize}

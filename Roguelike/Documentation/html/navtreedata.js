@@ -24,13 +24,14 @@
 */
 var NAVTREE =
 [
-  [ "Roguelike", "index.html", [
+  [ "JECL-Ducks", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
@@ -39,7 +40,9 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Enumerations", "globals_enum.html", null ]
+        [ "Variables", "globals_vars.html", null ],
+        [ "Enumerations", "globals_enum.html", null ],
+        [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -47,7 +50,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_enemy_8cpp.html"
+"_abstract_armour_8cpp.html",
+"class_enemy.html#a5ca0b9deba2be143f2d363dff0d39107",
+"class_strength_potion.html#ae642a1e1d8cc3cb06c2f8ddea8c95071"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

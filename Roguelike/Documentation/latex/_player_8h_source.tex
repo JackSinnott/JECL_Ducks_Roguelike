@@ -1,0 +1,118 @@
+\hypertarget{_player_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Player.h}
+\mbox{\hyperlink{_player_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_globals_8h}{Globals.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_item_8h}{AbstractItem.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_weapon_8h}{AbstractWeapon.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_armour_8h}{AbstractArmour.h}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_potion_8h}{AbstractPotion.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_inventory_8h}{Inventory.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_combat_system_8h}{CombatSystem.h}}"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_player}{Player}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17 \textcolor{keyword}{private}:}
+\DoxyCodeLine{19     sf::View \mbox{\hyperlink{class_player_a21f1fdf488b2b116f67adb16416400c7}{m\_playerView}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_player_ae9b6f0f536182776f76f5b553d44499e}{m\_freeToMoveRight}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{25     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_player_a5ae3f8a2df151b2aabd6a4735661c6c5}{m\_freeToMoveLeft}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_player_aaec1484dd2dbe04a3d6cc43c5fe81015}{m\_freeToMoveUp}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_player_ad13830a6f28b070fbce06cf208736d1c}{m\_freeToMoveDown}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{32     }
+\DoxyCodeLine{34     sf::Vector2i \mbox{\hyperlink{class_player_a00028c17aff2ea7821a796a8504132ee}{m\_previousPos}};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_ab4e6ed0131da3921bc80b39f9b455dc9}{row}};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{40     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_adaf24ef11afa33a073a952c464f5c762}{col}};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{43     sf::Sprite \mbox{\hyperlink{class_player_a62bfc9fa4b05ec3f69c62d0696918526}{m\_playerBody}};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{46     std::shared\_ptr<sf::Texture> \mbox{\hyperlink{class_player_a1da792254404554a9fa217c4e895f61e}{m\_playerTexture}};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{51     \textcolor{keyword}{static} std::unordered\_map<Armours, sf::IntRect> \mbox{\hyperlink{class_player_ab0217f5459b7a3faa159e4fe173dbc28}{m\_rects}};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{56     \textcolor{keyword}{static} sf::IntRect \mbox{\hyperlink{class_player_a49e87559987d4095de60d7229db897da}{m\_noArmourRect}};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59     \mbox{\hyperlink{class_inventory}{Inventory}} \mbox{\hyperlink{class_player_ad1d29479282a0a2a757b6d23940faaf3}{m\_playerInventory}};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{64     sf::Keyboard::Key \mbox{\hyperlink{class_player_a4300fd61cb43a3164e853850e5f6e307}{m\_pressingButton}} = sf::Keyboard::Unknown;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_adf0c3e7002bc6739960d88075c240709}{m\_strength}} = 10; }
+\DoxyCodeLine{69     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_a46a14f2dac1742c0caf1380cc7e2ebf2}{m\_armourClass}} = 2;}
+\DoxyCodeLine{71     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_a467e9e6a23ea7d9e999382c58d0db9aa}{m\_health}} = 20; }
+\DoxyCodeLine{73     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_aa1e06c89dea6981223879e6bfccdb5cd}{level}} = 1; }
+\DoxyCodeLine{75     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_ae61f2ea9b978c907d74338758b27e3d8}{xp}} = 0; }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{78     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_a6f9298e716231bdb7de5a3a4f2274703}{m\_maxHealth}} = 20;}
+\DoxyCodeLine{79                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   }
+\DoxyCodeLine{80     \textcolor{comment}{// Methods / Functions}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_af69e394b9934d2fa4930ed9581dc3f6b}{UpdateArmourLook}}();}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{comment}{// Combat Methods}}
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a7f4bab3e52ab1346ab9fea2068b821b2}{CalculateDamageToEnemy}}(\textcolor{keywordtype}{int} t\_EnemyAC, \textcolor{keywordtype}{int} t\_index);}
+\DoxyCodeLine{86     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_a112d582e1027c502f4d4d092de30b1ec}{GetHitModifier}}();}
+\DoxyCodeLine{87     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_a6315233fe618344f76a095a0b0e43ac0}{GetDamageModifier}}();}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{keyword}{public}:}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}}();}
+\DoxyCodeLine{92     \mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}}(\textcolor{keywordtype}{int} t\_row, \textcolor{keywordtype}{int} t\_col);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{comment}{//void InitialiseTextures();}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{keyword}{inline} sf::Vector2i \mbox{\hyperlink{class_player_a4dc646f3895098913530d784dce8c20e}{getPreviousPos}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_player_a00028c17aff2ea7821a796a8504132ee}{m\_previousPos}}; \}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a57c5229e6383990f33d5b01deef7ec92}{setPreviousPos}}(sf::Vector2i t\_prev) \{ \mbox{\hyperlink{class_player_a00028c17aff2ea7821a796a8504132ee}{m\_previousPos}} = t\_prev; \}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_ab4006b6f2a58d8acc184ca1f3fb9e98e}{setPlayerPositionInGrid}}();}
+\DoxyCodeLine{101     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_ab4006b6f2a58d8acc184ca1f3fb9e98e}{setPlayerPositionInGrid}}(sf::Vector2i t\_pos);}
+\DoxyCodeLine{102     sf::Vector2i \mbox{\hyperlink{class_player_a3039dcfc146012ccc242328261eab774}{getPlayerPositionInGrid}}();}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a1b4be5553e2e2ed83a315689fd97c8b0}{move}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_ab4e6ed0131da3921bc80b39f9b455dc9}{row}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_adaf24ef11afa33a073a952c464f5c762}{col}});}
+\DoxyCodeLine{105     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a1af5d39f7bac2aeaa1e30c7dda2332fa}{reset}}();}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{comment}{// The three main processes}}
+\DoxyCodeLine{108     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a12dd7fdccdc8dc7990f3d4925a4259f3}{Update}}(sf::Time t\_deltaTime);}
+\DoxyCodeLine{109     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_player_a4d93aef07c8b9406d3b7f8607c2a0efd}{ProcessKeys}}(sf::Event t\_event);}
+\DoxyCodeLine{110     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a2022b71485561ab132bfc88566ee08f0}{Render}}(sf::RenderWindow\& t\_window);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{comment}{// get / sets}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     sf::Vector2f \mbox{\hyperlink{class_player_aaed2801fda29def04633d24e4271edc0}{GetPosition}}();}
+\DoxyCodeLine{115     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_af39034a7791fd456efae5070dc477266}{setGridPosition}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_ab4e6ed0131da3921bc80b39f9b455dc9}{row}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_adaf24ef11afa33a073a952c464f5c762}{col}});}
+\DoxyCodeLine{116     }
+\DoxyCodeLine{121     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_player_a3414f2ca524596d388f0fbc665cb348c}{canWeMoveUp}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_player_aaec1484dd2dbe04a3d6cc43c5fe81015}{m\_freeToMoveUp}}; \}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{127     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a9d0e2fb38f26cef0cd0575d799e0364c}{setMovementBoolUp}}(\textcolor{keywordtype}{bool} t\_switch) \{ \mbox{\hyperlink{class_player_aaec1484dd2dbe04a3d6cc43c5fe81015}{m\_freeToMoveUp}} = t\_switch; \}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{133     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_ae03e2aea22f9d5f833456cfa67d1e506}{setMovementBoolDown}}(\textcolor{keywordtype}{bool} t\_switch) \{ \mbox{\hyperlink{class_player_ad13830a6f28b070fbce06cf208736d1c}{m\_freeToMoveDown}} = t\_switch; \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{139     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_player_a33413b5fc6c3e7f97522600f28000fa9}{canWeMoveDown}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_player_ad13830a6f28b070fbce06cf208736d1c}{m\_freeToMoveDown}}; \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{145     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a6fe3e551386836ec9e976f76887611e5}{setMovementBoolLeft}}(\textcolor{keywordtype}{bool} t\_switch) \{ \mbox{\hyperlink{class_player_a5ae3f8a2df151b2aabd6a4735661c6c5}{m\_freeToMoveLeft}} = t\_switch; \}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{151     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_player_a551fcd182a3b59e9adde7126b09e022a}{canWeMoveLeft}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_player_a5ae3f8a2df151b2aabd6a4735661c6c5}{m\_freeToMoveLeft}}; \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{157     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a075c6a3a2314cb3e9bf3e1a8c5304ac7}{setMovementBoolRight}}(\textcolor{keywordtype}{bool} t\_switch) \{ \mbox{\hyperlink{class_player_ae9b6f0f536182776f76f5b553d44499e}{m\_freeToMoveRight}} = t\_switch;    \}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{163     \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_player_a1c050f4451c872f3025d29aa7ceceb02}{canWeMoveRight}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_player_ae9b6f0f536182776f76f5b553d44499e}{m\_freeToMoveRight}}; \}}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a17d0f9cc9dbef0f08556713d10ffd8dc}{resetMovementBools}}(\textcolor{keywordtype}{bool} t\_switch) \{ \mbox{\hyperlink{class_player_a9d0e2fb38f26cef0cd0575d799e0364c}{setMovementBoolUp}}(t\_switch); \mbox{\hyperlink{class_player_ae03e2aea22f9d5f833456cfa67d1e506}{setMovementBoolDown}}(t\_switch);}
+\DoxyCodeLine{166         \mbox{\hyperlink{class_player_a6fe3e551386836ec9e976f76887611e5}{setMovementBoolLeft}}(t\_switch); \mbox{\hyperlink{class_player_a075c6a3a2314cb3e9bf3e1a8c5304ac7}{setMovementBoolRight}}(t\_switch); \}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168     \textcolor{comment}{// Inventory Methods}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_afbbcf7a7be42a17610556b5fabd338a0}{PickUpItem}}(\mbox{\hyperlink{class_abstract_item}{AbstractItem}}\& t\_item);}
+\DoxyCodeLine{171     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_aa94d617fc6f2a97eae9f3e6a5f9c3aec}{GetWeaponDamage}}();}
+\DoxyCodeLine{172     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_ab4249c6cbffb8783a85f0a25c67ac807}{GetArmourClass}}();}
+\DoxyCodeLine{173     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_ab4450f78c14edaabfeb7e3bf92a0709e}{UsePotion}}();}
+\DoxyCodeLine{174 \};}
+
+\end{DoxyCode}

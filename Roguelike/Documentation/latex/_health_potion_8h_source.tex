@@ -1,0 +1,32 @@
+\hypertarget{_health_potion_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Health\+Potion.h}
+\mbox{\hyperlink{_health_potion_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_potion_8h}{AbstractPotion.h}}"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_health_potion}{HealthPotion}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_abstract_potion}{AbstractPotion}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{16     \mbox{\hyperlink{class_health_potion_a995348d989b9b9c1d336254073cff707}{HealthPotion}}(\mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}} t\_potionType)}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         \mbox{\hyperlink{class_abstract_potion_a11323348e7bf8bc3f0ba674a209d9a3e}{SetPotionType}}(t\_potionType);}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_health_potion_afdaf3e69d23c13275fb74ad22d50a138}{m\_healing}} = 5 + rand() \% 10;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21         \mbox{\hyperlink{class_abstract_item_abe763be2ca66718e36515961477161f3}{SetupBasics}}();}
+\DoxyCodeLine{22         \mbox{\hyperlink{class_abstract_potion_a04d114823c4de68a9656ef2ca59de9e1}{SetType}}();}
+\DoxyCodeLine{23     \};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_health_potion_ade08018038d5659eecded3a43edca290}{UseEffect}}()\textcolor{keyword}{ override}}
+\DoxyCodeLine{30 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{31         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_health_potion_afdaf3e69d23c13275fb74ad22d50a138}{m\_healing}};}
+\DoxyCodeLine{32     \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{private}:}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{38     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_health_potion_afdaf3e69d23c13275fb74ad22d50a138}{m\_healing}} = 0;}
+\DoxyCodeLine{39 \};}
+
+\end{DoxyCode}

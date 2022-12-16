@@ -1,0 +1,346 @@
+\hypertarget{class_gameplay}{}\doxysection{Gameplay Class Reference}
+\label{class_gameplay}\index{Gameplay@{Gameplay}}
+
+
+The \mbox{\hyperlink{class_gameplay}{Gameplay}} screen. This is where the \mbox{\hyperlink{class_grid}{Grid}}, \mbox{\hyperlink{class_player}{Player}} and \mbox{\hyperlink{class_enemy}{Enemy}} objects are handled.   
+
+
+
+
+{\ttfamily \#include $<$Gameplay.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gameplay_a04898da34fb7c6a290a193f9e7ec1219}{Gameplay}} ()
+\begin{DoxyCompactList}\small\item\em The class\textquotesingle{}s default constructor.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gameplay_a367fddb609ffb3323b52ee41762d66ed}{process\+Events}} (sf\+::\+Event t\+\_\+event)
+\begin{DoxyCompactList}\small\item\em Handles any events the player has triggered while on the \mbox{\hyperlink{class_gameplay}{Gameplay}} Screen.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gameplay_a92fb3f91d9d7099f0606dfc8869d4c1f}{update}} (sf\+::\+Time t\+\_\+dt)
+\begin{DoxyCompactList}\small\item\em Updates the \mbox{\hyperlink{class_player}{Player}}, \mbox{\hyperlink{class_grid}{Grid}} and \mbox{\hyperlink{class_enemy}{Enemy}} objects, every frame.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gameplay_a00a815c3b7352357c2f844f19087ebac}{render}} (sf\+::\+Render\+Window \&t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draws all what\textquotesingle{}s happening on the gameplay screen.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gameplay_a738f3dbcaa7312594e5112c0e3f1fc51}{Generate\+Random\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Generates a random item, and gives it to the player. This is the player\textquotesingle{}s starting equipment.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gameplay_a08b9a9bbfe196a99d266ffaebbbb3405}{Mouse\+Events}} (sf\+::\+Event t\+\_\+event)
+\begin{DoxyCompactList}\small\item\em Handles the mouse events of the game, like the mouse moving around.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gameplay_a33b1b14ab91ff001b6c47e7790cd4e47}{Reset\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Sets the game back to how it was when it first loaded. Used for when the player dies or exits the game.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_gameplay_a5262549df409aaf56e248e2e4e978c1c}{Load\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Loads the floor the \mbox{\hyperlink{class_player}{Player}} is on, with several types of rooms.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gameplay_aa58fdba1ec98997af77737e4232cf837}{process\+Turn}} ()
+\begin{DoxyCompactList}\small\item\em Let\textquotesingle{}s all the \mbox{\hyperlink{class_enemy}{Enemy}} objects process their turns.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Font \mbox{\hyperlink{class_gameplay_a356c0d5c5754e67adfce97eca4bf0bef}{m\+\_\+arial\+Blackfont}}
+\begin{DoxyCompactList}\small\item\em The font used by the Text objects. \end{DoxyCompactList}\item 
+sf\+::\+Text \mbox{\hyperlink{class_gameplay_a9cab209f34a06548fac60ceedc943ac6}{m\+\_\+mouse\+Coordinate}}
+\begin{DoxyCompactList}\small\item\em The text used for messages on the screen. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_gameplay_a02d9cbd8446f19c77c2b8f59e93d91ca}{m\+\_\+mouse\+Position\+View}}
+\begin{DoxyCompactList}\small\item\em The position of the mouse on the screen. \end{DoxyCompactList}\item 
+sf\+::\+Text \mbox{\hyperlink{class_gameplay_a798be7f70abd46adcf6120d3947b7150}{m\+\_\+info\+Text}}
+\begin{DoxyCompactList}\small\item\em Extra text. \end{DoxyCompactList}\item 
+sf\+::\+Texture \mbox{\hyperlink{class_gameplay_a052e2fd042d5284708cf774ba5856cc4}{m\+\_\+tile\+Texture}}
+\begin{DoxyCompactList}\small\item\em How all the \mbox{\hyperlink{class_grid}{Grid}} Tiles took like. They will be cropped depending on their \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_level_loader}{Level\+Loader}} $\ast$ \mbox{\hyperlink{class_gameplay_a0e4f0d5be4d24ed85e423856bf5392fa}{m\+\_\+level\+Loader}}
+\begin{DoxyCompactList}\small\item\em Instance of a class that can load \mbox{\hyperlink{class_room}{Room}} objects from text files. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ \mbox{\hyperlink{class_gameplay_afbb5c780f44525fea33ec1589978b22f}{m\+\_\+button\+Texture}}
+\begin{DoxyCompactList}\small\item\em The texture of the buttons on screen. \end{DoxyCompactList}\item 
+std\+::vector$<$ sf\+::\+Sprite $\ast$ $>$ \mbox{\hyperlink{class_gameplay_a8d2122be2905b9158a7de9fe67014959}{m\+\_\+walls}}
+\begin{DoxyCompactList}\small\item\em a vector to hold the walls around the \mbox{\hyperlink{class_grid}{Grid}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_grid}{Grid}} \mbox{\hyperlink{class_gameplay_a8848de9136c3a2aaa8d017439423e987}{m\+\_\+grid}}
+\begin{DoxyCompactList}\small\item\em The area that the \mbox{\hyperlink{class_player}{Player}} and \mbox{\hyperlink{class_enemy}{Enemy}} will be moving about. Split into Tiles. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_abstract_item_factory}{Abstract\+Item\+Factory}} $\ast$ \mbox{\hyperlink{class_gameplay_abb557ea4163585558624dd1e5e667a90}{m\+\_\+itemfactory}}
+\begin{DoxyCompactList}\small\item\em Uses a factory method that allows the generation of items. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_abstract_item}{Abstract\+Item}} $\ast$ \mbox{\hyperlink{class_gameplay_a39e2cf39670a72a3890669a870ab8aed}{m\+\_\+abs\+Item}}
+\begin{DoxyCompactList}\small\item\em The item itself that can be used to assigned the generated item. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_abstract_item}{Abstract\+Item}} $\ast$ $>$ \mbox{\hyperlink{class_gameplay_aafe2be1f76a60f98082bf020dda0a8f8}{m\+\_\+abs\+Item\+Vector}}
+\begin{DoxyCompactList}\small\item\em A vector of items used to store what item is created. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player}{Player}} \mbox{\hyperlink{class_gameplay_a73e1f2b059a5d8e12a07fdb47085e094}{player}}
+\begin{DoxyCompactList}\small\item\em the player, that the user will control. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $\ast$ $>$ \mbox{\hyperlink{class_gameplay_ad2497c342b131728839125f201de75ae}{m\+\_\+enemies}}
+\begin{DoxyCompactList}\small\item\em a vetor to store all enemies regardless of type \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_gameplay_ad494f773f6caf872b0813334a60908b0}{m\+\_\+debug\+Tools}}
+\begin{DoxyCompactList}\small\item\em Controls whether the mouse coordinates are displayed on screen. Used for debugging. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_gameplay}{Gameplay}} screen. This is where the \mbox{\hyperlink{class_grid}{Grid}}, \mbox{\hyperlink{class_player}{Player}} and \mbox{\hyperlink{class_enemy}{Enemy}} objects are handled.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gameplay_a04898da34fb7c6a290a193f9e7ec1219}\label{class_gameplay_a04898da34fb7c6a290a193f9e7ec1219}} 
+\index{Gameplay@{Gameplay}!Gameplay@{Gameplay}}
+\index{Gameplay@{Gameplay}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{Gameplay()}{Gameplay()}}
+{\footnotesize\ttfamily Gameplay\+::\+Gameplay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The class\textquotesingle{}s default constructor.  
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gameplay_a738f3dbcaa7312594e5112c0e3f1fc51}\label{class_gameplay_a738f3dbcaa7312594e5112c0e3f1fc51}} 
+\index{Gameplay@{Gameplay}!GenerateRandomItem@{GenerateRandomItem}}
+\index{GenerateRandomItem@{GenerateRandomItem}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{GenerateRandomItem()}{GenerateRandomItem()}}
+{\footnotesize\ttfamily void Gameplay\+::\+Generate\+Random\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generates a random item, and gives it to the player. This is the player\textquotesingle{}s starting equipment.  
+
+\mbox{\Hypertarget{class_gameplay_a5262549df409aaf56e248e2e4e978c1c}\label{class_gameplay_a5262549df409aaf56e248e2e4e978c1c}} 
+\index{Gameplay@{Gameplay}!LoadLevel@{LoadLevel}}
+\index{LoadLevel@{LoadLevel}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{LoadLevel()}{LoadLevel()}}
+{\footnotesize\ttfamily void Gameplay\+::\+Load\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads the floor the \mbox{\hyperlink{class_player}{Player}} is on, with several types of rooms.  
+
+\mbox{\Hypertarget{class_gameplay_a08b9a9bbfe196a99d266ffaebbbb3405}\label{class_gameplay_a08b9a9bbfe196a99d266ffaebbbb3405}} 
+\index{Gameplay@{Gameplay}!MouseEvents@{MouseEvents}}
+\index{MouseEvents@{MouseEvents}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{MouseEvents()}{MouseEvents()}}
+{\footnotesize\ttfamily void Gameplay\+::\+Mouse\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event }\end{DoxyParamCaption})}
+
+
+
+Handles the mouse events of the game, like the mouse moving around.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & The event of the mouse doing something.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_gameplay_a367fddb609ffb3323b52ee41762d66ed}\label{class_gameplay_a367fddb609ffb3323b52ee41762d66ed}} 
+\index{Gameplay@{Gameplay}!processEvents@{processEvents}}
+\index{processEvents@{processEvents}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{processEvents()}{processEvents()}}
+{\footnotesize\ttfamily void Gameplay\+::process\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event }\end{DoxyParamCaption})}
+
+
+
+Handles any events the player has triggered while on the \mbox{\hyperlink{class_gameplay}{Gameplay}} Screen.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & The SFML event.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_gameplay_aa58fdba1ec98997af77737e4232cf837}\label{class_gameplay_aa58fdba1ec98997af77737e4232cf837}} 
+\index{Gameplay@{Gameplay}!processTurn@{processTurn}}
+\index{processTurn@{processTurn}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{processTurn()}{processTurn()}}
+{\footnotesize\ttfamily void Gameplay\+::process\+Turn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Let\textquotesingle{}s all the \mbox{\hyperlink{class_enemy}{Enemy}} objects process their turns.  
+
+\mbox{\Hypertarget{class_gameplay_a00a815c3b7352357c2f844f19087ebac}\label{class_gameplay_a00a815c3b7352357c2f844f19087ebac}} 
+\index{Gameplay@{Gameplay}!render@{render}}
+\index{render@{render}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Gameplay\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Draws all what\textquotesingle{}s happening on the gameplay screen.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & The screen to draw the gameplay to.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_gameplay_a33b1b14ab91ff001b6c47e7790cd4e47}\label{class_gameplay_a33b1b14ab91ff001b6c47e7790cd4e47}} 
+\index{Gameplay@{Gameplay}!ResetGame@{ResetGame}}
+\index{ResetGame@{ResetGame}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{ResetGame()}{ResetGame()}}
+{\footnotesize\ttfamily void Gameplay\+::\+Reset\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets the game back to how it was when it first loaded. Used for when the player dies or exits the game.  
+
+\mbox{\Hypertarget{class_gameplay_a92fb3f91d9d7099f0606dfc8869d4c1f}\label{class_gameplay_a92fb3f91d9d7099f0606dfc8869d4c1f}} 
+\index{Gameplay@{Gameplay}!update@{update}}
+\index{update@{update}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Gameplay\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+dt }\end{DoxyParamCaption})}
+
+
+
+Updates the \mbox{\hyperlink{class_player}{Player}}, \mbox{\hyperlink{class_grid}{Grid}} and \mbox{\hyperlink{class_enemy}{Enemy}} objects, every frame.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+dt} & The passed since the last update call.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_gameplay_a39e2cf39670a72a3890669a870ab8aed}\label{class_gameplay_a39e2cf39670a72a3890669a870ab8aed}} 
+\index{Gameplay@{Gameplay}!m\_absItem@{m\_absItem}}
+\index{m\_absItem@{m\_absItem}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{m\_absItem}{m\_absItem}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_abstract_item}{Abstract\+Item}}$\ast$ Gameplay\+::m\+\_\+abs\+Item\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The item itself that can be used to assigned the generated item. 
+
+\mbox{\Hypertarget{class_gameplay_aafe2be1f76a60f98082bf020dda0a8f8}\label{class_gameplay_aafe2be1f76a60f98082bf020dda0a8f8}} 
+\index{Gameplay@{Gameplay}!m\_absItemVector@{m\_absItemVector}}
+\index{m\_absItemVector@{m\_absItemVector}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{m\_absItemVector}{m\_absItemVector}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_abstract_item}{Abstract\+Item}}$\ast$$>$ Gameplay\+::m\+\_\+abs\+Item\+Vector\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A vector of items used to store what item is created. 
+
+\mbox{\Hypertarget{class_gameplay_a356c0d5c5754e67adfce97eca4bf0bef}\label{class_gameplay_a356c0d5c5754e67adfce97eca4bf0bef}} 
+\index{Gameplay@{Gameplay}!m\_arialBlackfont@{m\_arialBlackfont}}
+\index{m\_arialBlackfont@{m\_arialBlackfont}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{m\_arialBlackfont}{m\_arialBlackfont}}
+{\footnotesize\ttfamily sf\+::\+Font Gameplay\+::m\+\_\+arial\+Blackfont\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The font used by the Text objects. 
+
+\mbox{\Hypertarget{class_gameplay_afbb5c780f44525fea33ec1589978b22f}\label{class_gameplay_afbb5c780f44525fea33ec1589978b22f}} 
+\index{Gameplay@{Gameplay}!m\_buttonTexture@{m\_buttonTexture}}
+\index{m\_buttonTexture@{m\_buttonTexture}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{m\_buttonTexture}{m\_buttonTexture}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$sf\+::\+Texture$>$ Gameplay\+::m\+\_\+button\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The texture of the buttons on screen. 
+
+\mbox{\Hypertarget{class_gameplay_ad494f773f6caf872b0813334a60908b0}\label{class_gameplay_ad494f773f6caf872b0813334a60908b0}} 
+\index{Gameplay@{Gameplay}!m\_debugTools@{m\_debugTools}}
+\index{m\_debugTools@{m\_debugTools}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{m\_debugTools}{m\_debugTools}}
+{\footnotesize\ttfamily bool Gameplay\+::m\+\_\+debug\+Tools\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Controls whether the mouse coordinates are displayed on screen. Used for debugging. 
+
+\mbox{\Hypertarget{class_gameplay_ad2497c342b131728839125f201de75ae}\label{class_gameplay_ad2497c342b131728839125f201de75ae}} 
+\index{Gameplay@{Gameplay}!m\_enemies@{m\_enemies}}
+\index{m\_enemies@{m\_enemies}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{m\_enemies}{m\_enemies}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_enemy}{Enemy}}$\ast$$>$ Gameplay\+::m\+\_\+enemies\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+a vetor to store all enemies regardless of type 
+
+\mbox{\Hypertarget{class_gameplay_a8848de9136c3a2aaa8d017439423e987}\label{class_gameplay_a8848de9136c3a2aaa8d017439423e987}} 
+\index{Gameplay@{Gameplay}!m\_grid@{m\_grid}}
+\index{m\_grid@{m\_grid}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{m\_grid}{m\_grid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_grid}{Grid}} Gameplay\+::m\+\_\+grid\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The area that the \mbox{\hyperlink{class_player}{Player}} and \mbox{\hyperlink{class_enemy}{Enemy}} will be moving about. Split into Tiles. 
+
+\mbox{\Hypertarget{class_gameplay_a798be7f70abd46adcf6120d3947b7150}\label{class_gameplay_a798be7f70abd46adcf6120d3947b7150}} 
+\index{Gameplay@{Gameplay}!m\_infoText@{m\_infoText}}
+\index{m\_infoText@{m\_infoText}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{m\_infoText}{m\_infoText}}
+{\footnotesize\ttfamily sf\+::\+Text Gameplay\+::m\+\_\+info\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Extra text. 
+
+\mbox{\Hypertarget{class_gameplay_abb557ea4163585558624dd1e5e667a90}\label{class_gameplay_abb557ea4163585558624dd1e5e667a90}} 
+\index{Gameplay@{Gameplay}!m\_itemfactory@{m\_itemfactory}}
+\index{m\_itemfactory@{m\_itemfactory}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{m\_itemfactory}{m\_itemfactory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_abstract_item_factory}{Abstract\+Item\+Factory}}$\ast$ Gameplay\+::m\+\_\+itemfactory\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Uses a factory method that allows the generation of items. 
+
+\mbox{\Hypertarget{class_gameplay_a0e4f0d5be4d24ed85e423856bf5392fa}\label{class_gameplay_a0e4f0d5be4d24ed85e423856bf5392fa}} 
+\index{Gameplay@{Gameplay}!m\_levelLoader@{m\_levelLoader}}
+\index{m\_levelLoader@{m\_levelLoader}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{m\_levelLoader}{m\_levelLoader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_level_loader}{Level\+Loader}}$\ast$ Gameplay\+::m\+\_\+level\+Loader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance of a class that can load \mbox{\hyperlink{class_room}{Room}} objects from text files. 
+
+\mbox{\Hypertarget{class_gameplay_a9cab209f34a06548fac60ceedc943ac6}\label{class_gameplay_a9cab209f34a06548fac60ceedc943ac6}} 
+\index{Gameplay@{Gameplay}!m\_mouseCoordinate@{m\_mouseCoordinate}}
+\index{m\_mouseCoordinate@{m\_mouseCoordinate}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{m\_mouseCoordinate}{m\_mouseCoordinate}}
+{\footnotesize\ttfamily sf\+::\+Text Gameplay\+::m\+\_\+mouse\+Coordinate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The text used for messages on the screen. 
+
+\mbox{\Hypertarget{class_gameplay_a02d9cbd8446f19c77c2b8f59e93d91ca}\label{class_gameplay_a02d9cbd8446f19c77c2b8f59e93d91ca}} 
+\index{Gameplay@{Gameplay}!m\_mousePositionView@{m\_mousePositionView}}
+\index{m\_mousePositionView@{m\_mousePositionView}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{m\_mousePositionView}{m\_mousePositionView}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Gameplay\+::m\+\_\+mouse\+Position\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The position of the mouse on the screen. 
+
+\mbox{\Hypertarget{class_gameplay_a052e2fd042d5284708cf774ba5856cc4}\label{class_gameplay_a052e2fd042d5284708cf774ba5856cc4}} 
+\index{Gameplay@{Gameplay}!m\_tileTexture@{m\_tileTexture}}
+\index{m\_tileTexture@{m\_tileTexture}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{m\_tileTexture}{m\_tileTexture}}
+{\footnotesize\ttfamily sf\+::\+Texture Gameplay\+::m\+\_\+tile\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+How all the \mbox{\hyperlink{class_grid}{Grid}} Tiles took like. They will be cropped depending on their \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}}. 
+
+\mbox{\Hypertarget{class_gameplay_a8d2122be2905b9158a7de9fe67014959}\label{class_gameplay_a8d2122be2905b9158a7de9fe67014959}} 
+\index{Gameplay@{Gameplay}!m\_walls@{m\_walls}}
+\index{m\_walls@{m\_walls}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{m\_walls}{m\_walls}}
+{\footnotesize\ttfamily std\+::vector$<$sf\+::\+Sprite$\ast$$>$ Gameplay\+::m\+\_\+walls\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+a vector to hold the walls around the \mbox{\hyperlink{class_grid}{Grid}}. 
+
+\mbox{\Hypertarget{class_gameplay_a73e1f2b059a5d8e12a07fdb47085e094}\label{class_gameplay_a73e1f2b059a5d8e12a07fdb47085e094}} 
+\index{Gameplay@{Gameplay}!player@{player}}
+\index{player@{player}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player}{Player}} Gameplay\+::player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the player, that the user will control. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_gameplay_8h}{Gameplay.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_gameplay_8cpp}{Gameplay.\+cpp}}\end{DoxyCompactItemize}

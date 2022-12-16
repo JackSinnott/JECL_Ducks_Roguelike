@@ -1,0 +1,437 @@
+\hypertarget{_globals_8h}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Globals.h File Reference}
+\label{_globals_8h}\index{C:/Users/liney/OneDrive/Desktop/Work/Games Engineering/JECL\_Ducks\_Roguelike/Roguelike/Globals.h@{C:/Users/liney/OneDrive/Desktop/Work/Games Engineering/JECL\_Ducks\_Roguelike/Roguelike/Globals.h}}
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5}{Gamestate}} \{ \newline
+\mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5aad1111b48f98329333237912fc3b371b}{Main\+Menu}}
+, \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5aa6ea893fdc6e0771ff6d14028a6d7f3e}{Pause\+Menu}}
+, \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5adae8ace18bdcbcc6ae5aece263e14fe8}{Options}}
+, \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5a6288740a1cd0de37312619df3b6ddcf3}{Gameplay}}
+, \newline
+\mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5a8f347bc7cebca9fa6d97e70c6bc29eb3}{Game\+Over}}
+, \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5a6a26f548831e6a8c26bfbbd9f6ec61e0}{Help}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enum class whose values correspond to a screen the user can be on.  \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{_globals_8h_ac3e413a86119db4b031458c7259e268e}{Enemy\+Type}} \{ \mbox{\hyperlink{_globals_8h_ac3e413a86119db4b031458c7259e268ea2d5b3d62e7bd3a1d79494bd85e69b5ba}{Bat}}
+, \mbox{\hyperlink{_globals_8h_ac3e413a86119db4b031458c7259e268eaecd331596f91ddaac07c6e600ed166f1}{Rat}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enum class whose values correspond to the types of \mbox{\hyperlink{class_enemy}{Enemy}} variations there are.  \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{_globals_8h_a443f647757dde85043b49343f5cbe66b}{Item\+Type}} \{ \mbox{\hyperlink{_globals_8h_a443f647757dde85043b49343f5cbe66ba18c83669920215a818638ad0e5421e4b}{Weapon}}
+, \mbox{\hyperlink{_globals_8h_a443f647757dde85043b49343f5cbe66ba865800a9e29599ad35eadc572c4ff5a6}{Armour}}
+, \mbox{\hyperlink{_globals_8h_a443f647757dde85043b49343f5cbe66baf7f5d540f521d6d642502a9d459e7b16}{Potion}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enum class whose values correspond to the types of Item variations there are.  \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213}{Weapons}} \{ \mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213a6c198603789a4928477eccd5d550b6b2}{Sword}}
+, \mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213aed4dd6cc118ab2500715cbd23b054573}{Axe}}
+, \mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213a1c5c62b5cff296764b792468a69fa041}{Dagger}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enum class whose values correspond to the types of Weapon variations there are.  \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}} \{ \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070a9914a0ce04a7b7b6a8e39bec55064b82}{Light}}
+, \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070a87f8a6ab85c9ced3702b4ea641ad4bb5}{Medium}}
+, \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070af9ffe67a20da9cbff56b420fca4bd491}{Heavy}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enum class whose values correspond to the types of Armour variations there are.  \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}} \{ \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590a605669cab962bf944d99ce89cf9e58d9}{Health}}
+, \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590a5a455a612047a34ede7a6c564fa67c0a}{Strength}}
+, \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590a44877c6aa8e93fa5a91c9361211464fb}{Speed}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enum class whose values correspond to the types of Potion variations there are.  \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{_globals_8h_af275db8f31a6655e934f031c55b7aaa5}{Scrolls}} \{ \mbox{\hyperlink{_globals_8h_af275db8f31a6655e934f031c55b7aaa5aa8155b0ea02bae01cd41369018837d6b}{Fireball}}
+, \mbox{\hyperlink{_globals_8h_af275db8f31a6655e934f031c55b7aaa5a970da5f1f2e32aeb9e488dd017160ab4}{Shield}}
+, \mbox{\hyperlink{_globals_8h_af275db8f31a6655e934f031c55b7aaa5ab3f0fc8e6f6e70bcc3153365e10251c8}{Teleportation}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enum class whose values correspond to the types of Scroll variations there are.  \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}} \{ \newline
+\mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a3bc180bd00be2c60a3a5a68e0dd49503}{UNUSED}} = 0
+, \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1adedcb56e75fe1488e20865e0ea36d0b9}{GROUND}} = 1
+, \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1acff1d19b5e9949c76122a6c42801b6cb}{VERTICAL\+\_\+\+WALL}} = 2
+, \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a3817619231a131f2b7b22ff58a46d816}{HORIZONTAL\+\_\+\+WALL}} = 3
+, \newline
+\mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a703c9878316befeeae7160114ee632e2}{UPPER\+\_\+\+CORNER}} = 4
+, \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a1390c173a389b8a3659a3186a76050b0}{LOWER\+\_\+\+CORNER}} = 5
+, \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1ae5d176bc77e7e4e6957de0ef675f50fe}{INSIDE\+\_\+\+WALL}} = 6
+ \}
+\begin{DoxyCompactList}\small\item\em An enum class whose values correspond to the types of \mbox{\hyperlink{class_tile}{Tile}} variations there are.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5}{Gamestate}} \mbox{\hyperlink{_globals_8h_a9344dbdd78ef2f8ec839413396c5d99a}{g\+\_\+gamestate}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5}{Gamestate}} variable that keeps track of what screen the user is on.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5}{Gamestate}} \mbox{\hyperlink{_globals_8h_acfe94e0024186936408600577964b27e}{g\+\_\+previous\+State}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5}{Gamestate}} variable that keeps track of what screen the user was previously on.  \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_globals_8h_a71e590000c554e5f4e8ec83c07ce910f}{g\+\_\+exit\+Game}}
+\begin{DoxyCompactList}\small\item\em A bool that stops the game when the player chooses to exit on the Main menu.  \end{DoxyCompactList}\item 
+unsigned const int \mbox{\hyperlink{_globals_8h_adb4bf3f2c109fbaf8a9c11bfa807c26e}{G\+\_\+\+VIEW\+\_\+\+WIDTH}} = 1800
+\begin{DoxyCompactList}\small\item\em The width of the game screen.  \end{DoxyCompactList}\item 
+unsigned const int \mbox{\hyperlink{_globals_8h_a70ff7c8d515196ba09fb769cbdb3d64d}{G\+\_\+\+VIEW\+\_\+\+HEIGTH}} = 900
+\begin{DoxyCompactList}\small\item\em The height of the game screen.  \end{DoxyCompactList}\item 
+unsigned const int \mbox{\hyperlink{_globals_8h_a21074e289acbeb0f5d91be395e5725f8}{G\+\_\+\+ROOM\+\_\+\+ROWS}} = 25
+\begin{DoxyCompactList}\small\item\em Maximum number of rows in a \mbox{\hyperlink{class_room}{Room}}. \end{DoxyCompactList}\item 
+unsigned const int \mbox{\hyperlink{_globals_8h_a5574abc6a2a04bd270d2364617bb8736}{G\+\_\+\+ROOM\+\_\+\+COLS}} = 20
+\begin{DoxyCompactList}\small\item\em Maximum number of columns in a \mbox{\hyperlink{class_room}{Room}}. \end{DoxyCompactList}\item 
+unsigned const int \mbox{\hyperlink{_globals_8h_a4f8d156204e81cf90a7056ae14e7b148}{G\+\_\+\+MAP\+\_\+\+ROWS}} = 75
+\begin{DoxyCompactList}\small\item\em Maximum number of rows on the \mbox{\hyperlink{class_grid}{Grid}}. \end{DoxyCompactList}\item 
+unsigned const int \mbox{\hyperlink{_globals_8h_aae928e13459e3f134213e53cfdffb186}{G\+\_\+\+MAP\+\_\+\+COLS}} = 60
+\begin{DoxyCompactList}\small\item\em Maximum number of columns on the \mbox{\hyperlink{class_grid}{Grid}}. \end{DoxyCompactList}\item 
+unsigned const int \mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\+\_\+\+CELL\+\_\+\+SIZE}} = 32
+\begin{DoxyCompactList}\small\item\em The size of one \mbox{\hyperlink{class_tile}{Tile}} in the \mbox{\hyperlink{class_grid}{Grid}}. \end{DoxyCompactList}\item 
+std\+::string const \mbox{\hyperlink{_globals_8h_a18adc2c8bf6b36d5a575d02704f4e1c1}{MISSINGTEXTURE}} = \char`\"{}./ASSETS/IMAGES/Missing\+Texture.\+png\char`\"{}
+\begin{DoxyCompactList}\small\item\em The path that leads to a texture that will appear if there was an error loading the first texture.  \end{DoxyCompactList}\item 
+std\+::string const \mbox{\hyperlink{_globals_8h_a62bdf4f6ff3e6683dce531167dc91ba6}{ITEMS\+\_\+\+TEXTURE}} = \char`\"{}./ASSETS/IMAGES/tilemap\+\_\+packed.\+png\char`\"{}
+\begin{DoxyCompactList}\small\item\em The path that leads to a texture that holds the appearance of the \mbox{\hyperlink{class_player}{Player}}, the \mbox{\hyperlink{class_enemy}{Enemy}}, and the Items.  \end{DoxyCompactList}\item 
+sf\+::\+Font \mbox{\hyperlink{_globals_8h_a924211755bba964bfe8403fd49db0b4d}{g\+\_\+font}}
+\begin{DoxyCompactList}\small\item\em The font used throughout the \mbox{\hyperlink{class_game}{Game}}.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_globals_8h_a055e5eef1506d5a4360112d62215b070}\label{_globals_8h_a055e5eef1506d5a4360112d62215b070}} 
+\index{Globals.h@{Globals.h}!Armours@{Armours}}
+\index{Armours@{Armours}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{Armours}{Armours}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+An enum class whose values correspond to the types of Armour variations there are.  
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Light@{Light}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Light@{Light}}}\mbox{\Hypertarget{_globals_8h_a055e5eef1506d5a4360112d62215b070a9914a0ce04a7b7b6a8e39bec55064b82}\label{_globals_8h_a055e5eef1506d5a4360112d62215b070a9914a0ce04a7b7b6a8e39bec55064b82}} 
+Light&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Medium@{Medium}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Medium@{Medium}}}\mbox{\Hypertarget{_globals_8h_a055e5eef1506d5a4360112d62215b070a87f8a6ab85c9ced3702b4ea641ad4bb5}\label{_globals_8h_a055e5eef1506d5a4360112d62215b070a87f8a6ab85c9ced3702b4ea641ad4bb5}} 
+Medium&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Heavy@{Heavy}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Heavy@{Heavy}}}\mbox{\Hypertarget{_globals_8h_a055e5eef1506d5a4360112d62215b070af9ffe67a20da9cbff56b420fca4bd491}\label{_globals_8h_a055e5eef1506d5a4360112d62215b070af9ffe67a20da9cbff56b420fca4bd491}} 
+Heavy&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_globals_8h_ac3e413a86119db4b031458c7259e268e}\label{_globals_8h_ac3e413a86119db4b031458c7259e268e}} 
+\index{Globals.h@{Globals.h}!EnemyType@{EnemyType}}
+\index{EnemyType@{EnemyType}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{EnemyType}{EnemyType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{_globals_8h_ac3e413a86119db4b031458c7259e268e}{Enemy\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+An enum class whose values correspond to the types of \mbox{\hyperlink{class_enemy}{Enemy}} variations there are.  
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bat@{Bat}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Bat@{Bat}}}\mbox{\Hypertarget{_globals_8h_ac3e413a86119db4b031458c7259e268ea2d5b3d62e7bd3a1d79494bd85e69b5ba}\label{_globals_8h_ac3e413a86119db4b031458c7259e268ea2d5b3d62e7bd3a1d79494bd85e69b5ba}} 
+Bat&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rat@{Rat}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Rat@{Rat}}}\mbox{\Hypertarget{_globals_8h_ac3e413a86119db4b031458c7259e268eaecd331596f91ddaac07c6e600ed166f1}\label{_globals_8h_ac3e413a86119db4b031458c7259e268eaecd331596f91ddaac07c6e600ed166f1}} 
+Rat&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5}\label{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5}} 
+\index{Globals.h@{Globals.h}!Gamestate@{Gamestate}}
+\index{Gamestate@{Gamestate}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{Gamestate}{Gamestate}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5}{Gamestate}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+An enum class whose values correspond to a screen the user can be on.  
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MainMenu@{MainMenu}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!MainMenu@{MainMenu}}}\mbox{\Hypertarget{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5aad1111b48f98329333237912fc3b371b}\label{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5aad1111b48f98329333237912fc3b371b}} 
+Main\+Menu&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PauseMenu@{PauseMenu}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!PauseMenu@{PauseMenu}}}\mbox{\Hypertarget{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5aa6ea893fdc6e0771ff6d14028a6d7f3e}\label{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5aa6ea893fdc6e0771ff6d14028a6d7f3e}} 
+Pause\+Menu&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Options@{Options}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Options@{Options}}}\mbox{\Hypertarget{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5adae8ace18bdcbcc6ae5aece263e14fe8}\label{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5adae8ace18bdcbcc6ae5aece263e14fe8}} 
+Options&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Gameplay@{Gameplay}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Gameplay@{Gameplay}}}\mbox{\Hypertarget{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5a6288740a1cd0de37312619df3b6ddcf3}\label{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5a6288740a1cd0de37312619df3b6ddcf3}} 
+Gameplay&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GameOver@{GameOver}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!GameOver@{GameOver}}}\mbox{\Hypertarget{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5a8f347bc7cebca9fa6d97e70c6bc29eb3}\label{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5a8f347bc7cebca9fa6d97e70c6bc29eb3}} 
+Game\+Over&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Help@{Help}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Help@{Help}}}\mbox{\Hypertarget{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5a6a26f548831e6a8c26bfbbd9f6ec61e0}\label{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5a6a26f548831e6a8c26bfbbd9f6ec61e0}} 
+Help&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_globals_8h_a443f647757dde85043b49343f5cbe66b}\label{_globals_8h_a443f647757dde85043b49343f5cbe66b}} 
+\index{Globals.h@{Globals.h}!ItemType@{ItemType}}
+\index{ItemType@{ItemType}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{ItemType}{ItemType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{_globals_8h_a443f647757dde85043b49343f5cbe66b}{Item\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+An enum class whose values correspond to the types of Item variations there are.  
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Weapon@{Weapon}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Weapon@{Weapon}}}\mbox{\Hypertarget{_globals_8h_a443f647757dde85043b49343f5cbe66ba18c83669920215a818638ad0e5421e4b}\label{_globals_8h_a443f647757dde85043b49343f5cbe66ba18c83669920215a818638ad0e5421e4b}} 
+Weapon&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Armour@{Armour}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Armour@{Armour}}}\mbox{\Hypertarget{_globals_8h_a443f647757dde85043b49343f5cbe66ba865800a9e29599ad35eadc572c4ff5a6}\label{_globals_8h_a443f647757dde85043b49343f5cbe66ba865800a9e29599ad35eadc572c4ff5a6}} 
+Armour&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Potion@{Potion}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Potion@{Potion}}}\mbox{\Hypertarget{_globals_8h_a443f647757dde85043b49343f5cbe66baf7f5d540f521d6d642502a9d459e7b16}\label{_globals_8h_a443f647757dde85043b49343f5cbe66baf7f5d540f521d6d642502a9d459e7b16}} 
+Potion&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_globals_8h_a339b1e37de309d5689ffde954b8a4590}\label{_globals_8h_a339b1e37de309d5689ffde954b8a4590}} 
+\index{Globals.h@{Globals.h}!Potions@{Potions}}
+\index{Potions@{Potions}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{Potions}{Potions}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+An enum class whose values correspond to the types of Potion variations there are.  
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Health@{Health}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Health@{Health}}}\mbox{\Hypertarget{_globals_8h_a339b1e37de309d5689ffde954b8a4590a605669cab962bf944d99ce89cf9e58d9}\label{_globals_8h_a339b1e37de309d5689ffde954b8a4590a605669cab962bf944d99ce89cf9e58d9}} 
+Health&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Strength@{Strength}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Strength@{Strength}}}\mbox{\Hypertarget{_globals_8h_a339b1e37de309d5689ffde954b8a4590a5a455a612047a34ede7a6c564fa67c0a}\label{_globals_8h_a339b1e37de309d5689ffde954b8a4590a5a455a612047a34ede7a6c564fa67c0a}} 
+Strength&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Speed@{Speed}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Speed@{Speed}}}\mbox{\Hypertarget{_globals_8h_a339b1e37de309d5689ffde954b8a4590a44877c6aa8e93fa5a91c9361211464fb}\label{_globals_8h_a339b1e37de309d5689ffde954b8a4590a44877c6aa8e93fa5a91c9361211464fb}} 
+Speed&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_globals_8h_af275db8f31a6655e934f031c55b7aaa5}\label{_globals_8h_af275db8f31a6655e934f031c55b7aaa5}} 
+\index{Globals.h@{Globals.h}!Scrolls@{Scrolls}}
+\index{Scrolls@{Scrolls}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{Scrolls}{Scrolls}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{_globals_8h_af275db8f31a6655e934f031c55b7aaa5}{Scrolls}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+An enum class whose values correspond to the types of Scroll variations there are.  
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fireball@{Fireball}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Fireball@{Fireball}}}\mbox{\Hypertarget{_globals_8h_af275db8f31a6655e934f031c55b7aaa5aa8155b0ea02bae01cd41369018837d6b}\label{_globals_8h_af275db8f31a6655e934f031c55b7aaa5aa8155b0ea02bae01cd41369018837d6b}} 
+Fireball&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Shield@{Shield}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Shield@{Shield}}}\mbox{\Hypertarget{_globals_8h_af275db8f31a6655e934f031c55b7aaa5a970da5f1f2e32aeb9e488dd017160ab4}\label{_globals_8h_af275db8f31a6655e934f031c55b7aaa5a970da5f1f2e32aeb9e488dd017160ab4}} 
+Shield&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Teleportation@{Teleportation}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Teleportation@{Teleportation}}}\mbox{\Hypertarget{_globals_8h_af275db8f31a6655e934f031c55b7aaa5ab3f0fc8e6f6e70bcc3153365e10251c8}\label{_globals_8h_af275db8f31a6655e934f031c55b7aaa5ab3f0fc8e6f6e70bcc3153365e10251c8}} 
+Teleportation&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}\label{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}} 
+\index{Globals.h@{Globals.h}!TileType@{TileType}}
+\index{TileType@{TileType}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{TileType}{TileType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+An enum class whose values correspond to the types of \mbox{\hyperlink{class_tile}{Tile}} variations there are.  
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNUSED@{UNUSED}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!UNUSED@{UNUSED}}}\mbox{\Hypertarget{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a3bc180bd00be2c60a3a5a68e0dd49503}\label{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a3bc180bd00be2c60a3a5a68e0dd49503}} 
+UNUSED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GROUND@{GROUND}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!GROUND@{GROUND}}}\mbox{\Hypertarget{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1adedcb56e75fe1488e20865e0ea36d0b9}\label{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1adedcb56e75fe1488e20865e0ea36d0b9}} 
+GROUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VERTICAL\_WALL@{VERTICAL\_WALL}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!VERTICAL\_WALL@{VERTICAL\_WALL}}}\mbox{\Hypertarget{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1acff1d19b5e9949c76122a6c42801b6cb}\label{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1acff1d19b5e9949c76122a6c42801b6cb}} 
+VERTICAL\+\_\+\+WALL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HORIZONTAL\_WALL@{HORIZONTAL\_WALL}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!HORIZONTAL\_WALL@{HORIZONTAL\_WALL}}}\mbox{\Hypertarget{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a3817619231a131f2b7b22ff58a46d816}\label{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a3817619231a131f2b7b22ff58a46d816}} 
+HORIZONTAL\+\_\+\+WALL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UPPER\_CORNER@{UPPER\_CORNER}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!UPPER\_CORNER@{UPPER\_CORNER}}}\mbox{\Hypertarget{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a703c9878316befeeae7160114ee632e2}\label{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a703c9878316befeeae7160114ee632e2}} 
+UPPER\+\_\+\+CORNER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOWER\_CORNER@{LOWER\_CORNER}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!LOWER\_CORNER@{LOWER\_CORNER}}}\mbox{\Hypertarget{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a1390c173a389b8a3659a3186a76050b0}\label{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a1390c173a389b8a3659a3186a76050b0}} 
+LOWER\+\_\+\+CORNER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INSIDE\_WALL@{INSIDE\_WALL}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!INSIDE\_WALL@{INSIDE\_WALL}}}\mbox{\Hypertarget{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1ae5d176bc77e7e4e6957de0ef675f50fe}\label{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1ae5d176bc77e7e4e6957de0ef675f50fe}} 
+INSIDE\+\_\+\+WALL&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_globals_8h_a2e238758e72da0491a67935310819213}\label{_globals_8h_a2e238758e72da0491a67935310819213}} 
+\index{Globals.h@{Globals.h}!Weapons@{Weapons}}
+\index{Weapons@{Weapons}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{Weapons}{Weapons}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213}{Weapons}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+An enum class whose values correspond to the types of Weapon variations there are.  
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sword@{Sword}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Sword@{Sword}}}\mbox{\Hypertarget{_globals_8h_a2e238758e72da0491a67935310819213a6c198603789a4928477eccd5d550b6b2}\label{_globals_8h_a2e238758e72da0491a67935310819213a6c198603789a4928477eccd5d550b6b2}} 
+Sword&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Axe@{Axe}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Axe@{Axe}}}\mbox{\Hypertarget{_globals_8h_a2e238758e72da0491a67935310819213aed4dd6cc118ab2500715cbd23b054573}\label{_globals_8h_a2e238758e72da0491a67935310819213aed4dd6cc118ab2500715cbd23b054573}} 
+Axe&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dagger@{Dagger}!Globals.h@{Globals.h}}\index{Globals.h@{Globals.h}!Dagger@{Dagger}}}\mbox{\Hypertarget{_globals_8h_a2e238758e72da0491a67935310819213a1c5c62b5cff296764b792468a69fa041}\label{_globals_8h_a2e238758e72da0491a67935310819213a1c5c62b5cff296764b792468a69fa041}} 
+Dagger&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_globals_8h_afd21ad7218563b50069454fbf8994693}\label{_globals_8h_afd21ad7218563b50069454fbf8994693}} 
+\index{Globals.h@{Globals.h}!G\_CELL\_SIZE@{G\_CELL\_SIZE}}
+\index{G\_CELL\_SIZE@{G\_CELL\_SIZE}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{G\_CELL\_SIZE}{G\_CELL\_SIZE}}
+{\footnotesize\ttfamily unsigned const int G\+\_\+\+CELL\+\_\+\+SIZE = 32}
+
+
+
+The size of one \mbox{\hyperlink{class_tile}{Tile}} in the \mbox{\hyperlink{class_grid}{Grid}}. 
+
+\mbox{\Hypertarget{_globals_8h_a71e590000c554e5f4e8ec83c07ce910f}\label{_globals_8h_a71e590000c554e5f4e8ec83c07ce910f}} 
+\index{Globals.h@{Globals.h}!g\_exitGame@{g\_exitGame}}
+\index{g\_exitGame@{g\_exitGame}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{g\_exitGame}{g\_exitGame}}
+{\footnotesize\ttfamily bool g\+\_\+exit\+Game\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+A bool that stops the game when the player chooses to exit on the Main menu.  
+
+\mbox{\Hypertarget{_globals_8h_a924211755bba964bfe8403fd49db0b4d}\label{_globals_8h_a924211755bba964bfe8403fd49db0b4d}} 
+\index{Globals.h@{Globals.h}!g\_font@{g\_font}}
+\index{g\_font@{g\_font}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{g\_font}{g\_font}}
+{\footnotesize\ttfamily sf\+::\+Font g\+\_\+font\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+The font used throughout the \mbox{\hyperlink{class_game}{Game}}.  
+
+\mbox{\Hypertarget{_globals_8h_a9344dbdd78ef2f8ec839413396c5d99a}\label{_globals_8h_a9344dbdd78ef2f8ec839413396c5d99a}} 
+\index{Globals.h@{Globals.h}!g\_gamestate@{g\_gamestate}}
+\index{g\_gamestate@{g\_gamestate}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{g\_gamestate}{g\_gamestate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5}{Gamestate}} g\+\_\+gamestate\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+A \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5}{Gamestate}} variable that keeps track of what screen the user is on.  
+
+\mbox{\Hypertarget{_globals_8h_aae928e13459e3f134213e53cfdffb186}\label{_globals_8h_aae928e13459e3f134213e53cfdffb186}} 
+\index{Globals.h@{Globals.h}!G\_MAP\_COLS@{G\_MAP\_COLS}}
+\index{G\_MAP\_COLS@{G\_MAP\_COLS}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{G\_MAP\_COLS}{G\_MAP\_COLS}}
+{\footnotesize\ttfamily unsigned const int G\+\_\+\+MAP\+\_\+\+COLS = 60}
+
+
+
+Maximum number of columns on the \mbox{\hyperlink{class_grid}{Grid}}. 
+
+\mbox{\Hypertarget{_globals_8h_a4f8d156204e81cf90a7056ae14e7b148}\label{_globals_8h_a4f8d156204e81cf90a7056ae14e7b148}} 
+\index{Globals.h@{Globals.h}!G\_MAP\_ROWS@{G\_MAP\_ROWS}}
+\index{G\_MAP\_ROWS@{G\_MAP\_ROWS}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{G\_MAP\_ROWS}{G\_MAP\_ROWS}}
+{\footnotesize\ttfamily unsigned const int G\+\_\+\+MAP\+\_\+\+ROWS = 75}
+
+
+
+Maximum number of rows on the \mbox{\hyperlink{class_grid}{Grid}}. 
+
+\mbox{\Hypertarget{_globals_8h_acfe94e0024186936408600577964b27e}\label{_globals_8h_acfe94e0024186936408600577964b27e}} 
+\index{Globals.h@{Globals.h}!g\_previousState@{g\_previousState}}
+\index{g\_previousState@{g\_previousState}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{g\_previousState}{g\_previousState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5}{Gamestate}} g\+\_\+previous\+State\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+A \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5}{Gamestate}} variable that keeps track of what screen the user was previously on.  
+
+\mbox{\Hypertarget{_globals_8h_a5574abc6a2a04bd270d2364617bb8736}\label{_globals_8h_a5574abc6a2a04bd270d2364617bb8736}} 
+\index{Globals.h@{Globals.h}!G\_ROOM\_COLS@{G\_ROOM\_COLS}}
+\index{G\_ROOM\_COLS@{G\_ROOM\_COLS}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{G\_ROOM\_COLS}{G\_ROOM\_COLS}}
+{\footnotesize\ttfamily unsigned const int G\+\_\+\+ROOM\+\_\+\+COLS = 20}
+
+
+
+Maximum number of columns in a \mbox{\hyperlink{class_room}{Room}}. 
+
+\mbox{\Hypertarget{_globals_8h_a21074e289acbeb0f5d91be395e5725f8}\label{_globals_8h_a21074e289acbeb0f5d91be395e5725f8}} 
+\index{Globals.h@{Globals.h}!G\_ROOM\_ROWS@{G\_ROOM\_ROWS}}
+\index{G\_ROOM\_ROWS@{G\_ROOM\_ROWS}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{G\_ROOM\_ROWS}{G\_ROOM\_ROWS}}
+{\footnotesize\ttfamily unsigned const int G\+\_\+\+ROOM\+\_\+\+ROWS = 25}
+
+
+
+Maximum number of rows in a \mbox{\hyperlink{class_room}{Room}}. 
+
+\mbox{\Hypertarget{_globals_8h_a70ff7c8d515196ba09fb769cbdb3d64d}\label{_globals_8h_a70ff7c8d515196ba09fb769cbdb3d64d}} 
+\index{Globals.h@{Globals.h}!G\_VIEW\_HEIGTH@{G\_VIEW\_HEIGTH}}
+\index{G\_VIEW\_HEIGTH@{G\_VIEW\_HEIGTH}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{G\_VIEW\_HEIGTH}{G\_VIEW\_HEIGTH}}
+{\footnotesize\ttfamily unsigned const int G\+\_\+\+VIEW\+\_\+\+HEIGTH = 900}
+
+
+
+The height of the game screen.  
+
+\mbox{\Hypertarget{_globals_8h_adb4bf3f2c109fbaf8a9c11bfa807c26e}\label{_globals_8h_adb4bf3f2c109fbaf8a9c11bfa807c26e}} 
+\index{Globals.h@{Globals.h}!G\_VIEW\_WIDTH@{G\_VIEW\_WIDTH}}
+\index{G\_VIEW\_WIDTH@{G\_VIEW\_WIDTH}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{G\_VIEW\_WIDTH}{G\_VIEW\_WIDTH}}
+{\footnotesize\ttfamily unsigned const int G\+\_\+\+VIEW\+\_\+\+WIDTH = 1800}
+
+
+
+The width of the game screen.  
+
+\mbox{\Hypertarget{_globals_8h_a62bdf4f6ff3e6683dce531167dc91ba6}\label{_globals_8h_a62bdf4f6ff3e6683dce531167dc91ba6}} 
+\index{Globals.h@{Globals.h}!ITEMS\_TEXTURE@{ITEMS\_TEXTURE}}
+\index{ITEMS\_TEXTURE@{ITEMS\_TEXTURE}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{ITEMS\_TEXTURE}{ITEMS\_TEXTURE}}
+{\footnotesize\ttfamily std\+::string const ITEMS\+\_\+\+TEXTURE = \char`\"{}./ASSETS/IMAGES/tilemap\+\_\+packed.\+png\char`\"{}}
+
+
+
+The path that leads to a texture that holds the appearance of the \mbox{\hyperlink{class_player}{Player}}, the \mbox{\hyperlink{class_enemy}{Enemy}}, and the Items.  
+
+\mbox{\Hypertarget{_globals_8h_a18adc2c8bf6b36d5a575d02704f4e1c1}\label{_globals_8h_a18adc2c8bf6b36d5a575d02704f4e1c1}} 
+\index{Globals.h@{Globals.h}!MISSINGTEXTURE@{MISSINGTEXTURE}}
+\index{MISSINGTEXTURE@{MISSINGTEXTURE}!Globals.h@{Globals.h}}
+\doxysubsubsection{\texorpdfstring{MISSINGTEXTURE}{MISSINGTEXTURE}}
+{\footnotesize\ttfamily std\+::string const MISSINGTEXTURE = \char`\"{}./ASSETS/IMAGES/Missing\+Texture.\+png\char`\"{}}
+
+
+
+The path that leads to a texture that will appear if there was an error loading the first texture.  
+

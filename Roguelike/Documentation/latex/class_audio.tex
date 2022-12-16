@@ -1,0 +1,178 @@
+\hypertarget{class_audio}{}\doxysection{Audio Class Reference}
+\label{class_audio}\index{Audio@{Audio}}
+
+
+\mbox{\hyperlink{class_audio}{Audio}} class -\/ This will handle the start, stop, pause and playing of a sound.   
+
+
+
+
+{\ttfamily \#include $<$Audio\+Asset.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_audio_a286e025448ef6b134f30c8cb01424042}{Audio}} (\mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcf}{Audio\+Type}}, std\+::string t\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_audio_ae8f54deecb5f48511aaab469e80294d6}{$\sim$\+Audio}} ()
+\begin{DoxyCompactList}\small\item\em Default deconstructor.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_a2916f9015031bee9abb98adf0d83e7ee}{play}} ()
+\begin{DoxyCompactList}\small\item\em Plays the audio.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_a82c1018cf778eccc8819acfb64be53b2}{pause}} ()
+\begin{DoxyCompactList}\small\item\em Pauses the audio, if its playing.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_af628fdffa4dba3866e6e801fdda123ea}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stops the audio, if its playing.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_ad5526142e7ac9baedd101ee3434ee10a}{set\+Volume}} (float t\+\_\+volume)
+\begin{DoxyCompactList}\small\item\em Changes the volume of this sound.  \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcf}{Audio\+Type}} \mbox{\hyperlink{class_audio_a93883fcad75615fbe6db469edf50d75a}{get\+Type}} ()
+\item 
+bool \mbox{\hyperlink{class_audio_abca5fcabf8597df317644edbab49771e}{is\+Playing}} ()
+\begin{DoxyCompactList}\small\item\em Returns whether the audio is playing or not.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Sound\+Buffer \mbox{\hyperlink{class_audio_ac4269eb021343584dc90072f31ed88d3}{m\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em The buffer for the sound objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcf}{Audio\+Type}} \mbox{\hyperlink{class_audio_a8a8e8547ecc45bfb173f4b596744ae69}{m\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em The type of audio that will be player. \end{DoxyCompactList}\item 
+sf\+::\+Sound \mbox{\hyperlink{class_audio_a044e6a8ee58fce5c20bca4804b33461b}{m\+\_\+audio}}
+\begin{DoxyCompactList}\small\item\em The audio itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_audio}{Audio}} class -\/ This will handle the start, stop, pause and playing of a sound.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_audio_a286e025448ef6b134f30c8cb01424042}\label{class_audio_a286e025448ef6b134f30c8cb01424042}} 
+\index{Audio@{Audio}!Audio@{Audio}}
+\index{Audio@{Audio}!Audio@{Audio}}
+\doxysubsubsection{\texorpdfstring{Audio()}{Audio()}}
+{\footnotesize\ttfamily Audio\+::\+Audio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcf}{Audio\+Type}}}]{t\+\_\+type,  }\item[{std\+::string}]{t\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+type} & The type of sound this one will be.\\
+\hline
+{\em t\+\_\+path} & The path of where the audio file is.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_audio_ae8f54deecb5f48511aaab469e80294d6}\label{class_audio_ae8f54deecb5f48511aaab469e80294d6}} 
+\index{Audio@{Audio}!````~Audio@{$\sim$Audio}}
+\index{````~Audio@{$\sim$Audio}!Audio@{Audio}}
+\doxysubsubsection{\texorpdfstring{$\sim$Audio()}{~Audio()}}
+{\footnotesize\ttfamily Audio\+::$\sim$\+Audio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default deconstructor.  
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_audio_a93883fcad75615fbe6db469edf50d75a}\label{class_audio_a93883fcad75615fbe6db469edf50d75a}} 
+\index{Audio@{Audio}!getType@{getType}}
+\index{getType@{getType}!Audio@{Audio}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcf}{Audio\+Type}} Audio\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_audio_abca5fcabf8597df317644edbab49771e}\label{class_audio_abca5fcabf8597df317644edbab49771e}} 
+\index{Audio@{Audio}!isPlaying@{isPlaying}}
+\index{isPlaying@{isPlaying}!Audio@{Audio}}
+\doxysubsubsection{\texorpdfstring{isPlaying()}{isPlaying()}}
+{\footnotesize\ttfamily bool Audio\+::is\+Playing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns whether the audio is playing or not.  
+
+\begin{DoxyReturn}{Returns}
+Is the audio playing?
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_a82c1018cf778eccc8819acfb64be53b2}\label{class_audio_a82c1018cf778eccc8819acfb64be53b2}} 
+\index{Audio@{Audio}!pause@{pause}}
+\index{pause@{pause}!Audio@{Audio}}
+\doxysubsubsection{\texorpdfstring{pause()}{pause()}}
+{\footnotesize\ttfamily void Audio\+::pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pauses the audio, if its playing.  
+
+\mbox{\Hypertarget{class_audio_a2916f9015031bee9abb98adf0d83e7ee}\label{class_audio_a2916f9015031bee9abb98adf0d83e7ee}} 
+\index{Audio@{Audio}!play@{play}}
+\index{play@{play}!Audio@{Audio}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily void Audio\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Plays the audio.  
+
+\mbox{\Hypertarget{class_audio_ad5526142e7ac9baedd101ee3434ee10a}\label{class_audio_ad5526142e7ac9baedd101ee3434ee10a}} 
+\index{Audio@{Audio}!setVolume@{setVolume}}
+\index{setVolume@{setVolume}!Audio@{Audio}}
+\doxysubsubsection{\texorpdfstring{setVolume()}{setVolume()}}
+{\footnotesize\ttfamily void Audio\+::set\+Volume (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+volume }\end{DoxyParamCaption})}
+
+
+
+Changes the volume of this sound.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+volume} & The volume that the audio will be set to.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_audio_af628fdffa4dba3866e6e801fdda123ea}\label{class_audio_af628fdffa4dba3866e6e801fdda123ea}} 
+\index{Audio@{Audio}!stop@{stop}}
+\index{stop@{stop}!Audio@{Audio}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Audio\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stops the audio, if its playing.  
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_audio_a044e6a8ee58fce5c20bca4804b33461b}\label{class_audio_a044e6a8ee58fce5c20bca4804b33461b}} 
+\index{Audio@{Audio}!m\_audio@{m\_audio}}
+\index{m\_audio@{m\_audio}!Audio@{Audio}}
+\doxysubsubsection{\texorpdfstring{m\_audio}{m\_audio}}
+{\footnotesize\ttfamily sf\+::\+Sound Audio\+::m\+\_\+audio\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The audio itself. 
+
+\mbox{\Hypertarget{class_audio_ac4269eb021343584dc90072f31ed88d3}\label{class_audio_ac4269eb021343584dc90072f31ed88d3}} 
+\index{Audio@{Audio}!m\_buffer@{m\_buffer}}
+\index{m\_buffer@{m\_buffer}!Audio@{Audio}}
+\doxysubsubsection{\texorpdfstring{m\_buffer}{m\_buffer}}
+{\footnotesize\ttfamily sf\+::\+Sound\+Buffer Audio\+::m\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The buffer for the sound objects. 
+
+\mbox{\Hypertarget{class_audio_a8a8e8547ecc45bfb173f4b596744ae69}\label{class_audio_a8a8e8547ecc45bfb173f4b596744ae69}} 
+\index{Audio@{Audio}!m\_type@{m\_type}}
+\index{m\_type@{m\_type}!Audio@{Audio}}
+\doxysubsubsection{\texorpdfstring{m\_type}{m\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcf}{Audio\+Type}} Audio\+::m\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The type of audio that will be player. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_audio_asset_8h}{Audio\+Asset.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_audio_asset_8cpp}{Audio\+Asset.\+cpp}}\end{DoxyCompactItemize}

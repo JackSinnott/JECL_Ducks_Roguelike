@@ -1,0 +1,33 @@
+\hypertarget{_speed_potion_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Speed\+Potion.h}
+\mbox{\hyperlink{_speed_potion_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_potion_8h}{AbstractPotion.h}}"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_speed_potion}{SpeedPotion}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_abstract_potion}{AbstractPotion}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{16     \mbox{\hyperlink{class_speed_potion_ab6536bbb30ac8a8e01151506779f76d1}{SpeedPotion}}(\mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}} t\_potionType)}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         \mbox{\hyperlink{class_abstract_potion_aca7861acff934664fba9c57185e19212}{m\_potionType}} = t\_potionType;}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_speed_potion_a832a040211cf2f804d54326f5c73595c}{m\_speed}} = 2 + rand() \% 10;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21         \mbox{\hyperlink{class_abstract_item_abe763be2ca66718e36515961477161f3}{SetupBasics}}();}
+\DoxyCodeLine{22         \mbox{\hyperlink{class_abstract_potion_a04d114823c4de68a9656ef2ca59de9e1}{SetType}}();}
+\DoxyCodeLine{23     \};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{30     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_speed_potion_a8e76786099dd19fb27bf14389ebbd5b7}{UseEffect}}()\textcolor{keyword}{ override}}
+\DoxyCodeLine{31 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{32         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_speed_potion_a832a040211cf2f804d54326f5c73595c}{m\_speed}};}
+\DoxyCodeLine{33     \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{private}:}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{39     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_speed_potion_a832a040211cf2f804d54326f5c73595c}{m\_speed}} = 0;}
+\DoxyCodeLine{40 \};}
+
+\end{DoxyCode}

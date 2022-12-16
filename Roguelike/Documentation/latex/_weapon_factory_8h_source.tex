@@ -1,0 +1,35 @@
+\hypertarget{_weapon_factory_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Weapon\+Factory.h}
+\mbox{\hyperlink{_weapon_factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_item_factory_8h}{AbstractItemFactory.h}}"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_axe_weapon_8h}{AxeWeapon.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_dagger_weapon_8h}{DaggerWeapon.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_sword_weapon_8h}{SwordWeapon.h}}"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_weapon_factory}{WeaponFactory}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_abstract_item_factory}{AbstractItemFactory}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_abstract_weapon}{AbstractWeapon}}* \mbox{\hyperlink{class_weapon_factory_ae0451475f7a18ea92070f7ec9589a57a}{CreateWeapon}}(\mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213}{Weapons}} t\_weapon)\textcolor{keyword}{ override}}
+\DoxyCodeLine{19 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{20         \textcolor{keywordflow}{switch} (t\_weapon)}
+\DoxyCodeLine{21         \{}
+\DoxyCodeLine{22         \textcolor{keywordflow}{case} Weapons::Sword:}
+\DoxyCodeLine{23             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_sword_weapon}{SwordWeapon}}(t\_weapon);}
+\DoxyCodeLine{24             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{25         \textcolor{keywordflow}{case} Weapons::Axe:}
+\DoxyCodeLine{26             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_axe_weapon}{AxeWeapon}}(t\_weapon);}
+\DoxyCodeLine{27             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{28         \textcolor{keywordflow}{case} Weapons::Dagger:}
+\DoxyCodeLine{29             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_dagger_weapon}{DaggerWeapon}}(t\_weapon);}
+\DoxyCodeLine{30             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{31         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{32             \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{33             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{34         \}}
+\DoxyCodeLine{35     \};}
+\DoxyCodeLine{36 \};}
+\DoxyCodeLine{37 }
+
+\end{DoxyCode}

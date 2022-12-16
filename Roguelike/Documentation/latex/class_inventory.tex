@@ -1,0 +1,340 @@
+\hypertarget{class_inventory}{}\doxysection{Inventory Class Reference}
+\label{class_inventory}\index{Inventory@{Inventory}}
+
+
+Class that keeps track of all items the \mbox{\hyperlink{class_player}{Player}} has picked up.   
+
+
+
+
+{\ttfamily \#include $<$Inventory.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_inventory_a10485613fc8bfb32ee564d9b5110f8fb}{Inventory}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor, used to create the inventory.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_inventory_a6c6dfcb6d977c74a7abf46809e892e3d}{$\sim$\+Inventory}} ()
+\begin{DoxyCompactList}\small\item\em Default deconstructor.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_inventory_a166fdc37415d0104a6e778b2b04ef1e0}{Setup\+Inventory}} (sf\+::\+Vector2f t\+\_\+player\+Position)
+\begin{DoxyCompactList}\small\item\em Sets up the inventory sprites and positions depending on if the player has items in their inventory.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_inventory_a862faa9460e579f1d087bc49e74d1b03}{Store\+Item}} (\mbox{\hyperlink{class_abstract_item}{Abstract\+Item}} \&t\+\_\+item)
+\begin{DoxyCompactList}\small\item\em Stores the current item the player picked up.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_inventory_a0714189a9d4762a1ca52d5bee2b841f4}{Update\+Position}} (sf\+::\+Vector2f t\+\_\+player\+Position)
+\begin{DoxyCompactList}\small\item\em Updates the position of the inventory, to match where the player is.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_inventory_af4fd1ccaba278b950ec0c2eee26f310a}{Draw}} (sf\+::\+Render\+Window \&t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draws all sprites, depending on if the player has items in their inventory.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_inventory_aa1b8c680ccca9285dd8c3a86ed787798}{Toggle\+Inventory}} ()
+\begin{DoxyCompactList}\small\item\em A simple toggle to show or hide the player\textquotesingle{}s inventory.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_inventory_af6b5d1db3ad16af71526d0116f17ac86}{Remove\+Potion}} ()
+\begin{DoxyCompactList}\small\item\em Once the potion is used up, it is removed from the player\textquotesingle{}s inventory.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_abstract_weapon}{Abstract\+Weapon}} \& \mbox{\hyperlink{class_inventory_a4f4644ef3dde9ab8fbb447a2be001e36}{Get\+Weapon}} ()
+\begin{DoxyCompactList}\small\item\em Gets a reference to the current player\textquotesingle{}s weapon.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_abstract_armour}{Abstract\+Armour}} \& \mbox{\hyperlink{class_inventory_a1ba40930a3746185d5782b4f356a4b04}{Get\+Armour}} ()
+\begin{DoxyCompactList}\small\item\em Gets a reference to the current player\textquotesingle{}s armour.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_abstract_potion}{Abstract\+Potion}} \& \mbox{\hyperlink{class_inventory_aa743cbb472e7c2180654c9a1fad207f5}{Get\+Potion}} ()
+\begin{DoxyCompactList}\small\item\em Gets a reference to the current player\textquotesingle{}s potion  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_abstract_weapon}{Abstract\+Weapon}} $\ast$ \mbox{\hyperlink{class_inventory_aec9bfdb14cfa6a4fa43d3dab90b55a75}{m\+\_\+current\+Weapon}} = nullptr
+\begin{DoxyCompactList}\small\item\em Stores the current weapon the player has. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_abstract_armour}{Abstract\+Armour}} $\ast$ \mbox{\hyperlink{class_inventory_ab7986afe44c76598ae024d56d6aa0a07}{m\+\_\+current\+Armour}} = nullptr
+\begin{DoxyCompactList}\small\item\em Stores the current armour the player has. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_abstract_potion}{Abstract\+Potion}} $\ast$ \mbox{\hyperlink{class_inventory_aa397e962ad1754ba05d20f2d3fe2d0ad}{m\+\_\+current\+Potion}} = nullptr
+\begin{DoxyCompactList}\small\item\em Stores the current potion the player has. \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_inventory_ab77b0c845df91832c31b0991b6cda1e2}{m\+\_\+inventory\+Background}}
+\begin{DoxyCompactList}\small\item\em Background that shows the player\textquotesingle{}s inventory. \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_inventory_a92c55605819169fd2f4815cc5532d95c}{m\+\_\+inventory\+Block\+Weapon}}
+\begin{DoxyCompactList}\small\item\em Block to show the specific item the player has. \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_inventory_adf419087dde70418c570a7f0525c9235}{m\+\_\+inventory\+Block\+Armour}}
+\begin{DoxyCompactList}\small\item\em Block to show the specific item the player has. \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_inventory_ad11efe030753da2bb14bae090a54d8d7}{m\+\_\+inventory\+Block\+Potion}}
+\begin{DoxyCompactList}\small\item\em Block to show the specific item the player has. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_inventory_aa66828cf94530e255f6df60a2a784242}{m\+\_\+inventory\+Weapon\+Sprite}}
+\begin{DoxyCompactList}\small\item\em Sprite of the current item the player has. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_inventory_a2e1daf51bf579d2ccc871e6c482c7b1b}{m\+\_\+inventory\+Armour\+Sprite}}
+\begin{DoxyCompactList}\small\item\em Sprite of the current item the player has. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_inventory_abb1e1216245c5b83d2f8d5430136a822}{m\+\_\+inventory\+Potion\+Sprite}}
+\begin{DoxyCompactList}\small\item\em Sprite of the current item the player has. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_inventory_a4240b9ac1896528f46336fd1f49b5010}{m\+\_\+cell\+Offset}}
+\begin{DoxyCompactList}\small\item\em Half the size of a \mbox{\hyperlink{class_tile}{Tile}} so that the items are drawn in the centre of said tile. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_inventory_a5e868ae2fb8e443852adb09b0b2c4f4b}{m\+\_\+show\+Inventory}}
+\begin{DoxyCompactList}\small\item\em Whether to draw the inventory to the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that keeps track of all items the \mbox{\hyperlink{class_player}{Player}} has picked up.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_inventory_a10485613fc8bfb32ee564d9b5110f8fb}\label{class_inventory_a10485613fc8bfb32ee564d9b5110f8fb}} 
+\index{Inventory@{Inventory}!Inventory@{Inventory}}
+\index{Inventory@{Inventory}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{Inventory()}{Inventory()}}
+{\footnotesize\ttfamily Inventory\+::\+Inventory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor, used to create the inventory.  
+
+\mbox{\Hypertarget{class_inventory_a6c6dfcb6d977c74a7abf46809e892e3d}\label{class_inventory_a6c6dfcb6d977c74a7abf46809e892e3d}} 
+\index{Inventory@{Inventory}!````~Inventory@{$\sim$Inventory}}
+\index{````~Inventory@{$\sim$Inventory}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{$\sim$Inventory()}{~Inventory()}}
+{\footnotesize\ttfamily Inventory\+::$\sim$\+Inventory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default deconstructor.  
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_inventory_af4fd1ccaba278b950ec0c2eee26f310a}\label{class_inventory_af4fd1ccaba278b950ec0c2eee26f310a}} 
+\index{Inventory@{Inventory}!Draw@{Draw}}
+\index{Draw@{Draw}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Inventory\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Draws all sprites, depending on if the player has items in their inventory.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & The window to draw to.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_inventory_a1ba40930a3746185d5782b4f356a4b04}\label{class_inventory_a1ba40930a3746185d5782b4f356a4b04}} 
+\index{Inventory@{Inventory}!GetArmour@{GetArmour}}
+\index{GetArmour@{GetArmour}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{GetArmour()}{GetArmour()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_abstract_armour}{Abstract\+Armour}} \& Inventory\+::\+Get\+Armour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a reference to the current player\textquotesingle{}s armour.  
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s armour.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_inventory_aa743cbb472e7c2180654c9a1fad207f5}\label{class_inventory_aa743cbb472e7c2180654c9a1fad207f5}} 
+\index{Inventory@{Inventory}!GetPotion@{GetPotion}}
+\index{GetPotion@{GetPotion}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{GetPotion()}{GetPotion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_abstract_potion}{Abstract\+Potion}} \& Inventory\+::\+Get\+Potion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a reference to the current player\textquotesingle{}s potion  
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s potion.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_inventory_a4f4644ef3dde9ab8fbb447a2be001e36}\label{class_inventory_a4f4644ef3dde9ab8fbb447a2be001e36}} 
+\index{Inventory@{Inventory}!GetWeapon@{GetWeapon}}
+\index{GetWeapon@{GetWeapon}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{GetWeapon()}{GetWeapon()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_abstract_weapon}{Abstract\+Weapon}} \& Inventory\+::\+Get\+Weapon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a reference to the current player\textquotesingle{}s weapon.  
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s weapon.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_inventory_af6b5d1db3ad16af71526d0116f17ac86}\label{class_inventory_af6b5d1db3ad16af71526d0116f17ac86}} 
+\index{Inventory@{Inventory}!RemovePotion@{RemovePotion}}
+\index{RemovePotion@{RemovePotion}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{RemovePotion()}{RemovePotion()}}
+{\footnotesize\ttfamily void Inventory\+::\+Remove\+Potion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Once the potion is used up, it is removed from the player\textquotesingle{}s inventory.  
+
+\mbox{\Hypertarget{class_inventory_a166fdc37415d0104a6e778b2b04ef1e0}\label{class_inventory_a166fdc37415d0104a6e778b2b04ef1e0}} 
+\index{Inventory@{Inventory}!SetupInventory@{SetupInventory}}
+\index{SetupInventory@{SetupInventory}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{SetupInventory()}{SetupInventory()}}
+{\footnotesize\ttfamily void Inventory\+::\+Setup\+Inventory (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{t\+\_\+player\+Position }\end{DoxyParamCaption})}
+
+
+
+Sets up the inventory sprites and positions depending on if the player has items in their inventory.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+player\+Position} & The \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s position on the grid.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_inventory_a862faa9460e579f1d087bc49e74d1b03}\label{class_inventory_a862faa9460e579f1d087bc49e74d1b03}} 
+\index{Inventory@{Inventory}!StoreItem@{StoreItem}}
+\index{StoreItem@{StoreItem}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{StoreItem()}{StoreItem()}}
+{\footnotesize\ttfamily void Inventory\+::\+Store\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_item}{Abstract\+Item}} \&}]{t\+\_\+item }\end{DoxyParamCaption})}
+
+
+
+Stores the current item the player picked up.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+item} & The new picked up item.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_inventory_aa1b8c680ccca9285dd8c3a86ed787798}\label{class_inventory_aa1b8c680ccca9285dd8c3a86ed787798}} 
+\index{Inventory@{Inventory}!ToggleInventory@{ToggleInventory}}
+\index{ToggleInventory@{ToggleInventory}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{ToggleInventory()}{ToggleInventory()}}
+{\footnotesize\ttfamily void Inventory\+::\+Toggle\+Inventory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A simple toggle to show or hide the player\textquotesingle{}s inventory.  
+
+\mbox{\Hypertarget{class_inventory_a0714189a9d4762a1ca52d5bee2b841f4}\label{class_inventory_a0714189a9d4762a1ca52d5bee2b841f4}} 
+\index{Inventory@{Inventory}!UpdatePosition@{UpdatePosition}}
+\index{UpdatePosition@{UpdatePosition}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{UpdatePosition()}{UpdatePosition()}}
+{\footnotesize\ttfamily void Inventory\+::\+Update\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{t\+\_\+player\+Position }\end{DoxyParamCaption})}
+
+
+
+Updates the position of the inventory, to match where the player is.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+player\+Position} & The \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s position on the grid.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_inventory_a4240b9ac1896528f46336fd1f49b5010}\label{class_inventory_a4240b9ac1896528f46336fd1f49b5010}} 
+\index{Inventory@{Inventory}!m\_cellOffset@{m\_cellOffset}}
+\index{m\_cellOffset@{m\_cellOffset}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{m\_cellOffset}{m\_cellOffset}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Inventory\+::m\+\_\+cell\+Offset\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Half the size of a \mbox{\hyperlink{class_tile}{Tile}} so that the items are drawn in the centre of said tile. 
+
+\mbox{\Hypertarget{class_inventory_ab7986afe44c76598ae024d56d6aa0a07}\label{class_inventory_ab7986afe44c76598ae024d56d6aa0a07}} 
+\index{Inventory@{Inventory}!m\_currentArmour@{m\_currentArmour}}
+\index{m\_currentArmour@{m\_currentArmour}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{m\_currentArmour}{m\_currentArmour}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_abstract_armour}{Abstract\+Armour}}$\ast$ Inventory\+::m\+\_\+current\+Armour = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores the current armour the player has. 
+
+\mbox{\Hypertarget{class_inventory_aa397e962ad1754ba05d20f2d3fe2d0ad}\label{class_inventory_aa397e962ad1754ba05d20f2d3fe2d0ad}} 
+\index{Inventory@{Inventory}!m\_currentPotion@{m\_currentPotion}}
+\index{m\_currentPotion@{m\_currentPotion}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{m\_currentPotion}{m\_currentPotion}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_abstract_potion}{Abstract\+Potion}}$\ast$ Inventory\+::m\+\_\+current\+Potion = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores the current potion the player has. 
+
+\mbox{\Hypertarget{class_inventory_aec9bfdb14cfa6a4fa43d3dab90b55a75}\label{class_inventory_aec9bfdb14cfa6a4fa43d3dab90b55a75}} 
+\index{Inventory@{Inventory}!m\_currentWeapon@{m\_currentWeapon}}
+\index{m\_currentWeapon@{m\_currentWeapon}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{m\_currentWeapon}{m\_currentWeapon}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_abstract_weapon}{Abstract\+Weapon}}$\ast$ Inventory\+::m\+\_\+current\+Weapon = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores the current weapon the player has. 
+
+\mbox{\Hypertarget{class_inventory_a2e1daf51bf579d2ccc871e6c482c7b1b}\label{class_inventory_a2e1daf51bf579d2ccc871e6c482c7b1b}} 
+\index{Inventory@{Inventory}!m\_inventoryArmourSprite@{m\_inventoryArmourSprite}}
+\index{m\_inventoryArmourSprite@{m\_inventoryArmourSprite}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{m\_inventoryArmourSprite}{m\_inventoryArmourSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Inventory\+::m\+\_\+inventory\+Armour\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sprite of the current item the player has. 
+
+\mbox{\Hypertarget{class_inventory_ab77b0c845df91832c31b0991b6cda1e2}\label{class_inventory_ab77b0c845df91832c31b0991b6cda1e2}} 
+\index{Inventory@{Inventory}!m\_inventoryBackground@{m\_inventoryBackground}}
+\index{m\_inventoryBackground@{m\_inventoryBackground}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{m\_inventoryBackground}{m\_inventoryBackground}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Inventory\+::m\+\_\+inventory\+Background\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Background that shows the player\textquotesingle{}s inventory. 
+
+\mbox{\Hypertarget{class_inventory_adf419087dde70418c570a7f0525c9235}\label{class_inventory_adf419087dde70418c570a7f0525c9235}} 
+\index{Inventory@{Inventory}!m\_inventoryBlockArmour@{m\_inventoryBlockArmour}}
+\index{m\_inventoryBlockArmour@{m\_inventoryBlockArmour}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{m\_inventoryBlockArmour}{m\_inventoryBlockArmour}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Inventory\+::m\+\_\+inventory\+Block\+Armour\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Block to show the specific item the player has. 
+
+\mbox{\Hypertarget{class_inventory_ad11efe030753da2bb14bae090a54d8d7}\label{class_inventory_ad11efe030753da2bb14bae090a54d8d7}} 
+\index{Inventory@{Inventory}!m\_inventoryBlockPotion@{m\_inventoryBlockPotion}}
+\index{m\_inventoryBlockPotion@{m\_inventoryBlockPotion}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{m\_inventoryBlockPotion}{m\_inventoryBlockPotion}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Inventory\+::m\+\_\+inventory\+Block\+Potion\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Block to show the specific item the player has. 
+
+\mbox{\Hypertarget{class_inventory_a92c55605819169fd2f4815cc5532d95c}\label{class_inventory_a92c55605819169fd2f4815cc5532d95c}} 
+\index{Inventory@{Inventory}!m\_inventoryBlockWeapon@{m\_inventoryBlockWeapon}}
+\index{m\_inventoryBlockWeapon@{m\_inventoryBlockWeapon}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{m\_inventoryBlockWeapon}{m\_inventoryBlockWeapon}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Inventory\+::m\+\_\+inventory\+Block\+Weapon\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Block to show the specific item the player has. 
+
+\mbox{\Hypertarget{class_inventory_abb1e1216245c5b83d2f8d5430136a822}\label{class_inventory_abb1e1216245c5b83d2f8d5430136a822}} 
+\index{Inventory@{Inventory}!m\_inventoryPotionSprite@{m\_inventoryPotionSprite}}
+\index{m\_inventoryPotionSprite@{m\_inventoryPotionSprite}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{m\_inventoryPotionSprite}{m\_inventoryPotionSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Inventory\+::m\+\_\+inventory\+Potion\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sprite of the current item the player has. 
+
+\mbox{\Hypertarget{class_inventory_aa66828cf94530e255f6df60a2a784242}\label{class_inventory_aa66828cf94530e255f6df60a2a784242}} 
+\index{Inventory@{Inventory}!m\_inventoryWeaponSprite@{m\_inventoryWeaponSprite}}
+\index{m\_inventoryWeaponSprite@{m\_inventoryWeaponSprite}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{m\_inventoryWeaponSprite}{m\_inventoryWeaponSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Inventory\+::m\+\_\+inventory\+Weapon\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sprite of the current item the player has. 
+
+\mbox{\Hypertarget{class_inventory_a5e868ae2fb8e443852adb09b0b2c4f4b}\label{class_inventory_a5e868ae2fb8e443852adb09b0b2c4f4b}} 
+\index{Inventory@{Inventory}!m\_showInventory@{m\_showInventory}}
+\index{m\_showInventory@{m\_showInventory}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{m\_showInventory}{m\_showInventory}}
+{\footnotesize\ttfamily bool Inventory\+::m\+\_\+show\+Inventory\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Whether to draw the inventory to the screen. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_inventory_8h}{Inventory.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_inventory_8cpp}{Inventory.\+cpp}}\end{DoxyCompactItemize}

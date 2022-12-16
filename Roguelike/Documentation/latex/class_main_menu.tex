@@ -1,0 +1,110 @@
+\hypertarget{class_main_menu}{}\doxysection{Main\+Menu Class Reference}
+\label{class_main_menu}\index{MainMenu@{MainMenu}}
+
+
+The main screen the user will see once they open the game.   
+
+
+
+
+{\ttfamily \#include $<$Main\+Menu.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_menu_a53eecf9d5ffd094f54ac4193e7e57eaf}{Main\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em The Default constructor.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_menu_a032962faeb209fe33d48d8e32a21d70f}{process\+Events}} (sf\+::\+Event t\+\_\+event)
+\begin{DoxyCompactList}\small\item\em Handles any events the player has triggered while on the \mbox{\hyperlink{class_main_menu}{Main\+Menu}} Screen.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_menu_ac275937477e33f95e2613fc9d62e42fe}{update}} (sf\+::\+Vector2i t\+\_\+mouse\+Pos)
+\begin{DoxyCompactList}\small\item\em Updates the \mbox{\hyperlink{class_button}{Button}} objects on the screen.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_menu_a7509ed3fb6349699982f23d6ea002e31}{render}} (sf\+::\+Render\+Window \&t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draws all what\textquotesingle{}s happening on the menu screen.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_button}{Button}} $\ast$ $>$ \mbox{\hyperlink{class_main_menu_ab3203545110fb928dfbbca8b7d7c7019}{m\+\_\+buttons}}
+\begin{DoxyCompactList}\small\item\em All the \mbox{\hyperlink{class_button}{Button}} objects that appear on the \mbox{\hyperlink{class_main_menu}{Main\+Menu}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main screen the user will see once they open the game.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_menu_a53eecf9d5ffd094f54ac4193e7e57eaf}\label{class_main_menu_a53eecf9d5ffd094f54ac4193e7e57eaf}} 
+\index{MainMenu@{MainMenu}!MainMenu@{MainMenu}}
+\index{MainMenu@{MainMenu}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{MainMenu()}{MainMenu()}}
+{\footnotesize\ttfamily Main\+Menu\+::\+Main\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The Default constructor.  
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_menu_a032962faeb209fe33d48d8e32a21d70f}\label{class_main_menu_a032962faeb209fe33d48d8e32a21d70f}} 
+\index{MainMenu@{MainMenu}!processEvents@{processEvents}}
+\index{processEvents@{processEvents}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{processEvents()}{processEvents()}}
+{\footnotesize\ttfamily void Main\+Menu\+::process\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event }\end{DoxyParamCaption})}
+
+
+
+Handles any events the player has triggered while on the \mbox{\hyperlink{class_main_menu}{Main\+Menu}} Screen.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & The SFML event.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_menu_a7509ed3fb6349699982f23d6ea002e31}\label{class_main_menu_a7509ed3fb6349699982f23d6ea002e31}} 
+\index{MainMenu@{MainMenu}!render@{render}}
+\index{render@{render}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Main\+Menu\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Draws all what\textquotesingle{}s happening on the menu screen.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & The screen to draw to.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_menu_ac275937477e33f95e2613fc9d62e42fe}\label{class_main_menu_ac275937477e33f95e2613fc9d62e42fe}} 
+\index{MainMenu@{MainMenu}!update@{update}}
+\index{update@{update}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Main\+Menu\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{t\+\_\+mouse\+Pos }\end{DoxyParamCaption})}
+
+
+
+Updates the \mbox{\hyperlink{class_button}{Button}} objects on the screen.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+mouse\+Pos} & The mouse\textquotesingle{}s position on the screen.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_main_menu_ab3203545110fb928dfbbca8b7d7c7019}\label{class_main_menu_ab3203545110fb928dfbbca8b7d7c7019}} 
+\index{MainMenu@{MainMenu}!m\_buttons@{m\_buttons}}
+\index{m\_buttons@{m\_buttons}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{m\_buttons}{m\_buttons}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_button}{Button}}$\ast$$>$ Main\+Menu\+::m\+\_\+buttons\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+All the \mbox{\hyperlink{class_button}{Button}} objects that appear on the \mbox{\hyperlink{class_main_menu}{Main\+Menu}}. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_main_menu_8h}{Main\+Menu.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_main_menu_8cpp}{Main\+Menu.\+cpp}}\end{DoxyCompactItemize}

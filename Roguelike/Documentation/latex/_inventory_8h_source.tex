@@ -1,0 +1,58 @@
+\hypertarget{_inventory_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Inventory.h}
+\mbox{\hyperlink{_inventory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_globals_8h}{Globals.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_item_8h}{AbstractItem.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_weapon_8h}{AbstractWeapon.h}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_armour_8h}{AbstractArmour.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_potion_8h}{AbstractPotion.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_axe_weapon_8h}{AxeWeapon.h}}"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_inventory}{Inventory}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_inventory_a10485613fc8bfb32ee564d9b5110f8fb}{Inventory}}();}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_inventory_a6c6dfcb6d977c74a7abf46809e892e3d}{\string~Inventory}}();}
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_inventory_a166fdc37415d0104a6e778b2b04ef1e0}{SetupInventory}}(sf::Vector2f t\_playerPosition);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_inventory_a862faa9460e579f1d087bc49e74d1b03}{StoreItem}}(\mbox{\hyperlink{class_abstract_item}{AbstractItem}}\& t\_item);}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_inventory_a0714189a9d4762a1ca52d5bee2b841f4}{UpdatePosition}}(sf::Vector2f t\_playerPosition);}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_inventory_af4fd1ccaba278b950ec0c2eee26f310a}{Draw}}(sf::RenderWindow\& t\_window);}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_inventory_aa1b8c680ccca9285dd8c3a86ed787798}{ToggleInventory}}();}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_inventory_af6b5d1db3ad16af71526d0116f17ac86}{RemovePotion}}();}
+\DoxyCodeLine{26     \textcolor{comment}{//Getting an item}}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_abstract_weapon}{AbstractWeapon}}\& \mbox{\hyperlink{class_inventory_a4f4644ef3dde9ab8fbb447a2be001e36}{GetWeapon}}();}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_abstract_armour}{AbstractArmour}}\& \mbox{\hyperlink{class_inventory_a1ba40930a3746185d5782b4f356a4b04}{GetArmour}}();}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_abstract_potion}{AbstractPotion}}\& \mbox{\hyperlink{class_inventory_aa743cbb472e7c2180654c9a1fad207f5}{GetPotion}}();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{private}:}
+\DoxyCodeLine{33     \mbox{\hyperlink{class_abstract_weapon}{AbstractWeapon}}* \mbox{\hyperlink{class_inventory_aec9bfdb14cfa6a4fa43d3dab90b55a75}{m\_currentWeapon}} = \textcolor{keyword}{nullptr}; }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{36     \mbox{\hyperlink{class_abstract_armour}{AbstractArmour}}* \mbox{\hyperlink{class_inventory_ab7986afe44c76598ae024d56d6aa0a07}{m\_currentArmour}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{39     \mbox{\hyperlink{class_abstract_potion}{AbstractPotion}}* \mbox{\hyperlink{class_inventory_aa397e962ad1754ba05d20f2d3fe2d0ad}{m\_currentPotion}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42     sf::RectangleShape \mbox{\hyperlink{class_inventory_ab77b0c845df91832c31b0991b6cda1e2}{m\_inventoryBackground}};  }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45     sf::RectangleShape \mbox{\hyperlink{class_inventory_a92c55605819169fd2f4815cc5532d95c}{m\_inventoryBlockWeapon}};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{48     sf::RectangleShape \mbox{\hyperlink{class_inventory_adf419087dde70418c570a7f0525c9235}{m\_inventoryBlockArmour}}; }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{51     sf::RectangleShape \mbox{\hyperlink{class_inventory_ad11efe030753da2bb14bae090a54d8d7}{m\_inventoryBlockPotion}}; }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{54     sf::Sprite \mbox{\hyperlink{class_inventory_aa66828cf94530e255f6df60a2a784242}{m\_inventoryWeaponSprite}};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{57     sf::Sprite \mbox{\hyperlink{class_inventory_a2e1daf51bf579d2ccc871e6c482c7b1b}{m\_inventoryArmourSprite}};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60     sf::Sprite \mbox{\hyperlink{class_inventory_abb1e1216245c5b83d2f8d5430136a822}{m\_inventoryPotionSprite}};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{63     sf::Vector2f \mbox{\hyperlink{class_inventory_a4240b9ac1896528f46336fd1f49b5010}{m\_cellOffset}};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{66     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_inventory_a5e868ae2fb8e443852adb09b0b2c4f4b}{m\_showInventory}};}
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 }
+
+\end{DoxyCode}

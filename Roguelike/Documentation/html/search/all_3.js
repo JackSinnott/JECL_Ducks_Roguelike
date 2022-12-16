@@ -1,18 +1,8 @@
 var searchData=
 [
-  ['m_5farialblackfont_0',['m_ArialBlackfont',['../class_game.html#a763868ac591e7420691cac088b3de1cb',1,'Game']]],
-  ['m_5fenemy_1',['m_enemy',['../class_enemy.html#a9ec1cb19a11eb9949493f91fd9ffc33c',1,'Enemy']]],
-  ['m_5fexitgame_2',['m_exitGame',['../class_game.html#a5452d49a7b3f2d2ea3c7e2072fe8a828',1,'Game']]],
-  ['m_5flogosprite_3',['m_logoSprite',['../class_game.html#ad952ecd17335d493304d41ecc7e07e73',1,'Game']]],
-  ['m_5flogotexture_4',['m_logoTexture',['../class_game.html#a9921b40f7acc93e819c831223972607a',1,'Game']]],
-  ['m_5fplayerbody_5',['m_playerBody',['../class_player.html#ac1a2893d5bd1223e9ba54e771cd80d7b',1,'Player']]],
-  ['m_5fplayertexture_6',['m_playerTexture',['../class_player.html#ae5578033df193e71ef98e257c228a05c',1,'Player']]],
-  ['m_5fpressingbutton_7',['m_pressingButton',['../class_player.html#a4300fd61cb43a3164e853850e5f6e307',1,'Player']]],
-  ['m_5ftestenemy_8',['m_testEnemy',['../class_game.html#a87dc7b0386a606552942ffbcbdd90a2c',1,'Game']]],
-  ['m_5ftype_9',['m_type',['../class_enemy.html#ad315f1e54271e10f16bf3613c375ea70',1,'Enemy']]],
-  ['m_5fwelcomemessage_10',['m_welcomeMessage',['../class_game.html#a620ab177bf9b34ab2dbcec585f86afbd',1,'Game']]],
-  ['m_5fwindow_11',['m_window',['../class_game.html#a22a61b5ea27c609be8cf2724c33d7ae5',1,'Game']]],
-  ['main_12',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_13',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['movesquare_14',['MoveSquare',['../class_player.html#a9824d8d59b0baf9bcdd42e467399c359',1,'Player']]]
+  ['dagger_0',['Dagger',['../_globals_8h.html#a2e238758e72da0491a67935310819213a1c5c62b5cff296764b792468a69fa041',1,'Globals.h']]],
+  ['daggerweapon_1',['DaggerWeapon',['../class_dagger_weapon.html',1,'DaggerWeapon'],['../class_dagger_weapon.html#a07956c7401b545caf47f738310af394f',1,'DaggerWeapon::DaggerWeapon()']]],
+  ['daggerweapon_2eh_2',['DaggerWeapon.h',['../_dagger_weapon_8h.html',1,'']]],
+  ['draw_3',['Draw',['../class_inventory.html#af4fd1ccaba278b950ec0c2eee26f310a',1,'Inventory']]],
+  ['draw_4',['draw',['../class_abstract_item.html#ac44e52a2ecdcd5924bae257811b3c200',1,'AbstractItem::draw()'],['../class_grid.html#acc4187ed9e647e33dfb10eee5e57aa7c',1,'Grid::draw()'],['../class_room.html#a740596d1126a7b95656529799292a555',1,'Room::draw()'],['../class_tile.html#a00a3beeb62e2745b6d0b9abe69d5485f',1,'Tile::draw()']]]
 ];

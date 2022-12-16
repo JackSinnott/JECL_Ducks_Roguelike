@@ -1,0 +1,32 @@
+\hypertarget{_combat_system_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Combat\+System.h}
+\mbox{\hyperlink{_combat_system_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_combat_system}{CombatSystem}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12 \textcolor{keyword}{private}:}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{18     \textcolor{keyword}{static} std::vector<std::pair<int*, int>> \mbox{\hyperlink{class_combat_system_a6d065187e4aff4794caedcc9afe6e541}{enemiesStats}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{21     \textcolor{keyword}{static} \textcolor{keywordtype}{int}* \mbox{\hyperlink{class_combat_system_a91b916f2e27f3610de802cfd5d096705}{playerHealth}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_combat_system_ae4224420d40ff5cb1ce5187d13d0f38b}{RollD20}}(\textcolor{keywordtype}{int} amountRolled = 1);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_combat_system_ab836aeaa0dc8f25f53caf703f0f2612d}{RollD8}}(\textcolor{keywordtype}{int} amountRolled = 1);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_combat_system_a8d8f7701e92c709d8d8c81965d3c12d7}{SetPlayerHealth}}(\textcolor{keywordtype}{int}* t\_health);}
+\DoxyCodeLine{29     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_combat_system_a951de855dc332b5632667510a93847a9}{PushBackEnemyStats}}(\textcolor{keywordtype}{int}* t\_health, \textcolor{keywordtype}{int} t\_xp);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_combat_system_ac001dc20d329d47cbe21c2791e5f08ab}{BattleEquation}}(\textcolor{keywordtype}{int} defendersArmour, \textcolor{keywordtype}{int} attackersLevel = 0, \textcolor{keywordtype}{int} t\_modifiers = 0);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_combat_system_a4e97c93e2f5358af29ffc8a788cbe778}{HurtPlayer}}(\textcolor{keywordtype}{int} damage);}
+\DoxyCodeLine{34     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_combat_system_ab327b68d448bcc14d438a0c46bce35d5}{HurtEnemy}}(\textcolor{keywordtype}{int} t\_indexOfEnemy, \textcolor{keywordtype}{int} damage);}
+\DoxyCodeLine{35 \};}
+\DoxyCodeLine{36 }
+
+\end{DoxyCode}

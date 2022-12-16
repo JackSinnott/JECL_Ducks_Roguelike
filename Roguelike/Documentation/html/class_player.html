@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Roguelike: Player Class Reference</title>
+<title>JECL-Ducks: Player Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -29,23 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="rogue.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">Roguelike<span id="projectnumber">&#160;very early alpha</span>
+   <div id="projectname">JECL-Ducks
    </div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -57,6 +39,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -100,12 +93,13 @@ $(document).ready(function(){initNavTree('class_player.html',''); initResizable(
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_player-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Player Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Class the player directly controls.  
+<p>The class the user directly controls.   
  <a href="class_player.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_player_8h_source.html">Player.h</a>&gt;</code></p>
@@ -113,46 +107,170 @@ $(document).ready(function(){initNavTree('class_player.html',''); initResizable(
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:affe0cc3cb714f6deb4e62f0c0d3f1fd8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8">Player</a> ()</td></tr>
-<tr class="memdesc:affe0cc3cb714f6deb4e62f0c0d3f1fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor of <a class="el" href="class_player.html" title="Class the player directly controls.">Player</a>.  <a href="class_player.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8">More...</a><br /></td></tr>
+<tr class="memdesc:affe0cc3cb714f6deb4e62f0c0d3f1fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>.   <a href="class_player.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8">More...</a><br /></td></tr>
 <tr class="separator:affe0cc3cb714f6deb4e62f0c0d3f1fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cb139b1d8f9527ad0327f0a33c43511"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a2cb139b1d8f9527ad0327f0a33c43511">Player</a> (int t_row, int t_col)</td></tr>
+<tr class="memdesc:a2cb139b1d8f9527ad0327f0a33c43511"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded constructor for <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>, that sets the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>'s position.   <a href="class_player.html#a2cb139b1d8f9527ad0327f0a33c43511">More...</a><br /></td></tr>
+<tr class="separator:a2cb139b1d8f9527ad0327f0a33c43511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dc646f3895098913530d784dce8c20e"><td class="memItemLeft" align="right" valign="top">sf::Vector2i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a4dc646f3895098913530d784dce8c20e">getPreviousPos</a> ()</td></tr>
+<tr class="separator:a4dc646f3895098913530d784dce8c20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57c5229e6383990f33d5b01deef7ec92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a57c5229e6383990f33d5b01deef7ec92">setPreviousPos</a> (sf::Vector2i t_prev)</td></tr>
+<tr class="separator:a57c5229e6383990f33d5b01deef7ec92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4006b6f2a58d8acc184ca1f3fb9e98e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ab4006b6f2a58d8acc184ca1f3fb9e98e">setPlayerPositionInGrid</a> ()</td></tr>
+<tr class="memdesc:ab4006b6f2a58d8acc184ca1f3fb9e98e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>'s row and column in the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a>. This version does it by calculating it from the <a class="el" href="class_tile.html" title="Tile class, handles everything for one cell of the Grid.">Tile</a> size.   <a href="class_player.html#ab4006b6f2a58d8acc184ca1f3fb9e98e">More...</a><br /></td></tr>
+<tr class="separator:ab4006b6f2a58d8acc184ca1f3fb9e98e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa76f213f5fa3d6bbd62a0ecbccd39047"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aa76f213f5fa3d6bbd62a0ecbccd39047">setPlayerPositionInGrid</a> (sf::Vector2i t_pos)</td></tr>
+<tr class="memdesc:aa76f213f5fa3d6bbd62a0ecbccd39047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>'s row and column in the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a>. This version does it by setting it manually.   <a href="class_player.html#aa76f213f5fa3d6bbd62a0ecbccd39047">More...</a><br /></td></tr>
+<tr class="separator:aa76f213f5fa3d6bbd62a0ecbccd39047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3039dcfc146012ccc242328261eab774"><td class="memItemLeft" align="right" valign="top">sf::Vector2i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a3039dcfc146012ccc242328261eab774">getPlayerPositionInGrid</a> ()</td></tr>
+<tr class="memdesc:a3039dcfc146012ccc242328261eab774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the row and column in the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a> the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> currently is.   <a href="class_player.html#a3039dcfc146012ccc242328261eab774">More...</a><br /></td></tr>
+<tr class="separator:a3039dcfc146012ccc242328261eab774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b4be5553e2e2ed83a315689fd97c8b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a1b4be5553e2e2ed83a315689fd97c8b0">move</a> (int <a class="el" href="class_player.html#ab4e6ed0131da3921bc80b39f9b455dc9">row</a>, int <a class="el" href="class_player.html#adaf24ef11afa33a073a952c464f5c762">col</a>)</td></tr>
+<tr class="memdesc:a1b4be5553e2e2ed83a315689fd97c8b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the player by the specified row/column parameter passed into the function.   <a href="class_player.html#a1b4be5553e2e2ed83a315689fd97c8b0">More...</a><br /></td></tr>
+<tr class="separator:a1b4be5553e2e2ed83a315689fd97c8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1af5d39f7bac2aeaa1e30c7dda2332fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a1af5d39f7bac2aeaa1e30c7dda2332fa">reset</a> ()</td></tr>
+<tr class="memdesc:a1af5d39f7bac2aeaa1e30c7dda2332fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>'s health, position and camera back to the start. Used for when the <a class="el" href="class_game.html" title="The game class. Keeps track of Game Flow.">Game</a> is reset.   <a href="class_player.html#a1af5d39f7bac2aeaa1e30c7dda2332fa">More...</a><br /></td></tr>
+<tr class="separator:a1af5d39f7bac2aeaa1e30c7dda2332fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12dd7fdccdc8dc7990f3d4925a4259f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a12dd7fdccdc8dc7990f3d4925a4259f3">Update</a> (sf::Time t_deltaTime)</td></tr>
-<tr class="memdesc:a12dd7fdccdc8dc7990f3d4925a4259f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the player object every frame.  <a href="class_player.html#a12dd7fdccdc8dc7990f3d4925a4259f3">More...</a><br /></td></tr>
+<tr class="memdesc:a12dd7fdccdc8dc7990f3d4925a4259f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the player object every frame.   <a href="class_player.html#a12dd7fdccdc8dc7990f3d4925a4259f3">More...</a><br /></td></tr>
 <tr class="separator:a12dd7fdccdc8dc7990f3d4925a4259f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48fbeb3e31da3b8fe794bb67c99cc076"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a48fbeb3e31da3b8fe794bb67c99cc076">ProcessKeys</a> (sf::Event t_event)</td></tr>
-<tr class="memdesc:a48fbeb3e31da3b8fe794bb67c99cc076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls button presses that relate to player movement.  <a href="class_player.html#a48fbeb3e31da3b8fe794bb67c99cc076">More...</a><br /></td></tr>
-<tr class="separator:a48fbeb3e31da3b8fe794bb67c99cc076"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d93aef07c8b9406d3b7f8607c2a0efd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a4d93aef07c8b9406d3b7f8607c2a0efd">ProcessKeys</a> (sf::Event t_event)</td></tr>
+<tr class="memdesc:a4d93aef07c8b9406d3b7f8607c2a0efd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls button presses that relate to player movement. For example, if the player presses Up/Down/Left/Right, move player in appropriate direction.   <a href="class_player.html#a4d93aef07c8b9406d3b7f8607c2a0efd">More...</a><br /></td></tr>
+<tr class="separator:a4d93aef07c8b9406d3b7f8607c2a0efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2022b71485561ab132bfc88566ee08f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a2022b71485561ab132bfc88566ee08f0">Render</a> (sf::RenderWindow &amp;t_window)</td></tr>
-<tr class="memdesc:a2022b71485561ab132bfc88566ee08f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the player to the game screen.  <a href="class_player.html#a2022b71485561ab132bfc88566ee08f0">More...</a><br /></td></tr>
+<tr class="memdesc:a2022b71485561ab132bfc88566ee08f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the player to the game screen.   <a href="class_player.html#a2022b71485561ab132bfc88566ee08f0">More...</a><br /></td></tr>
 <tr class="separator:a2022b71485561ab132bfc88566ee08f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaed2801fda29def04633d24e4271edc0"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aaed2801fda29def04633d24e4271edc0">GetPosition</a> ()</td></tr>
+<tr class="memdesc:aaed2801fda29def04633d24e4271edc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the player's position on the screen.   <a href="class_player.html#aaed2801fda29def04633d24e4271edc0">More...</a><br /></td></tr>
 <tr class="separator:aaed2801fda29def04633d24e4271edc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af39034a7791fd456efae5070dc477266"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#af39034a7791fd456efae5070dc477266">setGridPosition</a> (int <a class="el" href="class_player.html#ab4e6ed0131da3921bc80b39f9b455dc9">row</a>, int <a class="el" href="class_player.html#adaf24ef11afa33a073a952c464f5c762">col</a>)</td></tr>
+<tr class="memdesc:af39034a7791fd456efae5070dc477266"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the position of the player, in relation to the grid. (ie 1,2 would put the player in second row, third column, as it starts with 0,0)   <a href="class_player.html#af39034a7791fd456efae5070dc477266">More...</a><br /></td></tr>
+<tr class="separator:af39034a7791fd456efae5070dc477266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3414f2ca524596d388f0fbc665cb348c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a3414f2ca524596d388f0fbc665cb348c">canWeMoveUp</a> ()</td></tr>
+<tr class="memdesc:a3414f2ca524596d388f0fbc665cb348c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> can move up.   <a href="class_player.html#a3414f2ca524596d388f0fbc665cb348c">More...</a><br /></td></tr>
+<tr class="separator:a3414f2ca524596d388f0fbc665cb348c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d0e2fb38f26cef0cd0575d799e0364c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a9d0e2fb38f26cef0cd0575d799e0364c">setMovementBoolUp</a> (bool t_switch)</td></tr>
+<tr class="memdesc:a9d0e2fb38f26cef0cd0575d799e0364c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> can move up or not.   <a href="class_player.html#a9d0e2fb38f26cef0cd0575d799e0364c">More...</a><br /></td></tr>
+<tr class="separator:a9d0e2fb38f26cef0cd0575d799e0364c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae03e2aea22f9d5f833456cfa67d1e506"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ae03e2aea22f9d5f833456cfa67d1e506">setMovementBoolDown</a> (bool t_switch)</td></tr>
+<tr class="memdesc:ae03e2aea22f9d5f833456cfa67d1e506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> can move down or not.   <a href="class_player.html#ae03e2aea22f9d5f833456cfa67d1e506">More...</a><br /></td></tr>
+<tr class="separator:ae03e2aea22f9d5f833456cfa67d1e506"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33413b5fc6c3e7f97522600f28000fa9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a33413b5fc6c3e7f97522600f28000fa9">canWeMoveDown</a> ()</td></tr>
+<tr class="memdesc:a33413b5fc6c3e7f97522600f28000fa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> can move down.   <a href="class_player.html#a33413b5fc6c3e7f97522600f28000fa9">More...</a><br /></td></tr>
+<tr class="separator:a33413b5fc6c3e7f97522600f28000fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fe3e551386836ec9e976f76887611e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a6fe3e551386836ec9e976f76887611e5">setMovementBoolLeft</a> (bool t_switch)</td></tr>
+<tr class="memdesc:a6fe3e551386836ec9e976f76887611e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> can move left or not.   <a href="class_player.html#a6fe3e551386836ec9e976f76887611e5">More...</a><br /></td></tr>
+<tr class="separator:a6fe3e551386836ec9e976f76887611e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a551fcd182a3b59e9adde7126b09e022a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a551fcd182a3b59e9adde7126b09e022a">canWeMoveLeft</a> ()</td></tr>
+<tr class="memdesc:a551fcd182a3b59e9adde7126b09e022a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> can move left.   <a href="class_player.html#a551fcd182a3b59e9adde7126b09e022a">More...</a><br /></td></tr>
+<tr class="separator:a551fcd182a3b59e9adde7126b09e022a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a075c6a3a2314cb3e9bf3e1a8c5304ac7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a075c6a3a2314cb3e9bf3e1a8c5304ac7">setMovementBoolRight</a> (bool t_switch)</td></tr>
+<tr class="memdesc:a075c6a3a2314cb3e9bf3e1a8c5304ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> can move right or not.   <a href="class_player.html#a075c6a3a2314cb3e9bf3e1a8c5304ac7">More...</a><br /></td></tr>
+<tr class="separator:a075c6a3a2314cb3e9bf3e1a8c5304ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c050f4451c872f3025d29aa7ceceb02"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a1c050f4451c872f3025d29aa7ceceb02">canWeMoveRight</a> ()</td></tr>
+<tr class="memdesc:a1c050f4451c872f3025d29aa7ceceb02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> can move right.   <a href="class_player.html#a1c050f4451c872f3025d29aa7ceceb02">More...</a><br /></td></tr>
+<tr class="separator:a1c050f4451c872f3025d29aa7ceceb02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17d0f9cc9dbef0f08556713d10ffd8dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a17d0f9cc9dbef0f08556713d10ffd8dc">resetMovementBools</a> (bool t_switch)</td></tr>
+<tr class="separator:a17d0f9cc9dbef0f08556713d10ffd8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbbcf7a7be42a17610556b5fabd338a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#afbbcf7a7be42a17610556b5fabd338a0">PickUpItem</a> (<a class="el" href="class_abstract_item.html">AbstractItem</a> &amp;t_item)</td></tr>
+<tr class="memdesc:afbbcf7a7be42a17610556b5fabd338a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Let's the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> pick up an item and store it in their <a class="el" href="class_inventory.html" title="Class that keeps track of all items the Player has picked up.">Inventory</a>.   <a href="class_player.html#afbbcf7a7be42a17610556b5fabd338a0">More...</a><br /></td></tr>
+<tr class="separator:afbbcf7a7be42a17610556b5fabd338a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94d617fc6f2a97eae9f3e6a5f9c3aec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aa94d617fc6f2a97eae9f3e6a5f9c3aec">GetWeaponDamage</a> ()</td></tr>
+<tr class="memdesc:aa94d617fc6f2a97eae9f3e6a5f9c3aec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the damage the weapon will do with the target.   <a href="class_player.html#aa94d617fc6f2a97eae9f3e6a5f9c3aec">More...</a><br /></td></tr>
+<tr class="separator:aa94d617fc6f2a97eae9f3e6a5f9c3aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4249c6cbffb8783a85f0a25c67ac807"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ab4249c6cbffb8783a85f0a25c67ac807">GetArmourClass</a> ()</td></tr>
+<tr class="memdesc:ab4249c6cbffb8783a85f0a25c67ac807"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the armour class of the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>.   <a href="class_player.html#ab4249c6cbffb8783a85f0a25c67ac807">More...</a><br /></td></tr>
+<tr class="separator:ab4249c6cbffb8783a85f0a25c67ac807"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4450f78c14edaabfeb7e3bf92a0709e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ab4450f78c14edaabfeb7e3bf92a0709e">UsePotion</a> ()</td></tr>
+<tr class="memdesc:ab4450f78c14edaabfeb7e3bf92a0709e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the <a class="el" href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590" title="An enum class whose values correspond to the types of Potion variations there are.">Potions</a> that the player currently has in their <a class="el" href="class_inventory.html" title="Class that keeps track of all items the Player has picked up.">Inventory</a>.   <a href="class_player.html#ab4450f78c14edaabfeb7e3bf92a0709e">More...</a><br /></td></tr>
+<tr class="separator:ab4450f78c14edaabfeb7e3bf92a0709e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a9824d8d59b0baf9bcdd42e467399c359"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a9824d8d59b0baf9bcdd42e467399c359">MoveSquare</a> (sf::Vector2f t_direction)</td></tr>
-<tr class="memdesc:a9824d8d59b0baf9bcdd42e467399c359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the player one grid space along the direction provided by the user's button press.  <a href="class_player.html#a9824d8d59b0baf9bcdd42e467399c359">More...</a><br /></td></tr>
-<tr class="separator:a9824d8d59b0baf9bcdd42e467399c359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af69e394b9934d2fa4930ed9581dc3f6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#af69e394b9934d2fa4930ed9581dc3f6b">UpdateArmourLook</a> ()</td></tr>
+<tr class="memdesc:af69e394b9934d2fa4930ed9581dc3f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates how the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> looks when they pick up some <a class="el" href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070" title="An enum class whose values correspond to the types of Armour variations there are.">Armours</a>.   <a href="class_player.html#af69e394b9934d2fa4930ed9581dc3f6b">More...</a><br /></td></tr>
+<tr class="separator:af69e394b9934d2fa4930ed9581dc3f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f4bab3e52ab1346ab9fea2068b821b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a7f4bab3e52ab1346ab9fea2068b821b2">CalculateDamageToEnemy</a> (int t_EnemyAC, int t_index)</td></tr>
+<tr class="memdesc:a7f4bab3e52ab1346ab9fea2068b821b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the hit chance the player has on the enemy, and then if they hit, calculates the damage to the enemy and applies it.   <a href="class_player.html#a7f4bab3e52ab1346ab9fea2068b821b2">More...</a><br /></td></tr>
+<tr class="separator:a7f4bab3e52ab1346ab9fea2068b821b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a112d582e1027c502f4d4d092de30b1ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a112d582e1027c502f4d4d092de30b1ec">GetHitModifier</a> ()</td></tr>
+<tr class="memdesc:a112d582e1027c502f4d4d092de30b1ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the additional hit chance of the player, based on their strength.   <a href="class_player.html#a112d582e1027c502f4d4d092de30b1ec">More...</a><br /></td></tr>
+<tr class="separator:a112d582e1027c502f4d4d092de30b1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6315233fe618344f76a095a0b0e43ac0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a6315233fe618344f76a095a0b0e43ac0">GetDamageModifier</a> ()</td></tr>
+<tr class="memdesc:a6315233fe618344f76a095a0b0e43ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the extra damage the player will do, based on their strength.   <a href="class_player.html#a6315233fe618344f76a095a0b0e43ac0">More...</a><br /></td></tr>
+<tr class="separator:a6315233fe618344f76a095a0b0e43ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ac1a2893d5bd1223e9ba54e771cd80d7b"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ac1a2893d5bd1223e9ba54e771cd80d7b">m_playerBody</a></td></tr>
-<tr class="memdesc:ac1a2893d5bd1223e9ba54e771cd80d7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appearance of player.  <a href="class_player.html#ac1a2893d5bd1223e9ba54e771cd80d7b">More...</a><br /></td></tr>
-<tr class="separator:ac1a2893d5bd1223e9ba54e771cd80d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5578033df193e71ef98e257c228a05c"><td class="memItemLeft" align="right" valign="top">sf::Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ae5578033df193e71ef98e257c228a05c">m_playerTexture</a></td></tr>
-<tr class="memdesc:ae5578033df193e71ef98e257c228a05c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the texture of the player.  <a href="class_player.html#ae5578033df193e71ef98e257c228a05c">More...</a><br /></td></tr>
-<tr class="separator:ae5578033df193e71ef98e257c228a05c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21f1fdf488b2b116f67adb16416400c7"><td class="memItemLeft" align="right" valign="top">sf::View&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a21f1fdf488b2b116f67adb16416400c7">m_playerView</a></td></tr>
+<tr class="memdesc:a21f1fdf488b2b116f67adb16416400c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The field of view of the player.  <a href="class_player.html#a21f1fdf488b2b116f67adb16416400c7">More...</a><br /></td></tr>
+<tr class="separator:a21f1fdf488b2b116f67adb16416400c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9b6f0f536182776f76f5b553d44499e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ae9b6f0f536182776f76f5b553d44499e">m_freeToMoveRight</a> = true</td></tr>
+<tr class="memdesc:ae9b6f0f536182776f76f5b553d44499e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> is able to move right this turn.  <a href="class_player.html#ae9b6f0f536182776f76f5b553d44499e">More...</a><br /></td></tr>
+<tr class="separator:ae9b6f0f536182776f76f5b553d44499e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ae3f8a2df151b2aabd6a4735661c6c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a5ae3f8a2df151b2aabd6a4735661c6c5">m_freeToMoveLeft</a> = true</td></tr>
+<tr class="memdesc:a5ae3f8a2df151b2aabd6a4735661c6c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> is able to move left this turn.  <a href="class_player.html#a5ae3f8a2df151b2aabd6a4735661c6c5">More...</a><br /></td></tr>
+<tr class="separator:a5ae3f8a2df151b2aabd6a4735661c6c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaec1484dd2dbe04a3d6cc43c5fe81015"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aaec1484dd2dbe04a3d6cc43c5fe81015">m_freeToMoveUp</a> = true</td></tr>
+<tr class="memdesc:aaec1484dd2dbe04a3d6cc43c5fe81015"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> is able to move up this turn.  <a href="class_player.html#aaec1484dd2dbe04a3d6cc43c5fe81015">More...</a><br /></td></tr>
+<tr class="separator:aaec1484dd2dbe04a3d6cc43c5fe81015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad13830a6f28b070fbce06cf208736d1c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ad13830a6f28b070fbce06cf208736d1c">m_freeToMoveDown</a> = true</td></tr>
+<tr class="memdesc:ad13830a6f28b070fbce06cf208736d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> is able to move down this turn.  <a href="class_player.html#ad13830a6f28b070fbce06cf208736d1c">More...</a><br /></td></tr>
+<tr class="separator:ad13830a6f28b070fbce06cf208736d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00028c17aff2ea7821a796a8504132ee"><td class="memItemLeft" align="right" valign="top">sf::Vector2i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a00028c17aff2ea7821a796a8504132ee">m_previousPos</a></td></tr>
+<tr class="memdesc:a00028c17aff2ea7821a796a8504132ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>'s position last turn.  <a href="class_player.html#a00028c17aff2ea7821a796a8504132ee">More...</a><br /></td></tr>
+<tr class="separator:a00028c17aff2ea7821a796a8504132ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4e6ed0131da3921bc80b39f9b455dc9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ab4e6ed0131da3921bc80b39f9b455dc9">row</a></td></tr>
+<tr class="memdesc:ab4e6ed0131da3921bc80b39f9b455dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The row the player is in on the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a>.  <a href="class_player.html#ab4e6ed0131da3921bc80b39f9b455dc9">More...</a><br /></td></tr>
+<tr class="separator:ab4e6ed0131da3921bc80b39f9b455dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaf24ef11afa33a073a952c464f5c762"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#adaf24ef11afa33a073a952c464f5c762">col</a></td></tr>
+<tr class="memdesc:adaf24ef11afa33a073a952c464f5c762"><td class="mdescLeft">&#160;</td><td class="mdescRight">The column the player is in on the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a>.  <a href="class_player.html#adaf24ef11afa33a073a952c464f5c762">More...</a><br /></td></tr>
+<tr class="separator:adaf24ef11afa33a073a952c464f5c762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62bfc9fa4b05ec3f69c62d0696918526"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a62bfc9fa4b05ec3f69c62d0696918526">m_playerBody</a></td></tr>
+<tr class="memdesc:a62bfc9fa4b05ec3f69c62d0696918526"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appearance of player.  <a href="class_player.html#a62bfc9fa4b05ec3f69c62d0696918526">More...</a><br /></td></tr>
+<tr class="separator:a62bfc9fa4b05ec3f69c62d0696918526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1da792254404554a9fa217c4e895f61e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; sf::Texture &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a1da792254404554a9fa217c4e895f61e">m_playerTexture</a></td></tr>
+<tr class="memdesc:a1da792254404554a9fa217c4e895f61e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the texture of the player.  <a href="class_player.html#a1da792254404554a9fa217c4e895f61e">More...</a><br /></td></tr>
+<tr class="separator:a1da792254404554a9fa217c4e895f61e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1d29479282a0a2a757b6d23940faaf3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_inventory.html">Inventory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ad1d29479282a0a2a757b6d23940faaf3">m_playerInventory</a></td></tr>
+<tr class="memdesc:ad1d29479282a0a2a757b6d23940faaf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>'s inventory. This is where their items are stored.  <a href="class_player.html#ad1d29479282a0a2a757b6d23940faaf3">More...</a><br /></td></tr>
+<tr class="separator:ad1d29479282a0a2a757b6d23940faaf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4300fd61cb43a3164e853850e5f6e307"><td class="memItemLeft" align="right" valign="top">sf::Keyboard::Key&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a4300fd61cb43a3164e853850e5f6e307">m_pressingButton</a> = sf::Keyboard::Unknown</td></tr>
-<tr class="memdesc:a4300fd61cb43a3164e853850e5f6e307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps track of whether the player is currently pressing a button.  <a href="class_player.html#a4300fd61cb43a3164e853850e5f6e307">More...</a><br /></td></tr>
+<tr class="memdesc:a4300fd61cb43a3164e853850e5f6e307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps track of whether the player is currently pressing a button.   <a href="class_player.html#a4300fd61cb43a3164e853850e5f6e307">More...</a><br /></td></tr>
 <tr class="separator:a4300fd61cb43a3164e853850e5f6e307"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94500af1daeabf3f22322118c7ec94c0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a94500af1daeabf3f22322118c7ec94c0">gridCellSize</a> = 50.0f</td></tr>
-<tr class="memdesc:a94500af1daeabf3f22322118c7ec94c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temporary variable - Used for moving between grid cells.  <a href="class_player.html#a94500af1daeabf3f22322118c7ec94c0">More...</a><br /></td></tr>
-<tr class="separator:a94500af1daeabf3f22322118c7ec94c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf0c3e7002bc6739960d88075c240709"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#adf0c3e7002bc6739960d88075c240709">m_strength</a> = 10</td></tr>
+<tr class="memdesc:adf0c3e7002bc6739960d88075c240709"><td class="mdescLeft">&#160;</td><td class="mdescRight">The strength of the player, used for attacking.  <a href="class_player.html#adf0c3e7002bc6739960d88075c240709">More...</a><br /></td></tr>
+<tr class="separator:adf0c3e7002bc6739960d88075c240709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46a14f2dac1742c0caf1380cc7e2ebf2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a46a14f2dac1742c0caf1380cc7e2ebf2">m_armourClass</a> = 2</td></tr>
+<tr class="memdesc:a46a14f2dac1742c0caf1380cc7e2ebf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The defense of the player, used for defending.  <a href="class_player.html#a46a14f2dac1742c0caf1380cc7e2ebf2">More...</a><br /></td></tr>
+<tr class="separator:a46a14f2dac1742c0caf1380cc7e2ebf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a467e9e6a23ea7d9e999382c58d0db9aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a467e9e6a23ea7d9e999382c58d0db9aa">m_health</a> = 20</td></tr>
+<tr class="memdesc:a467e9e6a23ea7d9e999382c58d0db9aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The health of the player. if this reaches 0, the game is over.  <a href="class_player.html#a467e9e6a23ea7d9e999382c58d0db9aa">More...</a><br /></td></tr>
+<tr class="separator:a467e9e6a23ea7d9e999382c58d0db9aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1e06c89dea6981223879e6bfccdb5cd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aa1e06c89dea6981223879e6bfccdb5cd">level</a> = 1</td></tr>
+<tr class="memdesc:aa1e06c89dea6981223879e6bfccdb5cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The players level. as level increases, so does the health, strength, and defense.  <a href="class_player.html#aa1e06c89dea6981223879e6bfccdb5cd">More...</a><br /></td></tr>
+<tr class="separator:aa1e06c89dea6981223879e6bfccdb5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae61f2ea9b978c907d74338758b27e3d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ae61f2ea9b978c907d74338758b27e3d8">xp</a> = 0</td></tr>
+<tr class="memdesc:ae61f2ea9b978c907d74338758b27e3d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">the players xp. When this reaches a certain threshold, level goes up by 1. XP is gotten by defeating enemies.  <a href="class_player.html#ae61f2ea9b978c907d74338758b27e3d8">More...</a><br /></td></tr>
+<tr class="separator:ae61f2ea9b978c907d74338758b27e3d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f9298e716231bdb7de5a3a4f2274703"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a6f9298e716231bdb7de5a3a4f2274703">m_maxHealth</a> = 20</td></tr>
+<tr class="memdesc:a6f9298e716231bdb7de5a3a4f2274703"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current maximum health the player can have.  <a href="class_player.html#a6f9298e716231bdb7de5a3a4f2274703">More...</a><br /></td></tr>
+<tr class="separator:a6f9298e716231bdb7de5a3a4f2274703"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:ab0217f5459b7a3faa159e4fe173dbc28"><td class="memItemLeft" align="right" valign="top">static std::unordered_map&lt; <a class="el" href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070">Armours</a>, sf::IntRect &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ab0217f5459b7a3faa159e4fe173dbc28">m_rects</a> = std::unordered_map&lt;<a class="el" href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070">Armours</a>, sf::IntRect&gt;()</td></tr>
+<tr class="memdesc:ab0217f5459b7a3faa159e4fe173dbc28"><td class="mdescLeft">&#160;</td><td class="mdescRight">The appearance of the player on the spritesheet, depending on the armours they can have.   <a href="class_player.html#ab0217f5459b7a3faa159e4fe173dbc28">More...</a><br /></td></tr>
+<tr class="separator:ab0217f5459b7a3faa159e4fe173dbc28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49e87559987d4095de60d7229db897da"><td class="memItemLeft" align="right" valign="top">static sf::IntRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a49e87559987d4095de60d7229db897da">m_noArmourRect</a> = sf::IntRect()</td></tr>
+<tr class="memdesc:a49e87559987d4095de60d7229db897da"><td class="mdescLeft">&#160;</td><td class="mdescRight">The appearance of the player on the spritesheet, if they are wearing no armour.   <a href="class_player.html#a49e87559987d4095de60d7229db897da">More...</a><br /></td></tr>
+<tr class="separator:a49e87559987d4095de60d7229db897da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Class the player directly controls. </p>
+<div class="textblock"><p >The class the user directly controls.  </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="affe0cc3cb714f6deb4e62f0c0d3f1fd8" name="affe0cc3cb714f6deb4e62f0c0d3f1fd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affe0cc3cb714f6deb4e62f0c0d3f1fd8">&#9670;&#160;</a></span>Player()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#affe0cc3cb714f6deb4e62f0c0d3f1fd8">&#9670;&#160;</a></span>Player() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -166,11 +284,301 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Default Constructor of <a class="el" href="class_player.html" title="Class the player directly controls.">Player</a>. </p>
+<p>Default constructor for <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>.  </p>
+
+</div>
+</div>
+<a id="a2cb139b1d8f9527ad0327f0a33c43511" name="a2cb139b1d8f9527ad0327f0a33c43511"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cb139b1d8f9527ad0327f0a33c43511">&#9670;&#160;</a></span>Player() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Player::Player </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>t_row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>t_col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overloaded constructor for <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>, that sets the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>'s position.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_row</td><td>The player's row in the grid.</td></tr>
+    <tr><td class="paramname">t_col</td><td>The player's column in the grid.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7f4bab3e52ab1346ab9fea2068b821b2" name="a7f4bab3e52ab1346ab9fea2068b821b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f4bab3e52ab1346ab9fea2068b821b2">&#9670;&#160;</a></span>CalculateDamageToEnemy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::CalculateDamageToEnemy </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>t_EnemyAC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>t_index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates the hit chance the player has on the enemy, and then if they hit, calculates the damage to the enemy and applies it.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_EnemyAC</td><td>The enemy's armour class, ie. how difficult they are to hit.</td></tr>
+    <tr><td class="paramname">t_index</td><td>The index of the enemy in the world.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a33413b5fc6c3e7f97522600f28000fa9" name="a33413b5fc6c3e7f97522600f28000fa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33413b5fc6c3e7f97522600f28000fa9">&#9670;&#160;</a></span>canWeMoveDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Player::canWeMoveDown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> can move down.  </p>
+<dl class="section return"><dt>Returns</dt><dd>Can the player move down?</dd></dl>
+
+</div>
+</div>
+<a id="a551fcd182a3b59e9adde7126b09e022a" name="a551fcd182a3b59e9adde7126b09e022a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a551fcd182a3b59e9adde7126b09e022a">&#9670;&#160;</a></span>canWeMoveLeft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Player::canWeMoveLeft </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> can move left.  </p>
+<dl class="section return"><dt>Returns</dt><dd>Can the player move left?</dd></dl>
+
+</div>
+</div>
+<a id="a1c050f4451c872f3025d29aa7ceceb02" name="a1c050f4451c872f3025d29aa7ceceb02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c050f4451c872f3025d29aa7ceceb02">&#9670;&#160;</a></span>canWeMoveRight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Player::canWeMoveRight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> can move right.  </p>
+<dl class="section return"><dt>Returns</dt><dd>Can the player move right?</dd></dl>
+
+</div>
+</div>
+<a id="a3414f2ca524596d388f0fbc665cb348c" name="a3414f2ca524596d388f0fbc665cb348c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3414f2ca524596d388f0fbc665cb348c">&#9670;&#160;</a></span>canWeMoveUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Player::canWeMoveUp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> can move up.  </p>
+<dl class="section return"><dt>Returns</dt><dd>Can the player move up?</dd></dl>
+
+</div>
+</div>
+<a id="ab4249c6cbffb8783a85f0a25c67ac807" name="ab4249c6cbffb8783a85f0a25c67ac807"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4249c6cbffb8783a85f0a25c67ac807">&#9670;&#160;</a></span>GetArmourClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Player::GetArmourClass </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the armour class of the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>.  </p>
+<dl class="section return"><dt>Returns</dt><dd>The AC of the armour the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> is wearing.</dd></dl>
+
+</div>
+</div>
+<a id="a6315233fe618344f76a095a0b0e43ac0" name="a6315233fe618344f76a095a0b0e43ac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6315233fe618344f76a095a0b0e43ac0">&#9670;&#160;</a></span>GetDamageModifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Player::GetDamageModifier </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates the extra damage the player will do, based on their strength.  </p>
+<dl class="section return"><dt>Returns</dt><dd>The additional damage the player does to the enemy.</dd></dl>
+
+</div>
+</div>
+<a id="a112d582e1027c502f4d4d092de30b1ec" name="a112d582e1027c502f4d4d092de30b1ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a112d582e1027c502f4d4d092de30b1ec">&#9670;&#160;</a></span>GetHitModifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Player::GetHitModifier </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates the additional hit chance of the player, based on their strength.  </p>
+<dl class="section return"><dt>Returns</dt><dd>The additional hit chance the player has when trying to hit the enemy.</dd></dl>
+
+</div>
+</div>
+<a id="a3039dcfc146012ccc242328261eab774" name="a3039dcfc146012ccc242328261eab774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3039dcfc146012ccc242328261eab774">&#9670;&#160;</a></span>getPlayerPositionInGrid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2i Player::getPlayerPositionInGrid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the row and column in the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a> the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> currently is.  </p>
+<dl class="section return"><dt>Returns</dt><dd>The row and column the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> is occupying.</dd></dl>
+
+</div>
+</div>
 <a id="aaed2801fda29def04633d24e4271edc0" name="aaed2801fda29def04633d24e4271edc0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaed2801fda29def04633d24e4271edc0">&#9670;&#160;</a></span>GetPosition()</h2>
 
@@ -186,10 +594,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>returns the player's position on the screen.  </p>
+<dl class="section return"><dt>Returns</dt><dd>The position of the player.</dd></dl>
+
 </div>
 </div>
-<a id="a9824d8d59b0baf9bcdd42e467399c359" name="a9824d8d59b0baf9bcdd42e467399c359"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9824d8d59b0baf9bcdd42e467399c359">&#9670;&#160;</a></span>MoveSquare()</h2>
+<a id="a4dc646f3895098913530d784dce8c20e" name="a4dc646f3895098913530d784dce8c20e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dc646f3895098913530d784dce8c20e">&#9670;&#160;</a></span>getPreviousPos()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -198,38 +609,112 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Player::MoveSquare </td>
+          <td class="memname">sf::Vector2i Player::getPreviousPos </td>
           <td>(</td>
-          <td class="paramtype">sf::Vector2f&#160;</td>
-          <td class="paramname"><em>t_direction</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Moves the player one grid space along the direction provided by the user's button press. </p>
+</div>
+</div>
+<a id="aa94d617fc6f2a97eae9f3e6a5f9c3aec" name="aa94d617fc6f2a97eae9f3e6a5f9c3aec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa94d617fc6f2a97eae9f3e6a5f9c3aec">&#9670;&#160;</a></span>GetWeaponDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Player::GetWeaponDamage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the damage the weapon will do with the target.  </p>
+<dl class="section return"><dt>Returns</dt><dd>The damage this weapon will do.</dd></dl>
+
+</div>
+</div>
+<a id="a1b4be5553e2e2ed83a315689fd97c8b0" name="a1b4be5553e2e2ed83a315689fd97c8b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b4be5553e2e2ed83a315689fd97c8b0">&#9670;&#160;</a></span>move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::move </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Move the player by the specified row/column parameter passed into the function.  </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">t_direction</td><td>The direction the player should move.</td></tr>
+    <tr><td class="paramname">row</td><td>The row change to move by (if any).</td></tr>
+    <tr><td class="paramname">col</td><td>The column change to move by (if any).</td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a48fbeb3e31da3b8fe794bb67c99cc076" name="a48fbeb3e31da3b8fe794bb67c99cc076"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48fbeb3e31da3b8fe794bb67c99cc076">&#9670;&#160;</a></span>ProcessKeys()</h2>
+<a id="afbbcf7a7be42a17610556b5fabd338a0" name="afbbcf7a7be42a17610556b5fabd338a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbbcf7a7be42a17610556b5fabd338a0">&#9670;&#160;</a></span>PickUpItem()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Player::ProcessKeys </td>
+          <td class="memname">void Player::PickUpItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_abstract_item.html">AbstractItem</a> &amp;&#160;</td>
+          <td class="paramname"><em>t_item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Let's the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> pick up an item and store it in their <a class="el" href="class_inventory.html" title="Class that keeps track of all items the Player has picked up.">Inventory</a>.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_item</td><td>The Item that is picked up.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4d93aef07c8b9406d3b7f8607c2a0efd" name="a4d93aef07c8b9406d3b7f8607c2a0efd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d93aef07c8b9406d3b7f8607c2a0efd">&#9670;&#160;</a></span>ProcessKeys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Player::ProcessKeys </td>
           <td>(</td>
           <td class="paramtype">sf::Event&#160;</td>
           <td class="paramname"><em>t_event</em></td><td>)</td>
@@ -238,13 +723,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Controls button presses that relate to player movement. </p>
-<p >For example, if the player presses Up/Down/Left/Right, move player in appropriate direction.  </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Controls button presses that relate to player movement. For example, if the player presses Up/Down/Left/Right, move player in appropriate direction.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">t_event</td><td>Event of button being pressed OR released.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> does an action.</dd></dl>
 
 </div>
 </div>
@@ -264,7 +750,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Draws the player to the game screen. </p>
+<p>Draws the player to the game screen.  </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">t_window</td><td>The window that the player will be drawn to.</td></tr>
@@ -275,6 +761,295 @@ Private Attributes</h2></td></tr>
 Example:</h3>
 <div class="fragment"><div class="line">playerObject.draw(gameWindow);</div>
 </div><!-- fragment --> 
+</div>
+</div>
+<a id="a1af5d39f7bac2aeaa1e30c7dda2332fa" name="a1af5d39f7bac2aeaa1e30c7dda2332fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1af5d39f7bac2aeaa1e30c7dda2332fa">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>'s health, position and camera back to the start. Used for when the <a class="el" href="class_game.html" title="The game class. Keeps track of Game Flow.">Game</a> is reset.  </p>
+
+</div>
+</div>
+<a id="a17d0f9cc9dbef0f08556713d10ffd8dc" name="a17d0f9cc9dbef0f08556713d10ffd8dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17d0f9cc9dbef0f08556713d10ffd8dc">&#9670;&#160;</a></span>resetMovementBools()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::resetMovementBools </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>t_switch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af39034a7791fd456efae5070dc477266" name="af39034a7791fd456efae5070dc477266"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af39034a7791fd456efae5070dc477266">&#9670;&#160;</a></span>setGridPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::setGridPosition </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Changes the position of the player, in relation to the grid. (ie 1,2 would put the player in second row, third column, as it starts with 0,0)  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>The player's new row in the grid.</td></tr>
+    <tr><td class="paramname">col</td><td>The player's new column in the grid.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae03e2aea22f9d5f833456cfa67d1e506" name="ae03e2aea22f9d5f833456cfa67d1e506"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae03e2aea22f9d5f833456cfa67d1e506">&#9670;&#160;</a></span>setMovementBoolDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::setMovementBoolDown </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>t_switch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Changes whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> can move down or not.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_switch</td><td>Change to if the player can move down.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6fe3e551386836ec9e976f76887611e5" name="a6fe3e551386836ec9e976f76887611e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fe3e551386836ec9e976f76887611e5">&#9670;&#160;</a></span>setMovementBoolLeft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::setMovementBoolLeft </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>t_switch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Changes whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> can move left or not.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_switch</td><td>Change to if the player can move left.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a075c6a3a2314cb3e9bf3e1a8c5304ac7" name="a075c6a3a2314cb3e9bf3e1a8c5304ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a075c6a3a2314cb3e9bf3e1a8c5304ac7">&#9670;&#160;</a></span>setMovementBoolRight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::setMovementBoolRight </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>t_switch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Changes whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> can move right or not.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_switch</td><td>Change to if the player can move right.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9d0e2fb38f26cef0cd0575d799e0364c" name="a9d0e2fb38f26cef0cd0575d799e0364c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d0e2fb38f26cef0cd0575d799e0364c">&#9670;&#160;</a></span>setMovementBoolUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::setMovementBoolUp </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>t_switch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Changes whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> can move up or not.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_switch</td><td>Change to if the player can move up.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab4006b6f2a58d8acc184ca1f3fb9e98e" name="ab4006b6f2a58d8acc184ca1f3fb9e98e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4006b6f2a58d8acc184ca1f3fb9e98e">&#9670;&#160;</a></span>setPlayerPositionInGrid() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::setPlayerPositionInGrid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets up the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>'s row and column in the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a>. This version does it by calculating it from the <a class="el" href="class_tile.html" title="Tile class, handles everything for one cell of the Grid.">Tile</a> size.  </p>
+
+</div>
+</div>
+<a id="aa76f213f5fa3d6bbd62a0ecbccd39047" name="aa76f213f5fa3d6bbd62a0ecbccd39047"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa76f213f5fa3d6bbd62a0ecbccd39047">&#9670;&#160;</a></span>setPlayerPositionInGrid() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::setPlayerPositionInGrid </td>
+          <td>(</td>
+          <td class="paramtype">sf::Vector2i&#160;</td>
+          <td class="paramname"><em>t_pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets up the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>'s row and column in the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a>. This version does it by setting it manually.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_pos</td><td>The manual row and column of the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> in the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a57c5229e6383990f33d5b01deef7ec92" name="a57c5229e6383990f33d5b01deef7ec92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57c5229e6383990f33d5b01deef7ec92">&#9670;&#160;</a></span>setPreviousPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::setPreviousPos </td>
+          <td>(</td>
+          <td class="paramtype">sf::Vector2i&#160;</td>
+          <td class="paramname"><em>t_prev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <a id="a12dd7fdccdc8dc7990f3d4925a4259f3" name="a12dd7fdccdc8dc7990f3d4925a4259f3"></a>
@@ -293,10 +1068,10 @@ Example:</h3>
       </table>
 </div><div class="memdoc">
 
-<p>Updates the player object every frame. </p>
+<p>Updates the player object every frame.  </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">t_deltaTime</td><td>Time since last frame.</td></tr>
+    <tr><td class="paramname">t_deltaTime</td><td>The time since last frame.</td></tr>
   </table>
   </dd>
 </dl>
@@ -306,9 +1081,8 @@ Example:</h3>
 </div><!-- fragment --> 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a94500af1daeabf3f22322118c7ec94c0" name="a94500af1daeabf3f22322118c7ec94c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94500af1daeabf3f22322118c7ec94c0">&#9670;&#160;</a></span>gridCellSize</h2>
+<a id="af69e394b9934d2fa4930ed9581dc3f6b" name="af69e394b9934d2fa4930ed9581dc3f6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af69e394b9934d2fa4930ed9581dc3f6b">&#9670;&#160;</a></span>UpdateArmourLook()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -317,7 +1091,10 @@ Example:</h3>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float Player::gridCellSize = 50.0f</td>
+          <td class="memname">void Player::UpdateArmourLook </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -327,13 +1104,32 @@ Example:</h3>
 </table>
 </div><div class="memdoc">
 
-<p>Temporary variable - Used for moving between grid cells. </p>
-<p >Will be replaced once Grid class is set up.  </p>
+<p>Updates how the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> looks when they pick up some <a class="el" href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070" title="An enum class whose values correspond to the types of Armour variations there are.">Armours</a>.  </p>
 
 </div>
 </div>
-<a id="ac1a2893d5bd1223e9ba54e771cd80d7b" name="ac1a2893d5bd1223e9ba54e771cd80d7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1a2893d5bd1223e9ba54e771cd80d7b">&#9670;&#160;</a></span>m_playerBody</h2>
+<a id="ab4450f78c14edaabfeb7e3bf92a0709e" name="ab4450f78c14edaabfeb7e3bf92a0709e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4450f78c14edaabfeb7e3bf92a0709e">&#9670;&#160;</a></span>UsePotion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::UsePotion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Uses the <a class="el" href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590" title="An enum class whose values correspond to the types of Potion variations there are.">Potions</a> that the player currently has in their <a class="el" href="class_inventory.html" title="Class that keeps track of all items the Player has picked up.">Inventory</a>.  </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="adaf24ef11afa33a073a952c464f5c762" name="adaf24ef11afa33a073a952c464f5c762"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaf24ef11afa33a073a952c464f5c762">&#9670;&#160;</a></span>col</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -342,7 +1138,247 @@ Example:</h3>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">sf::RectangleShape Player::m_playerBody</td>
+          <td class="memname">int Player::col</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The column the player is in on the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a>. </p>
+
+</div>
+</div>
+<a id="aa1e06c89dea6981223879e6bfccdb5cd" name="aa1e06c89dea6981223879e6bfccdb5cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1e06c89dea6981223879e6bfccdb5cd">&#9670;&#160;</a></span>level</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Player::level = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The players level. as level increases, so does the health, strength, and defense. </p>
+
+</div>
+</div>
+<a id="a46a14f2dac1742c0caf1380cc7e2ebf2" name="a46a14f2dac1742c0caf1380cc7e2ebf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46a14f2dac1742c0caf1380cc7e2ebf2">&#9670;&#160;</a></span>m_armourClass</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Player::m_armourClass = 2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The defense of the player, used for defending. </p>
+
+</div>
+</div>
+<a id="ad13830a6f28b070fbce06cf208736d1c" name="ad13830a6f28b070fbce06cf208736d1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad13830a6f28b070fbce06cf208736d1c">&#9670;&#160;</a></span>m_freeToMoveDown</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Player::m_freeToMoveDown = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> is able to move down this turn. </p>
+
+</div>
+</div>
+<a id="a5ae3f8a2df151b2aabd6a4735661c6c5" name="a5ae3f8a2df151b2aabd6a4735661c6c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ae3f8a2df151b2aabd6a4735661c6c5">&#9670;&#160;</a></span>m_freeToMoveLeft</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Player::m_freeToMoveLeft = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> is able to move left this turn. </p>
+
+</div>
+</div>
+<a id="ae9b6f0f536182776f76f5b553d44499e" name="ae9b6f0f536182776f76f5b553d44499e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9b6f0f536182776f76f5b553d44499e">&#9670;&#160;</a></span>m_freeToMoveRight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Player::m_freeToMoveRight = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> is able to move right this turn. </p>
+
+</div>
+</div>
+<a id="aaec1484dd2dbe04a3d6cc43c5fe81015" name="aaec1484dd2dbe04a3d6cc43c5fe81015"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaec1484dd2dbe04a3d6cc43c5fe81015">&#9670;&#160;</a></span>m_freeToMoveUp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Player::m_freeToMoveUp = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a> is able to move up this turn. </p>
+
+</div>
+</div>
+<a id="a467e9e6a23ea7d9e999382c58d0db9aa" name="a467e9e6a23ea7d9e999382c58d0db9aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a467e9e6a23ea7d9e999382c58d0db9aa">&#9670;&#160;</a></span>m_health</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Player::m_health = 20</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The health of the player. if this reaches 0, the game is over. </p>
+
+</div>
+</div>
+<a id="a6f9298e716231bdb7de5a3a4f2274703" name="a6f9298e716231bdb7de5a3a4f2274703"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f9298e716231bdb7de5a3a4f2274703">&#9670;&#160;</a></span>m_maxHealth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Player::m_maxHealth = 20</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The current maximum health the player can have. </p>
+
+</div>
+</div>
+<a id="a49e87559987d4095de60d7229db897da" name="a49e87559987d4095de60d7229db897da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49e87559987d4095de60d7229db897da">&#9670;&#160;</a></span>m_noArmourRect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::IntRect Player::m_noArmourRect = sf::IntRect()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The appearance of the player on the spritesheet, if they are wearing no armour.  </p>
+
+</div>
+</div>
+<a id="a62bfc9fa4b05ec3f69c62d0696918526" name="a62bfc9fa4b05ec3f69c62d0696918526"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62bfc9fa4b05ec3f69c62d0696918526">&#9670;&#160;</a></span>m_playerBody</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite Player::m_playerBody</td>
         </tr>
       </table>
   </td>
@@ -353,12 +1389,11 @@ Example:</h3>
 </div><div class="memdoc">
 
 <p>Appearance of player. </p>
-<p >For now it will be a rectangle shape, until a spritesheet can be sorted. </p>
 
 </div>
 </div>
-<a id="ae5578033df193e71ef98e257c228a05c" name="ae5578033df193e71ef98e257c228a05c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5578033df193e71ef98e257c228a05c">&#9670;&#160;</a></span>m_playerTexture</h2>
+<a id="ad1d29479282a0a2a757b6d23940faaf3" name="ad1d29479282a0a2a757b6d23940faaf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1d29479282a0a2a757b6d23940faaf3">&#9670;&#160;</a></span>m_playerInventory</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -367,7 +1402,31 @@ Example:</h3>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">sf::Texture* Player::m_playerTexture</td>
+          <td class="memname"><a class="el" href="class_inventory.html">Inventory</a> Player::m_playerInventory</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>'s inventory. This is where their items are stored. </p>
+
+</div>
+</div>
+<a id="a1da792254404554a9fa217c4e895f61e" name="a1da792254404554a9fa217c4e895f61e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1da792254404554a9fa217c4e895f61e">&#9670;&#160;</a></span>m_playerTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;sf::Texture&gt; Player::m_playerTexture</td>
         </tr>
       </table>
   </td>
@@ -378,6 +1437,30 @@ Example:</h3>
 </div><div class="memdoc">
 
 <p>Reference to the texture of the player. </p>
+
+</div>
+</div>
+<a id="a21f1fdf488b2b116f67adb16416400c7" name="a21f1fdf488b2b116f67adb16416400c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21f1fdf488b2b116f67adb16416400c7">&#9670;&#160;</a></span>m_playerView</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::View Player::m_playerView</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The field of view of the player. </p>
 
 </div>
 </div>
@@ -401,10 +1484,134 @@ Example:</h3>
 </table>
 </div><div class="memdoc">
 
-<p>Keeps track of whether the player is currently pressing a button. </p>
+<p>Keeps track of whether the player is currently pressing a button.  </p>
 
 </div>
 </div>
+<a id="a00028c17aff2ea7821a796a8504132ee" name="a00028c17aff2ea7821a796a8504132ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00028c17aff2ea7821a796a8504132ee">&#9670;&#160;</a></span>m_previousPos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2i Player::m_previousPos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>'s position last turn. </p>
+
+</div>
+</div>
+<a id="ab0217f5459b7a3faa159e4fe173dbc28" name="ab0217f5459b7a3faa159e4fe173dbc28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0217f5459b7a3faa159e4fe173dbc28">&#9670;&#160;</a></span>m_rects</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; <a class="el" href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070">Armours</a>, sf::IntRect &gt; Player::m_rects = std::unordered_map&lt;<a class="el" href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070">Armours</a>, sf::IntRect&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The appearance of the player on the spritesheet, depending on the armours they can have.  </p>
+
+</div>
+</div>
+<a id="adf0c3e7002bc6739960d88075c240709" name="adf0c3e7002bc6739960d88075c240709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf0c3e7002bc6739960d88075c240709">&#9670;&#160;</a></span>m_strength</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Player::m_strength = 10</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The strength of the player, used for attacking. </p>
+
+</div>
+</div>
+<a id="ab4e6ed0131da3921bc80b39f9b455dc9" name="ab4e6ed0131da3921bc80b39f9b455dc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4e6ed0131da3921bc80b39f9b455dc9">&#9670;&#160;</a></span>row</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Player::row</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The row the player is in on the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a>. </p>
+
+</div>
+</div>
+<a id="ae61f2ea9b978c907d74338758b27e3d8" name="ae61f2ea9b978c907d74338758b27e3d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae61f2ea9b978c907d74338758b27e3d8">&#9670;&#160;</a></span>xp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Player::xp = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the players xp. When this reaches a certain threshold, level goes up by 1. XP is gotten by defeating enemies. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>C:/Users/liney/OneDrive/Desktop/Work/Games Engineering/JECL_Ducks_Roguelike/Roguelike/<a class="el" href="_player_8h_source.html">Player.h</a></li>
+<li>C:/Users/liney/OneDrive/Desktop/Work/Games Engineering/JECL_Ducks_Roguelike/Roguelike/<a class="el" href="_player_8cpp.html">Player.cpp</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

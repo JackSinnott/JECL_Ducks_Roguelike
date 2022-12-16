@@ -1,0 +1,64 @@
+\hypertarget{_gameplay_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Gameplay.h}
+\mbox{\hyperlink{_gameplay_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_globals_8h}{Globals.h}}"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_file_loader_8h}{FileLoader.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_player_8h}{Player.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_bat_8h}{Bat.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_rat_8h}{Rat.h}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_grid_8h}{Grid.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_item_factory_8h}{AbstractItemFactory.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_weapon_factory_8h}{WeaponFactory.h}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_armour_factory_8h}{ArmourFactory.h}}"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_potion_factory_8h}{PotionFactory.h}}"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{class_gameplay}{Gameplay}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \mbox{\hyperlink{class_gameplay_a04898da34fb7c6a290a193f9e7ec1219}{Gameplay}}();}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gameplay_a367fddb609ffb3323b52ee41762d66ed}{processEvents}}(sf::Event t\_event);}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gameplay_a92fb3f91d9d7099f0606dfc8869d4c1f}{update}}(sf::Time t\_dt);}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gameplay_a00a815c3b7352357c2f844f19087ebac}{render}}(sf::RenderWindow\& t\_window);}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gameplay_a738f3dbcaa7312594e5112c0e3f1fc51}{GenerateRandomItem}}();}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gameplay_a08b9a9bbfe196a99d266ffaebbbb3405}{MouseEvents}}(sf::Event t\_event);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gameplay_a33b1b14ab91ff001b6c47e7790cd4e47}{ResetGame}}();}
+\DoxyCodeLine{29 \textcolor{keyword}{private}:}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gameplay_a5262549df409aaf56e248e2e4e978c1c}{LoadLevel}}();}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gameplay_aa58fdba1ec98997af77737e4232cf837}{processTurn}}();}
+\DoxyCodeLine{32     }
+\DoxyCodeLine{34     sf::Font \mbox{\hyperlink{class_gameplay_a356c0d5c5754e67adfce97eca4bf0bef}{m\_arialBlackfont}}; }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{37     sf::Text \mbox{\hyperlink{class_gameplay_a9cab209f34a06548fac60ceedc943ac6}{m\_mouseCoordinate}}; }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{40     sf::Vector2f \mbox{\hyperlink{class_gameplay_a02d9cbd8446f19c77c2b8f59e93d91ca}{m\_mousePositionView}};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{43     sf::Text \mbox{\hyperlink{class_gameplay_a798be7f70abd46adcf6120d3947b7150}{m\_infoText}};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{46     sf::Texture \mbox{\hyperlink{class_gameplay_a052e2fd042d5284708cf774ba5856cc4}{m\_tileTexture}};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49     \mbox{\hyperlink{class_level_loader}{LevelLoader}}* \mbox{\hyperlink{class_gameplay_a0e4f0d5be4d24ed85e423856bf5392fa}{m\_levelLoader}};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52     std::shared\_ptr<sf::Texture> \mbox{\hyperlink{class_gameplay_afbb5c780f44525fea33ec1589978b22f}{m\_buttonTexture}};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55     std::vector<sf::Sprite*> \mbox{\hyperlink{class_gameplay_a8d2122be2905b9158a7de9fe67014959}{m\_walls}};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{58     \mbox{\hyperlink{class_grid}{Grid}} \mbox{\hyperlink{class_gameplay_a8848de9136c3a2aaa8d017439423e987}{m\_grid}};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61     \mbox{\hyperlink{class_abstract_item_factory}{AbstractItemFactory}}* \mbox{\hyperlink{class_gameplay_abb557ea4163585558624dd1e5e667a90}{m\_itemfactory}};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{64     \mbox{\hyperlink{class_abstract_item}{AbstractItem}}* \mbox{\hyperlink{class_gameplay_a39e2cf39670a72a3890669a870ab8aed}{m\_absItem}};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67     std::vector<AbstractItem*> \mbox{\hyperlink{class_gameplay_aafe2be1f76a60f98082bf020dda0a8f8}{m\_absItemVector}}; }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70     \mbox{\hyperlink{class_player}{Player}} \mbox{\hyperlink{class_gameplay_a73e1f2b059a5d8e12a07fdb47085e094}{player}};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{73     std::vector<Enemy*> \mbox{\hyperlink{class_gameplay_ad2497c342b131728839125f201de75ae}{m\_enemies}};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{76     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_gameplay_ad494f773f6caf872b0813334a60908b0}{m\_debugTools}};}
+\DoxyCodeLine{77 \};}
+
+\end{DoxyCode}

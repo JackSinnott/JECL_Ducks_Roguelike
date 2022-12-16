@@ -1,5 +1,19 @@
 var searchData=
 [
-  ['update_0',['update',['../class_enemy.html#ad55ee71b5a8c23fbd00b3c368b90cc64',1,'Enemy::update()'],['../class_game.html#a1d2aee62bac8e228344e1f44fab504e0',1,'Game::update()']]],
-  ['update_1',['Update',['../class_player.html#a12dd7fdccdc8dc7990f3d4925a4259f3',1,'Player']]]
+  ['health_0',['health',['../class_enemy.html#aedd5e7bf8ef07ee97be433c853a10d8d',1,'Enemy']]],
+  ['health_1',['Health',['../_globals_8h.html#a339b1e37de309d5689ffde954b8a4590a605669cab962bf944d99ce89cf9e58d9',1,'Globals.h']]],
+  ['healthpotion_2',['HealthPotion',['../class_health_potion.html',1,'HealthPotion'],['../class_health_potion.html#a995348d989b9b9c1d336254073cff707',1,'HealthPotion::HealthPotion()']]],
+  ['healthpotion_2eh_3',['HealthPotion.h',['../_health_potion_8h.html',1,'']]],
+  ['heavy_4',['Heavy',['../_globals_8h.html#a055e5eef1506d5a4360112d62215b070af9ffe67a20da9cbff56b420fca4bd491',1,'Globals.h']]],
+  ['heavyarmour_5',['HeavyArmour',['../class_heavy_armour.html',1,'HeavyArmour'],['../class_heavy_armour.html#a751847c4975ce58dae6471818643e30e',1,'HeavyArmour::HeavyArmour()']]],
+  ['heavyarmour_2eh_6',['HeavyArmour.h',['../_heavy_armour_8h.html',1,'']]],
+  ['help_7',['Help',['../class_help.html',1,'Help'],['../class_help.html#aecdaeb53ac4c7dfef41c9bd8c341a928',1,'Help::Help()'],['../_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5a6a26f548831e6a8c26bfbbd9f6ec61e0',1,'Help():&#160;Globals.h']]],
+  ['help_2ecpp_8',['Help.cpp',['../_help_8cpp.html',1,'']]],
+  ['help_2eh_9',['Help.h',['../_help_8h.html',1,'']]],
+  ['helptext_10',['helpText',['../class_help.html#ac272824fe343899f61076d4871a019c8',1,'Help']]],
+  ['horizontal_5fwall_11',['HORIZONTAL_WALL',['../_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a3817619231a131f2b7b22ff58a46d816',1,'Globals.h']]],
+  ['hover_12',['hover',['../class_button.html#a9f2c80b737911ad8de25410fe120cbc4',1,'Button']]],
+  ['hovercolor_13',['hoverColor',['../class_button.html#a721b37218f6069a780443a39eb298fa0',1,'Button']]],
+  ['hurtenemy_14',['HurtEnemy',['../class_combat_system.html#ab327b68d448bcc14d438a0c46bce35d5',1,'CombatSystem']]],
+  ['hurtplayer_15',['HurtPlayer',['../class_combat_system.html#a4e97c93e2f5358af29ffc8a788cbe778',1,'CombatSystem']]]
 ];
