@@ -1,9 +1,18 @@
 #include "Enemy.h"
 
+/// <summary>
+/// Empty constructor, is to be overridden by child classes
+/// </summary>
 Enemy::Enemy()
 {
 }
 
+/// <summary>
+/// Updates the enemy, checks if the enemy has health and if so does the move action
+/// </summary>
+/// <param name="t_playerPos">The Position on the grid of the player</param>
+/// <param name="t_playerRoom">The room the player is in</param>
+/// <param name="t_enemyRoom">The room the enemy is in</param>
 void Enemy::update(sf::Vector2i t_playerPos, int t_playerRoom, int t_enemyRoom)
 {
 	if (health > 0)
@@ -64,6 +73,9 @@ int Enemy::GetDamage()
 	return damage;
 }
 
+/// <summary>
+/// This behaviour moves the enemy randomly only avoiding walls
+/// </summary>
 void Enemy::randomMovement()
 {
 	sf::Vector2f pos = m_enemy.getPosition();
@@ -102,6 +114,10 @@ void Enemy::randomMovement()
 	m_enemy.setPosition(pos);
 }
 
+/// <summary>
+/// This behaviour moves the Enemy towards the player, if theres a wall it stops in its tracks
+/// </summary>
+/// <param name="t_playerPos">The position on the grid of the player</param>
 void Enemy::moveTowardsPlayer(sf::Vector2i t_playerPos)
 {
 	sf::Vector2f pos = m_enemy.getPosition();

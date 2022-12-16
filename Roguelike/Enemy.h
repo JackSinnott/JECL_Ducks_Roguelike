@@ -59,14 +59,19 @@ protected:
 
 	///The spritesheet texture applied to the enemy appearance.
 	std::shared_ptr<sf::Texture> m_enemyTexture;
-	static std::unordered_map<EnemyType, sf::IntRect> m_rects;
 	
+	///The row the enemy is in on the grid
 	int row;
+	///The column the enemy is in on the grid
 	int col;
 
+	///The enemy can move up
 	bool m_freeToMoveUp;
+	///The enemy can move dowm
 	bool m_freeToMoveDown;
+	///The enemy can move left
 	bool m_freeToMoveLeft;
+	///The enemy can move right
 	bool m_freeToMoveRight;
 
 	void randomMovement();
