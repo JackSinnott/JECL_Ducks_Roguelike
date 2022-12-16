@@ -2,9 +2,17 @@
 #include "Globals.h"
 #include "Enemy.h"
 
+/// <summary>
+/// The Bat enemy that inherits from the Enemy Class
+/// </summary>
 class Bat : public Enemy
 {
 public:
+	/// <summary>
+	/// Overload constructor for the bat that sets the position
+	/// </summary>
+	/// <param name="t_posX">Position of the players on the X-axis</param>
+	/// <param name="t_posY">Position of the players on the Y-axis</param>
 	Bat(float t_posX, float t_posY)
 	{
 		m_type = EnemyType::Bat;
@@ -30,6 +38,12 @@ public:
 	}
 	sf::IntRect spriteRect = sf::IntRect{ 0,160,16,16 };
 private:
+	/// <summary>
+	/// Overrides the move function with the Bats movement logic
+	/// </summary>
+	/// <param name="t_playerPos">The Position on the grid of the player</param>
+	/// <param name="t_playerRoom">The room the player is in</param>
+	/// <param name="t_enemyRoom">The room the enemy is in</param>
 	void move(sf::Vector2i t_playerPos, int t_playerRoom, int t_enemyRoom) override
 	{
 		if (abs(t_playerPos.x - col) > 1 || abs(t_playerPos.y - row) <= 1)
