@@ -1,7 +1,6 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 #include "Globals.h"
-#include <iostream>
 #include "AbstractItem.h"
 #include "AbstractWeapon.h"
 #include "AbstractArmour.h"
@@ -162,6 +161,9 @@ public:
 	/// </summary>
 	/// <returns>Can the player move right?</returns>
 	inline bool canWeMoveRight() { return m_freeToMoveRight; }
+
+	inline void resetMovementBools(bool t_switch) { setMovementBoolUp(t_switch); setMovementBoolDown(t_switch);
+		setMovementBoolLeft(t_switch); setMovementBoolRight(t_switch); }
 
 	// Inventory Methods
 
