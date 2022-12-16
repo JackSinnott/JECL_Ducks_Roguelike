@@ -5,6 +5,10 @@
 
 #include "CombatSystem.h"
 
+/// <summary>
+/// The enemies of the Player. Will try and hunt down and defeat them.
+/// </summary>
+
 class Enemy
 {
 public:
@@ -36,16 +40,27 @@ public:
 	}
 protected:
 	sf::IntRect spriteRec{ 0,160,16,16 };
+	/// The armour class. The higher the number, the easier the enemy is to hit.
 	int m_armourClass = 2;
+
+	///The enemy's health. When this is reduced to 0, the enemy is defeated.
 	int health = 20;
+
+	///The amount of experience the enemy gives the player upon being defeated.
 	int xp = 10;
 
 	int GetDamage();
 
+	///The type of enemy this is. These include #Bat and #Rat.
 	EnemyType m_type = EnemyType::Bat;
-	sf::Sprite m_enemy;
-	std::shared_ptr<sf::Texture> m_enemyTexture;
 
+	///The appearance of the enemy.
+	sf::Sprite m_enemy;
+
+	///The spritesheet texture applied to the enemy appearance.
+	std::shared_ptr<sf::Texture> m_enemyTexture;
+	static std::unordered_map<EnemyType, sf::IntRect> m_rects;
+	
 	int row;
 	int col;
 
@@ -57,3 +72,5 @@ protected:
 	void randomMovement();
 	void moveTowardsPlayer(sf::Vector2i t_playerPos);
 };
+
+	

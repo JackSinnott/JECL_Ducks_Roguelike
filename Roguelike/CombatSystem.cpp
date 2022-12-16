@@ -3,28 +3,32 @@
 std::vector<std::pair<int*, int>> CombatSystem::enemiesStats = std::vector<std::pair<int*, int>>();
 int* CombatSystem::playerHealth = nullptr;
 
+/// <summary>
+/// Lets the system be able to affect the Player's health.
+/// </summary>
+/// <param name="t_health">The reference to the Player's health.</param>
 void CombatSystem::SetPlayerHealth(int* t_health)
 {
 	playerHealth = t_health;
 }
 
 /// <summary>
-/// 
+/// Pushes back some enemy stats, so the combat will be able to affect the enemies.
 /// </summary>
-/// <param name="t_health"></param>
-/// <param name="t_xp"></param>
+/// <param name="t_health">A reference to the health of an enemy.</param>
+/// <param name="t_xp">A copy of the xp the enemy will drop when they are defeated.</param>
 void CombatSystem::PushBackEnemyStats(int* t_health, int t_xp)
 {
 	enemiesStats.push_back(std::make_pair(t_health, t_xp));
 }
 
 /// <summary>
-/// 
+/// Calculates whether the attacker hits the defender.
 /// </summary>
-/// <param name="defendersArmour"></param>
-/// <param name="attackersLevel"></param>
-/// <param name="t_modifiers"></param>
-/// <returns></returns>
+/// <param name="defendersArmour">How hard it is to hit the defender.</param>
+/// <param name="attackersLevel">The level the attacker is at - this affects their hit chance.</param>
+/// <param name="t_modifiers">Hit chance modifiers, which is added after the roll.</param>
+/// <returns>Whether the hit went through.</returns>
 bool CombatSystem::BattleEquation(int defendersArmour, int attackersLevel, int t_modifiers)
 {
 	int attackersRoll = CombatSystem::RollD20();
@@ -37,9 +41,9 @@ bool CombatSystem::BattleEquation(int defendersArmour, int attackersLevel, int t
 }
 
 /// <summary>
-/// 
+/// Deal some damage to the Player.
 /// </summary>
-/// <param name="damage"></param>
+/// <param name="damage">The amount of damage to do to the Player.</param>
 void CombatSystem::HurtPlayer(int damage)
 {
 	(*playerHealth) -= damage;
@@ -47,10 +51,10 @@ void CombatSystem::HurtPlayer(int damage)
 }
 
 /// <summary>
-/// 
+/// Deals some damage to a specified Enemy. If the enemy is defeated, remove them from the vector.
 /// </summary>
-/// <param name="t_indexOfEnemy">The index of the enemies health in the vector</param>
-/// <param name="damage">How much damage will be done to the enemy</param>
+/// <param name="t_indexOfEnemy">The index of the Enemy in the vector.</param>
+/// <param name="damage">How much damage will be done to the Enemy.</param>
 int CombatSystem::HurtEnemy(int t_indexOfEnemy, int damage)
 {
 	int xpGotten = 0;
@@ -74,7 +78,7 @@ int CombatSystem::HurtEnemy(int t_indexOfEnemy, int damage)
 /// Returns a random number between 1 and 20 (inclusive), adds them together if the amount rolled is more than 1, then returns the result.
 /// </summary>
 /// <param name="amountRolled">The amount of times that dice should be rolled.</param>
-/// <returns>the resulting roll of all the dice,
+/// <returns>The resulting roll of all the dice,
 /// ie. if the dice is rolled twice and got 10 and 16, 26 is returned.</returns>
 int CombatSystem::RollD20(int amountRolled)
 {
@@ -92,7 +96,7 @@ int CombatSystem::RollD20(int amountRolled)
 /// Generates a number between 1 and 8 (inclusive), adds them together if the amount rolled is more than 1, then returns the result.
 /// </summary>
 /// <param name="amountRolled">The amount of times the dice is rolled.</param>
-/// <returns>The total number of the rolls,
+/// <returns>The resulting roll of all the dice,
 /// ie. if the dice is rolled twice and got 2 and 3, 5 is returned.</returns>
 int CombatSystem::RollD8(int amountRolled)
 {

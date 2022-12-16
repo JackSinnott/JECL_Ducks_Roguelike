@@ -3,17 +3,30 @@
 std::unordered_map<Armours, sf::IntRect> Player::m_rects = std::unordered_map<Armours, sf::IntRect>(); // initialize
 sf::IntRect Player::m_noArmourRect = sf::IntRect();
 
+/// <summary>
+/// Returns the row and column in the Grid the Player currently is.
+/// </summary>
+/// <returns>The row and column the Player is occupying.</returns>
 sf::Vector2i Player::getPlayerPositionInGrid()
 {
 	return sf::Vector2i(row, col);
 }
 
+/// <summary>
+/// Sets up the Player's row and column in the Grid.
+/// This version does it by calculating it from the Tile size.
+/// </summary>
 void Player::setPlayerPositionInGrid()
 {
 	row = m_playerBody.getPosition().x / G_CELL_SIZE;
 	col = m_playerBody.getPosition().y / G_CELL_SIZE;
 }
 
+/// <summary>
+/// Sets up the Player's row and column in the Grid.
+/// This version does it by setting it manually.
+/// </summary>
+/// <param name="t_pos">The manual row and column of the Player in the Grid.</param>
 void Player::setPlayerPositionInGrid(sf::Vector2i t_pos)
 {
 	row = t_pos.x;
@@ -21,10 +34,10 @@ void Player::setPlayerPositionInGrid(sf::Vector2i t_pos)
 }
 
 /// <summary>
-/// Move the player by the specified row/col parameter passed into the function 
+/// Move the player by the specified row/column parameter passed into the function.
 /// </summary>
-/// <param name="row">The row change to move by (if any)</param>
-/// <param name="col">The column change to move by (if any)</param>
+/// <param name="row">The row change to move by (if any).</param>
+/// <param name="col">The column change to move by (if any).</param>
 void Player::move(int row, int col)
 {
 	m_playerBody.move(sf::Vector2f( row, col ) * float(G_CELL_SIZE));
@@ -76,12 +89,10 @@ Player::Player(int t_row, int t_col) : m_playerTexture(nullptr),
 }
 
 
-
-
 /// <summary>
 /// Updates the player object every frame.
 /// </summary>
-/// <param name="t_deltaTime">Time since last frame.</param>
+/// <param name="t_deltaTime">The time since last frame.</param>
 /// 
 /// ### Example:
 /// ~~~~~~~~~~~~~~~~~~~~~.cpp
@@ -99,6 +110,9 @@ void Player::Update(sf::Time t_deltaTime)
 	}
 }
 
+/// <summary>
+/// Resets the Player's health, position and camera back to the start. Used for when the Game is reset.
+/// </summary>
 void Player::reset()
 {
 	m_health = m_maxHealth;
@@ -212,18 +226,18 @@ void Player::Render(sf::RenderWindow& t_window)
 /// <summary>
 /// returns the player's position on the screen.
 /// </summary>
-/// <returns>The position of the player</returns>
+/// <returns>The position of the player.</returns>
 sf::Vector2f Player::GetPosition()
 {
 	return m_playerBody.getPosition();
 }
 
 /// <summary>
-/// Changes the position of the player, in relation to the grid 
+/// Changes the position of the player, in relation to the grid.
 /// (ie 1,2 would put the player in second row, third column, as it starts with 0,0)
 /// </summary>
-/// <param name="row">The player's new row in the grid</param>
-/// <param name="col">The player's new column in the grid</param>
+/// <param name="row">The player's new row in the grid.</param>
+/// <param name="col">The player's new column in the grid.</param>
 void Player::setGridPosition(int row, int col)
 {
 	// Sets player to centre of map
@@ -231,22 +245,37 @@ void Player::setGridPosition(int row, int col)
 		G_CELL_SIZE * (col));
 }
 
+/// <summary>
+/// Let's the Player pick up an item and store it in their Inventory.
+/// </summary>
+/// <param name="t_item">The Item that is picked up.</param>
 void Player::PickUpItem(AbstractItem& t_item)
 {
 	//When the item is picked up. It will need to go into the right item slot type.
 	m_playerInventory.StoreItem(t_item);
 }
 
+/// <summary>
+/// Returns the damage the weapon will do with the target.
+/// </summary>
+/// <returns>The damage this weapon will do.</returns>
 int Player::GetWeaponDamage()
 {
 	return m_playerInventory.GetWeapon().GetDamage();
 }
 
+/// <summary>
+/// Returns the armour class of the Player.
+/// </summary>
+/// <returns>The AC of the armour the Player is wearing.</returns>
 int Player::GetArmourClass()
 {
 	return m_playerInventory.GetArmour().GetArmourClass();
 }
 
+/// <summary>
+/// Uses the #Potions that the player currently has in their Inventory.
+/// </summary>
 void Player::UsePotion()
 {
 	if (&m_playerInventory.GetPotion() != nullptr)
@@ -284,6 +313,9 @@ void Player::UsePotion()
 	}
 }
 
+/// <summary>
+/// Updates how the Player looks when they pick up some #Armours.
+/// </summary>
 void Player::UpdateArmourLook()
 {
 	if (&m_playerInventory.GetArmour() != nullptr)
@@ -300,7 +332,6 @@ void Player::UpdateArmourLook()
 		m_playerBody.setTextureRect(m_noArmourRect);
 	}
 }
-
 
 /// <summary>
 /// Calculates the hit chance the player has on the enemy,
