@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['rat_0',['Rat',['../_globals_8h.html#ac3e413a86119db4b031458c7259e268eaecd331596f91ddaac07c6e600ed166f1',1,'Globals.h']]],
-  ['render_1',['render',['../class_enemy.html#a09169617a34e6de54708bf409244d218',1,'Enemy::render()'],['../class_game.html#a15ddd769261d923827a3cdf41499c843',1,'Game::render()']]],
-  ['render_2',['Render',['../class_player.html#a2022b71485561ab132bfc88566ee08f0',1,'Player']]],
-  ['run_3',['run',['../class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa',1,'Game']]]
+  ['fileloader_0',['FileLoader',['../class_file_loader.html',1,'FileLoader'],['../class_file_loader.html#a4a1472973a5efd6caa03bd32b2b17af1',1,'FileLoader::FileLoader()']]],
+  ['fileloader_2ecpp_1',['FileLoader.cpp',['../_file_loader_8cpp.html',1,'']]],
+  ['fileloader_2eh_2',['FileLoader.h',['../_file_loader_8h.html',1,'']]],
+  ['fireball_3',['Fireball',['../_globals_8h.html#af275db8f31a6655e934f031c55b7aaa5aa8155b0ea02bae01cd41369018837d6b',1,'Globals.h']]]
 ];

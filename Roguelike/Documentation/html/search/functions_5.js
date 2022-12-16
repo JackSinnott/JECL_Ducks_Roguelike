@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['setupfontandtext_0',['setupFontAndText',['../class_game.html#a3d1c7a9010c33a27424961138dadb442',1,'Game']]],
-  ['setupsprite_1',['setupSprite',['../class_game.html#ae0708ae9f1fd7b640ffd1796773734f1',1,'Game']]]
+  ['fileloader_0',['FileLoader',['../class_file_loader.html#a4a1472973a5efd6caa03bd32b2b17af1',1,'FileLoader']]]
 ];

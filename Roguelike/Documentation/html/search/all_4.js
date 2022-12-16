@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['player_0',['Player',['../class_player.html',1,'']]],
-  ['player_1',['player',['../class_game.html#a6e48721b0532833b99fd5615a3628792',1,'Game']]],
-  ['player_2',['Player',['../class_player.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8',1,'Player']]],
-  ['player_2ecpp_3',['Player.cpp',['../_player_8cpp.html',1,'']]],
-  ['player_2eh_4',['Player.h',['../_player_8h.html',1,'']]],
-  ['processevents_5',['processEvents',['../class_game.html#a79f698dda206dd7a9bed28b3f88bdc38',1,'Game']]],
-  ['processkeys_6',['processKeys',['../class_game.html#adf2eb2e773dbad1322db8d6798705ea1',1,'Game']]],
-  ['processkeys_7',['ProcessKeys',['../class_player.html#a48fbeb3e31da3b8fe794bb67c99cc076',1,'Player']]]
+  ['enemiesstats_0',['enemiesStats',['../class_combat_system.html#a6d065187e4aff4794caedcc9afe6e541',1,'CombatSystem']]],
+  ['enemy_1',['Enemy',['../class_enemy.html',1,'Enemy'],['../class_enemy.html#a94f30d348b6d2840fd71675472ba38dd',1,'Enemy::Enemy()']]],
+  ['enemy_2ecpp_2',['Enemy.cpp',['../_enemy_8cpp.html',1,'']]],
+  ['enemy_2eh_3',['Enemy.h',['../_enemy_8h.html',1,'']]],
+  ['enemytype_4',['EnemyType',['../_globals_8h.html#ac3e413a86119db4b031458c7259e268e',1,'Globals.h']]]
 ];

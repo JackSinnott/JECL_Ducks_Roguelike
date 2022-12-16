@@ -2,7 +2,7 @@
 \label{class_game}\index{Game@{Game}}
 
 
-Authors\+: Jack Eoin Caroline Leo Start Date\+: 13/10/2022  
+The game class. Keeps track of \mbox{\hyperlink{class_game}{Game}} Flow.   
 
 
 
@@ -13,18 +13,43 @@ Authors\+: Jack Eoin Caroline Leo Start Date\+: 13/10/2022
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game}} ()
-\begin{DoxyCompactList}\small\item\em Authors\+: Jack Eoin Caroline Leo \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_game_ae3d112ca6e0e55150d2fdbc704474530}\label{class_game_ae3d112ca6e0e55150d2fdbc704474530}} 
-{\bfseries $\sim$\+Game} ()
-\begin{DoxyCompactList}\small\item\em default destructor we didn\textquotesingle{}t dynamically allocate anything so we don\textquotesingle{}t need to free it, but mthod needs to be here  \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Class\textquotesingle{}s Default Constructor.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{$\sim$\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Class\textquotesingle{}s Default deconstructor.  \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa}{run}} ()
-\begin{DoxyCompactList}\small\item\em main method for game  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The game loop function. Calls upon event handlers, updates, and renders every frame. Once this method ends, so does the game.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_a79f698dda206dd7a9bed28b3f88bdc38}{process\+Events}} ()
+\begin{DoxyCompactList}\small\item\em Handles ALL events that happen when the player interacts with the game. This includes moving the mouse, clicking on the screen, and pressing buttons.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_adf2eb2e773dbad1322db8d6798705ea1}{process\+Keys}} (sf\+::\+Event t\+\_\+event)
+\begin{DoxyCompactList}\small\item\em Handles events that happen when the player presses a key on the keyboard, and are not bound to a certain screen -\/ hitting escape to close the window, for instance.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_ae0da16763f3e4775e0c9e01fa862d4b1}{Update}} (sf\+::\+Time t\+\_\+dt)
+\begin{DoxyCompactList}\small\item\em Method that controls what gets updated, depending on what screen the user is on.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_abdb4620645e91922b0ba53c128faf1f7}{Render}} (sf\+::\+Render\+Window \&t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Method that controls what gets drawn onto the SFML window.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gameplay}{Gameplay}} \mbox{\hyperlink{class_game_a55388d86d137b4ef4086234ac79bd36a}{m\+\_\+game\+Screen}}
+\begin{DoxyCompactList}\small\item\em Instance of the gameplay screen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_main_menu}{Main\+Menu}} \mbox{\hyperlink{class_game_a89faffab9c3b76780b0712569e259f21}{m\+\_\+main\+Menu\+Screen}}
+\begin{DoxyCompactList}\small\item\em Instance of the main menu screen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_pause_menu}{Pause\+Menu}} \mbox{\hyperlink{class_game_a351e1826c929bbcfa4927323fc65fb3d}{m\+\_\+pause\+Screen}}
+\begin{DoxyCompactList}\small\item\em Instance of the pause screen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_over}{Game\+Over}} \mbox{\hyperlink{class_game_ad0f6daf930e602252811ed27ef2fe99a}{m\+\_\+game\+Over\+Screen}}
+\begin{DoxyCompactList}\small\item\em Instance of the game over screen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_options}{Options}} \mbox{\hyperlink{class_game_a7a2a07fd2256f22e202579211b5e87b2}{m\+\_\+option\+Screen}}
+\begin{DoxyCompactList}\small\item\em Instance of the options screen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_help}{Help}} \mbox{\hyperlink{class_game_a18891e967e927e414a6b4539e42fe075}{m\+\_\+help\+Screen}}
+\begin{DoxyCompactList}\small\item\em Instance of the help screen. \end{DoxyCompactList}\item 
+sf\+::\+Render\+Window \mbox{\hyperlink{class_game_a22a61b5ea27c609be8cf2724c33d7ae5}{m\+\_\+window}}
+\begin{DoxyCompactList}\small\item\em The main SFML window. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Authors\+: Jack Eoin Caroline Leo Start Date\+: 13/10/2022 
-
-include guards used so we don\textquotesingle{}t process this file twice same as \#pragma once Don\textquotesingle{}t forget the endif at the bottom  
+The game class. Keeps track of \mbox{\hyperlink{class_game}{Game}} Flow.  
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_game_ad59df6562a58a614fda24622d3715b65}\label{class_game_ad59df6562a58a614fda24622d3715b65}} 
@@ -35,13 +60,61 @@ include guards used so we don\textquotesingle{}t process this file twice same as
 
 
 
-Authors\+: Jack Eoin Caroline Leo 
+Class\textquotesingle{}s Default Constructor.  
 
-Start Date\+: 13/10/2022
+\mbox{\Hypertarget{class_game_ae3d112ca6e0e55150d2fdbc704474530}\label{class_game_ae3d112ca6e0e55150d2fdbc704474530}} 
+\index{Game@{Game}!````~Game@{$\sim$Game}}
+\index{````~Game@{$\sim$Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{$\sim$Game()}{~Game()}}
+{\footnotesize\ttfamily Game\+::$\sim$\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-default constructor setup the window properties load and setup the text load and setup thne image  
+
+
+Class\textquotesingle{}s Default deconstructor.  
+
+
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_a79f698dda206dd7a9bed28b3f88bdc38}\label{class_game_a79f698dda206dd7a9bed28b3f88bdc38}} 
+\index{Game@{Game}!processEvents@{processEvents}}
+\index{processEvents@{processEvents}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{processEvents()}{processEvents()}}
+{\footnotesize\ttfamily void Game\+::process\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles ALL events that happen when the player interacts with the game. This includes moving the mouse, clicking on the screen, and pressing buttons.  
+
+\mbox{\Hypertarget{class_game_adf2eb2e773dbad1322db8d6798705ea1}\label{class_game_adf2eb2e773dbad1322db8d6798705ea1}} 
+\index{Game@{Game}!processKeys@{processKeys}}
+\index{processKeys@{processKeys}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{processKeys()}{processKeys()}}
+{\footnotesize\ttfamily void Game\+::process\+Keys (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles events that happen when the player presses a key on the keyboard, and are not bound to a certain screen -\/ hitting escape to close the window, for instance.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & The SFML event.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game_abdb4620645e91922b0ba53c128faf1f7}\label{class_game_abdb4620645e91922b0ba53c128faf1f7}} 
+\index{Game@{Game}!Render@{Render}}
+\index{Render@{Render}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Game\+::\+Render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Method that controls what gets drawn onto the SFML window.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & The window to draw everything to.\\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa}\label{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa}} 
 \index{Game@{Game}!run@{run}}
 \index{run@{run}!Game@{Game}}
@@ -50,11 +123,99 @@ default constructor setup the window properties load and setup the text load and
 
 
 
-main method for game  
+The game loop function. Calls upon event handlers, updates, and renders every frame. Once this method ends, so does the game.  
 
-main game loop update 60 times per second, process update as often as possible and at least 60 times per second draw as often as possible but only updates are on time if updates run slow then don\textquotesingle{}t render frames  
+\mbox{\Hypertarget{class_game_ae0da16763f3e4775e0c9e01fa862d4b1}\label{class_game_ae0da16763f3e4775e0c9e01fa862d4b1}} 
+\index{Game@{Game}!Update@{Update}}
+\index{Update@{Update}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Game\+::\+Update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Method that controls what gets updated, depending on what screen the user is on.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+dt} & The time that has passed since the last frame.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_ad0f6daf930e602252811ed27ef2fe99a}\label{class_game_ad0f6daf930e602252811ed27ef2fe99a}} 
+\index{Game@{Game}!m\_gameOverScreen@{m\_gameOverScreen}}
+\index{m\_gameOverScreen@{m\_gameOverScreen}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_gameOverScreen}{m\_gameOverScreen}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_over}{Game\+Over}} Game\+::m\+\_\+game\+Over\+Screen\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance of the game over screen. 
+
+\mbox{\Hypertarget{class_game_a55388d86d137b4ef4086234ac79bd36a}\label{class_game_a55388d86d137b4ef4086234ac79bd36a}} 
+\index{Game@{Game}!m\_gameScreen@{m\_gameScreen}}
+\index{m\_gameScreen@{m\_gameScreen}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_gameScreen}{m\_gameScreen}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gameplay}{Gameplay}} Game\+::m\+\_\+game\+Screen\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance of the gameplay screen. 
+
+\mbox{\Hypertarget{class_game_a18891e967e927e414a6b4539e42fe075}\label{class_game_a18891e967e927e414a6b4539e42fe075}} 
+\index{Game@{Game}!m\_helpScreen@{m\_helpScreen}}
+\index{m\_helpScreen@{m\_helpScreen}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_helpScreen}{m\_helpScreen}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_help}{Help}} Game\+::m\+\_\+help\+Screen\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance of the help screen. 
+
+\mbox{\Hypertarget{class_game_a89faffab9c3b76780b0712569e259f21}\label{class_game_a89faffab9c3b76780b0712569e259f21}} 
+\index{Game@{Game}!m\_mainMenuScreen@{m\_mainMenuScreen}}
+\index{m\_mainMenuScreen@{m\_mainMenuScreen}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_mainMenuScreen}{m\_mainMenuScreen}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_main_menu}{Main\+Menu}} Game\+::m\+\_\+main\+Menu\+Screen\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance of the main menu screen. 
+
+\mbox{\Hypertarget{class_game_a7a2a07fd2256f22e202579211b5e87b2}\label{class_game_a7a2a07fd2256f22e202579211b5e87b2}} 
+\index{Game@{Game}!m\_optionScreen@{m\_optionScreen}}
+\index{m\_optionScreen@{m\_optionScreen}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_optionScreen}{m\_optionScreen}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_options}{Options}} Game\+::m\+\_\+option\+Screen\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance of the options screen. 
+
+\mbox{\Hypertarget{class_game_a351e1826c929bbcfa4927323fc65fb3d}\label{class_game_a351e1826c929bbcfa4927323fc65fb3d}} 
+\index{Game@{Game}!m\_pauseScreen@{m\_pauseScreen}}
+\index{m\_pauseScreen@{m\_pauseScreen}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_pauseScreen}{m\_pauseScreen}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pause_menu}{Pause\+Menu}} Game\+::m\+\_\+pause\+Screen\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance of the pause screen. 
+
+\mbox{\Hypertarget{class_game_a22a61b5ea27c609be8cf2724c33d7ae5}\label{class_game_a22a61b5ea27c609be8cf2724c33d7ae5}} 
+\index{Game@{Game}!m\_window@{m\_window}}
+\index{m\_window@{m\_window}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_window}{m\_window}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window Game\+::m\+\_\+window\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The main SFML window. 
+
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Game.\+h\item 
-Game.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_game_8h}{Game.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_game_8cpp}{Game.\+cpp}}\end{DoxyCompactItemize}
