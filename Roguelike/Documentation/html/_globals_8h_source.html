@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Roguelike: C:/Users/liney/OneDrive/Desktop/Work/Games Engineering/JECL_Ducks_Roguelike/Roguelike/Globals.h Source File</title>
+<title>JECL-Ducks: C:/Users/liney/OneDrive/Desktop/Work/Games Engineering/JECL_Ducks_Roguelike/Roguelike/Globals.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -29,23 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="rogue.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">Roguelike<span id="projectnumber">&#160;very early alpha</span>
+   <div id="projectname">JECL-Ducks
    </div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -57,6 +39,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -99,17 +92,163 @@ $(document).ready(function(){initNavTree('_globals_8h_source.html',''); initResi
   <div class="headertitle"><div class="title">C:/Users/liney/OneDrive/Desktop/Work/Games Engineering/JECL_Ducks_Roguelike/Roguelike/Globals.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_globals_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
+<a href="_globals_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef GLOBALS_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define GLOBALS_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="_globals_8h.html#ac3e413a86119db4b031458c7259e268e">    4</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="_globals_8h.html#ac3e413a86119db4b031458c7259e268e">EnemyType</a></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <a class="code hl_enumvalue" href="_globals_8h.html#ac3e413a86119db4b031458c7259e268ea2d5b3d62e7bd3a1d79494bd85e69b5ba">Bat</a>,</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_enumvalue" href="_globals_8h.html#ac3e413a86119db4b031458c7259e268eaecd331596f91ddaac07c6e600ed166f1">Rat</a></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>};</div>
-<div class="ttc" id="a_globals_8h_html_ac3e413a86119db4b031458c7259e268e"><div class="ttname"><a href="_globals_8h.html#ac3e413a86119db4b031458c7259e268e">EnemyType</a></div><div class="ttdeci">EnemyType</div><div class="ttdef"><b>Definition:</b> Globals.h:5</div></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5">   10</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5">Gamestate</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_enumvalue" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5aad1111b48f98329333237912fc3b371b">MainMenu</a>,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_enumvalue" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5aa6ea893fdc6e0771ff6d14028a6d7f3e">PauseMenu</a>,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_enumvalue" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5adae8ace18bdcbcc6ae5aece263e14fe8">Options</a>,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_enumvalue" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5a6288740a1cd0de37312619df3b6ddcf3">Gameplay</a>,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_enumvalue" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5a8f347bc7cebca9fa6d97e70c6bc29eb3">GameOver</a>,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_class" href="class_help.html">Help</a></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>};</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">extern</span> <a class="code hl_enumeration" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5">Gamestate</a> <a class="code hl_variable" href="_globals_8h.html#a9344dbdd78ef2f8ec839413396c5d99a">g_gamestate</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">extern</span> <a class="code hl_enumeration" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5">Gamestate</a> <a class="code hl_variable" href="_globals_8h.html#acfe94e0024186936408600577964b27e">g_previousState</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="_globals_8h.html#a71e590000c554e5f4e8ec83c07ce910f">g_exitGame</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="_globals_8h.html#ac3e413a86119db4b031458c7259e268e">   38</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="_globals_8h.html#ac3e413a86119db4b031458c7259e268e">EnemyType</a></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_enumvalue" href="_globals_8h.html#ac3e413a86119db4b031458c7259e268ea2d5b3d62e7bd3a1d79494bd85e69b5ba">Bat</a>,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_class" href="class_rat.html">Rat</a></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="_globals_8h.html#a443f647757dde85043b49343f5cbe66b">   47</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="_globals_8h.html#a443f647757dde85043b49343f5cbe66b">ItemType</a></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_enumvalue" href="_globals_8h.html#a443f647757dde85043b49343f5cbe66ba18c83669920215a818638ad0e5421e4b">Weapon</a>,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_enumvalue" href="_globals_8h.html#a443f647757dde85043b49343f5cbe66ba865800a9e29599ad35eadc572c4ff5a6">Armour</a>,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_enumvalue" href="_globals_8h.html#a443f647757dde85043b49343f5cbe66baf7f5d540f521d6d642502a9d459e7b16">Potion</a></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="_globals_8h.html#a2e238758e72da0491a67935310819213">   57</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="_globals_8h.html#a2e238758e72da0491a67935310819213">Weapons</a></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_enumvalue" href="_globals_8h.html#a2e238758e72da0491a67935310819213a6c198603789a4928477eccd5d550b6b2">Sword</a>,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_enumvalue" href="_globals_8h.html#a2e238758e72da0491a67935310819213aed4dd6cc118ab2500715cbd23b054573">Axe</a>,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_enumvalue" href="_globals_8h.html#a2e238758e72da0491a67935310819213a1c5c62b5cff296764b792468a69fa041">Dagger</a></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070">   67</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070">Armours</a></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>{</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_enumvalue" href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070a9914a0ce04a7b7b6a8e39bec55064b82">Light</a>,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_enumvalue" href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070a87f8a6ab85c9ced3702b4ea641ad4bb5">Medium</a>,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_enumvalue" href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070af9ffe67a20da9cbff56b420fca4bd491">Heavy</a></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>};</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590">   77</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590">Potions</a></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>{</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_enumvalue" href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590a605669cab962bf944d99ce89cf9e58d9">Health</a>,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_enumvalue" href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590a5a455a612047a34ede7a6c564fa67c0a">Strength</a>,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_enumvalue" href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590a44877c6aa8e93fa5a91c9361211464fb">Speed</a></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>};</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="_globals_8h.html#af275db8f31a6655e934f031c55b7aaa5">   87</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="_globals_8h.html#af275db8f31a6655e934f031c55b7aaa5">Scrolls</a></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>{</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_enumvalue" href="_globals_8h.html#af275db8f31a6655e934f031c55b7aaa5aa8155b0ea02bae01cd41369018837d6b">Fireball</a>,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_enumvalue" href="_globals_8h.html#af275db8f31a6655e934f031c55b7aaa5a970da5f1f2e32aeb9e488dd017160ab4">Shield</a>,</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_enumvalue" href="_globals_8h.html#af275db8f31a6655e934f031c55b7aaa5ab3f0fc8e6f6e70bcc3153365e10251c8">Teleportation</a></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>};</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1">   97</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1">TileType</a></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_enumvalue" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a3bc180bd00be2c60a3a5a68e0dd49503">UNUSED</a> = 0,</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_enumvalue" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1adedcb56e75fe1488e20865e0ea36d0b9">GROUND</a> = 1,</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code hl_enumvalue" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1acff1d19b5e9949c76122a6c42801b6cb">VERTICAL_WALL</a> = 2,</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <a class="code hl_enumvalue" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a3817619231a131f2b7b22ff58a46d816">HORIZONTAL_WALL</a> = 3,</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_enumvalue" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a703c9878316befeeae7160114ee632e2">UPPER_CORNER</a> = 4,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_enumvalue" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a1390c173a389b8a3659a3186a76050b0">LOWER_CORNER</a> = 5,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_enumvalue" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1ae5d176bc77e7e4e6957de0ef675f50fe">INSIDE_WALL</a> = 6</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>};</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="_globals_8h.html#adb4bf3f2c109fbaf8a9c11bfa807c26e">  111</a></span><span class="keywordtype">unsigned</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="_globals_8h.html#adb4bf3f2c109fbaf8a9c11bfa807c26e">G_VIEW_WIDTH</a> = 1800;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="_globals_8h.html#a70ff7c8d515196ba09fb769cbdb3d64d">  116</a></span><span class="keywordtype">unsigned</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="_globals_8h.html#a70ff7c8d515196ba09fb769cbdb3d64d">G_VIEW_HEIGTH</a> = 900;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">// Might be used later</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">//unsigned int Music_volume;</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">//unsigned int SFX_volume;</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">//unsigned int SFX_Walking_Volume;</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="_globals_8h.html#a21074e289acbeb0f5d91be395e5725f8">  124</a></span><span class="keywordtype">unsigned</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="_globals_8h.html#a21074e289acbeb0f5d91be395e5725f8">G_ROOM_ROWS</a> = 25; </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="_globals_8h.html#a5574abc6a2a04bd270d2364617bb8736">  127</a></span><span class="keywordtype">unsigned</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="_globals_8h.html#a5574abc6a2a04bd270d2364617bb8736">G_ROOM_COLS</a> = 20;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="_globals_8h.html#a4f8d156204e81cf90a7056ae14e7b148">  130</a></span><span class="keywordtype">unsigned</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="_globals_8h.html#a4f8d156204e81cf90a7056ae14e7b148">G_MAP_ROWS</a> = 75; </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="_globals_8h.html#aae928e13459e3f134213e53cfdffb186">  133</a></span><span class="keywordtype">unsigned</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="_globals_8h.html#aae928e13459e3f134213e53cfdffb186">G_MAP_COLS</a> = 60; </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="_globals_8h.html#afd21ad7218563b50069454fbf8994693">  136</a></span><span class="keywordtype">unsigned</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="_globals_8h.html#afd21ad7218563b50069454fbf8994693">G_CELL_SIZE</a> = 32;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">//unsigned const int MAP_WIDTH = MAP_ROWS * CELL_SIZE;</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment">//unsigned const int MAP_HEIGTH = MAP_COLS * CELL_SIZE ;</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="_globals_8h.html#a18adc2c8bf6b36d5a575d02704f4e1c1">  146</a></span>std::string <span class="keyword">const</span> <a class="code hl_variable" href="_globals_8h.html#a18adc2c8bf6b36d5a575d02704f4e1c1">MISSINGTEXTURE</a> = <span class="stringliteral">&quot;./ASSETS/IMAGES/MissingTexture.png&quot;</span>;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="_globals_8h.html#a62bdf4f6ff3e6683dce531167dc91ba6">  151</a></span>std::string <span class="keyword">const</span> <a class="code hl_variable" href="_globals_8h.html#a62bdf4f6ff3e6683dce531167dc91ba6">ITEMS_TEXTURE</a> = <span class="stringliteral">&quot;./ASSETS/IMAGES/tilemap_packed.png&quot;</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="keyword">extern</span> sf::Font <a class="code hl_variable" href="_globals_8h.html#a924211755bba964bfe8403fd49db0b4d">g_font</a>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="preprocessor">#endif </span><span class="comment">// !GLOBALS_H</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="ttc" id="a_globals_8h_html_a055e5eef1506d5a4360112d62215b070"><div class="ttname"><a href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070">Armours</a></div><div class="ttdeci">Armours</div><div class="ttdoc">An enum class whose values correspond to the types of Armour variations there are.</div><div class="ttdef"><b>Definition:</b> Globals.h:68</div></div>
+<div class="ttc" id="a_globals_8h_html_a055e5eef1506d5a4360112d62215b070a87f8a6ab85c9ced3702b4ea641ad4bb5"><div class="ttname"><a href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070a87f8a6ab85c9ced3702b4ea641ad4bb5">Armours::Medium</a></div><div class="ttdeci">@ Medium</div></div>
+<div class="ttc" id="a_globals_8h_html_a055e5eef1506d5a4360112d62215b070a9914a0ce04a7b7b6a8e39bec55064b82"><div class="ttname"><a href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070a9914a0ce04a7b7b6a8e39bec55064b82">Armours::Light</a></div><div class="ttdeci">@ Light</div></div>
+<div class="ttc" id="a_globals_8h_html_a055e5eef1506d5a4360112d62215b070af9ffe67a20da9cbff56b420fca4bd491"><div class="ttname"><a href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070af9ffe67a20da9cbff56b420fca4bd491">Armours::Heavy</a></div><div class="ttdeci">@ Heavy</div></div>
+<div class="ttc" id="a_globals_8h_html_a18adc2c8bf6b36d5a575d02704f4e1c1"><div class="ttname"><a href="_globals_8h.html#a18adc2c8bf6b36d5a575d02704f4e1c1">MISSINGTEXTURE</a></div><div class="ttdeci">std::string const MISSINGTEXTURE</div><div class="ttdoc">The path that leads to a texture that will appear if there was an error loading the first texture.</div><div class="ttdef"><b>Definition:</b> Globals.h:146</div></div>
+<div class="ttc" id="a_globals_8h_html_a21074e289acbeb0f5d91be395e5725f8"><div class="ttname"><a href="_globals_8h.html#a21074e289acbeb0f5d91be395e5725f8">G_ROOM_ROWS</a></div><div class="ttdeci">unsigned const int G_ROOM_ROWS</div><div class="ttdoc">Maximum number of rows in a Room.</div><div class="ttdef"><b>Definition:</b> Globals.h:124</div></div>
+<div class="ttc" id="a_globals_8h_html_a2e238758e72da0491a67935310819213"><div class="ttname"><a href="_globals_8h.html#a2e238758e72da0491a67935310819213">Weapons</a></div><div class="ttdeci">Weapons</div><div class="ttdoc">An enum class whose values correspond to the types of Weapon variations there are.</div><div class="ttdef"><b>Definition:</b> Globals.h:58</div></div>
+<div class="ttc" id="a_globals_8h_html_a2e238758e72da0491a67935310819213a1c5c62b5cff296764b792468a69fa041"><div class="ttname"><a href="_globals_8h.html#a2e238758e72da0491a67935310819213a1c5c62b5cff296764b792468a69fa041">Weapons::Dagger</a></div><div class="ttdeci">@ Dagger</div></div>
+<div class="ttc" id="a_globals_8h_html_a2e238758e72da0491a67935310819213a6c198603789a4928477eccd5d550b6b2"><div class="ttname"><a href="_globals_8h.html#a2e238758e72da0491a67935310819213a6c198603789a4928477eccd5d550b6b2">Weapons::Sword</a></div><div class="ttdeci">@ Sword</div></div>
+<div class="ttc" id="a_globals_8h_html_a2e238758e72da0491a67935310819213aed4dd6cc118ab2500715cbd23b054573"><div class="ttname"><a href="_globals_8h.html#a2e238758e72da0491a67935310819213aed4dd6cc118ab2500715cbd23b054573">Weapons::Axe</a></div><div class="ttdeci">@ Axe</div></div>
+<div class="ttc" id="a_globals_8h_html_a339b1e37de309d5689ffde954b8a4590"><div class="ttname"><a href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590">Potions</a></div><div class="ttdeci">Potions</div><div class="ttdoc">An enum class whose values correspond to the types of Potion variations there are.</div><div class="ttdef"><b>Definition:</b> Globals.h:78</div></div>
+<div class="ttc" id="a_globals_8h_html_a339b1e37de309d5689ffde954b8a4590a44877c6aa8e93fa5a91c9361211464fb"><div class="ttname"><a href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590a44877c6aa8e93fa5a91c9361211464fb">Potions::Speed</a></div><div class="ttdeci">@ Speed</div></div>
+<div class="ttc" id="a_globals_8h_html_a339b1e37de309d5689ffde954b8a4590a5a455a612047a34ede7a6c564fa67c0a"><div class="ttname"><a href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590a5a455a612047a34ede7a6c564fa67c0a">Potions::Strength</a></div><div class="ttdeci">@ Strength</div></div>
+<div class="ttc" id="a_globals_8h_html_a339b1e37de309d5689ffde954b8a4590a605669cab962bf944d99ce89cf9e58d9"><div class="ttname"><a href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590a605669cab962bf944d99ce89cf9e58d9">Potions::Health</a></div><div class="ttdeci">@ Health</div></div>
+<div class="ttc" id="a_globals_8h_html_a443f647757dde85043b49343f5cbe66b"><div class="ttname"><a href="_globals_8h.html#a443f647757dde85043b49343f5cbe66b">ItemType</a></div><div class="ttdeci">ItemType</div><div class="ttdoc">An enum class whose values correspond to the types of Item variations there are.</div><div class="ttdef"><b>Definition:</b> Globals.h:48</div></div>
+<div class="ttc" id="a_globals_8h_html_a443f647757dde85043b49343f5cbe66ba18c83669920215a818638ad0e5421e4b"><div class="ttname"><a href="_globals_8h.html#a443f647757dde85043b49343f5cbe66ba18c83669920215a818638ad0e5421e4b">ItemType::Weapon</a></div><div class="ttdeci">@ Weapon</div></div>
+<div class="ttc" id="a_globals_8h_html_a443f647757dde85043b49343f5cbe66ba865800a9e29599ad35eadc572c4ff5a6"><div class="ttname"><a href="_globals_8h.html#a443f647757dde85043b49343f5cbe66ba865800a9e29599ad35eadc572c4ff5a6">ItemType::Armour</a></div><div class="ttdeci">@ Armour</div></div>
+<div class="ttc" id="a_globals_8h_html_a443f647757dde85043b49343f5cbe66baf7f5d540f521d6d642502a9d459e7b16"><div class="ttname"><a href="_globals_8h.html#a443f647757dde85043b49343f5cbe66baf7f5d540f521d6d642502a9d459e7b16">ItemType::Potion</a></div><div class="ttdeci">@ Potion</div></div>
+<div class="ttc" id="a_globals_8h_html_a4f8d156204e81cf90a7056ae14e7b148"><div class="ttname"><a href="_globals_8h.html#a4f8d156204e81cf90a7056ae14e7b148">G_MAP_ROWS</a></div><div class="ttdeci">unsigned const int G_MAP_ROWS</div><div class="ttdoc">Maximum number of rows on the Grid.</div><div class="ttdef"><b>Definition:</b> Globals.h:130</div></div>
+<div class="ttc" id="a_globals_8h_html_a5574abc6a2a04bd270d2364617bb8736"><div class="ttname"><a href="_globals_8h.html#a5574abc6a2a04bd270d2364617bb8736">G_ROOM_COLS</a></div><div class="ttdeci">unsigned const int G_ROOM_COLS</div><div class="ttdoc">Maximum number of columns in a Room.</div><div class="ttdef"><b>Definition:</b> Globals.h:127</div></div>
+<div class="ttc" id="a_globals_8h_html_a62bdf4f6ff3e6683dce531167dc91ba6"><div class="ttname"><a href="_globals_8h.html#a62bdf4f6ff3e6683dce531167dc91ba6">ITEMS_TEXTURE</a></div><div class="ttdeci">std::string const ITEMS_TEXTURE</div><div class="ttdoc">The path that leads to a texture that holds the appearance of the Player, the Enemy,...</div><div class="ttdef"><b>Definition:</b> Globals.h:151</div></div>
+<div class="ttc" id="a_globals_8h_html_a70ff7c8d515196ba09fb769cbdb3d64d"><div class="ttname"><a href="_globals_8h.html#a70ff7c8d515196ba09fb769cbdb3d64d">G_VIEW_HEIGTH</a></div><div class="ttdeci">unsigned const int G_VIEW_HEIGTH</div><div class="ttdoc">The height of the game screen.</div><div class="ttdef"><b>Definition:</b> Globals.h:116</div></div>
+<div class="ttc" id="a_globals_8h_html_a71e590000c554e5f4e8ec83c07ce910f"><div class="ttname"><a href="_globals_8h.html#a71e590000c554e5f4e8ec83c07ce910f">g_exitGame</a></div><div class="ttdeci">bool g_exitGame</div><div class="ttdoc">A bool that stops the game when the player chooses to exit on the Main menu.</div><div class="ttdef"><b>Definition:</b> Globals.cpp:5</div></div>
+<div class="ttc" id="a_globals_8h_html_a924211755bba964bfe8403fd49db0b4d"><div class="ttname"><a href="_globals_8h.html#a924211755bba964bfe8403fd49db0b4d">g_font</a></div><div class="ttdeci">sf::Font g_font</div><div class="ttdoc">The font used throughout the Game.</div><div class="ttdef"><b>Definition:</b> Globals.cpp:7</div></div>
+<div class="ttc" id="a_globals_8h_html_a9344dbdd78ef2f8ec839413396c5d99a"><div class="ttname"><a href="_globals_8h.html#a9344dbdd78ef2f8ec839413396c5d99a">g_gamestate</a></div><div class="ttdeci">Gamestate g_gamestate</div><div class="ttdoc">A Gamestate variable that keeps track of what screen the user is on.</div><div class="ttdef"><b>Definition:</b> Globals.cpp:3</div></div>
+<div class="ttc" id="a_globals_8h_html_aae928e13459e3f134213e53cfdffb186"><div class="ttname"><a href="_globals_8h.html#aae928e13459e3f134213e53cfdffb186">G_MAP_COLS</a></div><div class="ttdeci">unsigned const int G_MAP_COLS</div><div class="ttdoc">Maximum number of columns on the Grid.</div><div class="ttdef"><b>Definition:</b> Globals.h:133</div></div>
+<div class="ttc" id="a_globals_8h_html_ac3e413a86119db4b031458c7259e268e"><div class="ttname"><a href="_globals_8h.html#ac3e413a86119db4b031458c7259e268e">EnemyType</a></div><div class="ttdeci">EnemyType</div><div class="ttdoc">An enum class whose values correspond to the types of Enemy variations there are.</div><div class="ttdef"><b>Definition:</b> Globals.h:39</div></div>
 <div class="ttc" id="a_globals_8h_html_ac3e413a86119db4b031458c7259e268ea2d5b3d62e7bd3a1d79494bd85e69b5ba"><div class="ttname"><a href="_globals_8h.html#ac3e413a86119db4b031458c7259e268ea2d5b3d62e7bd3a1d79494bd85e69b5ba">EnemyType::Bat</a></div><div class="ttdeci">@ Bat</div></div>
-<div class="ttc" id="a_globals_8h_html_ac3e413a86119db4b031458c7259e268eaecd331596f91ddaac07c6e600ed166f1"><div class="ttname"><a href="_globals_8h.html#ac3e413a86119db4b031458c7259e268eaecd331596f91ddaac07c6e600ed166f1">EnemyType::Rat</a></div><div class="ttdeci">@ Rat</div></div>
+<div class="ttc" id="a_globals_8h_html_ac9e486ec80ccfdb28a4f4837d419c9f1"><div class="ttname"><a href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1">TileType</a></div><div class="ttdeci">TileType</div><div class="ttdoc">An enum class whose values correspond to the types of Tile variations there are.</div><div class="ttdef"><b>Definition:</b> Globals.h:98</div></div>
+<div class="ttc" id="a_globals_8h_html_ac9e486ec80ccfdb28a4f4837d419c9f1a1390c173a389b8a3659a3186a76050b0"><div class="ttname"><a href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a1390c173a389b8a3659a3186a76050b0">TileType::LOWER_CORNER</a></div><div class="ttdeci">@ LOWER_CORNER</div></div>
+<div class="ttc" id="a_globals_8h_html_ac9e486ec80ccfdb28a4f4837d419c9f1a3817619231a131f2b7b22ff58a46d816"><div class="ttname"><a href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a3817619231a131f2b7b22ff58a46d816">TileType::HORIZONTAL_WALL</a></div><div class="ttdeci">@ HORIZONTAL_WALL</div></div>
+<div class="ttc" id="a_globals_8h_html_ac9e486ec80ccfdb28a4f4837d419c9f1a3bc180bd00be2c60a3a5a68e0dd49503"><div class="ttname"><a href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a3bc180bd00be2c60a3a5a68e0dd49503">TileType::UNUSED</a></div><div class="ttdeci">@ UNUSED</div></div>
+<div class="ttc" id="a_globals_8h_html_ac9e486ec80ccfdb28a4f4837d419c9f1a703c9878316befeeae7160114ee632e2"><div class="ttname"><a href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a703c9878316befeeae7160114ee632e2">TileType::UPPER_CORNER</a></div><div class="ttdeci">@ UPPER_CORNER</div></div>
+<div class="ttc" id="a_globals_8h_html_ac9e486ec80ccfdb28a4f4837d419c9f1acff1d19b5e9949c76122a6c42801b6cb"><div class="ttname"><a href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1acff1d19b5e9949c76122a6c42801b6cb">TileType::VERTICAL_WALL</a></div><div class="ttdeci">@ VERTICAL_WALL</div></div>
+<div class="ttc" id="a_globals_8h_html_ac9e486ec80ccfdb28a4f4837d419c9f1adedcb56e75fe1488e20865e0ea36d0b9"><div class="ttname"><a href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1adedcb56e75fe1488e20865e0ea36d0b9">TileType::GROUND</a></div><div class="ttdeci">@ GROUND</div></div>
+<div class="ttc" id="a_globals_8h_html_ac9e486ec80ccfdb28a4f4837d419c9f1ae5d176bc77e7e4e6957de0ef675f50fe"><div class="ttname"><a href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1ae5d176bc77e7e4e6957de0ef675f50fe">TileType::INSIDE_WALL</a></div><div class="ttdeci">@ INSIDE_WALL</div></div>
+<div class="ttc" id="a_globals_8h_html_acfe94e0024186936408600577964b27e"><div class="ttname"><a href="_globals_8h.html#acfe94e0024186936408600577964b27e">g_previousState</a></div><div class="ttdeci">Gamestate g_previousState</div><div class="ttdoc">A Gamestate variable that keeps track of what screen the user was previously on.</div><div class="ttdef"><b>Definition:</b> Globals.cpp:4</div></div>
+<div class="ttc" id="a_globals_8h_html_ad6eff87c4b0d26838106d44dfa85a3d5"><div class="ttname"><a href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5">Gamestate</a></div><div class="ttdeci">Gamestate</div><div class="ttdoc">An enum class whose values correspond to a screen the user can be on.</div><div class="ttdef"><b>Definition:</b> Globals.h:11</div></div>
+<div class="ttc" id="a_globals_8h_html_ad6eff87c4b0d26838106d44dfa85a3d5a6288740a1cd0de37312619df3b6ddcf3"><div class="ttname"><a href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5a6288740a1cd0de37312619df3b6ddcf3">Gamestate::Gameplay</a></div><div class="ttdeci">@ Gameplay</div></div>
+<div class="ttc" id="a_globals_8h_html_ad6eff87c4b0d26838106d44dfa85a3d5a8f347bc7cebca9fa6d97e70c6bc29eb3"><div class="ttname"><a href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5a8f347bc7cebca9fa6d97e70c6bc29eb3">Gamestate::GameOver</a></div><div class="ttdeci">@ GameOver</div></div>
+<div class="ttc" id="a_globals_8h_html_ad6eff87c4b0d26838106d44dfa85a3d5aa6ea893fdc6e0771ff6d14028a6d7f3e"><div class="ttname"><a href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5aa6ea893fdc6e0771ff6d14028a6d7f3e">Gamestate::PauseMenu</a></div><div class="ttdeci">@ PauseMenu</div></div>
+<div class="ttc" id="a_globals_8h_html_ad6eff87c4b0d26838106d44dfa85a3d5aad1111b48f98329333237912fc3b371b"><div class="ttname"><a href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5aad1111b48f98329333237912fc3b371b">Gamestate::MainMenu</a></div><div class="ttdeci">@ MainMenu</div></div>
+<div class="ttc" id="a_globals_8h_html_ad6eff87c4b0d26838106d44dfa85a3d5adae8ace18bdcbcc6ae5aece263e14fe8"><div class="ttname"><a href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5adae8ace18bdcbcc6ae5aece263e14fe8">Gamestate::Options</a></div><div class="ttdeci">@ Options</div></div>
+<div class="ttc" id="a_globals_8h_html_adb4bf3f2c109fbaf8a9c11bfa807c26e"><div class="ttname"><a href="_globals_8h.html#adb4bf3f2c109fbaf8a9c11bfa807c26e">G_VIEW_WIDTH</a></div><div class="ttdeci">unsigned const int G_VIEW_WIDTH</div><div class="ttdoc">The width of the game screen.</div><div class="ttdef"><b>Definition:</b> Globals.h:111</div></div>
+<div class="ttc" id="a_globals_8h_html_af275db8f31a6655e934f031c55b7aaa5"><div class="ttname"><a href="_globals_8h.html#af275db8f31a6655e934f031c55b7aaa5">Scrolls</a></div><div class="ttdeci">Scrolls</div><div class="ttdoc">An enum class whose values correspond to the types of Scroll variations there are.</div><div class="ttdef"><b>Definition:</b> Globals.h:88</div></div>
+<div class="ttc" id="a_globals_8h_html_af275db8f31a6655e934f031c55b7aaa5a970da5f1f2e32aeb9e488dd017160ab4"><div class="ttname"><a href="_globals_8h.html#af275db8f31a6655e934f031c55b7aaa5a970da5f1f2e32aeb9e488dd017160ab4">Scrolls::Shield</a></div><div class="ttdeci">@ Shield</div></div>
+<div class="ttc" id="a_globals_8h_html_af275db8f31a6655e934f031c55b7aaa5aa8155b0ea02bae01cd41369018837d6b"><div class="ttname"><a href="_globals_8h.html#af275db8f31a6655e934f031c55b7aaa5aa8155b0ea02bae01cd41369018837d6b">Scrolls::Fireball</a></div><div class="ttdeci">@ Fireball</div></div>
+<div class="ttc" id="a_globals_8h_html_af275db8f31a6655e934f031c55b7aaa5ab3f0fc8e6f6e70bcc3153365e10251c8"><div class="ttname"><a href="_globals_8h.html#af275db8f31a6655e934f031c55b7aaa5ab3f0fc8e6f6e70bcc3153365e10251c8">Scrolls::Teleportation</a></div><div class="ttdeci">@ Teleportation</div></div>
+<div class="ttc" id="a_globals_8h_html_afd21ad7218563b50069454fbf8994693"><div class="ttname"><a href="_globals_8h.html#afd21ad7218563b50069454fbf8994693">G_CELL_SIZE</a></div><div class="ttdeci">unsigned const int G_CELL_SIZE</div><div class="ttdoc">The size of one Tile in the Grid.</div><div class="ttdef"><b>Definition:</b> Globals.h:136</div></div>
+<div class="ttc" id="aclass_help_html"><div class="ttname"><a href="class_help.html">Help</a></div><div class="ttdoc">The Help screen. Is used to tell the user how to play the game.</div><div class="ttdef"><b>Definition:</b> Help.h:10</div></div>
+<div class="ttc" id="aclass_rat_html"><div class="ttname"><a href="class_rat.html">Rat</a></div><div class="ttdoc">The Rat enemy that inherits from the Enemy Class</div><div class="ttdef"><b>Definition:</b> Rat.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

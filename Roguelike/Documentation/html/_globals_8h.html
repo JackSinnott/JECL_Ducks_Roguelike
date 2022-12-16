@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Roguelike: C:/Users/liney/OneDrive/Desktop/Work/Games Engineering/JECL_Ducks_Roguelike/Roguelike/Globals.h File Reference</title>
+<title>JECL-Ducks: C:/Users/liney/OneDrive/Desktop/Work/Games Engineering/JECL_Ducks_Roguelike/Roguelike/Globals.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -29,23 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="rogue.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">Roguelike<span id="projectnumber">&#160;very early alpha</span>
+   <div id="projectname">JECL-Ducks
    </div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -57,6 +39,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -97,7 +90,8 @@ $(document).ready(function(){initNavTree('_globals_8h.html',''); initResizable()
 
 <div class="header">
   <div class="summary">
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">C:/Users/liney/OneDrive/Desktop/Work/Games Engineering/JECL_Ducks_Roguelike/Roguelike/Globals.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -107,12 +101,139 @@ $(document).ready(function(){initNavTree('_globals_8h.html',''); initResizable()
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:ad6eff87c4b0d26838106d44dfa85a3d5"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5">Gamestate</a> { <br />
+&#160;&#160;<a class="el" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5aad1111b48f98329333237912fc3b371b">MainMenu</a>
+, <a class="el" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5aa6ea893fdc6e0771ff6d14028a6d7f3e">PauseMenu</a>
+, <a class="el" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5adae8ace18bdcbcc6ae5aece263e14fe8">Options</a>
+, <a class="el" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5a6288740a1cd0de37312619df3b6ddcf3">Gameplay</a>
+, <br />
+&#160;&#160;<a class="el" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5a8f347bc7cebca9fa6d97e70c6bc29eb3">GameOver</a>
+, <a class="el" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5a6a26f548831e6a8c26bfbbd9f6ec61e0">Help</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ad6eff87c4b0d26838106d44dfa85a3d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum class whose values correspond to a screen the user can be on.   <a href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5">More...</a><br /></td></tr>
+<tr class="separator:ad6eff87c4b0d26838106d44dfa85a3d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3e413a86119db4b031458c7259e268e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#ac3e413a86119db4b031458c7259e268e">EnemyType</a> { <a class="el" href="_globals_8h.html#ac3e413a86119db4b031458c7259e268ea2d5b3d62e7bd3a1d79494bd85e69b5ba">Bat</a>
 , <a class="el" href="_globals_8h.html#ac3e413a86119db4b031458c7259e268eaecd331596f91ddaac07c6e600ed166f1">Rat</a>
  }</td></tr>
+<tr class="memdesc:ac3e413a86119db4b031458c7259e268e"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum class whose values correspond to the types of <a class="el" href="class_enemy.html" title="The enemies of the Player. Will try and hunt down and defeat them.">Enemy</a> variations there are.   <a href="_globals_8h.html#ac3e413a86119db4b031458c7259e268e">More...</a><br /></td></tr>
 <tr class="separator:ac3e413a86119db4b031458c7259e268e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a443f647757dde85043b49343f5cbe66b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#a443f647757dde85043b49343f5cbe66b">ItemType</a> { <a class="el" href="_globals_8h.html#a443f647757dde85043b49343f5cbe66ba18c83669920215a818638ad0e5421e4b">Weapon</a>
+, <a class="el" href="_globals_8h.html#a443f647757dde85043b49343f5cbe66ba865800a9e29599ad35eadc572c4ff5a6">Armour</a>
+, <a class="el" href="_globals_8h.html#a443f647757dde85043b49343f5cbe66baf7f5d540f521d6d642502a9d459e7b16">Potion</a>
+ }</td></tr>
+<tr class="memdesc:a443f647757dde85043b49343f5cbe66b"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum class whose values correspond to the types of Item variations there are.   <a href="_globals_8h.html#a443f647757dde85043b49343f5cbe66b">More...</a><br /></td></tr>
+<tr class="separator:a443f647757dde85043b49343f5cbe66b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e238758e72da0491a67935310819213"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#a2e238758e72da0491a67935310819213">Weapons</a> { <a class="el" href="_globals_8h.html#a2e238758e72da0491a67935310819213a6c198603789a4928477eccd5d550b6b2">Sword</a>
+, <a class="el" href="_globals_8h.html#a2e238758e72da0491a67935310819213aed4dd6cc118ab2500715cbd23b054573">Axe</a>
+, <a class="el" href="_globals_8h.html#a2e238758e72da0491a67935310819213a1c5c62b5cff296764b792468a69fa041">Dagger</a>
+ }</td></tr>
+<tr class="memdesc:a2e238758e72da0491a67935310819213"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum class whose values correspond to the types of Weapon variations there are.   <a href="_globals_8h.html#a2e238758e72da0491a67935310819213">More...</a><br /></td></tr>
+<tr class="separator:a2e238758e72da0491a67935310819213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a055e5eef1506d5a4360112d62215b070"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070">Armours</a> { <a class="el" href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070a9914a0ce04a7b7b6a8e39bec55064b82">Light</a>
+, <a class="el" href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070a87f8a6ab85c9ced3702b4ea641ad4bb5">Medium</a>
+, <a class="el" href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070af9ffe67a20da9cbff56b420fca4bd491">Heavy</a>
+ }</td></tr>
+<tr class="memdesc:a055e5eef1506d5a4360112d62215b070"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum class whose values correspond to the types of Armour variations there are.   <a href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070">More...</a><br /></td></tr>
+<tr class="separator:a055e5eef1506d5a4360112d62215b070"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339b1e37de309d5689ffde954b8a4590"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590">Potions</a> { <a class="el" href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590a605669cab962bf944d99ce89cf9e58d9">Health</a>
+, <a class="el" href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590a5a455a612047a34ede7a6c564fa67c0a">Strength</a>
+, <a class="el" href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590a44877c6aa8e93fa5a91c9361211464fb">Speed</a>
+ }</td></tr>
+<tr class="memdesc:a339b1e37de309d5689ffde954b8a4590"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum class whose values correspond to the types of Potion variations there are.   <a href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590">More...</a><br /></td></tr>
+<tr class="separator:a339b1e37de309d5689ffde954b8a4590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af275db8f31a6655e934f031c55b7aaa5"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#af275db8f31a6655e934f031c55b7aaa5">Scrolls</a> { <a class="el" href="_globals_8h.html#af275db8f31a6655e934f031c55b7aaa5aa8155b0ea02bae01cd41369018837d6b">Fireball</a>
+, <a class="el" href="_globals_8h.html#af275db8f31a6655e934f031c55b7aaa5a970da5f1f2e32aeb9e488dd017160ab4">Shield</a>
+, <a class="el" href="_globals_8h.html#af275db8f31a6655e934f031c55b7aaa5ab3f0fc8e6f6e70bcc3153365e10251c8">Teleportation</a>
+ }</td></tr>
+<tr class="memdesc:af275db8f31a6655e934f031c55b7aaa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum class whose values correspond to the types of Scroll variations there are.   <a href="_globals_8h.html#af275db8f31a6655e934f031c55b7aaa5">More...</a><br /></td></tr>
+<tr class="separator:af275db8f31a6655e934f031c55b7aaa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9e486ec80ccfdb28a4f4837d419c9f1"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1">TileType</a> { <br />
+&#160;&#160;<a class="el" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a3bc180bd00be2c60a3a5a68e0dd49503">UNUSED</a> = 0
+, <a class="el" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1adedcb56e75fe1488e20865e0ea36d0b9">GROUND</a> = 1
+, <a class="el" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1acff1d19b5e9949c76122a6c42801b6cb">VERTICAL_WALL</a> = 2
+, <a class="el" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a3817619231a131f2b7b22ff58a46d816">HORIZONTAL_WALL</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a703c9878316befeeae7160114ee632e2">UPPER_CORNER</a> = 4
+, <a class="el" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a1390c173a389b8a3659a3186a76050b0">LOWER_CORNER</a> = 5
+, <a class="el" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1ae5d176bc77e7e4e6957de0ef675f50fe">INSIDE_WALL</a> = 6
+<br />
+ }</td></tr>
+<tr class="memdesc:ac9e486ec80ccfdb28a4f4837d419c9f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum class whose values correspond to the types of <a class="el" href="class_tile.html" title="Tile class, handles everything for one cell of the Grid.">Tile</a> variations there are.   <a href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1">More...</a><br /></td></tr>
+<tr class="separator:ac9e486ec80ccfdb28a4f4837d419c9f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a9344dbdd78ef2f8ec839413396c5d99a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5">Gamestate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#a9344dbdd78ef2f8ec839413396c5d99a">g_gamestate</a></td></tr>
+<tr class="memdesc:a9344dbdd78ef2f8ec839413396c5d99a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5" title="An enum class whose values correspond to a screen the user can be on.">Gamestate</a> variable that keeps track of what screen the user is on.   <a href="_globals_8h.html#a9344dbdd78ef2f8ec839413396c5d99a">More...</a><br /></td></tr>
+<tr class="separator:a9344dbdd78ef2f8ec839413396c5d99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfe94e0024186936408600577964b27e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5">Gamestate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#acfe94e0024186936408600577964b27e">g_previousState</a></td></tr>
+<tr class="memdesc:acfe94e0024186936408600577964b27e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5" title="An enum class whose values correspond to a screen the user can be on.">Gamestate</a> variable that keeps track of what screen the user was previously on.   <a href="_globals_8h.html#acfe94e0024186936408600577964b27e">More...</a><br /></td></tr>
+<tr class="separator:acfe94e0024186936408600577964b27e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e590000c554e5f4e8ec83c07ce910f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#a71e590000c554e5f4e8ec83c07ce910f">g_exitGame</a></td></tr>
+<tr class="memdesc:a71e590000c554e5f4e8ec83c07ce910f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A bool that stops the game when the player chooses to exit on the Main menu.   <a href="_globals_8h.html#a71e590000c554e5f4e8ec83c07ce910f">More...</a><br /></td></tr>
+<tr class="separator:a71e590000c554e5f4e8ec83c07ce910f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb4bf3f2c109fbaf8a9c11bfa807c26e"><td class="memItemLeft" align="right" valign="top">unsigned const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#adb4bf3f2c109fbaf8a9c11bfa807c26e">G_VIEW_WIDTH</a> = 1800</td></tr>
+<tr class="memdesc:adb4bf3f2c109fbaf8a9c11bfa807c26e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The width of the game screen.   <a href="_globals_8h.html#adb4bf3f2c109fbaf8a9c11bfa807c26e">More...</a><br /></td></tr>
+<tr class="separator:adb4bf3f2c109fbaf8a9c11bfa807c26e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70ff7c8d515196ba09fb769cbdb3d64d"><td class="memItemLeft" align="right" valign="top">unsigned const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#a70ff7c8d515196ba09fb769cbdb3d64d">G_VIEW_HEIGTH</a> = 900</td></tr>
+<tr class="memdesc:a70ff7c8d515196ba09fb769cbdb3d64d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The height of the game screen.   <a href="_globals_8h.html#a70ff7c8d515196ba09fb769cbdb3d64d">More...</a><br /></td></tr>
+<tr class="separator:a70ff7c8d515196ba09fb769cbdb3d64d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21074e289acbeb0f5d91be395e5725f8"><td class="memItemLeft" align="right" valign="top">unsigned const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#a21074e289acbeb0f5d91be395e5725f8">G_ROOM_ROWS</a> = 25</td></tr>
+<tr class="memdesc:a21074e289acbeb0f5d91be395e5725f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of rows in a <a class="el" href="class_room.html" title="Class that handles Tile objects, and organises them together to look and act coherant....">Room</a>.  <a href="_globals_8h.html#a21074e289acbeb0f5d91be395e5725f8">More...</a><br /></td></tr>
+<tr class="separator:a21074e289acbeb0f5d91be395e5725f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5574abc6a2a04bd270d2364617bb8736"><td class="memItemLeft" align="right" valign="top">unsigned const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#a5574abc6a2a04bd270d2364617bb8736">G_ROOM_COLS</a> = 20</td></tr>
+<tr class="memdesc:a5574abc6a2a04bd270d2364617bb8736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of columns in a <a class="el" href="class_room.html" title="Class that handles Tile objects, and organises them together to look and act coherant....">Room</a>.  <a href="_globals_8h.html#a5574abc6a2a04bd270d2364617bb8736">More...</a><br /></td></tr>
+<tr class="separator:a5574abc6a2a04bd270d2364617bb8736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f8d156204e81cf90a7056ae14e7b148"><td class="memItemLeft" align="right" valign="top">unsigned const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#a4f8d156204e81cf90a7056ae14e7b148">G_MAP_ROWS</a> = 75</td></tr>
+<tr class="memdesc:a4f8d156204e81cf90a7056ae14e7b148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of rows on the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a>.  <a href="_globals_8h.html#a4f8d156204e81cf90a7056ae14e7b148">More...</a><br /></td></tr>
+<tr class="separator:a4f8d156204e81cf90a7056ae14e7b148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae928e13459e3f134213e53cfdffb186"><td class="memItemLeft" align="right" valign="top">unsigned const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#aae928e13459e3f134213e53cfdffb186">G_MAP_COLS</a> = 60</td></tr>
+<tr class="memdesc:aae928e13459e3f134213e53cfdffb186"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of columns on the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a>.  <a href="_globals_8h.html#aae928e13459e3f134213e53cfdffb186">More...</a><br /></td></tr>
+<tr class="separator:aae928e13459e3f134213e53cfdffb186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd21ad7218563b50069454fbf8994693"><td class="memItemLeft" align="right" valign="top">unsigned const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#afd21ad7218563b50069454fbf8994693">G_CELL_SIZE</a> = 32</td></tr>
+<tr class="memdesc:afd21ad7218563b50069454fbf8994693"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size of one <a class="el" href="class_tile.html" title="Tile class, handles everything for one cell of the Grid.">Tile</a> in the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a>.  <a href="_globals_8h.html#afd21ad7218563b50069454fbf8994693">More...</a><br /></td></tr>
+<tr class="separator:afd21ad7218563b50069454fbf8994693"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18adc2c8bf6b36d5a575d02704f4e1c1"><td class="memItemLeft" align="right" valign="top">std::string const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#a18adc2c8bf6b36d5a575d02704f4e1c1">MISSINGTEXTURE</a> = &quot;./ASSETS/IMAGES/MissingTexture.png&quot;</td></tr>
+<tr class="memdesc:a18adc2c8bf6b36d5a575d02704f4e1c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The path that leads to a texture that will appear if there was an error loading the first texture.   <a href="_globals_8h.html#a18adc2c8bf6b36d5a575d02704f4e1c1">More...</a><br /></td></tr>
+<tr class="separator:a18adc2c8bf6b36d5a575d02704f4e1c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62bdf4f6ff3e6683dce531167dc91ba6"><td class="memItemLeft" align="right" valign="top">std::string const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#a62bdf4f6ff3e6683dce531167dc91ba6">ITEMS_TEXTURE</a> = &quot;./ASSETS/IMAGES/tilemap_packed.png&quot;</td></tr>
+<tr class="memdesc:a62bdf4f6ff3e6683dce531167dc91ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The path that leads to a texture that holds the appearance of the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>, the <a class="el" href="class_enemy.html" title="The enemies of the Player. Will try and hunt down and defeat them.">Enemy</a>, and the Items.   <a href="_globals_8h.html#a62bdf4f6ff3e6683dce531167dc91ba6">More...</a><br /></td></tr>
+<tr class="separator:a62bdf4f6ff3e6683dce531167dc91ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a924211755bba964bfe8403fd49db0b4d"><td class="memItemLeft" align="right" valign="top">sf::Font&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_globals_8h.html#a924211755bba964bfe8403fd49db0b4d">g_font</a></td></tr>
+<tr class="memdesc:a924211755bba964bfe8403fd49db0b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The font used throughout the <a class="el" href="class_game.html" title="The game class. Keeps track of Game Flow.">Game</a>.   <a href="_globals_8h.html#a924211755bba964bfe8403fd49db0b4d">More...</a><br /></td></tr>
+<tr class="separator:a924211755bba964bfe8403fd49db0b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a055e5eef1506d5a4360112d62215b070" name="a055e5eef1506d5a4360112d62215b070"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a055e5eef1506d5a4360112d62215b070">&#9670;&#160;</a></span>Armours</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="_globals_8h.html#a055e5eef1506d5a4360112d62215b070">Armours</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An enum class whose values correspond to the types of Armour variations there are.  </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a055e5eef1506d5a4360112d62215b070a9914a0ce04a7b7b6a8e39bec55064b82" name="a055e5eef1506d5a4360112d62215b070a9914a0ce04a7b7b6a8e39bec55064b82"></a>Light&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a055e5eef1506d5a4360112d62215b070a87f8a6ab85c9ced3702b4ea641ad4bb5" name="a055e5eef1506d5a4360112d62215b070a87f8a6ab85c9ced3702b4ea641ad4bb5"></a>Medium&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a055e5eef1506d5a4360112d62215b070af9ffe67a20da9cbff56b420fca4bd491" name="a055e5eef1506d5a4360112d62215b070af9ffe67a20da9cbff56b420fca4bd491"></a>Heavy&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <a id="ac3e413a86119db4b031458c7259e268e" name="ac3e413a86119db4b031458c7259e268e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac3e413a86119db4b031458c7259e268e">&#9670;&#160;</a></span>EnemyType</h2>
 
@@ -132,10 +253,434 @@ Enumerations</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>An enum class whose values correspond to the types of <a class="el" href="class_enemy.html" title="The enemies of the Player. Will try and hunt down and defeat them.">Enemy</a> variations there are.  </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac3e413a86119db4b031458c7259e268ea2d5b3d62e7bd3a1d79494bd85e69b5ba" name="ac3e413a86119db4b031458c7259e268ea2d5b3d62e7bd3a1d79494bd85e69b5ba"></a>Bat&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ac3e413a86119db4b031458c7259e268eaecd331596f91ddaac07c6e600ed166f1" name="ac3e413a86119db4b031458c7259e268eaecd331596f91ddaac07c6e600ed166f1"></a>Rat&#160;</td><td class="fielddoc"></td></tr>
 </table>
+
+</div>
+</div>
+<a id="ad6eff87c4b0d26838106d44dfa85a3d5" name="ad6eff87c4b0d26838106d44dfa85a3d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6eff87c4b0d26838106d44dfa85a3d5">&#9670;&#160;</a></span>Gamestate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5">Gamestate</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An enum class whose values correspond to a screen the user can be on.  </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad6eff87c4b0d26838106d44dfa85a3d5aad1111b48f98329333237912fc3b371b" name="ad6eff87c4b0d26838106d44dfa85a3d5aad1111b48f98329333237912fc3b371b"></a>MainMenu&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad6eff87c4b0d26838106d44dfa85a3d5aa6ea893fdc6e0771ff6d14028a6d7f3e" name="ad6eff87c4b0d26838106d44dfa85a3d5aa6ea893fdc6e0771ff6d14028a6d7f3e"></a>PauseMenu&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad6eff87c4b0d26838106d44dfa85a3d5adae8ace18bdcbcc6ae5aece263e14fe8" name="ad6eff87c4b0d26838106d44dfa85a3d5adae8ace18bdcbcc6ae5aece263e14fe8"></a>Options&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad6eff87c4b0d26838106d44dfa85a3d5a6288740a1cd0de37312619df3b6ddcf3" name="ad6eff87c4b0d26838106d44dfa85a3d5a6288740a1cd0de37312619df3b6ddcf3"></a>Gameplay&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad6eff87c4b0d26838106d44dfa85a3d5a8f347bc7cebca9fa6d97e70c6bc29eb3" name="ad6eff87c4b0d26838106d44dfa85a3d5a8f347bc7cebca9fa6d97e70c6bc29eb3"></a>GameOver&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad6eff87c4b0d26838106d44dfa85a3d5a6a26f548831e6a8c26bfbbd9f6ec61e0" name="ad6eff87c4b0d26838106d44dfa85a3d5a6a26f548831e6a8c26bfbbd9f6ec61e0"></a>Help&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a443f647757dde85043b49343f5cbe66b" name="a443f647757dde85043b49343f5cbe66b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a443f647757dde85043b49343f5cbe66b">&#9670;&#160;</a></span>ItemType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="_globals_8h.html#a443f647757dde85043b49343f5cbe66b">ItemType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An enum class whose values correspond to the types of Item variations there are.  </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a443f647757dde85043b49343f5cbe66ba18c83669920215a818638ad0e5421e4b" name="a443f647757dde85043b49343f5cbe66ba18c83669920215a818638ad0e5421e4b"></a>Weapon&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a443f647757dde85043b49343f5cbe66ba865800a9e29599ad35eadc572c4ff5a6" name="a443f647757dde85043b49343f5cbe66ba865800a9e29599ad35eadc572c4ff5a6"></a>Armour&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a443f647757dde85043b49343f5cbe66baf7f5d540f521d6d642502a9d459e7b16" name="a443f647757dde85043b49343f5cbe66baf7f5d540f521d6d642502a9d459e7b16"></a>Potion&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a339b1e37de309d5689ffde954b8a4590" name="a339b1e37de309d5689ffde954b8a4590"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a339b1e37de309d5689ffde954b8a4590">&#9670;&#160;</a></span>Potions</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="_globals_8h.html#a339b1e37de309d5689ffde954b8a4590">Potions</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An enum class whose values correspond to the types of Potion variations there are.  </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a339b1e37de309d5689ffde954b8a4590a605669cab962bf944d99ce89cf9e58d9" name="a339b1e37de309d5689ffde954b8a4590a605669cab962bf944d99ce89cf9e58d9"></a>Health&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a339b1e37de309d5689ffde954b8a4590a5a455a612047a34ede7a6c564fa67c0a" name="a339b1e37de309d5689ffde954b8a4590a5a455a612047a34ede7a6c564fa67c0a"></a>Strength&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a339b1e37de309d5689ffde954b8a4590a44877c6aa8e93fa5a91c9361211464fb" name="a339b1e37de309d5689ffde954b8a4590a44877c6aa8e93fa5a91c9361211464fb"></a>Speed&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="af275db8f31a6655e934f031c55b7aaa5" name="af275db8f31a6655e934f031c55b7aaa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af275db8f31a6655e934f031c55b7aaa5">&#9670;&#160;</a></span>Scrolls</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="_globals_8h.html#af275db8f31a6655e934f031c55b7aaa5">Scrolls</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An enum class whose values correspond to the types of Scroll variations there are.  </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af275db8f31a6655e934f031c55b7aaa5aa8155b0ea02bae01cd41369018837d6b" name="af275db8f31a6655e934f031c55b7aaa5aa8155b0ea02bae01cd41369018837d6b"></a>Fireball&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af275db8f31a6655e934f031c55b7aaa5a970da5f1f2e32aeb9e488dd017160ab4" name="af275db8f31a6655e934f031c55b7aaa5a970da5f1f2e32aeb9e488dd017160ab4"></a>Shield&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af275db8f31a6655e934f031c55b7aaa5ab3f0fc8e6f6e70bcc3153365e10251c8" name="af275db8f31a6655e934f031c55b7aaa5ab3f0fc8e6f6e70bcc3153365e10251c8"></a>Teleportation&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="ac9e486ec80ccfdb28a4f4837d419c9f1" name="ac9e486ec80ccfdb28a4f4837d419c9f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9e486ec80ccfdb28a4f4837d419c9f1">&#9670;&#160;</a></span>TileType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="_globals_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1">TileType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An enum class whose values correspond to the types of <a class="el" href="class_tile.html" title="Tile class, handles everything for one cell of the Grid.">Tile</a> variations there are.  </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac9e486ec80ccfdb28a4f4837d419c9f1a3bc180bd00be2c60a3a5a68e0dd49503" name="ac9e486ec80ccfdb28a4f4837d419c9f1a3bc180bd00be2c60a3a5a68e0dd49503"></a>UNUSED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac9e486ec80ccfdb28a4f4837d419c9f1adedcb56e75fe1488e20865e0ea36d0b9" name="ac9e486ec80ccfdb28a4f4837d419c9f1adedcb56e75fe1488e20865e0ea36d0b9"></a>GROUND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac9e486ec80ccfdb28a4f4837d419c9f1acff1d19b5e9949c76122a6c42801b6cb" name="ac9e486ec80ccfdb28a4f4837d419c9f1acff1d19b5e9949c76122a6c42801b6cb"></a>VERTICAL_WALL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac9e486ec80ccfdb28a4f4837d419c9f1a3817619231a131f2b7b22ff58a46d816" name="ac9e486ec80ccfdb28a4f4837d419c9f1a3817619231a131f2b7b22ff58a46d816"></a>HORIZONTAL_WALL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac9e486ec80ccfdb28a4f4837d419c9f1a703c9878316befeeae7160114ee632e2" name="ac9e486ec80ccfdb28a4f4837d419c9f1a703c9878316befeeae7160114ee632e2"></a>UPPER_CORNER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac9e486ec80ccfdb28a4f4837d419c9f1a1390c173a389b8a3659a3186a76050b0" name="ac9e486ec80ccfdb28a4f4837d419c9f1a1390c173a389b8a3659a3186a76050b0"></a>LOWER_CORNER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac9e486ec80ccfdb28a4f4837d419c9f1ae5d176bc77e7e4e6957de0ef675f50fe" name="ac9e486ec80ccfdb28a4f4837d419c9f1ae5d176bc77e7e4e6957de0ef675f50fe"></a>INSIDE_WALL&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a2e238758e72da0491a67935310819213" name="a2e238758e72da0491a67935310819213"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e238758e72da0491a67935310819213">&#9670;&#160;</a></span>Weapons</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="_globals_8h.html#a2e238758e72da0491a67935310819213">Weapons</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An enum class whose values correspond to the types of Weapon variations there are.  </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2e238758e72da0491a67935310819213a6c198603789a4928477eccd5d550b6b2" name="a2e238758e72da0491a67935310819213a6c198603789a4928477eccd5d550b6b2"></a>Sword&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2e238758e72da0491a67935310819213aed4dd6cc118ab2500715cbd23b054573" name="a2e238758e72da0491a67935310819213aed4dd6cc118ab2500715cbd23b054573"></a>Axe&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2e238758e72da0491a67935310819213a1c5c62b5cff296764b792468a69fa041" name="a2e238758e72da0491a67935310819213a1c5c62b5cff296764b792468a69fa041"></a>Dagger&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="afd21ad7218563b50069454fbf8994693" name="afd21ad7218563b50069454fbf8994693"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd21ad7218563b50069454fbf8994693">&#9670;&#160;</a></span>G_CELL_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned const int G_CELL_SIZE = 32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The size of one <a class="el" href="class_tile.html" title="Tile class, handles everything for one cell of the Grid.">Tile</a> in the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a>. </p>
+
+</div>
+</div>
+<a id="a71e590000c554e5f4e8ec83c07ce910f" name="a71e590000c554e5f4e8ec83c07ce910f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71e590000c554e5f4e8ec83c07ce910f">&#9670;&#160;</a></span>g_exitGame</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool g_exitGame</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A bool that stops the game when the player chooses to exit on the Main menu.  </p>
+
+</div>
+</div>
+<a id="a924211755bba964bfe8403fd49db0b4d" name="a924211755bba964bfe8403fd49db0b4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a924211755bba964bfe8403fd49db0b4d">&#9670;&#160;</a></span>g_font</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Font g_font</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The font used throughout the <a class="el" href="class_game.html" title="The game class. Keeps track of Game Flow.">Game</a>.  </p>
+
+</div>
+</div>
+<a id="a9344dbdd78ef2f8ec839413396c5d99a" name="a9344dbdd78ef2f8ec839413396c5d99a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9344dbdd78ef2f8ec839413396c5d99a">&#9670;&#160;</a></span>g_gamestate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5">Gamestate</a> g_gamestate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A <a class="el" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5" title="An enum class whose values correspond to a screen the user can be on.">Gamestate</a> variable that keeps track of what screen the user is on.  </p>
+
+</div>
+</div>
+<a id="aae928e13459e3f134213e53cfdffb186" name="aae928e13459e3f134213e53cfdffb186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae928e13459e3f134213e53cfdffb186">&#9670;&#160;</a></span>G_MAP_COLS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned const int G_MAP_COLS = 60</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum number of columns on the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a>. </p>
+
+</div>
+</div>
+<a id="a4f8d156204e81cf90a7056ae14e7b148" name="a4f8d156204e81cf90a7056ae14e7b148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f8d156204e81cf90a7056ae14e7b148">&#9670;&#160;</a></span>G_MAP_ROWS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned const int G_MAP_ROWS = 75</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum number of rows on the <a class="el" href="class_grid.html" title="The Grid class - organises the Room objects, making sure that they&#39;re placed and updated correctly.">Grid</a>. </p>
+
+</div>
+</div>
+<a id="acfe94e0024186936408600577964b27e" name="acfe94e0024186936408600577964b27e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfe94e0024186936408600577964b27e">&#9670;&#160;</a></span>g_previousState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5">Gamestate</a> g_previousState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A <a class="el" href="_globals_8h.html#ad6eff87c4b0d26838106d44dfa85a3d5" title="An enum class whose values correspond to a screen the user can be on.">Gamestate</a> variable that keeps track of what screen the user was previously on.  </p>
+
+</div>
+</div>
+<a id="a5574abc6a2a04bd270d2364617bb8736" name="a5574abc6a2a04bd270d2364617bb8736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5574abc6a2a04bd270d2364617bb8736">&#9670;&#160;</a></span>G_ROOM_COLS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned const int G_ROOM_COLS = 20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum number of columns in a <a class="el" href="class_room.html" title="Class that handles Tile objects, and organises them together to look and act coherant....">Room</a>. </p>
+
+</div>
+</div>
+<a id="a21074e289acbeb0f5d91be395e5725f8" name="a21074e289acbeb0f5d91be395e5725f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21074e289acbeb0f5d91be395e5725f8">&#9670;&#160;</a></span>G_ROOM_ROWS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned const int G_ROOM_ROWS = 25</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum number of rows in a <a class="el" href="class_room.html" title="Class that handles Tile objects, and organises them together to look and act coherant....">Room</a>. </p>
+
+</div>
+</div>
+<a id="a70ff7c8d515196ba09fb769cbdb3d64d" name="a70ff7c8d515196ba09fb769cbdb3d64d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70ff7c8d515196ba09fb769cbdb3d64d">&#9670;&#160;</a></span>G_VIEW_HEIGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned const int G_VIEW_HEIGTH = 900</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The height of the game screen.  </p>
+
+</div>
+</div>
+<a id="adb4bf3f2c109fbaf8a9c11bfa807c26e" name="adb4bf3f2c109fbaf8a9c11bfa807c26e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb4bf3f2c109fbaf8a9c11bfa807c26e">&#9670;&#160;</a></span>G_VIEW_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned const int G_VIEW_WIDTH = 1800</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The width of the game screen.  </p>
+
+</div>
+</div>
+<a id="a62bdf4f6ff3e6683dce531167dc91ba6" name="a62bdf4f6ff3e6683dce531167dc91ba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62bdf4f6ff3e6683dce531167dc91ba6">&#9670;&#160;</a></span>ITEMS_TEXTURE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string const ITEMS_TEXTURE = &quot;./ASSETS/IMAGES/tilemap_packed.png&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The path that leads to a texture that holds the appearance of the <a class="el" href="class_player.html" title="The class the user directly controls.">Player</a>, the <a class="el" href="class_enemy.html" title="The enemies of the Player. Will try and hunt down and defeat them.">Enemy</a>, and the Items.  </p>
+
+</div>
+</div>
+<a id="a18adc2c8bf6b36d5a575d02704f4e1c1" name="a18adc2c8bf6b36d5a575d02704f4e1c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18adc2c8bf6b36d5a575d02704f4e1c1">&#9670;&#160;</a></span>MISSINGTEXTURE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string const MISSINGTEXTURE = &quot;./ASSETS/IMAGES/MissingTexture.png&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The path that leads to a texture that will appear if there was an error loading the first texture.  </p>
 
 </div>
 </div>

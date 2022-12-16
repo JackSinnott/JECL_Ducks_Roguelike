@@ -1,0 +1,195 @@
+\hypertarget{class_combat_system}{}\doxysection{Combat\+System Class Reference}
+\label{class_combat_system}\index{CombatSystem@{CombatSystem}}
+
+
+The static class that controls the combat between the \mbox{\hyperlink{class_enemy}{Enemy}} and \mbox{\hyperlink{class_player}{Player}}. Also lets the two damage each other.   
+
+
+
+
+{\ttfamily \#include $<$Combat\+System.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_combat_system_ab836aeaa0dc8f25f53caf703f0f2612d}{Roll\+D8}} (int amount\+Rolled=1)
+\begin{DoxyCompactList}\small\item\em Generates a number between 1 and 8 (inclusive), adds them together if the amount rolled is more than 1, then returns the result.  \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_combat_system_a8d8f7701e92c709d8d8c81965d3c12d7}{Set\+Player\+Health}} (int $\ast$t\+\_\+health)
+\begin{DoxyCompactList}\small\item\em Lets the system be able to affect the \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s health.  \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_combat_system_a951de855dc332b5632667510a93847a9}{Push\+Back\+Enemy\+Stats}} (int $\ast$t\+\_\+health, int t\+\_\+xp)
+\begin{DoxyCompactList}\small\item\em Pushes back some enemy stats, so the combat will be able to affect the enemies.  \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_combat_system_ac001dc20d329d47cbe21c2791e5f08ab}{Battle\+Equation}} (int defenders\+Armour, int attackers\+Level=0, int t\+\_\+modifiers=0)
+\begin{DoxyCompactList}\small\item\em Calculates whether the attacker hits the defender.  \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_combat_system_a4e97c93e2f5358af29ffc8a788cbe778}{Hurt\+Player}} (int damage)
+\begin{DoxyCompactList}\small\item\em Deal some damage to the \mbox{\hyperlink{class_player}{Player}}.  \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_combat_system_ab327b68d448bcc14d438a0c46bce35d5}{Hurt\+Enemy}} (int t\+\_\+index\+Of\+Enemy, int damage)
+\begin{DoxyCompactList}\small\item\em Deals some damage to a specified \mbox{\hyperlink{class_enemy}{Enemy}}. If the enemy is defeated, remove them from the vector.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_combat_system_ae4224420d40ff5cb1ce5187d13d0f38b}{Roll\+D20}} (int amount\+Rolled=1)
+\begin{DoxyCompactList}\small\item\em Returns a random number between 1 and 20 (inclusive), adds them together if the amount rolled is more than 1, then returns the result.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ std\+::pair$<$ int $\ast$, int $>$ $>$ \mbox{\hyperlink{class_combat_system_a6d065187e4aff4794caedcc9afe6e541}{enemies\+Stats}} = std\+::vector$<$std\+::pair$<$int$\ast$, int$>$$>$()
+\begin{DoxyCompactList}\small\item\em Reference to all the enemies\textquotesingle{} healths, and how much xp they would give the player when they\textquotesingle{}re defeated.  \end{DoxyCompactList}\item 
+static int $\ast$ \mbox{\hyperlink{class_combat_system_a91b916f2e27f3610de802cfd5d096705}{player\+Health}} = nullptr
+\begin{DoxyCompactList}\small\item\em Reference to the player\textquotesingle{}s health. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The static class that controls the combat between the \mbox{\hyperlink{class_enemy}{Enemy}} and \mbox{\hyperlink{class_player}{Player}}. Also lets the two damage each other.  
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_combat_system_ac001dc20d329d47cbe21c2791e5f08ab}\label{class_combat_system_ac001dc20d329d47cbe21c2791e5f08ab}} 
+\index{CombatSystem@{CombatSystem}!BattleEquation@{BattleEquation}}
+\index{BattleEquation@{BattleEquation}!CombatSystem@{CombatSystem}}
+\doxysubsubsection{\texorpdfstring{BattleEquation()}{BattleEquation()}}
+{\footnotesize\ttfamily bool Combat\+System\+::\+Battle\+Equation (\begin{DoxyParamCaption}\item[{int}]{defenders\+Armour,  }\item[{int}]{attackers\+Level = {\ttfamily 0},  }\item[{int}]{t\+\_\+modifiers = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates whether the attacker hits the defender.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em defenders\+Armour} & How hard it is to hit the defender.\\
+\hline
+{\em attackers\+Level} & The level the attacker is at -\/ this affects their hit chance.\\
+\hline
+{\em t\+\_\+modifiers} & Hit chance modifiers, which is added after the roll.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the hit went through.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_combat_system_ab327b68d448bcc14d438a0c46bce35d5}\label{class_combat_system_ab327b68d448bcc14d438a0c46bce35d5}} 
+\index{CombatSystem@{CombatSystem}!HurtEnemy@{HurtEnemy}}
+\index{HurtEnemy@{HurtEnemy}!CombatSystem@{CombatSystem}}
+\doxysubsubsection{\texorpdfstring{HurtEnemy()}{HurtEnemy()}}
+{\footnotesize\ttfamily int Combat\+System\+::\+Hurt\+Enemy (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+index\+Of\+Enemy,  }\item[{int}]{damage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deals some damage to a specified \mbox{\hyperlink{class_enemy}{Enemy}}. If the enemy is defeated, remove them from the vector.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+index\+Of\+Enemy} & The index of the \mbox{\hyperlink{class_enemy}{Enemy}} in the vector.\\
+\hline
+{\em damage} & How much damage will be done to the \mbox{\hyperlink{class_enemy}{Enemy}}.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_combat_system_a4e97c93e2f5358af29ffc8a788cbe778}\label{class_combat_system_a4e97c93e2f5358af29ffc8a788cbe778}} 
+\index{CombatSystem@{CombatSystem}!HurtPlayer@{HurtPlayer}}
+\index{HurtPlayer@{HurtPlayer}!CombatSystem@{CombatSystem}}
+\doxysubsubsection{\texorpdfstring{HurtPlayer()}{HurtPlayer()}}
+{\footnotesize\ttfamily void Combat\+System\+::\+Hurt\+Player (\begin{DoxyParamCaption}\item[{int}]{damage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deal some damage to the \mbox{\hyperlink{class_player}{Player}}.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage} & The amount of damage to do to the \mbox{\hyperlink{class_player}{Player}}.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_combat_system_a951de855dc332b5632667510a93847a9}\label{class_combat_system_a951de855dc332b5632667510a93847a9}} 
+\index{CombatSystem@{CombatSystem}!PushBackEnemyStats@{PushBackEnemyStats}}
+\index{PushBackEnemyStats@{PushBackEnemyStats}!CombatSystem@{CombatSystem}}
+\doxysubsubsection{\texorpdfstring{PushBackEnemyStats()}{PushBackEnemyStats()}}
+{\footnotesize\ttfamily void Combat\+System\+::\+Push\+Back\+Enemy\+Stats (\begin{DoxyParamCaption}\item[{int $\ast$}]{t\+\_\+health,  }\item[{int}]{t\+\_\+xp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Pushes back some enemy stats, so the combat will be able to affect the enemies.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+health} & A reference to the health of an enemy.\\
+\hline
+{\em t\+\_\+xp} & A copy of the xp the enemy will drop when they are defeated.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_combat_system_ae4224420d40ff5cb1ce5187d13d0f38b}\label{class_combat_system_ae4224420d40ff5cb1ce5187d13d0f38b}} 
+\index{CombatSystem@{CombatSystem}!RollD20@{RollD20}}
+\index{RollD20@{RollD20}!CombatSystem@{CombatSystem}}
+\doxysubsubsection{\texorpdfstring{RollD20()}{RollD20()}}
+{\footnotesize\ttfamily int Combat\+System\+::\+Roll\+D20 (\begin{DoxyParamCaption}\item[{int}]{amount\+Rolled = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Returns a random number between 1 and 20 (inclusive), adds them together if the amount rolled is more than 1, then returns the result.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount\+Rolled} & The amount of times that dice should be rolled.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting roll of all the dice, ie. if the dice is rolled twice and got 10 and 16, 26 is returned.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_combat_system_ab836aeaa0dc8f25f53caf703f0f2612d}\label{class_combat_system_ab836aeaa0dc8f25f53caf703f0f2612d}} 
+\index{CombatSystem@{CombatSystem}!RollD8@{RollD8}}
+\index{RollD8@{RollD8}!CombatSystem@{CombatSystem}}
+\doxysubsubsection{\texorpdfstring{RollD8()}{RollD8()}}
+{\footnotesize\ttfamily int Combat\+System\+::\+Roll\+D8 (\begin{DoxyParamCaption}\item[{int}]{amount\+Rolled = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generates a number between 1 and 8 (inclusive), adds them together if the amount rolled is more than 1, then returns the result.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount\+Rolled} & The amount of times the dice is rolled.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting roll of all the dice, ie. if the dice is rolled twice and got 2 and 3, 5 is returned.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_combat_system_a8d8f7701e92c709d8d8c81965d3c12d7}\label{class_combat_system_a8d8f7701e92c709d8d8c81965d3c12d7}} 
+\index{CombatSystem@{CombatSystem}!SetPlayerHealth@{SetPlayerHealth}}
+\index{SetPlayerHealth@{SetPlayerHealth}!CombatSystem@{CombatSystem}}
+\doxysubsubsection{\texorpdfstring{SetPlayerHealth()}{SetPlayerHealth()}}
+{\footnotesize\ttfamily void Combat\+System\+::\+Set\+Player\+Health (\begin{DoxyParamCaption}\item[{int $\ast$}]{t\+\_\+health }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lets the system be able to affect the \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s health.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+health} & The reference to the \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s health.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_combat_system_a6d065187e4aff4794caedcc9afe6e541}\label{class_combat_system_a6d065187e4aff4794caedcc9afe6e541}} 
+\index{CombatSystem@{CombatSystem}!enemiesStats@{enemiesStats}}
+\index{enemiesStats@{enemiesStats}!CombatSystem@{CombatSystem}}
+\doxysubsubsection{\texorpdfstring{enemiesStats}{enemiesStats}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::pair$<$ int $\ast$, int $>$ $>$ Combat\+System\+::enemies\+Stats = std\+::vector$<$std\+::pair$<$int$\ast$, int$>$$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Reference to all the enemies\textquotesingle{} healths, and how much xp they would give the player when they\textquotesingle{}re defeated.  
+
+\mbox{\Hypertarget{class_combat_system_a91b916f2e27f3610de802cfd5d096705}\label{class_combat_system_a91b916f2e27f3610de802cfd5d096705}} 
+\index{CombatSystem@{CombatSystem}!playerHealth@{playerHealth}}
+\index{playerHealth@{playerHealth}!CombatSystem@{CombatSystem}}
+\doxysubsubsection{\texorpdfstring{playerHealth}{playerHealth}}
+{\footnotesize\ttfamily int $\ast$ Combat\+System\+::player\+Health = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Reference to the player\textquotesingle{}s health. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_combat_system_8h}{Combat\+System.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_combat_system_8cpp}{Combat\+System.\+cpp}}\end{DoxyCompactItemize}

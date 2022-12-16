@@ -1,0 +1,103 @@
+\hypertarget{class_file_loader}{}\doxysection{File\+Loader Class Reference}
+\label{class_file_loader}\index{FileLoader@{FileLoader}}
+
+
+Child class of \mbox{\hyperlink{class_level_loader}{Level\+Loader}}, this class loads the \mbox{\hyperlink{class_room}{Room}} objects in using the text files in the project folders.   
+
+
+
+
+{\ttfamily \#include $<$File\+Loader.\+h$>$}
+
+Inheritance diagram for File\+Loader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_file_loader}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_file_loader_a4a1472973a5efd6caa03bd32b2b17af1}{File\+Loader}} (\mbox{\hyperlink{class_grid}{Grid}} \&t\+\_\+room)
+\begin{DoxyCompactList}\small\item\em Overloaded Constructor.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_file_loader_a19086ef6723c5b2d6740660773ceaaf1}{Load}} (int t\+\_\+level) override
+\begin{DoxyCompactList}\small\item\em Loads a \mbox{\hyperlink{class_room}{Room}} out of the level text files.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_grid}{Grid}} \& \mbox{\hyperlink{class_file_loader_a6af7d1e22e82fe1ddf1b39b079ebb5be}{m\+\_\+grid\+Data}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_grid}{Grid}} -\/ everything loaded here will be passed into this. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_file_loader_a95415f6b85c49435e19b285d86341657}{room\+\_\+id}} = 0
+\begin{DoxyCompactList}\small\item\em Keeps track of what rooms have been loaded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Child class of \mbox{\hyperlink{class_level_loader}{Level\+Loader}}, this class loads the \mbox{\hyperlink{class_room}{Room}} objects in using the text files in the project folders.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_file_loader_a4a1472973a5efd6caa03bd32b2b17af1}\label{class_file_loader_a4a1472973a5efd6caa03bd32b2b17af1}} 
+\index{FileLoader@{FileLoader}!FileLoader@{FileLoader}}
+\index{FileLoader@{FileLoader}!FileLoader@{FileLoader}}
+\doxysubsubsection{\texorpdfstring{FileLoader()}{FileLoader()}}
+{\footnotesize\ttfamily File\+Loader\+::\+File\+Loader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid}{Grid}} \&}]{t\+\_\+grid }\end{DoxyParamCaption})}
+
+
+
+Overloaded Constructor.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+grid} & A reference to the \mbox{\hyperlink{class_grid}{Grid}} in \mbox{\hyperlink{class_gameplay}{Gameplay}}.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_file_loader_a19086ef6723c5b2d6740660773ceaaf1}\label{class_file_loader_a19086ef6723c5b2d6740660773ceaaf1}} 
+\index{FileLoader@{FileLoader}!Load@{Load}}
+\index{Load@{Load}!FileLoader@{FileLoader}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily void File\+Loader\+::\+Load (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Loads a \mbox{\hyperlink{class_room}{Room}} out of the level text files.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+level} & The index of the \mbox{\hyperlink{class_room}{Room}} to be loaded.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_level_loader_a64f1347aca6e8399e08281e8db8e07d7}{Level\+Loader}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_file_loader_a6af7d1e22e82fe1ddf1b39b079ebb5be}\label{class_file_loader_a6af7d1e22e82fe1ddf1b39b079ebb5be}} 
+\index{FileLoader@{FileLoader}!m\_gridData@{m\_gridData}}
+\index{m\_gridData@{m\_gridData}!FileLoader@{FileLoader}}
+\doxysubsubsection{\texorpdfstring{m\_gridData}{m\_gridData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_grid}{Grid}}\& File\+Loader\+::m\+\_\+grid\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \mbox{\hyperlink{class_grid}{Grid}} -\/ everything loaded here will be passed into this. 
+
+\mbox{\Hypertarget{class_file_loader_a95415f6b85c49435e19b285d86341657}\label{class_file_loader_a95415f6b85c49435e19b285d86341657}} 
+\index{FileLoader@{FileLoader}!room\_id@{room\_id}}
+\index{room\_id@{room\_id}!FileLoader@{FileLoader}}
+\doxysubsubsection{\texorpdfstring{room\_id}{room\_id}}
+{\footnotesize\ttfamily int File\+Loader\+::room\+\_\+id = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Keeps track of what rooms have been loaded. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_file_loader_8h}{File\+Loader.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_file_loader_8cpp}{File\+Loader.\+cpp}}\end{DoxyCompactItemize}

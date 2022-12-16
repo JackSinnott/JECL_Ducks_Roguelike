@@ -1,0 +1,38 @@
+\hypertarget{_axe_weapon_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Axe\+Weapon.h}
+\mbox{\hyperlink{_axe_weapon_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_weapon_8h}{AbstractWeapon.h}}"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_axe_weapon}{AxeWeapon}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_abstract_weapon}{AbstractWeapon}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{16     \mbox{\hyperlink{class_axe_weapon_a75f8323360a395ce0b654522a56098cd}{AxeWeapon}}(\mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213}{Weapons}} t\_weaponType)}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         \mbox{\hyperlink{class_abstract_weapon_a1ed6802f934ea904b26e190f2aa2d373}{m\_weaponType}} = t\_weaponType;}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_abstract_weapon_ac9a7239aac84b4a0ec598538e75bbd69}{m\_damage}} = 8;}
+\DoxyCodeLine{20         \mbox{\hyperlink{class_abstract_item_a55adddf80a030b2230c40caf1ef744c2}{m\_rarity}} = 1;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22         \mbox{\hyperlink{class_abstract_item_a55adddf80a030b2230c40caf1ef744c2}{m\_rarity}} += rand() \% 10;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         \mbox{\hyperlink{class_abstract_item_abe763be2ca66718e36515961477161f3}{SetupBasics}}();}
+\DoxyCodeLine{25         \mbox{\hyperlink{class_abstract_weapon_acad3909b221f391a86309d112651077b}{SetType}}();}
+\DoxyCodeLine{26     \};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_axe_weapon_a36abf8bd987f366ce99c6fa74b0b45e9}{GetDamage}}()\textcolor{keyword}{ override }}
+\DoxyCodeLine{33 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{34         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_abstract_item_a55adddf80a030b2230c40caf1ef744c2}{m\_rarity}} > 5)}
+\DoxyCodeLine{35         \{}
+\DoxyCodeLine{36             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_abstract_weapon_ac9a7239aac84b4a0ec598538e75bbd69}{m\_damage}} * 2;}
+\DoxyCodeLine{37         \}}
+\DoxyCodeLine{38         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{39         \{}
+\DoxyCodeLine{40             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_abstract_weapon_ac9a7239aac84b4a0ec598538e75bbd69}{m\_damage}};}
+\DoxyCodeLine{41         \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \};}
+\DoxyCodeLine{44 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,110 @@
+\hypertarget{class_resource_allocator}{}\doxysection{Resource\+Allocator\texorpdfstring{$<$}{<} Derived, T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_resource_allocator}\index{ResourceAllocator$<$ Derived, T $>$@{ResourceAllocator$<$ Derived, T $>$}}
+
+
+A template class that is used for the management of resources, like textures.   
+
+
+
+
+{\ttfamily \#include $<$Resource\+Allocator.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_resource_allocator_ad5df72ec689c5f709713471610e50b38}{Resource\+Allocator}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_resource_allocator_ad36e7c0527af373e90929a1a0524ec08}{$\sim$\+Resource\+Allocator}} ()
+\begin{DoxyCompactList}\small\item\em Default deconstructor.  \end{DoxyCompactList}\item 
+virtual T \mbox{\hyperlink{class_resource_allocator_ac8f081f0234b607faabd88bcbf6395fb}{Acquire}} (const std\+::string \&name)=0
+\begin{DoxyCompactList}\small\item\em Searches for a new resource in the project\textquotesingle{}s files, loads it and returns it.  \end{DoxyCompactList}\item 
+virtual T \mbox{\hyperlink{class_resource_allocator_a202e31427e6037373a2af72bebec81f7}{Collectgarbage}} ()=0
+\begin{DoxyCompactList}\small\item\em deletes resources not being used, saving memory.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Derived, typename T$>$\newline
+class Resource\+Allocator$<$ Derived, T $>$}
+A template class that is used for the management of resources, like textures.  
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Derived} & A child class of \mbox{\hyperlink{class_resource_allocator}{Resource\+Allocator}}.\\
+\hline
+{\em T} & The variable type the child class wishes to manage.\\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_resource_allocator_ad5df72ec689c5f709713471610e50b38}\label{class_resource_allocator_ad5df72ec689c5f709713471610e50b38}} 
+\index{ResourceAllocator$<$ Derived, T $>$@{ResourceAllocator$<$ Derived, T $>$}!ResourceAllocator@{ResourceAllocator}}
+\index{ResourceAllocator@{ResourceAllocator}!ResourceAllocator$<$ Derived, T $>$@{ResourceAllocator$<$ Derived, T $>$}}
+\doxysubsubsection{\texorpdfstring{ResourceAllocator()}{ResourceAllocator()}}
+{\footnotesize\ttfamily template$<$typename Derived , typename T $>$ \\
+\mbox{\hyperlink{class_resource_allocator}{Resource\+Allocator}}$<$ Derived, T $>$\mbox{\hyperlink{class_resource_allocator}{\+::\+Resource\+Allocator}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor.  
+
+\mbox{\Hypertarget{class_resource_allocator_ad36e7c0527af373e90929a1a0524ec08}\label{class_resource_allocator_ad36e7c0527af373e90929a1a0524ec08}} 
+\index{ResourceAllocator$<$ Derived, T $>$@{ResourceAllocator$<$ Derived, T $>$}!````~ResourceAllocator@{$\sim$ResourceAllocator}}
+\index{````~ResourceAllocator@{$\sim$ResourceAllocator}!ResourceAllocator$<$ Derived, T $>$@{ResourceAllocator$<$ Derived, T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$ResourceAllocator()}{~ResourceAllocator()}}
+{\footnotesize\ttfamily template$<$typename Derived , typename T $>$ \\
+\mbox{\hyperlink{class_resource_allocator}{Resource\+Allocator}}$<$ Derived, T $>$\+::$\sim$\mbox{\hyperlink{class_resource_allocator}{Resource\+Allocator}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default deconstructor.  
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_resource_allocator_ac8f081f0234b607faabd88bcbf6395fb}\label{class_resource_allocator_ac8f081f0234b607faabd88bcbf6395fb}} 
+\index{ResourceAllocator$<$ Derived, T $>$@{ResourceAllocator$<$ Derived, T $>$}!Acquire@{Acquire}}
+\index{Acquire@{Acquire}!ResourceAllocator$<$ Derived, T $>$@{ResourceAllocator$<$ Derived, T $>$}}
+\doxysubsubsection{\texorpdfstring{Acquire()}{Acquire()}}
+{\footnotesize\ttfamily template$<$typename Derived , typename T $>$ \\
+virtual T \mbox{\hyperlink{class_resource_allocator}{Resource\+Allocator}}$<$ Derived, T $>$\+::\+Acquire (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Searches for a new resource in the project\textquotesingle{}s files, loads it and returns it.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & String that is the path to what is to be acquired.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new resource.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_texture_manager_a3b6cbb7a9be0556355e8a6206c5cc3e7}{Texture\+Manager}}.
+
+\mbox{\Hypertarget{class_resource_allocator_a202e31427e6037373a2af72bebec81f7}\label{class_resource_allocator_a202e31427e6037373a2af72bebec81f7}} 
+\index{ResourceAllocator$<$ Derived, T $>$@{ResourceAllocator$<$ Derived, T $>$}!Collectgarbage@{Collectgarbage}}
+\index{Collectgarbage@{Collectgarbage}!ResourceAllocator$<$ Derived, T $>$@{ResourceAllocator$<$ Derived, T $>$}}
+\doxysubsubsection{\texorpdfstring{Collectgarbage()}{Collectgarbage()}}
+{\footnotesize\ttfamily template$<$typename Derived , typename T $>$ \\
+virtual T \mbox{\hyperlink{class_resource_allocator}{Resource\+Allocator}}$<$ Derived, T $>$\+::\+Collectgarbage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+deletes resources not being used, saving memory.  
+
+\begin{DoxyReturn}{Returns}
+The template variable after being tidied.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_audio_manager_a16f1326be30177ad4b0128f02148a3cd}{Audio\+Manager}}, and \mbox{\hyperlink{class_texture_manager_a8792d04864b18f16ec37ab6642b92dbf}{Texture\+Manager}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_resource_allocator_8h}{Resource\+Allocator.\+h}}\end{DoxyCompactItemize}

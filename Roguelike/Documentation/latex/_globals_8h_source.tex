@@ -1,0 +1,111 @@
+\hypertarget{_globals_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Globals.h}
+\mbox{\hyperlink{_globals_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GLOBALS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GLOBALS\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{10 \textcolor{keyword}{enum class} \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5}{Gamestate}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5aad1111b48f98329333237912fc3b371b}{MainMenu}},}
+\DoxyCodeLine{13     \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5aa6ea893fdc6e0771ff6d14028a6d7f3e}{PauseMenu}},}
+\DoxyCodeLine{14     \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5adae8ace18bdcbcc6ae5aece263e14fe8}{Options}},}
+\DoxyCodeLine{15     \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5a6288740a1cd0de37312619df3b6ddcf3}{Gameplay}},}
+\DoxyCodeLine{16     \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5a8f347bc7cebca9fa6d97e70c6bc29eb3}{GameOver}},}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_help}{Help}}}
+\DoxyCodeLine{18 \};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{23 \textcolor{keyword}{extern} \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5}{Gamestate}} \mbox{\hyperlink{_globals_8h_a9344dbdd78ef2f8ec839413396c5d99a}{g\_gamestate}};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{28 \textcolor{keyword}{extern} \mbox{\hyperlink{_globals_8h_ad6eff87c4b0d26838106d44dfa85a3d5}{Gamestate}} \mbox{\hyperlink{_globals_8h_acfe94e0024186936408600577964b27e}{g\_previousState}};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{33 \textcolor{keyword}{extern} \textcolor{keywordtype}{bool} \mbox{\hyperlink{_globals_8h_a71e590000c554e5f4e8ec83c07ce910f}{g\_exitGame}};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{38 \textcolor{keyword}{enum class} \mbox{\hyperlink{_globals_8h_ac3e413a86119db4b031458c7259e268e}{EnemyType}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40     \mbox{\hyperlink{_globals_8h_ac3e413a86119db4b031458c7259e268ea2d5b3d62e7bd3a1d79494bd85e69b5ba}{Bat}},}
+\DoxyCodeLine{41     \mbox{\hyperlink{class_rat}{Rat}}}
+\DoxyCodeLine{42 \};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{47 \textcolor{keyword}{enum class} \mbox{\hyperlink{_globals_8h_a443f647757dde85043b49343f5cbe66b}{ItemType}}}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49     \mbox{\hyperlink{_globals_8h_a443f647757dde85043b49343f5cbe66ba18c83669920215a818638ad0e5421e4b}{Weapon}},}
+\DoxyCodeLine{50     \mbox{\hyperlink{_globals_8h_a443f647757dde85043b49343f5cbe66ba865800a9e29599ad35eadc572c4ff5a6}{Armour}},}
+\DoxyCodeLine{51     \mbox{\hyperlink{_globals_8h_a443f647757dde85043b49343f5cbe66baf7f5d540f521d6d642502a9d459e7b16}{Potion}}}
+\DoxyCodeLine{52 \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{57 \textcolor{keyword}{enum class} \mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213}{Weapons}}}
+\DoxyCodeLine{58 \{}
+\DoxyCodeLine{59     \mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213a6c198603789a4928477eccd5d550b6b2}{Sword}},}
+\DoxyCodeLine{60     \mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213aed4dd6cc118ab2500715cbd23b054573}{Axe}},}
+\DoxyCodeLine{61     \mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213a1c5c62b5cff296764b792468a69fa041}{Dagger}}}
+\DoxyCodeLine{62 \};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{67 \textcolor{keyword}{enum class} \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}}}
+\DoxyCodeLine{68 \{}
+\DoxyCodeLine{69     \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070a9914a0ce04a7b7b6a8e39bec55064b82}{Light}},}
+\DoxyCodeLine{70     \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070a87f8a6ab85c9ced3702b4ea641ad4bb5}{Medium}},}
+\DoxyCodeLine{71     \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070af9ffe67a20da9cbff56b420fca4bd491}{Heavy}}}
+\DoxyCodeLine{72 \};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{77 \textcolor{keyword}{enum class} \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}}}
+\DoxyCodeLine{78 \{}
+\DoxyCodeLine{79     \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590a605669cab962bf944d99ce89cf9e58d9}{Health}},}
+\DoxyCodeLine{80     \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590a5a455a612047a34ede7a6c564fa67c0a}{Strength}},}
+\DoxyCodeLine{81     \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590a44877c6aa8e93fa5a91c9361211464fb}{Speed}}}
+\DoxyCodeLine{82 \};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{87 \textcolor{keyword}{enum class} \mbox{\hyperlink{_globals_8h_af275db8f31a6655e934f031c55b7aaa5}{Scrolls}}}
+\DoxyCodeLine{88 \{}
+\DoxyCodeLine{89     \mbox{\hyperlink{_globals_8h_af275db8f31a6655e934f031c55b7aaa5aa8155b0ea02bae01cd41369018837d6b}{Fireball}},}
+\DoxyCodeLine{90     \mbox{\hyperlink{_globals_8h_af275db8f31a6655e934f031c55b7aaa5a970da5f1f2e32aeb9e488dd017160ab4}{Shield}},}
+\DoxyCodeLine{91     \mbox{\hyperlink{_globals_8h_af275db8f31a6655e934f031c55b7aaa5ab3f0fc8e6f6e70bcc3153365e10251c8}{Teleportation}}}
+\DoxyCodeLine{92 \};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{97 \textcolor{keyword}{enum class} \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{TileType}}}
+\DoxyCodeLine{98 \{}
+\DoxyCodeLine{99     \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a3bc180bd00be2c60a3a5a68e0dd49503}{UNUSED}} = 0,}
+\DoxyCodeLine{100     \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1adedcb56e75fe1488e20865e0ea36d0b9}{GROUND}} = 1,}
+\DoxyCodeLine{101     \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1acff1d19b5e9949c76122a6c42801b6cb}{VERTICAL\_WALL}} = 2,}
+\DoxyCodeLine{102     \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a3817619231a131f2b7b22ff58a46d816}{HORIZONTAL\_WALL}} = 3,}
+\DoxyCodeLine{103     \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a703c9878316befeeae7160114ee632e2}{UPPER\_CORNER}} = 4,}
+\DoxyCodeLine{104     \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a1390c173a389b8a3659a3186a76050b0}{LOWER\_CORNER}} = 5,}
+\DoxyCodeLine{105     \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1ae5d176bc77e7e4e6957de0ef675f50fe}{INSIDE\_WALL}} = 6}
+\DoxyCodeLine{106 \};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{111 \textcolor{keywordtype}{unsigned} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{_globals_8h_adb4bf3f2c109fbaf8a9c11bfa807c26e}{G\_VIEW\_WIDTH}} = 1800;}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{116 \textcolor{keywordtype}{unsigned} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{_globals_8h_a70ff7c8d515196ba09fb769cbdb3d64d}{G\_VIEW\_HEIGTH}} = 900;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{comment}{// Might be used later}}
+\DoxyCodeLine{119 \textcolor{comment}{//unsigned int Music\_volume;}}
+\DoxyCodeLine{120 \textcolor{comment}{//unsigned int SFX\_volume;}}
+\DoxyCodeLine{121 \textcolor{comment}{//unsigned int SFX\_Walking\_Volume;}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{124 \textcolor{keywordtype}{unsigned} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{_globals_8h_a21074e289acbeb0f5d91be395e5725f8}{G\_ROOM\_ROWS}} = 25; }
+\DoxyCodeLine{125 }
+\DoxyCodeLine{127 \textcolor{keywordtype}{unsigned} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{_globals_8h_a5574abc6a2a04bd270d2364617bb8736}{G\_ROOM\_COLS}} = 20;}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{130 \textcolor{keywordtype}{unsigned} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{_globals_8h_a4f8d156204e81cf90a7056ae14e7b148}{G\_MAP\_ROWS}} = 75; }
+\DoxyCodeLine{131 }
+\DoxyCodeLine{133 \textcolor{keywordtype}{unsigned} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{_globals_8h_aae928e13459e3f134213e53cfdffb186}{G\_MAP\_COLS}} = 60; }
+\DoxyCodeLine{134 }
+\DoxyCodeLine{136 \textcolor{keywordtype}{unsigned} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\_CELL\_SIZE}} = 32;}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{comment}{//unsigned const int MAP\_WIDTH = MAP\_ROWS * CELL\_SIZE;}}
+\DoxyCodeLine{140 \textcolor{comment}{//unsigned const int MAP\_HEIGTH = MAP\_COLS * CELL\_SIZE ;}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 }
+\DoxyCodeLine{146 std::string \textcolor{keyword}{const} \mbox{\hyperlink{_globals_8h_a18adc2c8bf6b36d5a575d02704f4e1c1}{MISSINGTEXTURE}} = \textcolor{stringliteral}{"{}./ASSETS/IMAGES/MissingTexture.png"{}};}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{151 std::string \textcolor{keyword}{const} \mbox{\hyperlink{_globals_8h_a62bdf4f6ff3e6683dce531167dc91ba6}{ITEMS\_TEXTURE}} = \textcolor{stringliteral}{"{}./ASSETS/IMAGES/tilemap\_packed.png"{}};}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{156 \textcolor{keyword}{extern} sf::Font \mbox{\hyperlink{_globals_8h_a924211755bba964bfe8403fd49db0b4d}{g\_font}};}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !GLOBALS\_H}}
+\DoxyCodeLine{159 }
+
+\end{DoxyCode}

@@ -1,0 +1,389 @@
+\hypertarget{class_grid}{}\doxysection{Grid Class Reference}
+\label{class_grid}\index{Grid@{Grid}}
+
+
+The \mbox{\hyperlink{class_grid}{Grid}} class -\/ organises the \mbox{\hyperlink{class_room}{Room}} objects, making sure that they\textquotesingle{}re placed and updated correctly.   
+
+
+
+
+{\ttfamily \#include $<$Grid.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_grid_a4ac9ff4f63552b4c61ff90fcb35ad66c}{Grid}} ()
+\begin{DoxyCompactList}\small\item\em Overloaded Constructor of \mbox{\hyperlink{class_grid}{Grid}}.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_grid_a3661d0a7f998caaaf8627d7a67072116}{$\sim$\+Grid}} ()
+\begin{DoxyCompactList}\small\item\em Default Deconstructor.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_grid_acc4187ed9e647e33dfb10eee5e57aa7c}{draw}} (sf\+::\+Render\+Target \&t\+\_\+target, sf\+::\+Render\+States const t\+\_\+state=sf\+::\+Render\+States\+::\+Default) const
+\begin{DoxyCompactList}\small\item\em Draws the rooms out onto the SFML screen.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_grid_a869343829d847145c2fc0f1ece4555ec}{update}} (sf\+::\+Time t\+\_\+dt, \mbox{\hyperlink{class_player}{Player}} \&t\+\_\+player\+Pos)
+\begin{DoxyCompactList}\small\item\em Updates the \mbox{\hyperlink{class_grid}{Grid}}, meaning it updates the appearance of the room, and checks \mbox{\hyperlink{class_player}{Player}} collisons with the Tiles.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_grid_af021942582b22eac4e7bfe6837b0215a}{set\+Up\+Room}} (\mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}} t\+\_\+type, int t\+\_\+room\+ID, int t\+\_\+row, int t\+\_\+col)
+\begin{DoxyCompactList}\small\item\em Sets up a \mbox{\hyperlink{class_tile}{Tile}} in a \mbox{\hyperlink{class_room}{Room}}.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_grid_ac0797650ecb93cbcc36de3029b31409a}{set\+Up\+Walls}} ()
+\begin{DoxyCompactList}\small\item\em Gets all the impassible Tiles from the \mbox{\hyperlink{class_room}{Room}} objects, and copies them, so \mbox{\hyperlink{class_grid}{Grid}} now knows where all collisions should occur.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_grid_a5ad5d8e380d3361cb9c140c39b329abc}{get\+Room\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Prints all Rooms\textquotesingle{} positions to the console. Used for debugging.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_room}{Room}} $\ast$ \mbox{\hyperlink{class_grid_a50584b5882e5d7f011d1eb21f3875648}{check\+Room}} (int t\+\_\+room\+ID)
+\begin{DoxyCompactList}\small\item\em Returns a reference to a \mbox{\hyperlink{class_room}{Room}}, by sending in the corresponding ID.  \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_grid_adc1642b4ef3c602446370e3f293f2c4b}{what\+Room\+Is\+Player\+In}} (sf\+::\+Vector2i t\+\_\+player\+Pos)
+\begin{DoxyCompactList}\small\item\em Calculates what \mbox{\hyperlink{class_room}{Room}} the \mbox{\hyperlink{class_player}{Player}} is in.  \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_grid_a6bf172cbfcc65b3efc50befab4d8d072}{what\+Room\+Is\+Target\+In}} (sf\+::\+Vector2i t\+\_\+\+Target\+Pos)
+\begin{DoxyCompactList}\small\item\em Calculates what \mbox{\hyperlink{class_room}{Room}} the target (ie the player) is in.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_grid_a5d03ca083d80eee1ac195a6d532a6368}{check\+Collision\+Player\+Wall}} (\mbox{\hyperlink{class_player}{Player}} \&t\+\_\+player)
+\begin{DoxyCompactList}\small\item\em Makes sure the \mbox{\hyperlink{class_player}{Player}} is in boundaries. before checking if they collided with walls.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_grid_ad82007b73c63b12c1340e841e15defcf}{check\+Collision\+Enemy\+Wall}} (\mbox{\hyperlink{class_enemy}{Enemy}} \&t\+\_\+enemy, int t\+\_\+room)
+\begin{DoxyCompactList}\small\item\em Makes sure the \mbox{\hyperlink{class_enemy}{Enemy}} is in boundaries. before checking if they collided with walls.  \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_grid_a5d1e3b4d368e747b346145745abe784c}{get\+Player\+Room}} ()
+\item 
+sf\+::\+Vector2i \mbox{\hyperlink{class_grid_a1896b8f2f70a98e0c50a679de14115a9}{get\+Player\+Pos}} (\mbox{\hyperlink{class_player}{Player}} \&t\+\_\+player)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_grid_a2dd2149815261c549f61692602e47685}{place\+Room}} ()
+\begin{DoxyCompactList}\small\item\em Gets a position for a new room, depending on how many rooms are currently spawned in.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_grid_a841d75cf39e633a33373fdf2366cc887}{check\+Collision\+Player\+In\+Room}} (\mbox{\hyperlink{class_player}{Player}} \&t\+\_\+player)
+\begin{DoxyCompactList}\small\item\em Checks if the \mbox{\hyperlink{class_player}{Player}} has collided with any of the wall \mbox{\hyperlink{class_tile}{Tile}} objects.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_grid_a7039bd25cc529a62e2e8ba110d8e1a9c}{check\+Collision\+Enemy\+In\+Room}} (\mbox{\hyperlink{class_enemy}{Enemy}} \&t\+\_\+enemy, int t\+\_\+room)
+\begin{DoxyCompactList}\small\item\em Checks if the \mbox{\hyperlink{class_enemy}{Enemy}} has collided with any of the wall \mbox{\hyperlink{class_tile}{Tile}} objects.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_grid_a240d262bb7670acf81aa9a296bd3a54f}{m\+\_\+player\+Room}}
+\begin{DoxyCompactList}\small\item\em The index of the room the \mbox{\hyperlink{class_player}{Player}} is currently in. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_grid_aa9cb493bc5fad4e0c16374c9dee2a1d4}{m\+\_\+room\+Pos}} = sf\+::\+Vector2f()
+\begin{DoxyCompactList}\small\item\em The current new position to place down Rooms. This updates every time a new \mbox{\hyperlink{class_room}{Room}} is generated. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_grid_a3442b0f8f93e0735daeb74405f2299d1}{num\+Of\+Rooms\+Made}} = 0
+\begin{DoxyCompactList}\small\item\em How many rooms are currently made on the \mbox{\hyperlink{class_grid}{Grid}}. \end{DoxyCompactList}\item 
+sf\+::\+Vertex\+Array \mbox{\hyperlink{class_grid_ab201b36056ea3f606d6297e8ead657e1}{m\+\_\+points}}
+\begin{DoxyCompactList}\small\item\em The dots on the map -\/ used to signify the size and area covered by a \mbox{\hyperlink{class_tile}{Tile}}. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_room}{Room}} $\ast$ $>$ \mbox{\hyperlink{class_grid_ae21c9934d673894474976fb780a50c28}{m\+\_\+rooms}}
+\begin{DoxyCompactList}\small\item\em The Rooms themselves -\/ stored as pointers. \end{DoxyCompactList}\item 
+std\+::map$<$ int, std\+::vector$<$ sf\+::\+Vector2i $>$ $>$ \mbox{\hyperlink{class_grid_adb4e103f0975fddc78bf37f72bf22c16}{m\+\_\+room\+Walls}}
+\begin{DoxyCompactList}\small\item\em All the impassable areas of the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_grid}{Grid}} class -\/ organises the \mbox{\hyperlink{class_room}{Room}} objects, making sure that they\textquotesingle{}re placed and updated correctly.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_grid_a4ac9ff4f63552b4c61ff90fcb35ad66c}\label{class_grid_a4ac9ff4f63552b4c61ff90fcb35ad66c}} 
+\index{Grid@{Grid}!Grid@{Grid}}
+\index{Grid@{Grid}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{Grid()}{Grid()}}
+{\footnotesize\ttfamily Grid\+::\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Overloaded Constructor of \mbox{\hyperlink{class_grid}{Grid}}.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+x} & The starting X position of the \mbox{\hyperlink{class_grid}{Grid}} (ie. the left side).\\
+\hline
+{\em t\+\_\+y} & The starting Y position of the \mbox{\hyperlink{class_grid}{Grid}} (ie. the top).\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_grid_a3661d0a7f998caaaf8627d7a67072116}\label{class_grid_a3661d0a7f998caaaf8627d7a67072116}} 
+\index{Grid@{Grid}!````~Grid@{$\sim$Grid}}
+\index{````~Grid@{$\sim$Grid}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{$\sim$Grid()}{~Grid()}}
+{\footnotesize\ttfamily Grid\+::$\sim$\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default Deconstructor.  
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_grid_a7039bd25cc529a62e2e8ba110d8e1a9c}\label{class_grid_a7039bd25cc529a62e2e8ba110d8e1a9c}} 
+\index{Grid@{Grid}!checkCollisionEnemyInRoom@{checkCollisionEnemyInRoom}}
+\index{checkCollisionEnemyInRoom@{checkCollisionEnemyInRoom}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{checkCollisionEnemyInRoom()}{checkCollisionEnemyInRoom()}}
+{\footnotesize\ttfamily void Grid\+::check\+Collision\+Enemy\+In\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \&}]{t\+\_\+enemy,  }\item[{int}]{t\+\_\+room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if the \mbox{\hyperlink{class_enemy}{Enemy}} has collided with any of the wall \mbox{\hyperlink{class_tile}{Tile}} objects.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+enemy} & A reference to the \mbox{\hyperlink{class_enemy}{Enemy}} in \mbox{\hyperlink{class_gameplay}{Gameplay}}.\\
+\hline
+{\em t\+\_\+room} & The room that the enemy is currently in.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_grid_ad82007b73c63b12c1340e841e15defcf}\label{class_grid_ad82007b73c63b12c1340e841e15defcf}} 
+\index{Grid@{Grid}!checkCollisionEnemyWall@{checkCollisionEnemyWall}}
+\index{checkCollisionEnemyWall@{checkCollisionEnemyWall}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{checkCollisionEnemyWall()}{checkCollisionEnemyWall()}}
+{\footnotesize\ttfamily void Grid\+::check\+Collision\+Enemy\+Wall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \&}]{t\+\_\+enemy,  }\item[{int}]{t\+\_\+room }\end{DoxyParamCaption})}
+
+
+
+Makes sure the \mbox{\hyperlink{class_enemy}{Enemy}} is in boundaries. before checking if they collided with walls.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+enemy} & A reference to the \mbox{\hyperlink{class_enemy}{Enemy}} in \mbox{\hyperlink{class_gameplay}{Gameplay}}.\\
+\hline
+{\em t\+\_\+room} & The room that the enemy is currently in.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_grid_a841d75cf39e633a33373fdf2366cc887}\label{class_grid_a841d75cf39e633a33373fdf2366cc887}} 
+\index{Grid@{Grid}!checkCollisionPlayerInRoom@{checkCollisionPlayerInRoom}}
+\index{checkCollisionPlayerInRoom@{checkCollisionPlayerInRoom}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{checkCollisionPlayerInRoom()}{checkCollisionPlayerInRoom()}}
+{\footnotesize\ttfamily void Grid\+::check\+Collision\+Player\+In\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{t\+\_\+player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if the \mbox{\hyperlink{class_player}{Player}} has collided with any of the wall \mbox{\hyperlink{class_tile}{Tile}} objects.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+player} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_grid_a5d03ca083d80eee1ac195a6d532a6368}\label{class_grid_a5d03ca083d80eee1ac195a6d532a6368}} 
+\index{Grid@{Grid}!checkCollisionPlayerWall@{checkCollisionPlayerWall}}
+\index{checkCollisionPlayerWall@{checkCollisionPlayerWall}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{checkCollisionPlayerWall()}{checkCollisionPlayerWall()}}
+{\footnotesize\ttfamily void Grid\+::check\+Collision\+Player\+Wall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{t\+\_\+player }\end{DoxyParamCaption})}
+
+
+
+Makes sure the \mbox{\hyperlink{class_player}{Player}} is in boundaries. before checking if they collided with walls.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+player} & A reference to the \mbox{\hyperlink{class_player}{Player}} in \mbox{\hyperlink{class_gameplay}{Gameplay}}.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_grid_a50584b5882e5d7f011d1eb21f3875648}\label{class_grid_a50584b5882e5d7f011d1eb21f3875648}} 
+\index{Grid@{Grid}!checkRoom@{checkRoom}}
+\index{checkRoom@{checkRoom}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{checkRoom()}{checkRoom()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_room}{Room}} $\ast$ Grid\+::check\+Room (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+room\+ID }\end{DoxyParamCaption})}
+
+
+
+Returns a reference to a \mbox{\hyperlink{class_room}{Room}}, by sending in the corresponding ID.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+room\+ID} & The ID of the room.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The reference to the \mbox{\hyperlink{class_room}{Room}}.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_grid_acc4187ed9e647e33dfb10eee5e57aa7c}\label{class_grid_acc4187ed9e647e33dfb10eee5e57aa7c}} 
+\index{Grid@{Grid}!draw@{draw}}
+\index{draw@{draw}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Grid\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{t\+\_\+target,  }\item[{sf\+::\+Render\+States const}]{t\+\_\+state = {\ttfamily sf\+:\+:RenderStates\+:\+:Default} }\end{DoxyParamCaption}) const}
+
+
+
+Draws the rooms out onto the SFML screen.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+target} & Where to draw the Rooms.\\
+\hline
+{\em t\+\_\+state} & The state in which to draw the Rooms.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_grid_a1896b8f2f70a98e0c50a679de14115a9}\label{class_grid_a1896b8f2f70a98e0c50a679de14115a9}} 
+\index{Grid@{Grid}!getPlayerPos@{getPlayerPos}}
+\index{getPlayerPos@{getPlayerPos}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{getPlayerPos()}{getPlayerPos()}}
+{\footnotesize\ttfamily sf\+::\+Vector2i Grid\+::get\+Player\+Pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{t\+\_\+player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_grid_a5d1e3b4d368e747b346145745abe784c}\label{class_grid_a5d1e3b4d368e747b346145745abe784c}} 
+\index{Grid@{Grid}!getPlayerRoom@{getPlayerRoom}}
+\index{getPlayerRoom@{getPlayerRoom}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{getPlayerRoom()}{getPlayerRoom()}}
+{\footnotesize\ttfamily int Grid\+::get\+Player\+Room (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_grid_a5ad5d8e380d3361cb9c140c39b329abc}\label{class_grid_a5ad5d8e380d3361cb9c140c39b329abc}} 
+\index{Grid@{Grid}!getRoomPosition@{getRoomPosition}}
+\index{getRoomPosition@{getRoomPosition}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{getRoomPosition()}{getRoomPosition()}}
+{\footnotesize\ttfamily void Grid\+::get\+Room\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints all Rooms\textquotesingle{} positions to the console. Used for debugging.  
+
+\mbox{\Hypertarget{class_grid_a2dd2149815261c549f61692602e47685}\label{class_grid_a2dd2149815261c549f61692602e47685}} 
+\index{Grid@{Grid}!placeRoom@{placeRoom}}
+\index{placeRoom@{placeRoom}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{placeRoom()}{placeRoom()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Grid\+::place\+Room (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets a position for a new room, depending on how many rooms are currently spawned in.  
+
+\begin{DoxyReturn}{Returns}
+The position of the \mbox{\hyperlink{class_room}{Room}} in the \mbox{\hyperlink{class_game}{Game}}.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_grid_af021942582b22eac4e7bfe6837b0215a}\label{class_grid_af021942582b22eac4e7bfe6837b0215a}} 
+\index{Grid@{Grid}!setUpRoom@{setUpRoom}}
+\index{setUpRoom@{setUpRoom}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{setUpRoom()}{setUpRoom()}}
+{\footnotesize\ttfamily void Grid\+::set\+Up\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}}}]{t\+\_\+type,  }\item[{int}]{t\+\_\+room\+ID,  }\item[{int}]{t\+\_\+row,  }\item[{int}]{t\+\_\+col }\end{DoxyParamCaption})}
+
+
+
+Sets up a \mbox{\hyperlink{class_tile}{Tile}} in a \mbox{\hyperlink{class_room}{Room}}.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+type} & The type of \mbox{\hyperlink{class_tile}{Tile}} that is being placed.\\
+\hline
+{\em t\+\_\+room\+ID} & The ID of the \mbox{\hyperlink{class_room}{Room}} that the \mbox{\hyperlink{class_tile}{Tile}} is being placed in.\\
+\hline
+{\em t\+\_\+row} & The row the \mbox{\hyperlink{class_tile}{Tile}} will have in the \mbox{\hyperlink{class_room}{Room}}. This can range from 0 to 24.\\
+\hline
+{\em t\+\_\+col} & The column the \mbox{\hyperlink{class_tile}{Tile}} will have in the \mbox{\hyperlink{class_room}{Room}}. This can range from 0 to 19.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_grid_ac0797650ecb93cbcc36de3029b31409a}\label{class_grid_ac0797650ecb93cbcc36de3029b31409a}} 
+\index{Grid@{Grid}!setUpWalls@{setUpWalls}}
+\index{setUpWalls@{setUpWalls}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{setUpWalls()}{setUpWalls()}}
+{\footnotesize\ttfamily void Grid\+::set\+Up\+Walls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets all the impassible Tiles from the \mbox{\hyperlink{class_room}{Room}} objects, and copies them, so \mbox{\hyperlink{class_grid}{Grid}} now knows where all collisions should occur.  
+
+\mbox{\Hypertarget{class_grid_a869343829d847145c2fc0f1ece4555ec}\label{class_grid_a869343829d847145c2fc0f1ece4555ec}} 
+\index{Grid@{Grid}!update@{update}}
+\index{update@{update}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Grid\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+dt,  }\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{t\+\_\+player\+Pos }\end{DoxyParamCaption})}
+
+
+
+Updates the \mbox{\hyperlink{class_grid}{Grid}}, meaning it updates the appearance of the room, and checks \mbox{\hyperlink{class_player}{Player}} collisons with the Tiles.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+dt} & The time that has passed since last frame.\\
+\hline
+{\em t\+\_\+player\+Pos} & A reference to the \mbox{\hyperlink{class_player}{Player}} in \mbox{\hyperlink{class_gameplay}{Gameplay}}.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_grid_adc1642b4ef3c602446370e3f293f2c4b}\label{class_grid_adc1642b4ef3c602446370e3f293f2c4b}} 
+\index{Grid@{Grid}!whatRoomIsPlayerIn@{whatRoomIsPlayerIn}}
+\index{whatRoomIsPlayerIn@{whatRoomIsPlayerIn}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{whatRoomIsPlayerIn()}{whatRoomIsPlayerIn()}}
+{\footnotesize\ttfamily int Grid\+::what\+Room\+Is\+Player\+In (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{t\+\_\+player\+Pos }\end{DoxyParamCaption})}
+
+
+
+Calculates what \mbox{\hyperlink{class_room}{Room}} the \mbox{\hyperlink{class_player}{Player}} is in.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+player\+Pos} & \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s row and column within the \mbox{\hyperlink{class_grid}{Grid}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+What \mbox{\hyperlink{class_room}{Room}} the \mbox{\hyperlink{class_player}{Player}} is currently in.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_grid_a6bf172cbfcc65b3efc50befab4d8d072}\label{class_grid_a6bf172cbfcc65b3efc50befab4d8d072}} 
+\index{Grid@{Grid}!whatRoomIsTargetIn@{whatRoomIsTargetIn}}
+\index{whatRoomIsTargetIn@{whatRoomIsTargetIn}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{whatRoomIsTargetIn()}{whatRoomIsTargetIn()}}
+{\footnotesize\ttfamily int Grid\+::what\+Room\+Is\+Target\+In (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{t\+\_\+target\+Pos }\end{DoxyParamCaption})}
+
+
+
+Calculates what \mbox{\hyperlink{class_room}{Room}} the target (ie the player) is in.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+target\+Pos} & The target\textquotesingle{}s position.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The room that the target is in.
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_grid_a240d262bb7670acf81aa9a296bd3a54f}\label{class_grid_a240d262bb7670acf81aa9a296bd3a54f}} 
+\index{Grid@{Grid}!m\_playerRoom@{m\_playerRoom}}
+\index{m\_playerRoom@{m\_playerRoom}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{m\_playerRoom}{m\_playerRoom}}
+{\footnotesize\ttfamily int Grid\+::m\+\_\+player\+Room\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The index of the room the \mbox{\hyperlink{class_player}{Player}} is currently in. 
+
+\mbox{\Hypertarget{class_grid_ab201b36056ea3f606d6297e8ead657e1}\label{class_grid_ab201b36056ea3f606d6297e8ead657e1}} 
+\index{Grid@{Grid}!m\_points@{m\_points}}
+\index{m\_points@{m\_points}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{m\_points}{m\_points}}
+{\footnotesize\ttfamily sf\+::\+Vertex\+Array Grid\+::m\+\_\+points\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The dots on the map -\/ used to signify the size and area covered by a \mbox{\hyperlink{class_tile}{Tile}}. 
+
+\mbox{\Hypertarget{class_grid_aa9cb493bc5fad4e0c16374c9dee2a1d4}\label{class_grid_aa9cb493bc5fad4e0c16374c9dee2a1d4}} 
+\index{Grid@{Grid}!m\_roomPos@{m\_roomPos}}
+\index{m\_roomPos@{m\_roomPos}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{m\_roomPos}{m\_roomPos}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Grid\+::m\+\_\+room\+Pos = sf\+::\+Vector2f()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current new position to place down Rooms. This updates every time a new \mbox{\hyperlink{class_room}{Room}} is generated. 
+
+\mbox{\Hypertarget{class_grid_ae21c9934d673894474976fb780a50c28}\label{class_grid_ae21c9934d673894474976fb780a50c28}} 
+\index{Grid@{Grid}!m\_rooms@{m\_rooms}}
+\index{m\_rooms@{m\_rooms}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{m\_rooms}{m\_rooms}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_room}{Room}}$\ast$$>$ Grid\+::m\+\_\+rooms\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The Rooms themselves -\/ stored as pointers. 
+
+\mbox{\Hypertarget{class_grid_adb4e103f0975fddc78bf37f72bf22c16}\label{class_grid_adb4e103f0975fddc78bf37f72bf22c16}} 
+\index{Grid@{Grid}!m\_roomWalls@{m\_roomWalls}}
+\index{m\_roomWalls@{m\_roomWalls}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{m\_roomWalls}{m\_roomWalls}}
+{\footnotesize\ttfamily std\+::map$<$int, std\+::vector$<$sf\+::\+Vector2i$>$ $>$ Grid\+::m\+\_\+room\+Walls\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+All the impassable areas of the game. 
+
+\mbox{\Hypertarget{class_grid_a3442b0f8f93e0735daeb74405f2299d1}\label{class_grid_a3442b0f8f93e0735daeb74405f2299d1}} 
+\index{Grid@{Grid}!numOfRoomsMade@{numOfRoomsMade}}
+\index{numOfRoomsMade@{numOfRoomsMade}!Grid@{Grid}}
+\doxysubsubsection{\texorpdfstring{numOfRoomsMade}{numOfRoomsMade}}
+{\footnotesize\ttfamily int Grid\+::num\+Of\+Rooms\+Made = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+How many rooms are currently made on the \mbox{\hyperlink{class_grid}{Grid}}. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_grid_8h}{Grid.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_grid_8cpp}{Grid.\+cpp}}\end{DoxyCompactItemize}

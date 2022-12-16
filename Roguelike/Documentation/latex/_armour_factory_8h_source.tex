@@ -1,0 +1,36 @@
+\hypertarget{_armour_factory_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Armour\+Factory.h}
+\mbox{\hyperlink{_armour_factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_item_factory_8h}{AbstractItemFactory.h}}"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_light_armour_8h}{LightArmour.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_heavy_armour_8h}{HeavyArmour.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_medium_armour_8h}{MediumArmour.h}}"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_armour_factory}{ArmourFactory}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_abstract_item_factory}{AbstractItemFactory}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{20     \mbox{\hyperlink{class_abstract_armour}{AbstractArmour}}* \mbox{\hyperlink{class_armour_factory_abbe69d7da0fea6e509249457e6bede97}{CreateArmour}}(\mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}} t\_armour)\textcolor{keyword}{ override}}
+\DoxyCodeLine{21 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{22         \textcolor{keywordflow}{switch} (t\_armour)}
+\DoxyCodeLine{23         \{}
+\DoxyCodeLine{24         \textcolor{keywordflow}{case} Armours::Light:}
+\DoxyCodeLine{25             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_light_armour}{LightArmour}}(t\_armour);}
+\DoxyCodeLine{26             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{27         \textcolor{keywordflow}{case} Armours::Medium:}
+\DoxyCodeLine{28             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_medium_armour}{MediumArmour}}(t\_armour);}
+\DoxyCodeLine{29             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{30         \textcolor{keywordflow}{case} Armours::Heavy:}
+\DoxyCodeLine{31             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_heavy_armour}{HeavyArmour}}(t\_armour);}
+\DoxyCodeLine{32             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{33         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{34             \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{35             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{36         \}}
+\DoxyCodeLine{37     \};}
+\DoxyCodeLine{38 \};}
+\DoxyCodeLine{39 }
+
+\end{DoxyCode}

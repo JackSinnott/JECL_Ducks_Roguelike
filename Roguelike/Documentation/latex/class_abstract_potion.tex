@@ -1,0 +1,155 @@
+\hypertarget{class_abstract_potion}{}\doxysection{Abstract\+Potion Class Reference}
+\label{class_abstract_potion}\index{AbstractPotion@{AbstractPotion}}
+
+
+An abstract potion that \mbox{\hyperlink{class_health_potion}{Health\+Potion}}, \mbox{\hyperlink{class_speed_potion}{Speed\+Potion}}, and \mbox{\hyperlink{class_strength_potion}{Strength\+Potion}} derive from.   
+
+
+
+
+{\ttfamily \#include $<$Abstract\+Potion.\+h$>$}
+
+Inheritance diagram for Abstract\+Potion\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_abstract_potion}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_abstract_potion_ad157b5ec25d1e99355f567ff2744b337}{Abstract\+Potion}} ()
+\begin{DoxyCompactList}\small\item\em Default Class Constructor.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_abstract_potion_aec4bf6af74a8506613020e83b9ec7e92}{$\sim$\+Abstract\+Potion}} ()
+\begin{DoxyCompactList}\small\item\em Default Class Deconstructor.  \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_abstract_potion_aff8c434cfe491e5d4a0b112eb00cfe03}{Use\+Effect}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function where all potions can use it for different effects.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_abstract_potion_a11323348e7bf8bc3f0ba674a209d9a3e}{Set\+Potion\+Type}} (\mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}} t\+\_\+potion\+Type)
+\begin{DoxyCompactList}\small\item\em Sets the potion\textquotesingle{}s type.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}} \mbox{\hyperlink{class_abstract_potion_a3db67f36c99eee219f6f1b60a20e8bb2}{Get\+Potion\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Returns the potion\textquotesingle{}s type.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_abstract_potion_a04d114823c4de68a9656ef2ca59de9e1}{Set\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Sets the type of item it is, as well as setting its sprite.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}} \mbox{\hyperlink{class_abstract_potion_aca7861acff934664fba9c57185e19212}{m\+\_\+potion\+Type}} = Potions\+::\+Health
+\begin{DoxyCompactList}\small\item\em The type of potion this object is -\/ \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590a5a455a612047a34ede7a6c564fa67c0a}{Strength}}, \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590a605669cab962bf944d99ce89cf9e58d9}{Health}} or \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590a44877c6aa8e93fa5a91c9361211464fb}{Speed}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}}, sf\+::\+Int\+Rect $>$ \mbox{\hyperlink{class_abstract_potion_ac47a4534487255f8c837593a0e236403}{m\+\_\+rects}} = std\+::unordered\+\_\+map$<$\mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}}, sf\+::\+Int\+Rect$>$()
+\begin{DoxyCompactList}\small\item\em The sprite rects of the potions.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract potion that \mbox{\hyperlink{class_health_potion}{Health\+Potion}}, \mbox{\hyperlink{class_speed_potion}{Speed\+Potion}}, and \mbox{\hyperlink{class_strength_potion}{Strength\+Potion}} derive from.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_abstract_potion_ad157b5ec25d1e99355f567ff2744b337}\label{class_abstract_potion_ad157b5ec25d1e99355f567ff2744b337}} 
+\index{AbstractPotion@{AbstractPotion}!AbstractPotion@{AbstractPotion}}
+\index{AbstractPotion@{AbstractPotion}!AbstractPotion@{AbstractPotion}}
+\doxysubsubsection{\texorpdfstring{AbstractPotion()}{AbstractPotion()}}
+{\footnotesize\ttfamily Abstract\+Potion\+::\+Abstract\+Potion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default Class Constructor.  
+
+\mbox{\Hypertarget{class_abstract_potion_aec4bf6af74a8506613020e83b9ec7e92}\label{class_abstract_potion_aec4bf6af74a8506613020e83b9ec7e92}} 
+\index{AbstractPotion@{AbstractPotion}!````~AbstractPotion@{$\sim$AbstractPotion}}
+\index{````~AbstractPotion@{$\sim$AbstractPotion}!AbstractPotion@{AbstractPotion}}
+\doxysubsubsection{\texorpdfstring{$\sim$AbstractPotion()}{~AbstractPotion()}}
+{\footnotesize\ttfamily Abstract\+Potion\+::$\sim$\+Abstract\+Potion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default Class Deconstructor.  
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_abstract_potion_a3db67f36c99eee219f6f1b60a20e8bb2}\label{class_abstract_potion_a3db67f36c99eee219f6f1b60a20e8bb2}} 
+\index{AbstractPotion@{AbstractPotion}!GetPotionType@{GetPotionType}}
+\index{GetPotionType@{GetPotionType}!AbstractPotion@{AbstractPotion}}
+\doxysubsubsection{\texorpdfstring{GetPotionType()}{GetPotionType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}} Abstract\+Potion\+::\+Get\+Potion\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the potion\textquotesingle{}s type.  
+
+\begin{DoxyReturn}{Returns}
+The type of potion this is.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_abstract_potion_a11323348e7bf8bc3f0ba674a209d9a3e}\label{class_abstract_potion_a11323348e7bf8bc3f0ba674a209d9a3e}} 
+\index{AbstractPotion@{AbstractPotion}!SetPotionType@{SetPotionType}}
+\index{SetPotionType@{SetPotionType}!AbstractPotion@{AbstractPotion}}
+\doxysubsubsection{\texorpdfstring{SetPotionType()}{SetPotionType()}}
+{\footnotesize\ttfamily void Abstract\+Potion\+::\+Set\+Potion\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}}}]{t\+\_\+potion\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the potion\textquotesingle{}s type.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+potion\+Type} & The type of potion this is.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_abstract_potion_a04d114823c4de68a9656ef2ca59de9e1}\label{class_abstract_potion_a04d114823c4de68a9656ef2ca59de9e1}} 
+\index{AbstractPotion@{AbstractPotion}!SetType@{SetType}}
+\index{SetType@{SetType}!AbstractPotion@{AbstractPotion}}
+\doxysubsubsection{\texorpdfstring{SetType()}{SetType()}}
+{\footnotesize\ttfamily void Abstract\+Potion\+::\+Set\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the type of item it is, as well as setting its sprite.  
+
+\mbox{\Hypertarget{class_abstract_potion_aff8c434cfe491e5d4a0b112eb00cfe03}\label{class_abstract_potion_aff8c434cfe491e5d4a0b112eb00cfe03}} 
+\index{AbstractPotion@{AbstractPotion}!UseEffect@{UseEffect}}
+\index{UseEffect@{UseEffect}!AbstractPotion@{AbstractPotion}}
+\doxysubsubsection{\texorpdfstring{UseEffect()}{UseEffect()}}
+{\footnotesize\ttfamily virtual int Abstract\+Potion\+::\+Use\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function where all potions can use it for different effects.  
+
+\begin{DoxyReturn}{Returns}
+The value passed, depending on the type of potion used.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_health_potion_ade08018038d5659eecded3a43edca290}{Health\+Potion}}, \mbox{\hyperlink{class_speed_potion_a8e76786099dd19fb27bf14389ebbd5b7}{Speed\+Potion}}, and \mbox{\hyperlink{class_strength_potion_ae642a1e1d8cc3cb06c2f8ddea8c95071}{Strength\+Potion}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_abstract_potion_aca7861acff934664fba9c57185e19212}\label{class_abstract_potion_aca7861acff934664fba9c57185e19212}} 
+\index{AbstractPotion@{AbstractPotion}!m\_potionType@{m\_potionType}}
+\index{m\_potionType@{m\_potionType}!AbstractPotion@{AbstractPotion}}
+\doxysubsubsection{\texorpdfstring{m\_potionType}{m\_potionType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}} Abstract\+Potion\+::m\+\_\+potion\+Type = Potions\+::\+Health\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The type of potion this object is -\/ \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590a5a455a612047a34ede7a6c564fa67c0a}{Strength}}, \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590a605669cab962bf944d99ce89cf9e58d9}{Health}} or \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590a44877c6aa8e93fa5a91c9361211464fb}{Speed}}. 
+
+\mbox{\Hypertarget{class_abstract_potion_ac47a4534487255f8c837593a0e236403}\label{class_abstract_potion_ac47a4534487255f8c837593a0e236403}} 
+\index{AbstractPotion@{AbstractPotion}!m\_rects@{m\_rects}}
+\index{m\_rects@{m\_rects}!AbstractPotion@{AbstractPotion}}
+\doxysubsubsection{\texorpdfstring{m\_rects}{m\_rects}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}}, sf\+::\+Int\+Rect $>$ Abstract\+Potion\+::m\+\_\+rects = std\+::unordered\+\_\+map$<$\mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}}, sf\+::\+Int\+Rect$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The sprite rects of the potions.  
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_abstract_potion_8h}{Abstract\+Potion.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_abstract_potion_8cpp}{Abstract\+Potion.\+cpp}}\end{DoxyCompactItemize}

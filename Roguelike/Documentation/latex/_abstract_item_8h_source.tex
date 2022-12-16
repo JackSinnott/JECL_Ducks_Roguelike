@@ -1,0 +1,60 @@
+\hypertarget{_abstract_item_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Abstract\+Item.h}
+\mbox{\hyperlink{_abstract_item_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_globals_8h}{Globals.h}}"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_texture_manager_8h}{TextureManager.h}}"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_abstract_item}{AbstractItem}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12 \textcolor{keyword}{public}:}
+\DoxyCodeLine{13     }
+\DoxyCodeLine{17     \mbox{\hyperlink{class_abstract_item_a1e64e12128fcd88cc212196008ff36b3}{\string~AbstractItem}}() \{ \textcolor{keyword}{delete} \textcolor{keyword}{this}; \};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_abstract_item_ac44e52a2ecdcd5924bae257811b3c200}{draw}}(sf::RenderWindow\& t\_window) \{ t\_window.draw(\mbox{\hyperlink{class_abstract_item_a3b837fabfac8f03e452a0000def3a1ee}{m\_itemSprite}}); \};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_abstract_item_a358c9fc8893cbd049fd51f054c5e176b}{GenerateRandomPosition}}()}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         \textcolor{keywordtype}{int} randomeX = rand() \% 56 + 16;}
+\DoxyCodeLine{32         \textcolor{keywordtype}{int} randomeY = rand() \% 28 + 16;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \mbox{\hyperlink{class_abstract_item_a3b837fabfac8f03e452a0000def3a1ee}{m\_itemSprite}}.setPosition( sf::Vector2f(randomeX, randomeY) * \textcolor{keywordtype}{float}(\mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\_CELL\_SIZE}}));}
+\DoxyCodeLine{35     \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_abstract_item_abe763be2ca66718e36515961477161f3}{SetupBasics}}()}
+\DoxyCodeLine{42     \{}
+\DoxyCodeLine{43         \mbox{\hyperlink{class_abstract_item_ade4186971af572bfe447ad46b6963024}{m\_itemTexture}} = \mbox{\hyperlink{class_texture_manager_a3b6cbb7a9be0556355e8a6206c5cc3e7}{TextureManager::Acquire}}(\mbox{\hyperlink{_globals_8h_a62bdf4f6ff3e6683dce531167dc91ba6}{ITEMS\_TEXTURE}});}
+\DoxyCodeLine{44         \mbox{\hyperlink{class_abstract_item_a3b837fabfac8f03e452a0000def3a1ee}{m\_itemSprite}}.setTexture(*\mbox{\hyperlink{class_abstract_item_ade4186971af572bfe447ad46b6963024}{m\_itemTexture}});}
+\DoxyCodeLine{45         \mbox{\hyperlink{class_abstract_item_a3b837fabfac8f03e452a0000def3a1ee}{m\_itemSprite}}.setOrigin(\mbox{\hyperlink{class_abstract_item_a3b837fabfac8f03e452a0000def3a1ee}{m\_itemSprite}}.getTextureRect().width/ 2.0f, \mbox{\hyperlink{class_abstract_item_a3b837fabfac8f03e452a0000def3a1ee}{m\_itemSprite}}.getTextureRect().height / 2.0f);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         \mbox{\hyperlink{class_abstract_item_a3b837fabfac8f03e452a0000def3a1ee}{m\_itemSprite}}.setPosition(\mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\_CELL\_SIZE}} * (10) + \mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\_CELL\_SIZE}} / 2.0f,}
+\DoxyCodeLine{48             \mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\_CELL\_SIZE}} * (10) + \mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\_CELL\_SIZE}} / 2.0f);}
+\DoxyCodeLine{49         \mbox{\hyperlink{class_abstract_item_a3b837fabfac8f03e452a0000def3a1ee}{m\_itemSprite}}.setScale(2.0f, 2.0f);}
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{57     \mbox{\hyperlink{_globals_8h_a443f647757dde85043b49343f5cbe66b}{ItemType}} \mbox{\hyperlink{class_abstract_item_afaf5453c5675970ed3c4ec29c19ed3e3}{GetItemType}}()}
+\DoxyCodeLine{58     \{}
+\DoxyCodeLine{59         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_abstract_item_a6e7d945f75b209961840cee458ae78a0}{m\_itemType}};}
+\DoxyCodeLine{60     \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{67     sf::Sprite \& \mbox{\hyperlink{class_abstract_item_a80bbe588b05ed695e4b5e716e939fcc0}{GetSprite}}()}
+\DoxyCodeLine{68     \{}
+\DoxyCodeLine{69         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_abstract_item_a3b837fabfac8f03e452a0000def3a1ee}{m\_itemSprite}};}
+\DoxyCodeLine{70     \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{74     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_abstract_item_a55adddf80a030b2230c40caf1ef744c2}{m\_rarity}} = 0;}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{77     std::shared\_ptr<sf::Texture> \mbox{\hyperlink{class_abstract_item_ade4186971af572bfe447ad46b6963024}{m\_itemTexture}};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{80     sf::Sprite \mbox{\hyperlink{class_abstract_item_a3b837fabfac8f03e452a0000def3a1ee}{m\_itemSprite}};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{83     \mbox{\hyperlink{_globals_8h_a443f647757dde85043b49343f5cbe66b}{ItemType}} \mbox{\hyperlink{class_abstract_item_a6e7d945f75b209961840cee458ae78a0}{m\_itemType}} = ItemType::Weapon;}
+\DoxyCodeLine{84 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,39 @@
+\hypertarget{_abstract_weapon_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Abstract\+Weapon.h}
+\mbox{\hyperlink{_abstract_weapon_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_item_8h}{AbstractItem.h}}"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_abstract_weapon}{AbstractWeapon}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_abstract_item}{AbstractItem}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{15     \mbox{\hyperlink{class_abstract_weapon_ac22a7865b7bd93f9c975159fb2d95995}{AbstractWeapon}}()}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_abstract_weapon_a4dd1ce5b598d233bf27d3493f8c57d15}{m\_rects}}.size() == 0)}
+\DoxyCodeLine{18         \{}
+\DoxyCodeLine{19             \mbox{\hyperlink{class_abstract_weapon_a4dd1ce5b598d233bf27d3493f8c57d15}{m\_rects}}.try\_emplace(Weapons::Axe, sf::IntRect\{ 160,144,16,16 \});}
+\DoxyCodeLine{20             \mbox{\hyperlink{class_abstract_weapon_a4dd1ce5b598d233bf27d3493f8c57d15}{m\_rects}}.try\_emplace(Weapons::Dagger, sf::IntRect\{ 112,128,16,16 \});}
+\DoxyCodeLine{21             \mbox{\hyperlink{class_abstract_weapon_a4dd1ce5b598d233bf27d3493f8c57d15}{m\_rects}}.try\_emplace(Weapons::Sword, sf::IntRect\{ 160,128,16,16 \});}
+\DoxyCodeLine{22         \}}
+\DoxyCodeLine{23     \}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{28     \mbox{\hyperlink{class_abstract_weapon_aa39edebc2b4c45742f76068e9166106c}{\string~AbstractWeapon}}() \{\};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_abstract_weapon_acad3909b221f391a86309d112651077b}{SetType}}() \{ \mbox{\hyperlink{class_abstract_item_a6e7d945f75b209961840cee458ae78a0}{m\_itemType}} = ItemType::Weapon; \mbox{\hyperlink{class_abstract_item_a3b837fabfac8f03e452a0000def3a1ee}{m\_itemSprite}}.setTextureRect(\mbox{\hyperlink{class_abstract_weapon_a4dd1ce5b598d233bf27d3493f8c57d15}{m\_rects}}.at(\mbox{\hyperlink{class_abstract_weapon_a1ed6802f934ea904b26e190f2aa2d373}{m\_weaponType}}));\};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{40     \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_abstract_weapon_a7f404c7abed589ab0d5b415182ae8d6b}{GetDamage}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_abstract_weapon_ac9a7239aac84b4a0ec598538e75bbd69}{m\_damage}}; \}; \textcolor{comment}{//Returns the damage of the weapon}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_abstract_weapon_ac9a7239aac84b4a0ec598538e75bbd69}{m\_damage}} = 0; }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{48     \textcolor{keyword}{static} std::unordered\_map<Weapons, sf::IntRect> \mbox{\hyperlink{class_abstract_weapon_a4dd1ce5b598d233bf27d3493f8c57d15}{m\_rects}};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{51     \mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213}{Weapons}} \mbox{\hyperlink{class_abstract_weapon_a1ed6802f934ea904b26e190f2aa2d373}{m\_weaponType}} = Weapons::Sword;}
+\DoxyCodeLine{52 \};}
+\DoxyCodeLine{53 }
+
+\end{DoxyCode}

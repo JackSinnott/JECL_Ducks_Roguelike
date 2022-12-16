@@ -1,0 +1,42 @@
+\hypertarget{_audio_asset_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Audio\+Asset.h}
+\mbox{\hyperlink{_audio_asset_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef AUDIO\_ASSET\_INCLUDE}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define AUDIO\_ASSET\_INCLUDE}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <SFML/Audio.hpp>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{9 \textcolor{keyword}{enum class} \mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcf}{AudioType}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcfad74c735013cdd2b883e25ccca502a2e9}{MUSIC}},}
+\DoxyCodeLine{12     \mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcfada101052f6ba998ab41d571a6fff1708}{SFX}}}
+\DoxyCodeLine{13 \};}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_audio}{Audio}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_audio}{Audio}}(\mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcf}{AudioType}}, std::string t\_path);}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_audio_ae8f54deecb5f48511aaab469e80294d6}{\string~Audio}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_audio_a2916f9015031bee9abb98adf0d83e7ee}{play}}();}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_audio_a82c1018cf778eccc8819acfb64be53b2}{pause}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_audio_af628fdffa4dba3866e6e801fdda123ea}{stop}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_audio_ad5526142e7ac9baedd101ee3434ee10a}{setVolume}}(\textcolor{keywordtype}{float} t\_volume);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keyword}{const} \mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcf}{AudioType}} \mbox{\hyperlink{class_audio_a93883fcad75615fbe6db469edf50d75a}{getType}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_audio_a8a8e8547ecc45bfb173f4b596744ae69}{m\_type}}; \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_audio_abca5fcabf8597df317644edbab49771e}{isPlaying}}();}
+\DoxyCodeLine{35 \textcolor{keyword}{private}:}
+\DoxyCodeLine{37     sf::SoundBuffer \mbox{\hyperlink{class_audio_ac4269eb021343584dc90072f31ed88d3}{m\_buffer}};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{40     \mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcf}{AudioType}} \mbox{\hyperlink{class_audio_a8a8e8547ecc45bfb173f4b596744ae69}{m\_type}};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{43     sf::Sound \mbox{\hyperlink{class_audio_a044e6a8ee58fce5c20bca4804b33461b}{m\_audio}};}
+\DoxyCodeLine{44 \};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

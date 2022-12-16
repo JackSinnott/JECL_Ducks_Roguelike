@@ -1,0 +1,308 @@
+\hypertarget{class_room}{}\doxysection{Room Class Reference}
+\label{class_room}\index{Room@{Room}}
+
+
+Class that handles \mbox{\hyperlink{class_tile}{Tile}} objects, and organises them together to look and act coherant. Also is used to seperate itself from other Rooms.   
+
+
+
+
+{\ttfamily \#include $<$Room.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_room_af8faab99ce9656cd3c1c4632ad385fa3}{Room}} (int t\+\_\+id, sf\+::\+Vector2f t\+\_\+room\+Pos)
+\begin{DoxyCompactList}\small\item\em Overloaded Class Constructor.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_room_a67d5da09983cc53097807fd43ba5481a}{$\sim$\+Room}} ()
+\begin{DoxyCompactList}\small\item\em Default deconstructor.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_room_a33f8da9118d83bd6395f69fb43303725}{update}} (sf\+::\+Time t\+\_\+dt, int \mbox{\hyperlink{class_room_a1390ef717209af1cbcd2afabb4642464}{row}}, int \mbox{\hyperlink{class_room_a008db12edeea58448b97570bf7a2c453}{col}})
+\begin{DoxyCompactList}\small\item\em Updates the \mbox{\hyperlink{class_tile}{Tile}} objects.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_room_a740596d1126a7b95656529799292a555}{draw}} (sf\+::\+Render\+Target \&t\+\_\+target, sf\+::\+Render\+States const t\+\_\+state=sf\+::\+Render\+States\+::\+Default) const
+\begin{DoxyCompactList}\small\item\em Draws all the \mbox{\hyperlink{class_tile}{Tile}} objects to the screen.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_room_a3068a85c9f12ea4247f23b4b0631595d}{Check\+Player}} (int t\+\_\+player\+Room\+ID)
+\begin{DoxyCompactList}\small\item\em Checks if the \mbox{\hyperlink{class_player}{Player}} has entered this \mbox{\hyperlink{class_room}{Room}}.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_room_a1005454662f31957143c39653e5d5550}{set\+Up\+Tiles}} (\mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}} t\+\_\+type, int \mbox{\hyperlink{class_room_a1390ef717209af1cbcd2afabb4642464}{row}}, int \mbox{\hyperlink{class_room_a008db12edeea58448b97570bf7a2c453}{col}})
+\begin{DoxyCompactList}\small\item\em Sets up a \mbox{\hyperlink{class_tile}{Tile}} object in this room.  \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_room_ae9f6536b2640aa477c03bdffc8fb0511}{get\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Returns the \mbox{\hyperlink{class_room}{Room}}\textquotesingle{}s ID.  \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_room_a9e8b1ce65e38ef7d1ed0ce4e375df051}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the start position of the \mbox{\hyperlink{class_room}{Room}} in relation to the whole \mbox{\hyperlink{class_grid}{Grid}}.  \end{DoxyCompactList}\item 
+std\+::vector$<$ sf\+::\+Vector2i $>$ \mbox{\hyperlink{class_room_a7dadb2c732c9a539743b47c672c865bb}{get\+Walls}} ()
+\begin{DoxyCompactList}\small\item\em Get all the positions of the Tiles that are \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1acff1d19b5e9949c76122a6c42801b6cb}{VERTICAL\+\_\+\+WALL}}, \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a3817619231a131f2b7b22ff58a46d816}{HORIZONTAL\+\_\+\+WALL}}, or \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1ae5d176bc77e7e4e6957de0ef675f50fe}{INSIDE\+\_\+\+WALL}}.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_room_ab0b351919b0eb1de670af849f1bdb966}{set\+Grid\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Sets up the rows and columns this \mbox{\hyperlink{class_tile}{Tile}} occupies, for easy returns later.  \end{DoxyCompactList}\item 
+sf\+::\+Vector2i \mbox{\hyperlink{class_room_acbe8af4fdea03b269256f24bdb83ea18}{get\+Grid\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the row and column of this \mbox{\hyperlink{class_room}{Room}} occupies in the \mbox{\hyperlink{class_grid}{Grid}}.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_room_a75b5e2284a315945e63292d10badbccb}{m\+\_\+pos}}
+\begin{DoxyCompactList}\small\item\em The position of the \mbox{\hyperlink{class_room}{Room}}. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ \mbox{\hyperlink{class_room_a8ef8f7cfa9c3d2db6c19fe3fb2843b0a}{m\+\_\+p\+Texture}}
+\begin{DoxyCompactList}\small\item\em The shared pointer to the texture of the \mbox{\hyperlink{class_tile}{Tile}} objects. \end{DoxyCompactList}\item 
+std\+::array$<$ std\+::array$<$ \mbox{\hyperlink{class_tile}{Tile}}, \mbox{\hyperlink{_globals_8h_aae928e13459e3f134213e53cfdffb186}{G\+\_\+\+MAP\+\_\+\+COLS}} $>$, \mbox{\hyperlink{_globals_8h_a4f8d156204e81cf90a7056ae14e7b148}{G\+\_\+\+MAP\+\_\+\+ROWS}} $>$ \mbox{\hyperlink{class_room_afa68c6dc6d9875a7c19f0474a6e808eb}{m\+\_\+tiles}}
+\begin{DoxyCompactList}\small\item\em The tiles themselves, laid out in a 2D array. \end{DoxyCompactList}\item 
+std\+::vector$<$ sf\+::\+Vector2i $>$ \mbox{\hyperlink{class_room_ad2791e9f52a26c8316c6c8d60b39bf0d}{m\+\_\+walls}}
+\item 
+int \mbox{\hyperlink{class_room_a1390ef717209af1cbcd2afabb4642464}{row}}
+\begin{DoxyCompactList}\small\item\em The row the \mbox{\hyperlink{class_room}{Room}} is in on the \mbox{\hyperlink{class_grid}{Grid}} -\/ All rooms are in a 3x3 layout together. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_room_a008db12edeea58448b97570bf7a2c453}{col}}
+\begin{DoxyCompactList}\small\item\em The column the \mbox{\hyperlink{class_room}{Room}} is in on the \mbox{\hyperlink{class_grid}{Grid}} -\/ All rooms are in a 3x3 layout together. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_room_af51865ded79b022a93c6af4bd613d41c}{id}}
+\begin{DoxyCompactList}\small\item\em an ID for the \mbox{\hyperlink{class_room}{Room}} -\/ used for identification, like what room \mbox{\hyperlink{class_player}{Player}} entered. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_room_a77b63882fbdf9e9fde49fc195cef3722}{m\+\_\+revealed}}
+\begin{DoxyCompactList}\small\item\em Whether the \mbox{\hyperlink{class_room}{Room}} has been visited by the \mbox{\hyperlink{class_player}{Player}}, and should be drawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that handles \mbox{\hyperlink{class_tile}{Tile}} objects, and organises them together to look and act coherant. Also is used to seperate itself from other Rooms.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_room_af8faab99ce9656cd3c1c4632ad385fa3}\label{class_room_af8faab99ce9656cd3c1c4632ad385fa3}} 
+\index{Room@{Room}!Room@{Room}}
+\index{Room@{Room}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{Room()}{Room()}}
+{\footnotesize\ttfamily Room\+::\+Room (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+id,  }\item[{sf\+::\+Vector2f}]{t\+\_\+pos = {\ttfamily sf\+:\+:Vector2f()} }\end{DoxyParamCaption})}
+
+
+
+Overloaded Class Constructor.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+id} & This \mbox{\hyperlink{class_room}{Room}}\textquotesingle{}s new ID.\\
+\hline
+{\em t\+\_\+pos} & This \mbox{\hyperlink{class_room}{Room}}\textquotesingle{}s new position.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_room_a67d5da09983cc53097807fd43ba5481a}\label{class_room_a67d5da09983cc53097807fd43ba5481a}} 
+\index{Room@{Room}!````~Room@{$\sim$Room}}
+\index{````~Room@{$\sim$Room}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{$\sim$Room()}{~Room()}}
+{\footnotesize\ttfamily Room\+::$\sim$\+Room (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default deconstructor.  
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_room_a3068a85c9f12ea4247f23b4b0631595d}\label{class_room_a3068a85c9f12ea4247f23b4b0631595d}} 
+\index{Room@{Room}!CheckPlayer@{CheckPlayer}}
+\index{CheckPlayer@{CheckPlayer}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{CheckPlayer()}{CheckPlayer()}}
+{\footnotesize\ttfamily void Room\+::\+Check\+Player (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+player\+Room\+ID }\end{DoxyParamCaption})}
+
+
+
+Checks if the \mbox{\hyperlink{class_player}{Player}} has entered this \mbox{\hyperlink{class_room}{Room}}.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+player\+Room\+ID} & The ID of the \mbox{\hyperlink{class_room}{Room}} the \mbox{\hyperlink{class_player}{Player}} currently is in.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_room_a740596d1126a7b95656529799292a555}\label{class_room_a740596d1126a7b95656529799292a555}} 
+\index{Room@{Room}!draw@{draw}}
+\index{draw@{draw}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Room\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{t\+\_\+target,  }\item[{sf\+::\+Render\+States const}]{t\+\_\+state = {\ttfamily sf\+:\+:RenderStates\+:\+:Default} }\end{DoxyParamCaption}) const}
+
+
+
+Draws all the \mbox{\hyperlink{class_tile}{Tile}} objects to the screen.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+target} & Where to draw the Tiles.\\
+\hline
+{\em t\+\_\+state} & The state in which to draw the Tiles.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_room_acbe8af4fdea03b269256f24bdb83ea18}\label{class_room_acbe8af4fdea03b269256f24bdb83ea18}} 
+\index{Room@{Room}!getGridPosition@{getGridPosition}}
+\index{getGridPosition@{getGridPosition}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{getGridPosition()}{getGridPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2i Room\+::get\+Grid\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the row and column of this \mbox{\hyperlink{class_room}{Room}} occupies in the \mbox{\hyperlink{class_grid}{Grid}}.  
+
+\begin{DoxyReturn}{Returns}
+The row and column of this \mbox{\hyperlink{class_room}{Room}}.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_room_ae9f6536b2640aa477c03bdffc8fb0511}\label{class_room_ae9f6536b2640aa477c03bdffc8fb0511}} 
+\index{Room@{Room}!getID@{getID}}
+\index{getID@{getID}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily int Room\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the \mbox{\hyperlink{class_room}{Room}}\textquotesingle{}s ID.  
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{class_room}{Room}}\textquotesingle{}s ID.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_room_a9e8b1ce65e38ef7d1ed0ce4e375df051}\label{class_room_a9e8b1ce65e38ef7d1ed0ce4e375df051}} 
+\index{Room@{Room}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Room\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the start position of the \mbox{\hyperlink{class_room}{Room}} in relation to the whole \mbox{\hyperlink{class_grid}{Grid}}.  
+
+\begin{DoxyReturn}{Returns}
+The position of the \mbox{\hyperlink{class_room}{Room}}.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_room_a7dadb2c732c9a539743b47c672c865bb}\label{class_room_a7dadb2c732c9a539743b47c672c865bb}} 
+\index{Room@{Room}!getWalls@{getWalls}}
+\index{getWalls@{getWalls}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{getWalls()}{getWalls()}}
+{\footnotesize\ttfamily std\+::vector$<$ sf\+::\+Vector2i $>$ Room\+::get\+Walls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get all the positions of the Tiles that are \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1acff1d19b5e9949c76122a6c42801b6cb}{VERTICAL\+\_\+\+WALL}}, \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a3817619231a131f2b7b22ff58a46d816}{HORIZONTAL\+\_\+\+WALL}}, or \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1ae5d176bc77e7e4e6957de0ef675f50fe}{INSIDE\+\_\+\+WALL}}.  
+
+\begin{DoxyReturn}{Returns}
+All the positions of the walls.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_room_ab0b351919b0eb1de670af849f1bdb966}\label{class_room_ab0b351919b0eb1de670af849f1bdb966}} 
+\index{Room@{Room}!setGridPosition@{setGridPosition}}
+\index{setGridPosition@{setGridPosition}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{setGridPosition()}{setGridPosition()}}
+{\footnotesize\ttfamily void Room\+::set\+Grid\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets up the rows and columns this \mbox{\hyperlink{class_tile}{Tile}} occupies, for easy returns later.  
+
+\mbox{\Hypertarget{class_room_a1005454662f31957143c39653e5d5550}\label{class_room_a1005454662f31957143c39653e5d5550}} 
+\index{Room@{Room}!setUpTiles@{setUpTiles}}
+\index{setUpTiles@{setUpTiles}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{setUpTiles()}{setUpTiles()}}
+{\footnotesize\ttfamily void Room\+::set\+Up\+Tiles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}}}]{t\+\_\+type,  }\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+
+
+Sets up a \mbox{\hyperlink{class_tile}{Tile}} object in this room.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+type} & The type of \mbox{\hyperlink{class_tile}{Tile}} this one is.\\
+\hline
+{\em row} & The row that this \mbox{\hyperlink{class_tile}{Tile}} will be at, in this \mbox{\hyperlink{class_room}{Room}}.\\
+\hline
+{\em col} & The column that this \mbox{\hyperlink{class_tile}{Tile}} will be at, in this \mbox{\hyperlink{class_room}{Room}}.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_room_a33f8da9118d83bd6395f69fb43303725}\label{class_room_a33f8da9118d83bd6395f69fb43303725}} 
+\index{Room@{Room}!update@{update}}
+\index{update@{update}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Room\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+dt,  }\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+
+
+Updates the \mbox{\hyperlink{class_tile}{Tile}} objects.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+dt} & The time that has passed since last frame.\\
+\hline
+{\em row} & The row this \mbox{\hyperlink{class_room}{Room}} takes in a 3x3 layout, compared to other rooms.\\
+\hline
+{\em col} & The column this \mbox{\hyperlink{class_room}{Room}} takes in a 3x3 layout, compared to other rooms.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_room_a008db12edeea58448b97570bf7a2c453}\label{class_room_a008db12edeea58448b97570bf7a2c453}} 
+\index{Room@{Room}!col@{col}}
+\index{col@{col}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{col}{col}}
+{\footnotesize\ttfamily int Room\+::col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The column the \mbox{\hyperlink{class_room}{Room}} is in on the \mbox{\hyperlink{class_grid}{Grid}} -\/ All rooms are in a 3x3 layout together. 
+
+\mbox{\Hypertarget{class_room_af51865ded79b022a93c6af4bd613d41c}\label{class_room_af51865ded79b022a93c6af4bd613d41c}} 
+\index{Room@{Room}!id@{id}}
+\index{id@{id}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int Room\+::id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+an ID for the \mbox{\hyperlink{class_room}{Room}} -\/ used for identification, like what room \mbox{\hyperlink{class_player}{Player}} entered. 
+
+\mbox{\Hypertarget{class_room_a75b5e2284a315945e63292d10badbccb}\label{class_room_a75b5e2284a315945e63292d10badbccb}} 
+\index{Room@{Room}!m\_pos@{m\_pos}}
+\index{m\_pos@{m\_pos}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{m\_pos}{m\_pos}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Room\+::m\+\_\+pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The position of the \mbox{\hyperlink{class_room}{Room}}. 
+
+\mbox{\Hypertarget{class_room_a8ef8f7cfa9c3d2db6c19fe3fb2843b0a}\label{class_room_a8ef8f7cfa9c3d2db6c19fe3fb2843b0a}} 
+\index{Room@{Room}!m\_pTexture@{m\_pTexture}}
+\index{m\_pTexture@{m\_pTexture}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{m\_pTexture}{m\_pTexture}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$sf\+::\+Texture$>$ Room\+::m\+\_\+p\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The shared pointer to the texture of the \mbox{\hyperlink{class_tile}{Tile}} objects. 
+
+\mbox{\Hypertarget{class_room_a77b63882fbdf9e9fde49fc195cef3722}\label{class_room_a77b63882fbdf9e9fde49fc195cef3722}} 
+\index{Room@{Room}!m\_revealed@{m\_revealed}}
+\index{m\_revealed@{m\_revealed}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{m\_revealed}{m\_revealed}}
+{\footnotesize\ttfamily bool Room\+::m\+\_\+revealed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Whether the \mbox{\hyperlink{class_room}{Room}} has been visited by the \mbox{\hyperlink{class_player}{Player}}, and should be drawn. 
+
+\mbox{\Hypertarget{class_room_afa68c6dc6d9875a7c19f0474a6e808eb}\label{class_room_afa68c6dc6d9875a7c19f0474a6e808eb}} 
+\index{Room@{Room}!m\_tiles@{m\_tiles}}
+\index{m\_tiles@{m\_tiles}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{m\_tiles}{m\_tiles}}
+{\footnotesize\ttfamily std\+::array$<$std\+::array$<$\mbox{\hyperlink{class_tile}{Tile}}, \mbox{\hyperlink{_globals_8h_aae928e13459e3f134213e53cfdffb186}{G\+\_\+\+MAP\+\_\+\+COLS}}$>$,\mbox{\hyperlink{_globals_8h_a4f8d156204e81cf90a7056ae14e7b148}{G\+\_\+\+MAP\+\_\+\+ROWS}}$>$ Room\+::m\+\_\+tiles\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The tiles themselves, laid out in a 2D array. 
+
+\mbox{\Hypertarget{class_room_ad2791e9f52a26c8316c6c8d60b39bf0d}\label{class_room_ad2791e9f52a26c8316c6c8d60b39bf0d}} 
+\index{Room@{Room}!m\_walls@{m\_walls}}
+\index{m\_walls@{m\_walls}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{m\_walls}{m\_walls}}
+{\footnotesize\ttfamily std\+::vector$<$sf\+::\+Vector2i$>$ Room\+::m\+\_\+walls\hspace{0.3cm}{\ttfamily [private]}}
+
+All the positions of the Tiles that are \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1acff1d19b5e9949c76122a6c42801b6cb}{VERTICAL\+\_\+\+WALL}}, \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1a3817619231a131f2b7b22ff58a46d816}{HORIZONTAL\+\_\+\+WALL}}, or \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1ae5d176bc77e7e4e6957de0ef675f50fe}{INSIDE\+\_\+\+WALL}}. \mbox{\Hypertarget{class_room_a1390ef717209af1cbcd2afabb4642464}\label{class_room_a1390ef717209af1cbcd2afabb4642464}} 
+\index{Room@{Room}!row@{row}}
+\index{row@{row}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{row}{row}}
+{\footnotesize\ttfamily int Room\+::row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The row the \mbox{\hyperlink{class_room}{Room}} is in on the \mbox{\hyperlink{class_grid}{Grid}} -\/ All rooms are in a 3x3 layout together. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_room_8h}{Room.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_room_8cpp}{Room.\+cpp}}\end{DoxyCompactItemize}

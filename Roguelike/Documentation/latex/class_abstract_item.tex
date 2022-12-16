@@ -1,0 +1,171 @@
+\hypertarget{class_abstract_item}{}\doxysection{Abstract\+Item Class Reference}
+\label{class_abstract_item}\index{AbstractItem@{AbstractItem}}
+
+
+Abstract item that all in-\/game items derive from. This includes all the \mbox{\hyperlink{class_abstract_weapon}{Abstract\+Weapon}}, \mbox{\hyperlink{class_abstract_armour}{Abstract\+Armour}}, and \mbox{\hyperlink{class_abstract_potion}{Abstract\+Potion}}.   
+
+
+
+
+{\ttfamily \#include $<$Abstract\+Item.\+h$>$}
+
+Inheritance diagram for Abstract\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.129793cm]{class_abstract_item}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_abstract_item_a1e64e12128fcd88cc212196008ff36b3}{$\sim$\+Abstract\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Class\textquotesingle{}s Default Deconstructor.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_abstract_item_ac44e52a2ecdcd5924bae257811b3c200}{draw}} (sf\+::\+Render\+Window \&t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draw method for drawing the item\textquotesingle{}s sprite.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_abstract_item_a358c9fc8893cbd049fd51f054c5e176b}{Generate\+Random\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Generates a random positon on the grid for said item.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_abstract_item_abe763be2ca66718e36515961477161f3}{Setup\+Basics}} ()
+\begin{DoxyCompactList}\small\item\em Sets up the item\textquotesingle{}s texture, a generic position and scale of the sprite.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_globals_8h_a443f647757dde85043b49343f5cbe66b}{Item\+Type}} \mbox{\hyperlink{class_abstract_item_afaf5453c5675970ed3c4ec29c19ed3e3}{Get\+Item\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of the item.  \end{DoxyCompactList}\item 
+sf\+::\+Sprite \& \mbox{\hyperlink{class_abstract_item_a80bbe588b05ed695e4b5e716e939fcc0}{Get\+Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the item\textquotesingle{}s sprite.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_abstract_item_a55adddf80a030b2230c40caf1ef744c2}{m\+\_\+rarity}} = 0
+\begin{DoxyCompactList}\small\item\em Item rarity, affects it\textquotesingle{}s stats. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ \mbox{\hyperlink{class_abstract_item_ade4186971af572bfe447ad46b6963024}{m\+\_\+item\+Texture}}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the texture. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_abstract_item_a3b837fabfac8f03e452a0000def3a1ee}{m\+\_\+item\+Sprite}}
+\begin{DoxyCompactList}\small\item\em The item\textquotesingle{}s sprite. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_globals_8h_a443f647757dde85043b49343f5cbe66b}{Item\+Type}} \mbox{\hyperlink{class_abstract_item_a6e7d945f75b209961840cee458ae78a0}{m\+\_\+item\+Type}} = Item\+Type\+::\+Weapon
+\begin{DoxyCompactList}\small\item\em The type of item it is. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract item that all in-\/game items derive from. This includes all the \mbox{\hyperlink{class_abstract_weapon}{Abstract\+Weapon}}, \mbox{\hyperlink{class_abstract_armour}{Abstract\+Armour}}, and \mbox{\hyperlink{class_abstract_potion}{Abstract\+Potion}}.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_abstract_item_a1e64e12128fcd88cc212196008ff36b3}\label{class_abstract_item_a1e64e12128fcd88cc212196008ff36b3}} 
+\index{AbstractItem@{AbstractItem}!````~AbstractItem@{$\sim$AbstractItem}}
+\index{````~AbstractItem@{$\sim$AbstractItem}!AbstractItem@{AbstractItem}}
+\doxysubsubsection{\texorpdfstring{$\sim$AbstractItem()}{~AbstractItem()}}
+{\footnotesize\ttfamily Abstract\+Item\+::$\sim$\+Abstract\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Class\textquotesingle{}s Default Deconstructor.  
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_abstract_item_ac44e52a2ecdcd5924bae257811b3c200}\label{class_abstract_item_ac44e52a2ecdcd5924bae257811b3c200}} 
+\index{AbstractItem@{AbstractItem}!draw@{draw}}
+\index{draw@{draw}!AbstractItem@{AbstractItem}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Abstract\+Item\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draw method for drawing the item\textquotesingle{}s sprite.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & The window to the item to.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_abstract_item_a358c9fc8893cbd049fd51f054c5e176b}\label{class_abstract_item_a358c9fc8893cbd049fd51f054c5e176b}} 
+\index{AbstractItem@{AbstractItem}!GenerateRandomPosition@{GenerateRandomPosition}}
+\index{GenerateRandomPosition@{GenerateRandomPosition}!AbstractItem@{AbstractItem}}
+\doxysubsubsection{\texorpdfstring{GenerateRandomPosition()}{GenerateRandomPosition()}}
+{\footnotesize\ttfamily void Abstract\+Item\+::\+Generate\+Random\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates a random positon on the grid for said item.  
+
+\mbox{\Hypertarget{class_abstract_item_afaf5453c5675970ed3c4ec29c19ed3e3}\label{class_abstract_item_afaf5453c5675970ed3c4ec29c19ed3e3}} 
+\index{AbstractItem@{AbstractItem}!GetItemType@{GetItemType}}
+\index{GetItemType@{GetItemType}!AbstractItem@{AbstractItem}}
+\doxysubsubsection{\texorpdfstring{GetItemType()}{GetItemType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_globals_8h_a443f647757dde85043b49343f5cbe66b}{Item\+Type}} Abstract\+Item\+::\+Get\+Item\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the type of the item.  
+
+\begin{DoxyReturn}{Returns}
+Type of the item.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_abstract_item_a80bbe588b05ed695e4b5e716e939fcc0}\label{class_abstract_item_a80bbe588b05ed695e4b5e716e939fcc0}} 
+\index{AbstractItem@{AbstractItem}!GetSprite@{GetSprite}}
+\index{GetSprite@{GetSprite}!AbstractItem@{AbstractItem}}
+\doxysubsubsection{\texorpdfstring{GetSprite()}{GetSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite \& Abstract\+Item\+::\+Get\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a reference to the item\textquotesingle{}s sprite.  
+
+\begin{DoxyReturn}{Returns}
+The item\textquotesingle{}s sprite.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_abstract_item_abe763be2ca66718e36515961477161f3}\label{class_abstract_item_abe763be2ca66718e36515961477161f3}} 
+\index{AbstractItem@{AbstractItem}!SetupBasics@{SetupBasics}}
+\index{SetupBasics@{SetupBasics}!AbstractItem@{AbstractItem}}
+\doxysubsubsection{\texorpdfstring{SetupBasics()}{SetupBasics()}}
+{\footnotesize\ttfamily void Abstract\+Item\+::\+Setup\+Basics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets up the item\textquotesingle{}s texture, a generic position and scale of the sprite.  
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_abstract_item_a3b837fabfac8f03e452a0000def3a1ee}\label{class_abstract_item_a3b837fabfac8f03e452a0000def3a1ee}} 
+\index{AbstractItem@{AbstractItem}!m\_itemSprite@{m\_itemSprite}}
+\index{m\_itemSprite@{m\_itemSprite}!AbstractItem@{AbstractItem}}
+\doxysubsubsection{\texorpdfstring{m\_itemSprite}{m\_itemSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Abstract\+Item\+::m\+\_\+item\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The item\textquotesingle{}s sprite. 
+
+\mbox{\Hypertarget{class_abstract_item_ade4186971af572bfe447ad46b6963024}\label{class_abstract_item_ade4186971af572bfe447ad46b6963024}} 
+\index{AbstractItem@{AbstractItem}!m\_itemTexture@{m\_itemTexture}}
+\index{m\_itemTexture@{m\_itemTexture}!AbstractItem@{AbstractItem}}
+\doxysubsubsection{\texorpdfstring{m\_itemTexture}{m\_itemTexture}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$sf\+::\+Texture$>$ Abstract\+Item\+::m\+\_\+item\+Texture\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Shared pointer to the texture. 
+
+\mbox{\Hypertarget{class_abstract_item_a6e7d945f75b209961840cee458ae78a0}\label{class_abstract_item_a6e7d945f75b209961840cee458ae78a0}} 
+\index{AbstractItem@{AbstractItem}!m\_itemType@{m\_itemType}}
+\index{m\_itemType@{m\_itemType}!AbstractItem@{AbstractItem}}
+\doxysubsubsection{\texorpdfstring{m\_itemType}{m\_itemType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_globals_8h_a443f647757dde85043b49343f5cbe66b}{Item\+Type}} Abstract\+Item\+::m\+\_\+item\+Type = Item\+Type\+::\+Weapon\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The type of item it is. 
+
+\mbox{\Hypertarget{class_abstract_item_a55adddf80a030b2230c40caf1ef744c2}\label{class_abstract_item_a55adddf80a030b2230c40caf1ef744c2}} 
+\index{AbstractItem@{AbstractItem}!m\_rarity@{m\_rarity}}
+\index{m\_rarity@{m\_rarity}!AbstractItem@{AbstractItem}}
+\doxysubsubsection{\texorpdfstring{m\_rarity}{m\_rarity}}
+{\footnotesize\ttfamily int Abstract\+Item\+::m\+\_\+rarity = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Item rarity, affects it\textquotesingle{}s stats. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_abstract_item_8h}{Abstract\+Item.\+h}}\end{DoxyCompactItemize}
