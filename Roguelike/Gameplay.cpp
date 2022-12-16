@@ -22,6 +22,8 @@ Gameplay::Gameplay() :
 	m_mouseCoordinate.setOutlineThickness(3.0f);
 	m_mouseCoordinate.setString("Mouse Position: blank, blank");
 
+	m_pathFinder = &m_pathFinder->getSingleton();
+
 	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
 
 	m_debugTools = false;
@@ -33,6 +35,8 @@ Gameplay::Gameplay() :
 /// <param name="t_event">The SFML event.</param>
 void Gameplay::processEvents(sf::Event t_event)
 {
+	std::vector<sf::Vector2i> temp = m_grid.getWaypoints();
+
 	if (sf::Event::KeyPressed == t_event.type ||
 		sf::Event::KeyReleased == t_event.type) //user pressed OR released a key
 	{
@@ -51,6 +55,18 @@ void Gameplay::processEvents(sf::Event t_event)
 			if (t_event.key.code == sf::Keyboard::M)
 			{
 				m_debugTools = !m_debugTools;
+			}
+
+			if (t_event.key.code == sf::Keyboard::Z)
+			{
+				m_pathFinder->toggleDebug();
+				
+
+				for (sf::Vector2i p : temp)
+				{
+					std::cout << "values stored as waypoints: { " << p.x << ", " << p.y << " }\n";
+					std::cout << "Player pos: " << player.getPlayerPositionInGrid().x << ", " << player.getPlayerPositionInGrid().y << "\n";
+				}
 			}
 		}
 	}
@@ -91,7 +107,7 @@ void Gameplay::render(sf::RenderWindow& t_window)
 	{
 		t_window.draw(m_mouseCoordinate);
 	}
-
+	m_pathFinder->draw(t_window);
 
 	for(AbstractItem * n : m_absItemVector)
 	{
@@ -185,6 +201,12 @@ void Gameplay::LoadLevel()
 	m_levelLoader->Load(3);
 
 	m_grid.setUpWalls();
+	m_grid.setUpPaths();
+	for (Room* r : m_grid.getData())
+	{
+		m_pathFinder->linkGraph(r->getData());
+
+	}
 }
 
 /// <summary>

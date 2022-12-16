@@ -14,6 +14,8 @@ Grid::Grid() : m_playerRoom(0)
 	sf::Vertex m_point;
 	m_point.color = sf::Color::Red;
 
+	m_pathFinder = &m_pathFinder->getSingleton();
+
 	for (int i = 0; i < G_MAP_COLS; i++)
 	{
 		for (int k = 0; k < G_MAP_ROWS; k++)
@@ -91,6 +93,28 @@ void Grid::setUpRoom(TileType t_type, int t_roomID, int t_row, int t_col)
 		// make a new room
 	}
 	m_rooms[m_rooms.size() - 1]->setUpTiles(t_type, t_row, t_col);
+}
+
+
+
+void Grid::setUpPaths()
+{
+	for (Room* r : m_rooms)
+	{
+		for (sf::Vector2i p : r->getEntrances())
+		{
+			m_entrances.push(p);
+		}
+	}
+	
+	std::queue<sf::Vector2i> e = m_entrances;
+	while(!e.empty())
+	{
+		addWaypoint(e.front());
+		e.pop();
+	}
+	
+	
 }
 
 /// <summary>
@@ -407,6 +431,16 @@ void Grid::checkCollisionPlayerWall(Player &t_player)
 		std::cout << "Where has our little player gone???? \n";
 		break;
 	}
+}
+
+void Grid::addWaypoint(sf::Vector2i t_pos)
+{
+	m_waypoints.push_back(t_pos);
+}
+
+sf::Vector2i Grid::generateTargets(bool)
+{
+	return sf::Vector2i();
 }
 
 /// <summary>

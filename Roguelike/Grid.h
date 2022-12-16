@@ -6,6 +6,7 @@
 #include <vector>
 #include "Room.h"
 #include "Player.h"
+#include "PathFinder.h"
 
 /// <summary>
 /// The Grid class - organises the Room objects, making sure that they're placed and updated correctly.
@@ -27,6 +28,8 @@ public:
 
 	void setUpRoom(TileType t_type, int t_roomID, int t_row, int t_col);
 
+	void setUpPaths();
+
 	void setUpWalls();
 
 	void getRoomPosition();
@@ -37,7 +40,25 @@ public:
 
 	void checkCollisionPlayerWall(Player &t_player);
 
+	void addWaypoint(sf::Vector2i t_pos);
+
+	std::vector<sf::Vector2i> getWaypoints() { return m_waypoints; }
+
+	std::vector<Room*> getData() { return m_rooms; }
+
 private:
+
+	//------------------ PATHFINDING -----------------------
+	PathFinder* m_pathFinder;
+
+	std::vector<sf::Vector2i> m_waypoints;
+
+	int m_currentWaypoint;
+
+	sf::Vector2i generateTargets(bool);
+
+	std::stack<sf::Vector2i> m_path;
+
 	sf::Vector2f placeRoom();
 
 	///The index of the room the Player is currently in.
@@ -57,6 +78,8 @@ private:
 
 	///All the impassable areas of the game.
 	std::map<int, std::vector<sf::Vector2i>> m_roomWalls;
+
+	std::queue<sf::Vector2i> m_entrances;
 };
 
 #endif // !GRID_H

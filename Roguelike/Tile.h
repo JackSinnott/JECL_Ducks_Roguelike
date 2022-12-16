@@ -61,6 +61,8 @@ private:
 	///What type this tile is.
 	TileType m_currentType;
 
+	bool marked = false;
+
 	/// <summary>
 	/// The rects of the sprite, this will change the appearance of the tile depending on its TileType.
 	/// </summary>

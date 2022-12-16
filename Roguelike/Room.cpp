@@ -72,9 +72,14 @@ void Room::setUpTiles(TileType t_type, int row, int col) // pass argument that i
 
 	m_tiles[row][col].setGridPosition();
 
-	if (m_tiles[row][col].getType() != TileType::UNUSED && m_tiles[row][col].getType() != TileType::GROUND)
+	if (m_tiles[row][col].getType() != TileType::UNUSED && m_tiles[row][col].getType() != TileType::GROUND && m_tiles[row][col].getType() != TileType::ENTRANCE)
 	{
 		m_walls.push_back(m_tiles[row][col].getGridPosition());
+	}
+
+	if (m_tiles[row][col].getType() == TileType::ENTRANCE)
+	{
+		m_entrances.push_back(m_tiles[row][col].getGridPosition());
 	}
 
 }

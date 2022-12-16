@@ -67,6 +67,9 @@
     <ClCompile Include="..\..\..\Games Engineering\JECL_Ducks_Roguelike\Roguelike\AudioAsset.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PathFinder.cpp">
+      <Filter>Source Files\Pathfinding</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemy.h">
@@ -186,6 +189,24 @@
     <ClInclude Include="..\..\..\Games Engineering\JECL_Ducks_Roguelike\Roguelike\AudioManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Comparer.h">
+      <Filter>Header Files\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>Header Files\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphArc.h">
+      <Filter>Header Files\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphNode.h">
+      <Filter>Header Files\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeData.h">
+      <Filter>Header Files\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="PathFinder.h">
+      <Filter>Header Files\Pathfinding</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
@@ -217,6 +238,12 @@
     </Filter>
     <Filter Include="Source Files\Scenes">
       <UniqueIdentifier>{a9aecd7e-9cff-4923-ab4f-32c19571b3ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Pathfinding">
+      <UniqueIdentifier>{ec6cad80-c6c9-4811-bec2-99cb4503d5fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Pathfinding">
+      <UniqueIdentifier>{99004d5f-3458-4fd2-a4c4-47da0f384e50}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

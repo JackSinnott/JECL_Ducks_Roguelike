@@ -5,6 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include "Globals.h"
 #include <array>
+#include <queue>
 #include "Tile.h"
 #include <iostream>
 
@@ -44,6 +45,12 @@ public:
 	/// <returns>All the positions of the walls.</returns>
 	inline std::vector<sf::Vector2i> getWalls() { return m_walls; };
 
+	/// <summary>
+	/// Get all the positions of the Tiles that are #ENTRANCE,
+	/// </summary>
+	/// <returns>All the positions of the entrances.</returns>
+	inline std::vector<sf::Vector2i> getEntrances() { return m_entrances; };
+
 	void setGridPosition();
 
 	/// <summary>
@@ -51,6 +58,8 @@ public:
 	/// </summary>
 	/// <returns>The row and column of this Room.</returns>
 	inline sf::Vector2i getGridPosition() { return sf::Vector2i(row, col); }
+
+	std::array<std::array<Tile, G_MAP_COLS>, G_MAP_ROWS> getData() { return m_tiles; }
 
 private:
 	///The position of the Room.
@@ -65,6 +74,8 @@ private:
 	///All the positions of the Tiles that are #VERTICAL_WALL,
 	/// #HORIZONTAL_WALL, or #INSIDE_WALL.
 	std::vector<sf::Vector2i> m_walls;
+
+	std::vector<sf::Vector2i> m_entrances;
 
 	///The row the Room is in on the Grid - All rooms are in a 3x3 layout together.
 	int row;

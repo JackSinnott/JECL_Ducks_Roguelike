@@ -102,7 +102,8 @@ enum class TileType
 	HORIZONTAL_WALL = 3,
 	UPPER_CORNER = 4,
 	LOWER_CORNER = 5,
-	INSIDE_WALL = 6
+	INSIDE_WALL = 6,
+	ENTRANCE = 7
 };
 
 /// <summary>

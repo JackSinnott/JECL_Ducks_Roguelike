@@ -8,6 +8,7 @@
 #include "WeaponFactory.h"
 #include "ArmourFactory.h"
 #include "PotionFactory.h"
+#include "PathFinder.h"
 
 /// <summary>
 /// The Gameplay screen. This is where the Grid, Player and Enemy objects are handled.
@@ -73,4 +74,7 @@ private:
 
 	///Controls whether the mouse coordinates are displayed on screen. Used for debugging.
 	bool m_debugTools;
+
+	// initialises the singleton
+	PathFinder* m_pathFinder; 
 };
