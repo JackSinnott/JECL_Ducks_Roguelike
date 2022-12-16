@@ -64,7 +64,7 @@
     <ClCompile Include="CombatSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Games Engineering\JECL_Ducks_Roguelike\Roguelike\AudioAsset.cpp">
+    <ClCompile Include="AudioAsset.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
