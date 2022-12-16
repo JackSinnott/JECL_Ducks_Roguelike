@@ -4,7 +4,6 @@
 /// The class's default constructor.
 /// </summary>
 Gameplay::Gameplay() :
-	m_grid(0,0),
 	player(5,5)
 {
 	m_levelLoader = new FileLoader(m_grid);

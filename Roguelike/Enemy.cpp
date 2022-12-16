@@ -4,34 +4,6 @@ Enemy::Enemy()
 {
 }
 
-/*Enemy::Enemy(EnemyType t_type, float t_posX, float t_posY) : m_type(t_type)
-{
-	int xCoord = (int)t_posX - (int)t_posX % G_CELL_SIZE + G_CELL_SIZE / 2;
-	int yCoord = (int)t_posY - (int)t_posY % G_CELL_SIZE + G_CELL_SIZE / 2;
-	m_enemy.setOrigin(G_CELL_SIZE / 2, G_CELL_SIZE / 2);
-	m_enemy.setPosition(sf::Vector2f(xCoord, yCoord));
-	row = (xCoord - G_CELL_SIZE / 2) / G_CELL_SIZE;
-	col = (yCoord - G_CELL_SIZE / 2) / G_CELL_SIZE;
-	
-	m_enemyTexture = TextureManager::Acquire(ITEMS_TEXTURE);
-
-	m_enemy.setTexture(*m_enemyTexture);
-
-	if (m_rects.size() == 0)
-	{
-		m_rects.try_emplace(EnemyType::Bat, sf::IntRect{ 0,160,16,16 });
-		m_rects.try_emplace(EnemyType::Rat, sf::IntRect{ 64,160,16,16 });
-	}
-
-	m_enemy.setTextureRect(m_rects.at(m_type));
-
-	m_enemy.setOrigin(m_enemy.getTextureRect().width / 2.0f,
-		m_enemy.getTextureRect().height / 2.0f);
-	m_enemy.setScale(2.0f, 2.0f);
-
-	CombatSystem::PushBackEnemyStats(&health, xp);
-}*/
-
 void Enemy::update(sf::Vector2i t_playerPos, int t_playerRoom, int t_enemyRoom)
 {
 	if (health > 0)
@@ -40,6 +12,11 @@ void Enemy::update(sf::Vector2i t_playerPos, int t_playerRoom, int t_enemyRoom)
 	}
 }
 
+/// <summary>
+/// Calculates the hit chance the enemy has on the player,
+/// and then if they hit, calculates the damage to the player and applies it.
+/// </summary>
+/// <param name="t_playerAC">The player's armour class.</param>
 void Enemy::CalculateDamageToPlayer(int t_playerAC)
 {
 	bool hitPlayer = CombatSystem::BattleEquation(t_playerAC);
@@ -56,6 +33,10 @@ void Enemy::CalculateDamageToPlayer(int t_playerAC)
 	}
 }
 
+/// <summary>
+/// Draws the Enemy to the screen.
+/// </summary>
+/// <param name="t_window">The window to draw to.</param>
 void Enemy::render(sf::RenderWindow& t_window)
 {
 	if (health > 0)
@@ -64,11 +45,19 @@ void Enemy::render(sf::RenderWindow& t_window)
 	}
 }
 
+/// <summary>
+/// Returns the armour class of this enemy - aka how hard it is to hit.
+/// </summary>
+/// <returns>The AC of this Enemy.</returns>
 int Enemy::GetArmourClass()
 {
 	return m_armourClass;
 }
 
+/// <summary>
+/// Calculates how much damage this enemy would cause to it's target, and return it.
+/// </summary>
+/// <returns>The damage dealt by this enemy.</returns>
 int Enemy::GetDamage()
 {
 	int damage = CombatSystem::RollD8();
@@ -120,27 +109,38 @@ void Enemy::moveTowardsPlayer(sf::Vector2i t_playerPos)
 	{
 		if (col > t_playerPos.x)
 		{
-			col--;
-			pos.x -= G_CELL_SIZE;
+			if (canWeMoveLeft())
+			{
+				col--;
+				pos.x -= G_CELL_SIZE;
+			}
 		}
 		else if (col < t_playerPos.x)
 		{
-			col++;
-			pos.x += G_CELL_SIZE;
+			if (canWeMoveRight())
+			{
+				col++;
+				pos.x += G_CELL_SIZE;
+			}
 		}
 	}
-
 	if (abs(t_playerPos.y - row) > 1)
 	{
 		if (row > t_playerPos.y)
 		{
-			row--;
-			pos.y -= G_CELL_SIZE;
+			if (canWeMoveUp())
+			{
+				row--;
+				pos.y -= G_CELL_SIZE;
+			}
 		}
-		else if (row < t_playerPos.y)
+		else if (col < t_playerPos.y)
 		{
-			row++;
-			pos.y += G_CELL_SIZE;
+			if (canWeMoveDown())
+			{
+				row++;
+				pos.y += G_CELL_SIZE;
+			}
 		}
 	}
 	m_enemy.setPosition(pos);

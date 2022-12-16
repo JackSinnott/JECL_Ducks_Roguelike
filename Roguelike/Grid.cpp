@@ -1,8 +1,19 @@
 #include "Grid.h"
 #include "Globals.h"
 
-Grid::Grid(int t_x, int t_y) : x(t_x), y(t_y),m_playerRoom(0)
+/// <summary>
+/// Overloaded Constructor of Grid.
+/// </summary>
+/// <param name="t_x">The starting X position of the Grid (ie. the left side).</param>
+/// <param name="t_y">The starting Y position of the Grid (ie. the top).</param>
+Grid::Grid() : m_playerRoom(0)
 {
+	int x = 0;
+	int y = 0;
+
+	sf::Vertex m_point;
+	m_point.color = sf::Color::Red;
+
 	for (int i = 0; i < G_MAP_COLS; i++)
 	{
 		for (int k = 0; k < G_MAP_ROWS; k++)
@@ -11,13 +22,17 @@ Grid::Grid(int t_x, int t_y) : x(t_x), y(t_y),m_playerRoom(0)
 			y = i * G_CELL_SIZE;
 
 			m_point.position = sf::Vector2f(x, y);
-			m_point.color = sf::Color::Red;
 			m_points.append(m_point);
 		}
 	}
 
 }
 
+/// <summary>
+/// Draws the rooms out onto the SFML screen.
+/// </summary>
+/// <param name="t_target">Where to draw the Rooms.</param>
+/// <param name="t_state">The state in which to draw the Rooms.</param>
 void Grid::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) const
 {
 	t_target.draw(m_points);
@@ -28,6 +43,11 @@ void Grid::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) cons
 	}
 }
 
+/// <summary>
+/// Updates the Grid, meaning it updates the appearance of the room, and checks Player collisons with the Tiles.
+/// </summary> 
+/// <param name="t_dt">The time that has passed since last frame.</param>
+/// <param name="t_playerPos">A reference to the Player in Gameplay.</param>
 void Grid::update(sf::Time t_dt, Player &t_playerPos)
 {
 	for (Room* room : m_rooms)
@@ -42,6 +62,13 @@ void Grid::update(sf::Time t_dt, Player &t_playerPos)
 	
 }
 
+/// <summary>
+/// Sets up a Tile in a Room.
+/// </summary>
+/// <param name="t_type">The type of Tile that is being placed.</param>
+/// <param name="t_roomID">The ID of the Room that the Tile is being placed in.</param>
+/// <param name="t_row">The row the Tile will have in the Room. This can range from 0 to 24.</param>
+/// <param name="t_col">The column the Tile will have in the Room. This can range from 0 to 19.</param>
 void Grid::setUpRoom(TileType t_type, int t_roomID, int t_row, int t_col)
 {
 	bool roomExists = false;
@@ -66,6 +93,10 @@ void Grid::setUpRoom(TileType t_type, int t_roomID, int t_row, int t_col)
 	m_rooms[m_rooms.size() - 1]->setUpTiles(t_type, t_row, t_col);
 }
 
+/// <summary>
+/// Gets all the impassible Tiles from the Room objects, and copies them, so Grid now knows 
+/// where all collisions should occur.
+/// </summary>
 void Grid::setUpWalls()
 {
 	for (Room* room : m_rooms)
@@ -74,6 +105,9 @@ void Grid::setUpWalls()
 	}
 }
 
+/// <summary>
+/// Prints all Rooms' positions to the console. Used for debugging.
+/// </summary>
 void Grid::getRoomPosition()
 {
 	for (Room* r : m_rooms)
@@ -82,11 +116,21 @@ void Grid::getRoomPosition()
 	}
 }
 
+/// <summary>
+/// Returns a reference to a Room, by sending in the corresponding ID.
+/// </summary>
+/// <param name="t_roomID">The ID of the room.</param>
+/// <returns>The reference to the Room.</returns>
 Room* Grid::checkRoom(int t_roomID)
 {
 	return m_rooms.at(t_roomID);
 }
 
+/// <summary>
+/// Calculates what Room the Player is in.
+/// </summary>
+/// <param name="t_playerPos">Player's row and column within the Grid.</param>
+/// <returns>What Room the Player is currently in.</returns>
 int Grid::whatRoomIsPlayerIn(sf::Vector2i t_playerPos)
 {
 	m_playerRoom = -1;
@@ -159,6 +203,10 @@ int Grid::whatRoomIsTargetIn(sf::Vector2i t_targetPos)
 	return room;
 }
 
+/// <summary>
+///Checks if the Player has collided with any of the wall Tile objects.
+/// </summary>
+/// <param name="t_player">A reference to the Player in Gameplay.</param>
 void Grid::checkCollisionPlayerWall(Player &t_player)
 {
 	if (m_playerRoom > 0 && m_playerRoom <= 4)
