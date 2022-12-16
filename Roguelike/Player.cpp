@@ -125,6 +125,7 @@ void Player::reset()
 /// For example, if the player presses Up/Down/Left/Right, move player in appropriate direction.
 /// </summary>
 /// <param name="t_event">Event of button being pressed OR released.</param>
+/// <returns>Whether the Player does an action.</returns>
 bool Player::ProcessKeys(sf::Event t_event)
 {
 	bool action = false;

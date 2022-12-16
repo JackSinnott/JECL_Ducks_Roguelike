@@ -36,6 +36,8 @@ public:
 		CombatSystem::PushBackEnemyStats(&health, xp);
 
 	}
+
+	/// Sprite Rectangle of the rat.
 	sf::IntRect spriteRect = sf::IntRect{ 0,160,16,16 };
 private:
 	/// <summary>
