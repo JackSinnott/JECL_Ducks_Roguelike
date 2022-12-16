@@ -6,6 +6,7 @@
 #include <vector>
 #include "Room.h"
 #include "Player.h"
+#include "Enemy.h"
 
 /// <summary>
 /// The Grid class - organises the Room objects, making sure that they're placed and updated correctly.
@@ -35,7 +36,15 @@ public:
 
 	int whatRoomIsPlayerIn(sf::Vector2i t_playerPos);
 
+	int whatRoomIsTargetIn(sf::Vector2i t_TargetPos);
+
 	void checkCollisionPlayerWall(Player &t_player);
+
+	void checkCollisionEnemyWall(Enemy& t_enemy, int t_room);
+
+	int getPlayerRoom() { return m_playerRoom; }
+
+	sf::Vector2i getPlayerPos(Player& t_player) { return t_player.getPlayerPositionInGrid(); }
 
 private:
 	sf::Vector2f placeRoom();
@@ -57,6 +66,10 @@ private:
 
 	///All the impassable areas of the game.
 	std::map<int, std::vector<sf::Vector2i>> m_roomWalls;
+	
+	void checkCollisionPlayerInRoom(Player& t_player);
+
+	void checkCollisionEnemyInRoom(Enemy& t_enemy, int t_room);
 };
 
 #endif // !GRID_H

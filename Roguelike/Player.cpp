@@ -184,6 +184,9 @@ bool Player::ProcessKeys(sf::Event t_event)
 			case sf::Keyboard::I:
 				m_playerInventory.ToggleInventory();
 				break;
+			case sf::Keyboard::L:
+				action = true;
+				break;
 			default:
 				break;
 			}

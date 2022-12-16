@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Games Engineering\JECL_Ducks_Roguelike\Roguelike\AudioAsset.cpp" />
+    <ClCompile Include="AudioAsset.cpp" />
     <ClCompile Include="AbstractArmour.cpp" />
     <ClCompile Include="AbstractPotion.cpp" />
     <ClCompile Include="AbstractWeapon.cpp" />
@@ -51,6 +51,7 @@
     <ClInclude Include="AbstractWeapon.h" />
     <ClInclude Include="ArmourFactory.h" />
     <ClInclude Include="AxeWeapon.h" />
+    <ClInclude Include="Bat.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="CombatSystem.h" />
     <ClInclude Include="DaggerWeapon.h" />
@@ -62,6 +63,7 @@
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Help.h" />
     <ClInclude Include="Inventory.h" />
+    <ClInclude Include="Rat.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="HealthPotion.h" />
