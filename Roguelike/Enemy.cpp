@@ -134,7 +134,7 @@ void Enemy::moveTowardsPlayer(sf::Vector2i t_playerPos)
 				pos.y -= G_CELL_SIZE;
 			}
 		}
-		else if (col < t_playerPos.y)
+		else if (row < t_playerPos.y)
 		{
 			if (canWeMoveDown())
 			{
