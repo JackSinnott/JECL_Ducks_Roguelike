@@ -68,6 +68,8 @@ private:
 
 	/// the player, that the user will control.
 	Player player;
+
+	/// a vetor to store all enemies regardless of type
 	std::vector<Enemy*> m_enemies;
 
 	///Controls whether the mouse coordinates are displayed on screen. Used for debugging.
