@@ -1,0 +1,135 @@
+\hypertarget{class_abstract_weapon}{}\doxysection{Abstract\+Weapon Class Reference}
+\label{class_abstract_weapon}\index{AbstractWeapon@{AbstractWeapon}}
+
+
+Abstract Weapon which \mbox{\hyperlink{class_axe_weapon}{Axe\+Weapon}}, \mbox{\hyperlink{class_dagger_weapon}{Dagger\+Weapon}} and \mbox{\hyperlink{class_sword_weapon}{Sword\+Weapon}} derive from.   
+
+
+
+
+{\ttfamily \#include $<$Abstract\+Weapon.\+h$>$}
+
+Inheritance diagram for Abstract\+Weapon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_abstract_weapon}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_abstract_weapon_ac22a7865b7bd93f9c975159fb2d95995}{Abstract\+Weapon}} ()
+\begin{DoxyCompactList}\small\item\em Default Class Constructor.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_abstract_weapon_aa39edebc2b4c45742f76068e9166106c}{$\sim$\+Abstract\+Weapon}} ()
+\begin{DoxyCompactList}\small\item\em Default Class Deconstructor.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_abstract_weapon_acad3909b221f391a86309d112651077b}{Set\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Sets the type of item it is, as well as assign the weapon\textquotesingle{}s texture.  \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_abstract_weapon_a7f404c7abed589ab0d5b415182ae8d6b}{Get\+Damage}} ()
+\begin{DoxyCompactList}\small\item\em Gets the damage of the weapon.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_abstract_weapon_ac9a7239aac84b4a0ec598538e75bbd69}{m\+\_\+damage}} = 0
+\begin{DoxyCompactList}\small\item\em How much damage the weapon does. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213}{Weapons}} \mbox{\hyperlink{class_abstract_weapon_a1ed6802f934ea904b26e190f2aa2d373}{m\+\_\+weapon\+Type}} = Weapons\+::\+Sword
+\begin{DoxyCompactList}\small\item\em The type of weapon it is. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213}{Weapons}}, sf\+::\+Int\+Rect $>$ \mbox{\hyperlink{class_abstract_weapon_a4dd1ce5b598d233bf27d3493f8c57d15}{m\+\_\+rects}} = std\+::unordered\+\_\+map$<$\mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213}{Weapons}}, sf\+::\+Int\+Rect$>$()
+\begin{DoxyCompactList}\small\item\em Texture rect of the sprite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract Weapon which \mbox{\hyperlink{class_axe_weapon}{Axe\+Weapon}}, \mbox{\hyperlink{class_dagger_weapon}{Dagger\+Weapon}} and \mbox{\hyperlink{class_sword_weapon}{Sword\+Weapon}} derive from.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_abstract_weapon_ac22a7865b7bd93f9c975159fb2d95995}\label{class_abstract_weapon_ac22a7865b7bd93f9c975159fb2d95995}} 
+\index{AbstractWeapon@{AbstractWeapon}!AbstractWeapon@{AbstractWeapon}}
+\index{AbstractWeapon@{AbstractWeapon}!AbstractWeapon@{AbstractWeapon}}
+\doxysubsubsection{\texorpdfstring{AbstractWeapon()}{AbstractWeapon()}}
+{\footnotesize\ttfamily Abstract\+Weapon\+::\+Abstract\+Weapon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default Class Constructor.  
+
+\mbox{\Hypertarget{class_abstract_weapon_aa39edebc2b4c45742f76068e9166106c}\label{class_abstract_weapon_aa39edebc2b4c45742f76068e9166106c}} 
+\index{AbstractWeapon@{AbstractWeapon}!````~AbstractWeapon@{$\sim$AbstractWeapon}}
+\index{````~AbstractWeapon@{$\sim$AbstractWeapon}!AbstractWeapon@{AbstractWeapon}}
+\doxysubsubsection{\texorpdfstring{$\sim$AbstractWeapon()}{~AbstractWeapon()}}
+{\footnotesize\ttfamily Abstract\+Weapon\+::$\sim$\+Abstract\+Weapon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default Class Deconstructor.  
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_abstract_weapon_a7f404c7abed589ab0d5b415182ae8d6b}\label{class_abstract_weapon_a7f404c7abed589ab0d5b415182ae8d6b}} 
+\index{AbstractWeapon@{AbstractWeapon}!GetDamage@{GetDamage}}
+\index{GetDamage@{GetDamage}!AbstractWeapon@{AbstractWeapon}}
+\doxysubsubsection{\texorpdfstring{GetDamage()}{GetDamage()}}
+{\footnotesize\ttfamily virtual int Abstract\+Weapon\+::\+Get\+Damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the damage of the weapon.  
+
+\begin{DoxyReturn}{Returns}
+The damage number of the weapon.
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_axe_weapon_a36abf8bd987f366ce99c6fa74b0b45e9}{Axe\+Weapon}}, \mbox{\hyperlink{class_dagger_weapon_aff307e07bfa5b1840115d62ab9c4b8be}{Dagger\+Weapon}}, and \mbox{\hyperlink{class_sword_weapon_a9309afd66e77509c88ffdeb6af8c90bb}{Sword\+Weapon}}.
+
+\mbox{\Hypertarget{class_abstract_weapon_acad3909b221f391a86309d112651077b}\label{class_abstract_weapon_acad3909b221f391a86309d112651077b}} 
+\index{AbstractWeapon@{AbstractWeapon}!SetType@{SetType}}
+\index{SetType@{SetType}!AbstractWeapon@{AbstractWeapon}}
+\doxysubsubsection{\texorpdfstring{SetType()}{SetType()}}
+{\footnotesize\ttfamily void Abstract\+Weapon\+::\+Set\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the type of item it is, as well as assign the weapon\textquotesingle{}s texture.  
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_abstract_weapon_ac9a7239aac84b4a0ec598538e75bbd69}\label{class_abstract_weapon_ac9a7239aac84b4a0ec598538e75bbd69}} 
+\index{AbstractWeapon@{AbstractWeapon}!m\_damage@{m\_damage}}
+\index{m\_damage@{m\_damage}!AbstractWeapon@{AbstractWeapon}}
+\doxysubsubsection{\texorpdfstring{m\_damage}{m\_damage}}
+{\footnotesize\ttfamily int Abstract\+Weapon\+::m\+\_\+damage = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+How much damage the weapon does. 
+
+\mbox{\Hypertarget{class_abstract_weapon_a4dd1ce5b598d233bf27d3493f8c57d15}\label{class_abstract_weapon_a4dd1ce5b598d233bf27d3493f8c57d15}} 
+\index{AbstractWeapon@{AbstractWeapon}!m\_rects@{m\_rects}}
+\index{m\_rects@{m\_rects}!AbstractWeapon@{AbstractWeapon}}
+\doxysubsubsection{\texorpdfstring{m\_rects}{m\_rects}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213}{Weapons}}, sf\+::\+Int\+Rect $>$ Abstract\+Weapon\+::m\+\_\+rects = std\+::unordered\+\_\+map$<$\mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213}{Weapons}}, sf\+::\+Int\+Rect$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Texture rect of the sprite. 
+
+\mbox{\Hypertarget{class_abstract_weapon_a1ed6802f934ea904b26e190f2aa2d373}\label{class_abstract_weapon_a1ed6802f934ea904b26e190f2aa2d373}} 
+\index{AbstractWeapon@{AbstractWeapon}!m\_weaponType@{m\_weaponType}}
+\index{m\_weaponType@{m\_weaponType}!AbstractWeapon@{AbstractWeapon}}
+\doxysubsubsection{\texorpdfstring{m\_weaponType}{m\_weaponType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_globals_8h_a2e238758e72da0491a67935310819213}{Weapons}} Abstract\+Weapon\+::m\+\_\+weapon\+Type = Weapons\+::\+Sword\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The type of weapon it is. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_abstract_weapon_8h}{Abstract\+Weapon.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_abstract_weapon_8cpp}{Abstract\+Weapon.\+cpp}}\end{DoxyCompactItemize}

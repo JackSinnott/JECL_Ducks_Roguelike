@@ -1,0 +1,103 @@
+\hypertarget{_audio_manager_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Audio\+Manager.h}
+\mbox{\hyperlink{_audio_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef AUDIO\_MANAGER\_INCLUDE}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define AUDIO\_MANAGER\_INCLUDE}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <SFML/Audio.hpp>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_resource_allocator_8h}{ResourceAllocator.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_audio_asset_8h}{AudioAsset.h}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_audio_manager}{AudioManager}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_resource_allocator}{ResourceAllocator}}<AudioManager, std::shared\_ptr<Audio>>}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_audio_manager_a3b0b94a727282887bb0fdec5c25cb532}{AddSound}}(\textcolor{keyword}{const} std::string\& filePath, \textcolor{keyword}{const} std::string\& name, \mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcf}{AudioType}} type)}
+\DoxyCodeLine{27     \{}
+\DoxyCodeLine{28         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}}.count(name))}
+\DoxyCodeLine{29         \{}
+\DoxyCodeLine{30             \textcolor{keyword}{auto} pAudio = std::make\_shared<Audio>(type, filePath);}
+\DoxyCodeLine{31             \mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}}.try\_emplace(name, pAudio);}
+\DoxyCodeLine{32             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{33         \}}
+\DoxyCodeLine{34         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{35     \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{41     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_audio_manager_a2502023ee8ecdd97398f0c151b91978d}{Play}}(std::string name)}
+\DoxyCodeLine{42     \{}
+\DoxyCodeLine{43         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}}.count(name))}
+\DoxyCodeLine{44         \{}
+\DoxyCodeLine{45             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}}.at(name).get()-\/>getType() == AudioType::MUSIC)}
+\DoxyCodeLine{46             \{}
+\DoxyCodeLine{47                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}}.at(name).get()-\/>isPlaying())}
+\DoxyCodeLine{48                     \mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}}.at(name).get()-\/>play();}
+\DoxyCodeLine{49             \}}
+\DoxyCodeLine{50             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{51                 \mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}}.at(name).get()-\/>play();}
+\DoxyCodeLine{52         \}}
+\DoxyCodeLine{53         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{54             std::cout << \textcolor{stringliteral}{"{}Sound Doesn't Exist\(\backslash\)n"{}};}
+\DoxyCodeLine{55     \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{61     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_audio_manager_ae3ca2a2544dd477ff4114ea78f89d746}{Pause}}(std::string name)}
+\DoxyCodeLine{62     \{}
+\DoxyCodeLine{63         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}}.count(name))}
+\DoxyCodeLine{64         \{}
+\DoxyCodeLine{65             \mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}}.at(name).get()-\/>pause();}
+\DoxyCodeLine{66         \}}
+\DoxyCodeLine{67     \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{73     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_audio_manager_a42c0734d824814bd6228fc48098f78eb}{Stop}}(std::string name)}
+\DoxyCodeLine{74     \{}
+\DoxyCodeLine{75         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}}.count(name))}
+\DoxyCodeLine{76         \{}
+\DoxyCodeLine{77             \mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}}.at(name).get()-\/>stop();}
+\DoxyCodeLine{78         \}}
+\DoxyCodeLine{79     \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{86     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_audio_manager_aaca621f0e8636c05391ae0e86b115a5e}{SetVolume}}(\mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcf}{AudioType}} t\_type, \textcolor{keywordtype}{float} t\_volume)}
+\DoxyCodeLine{87     \{}
+\DoxyCodeLine{88         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& audio : \mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}})}
+\DoxyCodeLine{89         \{}
+\DoxyCodeLine{90             \textcolor{keywordflow}{if} (audio.second-\/>getType() == t\_type)}
+\DoxyCodeLine{91                 audio.second-\/>setVolume(t\_volume);}
+\DoxyCodeLine{92         \}}
+\DoxyCodeLine{93     \}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{100     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_audio_manager_a43e16a89c5325d947c6b93f005f4108f}{isPlaying}}(std::string name)}
+\DoxyCodeLine{101     \{}
+\DoxyCodeLine{102         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}}.count(name))}
+\DoxyCodeLine{103         \{}
+\DoxyCodeLine{104             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}}.at(name).get()-\/>isPlaying();}
+\DoxyCodeLine{105         \}}
+\DoxyCodeLine{106         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{107     \}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{112     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_audio_manager_a16f1326be30177ad4b0128f02148a3cd}{Collectgarbage}}() \textcolor{comment}{// delete resources not being used.}}
+\DoxyCodeLine{113     \{}
+\DoxyCodeLine{114         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = \mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}}.begin(); i != \mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}}.end(); )}
+\DoxyCodeLine{115         \{}
+\DoxyCodeLine{116             \textcolor{keywordflow}{if} (i-\/>second.unique()) \textcolor{comment}{// If there is only one owner it must only belong to this texture manager}}
+\DoxyCodeLine{117             \{}
+\DoxyCodeLine{118                 i = \mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}}.erase(i); \textcolor{comment}{// So we can erase it. I must be assigned the empty memory or it will be deleted}}
+\DoxyCodeLine{119             \}}
+\DoxyCodeLine{120             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{121             \{}
+\DoxyCodeLine{122                 ++i; \textcolor{comment}{// Stay looking for unused textures}}
+\DoxyCodeLine{123             \}}
+\DoxyCodeLine{124         \}}
+\DoxyCodeLine{125     \}}
+\DoxyCodeLine{126 \textcolor{keyword}{private}:}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{131     \textcolor{keyword}{static} std::unordered\_map<std::string, std::shared\_ptr<Audio>> \mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\_sounds}};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \};}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !BUFFER\_MANAGER\_H}}
+
+\end{DoxyCode}

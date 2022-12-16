@@ -1,0 +1,36 @@
+\hypertarget{_potion_factory_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Potion\+Factory.h}
+\mbox{\hyperlink{_potion_factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_item_factory_8h}{AbstractItemFactory.h}}"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_health_potion_8h}{HealthPotion.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_strength_potion_8h}{StrengthPotion.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_speed_potion_8h}{SpeedPotion.h}}"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_potion_factory}{PotionFactory}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_abstract_item_factory}{AbstractItemFactory}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{19     \mbox{\hyperlink{class_abstract_potion}{AbstractPotion}}* \mbox{\hyperlink{class_potion_factory_afe1991f1ca2cb65cfb2f5ac6c63c7058}{CreatePotion}}(\mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}} t\_potion)\textcolor{keyword}{ override}}
+\DoxyCodeLine{20 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{21         \textcolor{keywordflow}{switch} (t\_potion)}
+\DoxyCodeLine{22         \{}
+\DoxyCodeLine{23         \textcolor{keywordflow}{case} Potions::Health:}
+\DoxyCodeLine{24             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_health_potion}{HealthPotion}}(t\_potion);}
+\DoxyCodeLine{25             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{26         \textcolor{keywordflow}{case} Potions::Strength:}
+\DoxyCodeLine{27             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_strength_potion}{StrengthPotion}}(t\_potion);}
+\DoxyCodeLine{28             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{29         \textcolor{keywordflow}{case} Potions::Speed:}
+\DoxyCodeLine{30             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_speed_potion}{SpeedPotion}}(t\_potion);}
+\DoxyCodeLine{31             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{32         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{33             \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{34             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{35         \}}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,91 @@
+\hypertarget{class_texture_manager}{}\doxysection{Texture\+Manager Class Reference}
+\label{class_texture_manager}\index{TextureManager@{TextureManager}}
+
+
+Class that loads textures to unique pointers and has the capabilities of deleting them. Derives from \mbox{\hyperlink{class_resource_allocator}{Resource\+Allocator}}.   
+
+
+
+
+{\ttfamily \#include $<$Texture\+Manager.\+h$>$}
+
+Inheritance diagram for Texture\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_texture_manager}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ \mbox{\hyperlink{class_texture_manager_a3b6cbb7a9be0556355e8a6206c5cc3e7}{Acquire}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Searches for a new texture in the project\textquotesingle{}s files, loads it and returns it.  \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_texture_manager_a8792d04864b18f16ec37ab6642b92dbf}{Collectgarbage}} ()
+\begin{DoxyCompactList}\small\item\em deletes textures not being used, saving memory.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unordered\+\_\+map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ $>$ \mbox{\hyperlink{class_texture_manager_adbc04f1036a2b808a65b9fc53fde69f1}{texture\+Ptrs}}
+\begin{DoxyCompactList}\small\item\em A collection of all the shared\+\_\+ptrs to the textures.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class that loads textures to unique pointers and has the capabilities of deleting them. Derives from \mbox{\hyperlink{class_resource_allocator}{Resource\+Allocator}}.  
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_texture_manager_a3b6cbb7a9be0556355e8a6206c5cc3e7}\label{class_texture_manager_a3b6cbb7a9be0556355e8a6206c5cc3e7}} 
+\index{TextureManager@{TextureManager}!Acquire@{Acquire}}
+\index{Acquire@{Acquire}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{Acquire()}{Acquire()}}
+{\footnotesize\ttfamily static std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ Texture\+Manager\+::\+Acquire (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [virtual]}}
+
+
+
+Searches for a new texture in the project\textquotesingle{}s files, loads it and returns it.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & String that is the path to what is to be acquired.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A shared\+\_\+ptr to the loaded texture.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_resource_allocator_ac8f081f0234b607faabd88bcbf6395fb}{Resource\+Allocator$<$ Texture\+Manager, std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ $>$}}.
+
+\mbox{\Hypertarget{class_texture_manager_a8792d04864b18f16ec37ab6642b92dbf}\label{class_texture_manager_a8792d04864b18f16ec37ab6642b92dbf}} 
+\index{TextureManager@{TextureManager}!Collectgarbage@{Collectgarbage}}
+\index{Collectgarbage@{Collectgarbage}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{Collectgarbage()}{Collectgarbage()}}
+{\footnotesize\ttfamily static void Texture\+Manager\+::\+Collectgarbage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [virtual]}}
+
+
+
+deletes textures not being used, saving memory.  
+
+
+
+Implements \mbox{\hyperlink{class_resource_allocator_a202e31427e6037373a2af72bebec81f7}{Resource\+Allocator$<$ Texture\+Manager, std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ $>$}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_texture_manager_adbc04f1036a2b808a65b9fc53fde69f1}\label{class_texture_manager_adbc04f1036a2b808a65b9fc53fde69f1}} 
+\index{TextureManager@{TextureManager}!texturePtrs@{texturePtrs}}
+\index{texturePtrs@{texturePtrs}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{texturePtrs}{texturePtrs}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ $>$ Texture\+Manager\+::texture\+Ptrs\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+A collection of all the shared\+\_\+ptrs to the textures.  
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_texture_manager_8h}{Texture\+Manager.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_game_8cpp}{Game.\+cpp}}\end{DoxyCompactItemize}

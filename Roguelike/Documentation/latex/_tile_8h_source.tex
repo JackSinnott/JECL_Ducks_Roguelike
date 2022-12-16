@@ -1,0 +1,50 @@
+\hypertarget{_tile_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Tile.h}
+\mbox{\hyperlink{_tile_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef TILE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define TILE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_globals_8h}{Globals.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_tile}{Tile}} : \textcolor{keyword}{public} sf::Drawable}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_tile_aeeb5593bb6b75aae2edfcccbc84ab378}{Tile}}();}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tile_aa072a9d0243f8038d3d781ebf3f3fd61}{setup}}(std::shared\_ptr<sf::Texture>\& t\_tex,}
+\DoxyCodeLine{20         sf::Vector2f t\_pos, sf::Vector2f t\_offset, \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{TileType}} t\_type);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tile_a00a3beeb62e2745b6d0b9abe69d5485f}{draw}}(sf::RenderTarget\& t\_target, sf::RenderStates \textcolor{keyword}{const} t\_state = sf::RenderStates::Default)\textcolor{keyword}{const override};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{28     \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{TileType}} \mbox{\hyperlink{class_tile_a9c5c52ada25a3848a13476827410b139}{getType}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_tile_a291309a1d4f5e8988fc761195688c2ad}{m\_currentType}}; \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{34     sf::Sprite\& \mbox{\hyperlink{class_tile_a1812f9328d9d27dc88dddf84cf834e3f}{getSprite}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_tile_a68ee1ab8913d2937f9e4ea2db62c7d72}{m\_tile}}; \}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{40     sf::Vector2f \mbox{\hyperlink{class_tile_afd69da1519691d4f82bfe0534db4f01c}{getPosition}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_tile_a1812f9328d9d27dc88dddf84cf834e3f}{getSprite}}().getPosition(); \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_tile_acb79dc495386d1d06b24dfcc03c20084}{setGridPosition}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{48     \textcolor{keyword}{inline} sf::Vector2i \mbox{\hyperlink{class_tile_a32efa16e208e796004961cd4abd05f96}{getGridPosition}}() \{ \textcolor{keywordflow}{return} sf::Vector2i(\mbox{\hyperlink{class_tile_a275234ed0a96dc9133787b1a51b43b89}{row}}, \mbox{\hyperlink{class_tile_a5bad27e5dfea9d5be39f0520c1e71a09}{col}}); \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{private}:}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53     sf::Sprite \mbox{\hyperlink{class_tile_a68ee1ab8913d2937f9e4ea2db62c7d72}{m\_tile}};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_tile_a275234ed0a96dc9133787b1a51b43b89}{row}};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_tile_a5bad27e5dfea9d5be39f0520c1e71a09}{col}};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62     \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{TileType}} \mbox{\hyperlink{class_tile_a291309a1d4f5e8988fc761195688c2ad}{m\_currentType}};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{67     \textcolor{keyword}{static} std::unordered\_map<TileType, sf::IntRect> \mbox{\hyperlink{class_tile_af084d0bf5717e9abad65d6ee1e7f2a09}{m\_rects}};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_tile_a710af8be5c49ec5ca351d6f2c4aed0f5}{m\_visibility}};}
+\DoxyCodeLine{71 \};}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !TILE\_H}}
+
+\end{DoxyCode}

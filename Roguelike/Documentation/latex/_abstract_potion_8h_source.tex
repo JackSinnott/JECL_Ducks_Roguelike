@@ -1,0 +1,40 @@
+\hypertarget{_abstract_potion_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Abstract\+Potion.h}
+\mbox{\hyperlink{_abstract_potion_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_item_8h}{AbstractItem.h}}"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_abstract_potion}{AbstractPotion}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_abstract_item}{AbstractItem}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{15     \mbox{\hyperlink{class_abstract_potion_ad157b5ec25d1e99355f567ff2744b337}{AbstractPotion}}()}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_abstract_potion_ac47a4534487255f8c837593a0e236403}{m\_rects}}.size() == 0)}
+\DoxyCodeLine{18         \{}
+\DoxyCodeLine{19             \mbox{\hyperlink{class_abstract_potion_ac47a4534487255f8c837593a0e236403}{m\_rects}}.try\_emplace(Potions::Speed, sf::IntRect\{ 96,144,16,16 \});}
+\DoxyCodeLine{20             \mbox{\hyperlink{class_abstract_potion_ac47a4534487255f8c837593a0e236403}{m\_rects}}.try\_emplace(Potions::Health, sf::IntRect\{ 112,144,16,16 \});}
+\DoxyCodeLine{21             \mbox{\hyperlink{class_abstract_potion_ac47a4534487255f8c837593a0e236403}{m\_rects}}.try\_emplace(Potions::Strength, sf::IntRect\{ 128,144,16,16 \});}
+\DoxyCodeLine{22         \}}
+\DoxyCodeLine{23     \}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{28     \mbox{\hyperlink{class_abstract_potion_aec4bf6af74a8506613020e83b9ec7e92}{\string~AbstractPotion}}() \{\};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{34     \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_abstract_potion_aff8c434cfe491e5d4a0b112eb00cfe03}{UseEffect}}() = 0;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_abstract_potion_a11323348e7bf8bc3f0ba674a209d9a3e}{SetPotionType}}(\mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}} t\_potionType) \{ \mbox{\hyperlink{class_abstract_potion_aca7861acff934664fba9c57185e19212}{m\_potionType}} = t\_potionType; \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{47     \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}} \mbox{\hyperlink{class_abstract_potion_a3db67f36c99eee219f6f1b60a20e8bb2}{GetPotionType}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_abstract_potion_aca7861acff934664fba9c57185e19212}{m\_potionType}}; \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_abstract_potion_a04d114823c4de68a9656ef2ca59de9e1}{SetType}}() \{ \mbox{\hyperlink{class_abstract_item_a6e7d945f75b209961840cee458ae78a0}{m\_itemType}} = ItemType::Potion;  \mbox{\hyperlink{class_abstract_item_a3b837fabfac8f03e452a0000def3a1ee}{m\_itemSprite}}.setTextureRect(\mbox{\hyperlink{class_abstract_potion_ac47a4534487255f8c837593a0e236403}{m\_rects}}.at(\mbox{\hyperlink{class_abstract_potion_aca7861acff934664fba9c57185e19212}{m\_potionType}}));\};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{59     \textcolor{keyword}{static} std::unordered\_map<Potions, sf::IntRect> \mbox{\hyperlink{class_abstract_potion_ac47a4534487255f8c837593a0e236403}{m\_rects}};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62     \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}} \mbox{\hyperlink{class_abstract_potion_aca7861acff934664fba9c57185e19212}{m\_potionType}} = Potions::Health;}
+\DoxyCodeLine{63 \};}
+
+\end{DoxyCode}

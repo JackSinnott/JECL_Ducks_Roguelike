@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Roguelike: C:/Users/liney/OneDrive/Desktop/Work/Games Engineering/JECL_Ducks_Roguelike/Roguelike/Game.h Source File</title>
+<title>JECL-Ducks: C:/Users/liney/OneDrive/Desktop/Work/Games Engineering/JECL_Ducks_Roguelike/Roguelike/Game.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>s
+<script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="resize.js"></script>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -29,23 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="rogue.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">Roguelike<span id="projectnumber">&#160;very early alpha</span>
+   <div id="projectname">JECL-Ducks
    </div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -57,6 +39,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -100,65 +93,92 @@ $(document).ready(function(){initNavTree('_game_8h_source.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <a href="_game_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef GAME_HPP</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define GAME_HPP</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_player_8h.html">Player.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//  Authors:</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Jack</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// Eoin</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// Caroline</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// Leo</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Start Date: 13/10/2022</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef GAME_HPP</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define GAME_HPP</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;time.h&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_globals_8h.html">Globals.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_enemy_8h.html">Enemy.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_game.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="class_game.html">Game</a></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_function" href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game</a>();</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_function" href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">~Game</a>();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa">run</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_gameplay_8h.html">Gameplay.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_main_menu_8h.html">MainMenu.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="_pause_menu_8h.html">PauseMenu.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="_game_over_8h.html">GameOver.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="_options_8h.html">Options.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="_help_8h.html">Help.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="_audio_manager_8h.html">AudioManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38">processEvents</a>();</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#adf2eb2e773dbad1322db8d6798705ea1">processKeys</a>(sf::Event t_event);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0">update</a>(sf::Time t_deltaTime);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#a15ddd769261d923827a3cdf41499c843">render</a>();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#a3d1c7a9010c33a27424961138dadb442">setupFontAndText</a>();</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#ae0708ae9f1fd7b640ffd1796773734f1">setupSprite</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_game.html">   26</a></span><span class="keyword">class </span><a class="code hl_class" href="class_game.html">Game</a></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">//Game(sf::Font&amp; t_font);</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">~Game</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa">run</a>();</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_game.html#a22a61b5ea27c609be8cf2724c33d7ae5">   36</a></span>    sf::RenderWindow <a class="code hl_variable" href="class_game.html#a22a61b5ea27c609be8cf2724c33d7ae5">m_window</a>; <span class="comment">// main SFML window</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_game.html#a763868ac591e7420691cac088b3de1cb">   37</a></span>    sf::Font <a class="code hl_variable" href="class_game.html#a763868ac591e7420691cac088b3de1cb">m_ArialBlackfont</a>; <span class="comment">// font used by message</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_game.html#a620ab177bf9b34ab2dbcec585f86afbd">   38</a></span>    sf::Text <a class="code hl_variable" href="class_game.html#a620ab177bf9b34ab2dbcec585f86afbd">m_welcomeMessage</a>; <span class="comment">// text used for message on screen</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_game.html#a9921b40f7acc93e819c831223972607a">   39</a></span>    sf::Texture <a class="code hl_variable" href="class_game.html#a9921b40f7acc93e819c831223972607a">m_logoTexture</a>; <span class="comment">// texture used for sfml logo</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_game.html#ad952ecd17335d493304d41ecc7e07e73">   40</a></span>    sf::Sprite <a class="code hl_variable" href="class_game.html#ad952ecd17335d493304d41ecc7e07e73">m_logoSprite</a>; <span class="comment">// sprite used for sfml logo</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_game.html#a5452d49a7b3f2d2ea3c7e2072fe8a828">   41</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_game.html#a5452d49a7b3f2d2ea3c7e2072fe8a828">m_exitGame</a>; <span class="comment">// control exiting game</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38">processEvents</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#adf2eb2e773dbad1322db8d6798705ea1">processKeys</a>(sf::Event t_event);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#ae0da16763f3e4775e0c9e01fa862d4b1">Update</a>(sf::Time t_dt);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_game.html#a6e48721b0532833b99fd5615a3628792">   43</a></span>    <a class="code hl_class" href="class_player.html">Player</a> <a class="code hl_variable" href="class_game.html#a6e48721b0532833b99fd5615a3628792">player</a>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_game.html#a87dc7b0386a606552942ffbcbdd90a2c">   44</a></span>    <a class="code hl_class" href="class_enemy.html">Enemy</a>* <a class="code hl_variable" href="class_game.html#a87dc7b0386a606552942ffbcbdd90a2c">m_testEnemy</a>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif </span><span class="comment">// !GAME_HPP</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="ttc" id="a_enemy_8h_html"><div class="ttname"><a href="_enemy_8h.html">Enemy.h</a></div></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#abdb4620645e91922b0ba53c128faf1f7">Render</a>(sf::RenderWindow&amp; t_window);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_game.html#a55388d86d137b4ef4086234ac79bd36a">   46</a></span>    <a class="code hl_class" href="class_gameplay.html">Gameplay</a> <a class="code hl_variable" href="class_game.html#a55388d86d137b4ef4086234ac79bd36a">m_gameScreen</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_game.html#a89faffab9c3b76780b0712569e259f21">   49</a></span>    <a class="code hl_class" href="class_main_menu.html">MainMenu</a> <a class="code hl_variable" href="class_game.html#a89faffab9c3b76780b0712569e259f21">m_mainMenuScreen</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_game.html#a351e1826c929bbcfa4927323fc65fb3d">   52</a></span>    <a class="code hl_class" href="class_pause_menu.html">PauseMenu</a> <a class="code hl_variable" href="class_game.html#a351e1826c929bbcfa4927323fc65fb3d">m_pauseScreen</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_game.html#ad0f6daf930e602252811ed27ef2fe99a">   55</a></span>    <a class="code hl_class" href="class_game_over.html">GameOver</a> <a class="code hl_variable" href="class_game.html#ad0f6daf930e602252811ed27ef2fe99a">m_gameOverScreen</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_game.html#a7a2a07fd2256f22e202579211b5e87b2">   58</a></span>    <a class="code hl_class" href="class_options.html">Options</a> <a class="code hl_variable" href="class_game.html#a7a2a07fd2256f22e202579211b5e87b2">m_optionScreen</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_game.html#a18891e967e927e414a6b4539e42fe075">   61</a></span>    <a class="code hl_class" href="class_help.html">Help</a> <a class="code hl_variable" href="class_game.html#a18891e967e927e414a6b4539e42fe075">m_helpScreen</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_game.html#a22a61b5ea27c609be8cf2724c33d7ae5">   64</a></span>    sf::RenderWindow <a class="code hl_variable" href="class_game.html#a22a61b5ea27c609be8cf2724c33d7ae5">m_window</a>; </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#endif </span><span class="comment">// !GAME_HPP</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="ttc" id="a_audio_manager_8h_html"><div class="ttname"><a href="_audio_manager_8h.html">AudioManager.h</a></div></div>
+<div class="ttc" id="a_game_over_8h_html"><div class="ttname"><a href="_game_over_8h.html">GameOver.h</a></div></div>
+<div class="ttc" id="a_gameplay_8h_html"><div class="ttname"><a href="_gameplay_8h.html">Gameplay.h</a></div></div>
 <div class="ttc" id="a_globals_8h_html"><div class="ttname"><a href="_globals_8h.html">Globals.h</a></div></div>
-<div class="ttc" id="a_player_8h_html"><div class="ttname"><a href="_player_8h.html">Player.h</a></div></div>
-<div class="ttc" id="aclass_enemy_html"><div class="ttname"><a href="class_enemy.html">Enemy</a></div><div class="ttdef"><b>Definition:</b> Enemy.h:5</div></div>
-<div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdoc">author Pete Lowe May 2019 you need to change the above line or lose marks</div><div class="ttdef"><b>Definition:</b> Game.h:17</div></div>
-<div class="ttc" id="aclass_game_html_a15ddd769261d923827a3cdf41499c843"><div class="ttname"><a href="class_game.html#a15ddd769261d923827a3cdf41499c843">Game::render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">draw the frame and then switch buffers</div><div class="ttdef"><b>Definition:</b> Game.cpp:120</div></div>
-<div class="ttc" id="aclass_game_html_a1ab78f5ed0d5ea879157357cf2fb2afa"><div class="ttname"><a href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa">Game::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">main method for game</div><div class="ttdef"><b>Definition:</b> Game.cpp:44</div></div>
-<div class="ttc" id="aclass_game_html_a1d2aee62bac8e228344e1f44fab504e0"><div class="ttname"><a href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0">Game::update</a></div><div class="ttdeci">void update(sf::Time t_deltaTime)</div><div class="ttdoc">Update the game world</div><div class="ttdef"><b>Definition:</b> Game.cpp:109</div></div>
-<div class="ttc" id="aclass_game_html_a22a61b5ea27c609be8cf2724c33d7ae5"><div class="ttname"><a href="class_game.html#a22a61b5ea27c609be8cf2724c33d7ae5">Game::m_window</a></div><div class="ttdeci">sf::RenderWindow m_window</div><div class="ttdef"><b>Definition:</b> Game.h:36</div></div>
-<div class="ttc" id="aclass_game_html_a3d1c7a9010c33a27424961138dadb442"><div class="ttname"><a href="class_game.html#a3d1c7a9010c33a27424961138dadb442">Game::setupFontAndText</a></div><div class="ttdeci">void setupFontAndText()</div><div class="ttdoc">load the font and setup the text message for screen</div><div class="ttdef"><b>Definition:</b> Game.cpp:133</div></div>
-<div class="ttc" id="aclass_game_html_a5452d49a7b3f2d2ea3c7e2072fe8a828"><div class="ttname"><a href="class_game.html#a5452d49a7b3f2d2ea3c7e2072fe8a828">Game::m_exitGame</a></div><div class="ttdeci">bool m_exitGame</div><div class="ttdef"><b>Definition:</b> Game.h:41</div></div>
-<div class="ttc" id="aclass_game_html_a620ab177bf9b34ab2dbcec585f86afbd"><div class="ttname"><a href="class_game.html#a620ab177bf9b34ab2dbcec585f86afbd">Game::m_welcomeMessage</a></div><div class="ttdeci">sf::Text m_welcomeMessage</div><div class="ttdef"><b>Definition:</b> Game.h:38</div></div>
-<div class="ttc" id="aclass_game_html_a6e48721b0532833b99fd5615a3628792"><div class="ttname"><a href="class_game.html#a6e48721b0532833b99fd5615a3628792">Game::player</a></div><div class="ttdeci">Player player</div><div class="ttdef"><b>Definition:</b> Game.h:43</div></div>
-<div class="ttc" id="aclass_game_html_a763868ac591e7420691cac088b3de1cb"><div class="ttname"><a href="class_game.html#a763868ac591e7420691cac088b3de1cb">Game::m_ArialBlackfont</a></div><div class="ttdeci">sf::Font m_ArialBlackfont</div><div class="ttdef"><b>Definition:</b> Game.h:37</div></div>
-<div class="ttc" id="aclass_game_html_a79f698dda206dd7a9bed28b3f88bdc38"><div class="ttname"><a href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38">Game::processEvents</a></div><div class="ttdeci">void processEvents()</div><div class="ttdoc">handle user and system events/ input get key presses/ mouse moves etc.</div><div class="ttdef"><b>Definition:</b> Game.cpp:68</div></div>
-<div class="ttc" id="aclass_game_html_a87dc7b0386a606552942ffbcbdd90a2c"><div class="ttname"><a href="class_game.html#a87dc7b0386a606552942ffbcbdd90a2c">Game::m_testEnemy</a></div><div class="ttdeci">Enemy * m_testEnemy</div><div class="ttdef"><b>Definition:</b> Game.h:44</div></div>
-<div class="ttc" id="aclass_game_html_a9921b40f7acc93e819c831223972607a"><div class="ttname"><a href="class_game.html#a9921b40f7acc93e819c831223972607a">Game::m_logoTexture</a></div><div class="ttdeci">sf::Texture m_logoTexture</div><div class="ttdef"><b>Definition:</b> Game.h:39</div></div>
-<div class="ttc" id="aclass_game_html_ad59df6562a58a614fda24622d3715b65"><div class="ttname"><a href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game::Game</a></div><div class="ttdeci">Game()</div><div class="ttdef"><b>Definition:</b> Game.cpp:18</div></div>
-<div class="ttc" id="aclass_game_html_ad952ecd17335d493304d41ecc7e07e73"><div class="ttname"><a href="class_game.html#ad952ecd17335d493304d41ecc7e07e73">Game::m_logoSprite</a></div><div class="ttdeci">sf::Sprite m_logoSprite</div><div class="ttdef"><b>Definition:</b> Game.h:40</div></div>
-<div class="ttc" id="aclass_game_html_adf2eb2e773dbad1322db8d6798705ea1"><div class="ttname"><a href="class_game.html#adf2eb2e773dbad1322db8d6798705ea1">Game::processKeys</a></div><div class="ttdeci">void processKeys(sf::Event t_event)</div><div class="ttdoc">deal with key presses from the user</div><div class="ttdef"><b>Definition:</b> Game.cpp:97</div></div>
-<div class="ttc" id="aclass_game_html_ae0708ae9f1fd7b640ffd1796773734f1"><div class="ttname"><a href="class_game.html#ae0708ae9f1fd7b640ffd1796773734f1">Game::setupSprite</a></div><div class="ttdeci">void setupSprite()</div><div class="ttdoc">load the texture and setup the sprite for the logo</div><div class="ttdef"><b>Definition:</b> Game.cpp:153</div></div>
-<div class="ttc" id="aclass_game_html_ae3d112ca6e0e55150d2fdbc704474530"><div class="ttname"><a href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">Game::~Game</a></div><div class="ttdeci">~Game()</div><div class="ttdoc">default destructor we didn't dynamically allocate anything so we don't need to free it,...</div><div class="ttdef"><b>Definition:</b> Game.cpp:32</div></div>
-<div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdoc">Class the player directly controls.</div><div class="ttdef"><b>Definition:</b> Player.h:10</div></div>
+<div class="ttc" id="a_help_8h_html"><div class="ttname"><a href="_help_8h.html">Help.h</a></div></div>
+<div class="ttc" id="a_main_menu_8h_html"><div class="ttname"><a href="_main_menu_8h.html">MainMenu.h</a></div></div>
+<div class="ttc" id="a_options_8h_html"><div class="ttname"><a href="_options_8h.html">Options.h</a></div></div>
+<div class="ttc" id="a_pause_menu_8h_html"><div class="ttname"><a href="_pause_menu_8h.html">PauseMenu.h</a></div></div>
+<div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdoc">The game class. Keeps track of Game Flow.</div><div class="ttdef"><b>Definition:</b> Game.h:27</div></div>
+<div class="ttc" id="aclass_game_html_a18891e967e927e414a6b4539e42fe075"><div class="ttname"><a href="class_game.html#a18891e967e927e414a6b4539e42fe075">Game::m_helpScreen</a></div><div class="ttdeci">Help m_helpScreen</div><div class="ttdoc">Instance of the help screen.</div><div class="ttdef"><b>Definition:</b> Game.h:61</div></div>
+<div class="ttc" id="aclass_game_html_a1ab78f5ed0d5ea879157357cf2fb2afa"><div class="ttname"><a href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa">Game::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">The game loop function. Calls upon event handlers, updates, and renders every frame....</div><div class="ttdef"><b>Definition:</b> Game.cpp:28</div></div>
+<div class="ttc" id="aclass_game_html_a22a61b5ea27c609be8cf2724c33d7ae5"><div class="ttname"><a href="class_game.html#a22a61b5ea27c609be8cf2724c33d7ae5">Game::m_window</a></div><div class="ttdeci">sf::RenderWindow m_window</div><div class="ttdoc">The main SFML window.</div><div class="ttdef"><b>Definition:</b> Game.h:64</div></div>
+<div class="ttc" id="aclass_game_html_a351e1826c929bbcfa4927323fc65fb3d"><div class="ttname"><a href="class_game.html#a351e1826c929bbcfa4927323fc65fb3d">Game::m_pauseScreen</a></div><div class="ttdeci">PauseMenu m_pauseScreen</div><div class="ttdoc">Instance of the pause screen.</div><div class="ttdef"><b>Definition:</b> Game.h:52</div></div>
+<div class="ttc" id="aclass_game_html_a55388d86d137b4ef4086234ac79bd36a"><div class="ttname"><a href="class_game.html#a55388d86d137b4ef4086234ac79bd36a">Game::m_gameScreen</a></div><div class="ttdeci">Gameplay m_gameScreen</div><div class="ttdoc">Instance of the gameplay screen.</div><div class="ttdef"><b>Definition:</b> Game.h:46</div></div>
+<div class="ttc" id="aclass_game_html_a79f698dda206dd7a9bed28b3f88bdc38"><div class="ttname"><a href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38">Game::processEvents</a></div><div class="ttdeci">void processEvents()</div><div class="ttdoc">Handles ALL events that happen when the player interacts with the game. This includes moving the mous...</div><div class="ttdef"><b>Definition:</b> Game.cpp:53</div></div>
+<div class="ttc" id="aclass_game_html_a7a2a07fd2256f22e202579211b5e87b2"><div class="ttname"><a href="class_game.html#a7a2a07fd2256f22e202579211b5e87b2">Game::m_optionScreen</a></div><div class="ttdeci">Options m_optionScreen</div><div class="ttdoc">Instance of the options screen.</div><div class="ttdef"><b>Definition:</b> Game.h:58</div></div>
+<div class="ttc" id="aclass_game_html_a89faffab9c3b76780b0712569e259f21"><div class="ttname"><a href="class_game.html#a89faffab9c3b76780b0712569e259f21">Game::m_mainMenuScreen</a></div><div class="ttdeci">MainMenu m_mainMenuScreen</div><div class="ttdoc">Instance of the main menu screen.</div><div class="ttdef"><b>Definition:</b> Game.h:49</div></div>
+<div class="ttc" id="aclass_game_html_abdb4620645e91922b0ba53c128faf1f7"><div class="ttname"><a href="class_game.html#abdb4620645e91922b0ba53c128faf1f7">Game::Render</a></div><div class="ttdeci">void Render(sf::RenderWindow &amp;t_window)</div><div class="ttdoc">Method that controls what gets drawn onto the SFML window.</div><div class="ttdef"><b>Definition:</b> Game.cpp:161</div></div>
+<div class="ttc" id="aclass_game_html_ad0f6daf930e602252811ed27ef2fe99a"><div class="ttname"><a href="class_game.html#ad0f6daf930e602252811ed27ef2fe99a">Game::m_gameOverScreen</a></div><div class="ttdeci">GameOver m_gameOverScreen</div><div class="ttdoc">Instance of the game over screen.</div><div class="ttdef"><b>Definition:</b> Game.h:55</div></div>
+<div class="ttc" id="aclass_game_html_ad59df6562a58a614fda24622d3715b65"><div class="ttname"><a href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game::Game</a></div><div class="ttdeci">Game()</div><div class="ttdoc">Class's Default Constructor.</div><div class="ttdef"><b>Definition:</b> Game.cpp:8</div></div>
+<div class="ttc" id="aclass_game_html_adf2eb2e773dbad1322db8d6798705ea1"><div class="ttname"><a href="class_game.html#adf2eb2e773dbad1322db8d6798705ea1">Game::processKeys</a></div><div class="ttdeci">void processKeys(sf::Event t_event)</div><div class="ttdoc">Handles events that happen when the player presses a key on the keyboard, and are not bound to a cert...</div><div class="ttdef"><b>Definition:</b> Game.cpp:109</div></div>
+<div class="ttc" id="aclass_game_html_ae0da16763f3e4775e0c9e01fa862d4b1"><div class="ttname"><a href="class_game.html#ae0da16763f3e4775e0c9e01fa862d4b1">Game::Update</a></div><div class="ttdeci">void Update(sf::Time t_dt)</div><div class="ttdoc">Method that controls what gets updated, depending on what screen the user is on.</div><div class="ttdef"><b>Definition:</b> Game.cpp:122</div></div>
+<div class="ttc" id="aclass_game_html_ae3d112ca6e0e55150d2fdbc704474530"><div class="ttname"><a href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">Game::~Game</a></div><div class="ttdeci">~Game()</div><div class="ttdoc">Class's Default deconstructor.</div><div class="ttdef"><b>Definition:</b> Game.cpp:21</div></div>
+<div class="ttc" id="aclass_game_over_html"><div class="ttname"><a href="class_game_over.html">GameOver</a></div><div class="ttdoc">The GameOver screen. It is accessed after the Player's health is 0 during Gameplay.</div><div class="ttdef"><b>Definition:</b> GameOver.h:10</div></div>
+<div class="ttc" id="aclass_gameplay_html"><div class="ttname"><a href="class_gameplay.html">Gameplay</a></div><div class="ttdoc">The Gameplay screen. This is where the Grid, Player and Enemy objects are handled.</div><div class="ttdef"><b>Definition:</b> Gameplay.h:18</div></div>
+<div class="ttc" id="aclass_help_html"><div class="ttname"><a href="class_help.html">Help</a></div><div class="ttdoc">The Help screen. Is used to tell the user how to play the game.</div><div class="ttdef"><b>Definition:</b> Help.h:10</div></div>
+<div class="ttc" id="aclass_main_menu_html"><div class="ttname"><a href="class_main_menu.html">MainMenu</a></div><div class="ttdoc">The main screen the user will see once they open the game.</div><div class="ttdef"><b>Definition:</b> MainMenu.h:10</div></div>
+<div class="ttc" id="aclass_options_html"><div class="ttname"><a href="class_options.html">Options</a></div><div class="ttdoc">The Options screen. Is used to let the user adjust their experience of the game.</div><div class="ttdef"><b>Definition:</b> Options.h:10</div></div>
+<div class="ttc" id="aclass_pause_menu_html"><div class="ttname"><a href="class_pause_menu.html">PauseMenu</a></div><div class="ttdoc">The PauseMenu screen. Is used to tell the user that the game is paused, and gives them choices on how...</div><div class="ttdef"><b>Definition:</b> PauseMenu.h:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

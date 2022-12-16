@@ -1,0 +1,31 @@
+\hypertarget{_strength_potion_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Strength\+Potion.h}
+\mbox{\hyperlink{_strength_potion_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_abstract_potion_8h}{AbstractPotion.h}}"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_strength_potion}{StrengthPotion}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_abstract_potion}{AbstractPotion}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_strength_potion_a112c16f3b6c77d144252b3dbf5727c89}{StrengthPotion}}(\mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}} t\_potionType)}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         \mbox{\hyperlink{class_abstract_potion_aca7861acff934664fba9c57185e19212}{m\_potionType}} = t\_potionType;}
+\DoxyCodeLine{18         \mbox{\hyperlink{class_strength_potion_afb436e7224131f82989ccd9134dd1e0e}{m\_strength}} = 2 + rand() \% 10;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20         \mbox{\hyperlink{class_abstract_item_abe763be2ca66718e36515961477161f3}{SetupBasics}}();}
+\DoxyCodeLine{21         \mbox{\hyperlink{class_abstract_potion_a04d114823c4de68a9656ef2ca59de9e1}{SetType}}();}
+\DoxyCodeLine{22     \};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_strength_potion_ae642a1e1d8cc3cb06c2f8ddea8c95071}{UseEffect}}()\textcolor{keyword}{ override}}
+\DoxyCodeLine{30 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{31         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_strength_potion_afb436e7224131f82989ccd9134dd1e0e}{m\_strength}};}
+\DoxyCodeLine{32     \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{private}:}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_strength_potion_afb436e7224131f82989ccd9134dd1e0e}{m\_strength}} = 0;}
+\DoxyCodeLine{38 \};}
+
+\end{DoxyCode}
