@@ -167,6 +167,11 @@ int Grid::whatRoomIsPlayerIn(sf::Vector2i t_playerPos)
 	return m_playerRoom;
 }
 
+/// <summary>
+/// Calculates what Room the target (ie the player) is in.
+/// </summary>
+/// <param name="t_targetPos">The target's position.</param>
+/// <returns>The room that the target is in.</returns>
 int Grid::whatRoomIsTargetIn(sf::Vector2i t_targetPos)
 {
 	int room = -1;
@@ -204,7 +209,7 @@ int Grid::whatRoomIsTargetIn(sf::Vector2i t_targetPos)
 }
 
 /// <summary>
-///Checks if the Player has collided with any of the wall Tile objects.
+/// Makes sure the Player is in boundaries. before checking if they collided with walls.
 /// </summary>
 /// <param name="t_player">A reference to the Player in Gameplay.</param>
 void Grid::checkCollisionPlayerWall(Player &t_player)
@@ -219,6 +224,11 @@ void Grid::checkCollisionPlayerWall(Player &t_player)
 	}
 }
 
+/// <summary>
+/// Makes sure the Enemy is in boundaries. before checking if they collided with walls.
+/// </summary>
+/// <param name="t_enemy">A reference to the Enemy in Gameplay.</param>
+/// <param name="t_room">The room that the enemy is currently in.</param>
 void Grid::checkCollisionEnemyWall(Enemy& t_enemy, int t_room)
 {
 	if (t_room > 0 && t_room <= 4)
@@ -231,6 +241,10 @@ void Grid::checkCollisionEnemyWall(Enemy& t_enemy, int t_room)
 	}
 }
 
+/// <summary>
+/// Gets a position for a new room, depending on how many rooms are currently spawned in.
+/// </summary>
+/// <returns>The position of the Room in the Game.</returns>
 sf::Vector2f Grid::placeRoom()
 {
 	switch (numOfRoomsMade)
@@ -249,6 +263,10 @@ sf::Vector2f Grid::placeRoom()
 	return m_roomPos;
 }
 
+/// <summary>
+/// Checks if the Player has collided with any of the wall Tile objects.
+/// </summary>
+/// <param name="t_player"></param>
 void Grid::checkCollisionPlayerInRoom(Player& t_player)
 {
 	sf::Vector2i playerPos = t_player.getPlayerPositionInGrid();
@@ -294,6 +312,11 @@ void Grid::checkCollisionPlayerInRoom(Player& t_player)
 	}
 }
 
+/// <summary>
+/// Checks if the Enemy has collided with any of the wall Tile objects.
+/// </summary>
+/// <param name="t_enemy">A reference to the Enemy in Gameplay.</param>
+/// <param name="t_room">The room that the enemy is currently in.</param>
 void Grid::checkCollisionEnemyInRoom(Enemy& t_enemy, int t_room)
 {
 	sf::Vector2i enemyPos = t_enemy.getEnemyPositionInGrid();
