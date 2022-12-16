@@ -44,7 +44,7 @@ public:
 
 	std::vector<sf::Vector2i> getWaypoints() { return m_waypoints; }
 
-	std::vector<Room*> getData() { return m_rooms; }
+	std::array<std::array<Tile, G_ROOM_COLS>, G_ROOM_ROWS>* getData(int i) { return m_rooms[i]->getData(); }
 
 private:
 

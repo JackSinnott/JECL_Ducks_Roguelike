@@ -24,7 +24,7 @@ public:
 	/// </summary>
 	/// <param name="m_levelArray"> level data to read where the blockages are </param>
 	/// <param name="size"> size of the above array</param>
-	void linkGraph(std::array<std::array<Tile,60>,75>& t_data);
+	void linkGraph(std::array<std::array<Tile, G_ROOM_COLS>, G_ROOM_ROWS>& t_data);
 
 	//test
 	void draw(sf::RenderWindow& t_window);

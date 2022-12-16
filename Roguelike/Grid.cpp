@@ -60,7 +60,7 @@ void Grid::update(sf::Time t_dt, Player &t_playerPos)
 		checkCollisionPlayerWall(t_playerPos);
 		room->CheckPlayer(m_playerRoom);
 	}
-
+	generateTargets(true);
 	
 }
 
@@ -96,7 +96,10 @@ void Grid::setUpRoom(TileType t_type, int t_roomID, int t_row, int t_col)
 }
 
 
-
+/// <summary>
+/// Gets the entrance tiles from the rooms and adds to waypoints for the pathfinding algorithm so it's aware of 
+/// the nodes it needs to be aware of
+/// </summary>
 void Grid::setUpPaths()
 {
 	for (Room* r : m_rooms)
@@ -438,9 +441,14 @@ void Grid::addWaypoint(sf::Vector2i t_pos)
 	m_waypoints.push_back(t_pos);
 }
 
-sf::Vector2i Grid::generateTargets(bool)
+sf::Vector2i Grid::generateTargets(bool waypoint)
 {
-	return sf::Vector2i();
+	if (m_path.empty())
+	{
+		m_pathFinder->generatePath(m_waypoints.front(), (waypoint) ? m_waypoints[m_currentWaypoint] : m_waypoints.back(), m_path);
+		m_currentWaypoint = (m_currentWaypoint + 1 > (m_waypoints.size() - 1)) ? 0 : m_currentWaypoint + 1;
+	}
+	return m_path.top();
 }
 
 /// <summary>

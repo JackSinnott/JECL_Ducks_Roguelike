@@ -4,7 +4,7 @@
 PathFinder* PathFinder::m_instance{ nullptr };
 
 PathFinder::PathFinder() :
-	m_graph(60*75),
+	m_graph(G_ROOM_ROWS* G_ROOM_COLS),
 	m_links(sf::Lines)
 {
 	createGraph();
@@ -21,8 +21,8 @@ void PathFinder::generatePath(sf::Vector2i t_pathStart, sf::Vector2i t_pathDest,
 	std::pair<int, int> indexPos; // first - start, second - end
 
 	//get the index of the start and end points
-	indexPos.first = (static_cast<int>(t_pathStart.x) / 32) + ((static_cast<int>(t_pathStart.y) / 32) * 100);
-	indexPos.second = (static_cast<int>(t_pathDest.x) / 32) + ((static_cast<int>(t_pathDest.y) / 32) * 100); 
+	indexPos.first = (static_cast<int>(t_pathStart.x) / 32) + ((static_cast<int>(t_pathStart.y) / 32) * 25);
+	indexPos.second = (static_cast<int>(t_pathDest.x) / 32) + ((static_cast<int>(t_pathDest.y) / 32) * 25); 
 
 	m_graph.aStar(m_graph.nodeIndex(indexPos.first), m_graph.nodeIndex(indexPos.second), path);
 
@@ -107,7 +107,7 @@ PathFinder::~PathFinder()
 
 //***********************************************
 
-void PathFinder::linkGraph(std::array<std::array<Tile, 60>, 75>& t_data)
+void PathFinder::linkGraph(std::array<std::array<Tile, G_ROOM_COLS>, G_ROOM_ROWS>& t_data)
 {
 	int weight = 5;
 	int diagWeight = 8;

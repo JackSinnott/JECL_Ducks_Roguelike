@@ -202,11 +202,12 @@ void Gameplay::LoadLevel()
 
 	m_grid.setUpWalls();
 	m_grid.setUpPaths();
-	for (Room* r : m_grid.getData())
-	{
-		m_pathFinder->linkGraph(r->getData());
 
-	}
+	m_pathFinder->linkGraph(*m_grid.getData(0));
+	//m_pathFinder->linkGraph(m_grid.getData(1)->getData());
+	//m_pathFinder->linkGraph(m_grid.getData(2)->getData());
+	//m_pathFinder->linkGraph(m_grid.getData(3)->getData());
+
 }
 
 /// <summary>

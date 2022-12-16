@@ -59,7 +59,7 @@ public:
 	/// <returns>The row and column of this Room.</returns>
 	inline sf::Vector2i getGridPosition() { return sf::Vector2i(row, col); }
 
-	std::array<std::array<Tile, G_MAP_COLS>, G_MAP_ROWS> getData() { return m_tiles; }
+	std::array<std::array<Tile, G_ROOM_COLS>, G_ROOM_ROWS>* getData() { return &m_tiles; }
 
 private:
 	///The position of the Room.
@@ -69,7 +69,7 @@ private:
 	std::shared_ptr<sf::Texture> m_pTexture;
 
 	///The tiles themselves, laid out in a 2D array.
-	std::array<std::array<Tile, G_MAP_COLS>,G_MAP_ROWS> m_tiles;
+	std::array<std::array<Tile, G_ROOM_COLS>,G_ROOM_ROWS> m_tiles;
 
 	///All the positions of the Tiles that are #VERTICAL_WALL,
 	/// #HORIZONTAL_WALL, or #INSIDE_WALL.
