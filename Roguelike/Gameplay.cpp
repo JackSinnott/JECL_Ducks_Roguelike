@@ -8,8 +8,13 @@ Gameplay::Gameplay()
 	m_itemfactory = new WeaponFactory();
 	Weapons w = static_cast<Weapons>(2);
 	m_starterWeapon = m_itemfactory->CreateWeapon(w);
-	
 	player = Player(5,5, m_starterWeapon);
+
+	//m_itemfactory = new ArmourFactory();
+	//Armours a = static_cast<Armours>(2);
+	//AbstractItem* m_debugArmour = m_itemfactory->CreateArmour(a);
+	//player.PickUpItem(*m_debugArmour);
+
 	m_levelLoader = new FileLoader(m_grid);
 
 	LoadLevel();

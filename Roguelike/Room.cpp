@@ -197,7 +197,7 @@ void Room::ComparePlayerAndItem(Player t_player, int t_playerRoomID)
 		//	}
 		//}
 
-		for (auto t_tile : m_tilesWithItems)
+		for (sf::Vector2i t_tile : m_tilesWithItems)
 		{
 			if (t_tile == t_player.getPlayerPositionInGrid())
 			{
@@ -215,8 +215,8 @@ void Room::ComparePlayerAndItem(Player t_player, int t_playerRoomID)
 					// found  
 					//std::cout << "Iterator points to " << it->first.x << it->first.y << " = something" << std::endl;
 
-
-					t_player.PickUpItem(*it->second);
+					AbstractItem* x = it->second;
+					t_player.PickUpItem(*x);
 					//m_mapWithItems.erase(it->first);
 				}
 
