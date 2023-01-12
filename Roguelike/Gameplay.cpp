@@ -3,9 +3,7 @@
 /// <summary>
 /// The class's default constructor.
 /// </summary>
-Gameplay::Gameplay() :
-	m_grid(0, 0)
-	player(5,5)
+Gameplay::Gameplay()
 {
 	m_itemfactory = new WeaponFactory();
 	Weapons w = static_cast<Weapons>(2);
