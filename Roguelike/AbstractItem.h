@@ -90,12 +90,4 @@ protected:
 
 	///The type of item it is.
 	ItemType m_itemType = ItemType::Weapon;
-
-	bool operator<(const AbstractItem* b) const
-	{
-		if (this->id == b->id)
-		{
-			return this->id;
-		};
-	}
 };

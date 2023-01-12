@@ -21,6 +21,16 @@
 #include "ArmourFactory.h"
 #include "PotionFactory.h"
 #include "Player.h"
+
+
+struct VectorComparator
+{
+	bool operator() (sf::Vector2i lhs, sf::Vector2i rhs) const
+	{
+		return lhs.x + lhs.y < rhs.x + rhs.y;
+	}
+};
+
 class Room
 {
 public:
@@ -101,10 +111,9 @@ private:
 	std::vector<sf::Vector2i> m_tilesWithItems;
 
 
-	//std::map<sf::Vector2i, AbstractItem*> m_mapWithItems;
+	std::map<sf::Vector2i, AbstractItem*, VectorComparator> m_mapWithItems;
 
 };
-
 
 #endif // !ROOM_H
 

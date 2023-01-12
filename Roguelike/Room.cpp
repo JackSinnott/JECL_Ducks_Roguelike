@@ -101,7 +101,7 @@ void Room::SpawnItems(int t_row, int t_col)
 	int randomChance = rand() % 10 + 1;
 	int randomChanceB = rand() % 3 + 1;
 
-	if (randomChance > 8 && m_tiles[t_row][t_col].TileOccupied() == false)
+	if (randomChance > 0 && m_tiles[t_row][t_col].TileOccupied() == false)
 	{
 		int n = rand() % 3;
 		Weapons w;
@@ -124,7 +124,7 @@ void Room::SpawnItems(int t_row, int t_col)
 
 
 
-			//m_mapWithItems.insert(std::pair<sf::Vector2i, AbstractItem*>(i, m_absItem));
+			m_mapWithItems.insert(std::pair<sf::Vector2i, AbstractItem*>(i, m_absItem));
 
 			break;
 
@@ -140,6 +140,8 @@ void Room::SpawnItems(int t_row, int t_col)
 			m_absItemVector.push_back(m_absItem);
 			m_tiles[t_row][t_col].ToggleTileOccupied();
 			m_tilesWithItems.push_back(sf::Vector2i(t_row, t_col));
+
+			m_mapWithItems.insert(std::pair<sf::Vector2i, AbstractItem*>(i, m_absItem));
 			break;
 
 		case 3:
@@ -154,13 +156,14 @@ void Room::SpawnItems(int t_row, int t_col)
 			m_absItemVector.push_back(m_absItem);
 			m_tiles[t_row][t_col].ToggleTileOccupied();
 			m_tilesWithItems.push_back(sf::Vector2i(t_row, t_col));
+
+			m_mapWithItems.insert(std::pair<sf::Vector2i, AbstractItem*>(i, m_absItem));
 			break;
 
 		default:
 			break;
 		}
 	}
-	
 }
 
 void Room::SearchTiles()
@@ -182,8 +185,8 @@ void Room::ComparePlayerAndItem(Player t_player, int t_playerRoomID)
 {
 	if (t_playerRoomID == id)
 	{
-		//
-		std::map<sf::Vector2i, AbstractItem*>::iterator it;
+		//std::map<sf::Vector2i, AbstractItem*>::iterator it;
+
 
 		//for (it = m_mapWithItems.begin(); it != m_mapWithItems.end(); it++)
 		//{
@@ -193,6 +196,33 @@ void Room::ComparePlayerAndItem(Player t_player, int t_playerRoomID)
 		//		m_mapWithItems.erase(it->first);
 		//	}
 		//}
+
+		for (auto t_tile : m_tilesWithItems)
+		{
+			if (t_tile == t_player.getPlayerPositionInGrid())
+			{
+		 		std::map<sf::Vector2i, AbstractItem*>::iterator it;
+				std::cout << "player collided with item" << std::endl;
+				it = m_mapWithItems.find(t_tile);
+				
+				if (it == m_mapWithItems.end())
+				{
+					// not found  
+					std::cout << "Element not found";
+				}
+				else
+				{
+					// found  
+					//std::cout << "Iterator points to " << it->first.x << it->first.y << " = something" << std::endl;
+
+
+					t_player.PickUpItem(*it->second);
+					//m_mapWithItems.erase(it->first);
+				}
+
+			}
+		}
+		
 	}
 }
 
