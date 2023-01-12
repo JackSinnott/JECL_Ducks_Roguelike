@@ -1,39 +1,63 @@
-\hypertarget{_game_8h_source}{}\doxysection{Game.\+h}
-
+\hypertarget{_game_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Game.h}
+\mbox{\hyperlink{_game_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 }
-\DoxyCodeLine{10 }
-\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef GAME\_HPP}}
-\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GAME\_HPP}}
-\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
-\DoxyCodeLine{19 }
-\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_game}{Game}}}
-\DoxyCodeLine{21 \{}
-\DoxyCodeLine{22 \textcolor{keyword}{public}:}
-\DoxyCodeLine{23     \mbox{\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game}}();}
-\DoxyCodeLine{24     \mbox{\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{\string~Game}}();}
-\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa}{run}}();}
+\DoxyCodeLine{2 \textcolor{comment}{//  Authors:}}
+\DoxyCodeLine{3 \textcolor{comment}{// Jack}}
+\DoxyCodeLine{4 \textcolor{comment}{// Eoin}}
+\DoxyCodeLine{5 \textcolor{comment}{// Caroline}}
+\DoxyCodeLine{6 \textcolor{comment}{// Leo}}
+\DoxyCodeLine{7 \textcolor{comment}{// Start Date: 13/10/2022}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GAME\_HPP}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GAME\_HPP}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_globals_8h}{Globals.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_gameplay_8h}{Gameplay.h}}"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_main_menu_8h}{MainMenu.h}}"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_pause_menu_8h}{PauseMenu.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_game_over_8h}{GameOver.h}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_options_8h}{Options.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_help_8h}{Help.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_audio_manager_8h}{AudioManager.h}}"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{class_game}{Game}}}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28 \textcolor{keyword}{public}:}
 \DoxyCodeLine{29 }
-\DoxyCodeLine{30 \textcolor{keyword}{private}:}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32     \textcolor{keywordtype}{void} processEvents();}
-\DoxyCodeLine{33     \textcolor{keywordtype}{void} processKeys(sf::Event t\_event);}
-\DoxyCodeLine{34     \textcolor{keywordtype}{void} update(sf::Time t\_deltaTime);}
-\DoxyCodeLine{35     \textcolor{keywordtype}{void} render();}
-\DoxyCodeLine{36     }
-\DoxyCodeLine{37     \textcolor{keywordtype}{void} setupFontAndText();}
-\DoxyCodeLine{38     \textcolor{keywordtype}{void} setupSprite();}
-\DoxyCodeLine{39 }
-\DoxyCodeLine{40     sf::RenderWindow m\_window; \textcolor{comment}{// main SFML window}}
-\DoxyCodeLine{41     sf::Font m\_ArialBlackfont; \textcolor{comment}{// font used by message}}
-\DoxyCodeLine{42     sf::Text m\_welcomeMessage; \textcolor{comment}{// text used for message on screen}}
-\DoxyCodeLine{43     sf::Texture m\_logoTexture; \textcolor{comment}{// texture used for sfml logo}}
-\DoxyCodeLine{44     sf::Sprite m\_logoSprite; \textcolor{comment}{// sprite used for sfml logo}}
-\DoxyCodeLine{45     \textcolor{keywordtype}{bool} m\_exitGame; \textcolor{comment}{// control exiting game}}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47 \};}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !GAME\_HPP}}
+\DoxyCodeLine{30     \textcolor{comment}{//Game(sf::Font\& t\_font);}}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game}}();}
+\DoxyCodeLine{32     \mbox{\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{\string~Game}}();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa}{run}}();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{private}:}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_a79f698dda206dd7a9bed28b3f88bdc38}{processEvents}}();}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_adf2eb2e773dbad1322db8d6798705ea1}{processKeys}}(sf::Event t\_event);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_ae0da16763f3e4775e0c9e01fa862d4b1}{Update}}(sf::Time t\_dt);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_abdb4620645e91922b0ba53c128faf1f7}{Render}}(sf::RenderWindow\& t\_window);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{46     \mbox{\hyperlink{class_gameplay}{Gameplay}} \mbox{\hyperlink{class_game_a55388d86d137b4ef4086234ac79bd36a}{m\_gameScreen}};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49     \mbox{\hyperlink{class_main_menu}{MainMenu}} \mbox{\hyperlink{class_game_a89faffab9c3b76780b0712569e259f21}{m\_mainMenuScreen}};}
 \DoxyCodeLine{50 }
+\DoxyCodeLine{52     \mbox{\hyperlink{class_pause_menu}{PauseMenu}} \mbox{\hyperlink{class_game_a351e1826c929bbcfa4927323fc65fb3d}{m\_pauseScreen}};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55     \mbox{\hyperlink{class_game_over}{GameOver}} \mbox{\hyperlink{class_game_ad0f6daf930e602252811ed27ef2fe99a}{m\_gameOverScreen}};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{58     \mbox{\hyperlink{class_options}{Options}} \mbox{\hyperlink{class_game_a7a2a07fd2256f22e202579211b5e87b2}{m\_optionScreen}};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61     \mbox{\hyperlink{class_help}{Help}} \mbox{\hyperlink{class_game_a18891e967e927e414a6b4539e42fe075}{m\_helpScreen}};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{64     sf::RenderWindow \mbox{\hyperlink{class_game_a22a61b5ea27c609be8cf2724c33d7ae5}{m\_window}}; }
+\DoxyCodeLine{65 \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !GAME\_HPP}}
+\DoxyCodeLine{68 }
 
 \end{DoxyCode}

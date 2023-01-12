@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['player_0',['player',['../class_game.html#a6e48721b0532833b99fd5615a3628792',1,'Game']]]
+  ['enemiesstats_0',['enemiesStats',['../class_combat_system.html#a6d065187e4aff4794caedcc9afe6e541',1,'CombatSystem']]]
 ];

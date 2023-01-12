@@ -1,0 +1,23 @@
+\hypertarget{_resource_allocator_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Resource\+Allocator.h}
+\mbox{\hyperlink{_resource_allocator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RESOURCE\_ALLOCATOR\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RESOURCE\_ALLOCATOR\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{template}<\textcolor{keyword}{typename} Derived, \textcolor{keyword}{typename} T>}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_resource_allocator}{ResourceAllocator}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_resource_allocator_ad5df72ec689c5f709713471610e50b38}{ResourceAllocator}}() \{ \textcolor{stringliteral}{"{}Resource allocator created"{}}; \};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{22     \mbox{\hyperlink{class_resource_allocator_ad36e7c0527af373e90929a1a0524ec08}{\string~ResourceAllocator}}() \{ \textcolor{stringliteral}{"{}Resource allocator deleted"{}}; \};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{29     \textcolor{keyword}{virtual} T \mbox{\hyperlink{class_resource_allocator_ac8f081f0234b607faabd88bcbf6395fb}{Acquire}}(\textcolor{keyword}{const} std::string\& name) = 0;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{35     \textcolor{keyword}{virtual} T \mbox{\hyperlink{class_resource_allocator_a202e31427e6037373a2af72bebec81f7}{Collectgarbage}}() = 0;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !RESOURCE\_ALLOCATOR\_H}}
+
+\end{DoxyCode}

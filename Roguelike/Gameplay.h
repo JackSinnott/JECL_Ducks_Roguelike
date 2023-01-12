@@ -2,7 +2,8 @@
 #include "Globals.h"
 #include "FileLoader.h"
 #include "Player.h"
-#include "Enemy.h"
+#include "Bat.h"
+#include "Rat.h"
 #include "Grid.h"
 #include "AbstractItemFactory.h"
 #include "WeaponFactory.h"
@@ -67,8 +68,8 @@ private:
 	/// the player, that the user will control.
 	Player player;
 
-	/// The first enemy. Will try to attack the Player.
-	Enemy* m_testEnemy;
+	/// a vetor to store all enemies regardless of type
+	std::vector<Enemy*> m_enemies;
 
 	///Controls whether the mouse coordinates are displayed on screen. Used for debugging.
 	bool m_debugTools;

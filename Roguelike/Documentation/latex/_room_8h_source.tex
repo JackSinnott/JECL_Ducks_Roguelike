@@ -1,0 +1,59 @@
+\hypertarget{_room_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Room.h}
+\mbox{\hyperlink{_room_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef ROOM\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define ROOM\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_texture_manager_8h}{TextureManager.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_globals_8h}{Globals.h}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <array>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_tile_8h}{Tile.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_room}{Room}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_room}{Room}}(\textcolor{keywordtype}{int} t\_id, sf::Vector2f t\_roomPos);}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_room_a67d5da09983cc53097807fd43ba5481a}{\string~Room}}();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_room_a33f8da9118d83bd6395f69fb43303725}{update}}(sf::Time t\_dt, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_room_a1390ef717209af1cbcd2afabb4642464}{row}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_room_a008db12edeea58448b97570bf7a2c453}{col}});}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_room_a740596d1126a7b95656529799292a555}{draw}}(sf::RenderTarget\& t\_target, sf::RenderStates \textcolor{keyword}{const} t\_state = sf::RenderStates::Default)\textcolor{keyword}{const};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_room_a3068a85c9f12ea4247f23b4b0631595d}{CheckPlayer}}(\textcolor{keywordtype}{int} t\_playerRoomID);}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_room_a1005454662f31957143c39653e5d5550}{setUpTiles}}(\mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{TileType}} t\_type, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_room_a1390ef717209af1cbcd2afabb4642464}{row}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_room_a008db12edeea58448b97570bf7a2c453}{col}});}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{32     \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_room_ae9f6536b2640aa477c03bdffc8fb0511}{getID}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_room_af51865ded79b022a93c6af4bd613d41c}{id}}; \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{38     \textcolor{keyword}{inline} sf::Vector2f \mbox{\hyperlink{class_room_a9e8b1ce65e38ef7d1ed0ce4e375df051}{getPosition}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_room_a75b5e2284a315945e63292d10badbccb}{m\_pos}}; \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{45     \textcolor{keyword}{inline} std::vector<sf::Vector2i> \mbox{\hyperlink{class_room_a7dadb2c732c9a539743b47c672c865bb}{getWalls}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_room_ad2791e9f52a26c8316c6c8d60b39bf0d}{m\_walls}}; \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_room_ab0b351919b0eb1de670af849f1bdb966}{setGridPosition}}();}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{53     \textcolor{keyword}{inline} sf::Vector2i \mbox{\hyperlink{class_room_acbe8af4fdea03b269256f24bdb83ea18}{getGridPosition}}() \{ \textcolor{keywordflow}{return} sf::Vector2i(\mbox{\hyperlink{class_room_a1390ef717209af1cbcd2afabb4642464}{row}}, \mbox{\hyperlink{class_room_a008db12edeea58448b97570bf7a2c453}{col}}); \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{private}:}
+\DoxyCodeLine{57     sf::Vector2f \mbox{\hyperlink{class_room_a75b5e2284a315945e63292d10badbccb}{m\_pos}};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60     std::shared\_ptr<sf::Texture> \mbox{\hyperlink{class_room_a8ef8f7cfa9c3d2db6c19fe3fb2843b0a}{m\_pTexture}};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{63     std::array<std::array<Tile, G\_MAP\_COLS>,\mbox{\hyperlink{_globals_8h_a4f8d156204e81cf90a7056ae14e7b148}{G\_MAP\_ROWS}}> \mbox{\hyperlink{class_room_afa68c6dc6d9875a7c19f0474a6e808eb}{m\_tiles}};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{67     std::vector<sf::Vector2i> \mbox{\hyperlink{class_room_ad2791e9f52a26c8316c6c8d60b39bf0d}{m\_walls}};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_room_a1390ef717209af1cbcd2afabb4642464}{row}};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{73     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_room_a008db12edeea58448b97570bf7a2c453}{col}};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{76     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_room_af51865ded79b022a93c6af4bd613d41c}{id}};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{79     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_room_a77b63882fbdf9e9fde49fc195cef3722}{m\_revealed}};}
+\DoxyCodeLine{80 \};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !ROOM\_H}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+
+\end{DoxyCode}

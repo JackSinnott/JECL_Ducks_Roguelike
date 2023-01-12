@@ -1,0 +1,242 @@
+\hypertarget{class_tile}{}\doxysection{Tile Class Reference}
+\label{class_tile}\index{Tile@{Tile}}
+
+
+\mbox{\hyperlink{class_tile}{Tile}} class, handles everything for one cell of the \mbox{\hyperlink{class_grid}{Grid}}.   
+
+
+
+
+{\ttfamily \#include $<$Tile.\+h$>$}
+
+Inheritance diagram for Tile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_tile}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_tile_aeeb5593bb6b75aae2edfcccbc84ab378}{Tile}} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tile_aa072a9d0243f8038d3d781ebf3f3fd61}{setup}} (std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ \&t\+\_\+tex, sf\+::\+Vector2f t\+\_\+pos, sf\+::\+Vector2f t\+\_\+offset, \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}} t\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Sets up the values inside \mbox{\hyperlink{class_tile}{Tile}}, such as its appearance and translation.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tile_a00a3beeb62e2745b6d0b9abe69d5485f}{draw}} (sf\+::\+Render\+Target \&t\+\_\+target, sf\+::\+Render\+States const t\+\_\+state=sf\+::\+Render\+States\+::\+Default) const override
+\begin{DoxyCompactList}\small\item\em Draws the tile out onto the SFML screen.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}} \mbox{\hyperlink{class_tile_a9c5c52ada25a3848a13476827410b139}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Returns what type of tile this one is.  \end{DoxyCompactList}\item 
+sf\+::\+Sprite \& \mbox{\hyperlink{class_tile_a1812f9328d9d27dc88dddf84cf834e3f}{get\+Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Returns the \mbox{\hyperlink{class_tile}{Tile}}\textquotesingle{}s sprite.  \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_tile_afd69da1519691d4f82bfe0534db4f01c}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Returns the tile\textquotesingle{}s position in the \mbox{\hyperlink{class_game}{Game}}.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tile_acb79dc495386d1d06b24dfcc03c20084}{set\+Grid\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Sets up the rows and columns this \mbox{\hyperlink{class_tile}{Tile}} occupies, for easy returns later.  \end{DoxyCompactList}\item 
+sf\+::\+Vector2i \mbox{\hyperlink{class_tile_a32efa16e208e796004961cd4abd05f96}{get\+Grid\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Returns the rows and columns this \mbox{\hyperlink{class_tile}{Tile}} occupies.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_tile_a68ee1ab8913d2937f9e4ea2db62c7d72}{m\+\_\+tile}}
+\begin{DoxyCompactList}\small\item\em The appearance of the \mbox{\hyperlink{class_tile}{Tile}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_tile_a275234ed0a96dc9133787b1a51b43b89}{row}}
+\begin{DoxyCompactList}\small\item\em What row the \mbox{\hyperlink{class_tile}{Tile}} is in. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_tile_a5bad27e5dfea9d5be39f0520c1e71a09}{col}}
+\begin{DoxyCompactList}\small\item\em What column the \mbox{\hyperlink{class_tile}{Tile}} is in. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}} \mbox{\hyperlink{class_tile_a291309a1d4f5e8988fc761195688c2ad}{m\+\_\+current\+Type}}
+\begin{DoxyCompactList}\small\item\em What type this tile is. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_tile_a710af8be5c49ec5ca351d6f2c4aed0f5}{m\+\_\+visibility}}
+\begin{DoxyCompactList}\small\item\em Whether this tile is visible to the \mbox{\hyperlink{class_player}{Player}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}}, sf\+::\+Int\+Rect $>$ \mbox{\hyperlink{class_tile_af084d0bf5717e9abad65d6ee1e7f2a09}{m\+\_\+rects}} = std\+::unordered\+\_\+map$<$\mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}}, sf\+::\+Int\+Rect$>$()
+\begin{DoxyCompactList}\small\item\em The rects of the sprite, this will change the appearance of the tile depending on its Tile\+Type.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_tile}{Tile}} class, handles everything for one cell of the \mbox{\hyperlink{class_grid}{Grid}}.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_tile_aeeb5593bb6b75aae2edfcccbc84ab378}\label{class_tile_aeeb5593bb6b75aae2edfcccbc84ab378}} 
+\index{Tile@{Tile}!Tile@{Tile}}
+\index{Tile@{Tile}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{Tile()}{Tile()}}
+{\footnotesize\ttfamily Tile\+::\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default Constructor.  
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_tile_a00a3beeb62e2745b6d0b9abe69d5485f}\label{class_tile_a00a3beeb62e2745b6d0b9abe69d5485f}} 
+\index{Tile@{Tile}!draw@{draw}}
+\index{draw@{draw}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Tile\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{t\+\_\+target,  }\item[{sf\+::\+Render\+States const}]{t\+\_\+state = {\ttfamily sf\+:\+:RenderStates\+:\+:Default} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Draws the tile out onto the SFML screen.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+target} & Where to draw the \mbox{\hyperlink{class_tile}{Tile}}.\\
+\hline
+{\em t\+\_\+state} & The state in which to draw the \mbox{\hyperlink{class_tile}{Tile}}.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_tile_a32efa16e208e796004961cd4abd05f96}\label{class_tile_a32efa16e208e796004961cd4abd05f96}} 
+\index{Tile@{Tile}!getGridPosition@{getGridPosition}}
+\index{getGridPosition@{getGridPosition}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{getGridPosition()}{getGridPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2i Tile\+::get\+Grid\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the rows and columns this \mbox{\hyperlink{class_tile}{Tile}} occupies.  
+
+\begin{DoxyReturn}{Returns}
+The row and columns that this \mbox{\hyperlink{class_tile}{Tile}} is in.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tile_afd69da1519691d4f82bfe0534db4f01c}\label{class_tile_afd69da1519691d4f82bfe0534db4f01c}} 
+\index{Tile@{Tile}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Tile\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the tile\textquotesingle{}s position in the \mbox{\hyperlink{class_game}{Game}}.  
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{class_tile}{Tile}}\textquotesingle{}s position.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tile_a1812f9328d9d27dc88dddf84cf834e3f}\label{class_tile_a1812f9328d9d27dc88dddf84cf834e3f}} 
+\index{Tile@{Tile}!getSprite@{getSprite}}
+\index{getSprite@{getSprite}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{getSprite()}{getSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite \& Tile\+::get\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the \mbox{\hyperlink{class_tile}{Tile}}\textquotesingle{}s sprite.  
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{class_tile}{Tile}}\textquotesingle{}s sprite.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tile_a9c5c52ada25a3848a13476827410b139}\label{class_tile_a9c5c52ada25a3848a13476827410b139}} 
+\index{Tile@{Tile}!getType@{getType}}
+\index{getType@{getType}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}} Tile\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns what type of tile this one is.  
+
+\begin{DoxyReturn}{Returns}
+The tile type of this \mbox{\hyperlink{class_tile}{Tile}} object.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tile_acb79dc495386d1d06b24dfcc03c20084}\label{class_tile_acb79dc495386d1d06b24dfcc03c20084}} 
+\index{Tile@{Tile}!setGridPosition@{setGridPosition}}
+\index{setGridPosition@{setGridPosition}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{setGridPosition()}{setGridPosition()}}
+{\footnotesize\ttfamily void Tile\+::set\+Grid\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets up the rows and columns this \mbox{\hyperlink{class_tile}{Tile}} occupies, for easy returns later.  
+
+\mbox{\Hypertarget{class_tile_aa072a9d0243f8038d3d781ebf3f3fd61}\label{class_tile_aa072a9d0243f8038d3d781ebf3f3fd61}} 
+\index{Tile@{Tile}!setup@{setup}}
+\index{setup@{setup}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void Tile\+::setup (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ \&}]{t\+\_\+tex,  }\item[{sf\+::\+Vector2f}]{t\+\_\+pos,  }\item[{sf\+::\+Vector2f}]{t\+\_\+offset,  }\item[{\mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}}}]{t\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Sets up the values inside \mbox{\hyperlink{class_tile}{Tile}}, such as its appearance and translation.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+tex} & The texture of the tile.\\
+\hline
+{\em t\+\_\+pos} & The position of the tile.\\
+\hline
+{\em t\+\_\+offset} & The offset the tile should have to the \mbox{\hyperlink{class_grid}{Grid}}.\\
+\hline
+{\em t\+\_\+type} & The type of tile it is, determining whether it\textquotesingle{}s passable.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_tile_a5bad27e5dfea9d5be39f0520c1e71a09}\label{class_tile_a5bad27e5dfea9d5be39f0520c1e71a09}} 
+\index{Tile@{Tile}!col@{col}}
+\index{col@{col}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{col}{col}}
+{\footnotesize\ttfamily int Tile\+::col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+What column the \mbox{\hyperlink{class_tile}{Tile}} is in. 
+
+\mbox{\Hypertarget{class_tile_a291309a1d4f5e8988fc761195688c2ad}\label{class_tile_a291309a1d4f5e8988fc761195688c2ad}} 
+\index{Tile@{Tile}!m\_currentType@{m\_currentType}}
+\index{m\_currentType@{m\_currentType}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{m\_currentType}{m\_currentType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}} Tile\+::m\+\_\+current\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+What type this tile is. 
+
+\mbox{\Hypertarget{class_tile_af084d0bf5717e9abad65d6ee1e7f2a09}\label{class_tile_af084d0bf5717e9abad65d6ee1e7f2a09}} 
+\index{Tile@{Tile}!m\_rects@{m\_rects}}
+\index{m\_rects@{m\_rects}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{m\_rects}{m\_rects}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}}, sf\+::\+Int\+Rect $>$ Tile\+::m\+\_\+rects = std\+::unordered\+\_\+map$<$\mbox{\hyperlink{_globals_8h_ac9e486ec80ccfdb28a4f4837d419c9f1}{Tile\+Type}}, sf\+::\+Int\+Rect$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The rects of the sprite, this will change the appearance of the tile depending on its Tile\+Type.  
+
+\mbox{\Hypertarget{class_tile_a68ee1ab8913d2937f9e4ea2db62c7d72}\label{class_tile_a68ee1ab8913d2937f9e4ea2db62c7d72}} 
+\index{Tile@{Tile}!m\_tile@{m\_tile}}
+\index{m\_tile@{m\_tile}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{m\_tile}{m\_tile}}
+{\footnotesize\ttfamily sf\+::\+Sprite Tile\+::m\+\_\+tile\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The appearance of the \mbox{\hyperlink{class_tile}{Tile}}. 
+
+\mbox{\Hypertarget{class_tile_a710af8be5c49ec5ca351d6f2c4aed0f5}\label{class_tile_a710af8be5c49ec5ca351d6f2c4aed0f5}} 
+\index{Tile@{Tile}!m\_visibility@{m\_visibility}}
+\index{m\_visibility@{m\_visibility}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{m\_visibility}{m\_visibility}}
+{\footnotesize\ttfamily bool Tile\+::m\+\_\+visibility\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Whether this tile is visible to the \mbox{\hyperlink{class_player}{Player}}. 
+
+\mbox{\Hypertarget{class_tile_a275234ed0a96dc9133787b1a51b43b89}\label{class_tile_a275234ed0a96dc9133787b1a51b43b89}} 
+\index{Tile@{Tile}!row@{row}}
+\index{row@{row}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{row}{row}}
+{\footnotesize\ttfamily int Tile\+::row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+What row the \mbox{\hyperlink{class_tile}{Tile}} is in. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_tile_8h}{Tile.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_tile_8cpp}{Tile.\+cpp}}\end{DoxyCompactItemize}

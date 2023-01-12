@@ -1,0 +1,181 @@
+\hypertarget{class_audio_manager}{}\doxysection{Audio\+Manager Class Reference}
+\label{class_audio_manager}\index{AudioManager@{AudioManager}}
+
+
+Loads Music to unique pointers and has the capabilities of deleting the resources.   
+
+
+
+
+{\ttfamily \#include $<$Audio\+Manager.\+h$>$}
+
+Inheritance diagram for Audio\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_audio_manager}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_audio_manager_a3b0b94a727282887bb0fdec5c25cb532}{Add\+Sound}} (const std\+::string \&file\+Path, const std\+::string \&name, \mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcf}{Audio\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Function used to add a specific \mbox{\hyperlink{class_audio}{Audio}} to the map.  \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_audio_manager_a2502023ee8ecdd97398f0c151b91978d}{Play}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Plays the sound associated with a name.  \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_audio_manager_ae3ca2a2544dd477ff4114ea78f89d746}{Pause}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Pauses the sound associated with a name.  \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_audio_manager_a42c0734d824814bd6228fc48098f78eb}{Stop}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Stops the sound associated with a name.  \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_audio_manager_aaca621f0e8636c05391ae0e86b115a5e}{Set\+Volume}} (\mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcf}{Audio\+Type}} t\+\_\+type, float t\+\_\+volume)
+\begin{DoxyCompactList}\small\item\em Sets the volume of a type of sound.  \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_audio_manager_a43e16a89c5325d947c6b93f005f4108f}{is\+Playing}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Returns whether a certain sound is playing.  \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_audio_manager_a16f1326be30177ad4b0128f02148a3cd}{Collectgarbage}} ()
+\begin{DoxyCompactList}\small\item\em deletes textures not being used, saving memory.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unordered\+\_\+map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_audio}{Audio}} $>$ $>$ \mbox{\hyperlink{class_audio_manager_ad57e94e4401efe25a431aac713420c01}{m\+\_\+sounds}}
+\begin{DoxyCompactList}\small\item\em Map to keep track fo the audio file paths.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Loads Music to unique pointers and has the capabilities of deleting the resources.  
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_audio_manager_a3b0b94a727282887bb0fdec5c25cb532}\label{class_audio_manager_a3b0b94a727282887bb0fdec5c25cb532}} 
+\index{AudioManager@{AudioManager}!AddSound@{AddSound}}
+\index{AddSound@{AddSound}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{AddSound()}{AddSound()}}
+{\footnotesize\ttfamily static bool Audio\+Manager\+::\+Add\+Sound (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path,  }\item[{const std\+::string \&}]{name,  }\item[{\mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcf}{Audio\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Function used to add a specific \mbox{\hyperlink{class_audio}{Audio}} to the map.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & path to the audio\\
+\hline
+{\em name} & the name associated with the sound.\\
+\hline
+{\em type} & The type of sound this is.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the sound was added correctly.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_manager_a16f1326be30177ad4b0128f02148a3cd}\label{class_audio_manager_a16f1326be30177ad4b0128f02148a3cd}} 
+\index{AudioManager@{AudioManager}!Collectgarbage@{Collectgarbage}}
+\index{Collectgarbage@{Collectgarbage}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{Collectgarbage()}{Collectgarbage()}}
+{\footnotesize\ttfamily static void Audio\+Manager\+::\+Collectgarbage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [virtual]}}
+
+
+
+deletes textures not being used, saving memory.  
+
+
+
+Implements \mbox{\hyperlink{class_resource_allocator_a202e31427e6037373a2af72bebec81f7}{Resource\+Allocator$<$ Audio\+Manager, std\+::shared\+\_\+ptr$<$ Audio $>$ $>$}}.
+
+\mbox{\Hypertarget{class_audio_manager_a43e16a89c5325d947c6b93f005f4108f}\label{class_audio_manager_a43e16a89c5325d947c6b93f005f4108f}} 
+\index{AudioManager@{AudioManager}!isPlaying@{isPlaying}}
+\index{isPlaying@{isPlaying}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{isPlaying()}{isPlaying()}}
+{\footnotesize\ttfamily static bool Audio\+Manager\+::is\+Playing (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns whether a certain sound is playing.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name associated with the sound.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the sound is currently playing.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_manager_ae3ca2a2544dd477ff4114ea78f89d746}\label{class_audio_manager_ae3ca2a2544dd477ff4114ea78f89d746}} 
+\index{AudioManager@{AudioManager}!Pause@{Pause}}
+\index{Pause@{Pause}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{Pause()}{Pause()}}
+{\footnotesize\ttfamily static void Audio\+Manager\+::\+Pause (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Pauses the sound associated with a name.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name associated with the sound\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_audio_manager_a2502023ee8ecdd97398f0c151b91978d}\label{class_audio_manager_a2502023ee8ecdd97398f0c151b91978d}} 
+\index{AudioManager@{AudioManager}!Play@{Play}}
+\index{Play@{Play}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{Play()}{Play()}}
+{\footnotesize\ttfamily static void Audio\+Manager\+::\+Play (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Plays the sound associated with a name.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name associated with the sound\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_audio_manager_aaca621f0e8636c05391ae0e86b115a5e}\label{class_audio_manager_aaca621f0e8636c05391ae0e86b115a5e}} 
+\index{AudioManager@{AudioManager}!SetVolume@{SetVolume}}
+\index{SetVolume@{SetVolume}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{SetVolume()}{SetVolume()}}
+{\footnotesize\ttfamily static void Audio\+Manager\+::\+Set\+Volume (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_audio_asset_8h_a5356e05a1ded2cb9e065e0203c4acbcf}{Audio\+Type}}}]{t\+\_\+type,  }\item[{float}]{t\+\_\+volume }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Sets the volume of a type of sound.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+type} & The type of sound that will have its volume changed.\\
+\hline
+{\em t\+\_\+volume} & The volume that the sounds will be set to.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_audio_manager_a42c0734d824814bd6228fc48098f78eb}\label{class_audio_manager_a42c0734d824814bd6228fc48098f78eb}} 
+\index{AudioManager@{AudioManager}!Stop@{Stop}}
+\index{Stop@{Stop}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily static void Audio\+Manager\+::\+Stop (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Stops the sound associated with a name.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name associated with the sound\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_audio_manager_ad57e94e4401efe25a431aac713420c01}\label{class_audio_manager_ad57e94e4401efe25a431aac713420c01}} 
+\index{AudioManager@{AudioManager}!m\_sounds@{m\_sounds}}
+\index{m\_sounds@{m\_sounds}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{m\_sounds}{m\_sounds}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_audio}{Audio}} $>$ $>$ Audio\+Manager\+::m\+\_\+sounds\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Map to keep track fo the audio file paths.  
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_audio_manager_8h}{Audio\+Manager.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_game_8cpp}{Game.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,759 @@
+\hypertarget{class_player}{}\doxysection{Player Class Reference}
+\label{class_player}\index{Player@{Player}}
+
+
+The class the user directly controls.   
+
+
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{class_player}{Player}}.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player_a2cb139b1d8f9527ad0327f0a33c43511}{Player}} (int t\+\_\+row, int t\+\_\+col)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for \mbox{\hyperlink{class_player}{Player}}, that sets the \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s position.  \end{DoxyCompactList}\item 
+sf\+::\+Vector2i \mbox{\hyperlink{class_player_a4dc646f3895098913530d784dce8c20e}{get\+Previous\+Pos}} ()
+\item 
+void \mbox{\hyperlink{class_player_a57c5229e6383990f33d5b01deef7ec92}{set\+Previous\+Pos}} (sf\+::\+Vector2i t\+\_\+prev)
+\item 
+void \mbox{\hyperlink{class_player_ab4006b6f2a58d8acc184ca1f3fb9e98e}{set\+Player\+Position\+In\+Grid}} ()
+\begin{DoxyCompactList}\small\item\em Sets up the \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s row and column in the \mbox{\hyperlink{class_grid}{Grid}}. This version does it by calculating it from the \mbox{\hyperlink{class_tile}{Tile}} size.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_aa76f213f5fa3d6bbd62a0ecbccd39047}{set\+Player\+Position\+In\+Grid}} (sf\+::\+Vector2i t\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em Sets up the \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s row and column in the \mbox{\hyperlink{class_grid}{Grid}}. This version does it by setting it manually.  \end{DoxyCompactList}\item 
+sf\+::\+Vector2i \mbox{\hyperlink{class_player_a3039dcfc146012ccc242328261eab774}{get\+Player\+Position\+In\+Grid}} ()
+\begin{DoxyCompactList}\small\item\em Returns the row and column in the \mbox{\hyperlink{class_grid}{Grid}} the \mbox{\hyperlink{class_player}{Player}} currently is.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a1b4be5553e2e2ed83a315689fd97c8b0}{move}} (int \mbox{\hyperlink{class_player_ab4e6ed0131da3921bc80b39f9b455dc9}{row}}, int \mbox{\hyperlink{class_player_adaf24ef11afa33a073a952c464f5c762}{col}})
+\begin{DoxyCompactList}\small\item\em Move the player by the specified row/column parameter passed into the function.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a1af5d39f7bac2aeaa1e30c7dda2332fa}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Resets the \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s health, position and camera back to the start. Used for when the \mbox{\hyperlink{class_game}{Game}} is reset.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a12dd7fdccdc8dc7990f3d4925a4259f3}{Update}} (sf\+::\+Time t\+\_\+delta\+Time)
+\begin{DoxyCompactList}\small\item\em Updates the player object every frame.  \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_a4d93aef07c8b9406d3b7f8607c2a0efd}{Process\+Keys}} (sf\+::\+Event t\+\_\+event)
+\begin{DoxyCompactList}\small\item\em Controls button presses that relate to player movement. For example, if the player presses Up/\+Down/\+Left/\+Right, move player in appropriate direction.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a2022b71485561ab132bfc88566ee08f0}{Render}} (sf\+::\+Render\+Window \&t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draws the player to the game screen.  \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_player_aaed2801fda29def04633d24e4271edc0}{Get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em returns the player\textquotesingle{}s position on the screen.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_af39034a7791fd456efae5070dc477266}{set\+Grid\+Position}} (int \mbox{\hyperlink{class_player_ab4e6ed0131da3921bc80b39f9b455dc9}{row}}, int \mbox{\hyperlink{class_player_adaf24ef11afa33a073a952c464f5c762}{col}})
+\begin{DoxyCompactList}\small\item\em Changes the position of the player, in relation to the grid. (ie 1,2 would put the player in second row, third column, as it starts with 0,0)  \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_a3414f2ca524596d388f0fbc665cb348c}{can\+We\+Move\+Up}} ()
+\begin{DoxyCompactList}\small\item\em Returns whether the \mbox{\hyperlink{class_player}{Player}} can move up.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a9d0e2fb38f26cef0cd0575d799e0364c}{set\+Movement\+Bool\+Up}} (bool t\+\_\+switch)
+\begin{DoxyCompactList}\small\item\em Changes whether the \mbox{\hyperlink{class_player}{Player}} can move up or not.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_ae03e2aea22f9d5f833456cfa67d1e506}{set\+Movement\+Bool\+Down}} (bool t\+\_\+switch)
+\begin{DoxyCompactList}\small\item\em Changes whether the \mbox{\hyperlink{class_player}{Player}} can move down or not.  \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_a33413b5fc6c3e7f97522600f28000fa9}{can\+We\+Move\+Down}} ()
+\begin{DoxyCompactList}\small\item\em Returns whether the \mbox{\hyperlink{class_player}{Player}} can move down.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a6fe3e551386836ec9e976f76887611e5}{set\+Movement\+Bool\+Left}} (bool t\+\_\+switch)
+\begin{DoxyCompactList}\small\item\em Changes whether the \mbox{\hyperlink{class_player}{Player}} can move left or not.  \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_a551fcd182a3b59e9adde7126b09e022a}{can\+We\+Move\+Left}} ()
+\begin{DoxyCompactList}\small\item\em Returns whether the \mbox{\hyperlink{class_player}{Player}} can move left.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a075c6a3a2314cb3e9bf3e1a8c5304ac7}{set\+Movement\+Bool\+Right}} (bool t\+\_\+switch)
+\begin{DoxyCompactList}\small\item\em Changes whether the \mbox{\hyperlink{class_player}{Player}} can move right or not.  \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_a1c050f4451c872f3025d29aa7ceceb02}{can\+We\+Move\+Right}} ()
+\begin{DoxyCompactList}\small\item\em Returns whether the \mbox{\hyperlink{class_player}{Player}} can move right.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a17d0f9cc9dbef0f08556713d10ffd8dc}{reset\+Movement\+Bools}} (bool t\+\_\+switch)
+\item 
+void \mbox{\hyperlink{class_player_afbbcf7a7be42a17610556b5fabd338a0}{Pick\+Up\+Item}} (\mbox{\hyperlink{class_abstract_item}{Abstract\+Item}} \&t\+\_\+item)
+\begin{DoxyCompactList}\small\item\em Let\textquotesingle{}s the \mbox{\hyperlink{class_player}{Player}} pick up an item and store it in their \mbox{\hyperlink{class_inventory}{Inventory}}.  \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_aa94d617fc6f2a97eae9f3e6a5f9c3aec}{Get\+Weapon\+Damage}} ()
+\begin{DoxyCompactList}\small\item\em Returns the damage the weapon will do with the target.  \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_ab4249c6cbffb8783a85f0a25c67ac807}{Get\+Armour\+Class}} ()
+\begin{DoxyCompactList}\small\item\em Returns the armour class of the \mbox{\hyperlink{class_player}{Player}}.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_ab4450f78c14edaabfeb7e3bf92a0709e}{Use\+Potion}} ()
+\begin{DoxyCompactList}\small\item\em Uses the \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}} that the player currently has in their \mbox{\hyperlink{class_inventory}{Inventory}}.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_af69e394b9934d2fa4930ed9581dc3f6b}{Update\+Armour\+Look}} ()
+\begin{DoxyCompactList}\small\item\em Updates how the \mbox{\hyperlink{class_player}{Player}} looks when they pick up some \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}}.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a7f4bab3e52ab1346ab9fea2068b821b2}{Calculate\+Damage\+To\+Enemy}} (int t\+\_\+\+Enemy\+AC, int t\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Calculates the hit chance the player has on the enemy, and then if they hit, calculates the damage to the enemy and applies it.  \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a112d582e1027c502f4d4d092de30b1ec}{Get\+Hit\+Modifier}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the additional hit chance of the player, based on their strength.  \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a6315233fe618344f76a095a0b0e43ac0}{Get\+Damage\+Modifier}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the extra damage the player will do, based on their strength.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+View \mbox{\hyperlink{class_player_a21f1fdf488b2b116f67adb16416400c7}{m\+\_\+player\+View}}
+\begin{DoxyCompactList}\small\item\em The field of view of the player. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_ae9b6f0f536182776f76f5b553d44499e}{m\+\_\+free\+To\+Move\+Right}} = true
+\begin{DoxyCompactList}\small\item\em Whether the \mbox{\hyperlink{class_player}{Player}} is able to move right this turn. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_a5ae3f8a2df151b2aabd6a4735661c6c5}{m\+\_\+free\+To\+Move\+Left}} = true
+\begin{DoxyCompactList}\small\item\em Whether the \mbox{\hyperlink{class_player}{Player}} is able to move left this turn. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_aaec1484dd2dbe04a3d6cc43c5fe81015}{m\+\_\+free\+To\+Move\+Up}} = true
+\begin{DoxyCompactList}\small\item\em Whether the \mbox{\hyperlink{class_player}{Player}} is able to move up this turn. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_ad13830a6f28b070fbce06cf208736d1c}{m\+\_\+free\+To\+Move\+Down}} = true
+\begin{DoxyCompactList}\small\item\em Whether the \mbox{\hyperlink{class_player}{Player}} is able to move down this turn. \end{DoxyCompactList}\item 
+sf\+::\+Vector2i \mbox{\hyperlink{class_player_a00028c17aff2ea7821a796a8504132ee}{m\+\_\+previous\+Pos}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s position last turn. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_ab4e6ed0131da3921bc80b39f9b455dc9}{row}}
+\begin{DoxyCompactList}\small\item\em The row the player is in on the \mbox{\hyperlink{class_grid}{Grid}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_adaf24ef11afa33a073a952c464f5c762}{col}}
+\begin{DoxyCompactList}\small\item\em The column the player is in on the \mbox{\hyperlink{class_grid}{Grid}}. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_player_a62bfc9fa4b05ec3f69c62d0696918526}{m\+\_\+player\+Body}}
+\begin{DoxyCompactList}\small\item\em Appearance of player. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ \mbox{\hyperlink{class_player_a1da792254404554a9fa217c4e895f61e}{m\+\_\+player\+Texture}}
+\begin{DoxyCompactList}\small\item\em Reference to the texture of the player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_inventory}{Inventory}} \mbox{\hyperlink{class_player_ad1d29479282a0a2a757b6d23940faaf3}{m\+\_\+player\+Inventory}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s inventory. This is where their items are stored. \end{DoxyCompactList}\item 
+sf\+::\+Keyboard\+::\+Key \mbox{\hyperlink{class_player_a4300fd61cb43a3164e853850e5f6e307}{m\+\_\+pressing\+Button}} = sf\+::\+Keyboard\+::\+Unknown
+\begin{DoxyCompactList}\small\item\em Keeps track of whether the player is currently pressing a button.  \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_adf0c3e7002bc6739960d88075c240709}{m\+\_\+strength}} = 10
+\begin{DoxyCompactList}\small\item\em The strength of the player, used for attacking. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a46a14f2dac1742c0caf1380cc7e2ebf2}{m\+\_\+armour\+Class}} = 2
+\begin{DoxyCompactList}\small\item\em The defense of the player, used for defending. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a467e9e6a23ea7d9e999382c58d0db9aa}{m\+\_\+health}} = 20
+\begin{DoxyCompactList}\small\item\em The health of the player. if this reaches 0, the game is over. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_aa1e06c89dea6981223879e6bfccdb5cd}{level}} = 1
+\begin{DoxyCompactList}\small\item\em The players level. as level increases, so does the health, strength, and defense. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_ae61f2ea9b978c907d74338758b27e3d8}{xp}} = 0
+\begin{DoxyCompactList}\small\item\em the players xp. When this reaches a certain threshold, level goes up by 1. XP is gotten by defeating enemies. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a6f9298e716231bdb7de5a3a4f2274703}{m\+\_\+max\+Health}} = 20
+\begin{DoxyCompactList}\small\item\em The current maximum health the player can have. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}}, sf\+::\+Int\+Rect $>$ \mbox{\hyperlink{class_player_ab0217f5459b7a3faa159e4fe173dbc28}{m\+\_\+rects}} = std\+::unordered\+\_\+map$<$\mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}}, sf\+::\+Int\+Rect$>$()
+\begin{DoxyCompactList}\small\item\em The appearance of the player on the spritesheet, depending on the armours they can have.  \end{DoxyCompactList}\item 
+static sf\+::\+Int\+Rect \mbox{\hyperlink{class_player_a49e87559987d4095de60d7229db897da}{m\+\_\+no\+Armour\+Rect}} = sf\+::\+Int\+Rect()
+\begin{DoxyCompactList}\small\item\em The appearance of the player on the spritesheet, if they are wearing no armour.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class the user directly controls.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}\label{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{class_player}{Player}}.  
+
+\mbox{\Hypertarget{class_player_a2cb139b1d8f9527ad0327f0a33c43511}\label{class_player_a2cb139b1d8f9527ad0327f0a33c43511}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+row,  }\item[{int}]{t\+\_\+col }\end{DoxyParamCaption})}
+
+
+
+Overloaded constructor for \mbox{\hyperlink{class_player}{Player}}, that sets the \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s position.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+row} & The player\textquotesingle{}s row in the grid.\\
+\hline
+{\em t\+\_\+col} & The player\textquotesingle{}s column in the grid.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_player_a7f4bab3e52ab1346ab9fea2068b821b2}\label{class_player_a7f4bab3e52ab1346ab9fea2068b821b2}} 
+\index{Player@{Player}!CalculateDamageToEnemy@{CalculateDamageToEnemy}}
+\index{CalculateDamageToEnemy@{CalculateDamageToEnemy}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{CalculateDamageToEnemy()}{CalculateDamageToEnemy()}}
+{\footnotesize\ttfamily void Player\+::\+Calculate\+Damage\+To\+Enemy (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+\+Enemy\+AC,  }\item[{int}]{t\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculates the hit chance the player has on the enemy, and then if they hit, calculates the damage to the enemy and applies it.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+\+Enemy\+AC} & The enemy\textquotesingle{}s armour class, ie. how difficult they are to hit.\\
+\hline
+{\em t\+\_\+index} & The index of the enemy in the world.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_a33413b5fc6c3e7f97522600f28000fa9}\label{class_player_a33413b5fc6c3e7f97522600f28000fa9}} 
+\index{Player@{Player}!canWeMoveDown@{canWeMoveDown}}
+\index{canWeMoveDown@{canWeMoveDown}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{canWeMoveDown()}{canWeMoveDown()}}
+{\footnotesize\ttfamily bool Player\+::can\+We\+Move\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns whether the \mbox{\hyperlink{class_player}{Player}} can move down.  
+
+\begin{DoxyReturn}{Returns}
+Can the player move down?
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_a551fcd182a3b59e9adde7126b09e022a}\label{class_player_a551fcd182a3b59e9adde7126b09e022a}} 
+\index{Player@{Player}!canWeMoveLeft@{canWeMoveLeft}}
+\index{canWeMoveLeft@{canWeMoveLeft}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{canWeMoveLeft()}{canWeMoveLeft()}}
+{\footnotesize\ttfamily bool Player\+::can\+We\+Move\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns whether the \mbox{\hyperlink{class_player}{Player}} can move left.  
+
+\begin{DoxyReturn}{Returns}
+Can the player move left?
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_a1c050f4451c872f3025d29aa7ceceb02}\label{class_player_a1c050f4451c872f3025d29aa7ceceb02}} 
+\index{Player@{Player}!canWeMoveRight@{canWeMoveRight}}
+\index{canWeMoveRight@{canWeMoveRight}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{canWeMoveRight()}{canWeMoveRight()}}
+{\footnotesize\ttfamily bool Player\+::can\+We\+Move\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns whether the \mbox{\hyperlink{class_player}{Player}} can move right.  
+
+\begin{DoxyReturn}{Returns}
+Can the player move right?
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_a3414f2ca524596d388f0fbc665cb348c}\label{class_player_a3414f2ca524596d388f0fbc665cb348c}} 
+\index{Player@{Player}!canWeMoveUp@{canWeMoveUp}}
+\index{canWeMoveUp@{canWeMoveUp}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{canWeMoveUp()}{canWeMoveUp()}}
+{\footnotesize\ttfamily bool Player\+::can\+We\+Move\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns whether the \mbox{\hyperlink{class_player}{Player}} can move up.  
+
+\begin{DoxyReturn}{Returns}
+Can the player move up?
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_ab4249c6cbffb8783a85f0a25c67ac807}\label{class_player_ab4249c6cbffb8783a85f0a25c67ac807}} 
+\index{Player@{Player}!GetArmourClass@{GetArmourClass}}
+\index{GetArmourClass@{GetArmourClass}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetArmourClass()}{GetArmourClass()}}
+{\footnotesize\ttfamily int Player\+::\+Get\+Armour\+Class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the armour class of the \mbox{\hyperlink{class_player}{Player}}.  
+
+\begin{DoxyReturn}{Returns}
+The AC of the armour the \mbox{\hyperlink{class_player}{Player}} is wearing.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_a6315233fe618344f76a095a0b0e43ac0}\label{class_player_a6315233fe618344f76a095a0b0e43ac0}} 
+\index{Player@{Player}!GetDamageModifier@{GetDamageModifier}}
+\index{GetDamageModifier@{GetDamageModifier}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetDamageModifier()}{GetDamageModifier()}}
+{\footnotesize\ttfamily int Player\+::\+Get\+Damage\+Modifier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculates the extra damage the player will do, based on their strength.  
+
+\begin{DoxyReturn}{Returns}
+The additional damage the player does to the enemy.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_a112d582e1027c502f4d4d092de30b1ec}\label{class_player_a112d582e1027c502f4d4d092de30b1ec}} 
+\index{Player@{Player}!GetHitModifier@{GetHitModifier}}
+\index{GetHitModifier@{GetHitModifier}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetHitModifier()}{GetHitModifier()}}
+{\footnotesize\ttfamily int Player\+::\+Get\+Hit\+Modifier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculates the additional hit chance of the player, based on their strength.  
+
+\begin{DoxyReturn}{Returns}
+The additional hit chance the player has when trying to hit the enemy.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_a3039dcfc146012ccc242328261eab774}\label{class_player_a3039dcfc146012ccc242328261eab774}} 
+\index{Player@{Player}!getPlayerPositionInGrid@{getPlayerPositionInGrid}}
+\index{getPlayerPositionInGrid@{getPlayerPositionInGrid}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getPlayerPositionInGrid()}{getPlayerPositionInGrid()}}
+{\footnotesize\ttfamily sf\+::\+Vector2i Player\+::get\+Player\+Position\+In\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the row and column in the \mbox{\hyperlink{class_grid}{Grid}} the \mbox{\hyperlink{class_player}{Player}} currently is.  
+
+\begin{DoxyReturn}{Returns}
+The row and column the \mbox{\hyperlink{class_player}{Player}} is occupying.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_aaed2801fda29def04633d24e4271edc0}\label{class_player_aaed2801fda29def04633d24e4271edc0}} 
+\index{Player@{Player}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Player\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns the player\textquotesingle{}s position on the screen.  
+
+\begin{DoxyReturn}{Returns}
+The position of the player.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_a4dc646f3895098913530d784dce8c20e}\label{class_player_a4dc646f3895098913530d784dce8c20e}} 
+\index{Player@{Player}!getPreviousPos@{getPreviousPos}}
+\index{getPreviousPos@{getPreviousPos}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getPreviousPos()}{getPreviousPos()}}
+{\footnotesize\ttfamily sf\+::\+Vector2i Player\+::get\+Previous\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_player_aa94d617fc6f2a97eae9f3e6a5f9c3aec}\label{class_player_aa94d617fc6f2a97eae9f3e6a5f9c3aec}} 
+\index{Player@{Player}!GetWeaponDamage@{GetWeaponDamage}}
+\index{GetWeaponDamage@{GetWeaponDamage}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetWeaponDamage()}{GetWeaponDamage()}}
+{\footnotesize\ttfamily int Player\+::\+Get\+Weapon\+Damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the damage the weapon will do with the target.  
+
+\begin{DoxyReturn}{Returns}
+The damage this weapon will do.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_a1b4be5553e2e2ed83a315689fd97c8b0}\label{class_player_a1b4be5553e2e2ed83a315689fd97c8b0}} 
+\index{Player@{Player}!move@{move}}
+\index{move@{move}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Player\+::move (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+
+
+Move the player by the specified row/column parameter passed into the function.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The row change to move by (if any).\\
+\hline
+{\em col} & The column change to move by (if any).\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_afbbcf7a7be42a17610556b5fabd338a0}\label{class_player_afbbcf7a7be42a17610556b5fabd338a0}} 
+\index{Player@{Player}!PickUpItem@{PickUpItem}}
+\index{PickUpItem@{PickUpItem}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{PickUpItem()}{PickUpItem()}}
+{\footnotesize\ttfamily void Player\+::\+Pick\+Up\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_item}{Abstract\+Item}} \&}]{t\+\_\+item }\end{DoxyParamCaption})}
+
+
+
+Let\textquotesingle{}s the \mbox{\hyperlink{class_player}{Player}} pick up an item and store it in their \mbox{\hyperlink{class_inventory}{Inventory}}.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+item} & The Item that is picked up.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_a4d93aef07c8b9406d3b7f8607c2a0efd}\label{class_player_a4d93aef07c8b9406d3b7f8607c2a0efd}} 
+\index{Player@{Player}!ProcessKeys@{ProcessKeys}}
+\index{ProcessKeys@{ProcessKeys}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{ProcessKeys()}{ProcessKeys()}}
+{\footnotesize\ttfamily bool Player\+::\+Process\+Keys (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{t\+\_\+event }\end{DoxyParamCaption})}
+
+
+
+Controls button presses that relate to player movement. For example, if the player presses Up/\+Down/\+Left/\+Right, move player in appropriate direction.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+event} & Event of button being pressed OR released.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the \mbox{\hyperlink{class_player}{Player}} does an action.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_a2022b71485561ab132bfc88566ee08f0}\label{class_player_a2022b71485561ab132bfc88566ee08f0}} 
+\index{Player@{Player}!Render@{Render}}
+\index{Render@{Render}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Player\+::\+Render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Draws the player to the game screen.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & The window that the player will be drawn to.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_player_autotoc_md1}{}\doxyparagraph{Example\+:}\label{class_player_autotoc_md1}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{playerObject.draw(gameWindow);}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{class_player_a1af5d39f7bac2aeaa1e30c7dda2332fa}\label{class_player_a1af5d39f7bac2aeaa1e30c7dda2332fa}} 
+\index{Player@{Player}!reset@{reset}}
+\index{reset@{reset}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Player\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s health, position and camera back to the start. Used for when the \mbox{\hyperlink{class_game}{Game}} is reset.  
+
+\mbox{\Hypertarget{class_player_a17d0f9cc9dbef0f08556713d10ffd8dc}\label{class_player_a17d0f9cc9dbef0f08556713d10ffd8dc}} 
+\index{Player@{Player}!resetMovementBools@{resetMovementBools}}
+\index{resetMovementBools@{resetMovementBools}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{resetMovementBools()}{resetMovementBools()}}
+{\footnotesize\ttfamily void Player\+::reset\+Movement\+Bools (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+switch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_player_af39034a7791fd456efae5070dc477266}\label{class_player_af39034a7791fd456efae5070dc477266}} 
+\index{Player@{Player}!setGridPosition@{setGridPosition}}
+\index{setGridPosition@{setGridPosition}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setGridPosition()}{setGridPosition()}}
+{\footnotesize\ttfamily void Player\+::set\+Grid\+Position (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+
+
+Changes the position of the player, in relation to the grid. (ie 1,2 would put the player in second row, third column, as it starts with 0,0)  
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The player\textquotesingle{}s new row in the grid.\\
+\hline
+{\em col} & The player\textquotesingle{}s new column in the grid.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_ae03e2aea22f9d5f833456cfa67d1e506}\label{class_player_ae03e2aea22f9d5f833456cfa67d1e506}} 
+\index{Player@{Player}!setMovementBoolDown@{setMovementBoolDown}}
+\index{setMovementBoolDown@{setMovementBoolDown}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setMovementBoolDown()}{setMovementBoolDown()}}
+{\footnotesize\ttfamily void Player\+::set\+Movement\+Bool\+Down (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+switch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Changes whether the \mbox{\hyperlink{class_player}{Player}} can move down or not.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+switch} & Change to if the player can move down.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_a6fe3e551386836ec9e976f76887611e5}\label{class_player_a6fe3e551386836ec9e976f76887611e5}} 
+\index{Player@{Player}!setMovementBoolLeft@{setMovementBoolLeft}}
+\index{setMovementBoolLeft@{setMovementBoolLeft}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setMovementBoolLeft()}{setMovementBoolLeft()}}
+{\footnotesize\ttfamily void Player\+::set\+Movement\+Bool\+Left (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+switch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Changes whether the \mbox{\hyperlink{class_player}{Player}} can move left or not.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+switch} & Change to if the player can move left.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_a075c6a3a2314cb3e9bf3e1a8c5304ac7}\label{class_player_a075c6a3a2314cb3e9bf3e1a8c5304ac7}} 
+\index{Player@{Player}!setMovementBoolRight@{setMovementBoolRight}}
+\index{setMovementBoolRight@{setMovementBoolRight}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setMovementBoolRight()}{setMovementBoolRight()}}
+{\footnotesize\ttfamily void Player\+::set\+Movement\+Bool\+Right (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+switch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Changes whether the \mbox{\hyperlink{class_player}{Player}} can move right or not.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+switch} & Change to if the player can move right.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_a9d0e2fb38f26cef0cd0575d799e0364c}\label{class_player_a9d0e2fb38f26cef0cd0575d799e0364c}} 
+\index{Player@{Player}!setMovementBoolUp@{setMovementBoolUp}}
+\index{setMovementBoolUp@{setMovementBoolUp}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setMovementBoolUp()}{setMovementBoolUp()}}
+{\footnotesize\ttfamily void Player\+::set\+Movement\+Bool\+Up (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+switch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Changes whether the \mbox{\hyperlink{class_player}{Player}} can move up or not.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+switch} & Change to if the player can move up.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_ab4006b6f2a58d8acc184ca1f3fb9e98e}\label{class_player_ab4006b6f2a58d8acc184ca1f3fb9e98e}} 
+\index{Player@{Player}!setPlayerPositionInGrid@{setPlayerPositionInGrid}}
+\index{setPlayerPositionInGrid@{setPlayerPositionInGrid}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setPlayerPositionInGrid()}{setPlayerPositionInGrid()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Player\+::set\+Player\+Position\+In\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets up the \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s row and column in the \mbox{\hyperlink{class_grid}{Grid}}. This version does it by calculating it from the \mbox{\hyperlink{class_tile}{Tile}} size.  
+
+\mbox{\Hypertarget{class_player_aa76f213f5fa3d6bbd62a0ecbccd39047}\label{class_player_aa76f213f5fa3d6bbd62a0ecbccd39047}} 
+\index{Player@{Player}!setPlayerPositionInGrid@{setPlayerPositionInGrid}}
+\index{setPlayerPositionInGrid@{setPlayerPositionInGrid}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setPlayerPositionInGrid()}{setPlayerPositionInGrid()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Player\+::set\+Player\+Position\+In\+Grid (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{t\+\_\+pos }\end{DoxyParamCaption})}
+
+
+
+Sets up the \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s row and column in the \mbox{\hyperlink{class_grid}{Grid}}. This version does it by setting it manually.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+pos} & The manual row and column of the \mbox{\hyperlink{class_player}{Player}} in the \mbox{\hyperlink{class_grid}{Grid}}.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_player_a57c5229e6383990f33d5b01deef7ec92}\label{class_player_a57c5229e6383990f33d5b01deef7ec92}} 
+\index{Player@{Player}!setPreviousPos@{setPreviousPos}}
+\index{setPreviousPos@{setPreviousPos}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setPreviousPos()}{setPreviousPos()}}
+{\footnotesize\ttfamily void Player\+::set\+Previous\+Pos (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{t\+\_\+prev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_player_a12dd7fdccdc8dc7990f3d4925a4259f3}\label{class_player_a12dd7fdccdc8dc7990f3d4925a4259f3}} 
+\index{Player@{Player}!Update@{Update}}
+\index{Update@{Update}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Player\+::\+Update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{t\+\_\+delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Updates the player object every frame.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+delta\+Time} & The time since last frame.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_player_autotoc_md0}{}\doxyparagraph{Example\+:}\label{class_player_autotoc_md0}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{playerObject.Update(dt);}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{class_player_af69e394b9934d2fa4930ed9581dc3f6b}\label{class_player_af69e394b9934d2fa4930ed9581dc3f6b}} 
+\index{Player@{Player}!UpdateArmourLook@{UpdateArmourLook}}
+\index{UpdateArmourLook@{UpdateArmourLook}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{UpdateArmourLook()}{UpdateArmourLook()}}
+{\footnotesize\ttfamily void Player\+::\+Update\+Armour\+Look (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates how the \mbox{\hyperlink{class_player}{Player}} looks when they pick up some \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}}.  
+
+\mbox{\Hypertarget{class_player_ab4450f78c14edaabfeb7e3bf92a0709e}\label{class_player_ab4450f78c14edaabfeb7e3bf92a0709e}} 
+\index{Player@{Player}!UsePotion@{UsePotion}}
+\index{UsePotion@{UsePotion}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{UsePotion()}{UsePotion()}}
+{\footnotesize\ttfamily void Player\+::\+Use\+Potion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Uses the \mbox{\hyperlink{_globals_8h_a339b1e37de309d5689ffde954b8a4590}{Potions}} that the player currently has in their \mbox{\hyperlink{class_inventory}{Inventory}}.  
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_player_adaf24ef11afa33a073a952c464f5c762}\label{class_player_adaf24ef11afa33a073a952c464f5c762}} 
+\index{Player@{Player}!col@{col}}
+\index{col@{col}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{col}{col}}
+{\footnotesize\ttfamily int Player\+::col\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The column the player is in on the \mbox{\hyperlink{class_grid}{Grid}}. 
+
+\mbox{\Hypertarget{class_player_aa1e06c89dea6981223879e6bfccdb5cd}\label{class_player_aa1e06c89dea6981223879e6bfccdb5cd}} 
+\index{Player@{Player}!level@{level}}
+\index{level@{level}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily int Player\+::level = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The players level. as level increases, so does the health, strength, and defense. 
+
+\mbox{\Hypertarget{class_player_a46a14f2dac1742c0caf1380cc7e2ebf2}\label{class_player_a46a14f2dac1742c0caf1380cc7e2ebf2}} 
+\index{Player@{Player}!m\_armourClass@{m\_armourClass}}
+\index{m\_armourClass@{m\_armourClass}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{m\_armourClass}{m\_armourClass}}
+{\footnotesize\ttfamily int Player\+::m\+\_\+armour\+Class = 2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The defense of the player, used for defending. 
+
+\mbox{\Hypertarget{class_player_ad13830a6f28b070fbce06cf208736d1c}\label{class_player_ad13830a6f28b070fbce06cf208736d1c}} 
+\index{Player@{Player}!m\_freeToMoveDown@{m\_freeToMoveDown}}
+\index{m\_freeToMoveDown@{m\_freeToMoveDown}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{m\_freeToMoveDown}{m\_freeToMoveDown}}
+{\footnotesize\ttfamily bool Player\+::m\+\_\+free\+To\+Move\+Down = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Whether the \mbox{\hyperlink{class_player}{Player}} is able to move down this turn. 
+
+\mbox{\Hypertarget{class_player_a5ae3f8a2df151b2aabd6a4735661c6c5}\label{class_player_a5ae3f8a2df151b2aabd6a4735661c6c5}} 
+\index{Player@{Player}!m\_freeToMoveLeft@{m\_freeToMoveLeft}}
+\index{m\_freeToMoveLeft@{m\_freeToMoveLeft}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{m\_freeToMoveLeft}{m\_freeToMoveLeft}}
+{\footnotesize\ttfamily bool Player\+::m\+\_\+free\+To\+Move\+Left = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Whether the \mbox{\hyperlink{class_player}{Player}} is able to move left this turn. 
+
+\mbox{\Hypertarget{class_player_ae9b6f0f536182776f76f5b553d44499e}\label{class_player_ae9b6f0f536182776f76f5b553d44499e}} 
+\index{Player@{Player}!m\_freeToMoveRight@{m\_freeToMoveRight}}
+\index{m\_freeToMoveRight@{m\_freeToMoveRight}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{m\_freeToMoveRight}{m\_freeToMoveRight}}
+{\footnotesize\ttfamily bool Player\+::m\+\_\+free\+To\+Move\+Right = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Whether the \mbox{\hyperlink{class_player}{Player}} is able to move right this turn. 
+
+\mbox{\Hypertarget{class_player_aaec1484dd2dbe04a3d6cc43c5fe81015}\label{class_player_aaec1484dd2dbe04a3d6cc43c5fe81015}} 
+\index{Player@{Player}!m\_freeToMoveUp@{m\_freeToMoveUp}}
+\index{m\_freeToMoveUp@{m\_freeToMoveUp}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{m\_freeToMoveUp}{m\_freeToMoveUp}}
+{\footnotesize\ttfamily bool Player\+::m\+\_\+free\+To\+Move\+Up = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Whether the \mbox{\hyperlink{class_player}{Player}} is able to move up this turn. 
+
+\mbox{\Hypertarget{class_player_a467e9e6a23ea7d9e999382c58d0db9aa}\label{class_player_a467e9e6a23ea7d9e999382c58d0db9aa}} 
+\index{Player@{Player}!m\_health@{m\_health}}
+\index{m\_health@{m\_health}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{m\_health}{m\_health}}
+{\footnotesize\ttfamily int Player\+::m\+\_\+health = 20\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The health of the player. if this reaches 0, the game is over. 
+
+\mbox{\Hypertarget{class_player_a6f9298e716231bdb7de5a3a4f2274703}\label{class_player_a6f9298e716231bdb7de5a3a4f2274703}} 
+\index{Player@{Player}!m\_maxHealth@{m\_maxHealth}}
+\index{m\_maxHealth@{m\_maxHealth}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{m\_maxHealth}{m\_maxHealth}}
+{\footnotesize\ttfamily int Player\+::m\+\_\+max\+Health = 20\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current maximum health the player can have. 
+
+\mbox{\Hypertarget{class_player_a49e87559987d4095de60d7229db897da}\label{class_player_a49e87559987d4095de60d7229db897da}} 
+\index{Player@{Player}!m\_noArmourRect@{m\_noArmourRect}}
+\index{m\_noArmourRect@{m\_noArmourRect}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{m\_noArmourRect}{m\_noArmourRect}}
+{\footnotesize\ttfamily sf\+::\+Int\+Rect Player\+::m\+\_\+no\+Armour\+Rect = sf\+::\+Int\+Rect()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The appearance of the player on the spritesheet, if they are wearing no armour.  
+
+\mbox{\Hypertarget{class_player_a62bfc9fa4b05ec3f69c62d0696918526}\label{class_player_a62bfc9fa4b05ec3f69c62d0696918526}} 
+\index{Player@{Player}!m\_playerBody@{m\_playerBody}}
+\index{m\_playerBody@{m\_playerBody}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{m\_playerBody}{m\_playerBody}}
+{\footnotesize\ttfamily sf\+::\+Sprite Player\+::m\+\_\+player\+Body\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Appearance of player. 
+
+\mbox{\Hypertarget{class_player_ad1d29479282a0a2a757b6d23940faaf3}\label{class_player_ad1d29479282a0a2a757b6d23940faaf3}} 
+\index{Player@{Player}!m\_playerInventory@{m\_playerInventory}}
+\index{m\_playerInventory@{m\_playerInventory}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{m\_playerInventory}{m\_playerInventory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_inventory}{Inventory}} Player\+::m\+\_\+player\+Inventory\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s inventory. This is where their items are stored. 
+
+\mbox{\Hypertarget{class_player_a1da792254404554a9fa217c4e895f61e}\label{class_player_a1da792254404554a9fa217c4e895f61e}} 
+\index{Player@{Player}!m\_playerTexture@{m\_playerTexture}}
+\index{m\_playerTexture@{m\_playerTexture}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{m\_playerTexture}{m\_playerTexture}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$sf\+::\+Texture$>$ Player\+::m\+\_\+player\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the texture of the player. 
+
+\mbox{\Hypertarget{class_player_a21f1fdf488b2b116f67adb16416400c7}\label{class_player_a21f1fdf488b2b116f67adb16416400c7}} 
+\index{Player@{Player}!m\_playerView@{m\_playerView}}
+\index{m\_playerView@{m\_playerView}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{m\_playerView}{m\_playerView}}
+{\footnotesize\ttfamily sf\+::\+View Player\+::m\+\_\+player\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The field of view of the player. 
+
+\mbox{\Hypertarget{class_player_a4300fd61cb43a3164e853850e5f6e307}\label{class_player_a4300fd61cb43a3164e853850e5f6e307}} 
+\index{Player@{Player}!m\_pressingButton@{m\_pressingButton}}
+\index{m\_pressingButton@{m\_pressingButton}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{m\_pressingButton}{m\_pressingButton}}
+{\footnotesize\ttfamily sf\+::\+Keyboard\+::\+Key Player\+::m\+\_\+pressing\+Button = sf\+::\+Keyboard\+::\+Unknown\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Keeps track of whether the player is currently pressing a button.  
+
+\mbox{\Hypertarget{class_player_a00028c17aff2ea7821a796a8504132ee}\label{class_player_a00028c17aff2ea7821a796a8504132ee}} 
+\index{Player@{Player}!m\_previousPos@{m\_previousPos}}
+\index{m\_previousPos@{m\_previousPos}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{m\_previousPos}{m\_previousPos}}
+{\footnotesize\ttfamily sf\+::\+Vector2i Player\+::m\+\_\+previous\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \mbox{\hyperlink{class_player}{Player}}\textquotesingle{}s position last turn. 
+
+\mbox{\Hypertarget{class_player_ab0217f5459b7a3faa159e4fe173dbc28}\label{class_player_ab0217f5459b7a3faa159e4fe173dbc28}} 
+\index{Player@{Player}!m\_rects@{m\_rects}}
+\index{m\_rects@{m\_rects}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{m\_rects}{m\_rects}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}}, sf\+::\+Int\+Rect $>$ Player\+::m\+\_\+rects = std\+::unordered\+\_\+map$<$\mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}}, sf\+::\+Int\+Rect$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The appearance of the player on the spritesheet, depending on the armours they can have.  
+
+\mbox{\Hypertarget{class_player_adf0c3e7002bc6739960d88075c240709}\label{class_player_adf0c3e7002bc6739960d88075c240709}} 
+\index{Player@{Player}!m\_strength@{m\_strength}}
+\index{m\_strength@{m\_strength}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{m\_strength}{m\_strength}}
+{\footnotesize\ttfamily int Player\+::m\+\_\+strength = 10\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The strength of the player, used for attacking. 
+
+\mbox{\Hypertarget{class_player_ab4e6ed0131da3921bc80b39f9b455dc9}\label{class_player_ab4e6ed0131da3921bc80b39f9b455dc9}} 
+\index{Player@{Player}!row@{row}}
+\index{row@{row}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{row}{row}}
+{\footnotesize\ttfamily int Player\+::row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The row the player is in on the \mbox{\hyperlink{class_grid}{Grid}}. 
+
+\mbox{\Hypertarget{class_player_ae61f2ea9b978c907d74338758b27e3d8}\label{class_player_ae61f2ea9b978c907d74338758b27e3d8}} 
+\index{Player@{Player}!xp@{xp}}
+\index{xp@{xp}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{xp}{xp}}
+{\footnotesize\ttfamily int Player\+::xp = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the players xp. When this reaches a certain threshold, level goes up by 1. XP is gotten by defeating enemies. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_player_8h}{Player.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_player_8cpp}{Player.\+cpp}}\end{DoxyCompactItemize}

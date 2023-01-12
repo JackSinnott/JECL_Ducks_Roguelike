@@ -1,10 +1,10 @@
 #include "Room.h"
 
 /// <summary>
-/// 
+/// Overloaded Class Constructor.
 /// </summary>
-/// <param name="t_id"></param>
-/// <param name="t_pos"></param>
+/// <param name="t_id">This Room's new ID.</param>
+/// <param name="t_pos">This Room's new position.</param>
 Room::Room(int t_id, sf::Vector2f t_pos = sf::Vector2f()) :
 	id(t_id),
 	m_pos(t_pos)
@@ -15,18 +15,18 @@ Room::Room(int t_id, sf::Vector2f t_pos = sf::Vector2f()) :
 }
 
 /// <summary>
-/// 
+/// Default deconstructor.
 /// </summary>
 Room::~Room()
 {
 }	
 
 /// <summary>
-/// 
+/// Updates the Tile objects.
 /// </summary>
-/// <param name="t_dt"></param>
-/// <param name="row"></param>
-/// <param name="col"></param>
+/// <param name="t_dt">The time that has passed since last frame.</param>
+/// <param name="row">The row this Room takes in a 3x3 layout, compared to other rooms.</param>
+/// <param name="col">The column this Room takes in a 3x3 layout, compared to other rooms.</param>
 void Room::update(sf::Time t_dt, int row, int col)
 {
 	//std::cout << "tile at index [" << row << "],[" << col <<"] is located at : " << m_tiles[row][col].getGridPosition().x << m_tiles[row][col].getGridPosition().y << "\n";
@@ -34,10 +34,10 @@ void Room::update(sf::Time t_dt, int row, int col)
 }
 
 /// <summary>
-/// 
+/// Draws all the Tile objects to the screen.
 /// </summary>
-/// <param name="t_target"></param>
-/// <param name="t_state"></param>
+/// <param name="t_target">Where to draw the Tiles.</param>
+/// <param name="t_state">The state in which to draw the Tiles.</param>
 void Room::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) const
 {
 	if (m_revealed)
@@ -54,9 +54,9 @@ void Room::draw(sf::RenderTarget& t_target, sf::RenderStates const t_state) cons
 }
 
 /// <summary>
-/// 
+/// Checks if the Player has entered this Room.
 /// </summary>
-/// <param name="t_playerRoomID"></param>
+/// <param name="t_playerRoomID">The ID of the Room the Player currently is in.</param>
 void Room::CheckPlayer(int t_playerRoomID)
 {
 	if (m_revealed == false && t_playerRoomID == id)
@@ -68,11 +68,11 @@ void Room::CheckPlayer(int t_playerRoomID)
 }
 
 /// <summary>
-/// 
+///Sets up a Tile object in this room.
 /// </summary>
-/// <param name="t_type"></param>
-/// <param name="row"></param>
-/// <param name="col"></param>
+/// <param name="t_type">The type of Tile this one is.</param>
+/// <param name="row">The row that this Tile will be at, in this Room.</param>
+/// <param name="col">The column that this Tile will be at, in this Room.</param>
 void Room::setUpTiles(TileType t_type, int row, int col) // pass argument that is GameData (aka whats loaded)
 {
 	m_tiles[row][col].setup(m_pTexture, sf::Vector2f{ static_cast<float>(row * G_CELL_SIZE), static_cast<float>(col * G_CELL_SIZE) }, m_pos, t_type);
@@ -87,7 +87,7 @@ void Room::setUpTiles(TileType t_type, int row, int col) // pass argument that i
 }
 
 /// <summary>
-/// 
+/// Sets up the rows and columns this Tile occupies, for easy returns later.
 /// </summary>
 void Room::setGridPosition()
 {

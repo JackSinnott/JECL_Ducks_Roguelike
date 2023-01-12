@@ -1,0 +1,100 @@
+\hypertarget{class_bat}{}\doxysection{Bat Class Reference}
+\label{class_bat}\index{Bat@{Bat}}
+
+
+The \mbox{\hyperlink{class_bat}{Bat}} enemy that inherits from the \mbox{\hyperlink{class_enemy}{Enemy}} Class   
+
+
+
+
+{\ttfamily \#include $<$Bat.\+h$>$}
+
+Inheritance diagram for Bat\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_bat}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bat_a337b9885000daa71d414ee6e6e15a04c}{Bat}} (float t\+\_\+posX, float t\+\_\+posY)
+\begin{DoxyCompactList}\small\item\em Overload constructor for the bat that sets the position  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Int\+Rect \mbox{\hyperlink{class_bat_a44efbe5814490ef60e908f3397c6bed1}{sprite\+Rect}} = sf\+::\+Int\+Rect\{ 0,160,16,16 \}
+\begin{DoxyCompactList}\small\item\em Sprite Rectangle of the bat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_bat_ac5b133d55bfeb5e686943589ffa1329f}{move}} (sf\+::\+Vector2i t\+\_\+player\+Pos, int t\+\_\+player\+Room, int t\+\_\+enemy\+Room) override
+\begin{DoxyCompactList}\small\item\em Overrides the move function with the Bats movement logic  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_bat}{Bat}} enemy that inherits from the \mbox{\hyperlink{class_enemy}{Enemy}} Class  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_bat_a337b9885000daa71d414ee6e6e15a04c}\label{class_bat_a337b9885000daa71d414ee6e6e15a04c}} 
+\index{Bat@{Bat}!Bat@{Bat}}
+\index{Bat@{Bat}!Bat@{Bat}}
+\doxysubsubsection{\texorpdfstring{Bat()}{Bat()}}
+{\footnotesize\ttfamily Bat\+::\+Bat (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+posX,  }\item[{float}]{t\+\_\+posY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload constructor for the bat that sets the position  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+posX} & Position of the players on the X-\/axis\\
+\hline
+{\em t\+\_\+posY} & Position of the players on the Y-\/axis\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_bat_ac5b133d55bfeb5e686943589ffa1329f}\label{class_bat_ac5b133d55bfeb5e686943589ffa1329f}} 
+\index{Bat@{Bat}!move@{move}}
+\index{move@{move}!Bat@{Bat}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Bat\+::move (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{t\+\_\+player\+Pos,  }\item[{int}]{t\+\_\+player\+Room,  }\item[{int}]{t\+\_\+enemy\+Room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Overrides the move function with the Bats movement logic  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+player\+Pos} & The Position on the grid of the player\\
+\hline
+{\em t\+\_\+player\+Room} & The room the player is in\\
+\hline
+{\em t\+\_\+enemy\+Room} & The room the enemy is in\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_enemy_ab56d496118288692dde4c0adcbe94b91}{Enemy}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_bat_a44efbe5814490ef60e908f3397c6bed1}\label{class_bat_a44efbe5814490ef60e908f3397c6bed1}} 
+\index{Bat@{Bat}!spriteRect@{spriteRect}}
+\index{spriteRect@{spriteRect}!Bat@{Bat}}
+\doxysubsubsection{\texorpdfstring{spriteRect}{spriteRect}}
+{\footnotesize\ttfamily sf\+::\+Int\+Rect Bat\+::sprite\+Rect = sf\+::\+Int\+Rect\{ 0,160,16,16 \}}
+
+
+
+Sprite Rectangle of the bat. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_bat_8h}{Bat.\+h}}\end{DoxyCompactItemize}

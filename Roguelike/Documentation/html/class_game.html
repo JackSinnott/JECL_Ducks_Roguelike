@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Roguelike: Game Class Reference</title>
+<title>JECL-Ducks: Game Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -29,23 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="rogue.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">Roguelike<span id="projectnumber">&#160;very early alpha</span>
+   <div id="projectname">JECL-Ducks
    </div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -57,6 +39,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -105,7 +98,7 @@ $(document).ready(function(){initNavTree('class_game.html',''); initResizable();
 </div><!--header-->
 <div class="contents">
 
-<p>author Pete Lowe May 2019 you need to change the above line or lose marks   
+<p>The game class. Keeps track of <a class="el" href="class_game.html" title="The game class. Keeps track of Game Flow.">Game</a> Flow.   
  <a href="class_game.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_game_8h_source.html">Game.h</a>&gt;</code></p>
@@ -113,57 +106,56 @@ $(document).ready(function(){initNavTree('class_game.html',''); initResizable();
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad59df6562a58a614fda24622d3715b65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game</a> ()</td></tr>
+<tr class="memdesc:ad59df6562a58a614fda24622d3715b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class's Default Constructor.   <a href="class_game.html#ad59df6562a58a614fda24622d3715b65">More...</a><br /></td></tr>
 <tr class="separator:ad59df6562a58a614fda24622d3715b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3d112ca6e0e55150d2fdbc704474530"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">~Game</a> ()</td></tr>
-<tr class="memdesc:ae3d112ca6e0e55150d2fdbc704474530"><td class="mdescLeft">&#160;</td><td class="mdescRight">default destructor we didn't dynamically allocate anything so we don't need to free it, but mthod needs to be here   <a href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">More...</a><br /></td></tr>
+<tr class="memdesc:ae3d112ca6e0e55150d2fdbc704474530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class's Default deconstructor.   <a href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">More...</a><br /></td></tr>
 <tr class="separator:ae3d112ca6e0e55150d2fdbc704474530"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ab78f5ed0d5ea879157357cf2fb2afa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa">run</a> ()</td></tr>
-<tr class="memdesc:a1ab78f5ed0d5ea879157357cf2fb2afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">main method for game   <a href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa">More...</a><br /></td></tr>
+<tr class="memdesc:a1ab78f5ed0d5ea879157357cf2fb2afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The game loop function. Calls upon event handlers, updates, and renders every frame. Once this method ends, so does the game.   <a href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa">More...</a><br /></td></tr>
 <tr class="separator:a1ab78f5ed0d5ea879157357cf2fb2afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a79f698dda206dd7a9bed28b3f88bdc38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38">processEvents</a> ()</td></tr>
-<tr class="memdesc:a79f698dda206dd7a9bed28b3f88bdc38"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle user and system events/ input get key presses/ mouse moves etc.  <a href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38">More...</a><br /></td></tr>
+<tr class="memdesc:a79f698dda206dd7a9bed28b3f88bdc38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles ALL events that happen when the player interacts with the game. This includes moving the mouse, clicking on the screen, and pressing buttons.   <a href="class_game.html#a79f698dda206dd7a9bed28b3f88bdc38">More...</a><br /></td></tr>
 <tr class="separator:a79f698dda206dd7a9bed28b3f88bdc38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf2eb2e773dbad1322db8d6798705ea1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#adf2eb2e773dbad1322db8d6798705ea1">processKeys</a> (sf::Event t_event)</td></tr>
-<tr class="memdesc:adf2eb2e773dbad1322db8d6798705ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">deal with key presses from the user   <a href="class_game.html#adf2eb2e773dbad1322db8d6798705ea1">More...</a><br /></td></tr>
+<tr class="memdesc:adf2eb2e773dbad1322db8d6798705ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles events that happen when the player presses a key on the keyboard, and are not bound to a certain screen - hitting escape to close the window, for instance.   <a href="class_game.html#adf2eb2e773dbad1322db8d6798705ea1">More...</a><br /></td></tr>
 <tr class="separator:adf2eb2e773dbad1322db8d6798705ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d2aee62bac8e228344e1f44fab504e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0">update</a> (sf::Time t_deltaTime)</td></tr>
-<tr class="memdesc:a1d2aee62bac8e228344e1f44fab504e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the game world   <a href="class_game.html#a1d2aee62bac8e228344e1f44fab504e0">More...</a><br /></td></tr>
-<tr class="separator:a1d2aee62bac8e228344e1f44fab504e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15ddd769261d923827a3cdf41499c843"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a15ddd769261d923827a3cdf41499c843">render</a> ()</td></tr>
-<tr class="memdesc:a15ddd769261d923827a3cdf41499c843"><td class="mdescLeft">&#160;</td><td class="mdescRight">draw the frame and then switch buffers   <a href="class_game.html#a15ddd769261d923827a3cdf41499c843">More...</a><br /></td></tr>
-<tr class="separator:a15ddd769261d923827a3cdf41499c843"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d1c7a9010c33a27424961138dadb442"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a3d1c7a9010c33a27424961138dadb442">setupFontAndText</a> ()</td></tr>
-<tr class="memdesc:a3d1c7a9010c33a27424961138dadb442"><td class="mdescLeft">&#160;</td><td class="mdescRight">load the font and setup the text message for screen   <a href="class_game.html#a3d1c7a9010c33a27424961138dadb442">More...</a><br /></td></tr>
-<tr class="separator:a3d1c7a9010c33a27424961138dadb442"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0708ae9f1fd7b640ffd1796773734f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ae0708ae9f1fd7b640ffd1796773734f1">setupSprite</a> ()</td></tr>
-<tr class="memdesc:ae0708ae9f1fd7b640ffd1796773734f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">load the texture and setup the sprite for the logo   <a href="class_game.html#ae0708ae9f1fd7b640ffd1796773734f1">More...</a><br /></td></tr>
-<tr class="separator:ae0708ae9f1fd7b640ffd1796773734f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0da16763f3e4775e0c9e01fa862d4b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ae0da16763f3e4775e0c9e01fa862d4b1">Update</a> (sf::Time t_dt)</td></tr>
+<tr class="memdesc:ae0da16763f3e4775e0c9e01fa862d4b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that controls what gets updated, depending on what screen the user is on.   <a href="class_game.html#ae0da16763f3e4775e0c9e01fa862d4b1">More...</a><br /></td></tr>
+<tr class="separator:ae0da16763f3e4775e0c9e01fa862d4b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdb4620645e91922b0ba53c128faf1f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#abdb4620645e91922b0ba53c128faf1f7">Render</a> (sf::RenderWindow &amp;t_window)</td></tr>
+<tr class="memdesc:abdb4620645e91922b0ba53c128faf1f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that controls what gets drawn onto the SFML window.   <a href="class_game.html#abdb4620645e91922b0ba53c128faf1f7">More...</a><br /></td></tr>
+<tr class="separator:abdb4620645e91922b0ba53c128faf1f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a55388d86d137b4ef4086234ac79bd36a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_gameplay.html">Gameplay</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a55388d86d137b4ef4086234ac79bd36a">m_gameScreen</a></td></tr>
+<tr class="memdesc:a55388d86d137b4ef4086234ac79bd36a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance of the gameplay screen.  <a href="class_game.html#a55388d86d137b4ef4086234ac79bd36a">More...</a><br /></td></tr>
+<tr class="separator:a55388d86d137b4ef4086234ac79bd36a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89faffab9c3b76780b0712569e259f21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_main_menu.html">MainMenu</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a89faffab9c3b76780b0712569e259f21">m_mainMenuScreen</a></td></tr>
+<tr class="memdesc:a89faffab9c3b76780b0712569e259f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance of the main menu screen.  <a href="class_game.html#a89faffab9c3b76780b0712569e259f21">More...</a><br /></td></tr>
+<tr class="separator:a89faffab9c3b76780b0712569e259f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a351e1826c929bbcfa4927323fc65fb3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_pause_menu.html">PauseMenu</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a351e1826c929bbcfa4927323fc65fb3d">m_pauseScreen</a></td></tr>
+<tr class="memdesc:a351e1826c929bbcfa4927323fc65fb3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance of the pause screen.  <a href="class_game.html#a351e1826c929bbcfa4927323fc65fb3d">More...</a><br /></td></tr>
+<tr class="separator:a351e1826c929bbcfa4927323fc65fb3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0f6daf930e602252811ed27ef2fe99a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_over.html">GameOver</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ad0f6daf930e602252811ed27ef2fe99a">m_gameOverScreen</a></td></tr>
+<tr class="memdesc:ad0f6daf930e602252811ed27ef2fe99a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance of the game over screen.  <a href="class_game.html#ad0f6daf930e602252811ed27ef2fe99a">More...</a><br /></td></tr>
+<tr class="separator:ad0f6daf930e602252811ed27ef2fe99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a2a07fd2256f22e202579211b5e87b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_options.html">Options</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a7a2a07fd2256f22e202579211b5e87b2">m_optionScreen</a></td></tr>
+<tr class="memdesc:a7a2a07fd2256f22e202579211b5e87b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance of the options screen.  <a href="class_game.html#a7a2a07fd2256f22e202579211b5e87b2">More...</a><br /></td></tr>
+<tr class="separator:a7a2a07fd2256f22e202579211b5e87b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18891e967e927e414a6b4539e42fe075"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_help.html">Help</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a18891e967e927e414a6b4539e42fe075">m_helpScreen</a></td></tr>
+<tr class="memdesc:a18891e967e927e414a6b4539e42fe075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance of the help screen.  <a href="class_game.html#a18891e967e927e414a6b4539e42fe075">More...</a><br /></td></tr>
+<tr class="separator:a18891e967e927e414a6b4539e42fe075"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22a61b5ea27c609be8cf2724c33d7ae5"><td class="memItemLeft" align="right" valign="top">sf::RenderWindow&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a22a61b5ea27c609be8cf2724c33d7ae5">m_window</a></td></tr>
+<tr class="memdesc:a22a61b5ea27c609be8cf2724c33d7ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main SFML window.  <a href="class_game.html#a22a61b5ea27c609be8cf2724c33d7ae5">More...</a><br /></td></tr>
 <tr class="separator:a22a61b5ea27c609be8cf2724c33d7ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a763868ac591e7420691cac088b3de1cb"><td class="memItemLeft" align="right" valign="top">sf::Font&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a763868ac591e7420691cac088b3de1cb">m_ArialBlackfont</a></td></tr>
-<tr class="separator:a763868ac591e7420691cac088b3de1cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a620ab177bf9b34ab2dbcec585f86afbd"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a620ab177bf9b34ab2dbcec585f86afbd">m_welcomeMessage</a></td></tr>
-<tr class="separator:a620ab177bf9b34ab2dbcec585f86afbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9921b40f7acc93e819c831223972607a"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a9921b40f7acc93e819c831223972607a">m_logoTexture</a></td></tr>
-<tr class="separator:a9921b40f7acc93e819c831223972607a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad952ecd17335d493304d41ecc7e07e73"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ad952ecd17335d493304d41ecc7e07e73">m_logoSprite</a></td></tr>
-<tr class="separator:ad952ecd17335d493304d41ecc7e07e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5452d49a7b3f2d2ea3c7e2072fe8a828"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a5452d49a7b3f2d2ea3c7e2072fe8a828">m_exitGame</a></td></tr>
-<tr class="separator:a5452d49a7b3f2d2ea3c7e2072fe8a828"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e48721b0532833b99fd5615a3628792"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player.html">Player</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a6e48721b0532833b99fd5615a3628792">player</a></td></tr>
-<tr class="separator:a6e48721b0532833b99fd5615a3628792"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87dc7b0386a606552942ffbcbdd90a2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_enemy.html">Enemy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a87dc7b0386a606552942ffbcbdd90a2c">m_testEnemy</a></td></tr>
-<tr class="separator:a87dc7b0386a606552942ffbcbdd90a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >author Pete Lowe May 2019 you need to change the above line or lose marks  </p>
-<p >include guards used so we don't process this file twice same as #pragma once Don't forget the endif at the bottom  </p>
+<div class="textblock"><p >The game class. Keeps track of <a class="el" href="class_game.html" title="The game class. Keeps track of Game Flow.">Game</a> Flow.  </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad59df6562a58a614fda24622d3715b65" name="ad59df6562a58a614fda24622d3715b65"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad59df6562a58a614fda24622d3715b65">&#9670;&#160;</a></span>Game()</h2>
@@ -180,12 +172,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p></p>
-<dl class="section author"><dt>Author</dt><dd>Peter Lowe </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>May 2019</dd></dl>
-<p>you need to change the above lines or lose marks  <br  />
-</p>
-<p >default constructor setup the window properties load and setup the text load and setup thne image  </p>
+<p>Class's Default Constructor.  </p>
 
 </div>
 </div>
@@ -204,7 +191,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>default destructor we didn't dynamically allocate anything so we don't need to free it, but mthod needs to be here  </p>
+<p>Class's Default deconstructor.  </p>
 
 </div>
 </div>
@@ -232,8 +219,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>handle user and system events/ input get key presses/ mouse moves etc. </p>
-<p >from OS and user :: Don't do game update here  </p>
+<p>Handles ALL events that happen when the player interacts with the game. This includes moving the mouse, clicking on the screen, and pressing buttons.  </p>
 
 </div>
 </div>
@@ -261,18 +247,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>deal with key presses from the user  </p>
+<p>Handles events that happen when the player presses a key on the keyboard, and are not bound to a certain screen - hitting escape to close the window, for instance.  </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">t_event</td><td>key press event</td></tr>
+    <tr><td class="paramname">t_event</td><td>The SFML event.</td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a15ddd769261d923827a3cdf41499c843" name="a15ddd769261d923827a3cdf41499c843"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15ddd769261d923827a3cdf41499c843">&#9670;&#160;</a></span>render()</h2>
+<a id="abdb4620645e91922b0ba53c128faf1f7" name="abdb4620645e91922b0ba53c128faf1f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdb4620645e91922b0ba53c128faf1f7">&#9670;&#160;</a></span>Render()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -281,9 +267,10 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Game::render </td>
+          <td class="memname">void Game::Render </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>t_window</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -294,7 +281,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>draw the frame and then switch buffers  </p>
+<p>Method that controls what gets drawn onto the SFML window.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_window</td><td>The window to draw everything to.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -313,13 +306,12 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>main method for game  </p>
-<p >main game loop update 60 times per second, process update as often as possible and at least 60 times per second draw as often as possible but only updates are on time if updates run slow then don't render frames  </p>
+<p>The game loop function. Calls upon event handlers, updates, and renders every frame. Once this method ends, so does the game.  </p>
 
 </div>
 </div>
-<a id="a3d1c7a9010c33a27424961138dadb442" name="a3d1c7a9010c33a27424961138dadb442"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d1c7a9010c33a27424961138dadb442">&#9670;&#160;</a></span>setupFontAndText()</h2>
+<a id="ae0da16763f3e4775e0c9e01fa862d4b1" name="ae0da16763f3e4775e0c9e01fa862d4b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0da16763f3e4775e0c9e01fa862d4b1">&#9670;&#160;</a></span>Update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -328,64 +320,10 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Game::setupFontAndText </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>load the font and setup the text message for screen  </p>
-
-</div>
-</div>
-<a id="ae0708ae9f1fd7b640ffd1796773734f1" name="ae0708ae9f1fd7b640ffd1796773734f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0708ae9f1fd7b640ffd1796773734f1">&#9670;&#160;</a></span>setupSprite()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Game::setupSprite </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>load the texture and setup the sprite for the logo  </p>
-
-</div>
-</div>
-<a id="a1d2aee62bac8e228344e1f44fab504e0" name="a1d2aee62bac8e228344e1f44fab504e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d2aee62bac8e228344e1f44fab504e0">&#9670;&#160;</a></span>update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Game::update </td>
+          <td class="memname">void Game::Update </td>
           <td>(</td>
           <td class="paramtype">sf::Time&#160;</td>
-          <td class="paramname"><em>t_deltaTime</em></td><td>)</td>
+          <td class="paramname"><em>t_dt</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -396,10 +334,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Update the game world  </p>
+<p>Method that controls what gets updated, depending on what screen the user is on.  </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">t_deltaTime</td><td>time interval per frame</td></tr>
+    <tr><td class="paramname">t_dt</td><td>The time that has passed since the last frame.</td></tr>
   </table>
   </dd>
 </dl>
@@ -407,8 +345,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a763868ac591e7420691cac088b3de1cb" name="a763868ac591e7420691cac088b3de1cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a763868ac591e7420691cac088b3de1cb">&#9670;&#160;</a></span>m_ArialBlackfont</h2>
+<a id="ad0f6daf930e602252811ed27ef2fe99a" name="ad0f6daf930e602252811ed27ef2fe99a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0f6daf930e602252811ed27ef2fe99a">&#9670;&#160;</a></span>m_gameOverScreen</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -417,7 +355,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">sf::Font Game::m_ArialBlackfont</td>
+          <td class="memname"><a class="el" href="class_game_over.html">GameOver</a> Game::m_gameOverScreen</td>
         </tr>
       </table>
   </td>
@@ -427,10 +365,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Instance of the game over screen. </p>
+
 </div>
 </div>
-<a id="a5452d49a7b3f2d2ea3c7e2072fe8a828" name="a5452d49a7b3f2d2ea3c7e2072fe8a828"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5452d49a7b3f2d2ea3c7e2072fe8a828">&#9670;&#160;</a></span>m_exitGame</h2>
+<a id="a55388d86d137b4ef4086234ac79bd36a" name="a55388d86d137b4ef4086234ac79bd36a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55388d86d137b4ef4086234ac79bd36a">&#9670;&#160;</a></span>m_gameScreen</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -439,7 +379,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Game::m_exitGame</td>
+          <td class="memname"><a class="el" href="class_gameplay.html">Gameplay</a> Game::m_gameScreen</td>
         </tr>
       </table>
   </td>
@@ -449,10 +389,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Instance of the gameplay screen. </p>
+
 </div>
 </div>
-<a id="ad952ecd17335d493304d41ecc7e07e73" name="ad952ecd17335d493304d41ecc7e07e73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad952ecd17335d493304d41ecc7e07e73">&#9670;&#160;</a></span>m_logoSprite</h2>
+<a id="a18891e967e927e414a6b4539e42fe075" name="a18891e967e927e414a6b4539e42fe075"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18891e967e927e414a6b4539e42fe075">&#9670;&#160;</a></span>m_helpScreen</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -461,7 +403,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">sf::Sprite Game::m_logoSprite</td>
+          <td class="memname"><a class="el" href="class_help.html">Help</a> Game::m_helpScreen</td>
         </tr>
       </table>
   </td>
@@ -471,10 +413,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Instance of the help screen. </p>
+
 </div>
 </div>
-<a id="a9921b40f7acc93e819c831223972607a" name="a9921b40f7acc93e819c831223972607a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9921b40f7acc93e819c831223972607a">&#9670;&#160;</a></span>m_logoTexture</h2>
+<a id="a89faffab9c3b76780b0712569e259f21" name="a89faffab9c3b76780b0712569e259f21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89faffab9c3b76780b0712569e259f21">&#9670;&#160;</a></span>m_mainMenuScreen</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -483,7 +427,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">sf::Texture Game::m_logoTexture</td>
+          <td class="memname"><a class="el" href="class_main_menu.html">MainMenu</a> Game::m_mainMenuScreen</td>
         </tr>
       </table>
   </td>
@@ -493,10 +437,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Instance of the main menu screen. </p>
+
 </div>
 </div>
-<a id="a87dc7b0386a606552942ffbcbdd90a2c" name="a87dc7b0386a606552942ffbcbdd90a2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87dc7b0386a606552942ffbcbdd90a2c">&#9670;&#160;</a></span>m_testEnemy</h2>
+<a id="a7a2a07fd2256f22e202579211b5e87b2" name="a7a2a07fd2256f22e202579211b5e87b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a2a07fd2256f22e202579211b5e87b2">&#9670;&#160;</a></span>m_optionScreen</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -505,7 +451,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_enemy.html">Enemy</a>* Game::m_testEnemy</td>
+          <td class="memname"><a class="el" href="class_options.html">Options</a> Game::m_optionScreen</td>
         </tr>
       </table>
   </td>
@@ -515,10 +461,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Instance of the options screen. </p>
+
 </div>
 </div>
-<a id="a620ab177bf9b34ab2dbcec585f86afbd" name="a620ab177bf9b34ab2dbcec585f86afbd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a620ab177bf9b34ab2dbcec585f86afbd">&#9670;&#160;</a></span>m_welcomeMessage</h2>
+<a id="a351e1826c929bbcfa4927323fc65fb3d" name="a351e1826c929bbcfa4927323fc65fb3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a351e1826c929bbcfa4927323fc65fb3d">&#9670;&#160;</a></span>m_pauseScreen</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -527,7 +475,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">sf::Text Game::m_welcomeMessage</td>
+          <td class="memname"><a class="el" href="class_pause_menu.html">PauseMenu</a> Game::m_pauseScreen</td>
         </tr>
       </table>
   </td>
@@ -536,6 +484,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Instance of the pause screen. </p>
 
 </div>
 </div>
@@ -559,30 +509,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a6e48721b0532833b99fd5615a3628792" name="a6e48721b0532833b99fd5615a3628792"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e48721b0532833b99fd5615a3628792">&#9670;&#160;</a></span>player</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_player.html">Player</a> Game::player</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>The main SFML window. </p>
 
 </div>
 </div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>C:/Users/liney/OneDrive/Desktop/Work/Games Engineering/JECL_Ducks_Roguelike/Roguelike/<a class="el" href="_game_8h_source.html">Game.h</a></li>
+<li>C:/Users/liney/OneDrive/Desktop/Work/Games Engineering/JECL_Ducks_Roguelike/Roguelike/<a class="el" href="_game_8cpp.html">Game.cpp</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

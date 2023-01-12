@@ -1,0 +1,54 @@
+\hypertarget{_rat_8h_source}{}\doxysection{C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\+Rat.h}
+\mbox{\hyperlink{_rat_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_globals_8h}{Globals.h}}"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_enemy_8h}{Enemy.h}}"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_rat}{Rat}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_enemy}{Enemy}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_rat_aa063ac27542dbc8ecd867110f5b8ca42}{Rat}}(\textcolor{keywordtype}{float} t\_posX, \textcolor{keywordtype}{float} t\_posY)}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         \mbox{\hyperlink{class_enemy_a5fbc5b6223ae7d59df9eb707a963b1dc}{m\_type}} = EnemyType::Rat;}
+\DoxyCodeLine{19         \textcolor{keywordtype}{int} xCoord = (int)t\_posX -\/ (\textcolor{keywordtype}{int})t\_posX \% \mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\_CELL\_SIZE}} + \mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\_CELL\_SIZE}} / 2;}
+\DoxyCodeLine{20         \textcolor{keywordtype}{int} yCoord = (int)t\_posY -\/ (\textcolor{keywordtype}{int})t\_posY \% \mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\_CELL\_SIZE}} + \mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\_CELL\_SIZE}} / 2;}
+\DoxyCodeLine{21         \mbox{\hyperlink{class_enemy_aea3fbafbbd033f2a6d4ff7139379e94f}{m\_enemy}}.setOrigin(\mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\_CELL\_SIZE}} / 2, \mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\_CELL\_SIZE}} / 2);}
+\DoxyCodeLine{22         \mbox{\hyperlink{class_enemy_aea3fbafbbd033f2a6d4ff7139379e94f}{m\_enemy}}.setPosition(sf::Vector2f(xCoord, yCoord));}
+\DoxyCodeLine{23         \mbox{\hyperlink{class_enemy_af5fc9526c259374e5981a5547e1fa648}{row}} = (xCoord -\/ \mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\_CELL\_SIZE}} / 2) / \mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\_CELL\_SIZE}};}
+\DoxyCodeLine{24         \mbox{\hyperlink{class_enemy_a3249683551ec77289ce25a126fdb48ec}{col}} = (yCoord -\/ \mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\_CELL\_SIZE}} / 2) / \mbox{\hyperlink{_globals_8h_afd21ad7218563b50069454fbf8994693}{G\_CELL\_SIZE}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         \mbox{\hyperlink{class_enemy_afb4cba128ce0cb75235b99d8ef5768a7}{m\_enemyTexture}} = \mbox{\hyperlink{class_texture_manager_a3b6cbb7a9be0556355e8a6206c5cc3e7}{TextureManager::Acquire}}(\mbox{\hyperlink{_globals_8h_a62bdf4f6ff3e6683dce531167dc91ba6}{ITEMS\_TEXTURE}});}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         \mbox{\hyperlink{class_enemy_aea3fbafbbd033f2a6d4ff7139379e94f}{m\_enemy}}.setTexture(*\mbox{\hyperlink{class_enemy_afb4cba128ce0cb75235b99d8ef5768a7}{m\_enemyTexture}});}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         \mbox{\hyperlink{class_enemy_aea3fbafbbd033f2a6d4ff7139379e94f}{m\_enemy}}.setTextureRect(sf::IntRect\{ 64,160,16,16 \});}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \mbox{\hyperlink{class_enemy_aea3fbafbbd033f2a6d4ff7139379e94f}{m\_enemy}}.setOrigin(\mbox{\hyperlink{class_enemy_aea3fbafbbd033f2a6d4ff7139379e94f}{m\_enemy}}.getTextureRect().width / 2.0f,}
+\DoxyCodeLine{33             \mbox{\hyperlink{class_enemy_aea3fbafbbd033f2a6d4ff7139379e94f}{m\_enemy}}.getTextureRect().height / 2.0f);}
+\DoxyCodeLine{34         \mbox{\hyperlink{class_enemy_aea3fbafbbd033f2a6d4ff7139379e94f}{m\_enemy}}.setScale(2.0f, 2.0f);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36         \mbox{\hyperlink{class_combat_system_a951de855dc332b5632667510a93847a9}{CombatSystem::PushBackEnemyStats}}(\&\mbox{\hyperlink{class_enemy_aedd5e7bf8ef07ee97be433c853a10d8d}{health}}, \mbox{\hyperlink{class_enemy_a6c93c0e43d21c5198797b386b6140848}{xp}});}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41     sf::IntRect \mbox{\hyperlink{class_rat_a845b0b315c8528d14e249ae4f6d49b92}{spriteRect}} = sf::IntRect\{ 0,160,16,16 \};}
+\DoxyCodeLine{42 \textcolor{keyword}{private}:}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_rat_a5b92ff258b240dd5d6e90771c8de3667}{move}}(sf::Vector2i t\_playerPos, \textcolor{keywordtype}{int} t\_playerRoom, \textcolor{keywordtype}{int} t\_enemyRoom)\textcolor{keyword}{ override}}
+\DoxyCodeLine{50 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{51         \textcolor{keywordflow}{if} (t\_playerRoom != t\_enemyRoom)}
+\DoxyCodeLine{52         \{}
+\DoxyCodeLine{53             \mbox{\hyperlink{class_enemy_ae720d544ca6133bc94e2cbf41fdf0f9a}{randomMovement}}();}
+\DoxyCodeLine{54         \}}
+\DoxyCodeLine{55         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (abs(t\_playerPos.x -\/ \mbox{\hyperlink{class_enemy_a3249683551ec77289ce25a126fdb48ec}{col}}) > 1 || abs(t\_playerPos.y -\/ \mbox{\hyperlink{class_enemy_af5fc9526c259374e5981a5547e1fa648}{row}}) > 1)}
+\DoxyCodeLine{56         \{}
+\DoxyCodeLine{57             \mbox{\hyperlink{class_enemy_acd16b6ada7d3f5f2a4d6af3faf78e87a}{moveTowardsPlayer}}(t\_playerPos);}
+\DoxyCodeLine{58         \}}
+\DoxyCodeLine{59         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{60         \{}
+\DoxyCodeLine{61             \mbox{\hyperlink{class_enemy_a2d8ebea362ec8d066952daf636a45d20}{CalculateDamageToPlayer}}(1);}
+\DoxyCodeLine{62         \}}
+\DoxyCodeLine{63     \}}
+\DoxyCodeLine{64 \};}
+
+\end{DoxyCode}

@@ -5,6 +5,7 @@
 /// </summary>
 Gameplay::Gameplay() :
 	m_grid(0, 0)
+	player(5,5)
 {
 	m_itemfactory = new WeaponFactory();
 	Weapons w = static_cast<Weapons>(2);
@@ -27,7 +28,8 @@ Gameplay::Gameplay() :
 	m_mouseCoordinate.setOutlineThickness(3.0f);
 	m_mouseCoordinate.setString("Mouse Position: blank, blank");
 
-	m_testEnemy = new Enemy(EnemyType::Bat, 100.0f, 100.0f);
+	m_enemies.push_back(new Bat(100.0f, 100.0f));
+	m_enemies.push_back(new Rat(150.0f, 150.0f));
 
 	m_debugTools = false;
 }
@@ -91,7 +93,10 @@ void Gameplay::render(sf::RenderWindow& t_window)
 	m_grid.draw(t_window);
 	t_window.draw(m_infoText);
 	player.Render(t_window);
-	m_testEnemy->render(t_window);
+	for (Enemy* enemy : m_enemies)
+	{
+		enemy->render(t_window);
+	}
 	m_mousePositionView = t_window.mapPixelToCoords(sf::Mouse::getPosition(t_window));
 	if (m_debugTools)
 	{
@@ -155,5 +160,10 @@ void Gameplay::LoadLevel()
 /// </summary>
 void Gameplay::processTurn()
 {
-	m_testEnemy->update();
+	for (Enemy* enemy : m_enemies)
+	{
+		m_grid.checkCollisionEnemyWall(*enemy, m_grid.whatRoomIsTargetIn(enemy->getEnemyPositionInGrid()));
+		enemy->update(m_grid.getPlayerPos(player), m_grid.getPlayerRoom(), m_grid.whatRoomIsTargetIn(enemy->getEnemyPositionInGrid()));
+	}
+	
 }

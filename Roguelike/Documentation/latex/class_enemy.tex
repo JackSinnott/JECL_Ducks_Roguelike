@@ -1,0 +1,414 @@
+\hypertarget{class_enemy}{}\doxysection{Enemy Class Reference}
+\label{class_enemy}\index{Enemy@{Enemy}}
+
+
+The enemies of the \mbox{\hyperlink{class_player}{Player}}. Will try and hunt down and defeat them.   
+
+
+
+
+{\ttfamily \#include $<$Enemy.\+h$>$}
+
+Inheritance diagram for Enemy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_enemy}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_enemy_a94f30d348b6d2840fd71675472ba38dd}{Enemy}} ()
+\begin{DoxyCompactList}\small\item\em Empty constructor, is to be overridden by child classes  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_a45f2116698b61bfb77b0633097e6b52f}{update}} (sf\+::\+Vector2i t\+\_\+player\+Pos, int t\+\_\+player\+Room, int t\+\_\+enemy\+Room)
+\begin{DoxyCompactList}\small\item\em Updates the enemy, checks if the enemy has health and if so does the move action  \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_enemy_ab56d496118288692dde4c0adcbe94b91}{move}} (sf\+::\+Vector2i t\+\_\+player\+Pos, int t\+\_\+player\+Room, int t\+\_\+enemy\+Room)=0
+\item 
+void \mbox{\hyperlink{class_enemy_a2d8ebea362ec8d066952daf636a45d20}{Calculate\+Damage\+To\+Player}} (int t\+\_\+player\+AC)
+\begin{DoxyCompactList}\small\item\em Calculates the hit chance the enemy has on the player, and then if they hit, calculates the damage to the player and applies it.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_a09169617a34e6de54708bf409244d218}{render}} (sf\+::\+Render\+Window \&t\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Draws the \mbox{\hyperlink{class_enemy}{Enemy}} to the screen.  \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_enemy_abdcc7150c080cfef99aa0ce5c4a8f781}{Get\+Armour\+Class}} ()
+\begin{DoxyCompactList}\small\item\em Returns the armour class of this enemy -\/ aka how hard it is to hit.  \end{DoxyCompactList}\item 
+sf\+::\+Vector2i \mbox{\hyperlink{class_enemy_a68f5c8c31edeab52c1612fb010c40032}{get\+Enemy\+Position\+In\+Grid}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_ac799b98082fa353e7f3f0f6bdd4193d2}{set\+Movement\+Bool\+Up}} (bool t\+\_\+switch)
+\item 
+bool \mbox{\hyperlink{class_enemy_a8f748630642ea0891a5fa3b8f0ff1319}{can\+We\+Move\+Up}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_a7f2beede54c37c4d5f04e4e95a00c439}{set\+Movement\+Bool\+Down}} (bool t\+\_\+switch)
+\item 
+bool \mbox{\hyperlink{class_enemy_a39993a9adce5e45eaa08dfde8ad10d4b}{can\+We\+Move\+Down}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_a009b50723fab4ac32a2d59766529fbfe}{set\+Movement\+Bool\+Left}} (bool t\+\_\+switch)
+\item 
+bool \mbox{\hyperlink{class_enemy_a88b78bb22c2058c0cb3c16be94563ce0}{can\+We\+Move\+Left}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_a591c068089a47f499702ba8054295337}{set\+Movement\+Bool\+Right}} (bool t\+\_\+switch)
+\item 
+bool \mbox{\hyperlink{class_enemy_ad6847db10f89a2617fc92dfa2e6621c4}{can\+We\+Move\+Right}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_ab5c0ff036d8e8dacf83e09ea6afa9731}{reset\+Movement\+Bools}} (bool t\+\_\+switch)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_enemy_a12c7db0b6db5c4f7ba466f6330b8af0b}{Get\+Damage}} ()
+\begin{DoxyCompactList}\small\item\em Calculates how much damage this enemy would cause to it\textquotesingle{}s target, and return it.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_ae720d544ca6133bc94e2cbf41fdf0f9a}{random\+Movement}} ()
+\begin{DoxyCompactList}\small\item\em This behaviour moves the enemy randomly only avoiding walls  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_acd16b6ada7d3f5f2a4d6af3faf78e87a}{move\+Towards\+Player}} (sf\+::\+Vector2i t\+\_\+player\+Pos)
+\begin{DoxyCompactList}\small\item\em This behaviour moves the \mbox{\hyperlink{class_enemy}{Enemy}} towards the player, if theres a wall it stops in its tracks  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Int\+Rect \mbox{\hyperlink{class_enemy_ab50f697f22f6d970b0567247d5f17dc8}{sprite\+Rec}} \{ 0,160,16,16 \}
+\item 
+int \mbox{\hyperlink{class_enemy_ac66ee9bc2816c303e2ea947d8a691395}{m\+\_\+armour\+Class}} = 2
+\begin{DoxyCompactList}\small\item\em The armour class. The higher the number, the easier the enemy is to hit. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_enemy_aedd5e7bf8ef07ee97be433c853a10d8d}{health}} = 20
+\begin{DoxyCompactList}\small\item\em The enemy\textquotesingle{}s health. When this is reduced to 0, the enemy is defeated. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_enemy_a6c93c0e43d21c5198797b386b6140848}{xp}} = 10
+\begin{DoxyCompactList}\small\item\em The amount of experience the enemy gives the player upon being defeated. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_globals_8h_ac3e413a86119db4b031458c7259e268e}{Enemy\+Type}} \mbox{\hyperlink{class_enemy_a5fbc5b6223ae7d59df9eb707a963b1dc}{m\+\_\+type}} = Enemy\+Type\+::\+Bat
+\begin{DoxyCompactList}\small\item\em The type of enemy this is. These include \mbox{\hyperlink{class_bat}{Bat}} and \mbox{\hyperlink{class_rat}{Rat}}. \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_enemy_aea3fbafbbd033f2a6d4ff7139379e94f}{m\+\_\+enemy}}
+\begin{DoxyCompactList}\small\item\em The appearance of the enemy. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ sf\+::\+Texture $>$ \mbox{\hyperlink{class_enemy_afb4cba128ce0cb75235b99d8ef5768a7}{m\+\_\+enemy\+Texture}}
+\begin{DoxyCompactList}\small\item\em The spritesheet texture applied to the enemy appearance. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_enemy_af5fc9526c259374e5981a5547e1fa648}{row}}
+\begin{DoxyCompactList}\small\item\em The row the enemy is in on the grid. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_enemy_a3249683551ec77289ce25a126fdb48ec}{col}}
+\begin{DoxyCompactList}\small\item\em The column the enemy is in on the grid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_enemy_a5ca0b9deba2be143f2d363dff0d39107}{m\+\_\+free\+To\+Move\+Up}}
+\begin{DoxyCompactList}\small\item\em The enemy can move up. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_enemy_af55d7d93c96f44e72bbabf4116d02bf1}{m\+\_\+free\+To\+Move\+Down}}
+\begin{DoxyCompactList}\small\item\em The enemy can move dowm. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_enemy_ae8976d8ba7521d3fca71cdc3c7b1f23f}{m\+\_\+free\+To\+Move\+Left}}
+\begin{DoxyCompactList}\small\item\em The enemy can move left. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_enemy_a6d658ebc7e413853bfea119223919647}{m\+\_\+free\+To\+Move\+Right}}
+\begin{DoxyCompactList}\small\item\em The enemy can move right. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The enemies of the \mbox{\hyperlink{class_player}{Player}}. Will try and hunt down and defeat them.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_enemy_a94f30d348b6d2840fd71675472ba38dd}\label{class_enemy_a94f30d348b6d2840fd71675472ba38dd}} 
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Enemy()}{Enemy()}}
+{\footnotesize\ttfamily Enemy\+::\+Enemy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Empty constructor, is to be overridden by child classes  
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_enemy_a2d8ebea362ec8d066952daf636a45d20}\label{class_enemy_a2d8ebea362ec8d066952daf636a45d20}} 
+\index{Enemy@{Enemy}!CalculateDamageToPlayer@{CalculateDamageToPlayer}}
+\index{CalculateDamageToPlayer@{CalculateDamageToPlayer}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{CalculateDamageToPlayer()}{CalculateDamageToPlayer()}}
+{\footnotesize\ttfamily void Enemy\+::\+Calculate\+Damage\+To\+Player (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+player\+AC }\end{DoxyParamCaption})}
+
+
+
+Calculates the hit chance the enemy has on the player, and then if they hit, calculates the damage to the player and applies it.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+player\+AC} & The player\textquotesingle{}s armour class.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_enemy_a39993a9adce5e45eaa08dfde8ad10d4b}\label{class_enemy_a39993a9adce5e45eaa08dfde8ad10d4b}} 
+\index{Enemy@{Enemy}!canWeMoveDown@{canWeMoveDown}}
+\index{canWeMoveDown@{canWeMoveDown}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{canWeMoveDown()}{canWeMoveDown()}}
+{\footnotesize\ttfamily bool Enemy\+::can\+We\+Move\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_enemy_a88b78bb22c2058c0cb3c16be94563ce0}\label{class_enemy_a88b78bb22c2058c0cb3c16be94563ce0}} 
+\index{Enemy@{Enemy}!canWeMoveLeft@{canWeMoveLeft}}
+\index{canWeMoveLeft@{canWeMoveLeft}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{canWeMoveLeft()}{canWeMoveLeft()}}
+{\footnotesize\ttfamily bool Enemy\+::can\+We\+Move\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_enemy_ad6847db10f89a2617fc92dfa2e6621c4}\label{class_enemy_ad6847db10f89a2617fc92dfa2e6621c4}} 
+\index{Enemy@{Enemy}!canWeMoveRight@{canWeMoveRight}}
+\index{canWeMoveRight@{canWeMoveRight}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{canWeMoveRight()}{canWeMoveRight()}}
+{\footnotesize\ttfamily bool Enemy\+::can\+We\+Move\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_enemy_a8f748630642ea0891a5fa3b8f0ff1319}\label{class_enemy_a8f748630642ea0891a5fa3b8f0ff1319}} 
+\index{Enemy@{Enemy}!canWeMoveUp@{canWeMoveUp}}
+\index{canWeMoveUp@{canWeMoveUp}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{canWeMoveUp()}{canWeMoveUp()}}
+{\footnotesize\ttfamily bool Enemy\+::can\+We\+Move\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_enemy_abdcc7150c080cfef99aa0ce5c4a8f781}\label{class_enemy_abdcc7150c080cfef99aa0ce5c4a8f781}} 
+\index{Enemy@{Enemy}!GetArmourClass@{GetArmourClass}}
+\index{GetArmourClass@{GetArmourClass}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{GetArmourClass()}{GetArmourClass()}}
+{\footnotesize\ttfamily int Enemy\+::\+Get\+Armour\+Class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the armour class of this enemy -\/ aka how hard it is to hit.  
+
+\begin{DoxyReturn}{Returns}
+The AC of this \mbox{\hyperlink{class_enemy}{Enemy}}.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_enemy_a12c7db0b6db5c4f7ba466f6330b8af0b}\label{class_enemy_a12c7db0b6db5c4f7ba466f6330b8af0b}} 
+\index{Enemy@{Enemy}!GetDamage@{GetDamage}}
+\index{GetDamage@{GetDamage}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{GetDamage()}{GetDamage()}}
+{\footnotesize\ttfamily int Enemy\+::\+Get\+Damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Calculates how much damage this enemy would cause to it\textquotesingle{}s target, and return it.  
+
+\begin{DoxyReturn}{Returns}
+The damage dealt by this enemy.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_enemy_a68f5c8c31edeab52c1612fb010c40032}\label{class_enemy_a68f5c8c31edeab52c1612fb010c40032}} 
+\index{Enemy@{Enemy}!getEnemyPositionInGrid@{getEnemyPositionInGrid}}
+\index{getEnemyPositionInGrid@{getEnemyPositionInGrid}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{getEnemyPositionInGrid()}{getEnemyPositionInGrid()}}
+{\footnotesize\ttfamily sf\+::\+Vector2i Enemy\+::get\+Enemy\+Position\+In\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_enemy_ab56d496118288692dde4c0adcbe94b91}\label{class_enemy_ab56d496118288692dde4c0adcbe94b91}} 
+\index{Enemy@{Enemy}!move@{move}}
+\index{move@{move}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily virtual void Enemy\+::move (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{t\+\_\+player\+Pos,  }\item[{int}]{t\+\_\+player\+Room,  }\item[{int}]{t\+\_\+enemy\+Room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_bat_ac5b133d55bfeb5e686943589ffa1329f}{Bat}}, and \mbox{\hyperlink{class_rat_a5b92ff258b240dd5d6e90771c8de3667}{Rat}}.
+
+\mbox{\Hypertarget{class_enemy_acd16b6ada7d3f5f2a4d6af3faf78e87a}\label{class_enemy_acd16b6ada7d3f5f2a4d6af3faf78e87a}} 
+\index{Enemy@{Enemy}!moveTowardsPlayer@{moveTowardsPlayer}}
+\index{moveTowardsPlayer@{moveTowardsPlayer}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{moveTowardsPlayer()}{moveTowardsPlayer()}}
+{\footnotesize\ttfamily void Enemy\+::move\+Towards\+Player (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{t\+\_\+player\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+This behaviour moves the \mbox{\hyperlink{class_enemy}{Enemy}} towards the player, if theres a wall it stops in its tracks  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+player\+Pos} & The position on the grid of the player\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_enemy_ae720d544ca6133bc94e2cbf41fdf0f9a}\label{class_enemy_ae720d544ca6133bc94e2cbf41fdf0f9a}} 
+\index{Enemy@{Enemy}!randomMovement@{randomMovement}}
+\index{randomMovement@{randomMovement}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{randomMovement()}{randomMovement()}}
+{\footnotesize\ttfamily void Enemy\+::random\+Movement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+This behaviour moves the enemy randomly only avoiding walls  
+
+\mbox{\Hypertarget{class_enemy_a09169617a34e6de54708bf409244d218}\label{class_enemy_a09169617a34e6de54708bf409244d218}} 
+\index{Enemy@{Enemy}!render@{render}}
+\index{render@{render}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Enemy\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Draws the \mbox{\hyperlink{class_enemy}{Enemy}} to the screen.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+window} & The window to draw to.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_enemy_ab5c0ff036d8e8dacf83e09ea6afa9731}\label{class_enemy_ab5c0ff036d8e8dacf83e09ea6afa9731}} 
+\index{Enemy@{Enemy}!resetMovementBools@{resetMovementBools}}
+\index{resetMovementBools@{resetMovementBools}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{resetMovementBools()}{resetMovementBools()}}
+{\footnotesize\ttfamily void Enemy\+::reset\+Movement\+Bools (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+switch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_enemy_a7f2beede54c37c4d5f04e4e95a00c439}\label{class_enemy_a7f2beede54c37c4d5f04e4e95a00c439}} 
+\index{Enemy@{Enemy}!setMovementBoolDown@{setMovementBoolDown}}
+\index{setMovementBoolDown@{setMovementBoolDown}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{setMovementBoolDown()}{setMovementBoolDown()}}
+{\footnotesize\ttfamily void Enemy\+::set\+Movement\+Bool\+Down (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+switch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_enemy_a009b50723fab4ac32a2d59766529fbfe}\label{class_enemy_a009b50723fab4ac32a2d59766529fbfe}} 
+\index{Enemy@{Enemy}!setMovementBoolLeft@{setMovementBoolLeft}}
+\index{setMovementBoolLeft@{setMovementBoolLeft}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{setMovementBoolLeft()}{setMovementBoolLeft()}}
+{\footnotesize\ttfamily void Enemy\+::set\+Movement\+Bool\+Left (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+switch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_enemy_a591c068089a47f499702ba8054295337}\label{class_enemy_a591c068089a47f499702ba8054295337}} 
+\index{Enemy@{Enemy}!setMovementBoolRight@{setMovementBoolRight}}
+\index{setMovementBoolRight@{setMovementBoolRight}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{setMovementBoolRight()}{setMovementBoolRight()}}
+{\footnotesize\ttfamily void Enemy\+::set\+Movement\+Bool\+Right (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+switch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_enemy_ac799b98082fa353e7f3f0f6bdd4193d2}\label{class_enemy_ac799b98082fa353e7f3f0f6bdd4193d2}} 
+\index{Enemy@{Enemy}!setMovementBoolUp@{setMovementBoolUp}}
+\index{setMovementBoolUp@{setMovementBoolUp}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{setMovementBoolUp()}{setMovementBoolUp()}}
+{\footnotesize\ttfamily void Enemy\+::set\+Movement\+Bool\+Up (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+switch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_enemy_a45f2116698b61bfb77b0633097e6b52f}\label{class_enemy_a45f2116698b61bfb77b0633097e6b52f}} 
+\index{Enemy@{Enemy}!update@{update}}
+\index{update@{update}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Enemy\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{t\+\_\+player\+Pos,  }\item[{int}]{t\+\_\+player\+Room,  }\item[{int}]{t\+\_\+enemy\+Room }\end{DoxyParamCaption})}
+
+
+
+Updates the enemy, checks if the enemy has health and if so does the move action  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+player\+Pos} & The Position on the grid of the player\\
+\hline
+{\em t\+\_\+player\+Room} & The room the player is in\\
+\hline
+{\em t\+\_\+enemy\+Room} & The room the enemy is in\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_enemy_a3249683551ec77289ce25a126fdb48ec}\label{class_enemy_a3249683551ec77289ce25a126fdb48ec}} 
+\index{Enemy@{Enemy}!col@{col}}
+\index{col@{col}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{col}{col}}
+{\footnotesize\ttfamily int Enemy\+::col\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The column the enemy is in on the grid. 
+
+\mbox{\Hypertarget{class_enemy_aedd5e7bf8ef07ee97be433c853a10d8d}\label{class_enemy_aedd5e7bf8ef07ee97be433c853a10d8d}} 
+\index{Enemy@{Enemy}!health@{health}}
+\index{health@{health}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{health}{health}}
+{\footnotesize\ttfamily int Enemy\+::health = 20\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The enemy\textquotesingle{}s health. When this is reduced to 0, the enemy is defeated. 
+
+\mbox{\Hypertarget{class_enemy_ac66ee9bc2816c303e2ea947d8a691395}\label{class_enemy_ac66ee9bc2816c303e2ea947d8a691395}} 
+\index{Enemy@{Enemy}!m\_armourClass@{m\_armourClass}}
+\index{m\_armourClass@{m\_armourClass}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{m\_armourClass}{m\_armourClass}}
+{\footnotesize\ttfamily int Enemy\+::m\+\_\+armour\+Class = 2\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The armour class. The higher the number, the easier the enemy is to hit. 
+
+\mbox{\Hypertarget{class_enemy_aea3fbafbbd033f2a6d4ff7139379e94f}\label{class_enemy_aea3fbafbbd033f2a6d4ff7139379e94f}} 
+\index{Enemy@{Enemy}!m\_enemy@{m\_enemy}}
+\index{m\_enemy@{m\_enemy}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{m\_enemy}{m\_enemy}}
+{\footnotesize\ttfamily sf\+::\+Sprite Enemy\+::m\+\_\+enemy\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The appearance of the enemy. 
+
+\mbox{\Hypertarget{class_enemy_afb4cba128ce0cb75235b99d8ef5768a7}\label{class_enemy_afb4cba128ce0cb75235b99d8ef5768a7}} 
+\index{Enemy@{Enemy}!m\_enemyTexture@{m\_enemyTexture}}
+\index{m\_enemyTexture@{m\_enemyTexture}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{m\_enemyTexture}{m\_enemyTexture}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$sf\+::\+Texture$>$ Enemy\+::m\+\_\+enemy\+Texture\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The spritesheet texture applied to the enemy appearance. 
+
+\mbox{\Hypertarget{class_enemy_af55d7d93c96f44e72bbabf4116d02bf1}\label{class_enemy_af55d7d93c96f44e72bbabf4116d02bf1}} 
+\index{Enemy@{Enemy}!m\_freeToMoveDown@{m\_freeToMoveDown}}
+\index{m\_freeToMoveDown@{m\_freeToMoveDown}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{m\_freeToMoveDown}{m\_freeToMoveDown}}
+{\footnotesize\ttfamily bool Enemy\+::m\+\_\+free\+To\+Move\+Down\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The enemy can move dowm. 
+
+\mbox{\Hypertarget{class_enemy_ae8976d8ba7521d3fca71cdc3c7b1f23f}\label{class_enemy_ae8976d8ba7521d3fca71cdc3c7b1f23f}} 
+\index{Enemy@{Enemy}!m\_freeToMoveLeft@{m\_freeToMoveLeft}}
+\index{m\_freeToMoveLeft@{m\_freeToMoveLeft}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{m\_freeToMoveLeft}{m\_freeToMoveLeft}}
+{\footnotesize\ttfamily bool Enemy\+::m\+\_\+free\+To\+Move\+Left\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The enemy can move left. 
+
+\mbox{\Hypertarget{class_enemy_a6d658ebc7e413853bfea119223919647}\label{class_enemy_a6d658ebc7e413853bfea119223919647}} 
+\index{Enemy@{Enemy}!m\_freeToMoveRight@{m\_freeToMoveRight}}
+\index{m\_freeToMoveRight@{m\_freeToMoveRight}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{m\_freeToMoveRight}{m\_freeToMoveRight}}
+{\footnotesize\ttfamily bool Enemy\+::m\+\_\+free\+To\+Move\+Right\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The enemy can move right. 
+
+\mbox{\Hypertarget{class_enemy_a5ca0b9deba2be143f2d363dff0d39107}\label{class_enemy_a5ca0b9deba2be143f2d363dff0d39107}} 
+\index{Enemy@{Enemy}!m\_freeToMoveUp@{m\_freeToMoveUp}}
+\index{m\_freeToMoveUp@{m\_freeToMoveUp}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{m\_freeToMoveUp}{m\_freeToMoveUp}}
+{\footnotesize\ttfamily bool Enemy\+::m\+\_\+free\+To\+Move\+Up\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The enemy can move up. 
+
+\mbox{\Hypertarget{class_enemy_a5fbc5b6223ae7d59df9eb707a963b1dc}\label{class_enemy_a5fbc5b6223ae7d59df9eb707a963b1dc}} 
+\index{Enemy@{Enemy}!m\_type@{m\_type}}
+\index{m\_type@{m\_type}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{m\_type}{m\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_globals_8h_ac3e413a86119db4b031458c7259e268e}{Enemy\+Type}} Enemy\+::m\+\_\+type = Enemy\+Type\+::\+Bat\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The type of enemy this is. These include \mbox{\hyperlink{class_bat}{Bat}} and \mbox{\hyperlink{class_rat}{Rat}}. 
+
+\mbox{\Hypertarget{class_enemy_af5fc9526c259374e5981a5547e1fa648}\label{class_enemy_af5fc9526c259374e5981a5547e1fa648}} 
+\index{Enemy@{Enemy}!row@{row}}
+\index{row@{row}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{row}{row}}
+{\footnotesize\ttfamily int Enemy\+::row\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The row the enemy is in on the grid. 
+
+\mbox{\Hypertarget{class_enemy_ab50f697f22f6d970b0567247d5f17dc8}\label{class_enemy_ab50f697f22f6d970b0567247d5f17dc8}} 
+\index{Enemy@{Enemy}!spriteRec@{spriteRec}}
+\index{spriteRec@{spriteRec}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{spriteRec}{spriteRec}}
+{\footnotesize\ttfamily sf\+::\+Int\+Rect Enemy\+::sprite\+Rec \{ 0,160,16,16 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_enemy_a6c93c0e43d21c5198797b386b6140848}\label{class_enemy_a6c93c0e43d21c5198797b386b6140848}} 
+\index{Enemy@{Enemy}!xp@{xp}}
+\index{xp@{xp}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{xp}{xp}}
+{\footnotesize\ttfamily int Enemy\+::xp = 10\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The amount of experience the enemy gives the player upon being defeated. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_enemy_8h}{Enemy.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_enemy_8cpp}{Enemy.\+cpp}}\end{DoxyCompactItemize}

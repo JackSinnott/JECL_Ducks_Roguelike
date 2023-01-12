@@ -1,0 +1,146 @@
+\hypertarget{class_abstract_armour}{}\doxysection{Abstract\+Armour Class Reference}
+\label{class_abstract_armour}\index{AbstractArmour@{AbstractArmour}}
+
+
+The Abstract class that is the base for the \mbox{\hyperlink{class_light_armour}{Light\+Armour}}, \mbox{\hyperlink{class_heavy_armour}{Heavy\+Armour}}, and \mbox{\hyperlink{class_medium_armour}{Medium\+Armour}} classes.   
+
+
+
+
+{\ttfamily \#include $<$Abstract\+Armour.\+h$>$}
+
+Inheritance diagram for Abstract\+Armour\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_abstract_armour}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_abstract_armour_ab12801f79e752bd496b008cc79346237}{Abstract\+Armour}} ()
+\begin{DoxyCompactList}\small\item\em Default class constructor.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_abstract_armour_ad340a2b797cf5c17d2b3e396eb3c71c3}{$\sim$\+Abstract\+Armour}} ()
+\begin{DoxyCompactList}\small\item\em Default class deconstructor.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_abstract_armour_aa02f4016fc6a1a58e19e356a7a378c7d}{Set\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Sets the type of item this object is, as well as setting its sprite.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}} \mbox{\hyperlink{class_abstract_armour_aecf865cfa22e951243aac922f81b0699}{Get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the armour type of this object.  \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_abstract_armour_a95a473e258e7552bef03068246390646}{Get\+Armour\+Class}} ()
+\begin{DoxyCompactList}\small\item\em Gets the armour class.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_abstract_armour_aa1bbaf779de94f8d6d0012da2ddb0d56}{m\+\_\+armour\+Class}} = 0
+\begin{DoxyCompactList}\small\item\em The armour class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}} \mbox{\hyperlink{class_abstract_armour_a9a47bfcc8db0035cba4189a0a841746f}{m\+\_\+armour\+Type}} = Armours\+::\+Light
+\begin{DoxyCompactList}\small\item\em The armour type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}}, sf\+::\+Int\+Rect $>$ \mbox{\hyperlink{class_abstract_armour_a6cc7b88e03574f798f8ca01067ba1114}{m\+\_\+rects}} = std\+::unordered\+\_\+map$<$\mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}}, sf\+::\+Int\+Rect$>$()
+\begin{DoxyCompactList}\small\item\em The sprite rects of the armour.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Abstract class that is the base for the \mbox{\hyperlink{class_light_armour}{Light\+Armour}}, \mbox{\hyperlink{class_heavy_armour}{Heavy\+Armour}}, and \mbox{\hyperlink{class_medium_armour}{Medium\+Armour}} classes.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_abstract_armour_ab12801f79e752bd496b008cc79346237}\label{class_abstract_armour_ab12801f79e752bd496b008cc79346237}} 
+\index{AbstractArmour@{AbstractArmour}!AbstractArmour@{AbstractArmour}}
+\index{AbstractArmour@{AbstractArmour}!AbstractArmour@{AbstractArmour}}
+\doxysubsubsection{\texorpdfstring{AbstractArmour()}{AbstractArmour()}}
+{\footnotesize\ttfamily Abstract\+Armour\+::\+Abstract\+Armour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default class constructor.  
+
+\mbox{\Hypertarget{class_abstract_armour_ad340a2b797cf5c17d2b3e396eb3c71c3}\label{class_abstract_armour_ad340a2b797cf5c17d2b3e396eb3c71c3}} 
+\index{AbstractArmour@{AbstractArmour}!````~AbstractArmour@{$\sim$AbstractArmour}}
+\index{````~AbstractArmour@{$\sim$AbstractArmour}!AbstractArmour@{AbstractArmour}}
+\doxysubsubsection{\texorpdfstring{$\sim$AbstractArmour()}{~AbstractArmour()}}
+{\footnotesize\ttfamily Abstract\+Armour\+::$\sim$\+Abstract\+Armour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default class deconstructor.  
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_abstract_armour_a95a473e258e7552bef03068246390646}\label{class_abstract_armour_a95a473e258e7552bef03068246390646}} 
+\index{AbstractArmour@{AbstractArmour}!GetArmourClass@{GetArmourClass}}
+\index{GetArmourClass@{GetArmourClass}!AbstractArmour@{AbstractArmour}}
+\doxysubsubsection{\texorpdfstring{GetArmourClass()}{GetArmourClass()}}
+{\footnotesize\ttfamily int Abstract\+Armour\+::\+Get\+Armour\+Class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the armour class.  
+
+\begin{DoxyReturn}{Returns}
+The armour class (AC) of this armour.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_abstract_armour_aecf865cfa22e951243aac922f81b0699}\label{class_abstract_armour_aecf865cfa22e951243aac922f81b0699}} 
+\index{AbstractArmour@{AbstractArmour}!GetType@{GetType}}
+\index{GetType@{GetType}!AbstractArmour@{AbstractArmour}}
+\doxysubsubsection{\texorpdfstring{GetType()}{GetType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}} Abstract\+Armour\+::\+Get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the armour type of this object.  
+
+\begin{DoxyReturn}{Returns}
+The Armour type.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_abstract_armour_aa02f4016fc6a1a58e19e356a7a378c7d}\label{class_abstract_armour_aa02f4016fc6a1a58e19e356a7a378c7d}} 
+\index{AbstractArmour@{AbstractArmour}!SetType@{SetType}}
+\index{SetType@{SetType}!AbstractArmour@{AbstractArmour}}
+\doxysubsubsection{\texorpdfstring{SetType()}{SetType()}}
+{\footnotesize\ttfamily void Abstract\+Armour\+::\+Set\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the type of item this object is, as well as setting its sprite.  
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_abstract_armour_aa1bbaf779de94f8d6d0012da2ddb0d56}\label{class_abstract_armour_aa1bbaf779de94f8d6d0012da2ddb0d56}} 
+\index{AbstractArmour@{AbstractArmour}!m\_armourClass@{m\_armourClass}}
+\index{m\_armourClass@{m\_armourClass}!AbstractArmour@{AbstractArmour}}
+\doxysubsubsection{\texorpdfstring{m\_armourClass}{m\_armourClass}}
+{\footnotesize\ttfamily int Abstract\+Armour\+::m\+\_\+armour\+Class = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The armour class. 
+
+\mbox{\Hypertarget{class_abstract_armour_a9a47bfcc8db0035cba4189a0a841746f}\label{class_abstract_armour_a9a47bfcc8db0035cba4189a0a841746f}} 
+\index{AbstractArmour@{AbstractArmour}!m\_armourType@{m\_armourType}}
+\index{m\_armourType@{m\_armourType}!AbstractArmour@{AbstractArmour}}
+\doxysubsubsection{\texorpdfstring{m\_armourType}{m\_armourType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}} Abstract\+Armour\+::m\+\_\+armour\+Type = Armours\+::\+Light\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The armour type. 
+
+\mbox{\Hypertarget{class_abstract_armour_a6cc7b88e03574f798f8ca01067ba1114}\label{class_abstract_armour_a6cc7b88e03574f798f8ca01067ba1114}} 
+\index{AbstractArmour@{AbstractArmour}!m\_rects@{m\_rects}}
+\index{m\_rects@{m\_rects}!AbstractArmour@{AbstractArmour}}
+\doxysubsubsection{\texorpdfstring{m\_rects}{m\_rects}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}}, sf\+::\+Int\+Rect $>$ Abstract\+Armour\+::m\+\_\+rects = std\+::unordered\+\_\+map$<$\mbox{\hyperlink{_globals_8h_a055e5eef1506d5a4360112d62215b070}{Armours}}, sf\+::\+Int\+Rect$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The sprite rects of the armour.  
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_abstract_armour_8h}{Abstract\+Armour.\+h}}\item 
+C\+:/\+Users/liney/\+One\+Drive/\+Desktop/\+Work/\+Games Engineering/\+JECL\+\_\+\+Ducks\+\_\+\+Roguelike/\+Roguelike/\mbox{\hyperlink{_abstract_armour_8cpp}{Abstract\+Armour.\+cpp}}\end{DoxyCompactItemize}

@@ -1,9 +1,26 @@
 var searchData=
 [
-  ['game_0',['Game',['../class_game.html',1,'Game'],['../class_game.html#ad59df6562a58a614fda24622d3715b65',1,'Game::Game()']]],
-  ['game_2ecpp_1',['Game.cpp',['../_game_8cpp.html',1,'']]],
-  ['game_2eh_2',['Game.h',['../_game_8h.html',1,'']]],
-  ['getposition_3',['GetPosition',['../class_player.html#aaed2801fda29def04633d24e4271edc0',1,'Player']]],
-  ['globals_2eh_4',['Globals.h',['../_globals_8h.html',1,'']]],
-  ['gridcellsize_5',['gridCellSize',['../class_player.html#a94500af1daeabf3f22322118c7ec94c0',1,'Player']]]
+  ['calculatedamagetoenemy_0',['CalculateDamageToEnemy',['../class_player.html#a7f4bab3e52ab1346ab9fea2068b821b2',1,'Player']]],
+  ['calculatedamagetoplayer_1',['CalculateDamageToPlayer',['../class_enemy.html#a2d8ebea362ec8d066952daf636a45d20',1,'Enemy']]],
+  ['canwemovedown_2',['canWeMoveDown',['../class_enemy.html#a39993a9adce5e45eaa08dfde8ad10d4b',1,'Enemy::canWeMoveDown()'],['../class_player.html#a33413b5fc6c3e7f97522600f28000fa9',1,'Player::canWeMoveDown()']]],
+  ['canwemoveleft_3',['canWeMoveLeft',['../class_enemy.html#a88b78bb22c2058c0cb3c16be94563ce0',1,'Enemy::canWeMoveLeft()'],['../class_player.html#a551fcd182a3b59e9adde7126b09e022a',1,'Player::canWeMoveLeft()']]],
+  ['canwemoveright_4',['canWeMoveRight',['../class_enemy.html#ad6847db10f89a2617fc92dfa2e6621c4',1,'Enemy::canWeMoveRight()'],['../class_player.html#a1c050f4451c872f3025d29aa7ceceb02',1,'Player::canWeMoveRight()']]],
+  ['canwemoveup_5',['canWeMoveUp',['../class_enemy.html#a8f748630642ea0891a5fa3b8f0ff1319',1,'Enemy::canWeMoveUp()'],['../class_player.html#a3414f2ca524596d388f0fbc665cb348c',1,'Player::canWeMoveUp()']]],
+  ['changecolor_6',['changeColor',['../class_button.html#ae05acdacdad978c2ddc3a66dbe313eae',1,'Button']]],
+  ['checkcollisionenemyinroom_7',['checkCollisionEnemyInRoom',['../class_grid.html#a7039bd25cc529a62e2e8ba110d8e1a9c',1,'Grid']]],
+  ['checkcollisionenemywall_8',['checkCollisionEnemyWall',['../class_grid.html#ad82007b73c63b12c1340e841e15defcf',1,'Grid']]],
+  ['checkcollisionplayerinroom_9',['checkCollisionPlayerInRoom',['../class_grid.html#a841d75cf39e633a33373fdf2366cc887',1,'Grid']]],
+  ['checkcollisionplayerwall_10',['checkCollisionPlayerWall',['../class_grid.html#a5d03ca083d80eee1ac195a6d532a6368',1,'Grid']]],
+  ['checkplayer_11',['CheckPlayer',['../class_room.html#a3068a85c9f12ea4247f23b4b0631595d',1,'Room']]],
+  ['checkroom_12',['checkRoom',['../class_grid.html#a50584b5882e5d7f011d1eb21f3875648',1,'Grid']]],
+  ['clickcolor_13',['clickColor',['../class_button.html#a4498bae738c99e87c44df834d96ea8de',1,'Button']]],
+  ['clicking_14',['clicking',['../class_button.html#ad051b0a188af599d3ca171de373fa0c9',1,'Button']]],
+  ['col_15',['col',['../class_enemy.html#a3249683551ec77289ce25a126fdb48ec',1,'Enemy::col()'],['../class_player.html#adaf24ef11afa33a073a952c464f5c762',1,'Player::col()'],['../class_room.html#a008db12edeea58448b97570bf7a2c453',1,'Room::col()'],['../class_tile.html#a5bad27e5dfea9d5be39f0520c1e71a09',1,'Tile::col()']]],
+  ['collectgarbage_16',['Collectgarbage',['../class_audio_manager.html#a16f1326be30177ad4b0128f02148a3cd',1,'AudioManager::Collectgarbage()'],['../class_resource_allocator.html#a202e31427e6037373a2af72bebec81f7',1,'ResourceAllocator::Collectgarbage()'],['../class_texture_manager.html#a8792d04864b18f16ec37ab6642b92dbf',1,'TextureManager::Collectgarbage()']]],
+  ['combatsystem_17',['CombatSystem',['../class_combat_system.html',1,'']]],
+  ['combatsystem_2ecpp_18',['CombatSystem.cpp',['../_combat_system_8cpp.html',1,'']]],
+  ['combatsystem_2eh_19',['CombatSystem.h',['../_combat_system_8h.html',1,'']]],
+  ['createarmour_20',['CreateArmour',['../class_abstract_item_factory.html#ae18686152a9f16da5a03730019f040e4',1,'AbstractItemFactory::CreateArmour()'],['../class_armour_factory.html#abbe69d7da0fea6e509249457e6bede97',1,'ArmourFactory::CreateArmour()']]],
+  ['createpotion_21',['CreatePotion',['../class_abstract_item_factory.html#ab5286515f74f77df65ff8a6d5f1acc3a',1,'AbstractItemFactory::CreatePotion()'],['../class_potion_factory.html#afe1991f1ca2cb65cfb2f5ac6c63c7058',1,'PotionFactory::CreatePotion()']]],
+  ['createweapon_22',['CreateWeapon',['../class_abstract_item_factory.html#ac2ef87714d1b180fee21bbbf54e818a5',1,'AbstractItemFactory::CreateWeapon()'],['../class_weapon_factory.html#ae0451475f7a18ea92070f7ec9589a57a',1,'WeaponFactory::CreateWeapon()']]]
 ];
